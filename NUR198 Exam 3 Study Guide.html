@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NUR198 Exam 3 Study Guide — Cardiovascular</title><style>
+ *{box-sizing:border-box} html,body{margin:0;height:100%}
+ body{font-family:'Segoe UI',system-ui,sans-serif;color:#f4f0ff;display:flex;flex-direction:column;height:100vh;
+   background-color:#140b24;background-image:linear-gradient(rgba(12,7,22,.85),rgba(12,7,22,.9)),url("Designer.jpg");
+   background-size:cover;background-position:center;background-attachment:fixed}
+ header{background:linear-gradient(135deg,#5a2d82,#8e2d6b);padding:12px 18px;flex:0 0 auto;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+ header h1{margin:0;font-size:1.15rem} header p{margin:2px 0 0;font-size:.82rem;color:#ffe49b}
+ .tabbar{display:flex;flex-wrap:wrap;gap:6px;background:rgba(36,22,64,.85);padding:8px 12px;flex:0 0 auto;border-bottom:1px solid #473a6b}
+ .tab{background:rgba(255,255,255,.06);color:#f4f0ff;border:1px solid #473a6b;border-radius:22px;padding:8px 16px;font-size:.9rem;font-weight:700;cursor:pointer}
+ .tab:hover{background:rgba(181,140,255,.2)}
+ .tab.active{background:#b58cff;color:#1a0d2e;border-color:#b58cff}
+ .frames{flex:1 1 auto;position:relative;min-height:0}
+ .tf{position:absolute;inset:0;width:100%;height:100%;border:0;background:#140b24;display:none}
+ .tf.show{display:block}
+</style></head><body>
+<a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">🏠 Home</a>
+<header><h1>🫀 NUR 198 · Exam 3 Study Guide — Cardiovascular (Modules 7–8)</h1>
+<p>Comprehensive Key Concepts (KCRs) plus the quick guide and practice quiz. Use the tabs.</p></header>
+<div class="tabbar">
+  <button class="tab active" data-tab="kcrs">📖 Key Concepts (KCRs)</button>
+  <button class="tab" data-tab="guide">📝 Guide + Quiz</button>
+</div>
+<div class="frames">
+  <iframe class="tf show" data-tab="kcrs" src="NUR198%20Exam%203%20KCRs.html" loading="eager"></iframe>
+  <iframe class="tf" data-tab="guide" src="NUR198%20Exam%203%20Guide%20and%20Quiz.html" loading="lazy"></iframe>
+</div>
+<script>
+ var tabs=document.querySelectorAll('.tab'), frames=document.querySelectorAll('.tf');
+ tabs.forEach(function(t){t.addEventListener('click',function(){
+   var id=t.dataset.tab;
+   tabs.forEach(function(x){x.classList.toggle('active',x===t);});
+   frames.forEach(function(f){f.classList.toggle('show',f.dataset.tab===id);});
+ });});
+</script>
+</body></html>
