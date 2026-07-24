@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUR 198 Exam 3 — Cardiovascular Key Concepts</title>
+<style>
+:root{
+  --ocean:#04243f; --ocean2:#0a3a5c; --burgundy:#5c1230; --pink:#a8326b; --gold:#c79a1e;
+  --accent-cyan:#3fd0e0; --accent-pink:#ff6bb0; --accent-gold:#ffd166; --accent-amber:#ffb24d;
+  --ink:#f3f7f9; --ink-dim:#c6d3da; --ink-faint:#9fb0ba;
+  --line:#274a5e; --good:#39d98a; --bad:#ff6b6b;
+  --card:rgba(8,40,64,.66);
+  --base:16.5px; --r:16px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  color:var(--ink); font-size:var(--base); line-height:1.62;
+  background:
+    radial-gradient(1100px 640px at 10% 2%, #0a4a6b 0%, transparent 55%),
+    linear-gradient(165deg, #04243f 0%, #0a3a5c 30%, #5c1230 64%, #a8326b 86%, #c79a1e 100%);
+  background-attachment:fixed; min-height:100vh;
+}
+.wrap{max-width:1060px; margin:0 auto; padding:24px 18px 100px;}
+header.hero{
+  text-align:center; padding:32px 22px 26px; margin-bottom:20px;
+  background:rgba(4,24,40,.62); border:1px solid var(--line); border-radius:20px;
+  backdrop-filter:blur(6px); box-shadow:0 10px 34px rgba(0,0,0,.32);
+}
+.hero h1{font-size:1.95rem; margin:.15em 0 .2em; line-height:1.2;}
+.hero .sub{color:var(--ink-dim); max-width:680px; margin:0 auto; font-size:1.02rem;}
+.hero .pills{display:flex; flex-wrap:wrap; gap:9px; justify-content:center; margin-top:16px;}
+.pill{background:rgba(199,154,30,.18); border:1px solid rgba(199,154,30,.5); color:#ffe7ad;
+  padding:6px 14px; border-radius:999px; font-size:.85rem; font-weight:600;}
+
+.tabs{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:0 0 22px;}
+.tab{cursor:pointer; padding:11px 24px; border-radius:13px; font-weight:700; font-size:1rem;
+  border:1px solid var(--line); background:rgba(4,24,40,.55); color:var(--ink-dim); transition:.18s;}
+.tab:hover{background:rgba(63,208,224,.2); color:#fff;}
+.tab.active{background:linear-gradient(135deg,var(--accent-cyan),var(--accent-gold)); color:#04243f; border-color:transparent;}
+section.view{display:none; animation:fade .3s;} section.view.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+h2.mod{font-size:1.55rem; margin:8px 0 4px; display:flex; align-items:center; gap:10px;}
+.mod-banner{border-radius:16px; padding:16px 20px; margin:22px 0 14px; border:1px solid var(--line);
+  background:linear-gradient(120deg, rgba(92,18,48,.65), rgba(10,58,92,.6));}
+.mod-banner h2{margin:0;}
+.deliv{margin-top:14px; display:grid; grid-template-columns:1.4fr 1fr; gap:14px;}
+@media(max-width:640px){.deliv{grid-template-columns:1fr;}}
+.deliv-box{background:rgba(4,24,40,.5); border:1px solid var(--line); border-radius:12px; padding:13px 15px;}
+.deliv-box h4{margin:.1em 0 .5em; font-size:.96rem; color:var(--accent-gold); display:flex; gap:7px; align-items:center;}
+.deliv-box ol,.deliv-box ul{margin:.2em 0; padding-left:1.2em;}
+.deliv-box li{margin:.34em 0; font-size:.9rem; color:var(--ink-dim); line-height:1.45;}
+.deliv-box .co{color:var(--accent-cyan); font-weight:700; font-size:.82rem;}
+.deliv-chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;}
+.deliv-chips .chip{background:rgba(57,217,138,.15); border-color:rgba(57,217,138,.45); color:#bff0d6;}
+.hr{height:3px; border:0; border-radius:3px; margin:26px 0 16px;
+  background:linear-gradient(90deg,var(--accent-cyan),var(--accent-gold),var(--accent-pink));}
+h3.cond{font-size:1.24rem; margin:22px 0 8px; color:#fff; display:flex; align-items:center; gap:9px;}
+
+.ibox{border-radius:13px; padding:13px 16px; margin:12px 0; border:1px solid var(--line); background:var(--card); backdrop-filter:blur(4px);}
+.ibox h4{margin:.1em 0 .5em; font-size:1.04rem; display:flex; gap:8px; align-items:center;}
+.ibox.path{background:rgba(63,208,224,.13); border-color:rgba(63,208,224,.45);}
+.ibox.mani{background:rgba(168,50,107,.16); border-color:rgba(168,50,107,.5);}
+.ibox.mgmt{background:rgba(57,217,138,.12); border-color:rgba(57,217,138,.42);}
+.ibox.redflag{background:rgba(255,107,107,.14); border-color:rgba(255,107,107,.5);}
+.ibox.teach{background:rgba(199,154,30,.14); border-color:rgba(199,154,30,.5);}
+.ibox.tip{background:rgba(255,178,77,.13); border-color:rgba(255,178,77,.45);}
+.ibox ul{margin:.3em 0; padding-left:1.2em;} .ibox li{margin:.26em 0;}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+@media(max-width:640px){.grid2{grid-template-columns:1fr;}}
+table.ref{width:100%; border-collapse:collapse; margin:12px 0; background:var(--card); border-radius:12px; overflow:hidden; font-size:.95rem;}
+table.ref th,table.ref td{padding:9px 12px; text-align:left; border-bottom:1px solid var(--line);}
+table.ref th{background:rgba(10,58,92,.7); font-weight:800;}
+.chip{display:inline-block; padding:3px 11px; border-radius:999px; font-size:.8rem; font-weight:700;
+  background:rgba(63,208,224,.18); border:1px solid rgba(63,208,224,.45); color:#bdf0f7; margin:2px 3px 2px 0;}
+svg.diagram{width:100%; height:auto; background:rgba(4,24,40,.5); border-radius:13px; border:1px solid var(--line); margin:10px 0;}
+.mnemonic{font-weight:800; color:var(--accent-gold);}
+
+/* quiz */
+.quiz-setup{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px; backdrop-filter:blur(4px);}
+.qrow{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:12px 0;}
+.qrow label{font-weight:700; min-width:90px;}
+select,.numbtn{font-size:1rem; padding:9px 14px; border-radius:11px; border:1px solid var(--line); background:#0a3a5c; color:var(--ink); font-weight:600;}
+.numbtn{cursor:pointer;} .numbtn.sel{background:linear-gradient(135deg,var(--accent-cyan),var(--accent-gold)); color:#04243f; border-color:transparent;}
+.btn{cursor:pointer; border:0; border-radius:13px; padding:13px 26px; font-size:1.05rem; font-weight:800;
+  background:linear-gradient(135deg,var(--accent-cyan),var(--accent-gold)); color:#04243f; transition:.18s; box-shadow:0 6px 18px rgba(0,0,0,.25);}
+.btn:hover{filter:brightness(1.07); transform:translateY(-2px);}
+.btn.ghost{background:rgba(4,24,40,.6); color:var(--ink); border:1px solid var(--line);}
+.btn.pink{background:linear-gradient(135deg,var(--accent-pink),var(--accent-gold)); color:#3a1126;}
+.qmeta{display:flex; justify-content:space-between; font-size:.92rem; color:var(--ink-dim); margin-bottom:4px;}
+.progress-wrap{background:rgba(4,24,40,.5); border-radius:999px; height:13px; overflow:hidden; margin:10px 0 4px; border:1px solid var(--line);}
+.progress-bar{height:100%; width:0; background:linear-gradient(90deg,var(--accent-cyan),var(--accent-gold),var(--accent-pink)); transition:width .3s;}
+.qcard{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; margin-top:14px; backdrop-filter:blur(5px);}
+.q-tag{display:inline-block; font-size:.78rem; font-weight:800; padding:4px 11px; border-radius:999px; background:rgba(199,154,30,.2); border:1px solid rgba(199,154,30,.5); color:#ffe7ad; margin-bottom:10px;}
+.q-tag.sata{background:rgba(168,50,107,.22); border-color:rgba(168,50,107,.55); color:#ffd1e6;}
+.qstem{font-size:1.15rem; font-weight:700; line-height:1.5; margin-bottom:6px;}
+.sata-hint{font-size:.9rem; color:var(--accent-gold); font-weight:700; margin:2px 0 10px;}
+.opts{display:flex; flex-direction:column; gap:11px; margin-top:8px;}
+.opt{display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border-radius:13px; border:1.5px solid var(--line); background:rgba(4,24,40,.45); cursor:pointer; transition:.14s; font-size:1.03rem;}
+.opt:hover{border-color:var(--accent-cyan); background:rgba(63,208,224,.14);}
+.opt .ltr{font-weight:900; min-width:26px; height:26px; border-radius:7px; display:flex; align-items:center; justify-content:center; background:rgba(199,154,30,.22); color:#ffe7ad; flex-shrink:0;}
+.opt.sel{border-color:var(--accent-gold); background:rgba(199,154,30,.16);}
+.opt.correct{border-color:var(--good); background:rgba(57,217,138,.16);}
+.opt.correct .ltr{background:var(--good); color:#04261b;}
+.opt.wrong{border-color:var(--bad); background:rgba(255,107,107,.14);}
+.opt.wrong .ltr{background:var(--bad); color:#3a0f0a;}
+.opt.locked{cursor:default;} .opt .mark{margin-left:auto; font-weight:900; font-size:1.1rem;}
+.rationale{margin-top:16px; border-radius:13px; padding:15px 17px; background:rgba(199,154,30,.13); border:1px solid rgba(199,154,30,.45); display:none;}
+.rationale.show{display:block; animation:fade .3s;}
+.rationale .lbl{font-weight:900; color:var(--accent-gold); display:flex; gap:7px; margin-bottom:5px;}
+.verdict{font-weight:900; margin-bottom:6px;} .verdict.ok{color:var(--good);} .verdict.no{color:var(--bad);}
+.nav{display:flex; gap:10px; justify-content:space-between; margin-top:18px; flex-wrap:wrap;}
+.results{text-align:center; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:30px 24px;}
+.score-ring{font-size:3.1rem; font-weight:900;} .score-sub{color:var(--ink-dim); font-size:1.05rem;}
+.breakdown{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; margin:22px 0;}
+.stat{background:rgba(4,24,40,.5); border:1px solid var(--line); border-radius:14px; padding:14px;}
+.stat .n{font-size:1.8rem; font-weight:900;} .stat .l{font-size:.85rem; color:var(--ink-dim);}
+.hidden{display:none!important;} .muted{color:var(--ink-dim);}
+.scrollbtn{position:fixed; right:18px; bottom:18px; z-index:30;}
+footer{text-align:center; color:var(--ink-dim); font-size:.84rem; margin-top:40px;}
+</style>
+<style id="bgInject">
+html{min-height:100%}
+body{
+  background-image:linear-gradient(rgba(12,7,22,.85),rgba(12,7,22,.90)),url("Designer.jpg")!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-attachment:fixed!important;
+  background-repeat:no-repeat!important;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div style="font-size:2.3rem">🫀</div>
+    <h1>NUR 198 · Exam 3 — Cardiovascular Key Concepts</h1>
+    <div class="sub">Modules 7 & 8 made exam-ready: every listed condition built out with pathophysiology, manifestations, management, nursing priorities, and teaching — plus a quiz.</div>
+    <div class="pills">
+      <span class="pill">📘 Modules 7 & 8</span>
+      <span class="pill">🫀 Coronary · Arrhythmias · HF · Vascular</span>
+      <span class="pill">🧮 Dosage calc included</span>
+      <span class="pill">📝 41-question quiz</span>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" data-view="study">📖 Study Guide</div>
+    <div class="tab" data-view="quiz">📝 Quiz</div>
+  </div>
+
+  <section class="view active" id="study">
+    <h2 class="mod">📖 Exam 3 — Cardiovascular</h2>
+<p class="muted">Built from the ATI Adult Med-Surg eBook (Unit 4) to match your Exam 3 Key Concepts. Each condition follows the same frame: <b>causes/risk → pathophysiology → manifestations → medical management → nursing priorities → teaching</b>. Tap the <b>Quiz</b> tab to test yourself.</p>
+
+<div class="ibox tip"><h4>🧭 How to use this</h4>The colored boxes chunk each disorder the same way every time, so your eyes know where to look: <span class="chip">🔬 Patho</span><span class="chip">📋 Manifestations</span><span class="chip">💊 Management</span><span class="chip">🚨 Nursing priority</span><span class="chip">🎓 Teaching</span></div>
+
+<!-- ============ MODULE 7 ============ -->
+<div class="mod-banner">
+  <h2 class="mod">🫀 Module 7 — Coronary, Conduction & Hypertension</h2>
+  <div class="deliv">
+    <div class="deliv-box">
+      <h4>🎯 Module objectives (deliverables)</h4>
+      <ol>
+        <li>Discuss normal and abnormal cardiovascular assessment findings. <span class="co">(CO 1)</span></li>
+        <li>Identify diagnostic tests of the cardiovascular system and related nursing implications. <span class="co">(CO 1)</span></li>
+        <li>Describe pathophysiology, clinical manifestations, and treatment of coronary vascular disorders. <span class="co">(CO 1, 2, 3, 4)</span></li>
+        <li>Use the nursing process as a framework for care of the client with hypertension, angina pectoris, acute coronary syndrome, or who has undergone cardiac revascularization procedures or cardiac surgery. <span class="co">(CO 1, 2, 3, 4)</span></li>
+      </ol>
+    </div>
+    <div class="deliv-box">
+      <h4>📋 For all disorders, know:</h4>
+      <ul>
+        <li>Causes and risk factors</li>
+        <li>Pathophysiology</li>
+        <li>Diagnostic procedures</li>
+        <li>Clinical manifestations</li>
+        <li>Medical management</li>
+        <li>Nursing management & priorities of care</li>
+        <li>Client teaching / education</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3 class="cond">❤️ Coronary Artery Disease (CAD)</h3>
+<div class="ibox path"><h4>🔬 Pathophysiology & causes</h4>Atherosclerosis = gradual thickening of the intima/media with plaque buildup → progressive narrowing of the coronary lumen → reduced blood flow & oxygen to the myocardium (ischemia). <b>Modifiable risks:</b> smoking, hypertension, hyperlipidemia, diabetes, obesity, sedentary lifestyle, elevated CRP. <b>Non-modifiable:</b> age, family history, sex assigned at birth.</div>
+<div class="ibox teach"><h4>🎓 Teaching / prevention</h4>Smoking cessation, DASH/low-fat diet, regular exercise to raise HDL, control BP/glucose/lipids, manage stress, statin adherence.</div>
+
+<h3 class="cond">💢 Angina Pectoris</h3>
+<table class="ref">
+  <tr><th>Type</th><th>Pattern</th><th>Relief</th></tr>
+  <tr><td><b>Stable (exertional)</b></td><td>With exercise or emotional stress; predictable</td><td>✅ Rest or nitroglycerin</td></tr>
+  <tr><td><b>Unstable (preinfarction)</b></td><td>At rest or exertion; ↑ in frequency, severity, duration</td><td>⚠️ NOT reliably relieved — emergency</td></tr>
+  <tr><td><b>Variant (Prinzmetal)</b></td><td>Coronary artery spasm, often at rest</td><td>Calcium channel blockers, nitrates</td></tr>
+</table>
+<div class="ibox mgmt"><h4>💊 Medical management</h4>Nitroglycerin (vasodilator), beta-blockers, calcium channel blockers, antiplatelets (aspirin), statins. 12-lead ECG & troponin to rule out MI.</div>
+<div class="ibox teach"><h4>🎓 Nitroglycerin teaching</h4>Sit/lie down first (causes hypotension). Take 1 SL tablet; if pain persists, <b>call 911</b>, may take up to 3 tablets 5 min apart. Store in a dark glass bottle; replace every 6 months; expect a tingling/headache. Never combine with erectile-dysfunction drugs (severe hypotension).</div>
+
+<h3 class="cond">🚨 Acute Coronary Syndrome (ACS) & MI</h3>
+<div class="ibox path"><h4>🔬 Pathophysiology</h4>ACS = acute onset of myocardial ischemia from supply/demand imbalance. Spectrum: <b>unstable angina → NSTEMI → STEMI.</b> Abrupt loss of oxygen → ischemia (reversible) → infarction/necrosis (permanent) if flow isn't restored. Pain unrelieved by rest or nitro and lasting >15 min differentiates MI from angina. Women & older adults may have atypical symptoms (fatigue, indigestion, dyspnea).</div>
+<div class="ibox mani"><h4>📋 Manifestations</h4>Crushing substernal chest pain/pressure radiating to jaw/left arm/back, dyspnea, diaphoresis, nausea, anxiety, sense of doom. <b>Diagnostics:</b> ECG (ST elevation = STEMI), ↑ troponin (most specific; rises 3-4 hr, stays up ~2 wk), CK-MB.</div>
+<div class="ibox redflag"><h4>🚨 Immediate management — MONA + reperfusion</h4><ul>
+<li><b>M</b>orphine — for pain unrelieved by nitro</li>
+<li><b>O</b>xygen — only if SpO₂ &lt; 90% or in distress</li>
+<li><b>N</b>itroglycerin — vasodilation</li>
+<li><b>A</b>spirin — chewed, 162–325 mg</li>
+<li><b>STEMI = time is muscle:</b> PCI within <b>90 min</b> (door-to-balloon) or fibrinolytics within 30 min</li>
+<li>Long-term: aspirin, beta-blocker, statin, ACE-I/ARB</li></ul></div>
+
+<h3 class="cond">📈 ECG & Cardiac Conduction</h3>
+<svg class="diagram" viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cardiac conduction pathway">
+  <text x="20" y="26" fill="#f3f7f9" font-size="16" font-weight="800">Cardiac conduction pathway</text>
+  <g font-family="Segoe UI,Arial" font-size="13">
+    <circle cx="110" cy="80" r="11" fill="#3fd0e0"/>
+    <text x="110" y="60" fill="#bdf0f7" text-anchor="middle" font-weight="800">SA node</text>
+    <text x="110" y="108" fill="#c6d3da" text-anchor="middle" font-size="11">pacemaker 60-100</text>
+    <circle cx="260" cy="120" r="11" fill="#ffd166"/>
+    <text x="260" y="100" fill="#ffe7ad" text-anchor="middle" font-weight="800">AV node</text>
+    <text x="260" y="148" fill="#c6d3da" text-anchor="middle" font-size="11">brief delay</text>
+    <circle cx="410" cy="120" r="11" fill="#ff6bb0"/>
+    <text x="410" y="100" fill="#ffd1e6" text-anchor="middle" font-weight="800">Bundle of His</text>
+    <circle cx="560" cy="150" r="11" fill="#39d98a"/>
+    <text x="560" y="130" fill="#bff0d6" text-anchor="middle" font-weight="800">Bundle branches</text>
+    <circle cx="660" cy="185" r="11" fill="#ffb24d"/>
+    <text x="660" y="167" fill="#ffe0bb" text-anchor="middle" font-weight="800">Purkinje</text>
+    <text x="660" y="210" fill="#c6d3da" text-anchor="middle" font-size="11">ventricles fire</text>
+  </g>
+  <g stroke="#9fb0ba" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+    <path d="M121 86 L249 114"/><path d="M271 120 L399 120"/><path d="M421 122 L549 146"/><path d="M571 154 L649 180"/>
+  </g>
+  <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#9fb0ba"/></marker></defs>
+</svg>
+
+<div class="ibox path"><h4>🔬 Conduction pathway</h4><span class="mnemonic">SA node</span> (pacemaker 60–100/min) → <span class="mnemonic">AV node</span> → <span class="mnemonic">Bundle of His</span> → right & left bundle branches → <span class="mnemonic">Purkinje fibers</span> → ventricular contraction. <b>Depolarization</b> = electrical activation (contraction); <b>repolarization</b> = recovery/reset.</div>
+<table class="ref">
+  <tr><th>Wave</th><th>Represents</th></tr>
+  <tr><td><b>P wave</b></td><td>Atrial depolarization</td></tr>
+  <tr><td><b>PR interval</b></td><td>Time from atrial depolarization to ventricular (SA→AV delay)</td></tr>
+  <tr><td><b>QRS complex</b></td><td>Ventricular depolarization (contraction)</td></tr>
+  <tr><td><b>T wave</b></td><td>Ventricular repolarization (recovery)</td></tr>
+</table>
+<div class="ibox tip"><h4>💡 PQRST memory</h4>The letters run in order through one heartbeat: <b>P</b>-wave first (atria), then the <b>QRS</b> (ventricles fire), then <b>T</b> (ventricles reset).</div>
+
+<h3 class="cond">⚡ Cardiac Arrhythmias (Dysrhythmias)</h3>
+<div class="ibox path"><h4>🔬 Why they matter</h4>Classified by site of origin (SA, atria, AV, ventricle) and effect on rate/rhythm. Life-threatening effects come from <b>decreased cardiac output & poor tissue perfusion.</b> Dysrhythmias are a leading cause of death after acute MI.</div>
+<table class="ref">
+  <tr><th>Rhythm</th><th>Key feature</th><th>Priority response</th></tr>
+  <tr><td><b>Bradycardia</b></td><td>HR &lt; 60; may cause ↓ output, dizziness</td><td>Atropine; pacing if symptomatic</td></tr>
+  <tr><td><b>Tachycardia / SVT</b></td><td>Fast rate ↓ filling time</td><td>Vagal maneuvers, adenosine; cardioversion if unstable</td></tr>
+  <tr><td><b>Atrial fibrillation</b></td><td>Irregularly irregular, <b>no P waves</b></td><td>Rate control + <b>anticoagulation</b> (stroke risk!)</td></tr>
+  <tr><td><b>Ventricular tachycardia</b></td><td>Wide QRS, fast; may have/lose pulse</td><td>Pulse → cardiovert/antiarrhythmic; no pulse → <b>defibrillate</b></td></tr>
+  <tr><td><b>Ventricular fibrillation</b></td><td>Chaotic, no output — lethal</td><td><b>Defibrillate immediately</b> + CPR</td></tr>
+  <tr><td><b>Asystole</b></td><td>Flat line, no electrical activity</td><td>CPR + epinephrine (NOT shockable); confirm in 2nd lead</td></tr>
+</table>
+<div class="ibox redflag"><h4>🚨 A-fib = clot = stroke</h4>Blood pools in the fibrillating atria → thrombus → embolic stroke. Clients are anticoagulated (warfarin or a DOAC) based on the CHA₂DS₂-VASc score.</div>
+
+<h3 class="cond">⚡ Cardioversion vs. Defibrillation</h3>
+<div class="grid2">
+  <div class="ibox mgmt"><h4>🔄 Synchronized Cardioversion</h4>Shock is <b>timed to the R wave</b> (avoids the vulnerable T wave). Used for <b>unstable rhythms WITH a pulse</b>: unstable A-fib, SVT, V-tach with a pulse. Usually sedated & scheduled; hold digoxin beforehand.</div>
+  <div class="ibox redflag"><h4>⚡ Defibrillation</h4><b>Unsynchronized</b> immediate shock. Used for <b>V-fib and pulseless V-tach</b> only. "Clear" before discharging; resume CPR immediately after.</div>
+</div>
+
+<h3 class="cond">🔋 Pacemakers & AICD</h3>
+<div class="ibox mgmt"><h4>💊 What they do</h4><b>Pacemaker</b> = delivers electrical impulses when the heart's own rate is too slow (e.g., symptomatic bradycardia, heart block). <b>AICD (implantable cardioverter-defibrillator)</b> = senses lethal ventricular arrhythmias and delivers a shock/paces to terminate them.</div>
+<div class="ibox teach"><h4>🎓 Discharge teaching</h4><ul>
+<li>Check pulse daily; report rate below the set rate</li>
+<li>Report dizziness, fainting, or <b>hiccups</b> (may signal lead displacement)</li>
+<li>Keep cell phones ~6 inches from the generator; avoid strong magnets/MRI unless cleared</li>
+<li>Carry the device ID card; avoid heavy lifting/raising the arm above the shoulder initially</li>
+<li>If an AICD fires, you may feel a "kick"; report repeated firings</li></ul></div>
+
+<h3 class="cond">🩺 Coronary Revascularization</h3>
+<div class="grid2">
+  <div class="ibox mgmt"><h4>PCI (angioplasty/stent)</h4>Catheter opens the blocked artery, often with a stent. Post-op: monitor the insertion site for bleeding/hematoma, check distal pulses, keep the affected leg straight, monitor for dysrhythmias, give antiplatelets.</div>
+  <div class="ibox mgmt"><h4>CABG (bypass graft)</h4>For significant multi-vessel disease. Post-op priorities: monitor chest tube output (<b>report &gt;100–150 mL/hr</b> → hemorrhage), watch for cardiac tamponade (muffled tones, JVD, hypotension), pain control, dysrhythmias, antiembolism stockings.</div>
+</div>
+
+<h3 class="cond">🩸 Hypertension</h3>
+<div class="ibox path"><h4>🔬 Patho & types</h4>BP at or above <b>130/80</b> on two+ readings on two+ occasions. <b>Essential (primary)</b> = no known cause (most cases). <b>Secondary</b> = caused by another condition (kidney disease, endocrine disorders, medications) — treat the cause. Prolonged HTN damages heart, brain, eyes, kidneys → left ventricular hypertrophy, stroke, retinopathy, CKD. Often the "silent killer" (few symptoms).</div>
+<table class="ref">
+  <tr><th>Category</th><th>Systolic</th><th>Diastolic</th></tr>
+  <tr><td>Normal</td><td>&lt; 120</td><td>and &lt; 80</td></tr>
+  <tr><td>Elevated</td><td>120–129</td><td>and &lt; 80</td></tr>
+  <tr><td>Stage 1</td><td>130–139</td><td>or 80–89</td></tr>
+  <tr><td>Stage 2</td><td>≥ 140</td><td>or ≥ 90</td></tr>
+</table>
+<div class="ibox mgmt"><h4>💊 Medical management</h4>Thiazide diuretics, ACE inhibitors (-pril), ARBs (-sartan), calcium channel blockers, beta-blockers. <b>ACE-I → watch dry cough, hyperkalemia, angioedema.</b> <b>Thiazide/loop diuretics → hypokalemia.</b> Spironolactone (K-sparing) → hyperkalemia.</div>
+<div class="ibox teach"><h4>🎓 Teaching</h4>DASH diet, sodium ≤ 2,300 mg/day (ideally 1,500), weight loss, exercise, limit alcohol, no smoking, take meds even when feeling well, rise slowly (orthostatic hypotension), monitor BP at home.</div>
+
+<!-- ============ MODULE 8 ============ -->
+<div class="mod-banner">
+  <h2 class="mod">🫀 Module 8 — Valves, Inflammatory, Heart Failure & Vascular</h2>
+  <div class="deliv">
+    <div class="deliv-box">
+      <h4>🎯 Module objectives (deliverables)</h4>
+      <ol>
+        <li>Define the pathophysiology and etiology of cardiac valve disorders, infectious cardiac disorders, and cardiomyopathy. <span class="co">(CO 1)</span></li>
+        <li>Describe the nursing care of the adult client with a cardiac valvular disorder, with cardiomyopathy, and with an infectious cardiac disorder. <span class="co">(CO 1, 2, 3, 4)</span></li>
+        <li>Use the nursing process as a framework for care of the adult client with heart failure. <span class="co">(CO 1, 2, 3, 4)</span></li>
+      </ol>
+    </div>
+    <div class="deliv-box">
+      <h4>📋 For all disorders, know:</h4>
+      <ul>
+        <li>Causes and risk factors</li>
+        <li>Pathophysiology</li>
+        <li>Diagnostic procedures</li>
+        <li>Clinical manifestations</li>
+        <li>Medical management</li>
+        <li>Nursing management & priorities of care</li>
+        <li>Client teaching / education</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h3 class="cond">🚪 Valvular Heart Disease</h3>
+<div class="ibox path"><h4>🔬 Patho</h4>Dysfunction of any of the 4 valves reduces the heart's pumping efficiency and stroke volume → remodeling (hypertrophy) → heart failure. <b>Stenosis</b> = narrowed opening impedes forward flow. <b>Regurgitation</b> = incomplete closure lets blood flow backward. Aortic stenosis is most common in older adults (calcification). Tricuspid dysfunction is linked to IV drug use (endocarditis).</div>
+<div class="ibox mani"><h4>📋 Manifestations</h4>Fatigue, dyspnea (especially mitral stenosis → pulmonary congestion), murmurs, palpitations/A-fib, JVD, signs of heart failure.</div>
+<div class="ibox mgmt"><h4>💊 Management</h4>Sodium restriction, diuretics, manage HTN. Procedures: percutaneous balloon valvuloplasty or valve replacement. <b>Prosthetic valve clients need antibiotic prophylaxis before dental/invasive procedures</b> and lifelong anticoagulation with mechanical valves.</div>
+
+<h3 class="cond">🔥 Inflammatory/Infectious Cardiac Disorders</h3>
+<table class="ref">
+  <tr><th>Disorder</th><th>What's inflamed</th><th>Key points</th></tr>
+  <tr><td><b>Pericarditis</b></td><td>Pericardium (sac)</td><td>Often follows viral infection or MI; sharp pleuritic pain <b>worse lying flat, better leaning forward</b>; <b>friction rub</b>; watch for tamponade</td></tr>
+  <tr><td><b>Myocarditis</b></td><td>Myocardium (muscle)</td><td>Often viral; can → dysrhythmias & heart failure; flu/COVID/pneumonia vaccines help prevent</td></tr>
+  <tr><td><b>Endocarditis</b></td><td>Endocardium/valves</td><td>Vegetations on valves; IV drug use, prosthetic valves, poor dental health; emboli risk (stroke, PE)</td></tr>
+  <tr><td><b>Rheumatic heart disease</b></td><td>Valves (post-strep)</td><td>Follows untreated strep → rheumatic fever; <b>early strep treatment prevents it</b></td></tr>
+</table>
+<div class="ibox redflag"><h4>🚨 Cardiac tamponade — Beck's triad</h4>Muffled heart sounds + JVD + hypotension (± pulsus paradoxus). Fluid compresses the heart → emergency <b>pericardiocentesis.</b> Monitor pericarditis clients closely.</div>
+<div class="ibox redflag"><h4>🚨 Endocarditis emboli</h4>Vegetations can break off → stroke (sudden weakness/slurred speech), PE, splenic/limb infarcts. New neuro deficits = emergency.</div>
+
+<h3 class="cond">💪 Cardiomyopathy</h3>
+<div class="grid2">
+  <div class="ibox path"><h4>Dilated</h4>Ventricle stretches & weakens → poor contractility → heart failure, dysrhythmias, thrombus/embolism. Managed like HF; may need AICD or transplant.</div>
+  <div class="ibox redflag"><h4>Hypertrophic</h4>Thickened septum can obstruct outflow → risk of <b>sudden cardiac death</b>. <b>Avoid strenuous exertion, dehydration, and Valsalva.</b> Beta-blockers reduce obstruction.</div>
+</div>
+
+<h3 class="cond">💔 Heart Failure</h3>
+<svg class="diagram" viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Left vs right heart failure">
+  <text x="20" y="26" fill="#f3f7f9" font-size="16" font-weight="800">Left vs. Right heart failure — where it backs up</text>
+  <rect x="30" y="46" width="320" height="150" rx="12" fill="rgba(63,208,224,.13)" stroke="#3fd0e0"/>
+  <text x="190" y="72" fill="#bdf0f7" text-anchor="middle" font-size="15" font-weight="800">⬅️ LEFT = Lungs</text>
+  <g fill="#e6f6fa" font-size="12.5" font-family="Segoe UI,Arial">
+    <text x="50" y="98">• Crackles, dyspnea</text>
+    <text x="50" y="120">• Orthopnea, PND</text>
+    <text x="50" y="142">• Pink frothy sputum</text>
+    <text x="50" y="164">• Fatigue, ↓ O₂</text>
+  </g>
+  <rect x="370" y="46" width="320" height="150" rx="12" fill="rgba(168,50,107,.16)" stroke="#a8326b"/>
+  <text x="530" y="72" fill="#ffd1e6" text-anchor="middle" font-size="15" font-weight="800">➡️ RIGHT = Body</text>
+  <g fill="#fbe6f0" font-size="12.5" font-family="Segoe UI,Arial">
+    <text x="390" y="98">• Peripheral / dependent edema</text>
+    <text x="390" y="120">• JVD (neck vein distention)</text>
+    <text x="390" y="142">• Hepatomegaly, ascites</text>
+    <text x="390" y="164">• Weight gain</text>
+  </g>
+</svg>
+
+<div class="grid2">
+  <div class="ibox mani"><h4>⬅️ Left-sided = Lungs</h4>Backs up into the lungs: crackles, dyspnea, orthopnea, paroxysmal nocturnal dyspnea, <b>pink frothy sputum</b>, fatigue. ("Left = Lungs.")</div>
+  <div class="ibox mani"><h4>➡️ Right-sided = Body</h4>Backs up into the body: peripheral/dependent edema, <b>JVD</b>, hepatomegaly, ascites, weight gain. (Cor pulmonale = right HF from lung disease.)</div>
+</div>
+<div class="ibox path"><h4>🔬 Diagnostics</h4><b>BNP</b> (B-type natriuretic peptide) rises with ventricular stretch/volume overload — supports the diagnosis and trends with severity. Echocardiogram measures ejection fraction.</div>
+<div class="ibox redflag"><h4>🚨 Acute pulmonary edema — emergency</h4>Sudden severe dyspnea, pink frothy sputum, anxiety. <b>Priority: sit upright (high-Fowler's, legs dependent) + oxygen.</b> Anticipate <span class="mnemonic">LMNOP</span>: Lasix (furosemide), Morphine, Nitrates, Oxygen, Position.</div>
+<div class="ibox teach"><h4>🎓 Self-management teaching</h4><ul>
+<li><b>Daily weight</b> — same time, same clothes, after voiding. Report a gain of <b>2–3 lb in a day or ~5 lb in a week</b></li>
+<li>Low-sodium diet & prescribed fluid restriction</li>
+<li>Take meds as prescribed (diuretics, ACE-I/ARB, beta-blocker); don't skip</li>
+<li>Report worsening dyspnea, edema, fatigue, or nighttime breathlessness</li>
+<li>Balance activity with rest; elevate legs when sitting</li></ul></div>
+
+<h3 class="cond">🦵 Peripheral Vascular Disorders</h3>
+<div class="grid2">
+  <div class="ibox path"><h4>🔴 Peripheral ARTERIAL disease (PAD)</h4>Atherosclerosis ↓ arterial flow to the legs. <b>Intermittent claudication</b> (cramping pain with walking, relieved by rest); cool, pale, hairless legs; diminished pulses; thick nails; pain worse with elevation, better dependent. <b>Keep legs dependent</b>; walk to build collaterals; protect feet; no tight stockings.</div>
+  <div class="ibox path"><h4>🔵 Peripheral VENOUS disease</h4>Poor venous return → edema, brown (hemosiderin) discoloration, stasis ulcers near the ankle, aching relieved by elevation. <b>Elevate legs above heart + compression stockings</b> to promote return.</div>
+</div>
+<div class="ibox tip"><h4>💡 Arterial vs. venous (don't mix them up!)</h4><b>Arterial → dependent</b> (gravity helps flow down). <b>Venous → elevate + compress</b> (help blood get back up). They are exact opposites.</div>
+
+<h3 class="cond">🩸 Deep Vein Thrombosis (DVT)</h3>
+<div class="ibox mani"><h4>📋 Manifestations & causes</h4>Unilateral leg swelling, warmth, redness, pain/tenderness. <b>Virchow's triad:</b> venous stasis, endothelial injury, hypercoagulability (immobility, surgery, pregnancy, oral contraceptives).</div>
+<div class="ibox redflag"><h4>🚨 Nursing priorities</h4><b>Never massage the leg</b> (dislodges clot → PE). Maintain rest, elevate the leg, warm compresses, anticoagulation (heparin → warfarin/DOAC). <b>Watch for PE:</b> sudden dyspnea, pleuritic chest pain, tachycardia, hypoxia → emergency.</div>
+<div class="ibox teach"><h4>🎓 Prevention</h4>Early ambulation, leg exercises, sequential compression devices, hydration, prophylactic anticoagulants. Avoid leg crossing & prolonged immobility.</div>
+
+<h3 class="cond">❄️ Raynaud Syndrome</h3>
+<div class="ibox path"><h4>🔬 Patho & teaching</h4>Episodic vasospasm of the fingers/toes triggered by <b>cold or stress</b> → classic color change: white (pallor) → blue (cyanosis) → red (rubor/reperfusion). <b>Teaching:</b> keep warm, wear gloves, avoid cold & nicotine, manage stress; calcium channel blockers may be prescribed.</div>
+
+<h3 class="cond">🎈 Aortic Aneurysm</h3>
+<div class="ibox path"><h4>🔬 Patho & risk</h4>Weakening/outpouching of the arterial wall. Main cause: <b>uncontrolled hypertension</b> + atherosclerosis. Abdominal aortic aneurysm (AAA) most common; may have a pulsatile abdominal mass and bruit. Often asymptomatic until it enlarges or ruptures.</div>
+<div class="ibox redflag"><h4>🚨 Rupture/dissection — emergency</h4>Sudden severe <b>tearing</b> back/abdominal pain, hypotension, signs of shock. <b>Do not palpate the mass.</b> Notify provider, prepare for emergent surgical repair. Control BP to reduce wall stress.</div>
+
+<div class="ibox tip" style="margin-top:24px"><h4>🧮 Dosage calculation reminder</h4>Exam 3 includes math. Practice IV drip rates, weight-based infusions (mcg/kg/min), and concentration conversions — there are worked examples in the quiz's <b>Dosage Calc</b> topic.</div>
+
+<div class="ibox mgmt" style="margin-top:14px;text-align:center"><h4 style="justify-content:center">💪 You've got this</h4>Work each disorder the same way — patho, signs, management, priority, teaching — and the patterns start to repeat. Run the quiz by topic to lock it in.</div>
+
+  </section>
+
+  <section class="view" id="quiz">
+    <div id="quiz-setup" class="quiz-setup">
+      <h2 class="mod">🎯 Build your quiz</h2>
+      <p class="muted">Pick a topic and length. Rationales appear right after you answer.</p>
+      <div class="qrow"><label for="catsel">Topic</label>
+        <select id="catsel"><option value="__ALL__">🌈 All cardiac topics (41)</option></select></div>
+      <div class="qrow"><label>Length</label>
+        <span class="numbtn" data-n="10">10</span>
+        <span class="numbtn sel" data-n="20">20</span>
+        <span class="numbtn" data-n="0">All</span></div>
+      <div class="qrow"><label>Order</label>
+        <select id="ordersel"><option value="shuffle">🔀 Shuffle</option><option value="seq">➡️ In order</option></select></div>
+      <div style="margin-top:18px"><button class="btn" id="startBtn">Start quiz ▶</button></div>
+    </div>
+    <div id="quiz-run" class="hidden">
+      <div class="qmeta"><span id="qcount"></span><span id="qcat"></span></div>
+      <div class="progress-wrap"><div class="progress-bar" id="pbar"></div></div>
+      <div id="qcard-host"></div>
+      <div class="nav"><button class="btn ghost" id="quitBtn">✕ End quiz</button>
+        <button class="btn" id="nextBtn" disabled>Next ▶</button></div>
+    </div>
+    <div id="quiz-results" class="hidden"></div>
+  </section>
+
+  <footer>
+    Built for focused, accessible review • NUR 198 Exam 3 (Summer 2026), Modules 7 & 8<br>
+    A study aid built from standard nursing content — always verify against your course materials and current guidelines.
+  </footer>
+</div>
+<button class="btn ghost scrollbtn hidden" id="topBtn">↑ Top</button>
+<script>const QUIZ = [
+{"q":"A nurse is teaching a client about modifiable risk factors for coronary artery disease. Which factor should the nurse include?","o":["Family history of CAD","Cigarette smoking","Male gender","Increasing age"],"a":["Cigarette smoking"],"r":"Smoking is a major MODIFIABLE risk factor. Family history, gender, and age are non-modifiable. Other modifiable factors: hypertension, hyperlipidemia, diabetes, obesity, sedentary lifestyle.","c":"CAD & Angina"},
+{"q":"A client reports chest pain relieved by rest and nitroglycerin. This is characteristic of which type of angina?","o":["Stable (exertional) angina","Unstable angina","Variant (Prinzmetal) angina","Silent ischemia"],"a":["Stable (exertional) angina"],"r":"Stable angina is predictable, triggered by exertion/stress, and relieved by REST and nitroglycerin. Unstable angina occurs at rest, is unpredictable, and is NOT reliably relieved by rest/nitro — it's a medical emergency.","c":"CAD & Angina"},
+{"q":"A client with chest pain takes one sublingual nitroglycerin tablet with no relief after 5 minutes. What should the nurse instruct?","o":["Take a second tablet and wait another 5 minutes; call 911 if no relief after a third","Take 3 tablets all at once","Wait 30 minutes before taking another","Drive themselves to the ER immediately"],"a":["Take a second tablet and wait another 5 minutes; call 911 if no relief after a third"],"r":"Take 1 tablet every 5 min, up to 3 doses. Call 911 if pain is unrelieved after the FIRST tablet (current AHA guidance) or persists after 3 doses. Sit or lie down — nitro causes hypotension. Never drive yourself.","c":"CAD & Angina"},
+{"q":"Which lab marker is most specific for myocardial infarction?","o":["Troponin","Myoglobin","CK-MB","C-reactive protein"],"a":["Troponin"],"r":"Cardiac TROPONIN (I or T) is the most specific and sensitive marker for MI. It rises within 3-4 hr, peaks at 12-24 hr, and stays elevated up to 2 weeks. Myoglobin rises early but is non-specific.","c":"ACS & MI"},
+{"q":"A client is having an acute MI. Which initial intervention bundle should the nurse anticipate? (Select all that apply.)","o":["Aspirin","Nitroglycerin","Morphine for unrelieved pain","Supplemental oxygen if SpO2 < 90%","Withhold all antiplatelet agents"],"a":["Aspirin","Nitroglycerin","Morphine for unrelieved pain","Supplemental oxygen if SpO2 < 90%"],"r":"Remember MONA, now individualized: Aspirin (chewed, 162-325 mg), Nitroglycerin, Morphine for pain unrelieved by nitro, and Oxygen only if SpO2 < 90% or in distress. Antiplatelets are GIVEN, not withheld.","c":"ACS & MI"},
+{"q":"A client is admitted with an ST-elevation MI (STEMI). What is the priority goal of treatment?","o":["Restore coronary perfusion as quickly as possible (PCI within 90 min)","Administer a stool softener","Schedule an exercise stress test","Begin cardiac rehabilitation teaching"],"a":["Restore coronary perfusion as quickly as possible (PCI within 90 min)"],"r":"For STEMI, 'time is muscle.' The priority is reperfusion: percutaneous coronary intervention (PCI) within 90 min of arrival (door-to-balloon), or fibrinolytics within 30 min if PCI unavailable.","c":"ACS & MI"},
+{"q":"The nurse is reviewing the cardiac conduction system. Place the normal pathway of impulse conduction in order: which structure fires first?","o":["SA node","AV node","Bundle of His","Purkinje fibers"],"a":["SA node"],"r":"Normal conduction: SA node (pacemaker, 60-100/min) → AV node → Bundle of His → right & left bundle branches → Purkinje fibers → ventricular contraction.","c":"ECG & Conduction"},
+{"q":"On an ECG, what does the QRS complex represent?","o":["Ventricular depolarization","Atrial depolarization","Ventricular repolarization","Atrial repolarization"],"a":["Ventricular depolarization"],"r":"P wave = atrial depolarization; QRS = ventricular depolarization (contraction); T wave = ventricular repolarization. Atrial repolarization is hidden within the QRS.","c":"ECG & Conduction"},
+{"q":"A client's ECG shows an irregularly irregular rhythm with no identifiable P waves. Which arrhythmia does the nurse suspect?","o":["Atrial fibrillation","Sinus bradycardia","Ventricular fibrillation","First-degree AV block"],"a":["Atrial fibrillation"],"r":"Atrial fibrillation = irregularly irregular rhythm with NO discernible P waves (chaotic atrial activity). Major risk: thrombus formation in the atria → stroke. Anticoagulation is key.","c":"Arrhythmias"},
+{"q":"A client with atrial fibrillation is at greatest risk for which complication?","o":["Embolic stroke","Hypoglycemia","Pulmonary fibrosis","Hepatic failure"],"a":["Embolic stroke"],"r":"Blood pools in the fibrillating atria, forming clots that can embolize to the brain → stroke. Clients are anticoagulated (warfarin or a DOAC) based on CHA2DS2-VASc score.","c":"Arrhythmias"},
+{"q":"A client is in pulseless ventricular fibrillation. What is the priority intervention?","o":["Immediate defibrillation","Synchronized cardioversion","Administer adenosine","Obtain a 12-lead ECG"],"a":["Immediate defibrillation"],"r":"Ventricular fibrillation is lethal — the priority is immediate DEFIBRILLATION (unsynchronized shock) plus high-quality CPR. V-fib and pulseless V-tach are the 'shockable' rhythms.","c":"Arrhythmias"},
+{"q":"What is the key difference between defibrillation and synchronized cardioversion?","o":["Cardioversion delivers the shock timed to the R wave; defibrillation delivers an immediate unsynchronized shock","They are identical procedures","Defibrillation is used only for stable clients","Cardioversion is always done without sedation"],"a":["Cardioversion delivers the shock timed to the R wave; defibrillation delivers an immediate unsynchronized shock"],"r":"Synchronized cardioversion times the shock to the R wave (avoids the vulnerable T wave) — used for unstable rhythms WITH a pulse (e.g., unstable A-fib, SVT, V-tach with pulse). Defibrillation is unsynchronized — for V-fib and pulseless V-tach.","c":"Arrhythmias"},
+{"q":"A client has asystole on the monitor. What is the appropriate action?","o":["Begin CPR and give epinephrine; confirm rhythm in a second lead","Defibrillate immediately","Perform synchronized cardioversion","Administer adenosine rapidly"],"a":["Begin CPR and give epinephrine; confirm rhythm in a second lead"],"r":"Asystole is NOT shockable. Treat with high-quality CPR and epinephrine, search for reversible causes (H's and T's), and confirm the flat line in a second lead (rule out fine V-fib or lead disconnection).","c":"Arrhythmias"},
+{"q":"A client with a new permanent pacemaker is being discharged. Which statement indicates a need for further teaching?","o":["\"I'll skip checking my pulse since the pacemaker does it for me.\"","\"I'll avoid placing my cell phone directly over the generator.\"","\"I'll report dizziness or hiccups to my provider.\"","\"I'll carry my pacemaker identification card.\""],"a":["\"I'll skip checking my pulse since the pacemaker does it for me.\""],"r":"Clients should check their pulse daily and report a rate below the set rate. Hiccups can signal lead displacement. Avoid strong magnetic fields; keep phones ~6 inches from the generator; carry the ID card.","c":"Devices"},
+{"q":"What is the purpose of an AICD (automatic implantable cardioverter-defibrillator)?","o":["To detect and terminate life-threatening ventricular arrhythmias","To pace only when the heart rate is too slow","To measure cardiac output continuously","To replace a diseased heart valve"],"a":["To detect and terminate life-threatening ventricular arrhythmias"],"r":"An AICD senses lethal ventricular arrhythmias (V-tach, V-fib) and delivers a shock or paces to terminate them. Teach clients that if shocked, they may feel a 'kick' in the chest; report repeated firings.","c":"Devices"},
+{"q":"A nurse is caring for a client after a coronary artery bypass graft (CABG). Which finding requires immediate intervention?","o":["Chest tube drainage of 150 mL/hr for 3 hours","Temperature of 37.8°C (100°F)","Incisional pain rated 4/10","Serous drainage at the leg graft site"],"a":["Chest tube drainage of 150 mL/hr for 3 hours"],"r":"Chest tube output > 100-150 mL/hr (or a sudden increase/stop) suggests hemorrhage or impending cardiac tamponade — report immediately. Monitor for tamponade: muffled heart sounds, JVD, hypotension, pulsus paradoxus.","c":"Revascularization"},
+{"q":"A client's blood pressure is consistently 148/94 mm Hg. According to current guidelines, this is classified as:","o":["Stage 2 hypertension","Normal","Elevated","Stage 1 hypertension"],"a":["Stage 2 hypertension"],"r":"ACC/AHA: Normal <120/<80; Elevated 120-129/<80; Stage 1 = 130-139 or 80-89; Stage 2 = ≥140 or ≥90. A reading of 148/94 is Stage 2.","c":"Hypertension"},
+{"q":"A client newly diagnosed with hypertension asks about lifestyle changes. Which is the most appropriate dietary recommendation?","o":["Follow the DASH diet and reduce sodium intake","Increase saturated fat intake","Eliminate all dietary potassium","Restrict fluids to 1 L per day"],"a":["Follow the DASH diet and reduce sodium intake"],"r":"The DASH diet (rich in fruits, vegetables, whole grains, low-fat dairy; low in sodium and saturated fat) is first-line. Recommend ≤2,300 mg sodium/day (ideally 1,500 mg), weight loss, exercise, limited alcohol.","c":"Hypertension"},
+{"q":"A client taking lisinopril for hypertension develops a persistent dry cough. What is the nurse's best explanation?","o":["A dry cough is a known side effect of ACE inhibitors; the provider may switch to an ARB","The cough indicates heart failure","The client should double the dose","This is an allergic reaction requiring epinephrine"],"a":["A dry cough is a known side effect of ACE inhibitors; the provider may switch to an ARB"],"r":"ACE inhibitors (-pril) commonly cause a dry, nonproductive cough from bradykinin buildup. If intolerable, providers switch to an ARB (-sartan). Also monitor for hyperkalemia and angioedema.","c":"Hypertension"},
+{"q":"A client with hypertension is prescribed a thiazide diuretic. Which electrolyte imbalance should the nurse monitor for?","o":["Hypokalemia","Hyperkalemia","Hypernatremia","Hypercalcemia (low)"],"a":["Hypokalemia"],"r":"Thiazide and loop diuretics waste potassium → hypokalemia (monitor for muscle weakness, dysrhythmias). Teach potassium-rich foods. (Potassium-SPARING diuretics like spironolactone cause the opposite — hyperkalemia.)","c":"Hypertension"},
+{"q":"A client with mitral stenosis is likely to present with which finding?","o":["Dyspnea and fatigue from pulmonary congestion","Bounding peripheral pulses","Hypertensive crisis","Bradycardia at rest"],"a":["Dyspnea and fatigue from pulmonary congestion"],"r":"Mitral stenosis obstructs flow from left atrium to ventricle → blood backs up into the lungs → pulmonary congestion, dyspnea, fatigue, and atrial fibrillation. A loud S1 and diastolic murmur are classic.","c":"Valve Disorders"},
+{"q":"A nurse is teaching a client with a prosthetic heart valve about endocarditis prevention. Which instruction is essential?","o":["Take prophylactic antibiotics before dental procedures","Avoid all physical activity","Stop anticoagulants before dental visits without provider input","Limit fluid intake permanently"],"a":["Take prophylactic antibiotics before dental procedures"],"r":"Clients with prosthetic valves are at high risk for infective endocarditis and need antibiotic prophylaxis before dental and invasive procedures. Teach good oral hygiene and to report fever/flu-like symptoms.","c":"Infectious Cardiac"},
+{"q":"A client with infective endocarditis suddenly develops left-sided weakness and slurred speech. What does the nurse suspect?","o":["Embolization of a vegetation causing a stroke","A normal medication side effect","Anxiety","Hypoglycemia"],"a":["Embolization of a vegetation causing a stroke"],"r":"Vegetations on infected valves can break off and embolize — to the brain (stroke), lungs (PE), spleen, or extremities. New neurologic deficits are an emergency.","c":"Infectious Cardiac"},
+{"q":"A client with acute pericarditis would most likely report which type of chest pain?","o":["Sharp pain that worsens with inspiration and lying flat, relieved by sitting forward","Crushing substernal pressure radiating to the jaw","Burning pain after meals","Pain only with deep palpation"],"a":["Sharp pain that worsens with inspiration and lying flat, relieved by sitting forward"],"r":"Pericarditis pain is pleuritic (worse with inspiration), worse when supine, and RELIEVED by sitting up and leaning forward. A pericardial friction rub is the hallmark sign.","c":"Inflammatory Cardiac"},
+{"q":"A client with pericarditis develops muffled heart sounds, jugular vein distention, and hypotension. What complication does the nurse suspect?","o":["Cardiac tamponade","Pulmonary embolism","Aortic dissection","Hypertensive crisis"],"a":["Cardiac tamponade"],"r":"Beck's triad (muffled heart sounds, JVD, hypotension) signals cardiac tamponade — fluid in the pericardial sac compressing the heart. It's an emergency requiring pericardiocentesis. Watch for pulsus paradoxus.","c":"Inflammatory Cardiac"},
+{"q":"A client has left-sided heart failure. Which assessment finding does the nurse expect?","o":["Crackles, dyspnea, and frothy sputum","Peripheral edema and ascites","Jugular vein distention and hepatomegaly","Weight gain in the legs only"],"a":["Crackles, dyspnea, and frothy sputum"],"r":"LEFT-sided failure backs blood up into the LUNGS: crackles, dyspnea, orthopnea, paroxysmal nocturnal dyspnea, pink frothy sputum. RIGHT-sided backs up into the BODY: peripheral edema, JVD, hepatomegaly, ascites. ('Left = Lungs.')","c":"Heart Failure"},
+{"q":"Which laboratory value is used to help diagnose and monitor heart failure?","o":["B-type natriuretic peptide (BNP)","Amylase","Bilirubin","TSH"],"a":["B-type natriuretic peptide (BNP)"],"r":"BNP is released by stretched ventricles in volume overload. Elevated BNP supports a diagnosis of heart failure and trends with severity. A normal BNP makes HF unlikely.","c":"Heart Failure"},
+{"q":"A client with acute decompensated heart failure develops sudden severe dyspnea, pink frothy sputum, and anxiety. What is the priority nursing action?","o":["Place the client in high-Fowler's position and administer oxygen","Lay the client flat and elevate the legs","Encourage oral fluids","Prepare for immediate ambulation"],"a":["Place the client in high-Fowler's position and administer oxygen"],"r":"These are signs of acute pulmonary edema — a life-threatening emergency. Sit the client upright (high-Fowler's, legs dependent) to decrease venous return and ease breathing, give oxygen, and anticipate IV diuretics, morphine, and vasodilators. (LMNOP: Lasix, Morphine, Nitrates, Oxygen, Position.)","c":"Heart Failure"},
+{"q":"A nurse is teaching a client with chronic heart failure about self-monitoring. Which finding should the client report immediately?","o":["Weight gain of 2-3 lb in a day or 5 lb in a week","Losing 1 lb over a month","Urinating once overnight","Mild thirst after exercise"],"a":["Weight gain of 2-3 lb in a day or 5 lb in a week"],"r":"Daily weight is the most reliable indicator of fluid status. A gain of 2-3 lb in 24 hr or ~5 lb in a week signals fluid retention and worsening HF — report it. Weigh at the same time daily, same clothes, after voiding.","c":"Heart Failure"},
+{"q":"A client with dilated cardiomyopathy is at greatest risk for which complication?","o":["Heart failure and dysrhythmias","Peptic ulcer disease","Hyperthyroidism","Renal calculi"],"a":["Heart failure and dysrhythmias"],"r":"Dilated cardiomyopathy stretches and weakens the ventricle → poor contractility → heart failure, dysrhythmias, and thrombus/embolism risk. Management mirrors HF; some clients need an AICD or transplant.","c":"Cardiomyopathy"},
+{"q":"A client with hypertrophic cardiomyopathy should be taught to avoid which activity?","o":["Strenuous exertion and competitive sports","Daily light walking","Adequate hydration","Following a low-sodium diet"],"a":["Strenuous exertion and competitive sports"],"r":"In hypertrophic cardiomyopathy, the thickened septum can obstruct outflow; strenuous exertion can trigger sudden cardiac death. Avoid heavy exertion, dehydration, and Valsalva. Beta-blockers reduce obstruction.","c":"Cardiomyopathy"},
+{"q":"A client with peripheral ARTERIAL disease (PAD) would most likely report which symptom?","o":["Intermittent claudication — leg pain with walking, relieved by rest","Leg pain relieved by elevating the legs","Warm, edematous legs with brown discoloration","Pain that worsens when legs are dependent"],"a":["Intermittent claudication — leg pain with walking, relieved by rest"],"r":"PAD = inadequate arterial flow. Classic sign: intermittent claudication (cramping pain with activity, relieved by rest). Legs are cool, pale, hairless with diminished pulses; pain worsens with elevation, improves when dependent.","c":"Vascular"},
+{"q":"A nurse is teaching a client with peripheral arterial disease. Which positioning instruction is correct?","o":["Keep the legs in a dependent (lowered) position to promote arterial flow","Elevate the legs above the heart at all times","Cross the legs at the knee when sitting","Apply tight compression stockings"],"a":["Keep the legs in a dependent (lowered) position to promote arterial flow"],"r":"In PAD, gravity helps arterial flow — keep legs dependent, avoid elevation and leg crossing. (This is the OPPOSITE of venous disease.) Encourage walking to build collateral circulation; protect feet; no tight stockings.","c":"Vascular"},
+{"q":"A client with chronic venous insufficiency would benefit from which intervention?","o":["Elevating the legs above heart level and wearing compression stockings","Keeping the legs in a dependent position","Avoiding all ambulation","Applying heat to the lower legs"],"a":["Elevating the legs above heart level and wearing compression stockings"],"r":"Venous disease = poor venous return → edema, brown (hemosiderin) discoloration, stasis ulcers near the ankle. ELEVATE legs and use compression to promote venous return — the opposite of arterial disease.","c":"Vascular"},
+{"q":"A client is suspected of having a deep vein thrombosis (DVT) in the right leg. Which nursing action is appropriate?","o":["Maintain bed rest and avoid massaging the leg","Vigorously massage the calf to improve circulation","Apply cold packs and dangle the leg","Encourage the client to walk it off"],"a":["Maintain bed rest and avoid massaging the leg"],"r":"NEVER massage a suspected DVT — it can dislodge the clot → pulmonary embolism. Maintain rest, elevate the leg, apply warm compresses, anticipate anticoagulation. Monitor for sudden dyspnea/chest pain (PE).","c":"Vascular"},
+{"q":"A client with a known abdominal aortic aneurysm reports sudden severe tearing back/abdominal pain. What does the nurse suspect and do first?","o":["Aneurysm rupture — this is an emergency; notify the provider and prepare for surgery","Constipation; administer a laxative","Muscle strain; apply heat","Anxiety; offer reassurance only"],"a":["Aneurysm rupture — this is an emergency; notify the provider and prepare for surgery"],"r":"Sudden severe tearing pain, hypotension, and a pulsatile abdominal mass suggest aneurysm rupture/dissection — a surgical emergency with high mortality. Avoid palpating the mass; prepare for emergent repair.","c":"Vascular"},
+{"q":"A client reports that their fingers turn white, then blue, then red with cold exposure and stress. This describes:","o":["Raynaud phenomenon","Deep vein thrombosis","Lymphedema","Cellulitis"],"a":["Raynaud phenomenon"],"r":"Raynaud = episodic vasospasm of the fingers/toes triggered by cold or stress → color changes (white→blue→red). Teach: keep warm, wear gloves, avoid cold and nicotine, manage stress; calcium channel blockers may help.","c":"Vascular"},
+{"q":"A client with pulmonary hypertension is most likely to develop which complication over time?","o":["Right-sided heart failure (cor pulmonale)","Left-sided heart failure first","Peptic ulcers","Hyperkalemia"],"a":["Right-sided heart failure (cor pulmonale)"],"r":"Chronic pulmonary hypertension forces the right ventricle to pump against high pressure → right ventricular hypertrophy and failure (cor pulmonale): JVD, peripheral edema, hepatomegaly, fatigue.","c":"Heart Failure"},
+{"q":"A provider prescribes heparin 25,000 units in 250 mL D5W to infuse at 800 units/hr. How many mL/hr should the nurse set the pump?","o":["8 mL/hr","16 mL/hr","10 mL/hr","12 mL/hr"],"a":["8 mL/hr"],"r":"Concentration = 25,000 units ÷ 250 mL = 100 units/mL. Rate = 800 units/hr ÷ 100 units/mL = 8 mL/hr.","c":"Dosage Calc"},
+{"q":"A client weighs 80 kg. The provider orders a dopamine infusion at 5 mcg/kg/min. How many mcg/min will the client receive?","o":["400 mcg/min","160 mcg/min","320 mcg/min","800 mcg/min"],"a":["400 mcg/min"],"r":"5 mcg/kg/min × 80 kg = 400 mcg/min.","c":"Dosage Calc"},
+{"q":"A nitroglycerin drip of 50 mg in 250 mL is ordered to infuse at 10 mL/hr. How many mg/hr is the client receiving?","o":["2 mg/hr","5 mg/hr","1 mg/hr","4 mg/hr"],"a":["2 mg/hr"],"r":"Concentration = 50 mg ÷ 250 mL = 0.2 mg/mL. Rate = 0.2 mg/mL × 10 mL/hr = 2 mg/hr.","c":"Dosage Calc"}
+]
+;</script>
+<script>const tabs=document.querySelectorAll('.tab'), views=document.querySelectorAll('.view');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('active')); views.forEach(x=>x.classList.remove('active'));
+  t.classList.add('active'); document.getElementById(t.dataset.view).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+const byCat={}; QUIZ.forEach(q=>{(byCat[q.c]=byCat[q.c]||[]).push(q);});
+const catsel=document.getElementById('catsel');
+Object.keys(byCat).sort((a,b)=>byCat[b].length-byCat[a].length).forEach(c=>{
+  const o=document.createElement('option'); o.value=c; o.textContent=`${c} (${byCat[c].length})`; catsel.appendChild(o);
+});
+let chosenN=20;
+document.querySelectorAll('.numbtn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.numbtn').forEach(x=>x.classList.remove('sel')); b.classList.add('sel'); chosenN=+b.dataset.n;
+}));
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+let quiz=[],idx=0,answers=[],answered=false;
+document.getElementById('startBtn').addEventListener('click',()=>{
+  const c=catsel.value; let pool=c==='__ALL__'?QUIZ.slice():byCat[c].slice();
+  if(document.getElementById('ordersel').value==='shuffle')pool=shuffle(pool);
+  if(chosenN>0)pool=pool.slice(0,chosenN);
+  quiz=pool; idx=0; answers=new Array(quiz.length).fill(null);
+  document.getElementById('quiz-setup').classList.add('hidden');
+  document.getElementById('quiz-results').classList.add('hidden');
+  document.getElementById('quiz-run').classList.remove('hidden'); renderQ();
+});
+function renderQ(){
+  answered=false; const q=quiz[idx]; const isSata=q.a.length>1;
+  document.getElementById('qcount').textContent=`Question ${idx+1} of ${quiz.length}`;
+  document.getElementById('qcat').textContent=q.c;
+  document.getElementById('pbar').style.width=(idx/quiz.length*100)+'%';
+  let html=`<div class="qcard"><span class="q-tag ${isSata?'sata':''}">${isSata?'🧩 Select All That Apply':'◉ Multiple Choice'}</span>
+    <div class="qstem">${esc(q.q)}</div>`;
+  if(isSata)html+=`<div class="sata-hint">Choose every correct option, then press Check.</div>`;
+  html+=`<div class="opts" id="opts">`;
+  q.o.forEach((opt,i)=>{const L=String.fromCharCode(65+i);
+    html+=`<div class="opt" data-i="${i}"><span class="ltr">${L}</span><span>${esc(opt)}</span><span class="mark"></span></div>`;});
+  html+=`</div>`;
+  if(isSata)html+=`<div style="margin-top:14px"><button class="btn pink" id="checkBtn">Check ✓</button></div>`;
+  html+=`<div class="rationale" id="rat"><div class="verdict" id="verdict"></div>
+    <div class="lbl">💡 Rationale</div><div>${esc(q.r)}</div></div></div>`;
+  document.getElementById('qcard-host').innerHTML=html;
+  const opts=[...document.querySelectorAll('#opts .opt')]; const correctIdx=new Set(q.o.map((o,i)=>q.a.includes(o)?i:-1).filter(x=>x>=0));
+  let picked=new Set();
+  if(!isSata){opts.forEach(o=>o.addEventListener('click',()=>{if(!answered)grade(new Set([+o.dataset.i]),correctIdx,opts);}));}
+  else{opts.forEach(o=>o.addEventListener('click',()=>{if(answered)return;const v=+o.dataset.i;
+    if(picked.has(v)){picked.delete(v);o.classList.remove('sel');}else{picked.add(v);o.classList.add('sel');}}));
+    document.getElementById('checkBtn').addEventListener('click',()=>{if(!answered)grade(picked,correctIdx,opts);});}
+  document.getElementById('nextBtn').textContent=idx===quiz.length-1?'See results 🎉':'Next ▶';
+  document.getElementById('nextBtn').disabled=true;
+}
+function grade(sel,correctIdx,opts){
+  answered=true; const correct=correctIdx.size===sel.size&&[...correctIdx].every(x=>sel.has(x)); answers[idx]=correct;
+  opts.forEach(o=>{o.classList.add('locked');o.classList.remove('sel');const v=+o.dataset.i;
+    if(correctIdx.has(v)){o.classList.add('correct');o.querySelector('.mark').textContent='✓';}
+    if(sel.has(v)&&!correctIdx.has(v)){o.classList.add('wrong');o.querySelector('.mark').textContent='✗';}});
+  const cb=document.getElementById('checkBtn'); if(cb)cb.style.display='none';
+  const r=document.getElementById('rat'); r.classList.add('show');
+  const v=document.getElementById('verdict'); v.textContent=correct?'✅ Correct!':'❌ Not quite'; v.className='verdict '+(correct?'ok':'no');
+  document.getElementById('nextBtn').disabled=false;
+  document.getElementById('pbar').style.width=((idx+1)/quiz.length*100)+'%';
+}
+document.getElementById('nextBtn').addEventListener('click',()=>{if(!answered)return;
+  if(idx===quiz.length-1)showResults();else{idx++;renderQ();window.scrollTo({top:0,behavior:'smooth'});}});
+document.getElementById('quitBtn').addEventListener('click',showResults);
+function showResults(){
+  document.getElementById('quiz-run').classList.add('hidden');
+  const done=answers.filter(a=>a!==null),right=done.filter(a=>a===true).length,tot=done.length,pct=tot?Math.round(right/tot*100):0;
+  const msg=pct>=90?'Outstanding 🌟':pct>=80?'Strong work 💪':pct>=70?'Solid 📈':pct>=60?'Getting there 🌱':'Review & retry 🔁';
+  const host=document.getElementById('quiz-results'); host.classList.remove('hidden');
+  host.innerHTML=`<div class="results"><div class="score-ring">${pct}%</div><div class="score-sub">${msg}</div>
+    <div class="breakdown">
+    <div class="stat"><div class="n" style="color:var(--good)">${right}</div><div class="l">Correct</div></div>
+    <div class="stat"><div class="n" style="color:var(--bad)">${tot-right}</div><div class="l">Missed</div></div>
+    <div class="stat"><div class="n">${tot}</div><div class="l">Answered</div></div></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+    <button class="btn" onclick="restart()">🔁 New quiz</button>
+    <button class="btn pink" onclick="retryMissed()">🎯 Retry missed</button></div></div>`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function restart(){document.getElementById('quiz-results').classList.add('hidden');document.getElementById('quiz-setup').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+function retryMissed(){const m=quiz.filter((q,i)=>answers[i]===false);if(!m.length){restart();return;}
+  quiz=shuffle(m);idx=0;answers=new Array(quiz.length).fill(null);
+  document.getElementById('quiz-results').classList.add('hidden');document.getElementById('quiz-run').classList.remove('hidden');renderQ();}
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>topBtn.classList.toggle('hidden',window.scrollY<400));
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body></html>
