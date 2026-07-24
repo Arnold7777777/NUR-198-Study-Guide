@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NUR198 Study Hub</title><style>
+ :root{--bg:#140b24;--bg2:#1c1136;--panel:#241a3d;--panel2:#2b2050;--ink:#f4f0ff;--soft:#cdc3e8;--muted:#a99fc7;
+   --line:#3a2d5e;--gold:#ffcf5c;--violet:#b58cff;--teal:#4fd6c9;--pink:#ff7ad6;--blue:#7fb4ff;--green:#5be39b;--red:#ff7a8a;--sb:280px}
+ *{box-sizing:border-box} html,body{margin:0;height:100%}
+ body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);
+   background:linear-gradient(160deg,#140b24,#1a0d2e 40%,#2a1140);min-height:100vh}
+ a{color:inherit;text-decoration:none}
+ /* sidebar */
+ .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sb);background:rgba(20,11,36,.96);
+   border-right:1px solid var(--line);padding:20px 16px;overflow:auto;transition:transform .25s;z-index:40}
+ .sidebar .brand{font-size:1.15rem;font-weight:800;margin:0 0 4px;display:flex;align-items:center;gap:8px}
+ .sidebar .brandsub{font-size:.78rem;color:var(--muted);margin-bottom:18px}
+ .sidebar a.navlink{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;color:var(--soft);
+   font-size:.95rem;font-weight:600;margin:3px 0}
+ .sidebar a.navlink:hover{background:rgba(181,140,255,.16);color:#fff}
+ .sidebar a.navlink .ic{font-size:1.1rem;width:22px;text-align:center}
+ .sidebar .sbfoot{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font-size:.76rem;color:var(--muted);line-height:1.5}
+ body.nav-collapsed .sidebar{transform:translateX(-100%)}
+ /* main */
+ .main{margin-left:var(--sb);transition:margin .25s;min-height:100vh}
+ body.nav-collapsed .main{margin-left:0}
+ .topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;padding:14px 22px;
+   background:linear-gradient(135deg,rgba(90,45,130,.95),rgba(142,45,107,.9));border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+ .menubtn{background:rgba(255,255,255,.12);border:1px solid var(--line);color:#fff;border-radius:10px;
+   width:42px;height:42px;font-size:1.2rem;cursor:pointer;flex:0 0 auto}
+ .menubtn:hover{background:rgba(255,255,255,.22)}
+ .topbar h1{margin:0;font-size:1.15rem}
+ .countbar{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+ .cd{background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:.82rem;text-align:center}
+ .cd .n{font-size:1.1rem;font-weight:800;color:var(--gold);display:block;line-height:1}
+ .cd .l{font-size:.68rem;color:var(--soft)}
+ .wrap{max-width:1080px;margin:0 auto;padding:24px 22px 70px}
+ .lead{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:26px}
+ .lead h2{margin:0 0 8px;font-size:1.1rem;color:var(--teal)}
+ .lead p{margin:0;color:var(--soft);font-size:.95rem}
+ .sec{margin:30px 0 8px;display:flex;align-items:center;gap:10px;font-size:1.15rem;font-weight:800;color:var(--gold)}
+ .sec .bar{height:2px;background:var(--line);flex:1;border:0}
+ .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+ .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;
+   transition:.15s;position:relative;border-left:5px solid var(--violet)}
+ .card:hover{background:var(--panel2);transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.4)}
+ .card .ic{font-size:1.7rem} .card h3{margin:8px 0 5px;font-size:1.08rem;color:#fff}
+ .card p{margin:0;color:var(--muted);font-size:.87rem;line-height:1.5}
+ .card .go{position:absolute;top:16px;right:18px;color:var(--muted);font-size:1.1rem}
+ .card.plan{border-left-color:var(--blue)} .card.quiz{border-left-color:var(--teal)}
+ .card.guide{border-left-color:var(--violet)} .card.video{border-left-color:var(--pink)}
+ .card.star{border-left-color:var(--gold)}
+ .tag{display:inline-block;font-size:.68rem;background:rgba(181,140,255,.18);color:var(--violet);
+   border:1px solid var(--violet);border-radius:20px;padding:1px 9px;margin-top:8px;font-weight:700}
+ @media(max-width:860px){:root{--sb:250px} body:not(.nav-open) .sidebar{transform:translateX(-100%)} .main{margin-left:0!important}
+   body.nav-open .sidebar{transform:none} .countbar{display:none}}
+</style><style id="bgInject">
+html{min-height:100%}
+body{
+  background-image:linear-gradient(rgba(12,7,22,.85),rgba(12,7,22,.90)),url("Designer.jpg")!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-attachment:fixed!important;
+  background-repeat:no-repeat!important;
+}
+</style>
+</head><body class="">
+<nav class="sidebar" id="sidebar">
+  <div class="brand">🩺 NUR198</div>
+  <div class="brandsub">Study Hub · everything in one place</div>
+  <a class="navlink" href="#start"><span class="ic">🚀</span> Start Here</a>
+  <a class="navlink" href="#plan"><span class="ic">📅</span> Study Plan</a>
+  <a class="navlink" href="#practice"><span class="ic">🧠</span> Practice &amp; Quizzes</a>
+  <a class="navlink" href="#guides"><span class="ic">📚</span> Study Guides</a>
+  <a class="navlink" href="#meds"><span class="ic">💊</span> Medications</a>
+  <a class="navlink" href="#podcasts"><span class="ic">🎧</span> Podcasts</a>
+  <a class="navlink" href="#infographics"><span class="ic">🖼️</span> Infographics</a>
+  <a class="navlink" href="#videos"><span class="ic">🎬</span> Videos</a>
+  <div class="sbfoot">🎯 Exam 5 + ATI: <b style="color:var(--gold)">Aug 5</b><br>🎯 Final: <b style="color:var(--gold)">Aug 11</b><br><br>Tip: every card opens in its own tab.</div>
+</nav>
+<div class="main">
+ <div class="topbar">
+   <button class="menubtn" id="menubtn" title="Toggle menu">☰</button>
+   <h1>🩺 NUR198 Study Hub</h1>
+   <div class="countbar">
+     <div class="cd"><span class="n" id="cd1">–</span><span class="l">days to Exam 5 + ATI</span></div>
+     <div class="cd"><span class="n" id="cd2">–</span><span class="l">days to the Final</span></div>
+   </div>
+ </div>
+ <div class="wrap">
+   <div class="lead" id="start"><h2>🚀 Start here</h2>
+     <p>Your one home base. Open <b>Study Plan</b> to see today's focus (recall first, then review), then use the <b>Mega Quiz</b> to test yourself. Each exam has its own full guide below. Do your <b>15-min dosage/pharm drill</b> every day — it's your biggest point-leak.</p></div>
+
+   <div class="sec">📅 Plan &amp; Accountability<hr class="bar"></div>
+   <div class="cards">
+     <a class="card plan star" href="NUR198%20Study%20Plan.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">📅</div><h3>Study Plan</h3>
+       <p>Your dated day-by-day plan through Aug 5 &amp; Aug 11, with the ATI track and the daily dosage/pharm drill. Check off tasks as you go.</p>
+       <span class="tag">start each day here</span></a>
+   </div>
+
+   <div class="sec" id="practice">🧠 Practice &amp; Quizzes<hr class="bar"></div>
+   <div class="cards">
+     <a class="card quiz star" href="NUR198%20Mega%20Quiz.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🧠</div><h3>Mega Quiz</h3>
+       <p>390 questions pooled from every guide. Filter by exam, topic, source (📚 Lecture · 🍽️ GI · 💊 Dosage · 🏥 ATI · NCLEX · HESI · Book) and pick how many random questions you want.</p>
+       <span class="tag">test yourself here</span></a>
+     <a class="card quiz" href="NUR198%20Mega%20Quiz.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">💊</div><h3>Dosage &amp; ATI drills</h3>
+       <p>In the Mega Quiz, tap the <b>💊 Dosage</b> or <b>🏥 ATI Content Mastery</b> source filter to drill just those — your highest-yield practice for Aug 5.</p></a>
+   </div>
+
+   <div class="sec" id="guides">📚 Study Guides (by exam)<hr class="bar"></div>
+   <div class="cards">
+     <a class="card guide" href="NUR198%20Exam%202%20Study%20Guide.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🫁</div><h3>Exam 2 · Respiratory</h3>
+       <p>Modules 4–6. Tabs for Key Points, Full Guide, ATI Set, Concept Maps, and Practice Quiz.</p></a>
+     <a class="card guide" href="NUR198%20Exam%203%20Study%20Guide.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🫀</div><h3>Exam 3 · Cardiovascular</h3>
+       <p>Modules 7–8. Coronary, conduction &amp; hypertension; valves, heart failure &amp; vascular — with a build-your-own quiz.</p></a>
+     <a class="card guide" href="NUR198%20Exam%204%20Guide.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🫘</div><h3>Exam 4 · Renal &amp; Hepatobiliary</h3>
+       <p>Modules 9–10. Full guide with its own quiz — this is where the 📚 Lecture questions live (Source → Lecture).</p></a>
+     <a class="card guide" href="../Exam%205/Exam%205%20GI%20Complete%20Study%20Guide.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🍽️</div><h3>Exam 5 · GI</h3>
+       <p>Modules 11–12. Deep-dive with videos, images, and a 200-question quiz (now with a "# of questions" picker).</p></a>
+     <a class="card guide star" href="NUR198-Master-Study-Guide.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">📖</div><h3>Master Guide · All Modules</h3>
+       <p>Everything (Modules 1–13) plus Meds, Mind Maps, Compare charts, and Key Concepts. Use its View menu to browse by topic or exam.</p>
+       <span class="tag">the big one</span></a>
+   </div>
+
+   <div class="sec" id="meds">💊 Medications<hr class="bar"></div>
+   <div class="cards">
+     <a class="card guide" href="NUR198%20Medications.html" target="_blank" style="border-left-color:var(--red)"><span class="go">↗</span>
+       <div class="ic">💊</div><h3>Medications Reference</h3>
+       <p>Grouped by drug class with a suffix→class→nursing-point table. Expandable 6-point card per med, high-alert flags, antidotes, and look-alike/sound-alike pairs. Search box up top.</p>
+       <span class="tag">daily pharm drill lives here</span></a>
+   </div>
+
+   <div class="sec" id="podcasts">🎧 Podcasts<hr class="bar"></div>
+   <div class="cards">
+     <a class="card" style="border-left-color:var(--teal)" href="NUR198%20Podcasts.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🎧</div><h3>Podcasts</h3>
+       <p>Recorded audio study sessions — GI, Cardiovascular &amp; Nutrition. Tap play; they stream from Google Drive.</p>
+       <span class="tag">listen anywhere</span></a>
+   </div>
+
+   <div class="sec" id="infographics">🖼️ Infographics<hr class="bar"></div>
+   <div class="cards">
+     <a class="card" style="border-left-color:var(--gold)" href="NUR198%20Exam%205%20Infographics.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🍽️</div><h3>Exam 5 · GI Infographics</h3>
+       <p>SimpleNursing visual cards — acid/GERD/PUD meds, antiemetics, laxatives, IBD (Crohn's/UC), Pancrelipase.</p></a>
+     <a class="card" style="border-left-color:var(--red)" href="NUR198%20Exam%203%20Infographics.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🫀</div><h3>Exam 3 · Cardiovascular Infographics</h3>
+       <p>HF, MI, angina, shock (all types), PVD/DVT, endo/pericarditis, tamponade, and congenital heart defects.</p></a>
+   </div>
+
+   <div class="sec" id="videos">🎬 Videos<hr class="bar"></div>
+   <div class="cards">
+     <a class="card video" href="NUR198%20Study%20Video%20Playlist.html" target="_blank"><span class="go">↗</span>
+       <div class="ic">🎬</div><h3>Video Playlist</h3>
+       <p>All your SimpleNursing lectures, deduped and ordered by module, with a built-in player. Watch a clip only for what you missed.</p></a>
+   </div>
+ </div>
+</div>
+<script>
+ var body=document.body, btn=document.getElementById('menubtn');
+ function isMobile(){return window.matchMedia('(max-width:860px)').matches;}
+ btn.addEventListener('click',function(){
+   if(isMobile()){ body.classList.toggle('nav-open'); }
+   else { body.classList.toggle('nav-collapsed'); }
+ });
+ // close mobile menu after clicking a link
+ document.querySelectorAll('.sidebar .navlink').forEach(function(a){
+   a.addEventListener('click',function(){ if(isMobile()) body.classList.remove('nav-open'); });
+ });
+ // countdowns
+ function days(to){var now=new Date(); now.setHours(0,0,0,0); var t=new Date(to); return Math.max(0,Math.round((t-now)/86400000));}
+ document.getElementById('cd1').textContent=days('2026-08-05');
+ document.getElementById('cd2').textContent=days('2026-08-11');
+</script>
+</body></html>

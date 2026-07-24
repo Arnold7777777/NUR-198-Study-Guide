@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NUR198 Study Video Playlist</title>
+<style>
+ :root{--ink:#eaf4f1;--soft:#c4d6d0;--muted:#93a7a1;--line:rgba(255,255,255,.14);--acc:#93c5fd;--acc2:#c4b5fd;}
+ *{box-sizing:border-box} body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);
+   background:linear-gradient(160deg,#0b1220,#0e1a2b);min-height:100vh}
+ header{padding:20px 22px;background:linear-gradient(135deg,rgba(76,29,149,.6),rgba(14,116,144,.55));border-bottom:1px solid var(--line)}
+ header h1{margin:0 0 4px;font-size:1.35rem} header p{margin:0;color:var(--soft);font-size:.9rem}
+ .wrap{display:grid;grid-template-columns:1fr 420px;gap:18px;padding:18px;max-width:1400px;margin:0 auto}
+ @media(max-width:900px){.wrap{grid-template-columns:1fr}}
+ .player{position:sticky;top:12px;align-self:start}
+ video{width:100%;border-radius:14px;background:#000;border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,.5)}
+ .now{margin:10px 2px;font-size:.95rem;color:var(--soft)} .now b{color:var(--ink)}
+ .hint{font-size:.8rem;color:var(--muted);margin:8px 2px;line-height:1.5}
+ .list{background:rgba(9,14,22,.6);border:1px solid var(--line);border-radius:14px;padding:8px;max-height:80vh;overflow:auto}
+ .grp{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#fcd34d;margin:14px 8px 6px}
+ .it{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:10px;cursor:pointer;text-decoration:none;color:var(--ink)}
+ .it:hover{background:rgba(147,197,253,.12)} .it.active{background:rgba(147,197,253,.20);outline:1px solid var(--acc)}
+ .it .n{flex:0 0 26px;height:26px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.78rem;color:var(--muted)}
+ .it .t{display:flex;flex-direction:column;font-size:.9rem;line-height:1.3}
+ .it .meta{font-size:.74rem;color:var(--muted);margin-top:2px}
+ .it.zoom .n{background:rgba(196,181,253,.2);color:var(--acc2)}
+ .bar{display:flex;gap:8px;padding:6px 8px 2px} .bar button{flex:1;background:rgba(255,255,255,.07);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px;font-size:.82rem;cursor:pointer}
+ .bar button:hover{background:rgba(147,197,253,.15)}
+</style><style id="bgInject">
+html{min-height:100%}
+body{
+  background-image:linear-gradient(rgba(12,7,22,.85),rgba(12,7,22,.90)),url("Designer.jpg")!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-attachment:fixed!important;
+  background-repeat:no-repeat!important;
+}
+</style>
+</head>
+<body>
+<a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">🏠 Home</a>
+<header><h1>🎬 NUR198 — Study Video Playlist</h1>
+<p>SimpleNursing lectures + Zoom exam-prep recordings, deduplicated & ordered by module. Click any item to play.</p></header>
+<div class="wrap">
+ <div class="player">
+   <video id="v" controls playsinline></video>
+   <div class="now" id="now">Select a video from the list →</div>
+   <div class="bar"><button id="prev">⏮ Prev</button><button id="auto">Autoplay: On</button><button id="next">Next ⏭</button></div>
+   <div class="hint">▶ Local videos play right here. If a video won't load, your browser may block local files — then just double-click the file in the folder, or open this page from the same drive.<br>↗ Zoom items open in a new browser tab (sign in to Google/Zoom).</div>
+ </div>
+ <div class="list" id="list">
+   <div class="grp">Fluids, Electrolytes &amp; Acid–Base (Mod 2)</div><div class="it" data-i="0"><span class="n">1</span><span class="t">SN Fluids &amp; Electrolytes<span class="meta">1.80 GB · Full fluids/electrolytes review</span></span></div><div class="grp">Renal &amp; Urinary (Mod 9)</div><div class="it" data-i="1"><span class="n">2</span><span class="t">Renal Anatomy &amp; Physiology<span class="meta">145 MB</span></span></div><div class="it" data-i="2"><span class="n">3</span><span class="t">Renal Lab Values (BUN, Creatinine, GFR)<span class="meta">44 MB</span></span></div><div class="it" data-i="3"><span class="n">4</span><span class="t">Renal Failure<span class="meta">108 MB</span></span></div><div class="it" data-i="4"><span class="n">5</span><span class="t">Renal Failure — Acute vs. Chronic<span class="meta">236 MB</span></span></div><div class="it" data-i="5"><span class="n">6</span><span class="t">Renal &amp; Urinary Disorders Review — CKD, Dialysis, Incontinence<span class="meta">558 MB</span></span></div><div class="grp">Hepatobiliary (Mod 10)</div><div class="it" data-i="6"><span class="n">7</span><span class="t">Hepatitis A–E<span class="meta">34 MB</span></span></div><div class="it" data-i="7"><span class="n">8</span><span class="t">Cirrhosis — Interventions &amp; Ascites Care<span class="meta">181 MB</span></span></div><div class="grp">GI — Upper &amp; Lower (Mod 11–12)</div><div class="it" data-i="8"><span class="n">9</span><span class="t">Intro to the Digestive System<span class="meta">131 MB</span></span></div><div class="it" data-i="9"><span class="n">10</span><span class="t">GI Playlist Pt.1 — Cirrhosis, Abdominal Assessment &amp; Bowel<span class="meta">501 MB</span></span></div><div class="it" data-i="10"><span class="n">11</span><span class="t">GI — Abdominal Assessment (Health Assessment)<span class="meta">719 MB</span></span></div><div class="it" data-i="11"><span class="n">12</span><span class="t">GERD &amp; Peptic Ulcer Disease<span class="meta">205 MB</span></span></div><div class="it" data-i="12"><span class="n">13</span><span class="t">Celiac Disease<span class="meta">13 MB</span></span></div><div class="it" data-i="13"><span class="n">14</span><span class="t">Appendicitis<span class="meta">31 MB</span></span></div><div class="it" data-i="14"><span class="n">15</span><span class="t">Diverticulitis &amp; Diverticulosis<span class="meta">23 MB</span></span></div><div class="it" data-i="15"><span class="n">16</span><span class="t">Colostomy &amp; Ileostomy<span class="meta">40 MB</span></span></div><div class="grp">Full-length sessions &amp; instructor lectures</div><div class="it" data-i="16"><span class="n">17</span><span class="t">Wagner — Final Exam Review 1<span class="meta">146 MB · Instructor review</span></span></div><div class="it" data-i="17"><span class="n">18</span><span class="t">Wagner — Final Exam Review 2<span class="meta">126 MB · Instructor review</span></span></div><div class="it" data-i="18"><span class="n">19</span><span class="t">Wagner — Lectures 9 &amp; 10<span class="meta">3.04 GB · Instructor (long)</span></span></div><div class="it" data-i="19"><span class="n">20</span><span class="t">SimpleNursing — Modules 9 &amp; 10 (full)<span class="meta">4.16 GB · Full compilation (long)</span></span></div><div class="grp">Zoom exam-prep recordings</div><a class="it zoom" href="https://joyce-edu.zoom.us/rec/play/xH-LhmDDC8hw2nDVFrMYecXzblV8okrOe4bnK5VpzkTC7A8nd78Aa8kcuji405bsdRsCpCoJKrz_sgBK.u107vTRK1mbymaLV" target="_blank" rel="noopener"><span class="n">21</span><span class="t">NUR198 Lower GI Disorders &amp; Conditions (Q&amp;A)<span class="meta">↗ Opens in browser · sign in to Google/Zoom</span></span></a>
+ </div>
+</div>
+<script>
+ var DATA=[{"src":"Simple%20Nursing/SN%20Fluids%20and%20Electrolytes.mp4","title":"SN Fluids & Electrolytes"},{"src":"Simple%20Nursing/Renal%20Anatomy%20%26%20Physiology%20-%20SimpleNursing%20%28Nurse%20Mike%29%20-%202026-07-02%202012.mp4","title":"Renal Anatomy & Physiology"},{"src":"Simple%20Nursing/Renal%20Lab%20Values.mp4","title":"Renal Lab Values (BUN, Creatinine, GFR)"},{"src":"Simple%20Nursing/Renal%20Failure.mp4","title":"Renal Failure"},{"src":"Simple%20Nursing/Renal%20Failure%20Acute%20vs%20Chronic.mp4","title":"Renal Failure — Acute vs. Chronic"},{"src":"Simple%20Nursing/Renal%20%26%20Urinary%20Disorders%20Review%20-%20CKD%2C%20Dialysis%2C%20Incontinence%20-%20SimpleNursing%20%28Nurse%20Mike%29%20-%202026-07-02%202127.mp4","title":"Renal & Urinary Disorders Review — CKD, Dialysis, Incontinence"},{"src":"Simple%20Nursing/Hepatitis%20A-E%20-%20SimpleNursing%20GI%20%28Nurse%20Mike%29%20-%202026-06-30%200655.mp4","title":"Hepatitis A–E"},{"src":"Simple%20Nursing/Cirrhosis%20Interventions%20%26%20Ascites%20Care%20-%20SimpleNursing%20%28Nurse%20Mike%29%20-%202026-06-30%200648.mp4","title":"Cirrhosis — Interventions & Ascites Care"},{"src":"Simple%20Nursing/Intro%20to%20Digestive%20System.mp4","title":"Intro to the Digestive System"},{"src":"Simple%20Nursing/GI%20Playlist%20Pt1%20-%20Cirrhosis%2C%20Abdominal%20Assessment%20%26%20Bowel%20Disorders%20-%20SimpleNursing%20%28Nurse%20Mike%29%20-%202026-06-30%200621.mp4","title":"GI Playlist Pt.1 — Cirrhosis, Abdominal Assessment & Bowel"},{"src":"Simple%20Nursing/Health%20Assessment%20Abdomen.mp4","title":"GI — Abdominal Assessment (Health Assessment)"},{"src":"Simple%20Nursing/GERD%20%26%20Peptic%20Ulcer%20Disease%20-%20SimpleNursing%20GI%20%28Nurse%20Mike%29%20-%202026-06-30%200745.mp4","title":"GERD & Peptic Ulcer Disease"},{"src":"Simple%20Nursing/Celiac%20Disease%20-%20SimpleNursing%20GI%20%28Nurse%20Mike%29%20-%202026-06-30%200706.mp4","title":"Celiac Disease"},{"src":"Simple%20Nursing/Appendicitis%20-%20SimpleNursing%20GI%20%28Nurse%20Mike%29%20-%202026-06-30%200702.mp4","title":"Appendicitis"},{"src":"Simple%20Nursing/Diverticulitis%20-%20SimpleNursing%20GI%20%28Nurse%20Mike%29%20-%202026-06-30%200717.mp4","title":"Diverticulitis & Diverticulosis"},{"src":"Simple%20Nursing/Colostomy%20%26%20Ileostomy%20-%20SimpleNursing%20GI%20%28Nurse%20Mike%29%20-%202026-06-30%200713.mp4","title":"Colostomy & Ileostomy"},{"src":"Lecture%20Review%20Videos/Wagner%20Final%20Exam%20Review%201.mp4","title":"Wagner — Final Exam Review 1"},{"src":"Lecture%20Review%20Videos/Wagner%20Final%20Exam%20Review%202.mp4","title":"Wagner — Final Exam Review 2"},{"src":"Simple%20Nursing/Wagner%20Lectures%209%20and10.mp4","title":"Wagner — Lectures 9 & 10"},{"src":"Simple%20Nursing/AAA%20SN%20Modules%209%20and%2010.mp4","title":"SimpleNursing — Modules 9 & 10 (full)"},null];
+ var v=document.getElementById('v'), now=document.getElementById('now');
+ var items=[].slice.call(document.querySelectorAll('.it[data-i]'));
+ var auto=true, cur=-1;
+ function play(i){
+   var d=DATA[i]; if(!d) return;
+   cur=i; v.src=d.src; v.play().catch(function(){});
+   now.innerHTML='Now playing: <b>'+d.title+'</b>';
+   items.forEach(function(el){el.classList.toggle('active', +el.dataset.i===i);});
+   var act=document.querySelector('.it.active'); if(act) act.scrollIntoView({block:'nearest'});
+ }
+ items.forEach(function(el){el.addEventListener('click',function(){play(+el.dataset.i);});});
+ document.getElementById('next').onclick=function(){var n=nextLocal(cur);if(n>-1)play(n);};
+ document.getElementById('prev').onclick=function(){for(var i=cur-1;i>=0;i--){if(DATA[i]){play(i);return;}}};
+ document.getElementById('auto').onclick=function(){auto=!auto;this.textContent='Autoplay: '+(auto?'On':'Off');};
+ function nextLocal(from){for(var i=from+1;i<DATA.length;i++){if(DATA[i])return i;}return -1;}
+ v.addEventListener('ended',function(){if(auto){var n=nextLocal(cur);if(n>-1)play(n);}});
+</script>
+</body></html>
