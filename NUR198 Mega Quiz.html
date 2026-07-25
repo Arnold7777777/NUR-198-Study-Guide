@@ -75,11 +75,19 @@ body{
   background-repeat:no-repeat!important;
 }
 </style>
+<style id="quizUX-css">
+.filt-toggle{display:inline-flex;align-items:center;gap:6px;background:#241a3d;border:1px solid var(--line);color:var(--soft);
+  font:700 .8rem 'Segoe UI',system-ui,sans-serif;padding:7px 13px;border-radius:18px;cursor:pointer;margin:2px 0 10px}
+.filt-toggle:hover{border-color:var(--violet);color:#fff}
+.filters.collapsed{display:none}
+#calcFab{touch-action:none}
+</style>
 </head><body>
 <a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">🏠 Home</a>
 <header><h1>🧠 NUR198 Mega Quiz</h1><p>390 questions pooled from all your guides + dosage & ATI drills · filter by exam, topic, source, and how many you want</p></header>
 <main>
- <div class="filters">
+ <button id="filtToggle" class="filt-toggle" type="button">▾ Hide filters</button>
+<div class="filters">
    <div class="frow ex"><span class="flabel">Exam</span>
      <button class="fbtn active" data-g="exam" data-v="all">All</button>
      <button class="fbtn" data-g="exam" data-v="e1">Exam 1</button>
@@ -297,6 +305,42 @@ updatePool();
     };
   }
   hookRender();
+})();
+</script>
+<script id="quizUX-js">
+(function(){
+  // ---- collapsible filter menu ----
+  var filt=document.querySelector('.filters'), tog=document.getElementById('filtToggle');
+  if(filt&&tog){ tog.addEventListener('click',function(){
+    var c=filt.classList.toggle('collapsed'); tog.innerHTML=c?'▸ Show filters':'▾ Hide filters'; }); }
+  // ---- draggable calculator ----
+  var fab=document.getElementById('calcFab'), panel=document.getElementById('calcPanel');
+  if(!fab) return;
+  function clamp(x,y,w,h){x=Math.max(4,Math.min(innerWidth-w-4,x));y=Math.max(4,Math.min(innerHeight-h-4,y));return[x,y];}
+  function posPanel(){ if(!panel||!panel.classList.contains('open'))return;
+    var r=fab.getBoundingClientRect(), pw=panel.offsetWidth||330, ph=panel.offsetHeight||320;
+    var left=r.left, top=r.top-ph-8; if(top<4) top=r.bottom+8; var p=clamp(left,top,pw,ph);
+    panel.style.left=p[0]+'px'; panel.style.top=p[1]+'px'; panel.style.right='auto'; panel.style.bottom='auto'; }
+  function placeFab(x,y){ var w=fab.offsetWidth,h=fab.offsetHeight,p=clamp(x,y,w,h);
+    fab.style.left=p[0]+'px'; fab.style.top=p[1]+'px'; fab.style.right='auto'; fab.style.bottom='auto'; posPanel(); }
+  var drag=false,moved=false,sx,sy,ox,oy;
+  fab.addEventListener('pointerdown',function(e){drag=true;moved=false;sx=e.clientX;sy=e.clientY;
+    var r=fab.getBoundingClientRect();ox=r.left;oy=r.top;try{fab.setPointerCapture(e.pointerId);}catch(_){}}); 
+  fab.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-sx,dy=e.clientY-sy;
+    if(Math.abs(dx)>4||Math.abs(dy)>4)moved=true; if(moved){placeFab(ox+dx,oy+dy);e.preventDefault();}});
+  fab.addEventListener('pointerup',function(e){drag=false;try{fab.releasePointerCapture(e.pointerId);}catch(_){}}); 
+  fab.addEventListener('click',function(e){if(moved){e.stopImmediatePropagation();e.preventDefault();moved=false;}},true);
+  var _ct=window.calcToggle; if(typeof _ct==='function'){ window.calcToggle=function(){_ct.apply(this,arguments);posPanel();}; }
+  if(panel){ var head=panel.querySelector('h4'); if(head){ head.style.cursor='move'; head.style.touchAction='none';
+    var pd=false,psx,psy,pox,poy;
+    head.addEventListener('pointerdown',function(e){ if(e.target.closest('.x'))return; pd=true;psx=e.clientX;psy=e.clientY;
+      var r=panel.getBoundingClientRect();pox=r.left;poy=r.top;panel.style.right='auto';panel.style.bottom='auto';
+      try{head.setPointerCapture(e.pointerId);}catch(_){}e.preventDefault();});
+    head.addEventListener('pointermove',function(e){ if(!pd)return; var dx=e.clientX-psx,dy=e.clientY-psy,pw=panel.offsetWidth,ph=panel.offsetHeight;
+      var p=clamp(pox+dx,poy+dy,pw,ph);panel.style.left=p[0]+'px';panel.style.top=p[1]+'px';e.preventDefault();});
+    head.addEventListener('pointerup',function(e){pd=false;try{head.releasePointerCapture(e.pointerId);}catch(_){}}); } }
+  window.addEventListener('resize',posPanel);
+  fab.setAttribute('title','Drag to move · tap to open the calculator');
 })();
 </script>
 </body></html>
