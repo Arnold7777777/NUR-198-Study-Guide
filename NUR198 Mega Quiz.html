@@ -98,6 +98,8 @@ body{
 .rbar-fill{height:100%;display:flex;align-items:center;justify-content:flex-end;padding-right:9px;font-size:.78rem;font-weight:800;border-radius:9px;min-width:36px;transition:width .6s ease}
 .rbar-fill.green{background:linear-gradient(90deg,#3ddc84,#2bbf6e);color:#06210f}
 .rbar-fill.red{background:linear-gradient(90deg,#ffb0bb,#e0556a);color:#3a0410}
+.clear-miss{background:none;border:none;color:#a99fc7;font-size:.72rem;text-decoration:underline;cursor:pointer;align-self:center;padding:0 4px}
+.clear-miss.arm{color:#ff7a8a;font-weight:700}
 </style>
 </head><body>
 <a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">🏠 Home</a>
@@ -114,7 +116,7 @@ body{
      <button class="fbtn" data-g="exam" data-v="e5">Exam 5</button>
      <button class="fbtn" data-g="exam" data-v="final">Final</button>
    </div>
-   <div class="frow foc"><span class="flabel">Focus</span><button class="fbtn active" data-g="focus" data-v="all">All</button><button class="fbtn" data-g="focus" data-v="patho">🧬 Patho</button><button class="fbtn" data-g="focus" data-v="pharm">💊 Pharm</button></div>
+   <div class="frow foc"><span class="flabel">Focus</span><button class="fbtn active" data-g="focus" data-v="all">All</button><button class="fbtn" data-g="focus" data-v="patho">🧬 Patho</button><button class="fbtn" data-g="focus" data-v="pharm">💊 Pharm</button><button class="fbtn" id="missBtn" data-g="focus" data-v="misses">❌ My Misses (0)</button><button id="clearMiss" class="clear-miss" type="button" title="Clear your saved misses">clear</button></div>
 <div class="frow mod"><span class="flabel">Topic</span><span id="modbtns"></span></div>
    <div class="frow src"><span class="flabel">Source</span>
      <button class="fbtn active" data-g="src" data-v="all">All</button>
@@ -148,13 +150,19 @@ const SRCLABEL={lecture:'📚 Lecture',gi:'🍽️ GI',book:'📖 Book',nclex:'N
 const EXLABEL={e1:'Exam 1',e2:'Exam 2',e3:'Exam 3',e4:'Exam 4',e5:'Exam 5',final:'Final'};
 let filt={exam:'all',focus:'all',mod:[],src:[],count:'all'};
 let list=[], idx=0, score=0, answered=0, state={};
+let misses=new Set(); try{misses=new Set(JSON.parse(localStorage.getItem('nur198_misses')||'[]'));}catch(e){}
+function saveMisses(){try{localStorage.setItem('nur198_misses',JSON.stringify([...misses]));}catch(e){}}
+function updateMissBadge(){var b=document.getElementById('missBtn');if(b)b.textContent='❌ My Misses ('+misses.size+')';}
+function recordMiss(q,ok){var k=keyOf(q);if(ok)misses.delete(k);else misses.add(k);saveMisses();updateMissBadge();}
+updateMissBadge();
+(function(){var cm=document.getElementById('clearMiss');if(!cm)return;var armed=false;cm.addEventListener('click',function(){if(!armed){armed=true;cm.textContent='tap again';cm.classList.add('arm');setTimeout(function(){armed=false;cm.textContent='clear';cm.classList.remove('arm');},3000);}else{misses.clear();saveMisses();updateMissBadge();armed=false;cm.classList.remove('arm');cm.textContent='cleared ✓';updatePool();setTimeout(function(){cm.textContent='clear';},1500);}});})();
 // build module buttons from data
 const mods=[...new Set(QUIZ.map(q=>q.mod))].filter(m=>m>0).sort((a,b)=>a-b);
 const modWrap=document.getElementById('modbtns');
 modWrap.innerHTML='<button class="fbtn active" data-g="mod" data-v="all">All</button>'+
   mods.map(m=>`<button class="fbtn" data-g="mod" data-v="${m}">${MODLABEL[m]||('M'+m)}</button>`).join('');
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
-function pool(){return QUIZ.filter(q=>(filt.exam==='all'||q.exam===filt.exam)&&(filt.focus==='all'||(filt.focus==='pharm'&&q.ph)||(filt.focus==='patho'&&q.pa))&&(filt.mod.length===0||filt.mod.map(Number).indexOf(q.mod)>-1)&&(filt.src.length===0||filt.src.indexOf(q.src)>-1));}
+function pool(){return QUIZ.filter(q=>(filt.exam==='all'||q.exam===filt.exam)&&(filt.focus==='all'||(filt.focus==='pharm'&&q.ph)||(filt.focus==='patho'&&q.pa)||(filt.focus==='misses'&&misses.has(keyOf(q))))&&(filt.mod.length===0||filt.mod.map(Number).indexOf(q.mod)>-1)&&(filt.src.length===0||filt.src.indexOf(q.src)>-1));}
 function updatePool(){document.getElementById('poolcount').textContent=pool().length;}
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 document.querySelectorAll('.filters').forEach(f=>f.addEventListener('click',e=>{
@@ -210,7 +218,7 @@ function wire(q,card,already){
     opts.forEach(b=>b.addEventListener('click',()=>{
       if(state[keyOf(q)])return;
       const oi=+b.dataset.oi, ok=q.correct.indexOf(oi)>-1;
-      state[keyOf(q)]={picked:[oi],ok}; commitScore(ok);
+      state[keyOf(q)]={picked:[oi],ok}; commitScore(ok); recordMiss(q,ok);
       replay(q,card,state[keyOf(q)]);
     }));
   } else {
@@ -219,7 +227,7 @@ function wire(q,card,already){
       if(state[keyOf(q)])return;
       const picked=opts.filter(b=>b.classList.contains('sel')).map(b=>+b.dataset.oi);
       const ok=picked.length===q.correct.length && picked.every(p=>q.correct.indexOf(p)>-1);
-      state[keyOf(q)]={picked,ok}; commitScore(ok);
+      state[keyOf(q)]={picked,ok}; commitScore(ok); recordMiss(q,ok);
       replay(q,card,state[keyOf(q)]);
     });
   }
