@@ -321,6 +321,59 @@ body{
 }
 </style>
 <style id="homeFix">#topnav{padding-right:108px}</style>
+<style id="sideDrawerCss">
+/* ---- off-canvas side menu (replaces the sticky top nav) ---- */
+#topnav{
+  position:fixed !important; top:0 !important; left:0 !important;
+  width:min(84vw,320px) !important; height:100dvh !important;
+  max-height:100dvh !important;
+  overflow-y:auto !important; overflow-x:hidden !important;
+  -webkit-overflow-scrolling:touch;
+  z-index:100000 !important;
+  transform:translateX(-102%); transition:transform .22s ease;
+  box-shadow:6px 0 26px rgba(0,0,0,.6);
+  border-right:1px solid rgba(255,255,255,.18);
+  border-bottom:none !important;
+  padding:56px 14px 28px !important;
+  display:block !important;
+  flex-wrap:nowrap !important;
+  background:rgba(8,10,20,.97) !important;
+  backdrop-filter:blur(10px);
+}
+body.drawer-open #topnav{transform:translateX(0);}
+/* stack every direct child vertically inside the drawer */
+#topnav > *{display:block !important; width:100% !important; margin:0 0 7px !important;
+  white-space:normal !important; text-align:left !important;}
+#topnav button, #topnav a, #topnav .dd-btn{
+  width:100% !important; text-align:left !important; white-space:normal !important;
+  justify-content:flex-start !important;}
+#topnav .ddrow, #topnav .navrow{display:block !important; overflow:visible !important;}
+#topnav .dd{width:100% !important;}
+#topnav .dd-menu{position:static !important; width:100% !important; box-shadow:none !important;}
+
+/* hamburger */
+#drawerBtn{
+  position:fixed; top:9px; left:10px; z-index:100002;
+  background:linear-gradient(135deg,#5a2d82,#8e2d6b); color:#fff;
+  border:1px solid rgba(255,255,255,.22); border-radius:22px;
+  padding:8px 15px; font:700 .84rem 'Segoe UI',system-ui,sans-serif;
+  cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.5); line-height:1;
+}
+#drawerBtn:hover{filter:brightness(1.12)}
+body.drawer-open #drawerBtn{left:calc(min(84vw,320px) + 10px);}
+@media(max-width:520px){body.drawer-open #drawerBtn{left:auto; right:10px;}}
+
+/* backdrop */
+#drawerBg{
+  position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:99999;
+  opacity:0; pointer-events:none; transition:opacity .2s ease;
+}
+body.drawer-open #drawerBg{opacity:1; pointer-events:auto;}
+
+/* give the page its full height back */
+body{padding-top:0 !important;}
+@media print{#drawerBtn,#drawerBg,#topnav{display:none !important;}}
+</style>
 </head>
 <body>
 <a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">🏠 Home</a>
@@ -2940,6 +2993,49 @@ const QUIZ=[
       window.scrollTo({top:0,behavior:'smooth'});
     });
   });
+</script>
+<script id="sideDrawerJs">
+(function(){
+  var SEL="#topnav";
+  function init(){
+    var nav=document.querySelector(SEL);
+    if(!nav){return setTimeout(init,150);}
+    if(document.getElementById('drawerBtn'))return;
+
+    var btn=document.createElement('button');
+    btn.id='drawerBtn'; btn.type='button';
+    btn.setAttribute('aria-label','Open the menu');
+    btn.innerHTML='\u2630 Menu';
+
+    var bg=document.createElement('div');
+    bg.id='drawerBg';
+
+    document.body.appendChild(bg);
+    document.body.appendChild(btn);
+
+    function set(open){
+      document.body.classList.toggle('drawer-open',open);
+      btn.innerHTML = open ? '\u2715 Close' : '\u2630 Menu';
+      btn.setAttribute('aria-label', open ? 'Close the menu' : 'Open the menu');
+    }
+    btn.addEventListener('click',function(e){e.stopPropagation();set(!document.body.classList.contains('drawer-open'));});
+    bg.addEventListener('click',function(){set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+
+    // tapping a link or a jump button inside the drawer closes it
+    nav.addEventListener('click',function(e){
+      var t=e.target.closest('a,button');
+      if(!t)return;
+      if(t.classList.contains('dd-btn'))return;      // dropdown openers stay
+      setTimeout(function(){set(false);},120);
+    });
+
+    // if the nav had its own collapse toggle, it is redundant now
+    var old=nav.querySelector('.nav-toggle'); if(old)old.style.display='none';
+    set(false);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
+})();
 </script>
 </body>
 </html>
