@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NUR198 &middot; Conversions &amp; Dosage Math</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#140b24;--panel:#241a3d;--panel2:#2b2050;--ink:#f4f0ff;--soft:#cdc3e8;--muted:#a99fc7;
+  --line:#3a2d5e;--gold:#ffcf5c;--accent:#b58cff;--accent2:#ff7ad6;--teal:#4fd6c9;--green:#5be39b;--red:#ff7a8a;--blue:#7fb4ff}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);line-height:1.55;font-size:16px;
+  background-color:var(--bg);
+  background-image:linear-gradient(rgba(12,6,24,.90),rgba(12,6,24,.94)),url("Designer.jpg");
+  background-size:cover;background-position:center;background-attachment:fixed}
+.wrap{max-width:1040px;margin:0 auto;padding:22px 18px 90px}
+header.top h1{margin:0 0 4px;font-size:1.9rem;letter-spacing:-.3px}
+header.top p{margin:0 0 6px;color:var(--soft)}
+a.home{position:fixed;top:10px;right:12px;z-index:99;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#12101c;text-decoration:none;font-weight:800;font-size:.82rem;padding:8px 14px;border-radius:22px;
+  box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)}
+h2.sys{margin:34px 0 6px;font-size:1.3rem;color:var(--gold);border-bottom:2px solid var(--line);padding-bottom:8px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:14px 0}
+.panel h3{margin:0 0 10px;font-size:1.05rem;color:var(--accent)}
+.muted{color:var(--muted);font-size:.85rem}
+.soft{color:var(--soft)}
+
+/* jump bar */
+.jump{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 4px}
+.jump a{background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:7px 13px;
+  font-size:.83rem;font-weight:700;color:var(--ink);text-decoration:none}
+.jump a:hover{background:var(--accent);color:#12101c;border-color:var(--accent)}
+
+/* converter */
+.conv{background:linear-gradient(160deg,var(--panel2),var(--panel));border:2px solid var(--accent);border-radius:18px;padding:18px}
+.crow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.conv input[type=number]{flex:1 1 150px;min-width:120px;font-size:1.5rem;font-weight:800;padding:11px 14px;border-radius:12px;
+  border:1px solid var(--line);background:rgba(0,0,0,.34);color:var(--ink);-moz-appearance:textfield}
+.conv select{flex:1 1 190px;font-size:1rem;font-weight:600;padding:12px;border-radius:12px;
+  border:1px solid var(--line);background:#10101c;color:var(--ink)}
+.conv .eq{font-size:1.5rem;font-weight:900;color:var(--muted);padding:0 2px}
+.swap{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:11px 15px;
+  font-weight:800;cursor:pointer;font-size:.9rem}
+.swap:hover{background:var(--accent);color:#12101c}
+.answer{margin-top:12px;background:rgba(0,0,0,.30);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.answer .big{font-size:2.15rem;font-weight:900;color:var(--green);line-height:1.15;word-break:break-word}
+.answer .work{margin-top:8px;font-family:'Consolas',ui-monospace,monospace;font-size:.92rem;color:var(--soft)}
+.answer .note{margin-top:7px;font-size:.83rem;color:var(--muted)}
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tab{background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:20px;padding:8px 16px;
+  font-weight:800;cursor:pointer;font-size:.88rem}
+.tab.on{background:var(--accent);color:#12101c;border-color:var(--accent)}
+
+/* tables */
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:420px;font-size:.94rem}
+th{background:var(--panel2);color:var(--gold);text-align:left;padding:9px 11px;border:1px solid var(--line);
+  font-size:.78rem;text-transform:uppercase;letter-spacing:.5px}
+td{padding:9px 11px;border:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(odd){background:rgba(255,255,255,.028)}
+td b,th b{color:var(--ink)}
+.eqcell{font-weight:800;color:var(--green);white-space:nowrap}
+.key{font-weight:800;color:var(--accent);white-space:nowrap}
+
+/* ladder */
+.ladder{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0 4px}
+.rung{background:var(--panel2);border:2px solid var(--line);border-radius:12px;padding:11px 16px;text-align:center;min-width:96px}
+.rung b{display:block;font-size:1.25rem;color:var(--gold)}
+.rung span{font-size:.72rem;color:var(--muted)}
+.arrow{font-weight:900;color:var(--accent);font-size:.86rem;text-align:center;line-height:1.15}
+
+/* callouts */
+.warn{background:rgba(255,122,138,.10);border:1px solid var(--red);border-left:5px solid var(--red);
+  border-radius:10px;padding:12px 15px;margin:12px 0}
+.warn b{color:var(--red)}
+.tip{background:rgba(255,207,92,.09);border:1px solid var(--gold);border-left:5px solid var(--gold);
+  border-radius:10px;padding:12px 15px;margin:12px 0}
+.tip b{color:var(--gold)}
+.win{background:rgba(91,227,155,.09);border:1px solid var(--green);border-left:5px solid var(--green);
+  border-radius:10px;padding:12px 15px;margin:12px 0}
+.win b{color:var(--green)}
+
+/* memorize cards */
+.mem{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px;margin-top:6px}
+.mcard{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:12px;padding:12px 14px}
+.mcard .v{font-size:1.22rem;font-weight:900;color:var(--gold);line-height:1.25}
+.mcard .l{font-size:.76rem;color:var(--muted);margin-top:3px}
+
+/* practice */
+details.pq{background:var(--panel2);border:1px solid var(--line);border-radius:12px;margin:9px 0;overflow:hidden}
+details.pq>summary{cursor:pointer;padding:13px 16px;font-weight:700;list-style:none;font-size:.96rem}
+details.pq>summary::-webkit-details-marker{display:none}
+details.pq>summary::before{content:'\25B8';color:var(--accent);font-weight:900;margin-right:9px;display:inline-block;transition:.15s}
+details.pq[open]>summary::before{transform:rotate(90deg)}
+details.pq[open]>summary{background:rgba(255,255,255,.05);border-bottom:1px solid var(--line)}
+.pa{padding:13px 16px;background:rgba(0,0,0,.22)}
+.pa .ans{font-size:1.18rem;font-weight:900;color:var(--green);margin-bottom:6px}
+.pa .steps{font-family:'Consolas',ui-monospace,monospace;font-size:.88rem;color:var(--soft);white-space:pre-wrap}
+.btnrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#12101c;text-decoration:none;
+  font-weight:800;font-size:.88rem;padding:11px 18px;border-radius:24px;display:inline-block;border:none;cursor:pointer}
+.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.83rem}
+@media(max-width:560px){.conv .eq{display:none}header.top h1{font-size:1.45rem}.answer .big{font-size:1.7rem}}
+@media print{a.home,.jump,.tabs,.swap{display:none}}
+</style></head><body>
+<a class="home" href="NUR198%20Study%20Hub.html">&#127968; Study Hub</a>
+<div class="wrap">
+
+<header class="top">
+ <h1>&#128207; Conversions &amp; Dosage Math</h1>
+ <p>Every conversion nursing school actually tests, plus a calculator that shows the work.</p>
+</header>
+
+<div class="jump">
+ <a href="#calc">Calculator</a><a href="#metric">Metric (g &rarr; mg &rarr; mcg)</a>
+ <a href="#volume">tsp / tbsp / oz / cup / mL</a><a href="#weight">lb &harr; kg</a>
+ <a href="#memorize">Memorize these</a><a href="#setup">How to set it up</a>
+ <a href="#traps">Traps</a><a href="#practice">Practice</a>
+</div>
+
+<!-- ===================== CALCULATOR ===================== -->
+<h2 class="sys" id="calc">&#129518; Converter</h2>
+<div class="conv">
+ <div class="tabs">
+  <button class="tab on" id="tabV" type="button">&#129380; Volume &middot; liquids</button>
+  <button class="tab" id="tabM" type="button">&#9878;&#65039; Weight &middot; drug amounts</button>
+  <button class="tab" id="tabT" type="button">&#127777;&#65039; Temperature</button>
+ </div>
+
+ <div id="uconv">
+  <div class="crow">
+   <input id="cval" type="number" value="1" step="any" aria-label="value to convert">
+   <select id="cfrom" aria-label="convert from"></select>
+   <span class="eq">&rarr;</span>
+   <select id="cto" aria-label="convert to"></select>
+   <button class="swap" id="cswap" type="button">&#8646; Swap</button>
+  </div>
+ </div>
+
+ <div id="tconv" style="display:none">
+  <div class="crow">
+   <input id="tval" type="number" value="98.6" step="any" aria-label="temperature">
+   <select id="tfrom" aria-label="temperature scale">
+     <option value="F">&deg;F  (Fahrenheit)</option>
+     <option value="C">&deg;C  (Celsius)</option>
+   </select>
+  </div>
+ </div>
+
+ <div class="answer">
+  <div class="big" id="out">&mdash;</div>
+  <div class="work" id="work"></div>
+  <div class="note" id="note"></div>
+ </div>
+</div>
+
+<!-- ===================== METRIC ===================== -->
+<h2 class="sys" id="metric">&#129514; The metric ladder &mdash; everything is &times;1000</h2>
+<div class="panel">
+ <p class="soft" style="margin:0 0 12px">This is the whole thing. Each step is <b>1000</b>. Nothing else to know.</p>
+ <div class="ladder">
+  <div class="rung"><b>kg</b><span>kilogram</span></div>
+  <div class="arrow">&#215;1000 &rarr;<br>&#8592; &#247;1000</div>
+  <div class="rung"><b>g</b><span>gram</span></div>
+  <div class="arrow">&#215;1000 &rarr;<br>&#8592; &#247;1000</div>
+  <div class="rung"><b>mg</b><span>milligram</span></div>
+  <div class="arrow">&#215;1000 &rarr;<br>&#8592; &#247;1000</div>
+  <div class="rung"><b>mcg</b><span>microgram</span></div>
+ </div>
+ <div class="win"><b>The only rule you need:</b> going <b>DOWN</b> the ladder to a smaller unit, the number gets
+  <b>BIGGER</b> &mdash; multiply by 1000, move the decimal <b>3 places right</b>.
+  Going <b>UP</b> to a bigger unit, the number gets <b>SMALLER</b> &mdash; divide by 1000, decimal <b>3 places left</b>.</div>
+ <div class="scroll"><table>
+  <thead><tr><th>Conversion</th><th>Equals</th><th>Worked example</th></tr></thead><tbody>
+  <tr><td class="key">1 kg</td><td class="eqcell">1000 g</td><td>2.5 kg = 2500 g</td></tr>
+  <tr><td class="key">1 g</td><td class="eqcell">1000 mg</td><td>0.5 g = 500 mg</td></tr>
+  <tr><td class="key">1 mg</td><td class="eqcell">1000 mcg</td><td>0.25 mg = 250 mcg</td></tr>
+  <tr><td class="key">1 g</td><td class="eqcell">1,000,000 mcg</td><td>rarely asked, but true</td></tr>
+  <tr><td class="key">1 L</td><td class="eqcell">1000 mL</td><td>1.5 L = 1500 mL</td></tr>
+  <tr><td class="key">1 mL</td><td class="eqcell">1 cc</td><td>identical &mdash; 30 mL = 30 cc</td></tr>
+  <tr><td class="key">1 grain (gr)</td><td class="eqcell">60 mg</td><td>gr 1/2 = 30 mg &middot; older orders only</td></tr>
+  </tbody></table></div>
+</div>
+
+<!-- ===================== VOLUME ===================== -->
+<h2 class="sys" id="volume">&#129380; Household volume &rarr; mL</h2>
+<div class="panel">
+ <p class="soft" style="margin:0 0 10px">Liquid medications and intake &amp; output. These are the ones that show up over and over.</p>
+ <div class="scroll"><table>
+  <thead><tr><th>Household</th><th>=</th><th>Also equals</th><th>Where it shows up</th></tr></thead><tbody>
+  <tr><td class="key">1 tsp</td><td class="eqcell">5 mL</td><td>&mdash;</td><td>Liquid antibiotics, cough syrup</td></tr>
+  <tr><td class="key">1 tbsp</td><td class="eqcell">15 mL</td><td>3 tsp</td><td>Antacids, laxatives</td></tr>
+  <tr><td class="key">1 fluid ounce (oz)</td><td class="eqcell">30 mL</td><td>2 tbsp &middot; 6 tsp</td><td>Med cups, I&amp;O, tube flushes</td></tr>
+  <tr><td class="key">1 teacup</td><td class="eqcell">180 mL</td><td>6 oz</td><td>I&amp;O trays</td></tr>
+  <tr><td class="key">1 cup / glass</td><td class="eqcell">240 mL</td><td>8 oz &middot; 16 tbsp</td><td>I&amp;O, fluid restriction teaching</td></tr>
+  <tr><td class="key">1 pint</td><td class="eqcell">480 mL</td><td>2 cups &middot; 16 oz</td><td>Blood products, bowel prep</td></tr>
+  <tr><td class="key">1 quart</td><td class="eqcell">960 mL</td><td>2 pints &middot; 4 cups &middot; 32 oz</td><td>Roughly 1 liter</td></tr>
+  <tr><td class="key">1 gallon</td><td class="eqcell">3840 mL</td><td>4 quarts &middot; 128 oz</td><td>Colonoscopy prep</td></tr>
+  </tbody></table></div>
+ <div class="tip"><b>The chain that unlocks most questions:</b> 1 tsp = 5 mL &rarr; 3 tsp = 1 tbsp = 15 mL
+  &rarr; 2 tbsp = 1 oz = 30 mL &rarr; 8 oz = 1 cup = 240 mL. If you only memorize one line on this page, memorize that one.</div>
+</div>
+
+<!-- ===================== WEIGHT ===================== -->
+<h2 class="sys" id="weight">&#9878;&#65039; Body weight &mdash; lb &harr; kg</h2>
+<div class="panel">
+ <div class="scroll"><table>
+  <thead><tr><th>Conversion</th><th>Equals</th><th>Direction</th></tr></thead><tbody>
+  <tr><td class="key">1 kg</td><td class="eqcell">2.2 lb</td><td>lb &rarr; kg: <b>DIVIDE by 2.2</b></td></tr>
+  <tr><td class="key">1 lb</td><td class="eqcell">0.45 kg</td><td>kg &rarr; lb: <b>MULTIPLY by 2.2</b></td></tr>
+  <tr><td class="key">1 lb</td><td class="eqcell">16 oz (weight)</td><td>Newborn weights</td></tr>
+  <tr><td class="key">1 oz (weight)</td><td class="eqcell">about 30 g</td><td>Newborn weights</td></tr>
+  </tbody></table></div>
+ <div class="win"><b>Sanity check:</b> kilograms are always the SMALLER number. A 200 lb client is about 90 kg.
+  If your kg answer is bigger than the lb you started with, you multiplied when you should have divided.</div>
+ <div class="warn"><b>Weight-based orders:</b> convert the weight to <b>kg FIRST</b>, before you touch the dose.
+  Doing it in the wrong order is the single most common weight-based math error.</div>
+</div>
+
+<!-- ===================== MEMORIZE ===================== -->
+<h2 class="sys" id="memorize">&#127919; The short list to memorize</h2>
+<div class="panel">
+ <p class="soft" style="margin:0 0 4px">Everything else on this page can be built from these ten.</p>
+ <div class="mem">
+  <div class="mcard"><div class="v">1 kg = 1000 g</div><div class="l">metric</div></div>
+  <div class="mcard"><div class="v">1 g = 1000 mg</div><div class="l">metric</div></div>
+  <div class="mcard"><div class="v">1 mg = 1000 mcg</div><div class="l">metric</div></div>
+  <div class="mcard"><div class="v">1 L = 1000 mL</div><div class="l">metric</div></div>
+  <div class="mcard"><div class="v">1 tsp = 5 mL</div><div class="l">household</div></div>
+  <div class="mcard"><div class="v">1 tbsp = 15 mL</div><div class="l">= 3 tsp</div></div>
+  <div class="mcard"><div class="v">1 oz = 30 mL</div><div class="l">= 2 tbsp</div></div>
+  <div class="mcard"><div class="v">1 cup = 240 mL</div><div class="l">= 8 oz</div></div>
+  <div class="mcard"><div class="v">1 kg = 2.2 lb</div><div class="l">body weight</div></div>
+  <div class="mcard"><div class="v">1 mL = 1 cc</div><div class="l">same thing</div></div>
+ </div>
+</div>
+
+<!-- ===================== SETUP ===================== -->
+<h2 class="sys" id="setup">&#129504; How to set it up so you stop guessing</h2>
+<div class="panel">
+ <h3>1. The formula for "how much do I give?"</h3>
+ <div class="win" style="font-size:1.12rem"><b>(Desired &divide; Have) &times; Quantity = amount to give</b></div>
+ <p class="soft" style="margin:6px 0 0"><b>Desired</b> = what the order says. <b>Have</b> = the strength on the label.
+  <b>Quantity</b> = the volume or tablets that strength comes in.</p>
+ <div class="scroll" style="margin-top:10px"><table>
+  <thead><tr><th>Order</th><th>Label says</th><th>Set-up</th><th>Answer</th></tr></thead><tbody>
+  <tr><td>metoprolol 50 mg</td><td>25 mg tablets</td><td>(50 &divide; 25) &times; 1 tab</td><td class="eqcell">2 tablets</td></tr>
+  <tr><td>amoxicillin 500 mg</td><td>250 mg per 5 mL</td><td>(500 &divide; 250) &times; 5 mL</td><td class="eqcell">10 mL</td></tr>
+  <tr><td>furosemide 30 mg</td><td>40 mg per 4 mL</td><td>(30 &divide; 40) &times; 4 mL</td><td class="eqcell">3 mL</td></tr>
+  </tbody></table></div>
+
+ <h3 style="margin-top:20px">2. Convert BEFORE you divide</h3>
+ <p class="soft" style="margin:0">The formula only works when Desired and Have are in the <b>same unit</b>.
+  If the order says grams and the bottle says milligrams, fix that first. This is where most wrong answers come from.</p>
+ <div class="tip"><b>Order: 0.5 g. Label: 250 mg tablets.</b><br>
+  Step 1 &mdash; same units: 0.5 g &times; 1000 = <b>500 mg</b><br>
+  Step 2 &mdash; formula: (500 &divide; 250) &times; 1 = <b>2 tablets</b></div>
+
+ <h3 style="margin-top:20px">3. Ask "does this answer make sense?"</h3>
+ <p class="soft" style="margin:0">Half a tablet, 2 tablets, 5&ndash;15 mL of a liquid: reasonable.
+  38 tablets or 0.006 mL: you slipped a decimal. On a test, an answer that is off by exactly 1000
+  almost always means a mg/mcg mix-up.</p>
+</div>
+
+<!-- ===================== TRAPS ===================== -->
+<h2 class="sys" id="traps">&#128680; The traps they write questions about</h2>
+<div class="panel">
+ <div class="warn"><b>Fluid ounce is NOT weight ounce.</b> 1 fluid oz = 30 mL (volume).
+  1 weight oz = about 30 g (mass). Same word, different measurement. Read whether the question is about
+  liquid the client drank or how much something weighs.</div>
+ <div class="warn"><b>mg vs mcg is a 1000-fold error.</b> This is the classic fatal medication error.
+  Digoxin, levothyroxine and fentanyl are commonly ordered in mcg. Slow down whenever both units appear in one problem.</div>
+ <div class="warn"><b>Leading zero YES, trailing zero NO.</b> Write <b>0.5 mg</b>, never <b>.5 mg</b> &mdash; the dot gets
+  missed and it reads as 5 mg. Write <b>5 mg</b>, never <b>5.0 mg</b> &mdash; that reads as 50 mg.
+  This is a test question, not just a style note.</div>
+ <div class="warn"><b>Never abbreviate "units."</b> Write out <b>units</b>. A "U" mistaken for a zero has caused
+  10-fold insulin overdoses. Same for "international units" &mdash; spell it out.</div>
+ <div class="tip"><b>Household measuring is imprecise.</b> Teach clients to use the dosing syringe or the
+  cup that came with the medication, never a kitchen teaspoon. A kitchen "teaspoon" ranges from about 3 to 7 mL.</div>
+ <div class="tip"><b>Rounding:</b> follow whatever your course says. In general, tablets round to the nearest
+  half or whole, mL for adults to the nearest tenth, and IV pump rates to the nearest whole mL/hr.</div>
+</div>
+
+<!-- ===================== IV ===================== -->
+<h2 class="sys" id="iv">&#128137; IV rate math</h2>
+<div class="panel">
+ <div class="scroll"><table>
+  <thead><tr><th>What you want</th><th>Formula</th><th>Example</th></tr></thead><tbody>
+  <tr><td class="key">mL per hour</td><td class="eqcell">total mL &divide; total hours</td><td>1000 mL over 8 hr = <b>125 mL/hr</b></td></tr>
+  <tr><td class="key">gtt per minute</td><td class="eqcell">(mL &times; drop factor) &divide; minutes</td><td>1000 mL, 15 gtt/mL, 480 min = <b>31 gtt/min</b></td></tr>
+  <tr><td class="key">Microdrip shortcut</td><td class="eqcell">60 gtt/mL &rarr; gtt/min = mL/hr</td><td>80 mL/hr = <b>80 gtt/min</b></td></tr>
+  <tr><td class="key">Infusion time</td><td class="eqcell">total mL &divide; mL per hour</td><td>500 mL at 125 mL/hr = <b>4 hours</b></td></tr>
+  </tbody></table></div>
+ <p class="muted" style="margin:10px 0 0">Drop factors: macrodrip sets are 10, 15 or 20 gtt/mL &mdash; the number is
+  printed on the tubing package. Microdrip is always 60 gtt/mL. Drops per minute always round to a whole number.</p>
+</div>
+
+<!-- ===================== PRACTICE ===================== -->
+<h2 class="sys" id="practice">&#9999;&#65039; Practice &mdash; work it, then open it</h2>
+<div class="panel">
+ <p class="soft" style="margin:0 0 10px">Do it on paper first. The answer shows every step, not just the number.</p>
+ <details class="pq"><summary>1. Order: 0.75 g PO. Available: 250 mg tablets. How many tablets?</summary><div class="pa"><div class="ans">3 tablets</div><div class="steps">g -> mg is a SMALLER unit, so multiply by 1000
+0.75 g x 1000 = 750 mg
+750 mg / 250 mg per tab = 3 tablets</div></div></details><details class="pq"><summary>2. Order: 500 mcg. Available: 0.25 mg tablets. How many tablets?</summary><div class="pa"><div class="ans">2 tablets</div><div class="steps">Get both into the same unit first.
+500 mcg / 1000 = 0.5 mg
+0.5 mg / 0.25 mg per tab = 2 tablets</div></div></details><details class="pq"><summary>3. The provider orders 2 tablespoons of a liquid antacid. How many mL?</summary><div class="pa"><div class="ans">30 mL</div><div class="steps">1 tbsp = 15 mL
+2 x 15 = 30 mL   (also = 1 fluid ounce)</div></div></details><details class="pq"><summary>4. A client drank 1 cup of coffee, 6 oz of juice and 240 mL of water. Total intake in mL?</summary><div class="pa"><div class="ans">660 mL</div><div class="steps">1 cup = 240 mL
+6 oz x 30 = 180 mL
+water = 240 mL
+240 + 180 + 240 = 660 mL</div></div></details><details class="pq"><summary>5. A client weighs 176 lb. What is the weight in kg?</summary><div class="pa"><div class="ans">80 kg</div><div class="steps">1 kg = 2.2 lb, so DIVIDE by 2.2
+176 / 2.2 = 80 kg</div></div></details><details class="pq"><summary>6. Order: 15 mg/kg for a client weighing 44 lb. How many mg?</summary><div class="pa"><div class="ans">300 mg</div><div class="steps">Convert the weight FIRST.
+44 / 2.2 = 20 kg
+20 kg x 15 mg/kg = 300 mg</div></div></details><details class="pq"><summary>7. Order: amoxicillin 375 mg PO. Available: 250 mg per 5 mL. How many mL? How many tsp?</summary><div class="pa"><div class="ans">7.5 mL  =  1.5 tsp</div><div class="steps">Desired / Have x Quantity
+375 / 250 x 5 = 7.5 mL
+7.5 / 5 = 1.5 tsp</div></div></details><details class="pq"><summary>8. Convert 0.04 mg to mcg.</summary><div class="pa"><div class="ans">40 mcg</div><div class="steps">mg -> mcg is SMALLER, so multiply by 1000
+0.04 x 1000 = 40 mcg
+(decimal hops 3 places RIGHT)</div></div></details><details class="pq"><summary>9. A client is to drink 1.5 L of fluid per day. How many 8 oz cups is that?</summary><div class="pa"><div class="ans">About 6 cups</div><div class="steps">1.5 L = 1500 mL
+1 cup = 8 oz = 240 mL
+1500 / 240 = 6.25, so about 6 cups</div></div></details><details class="pq"><summary>10. Infuse 1000 mL over 8 hours. What is the rate in mL/hr?</summary><div class="pa"><div class="ans">125 mL/hr</div><div class="steps">Total volume / total hours
+1000 / 8 = 125 mL/hr</div></div></details><details class="pq"><summary>11. A child weighing 33 lb is ordered 5 mg/kg/day divided into 3 doses. How many mg per dose?</summary><div class="pa"><div class="ans">25 mg per dose</div><div class="steps">33 / 2.2 = 15 kg
+15 x 5 = 75 mg per DAY
+75 / 3 doses = 25 mg per dose</div></div></details><details class="pq"><summary>12. Available: 1 gram in 50 mL. The order is 400 mg. How many mL?</summary><div class="pa"><div class="ans">20 mL</div><div class="steps">1 g = 1000 mg
+400 / 1000 x 50 = 20 mL</div></div></details>
+ <div class="btnrow">
+  <a class="btn" href="NUR198%20Mega%20Quiz.html">&#129504; More practice in the Mega Quiz &rarr; 💊 Dosage Calc</a>
+ </div>
+</div>
+
+<div class="foot">NUR198 &middot; Conversions &amp; Dosage Math &middot; always confirm rounding rules and
+ accepted equivalents against your own course materials and facility policy.</div>
+</div>
+
+<script>
+(function(){
+ var MASS=[["kg", "kg  (kilogram)", 1000000], ["g", "g  (gram)", 1000], ["mg", "mg  (milligram)", 1], ["mcg", "mcg  (microgram)", 0.001], ["lb", "lb  (pound)", 454545.4545454545], ["ozwt", "oz  (ounce, WEIGHT)", 28409.09090909091], ["gr", "gr  (grain)", 60]], VOL=[["L", "L  (liter)", 1000], ["mL", "mL  (milliliter = cc)", 1], ["tsp", "tsp  (teaspoon)", 5], ["tbsp", "tbsp  (tablespoon)", 15], ["ozfl", "oz  (fluid ounce)", 30], ["cup", "cup", 240], ["pt", "pint", 480], ["qt", "quart", 960], ["gal", "gallon", 3840]];
+ var val=document.getElementById('cval'), from=document.getElementById('cfrom'), to=document.getElementById('cto');
+ var out=document.getElementById('out'), work=document.getElementById('work'), note=document.getElementById('note');
+ var tabV=document.getElementById('tabV'), tabM=document.getElementById('tabM'), tabT=document.getElementById('tabT');
+ var uconv=document.getElementById('uconv'), tconv=document.getElementById('tconv');
+ var tval=document.getElementById('tval'), tfrom=document.getElementById('tfrom');
+ var mode='V', SET=VOL;
+
+ function fmt(n){
+   if(!isFinite(n)) return '--';
+   if(n!==0 && Math.abs(n)<0.0001) return n.toExponential(3);
+   var r=Math.round(n*10000)/10000;
+   return r.toLocaleString(undefined,{maximumFractionDigits:4});
+ }
+ function shortLbl(k){ return k==='ozfl'?'oz (fluid)' : k==='ozwt'?'oz (weight)' : k; }
+
+ function fill(sel,set,pick){
+   sel.innerHTML=set.map(function(u){return '<option value="'+u[0]+'">'+u[1]+'</option>';}).join('');
+   sel.value=pick;
+ }
+ function load(set,a,b){
+   SET=set; fill(from,set,a); fill(to,set,b); calc();
+ }
+ function factor(k){ for(var i=0;i<SET.length;i++){ if(SET[i][0]===k) return SET[i][2]; } return 1; }
+
+ function calc(){
+   var v=parseFloat(val.value);
+   if(isNaN(v)){ out.textContent='--'; work.textContent='Type a number above.'; note.textContent=''; return; }
+   var f=factor(from.value), t=factor(to.value);
+   var res=v*f/t;
+   var base=(mode==='M')?'mg':'mL';
+   out.textContent=fmt(v)+' '+shortLbl(from.value)+'  =  '+fmt(res)+' '+shortLbl(to.value);
+   var ratio=f/t;
+   var line;
+   if(ratio===1){ line='Same size unit -- the number does not change.'; }
+   else if(ratio>1){ line=fmt(v)+' x '+fmt(ratio)+'  =  '+fmt(res)+'   (going to a SMALLER unit, so the number gets BIGGER)'; }
+   else { line=fmt(v)+' / '+fmt(1/ratio)+'  =  '+fmt(res)+'   (going to a BIGGER unit, so the number gets SMALLER)'; }
+   work.textContent=line;
+   note.textContent='1 '+shortLbl(from.value)+' = '+fmt(f)+' '+base+'   |   1 '+shortLbl(to.value)+' = '+fmt(t)+' '+base;
+ }
+ function tcalc(){
+   var v=parseFloat(tval.value);
+   if(isNaN(v)){ out.textContent='--'; work.textContent='Type a number above.'; note.textContent=''; return; }
+   if(tfrom.value==='F'){
+     var c=(v-32)*5/9;
+     out.textContent=fmt(v)+' F  =  '+fmt(Math.round(c*10)/10)+' C';
+     work.textContent='C = (F - 32) x 5/9\n    = ('+fmt(v)+' - 32) x 5/9  =  '+fmt(Math.round(c*10)/10);
+   } else {
+     var fa=v*9/5+32;
+     out.textContent=fmt(v)+' C  =  '+fmt(Math.round(fa*10)/10)+' F';
+     work.textContent='F = (C x 9/5) + 32\n    = ('+fmt(v)+' x 9/5) + 32  =  '+fmt(Math.round(fa*10)/10);
+   }
+   note.textContent='Normal body temp 36.5-37.5 C  =  97.7-99.5 F   |   Fever at or above 38 C = 100.4 F';
+ }
+ function run(){ (mode==='T'?tcalc:calc)(); }
+
+ function setTab(which){
+   mode=which;
+   tabV.classList.toggle('on',which==='V');
+   tabM.classList.toggle('on',which==='M');
+   tabT.classList.toggle('on',which==='T');
+   uconv.style.display=(which==='T')?'none':'';
+   tconv.style.display=(which==='T')?'':'none';
+   if(which==='V'){ load(VOL,'tsp','mL'); }
+   else if(which==='M'){ load(MASS,'g','mg'); }
+   else { tcalc(); }
+ }
+ tabV.addEventListener('click',function(){setTab('V');});
+ tabM.addEventListener('click',function(){setTab('M');});
+ tabT.addEventListener('click',function(){setTab('T');});
+ document.getElementById('cswap').addEventListener('click',function(){
+   var a=from.value; from.value=to.value; to.value=a; calc();
+ });
+ ['input','change'].forEach(function(e){
+   val.addEventListener(e,run); from.addEventListener(e,run); to.addEventListener(e,run);
+   tval.addEventListener(e,run); tfrom.addEventListener(e,run);
+ });
+ setTab('V');
+})();
+</script>
+</body></html>
