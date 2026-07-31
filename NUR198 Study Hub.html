@@ -84,6 +84,175 @@ body{
    </div>
  </div>
  <div class="wrap">
+<!-- ═══════════ SITE SEARCH ═══════════ -->
+<style>
+#siteSearch{position:relative;margin:0 0 18px}
+#siteSearch .ssbox{
+  background:rgba(20,11,36,.62);
+  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+  border:1px solid rgba(255,255,255,.30);border-radius:16px;
+  padding:13px 15px;box-shadow:0 8px 26px rgba(0,0,0,.42);
+}
+#siteSearch h2{margin:0 0 3px;font-size:1.05rem;font-weight:900;color:#fff}
+#siteSearch .sshint{margin:0 0 9px;font-size:.79rem;opacity:.85;color:#fff}
+#siteSearch .ssrow{display:flex;gap:8px;align-items:center}
+#ssInput{
+  flex:1;min-width:0;background:rgba(255,255,255,.13);color:#fff;
+  border:1px solid rgba(255,255,255,.34);border-radius:999px;
+  padding:10px 16px;font-size:1rem;font-family:inherit;outline:none;
+}
+#ssInput::placeholder{color:rgba(255,255,255,.62)}
+#ssInput:focus{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.19)}
+#ssClear{
+  background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.32);
+  border-radius:999px;width:36px;height:36px;font-size:1rem;cursor:pointer;font-family:inherit;flex:0 0 auto;
+}
+#ssClear:hover{background:rgba(255,255,255,.3)}
+#ssStatus{margin-top:8px;font-size:.79rem;opacity:.88;color:#fff}
+#ssResults{margin-top:9px;max-height:60vh;overflow:auto;display:none}
+#ssResults.on{display:block}
+#ssResults a.ssr{
+  display:block;text-decoration:none;color:#fff;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.19);
+  border-left:5px solid rgba(157,92,255,.9);
+  border-radius:12px;padding:9px 12px;margin-bottom:7px;transition:background .12s;
+}
+#ssResults a.ssr:hover,#ssResults a.ssr:focus{background:rgba(255,255,255,.2);outline:none}
+#ssResults a.ssr.s-lab{border-left-color:rgba(0,194,199,.95)}
+#ssResults a.ssr.s-drug{border-left-color:rgba(255,138,61,.95)}
+#ssResults .ssh{font-weight:800;font-size:.94rem;line-height:1.35;margin-bottom:2px}
+#ssResults .sst{font-size:.83rem;opacity:.9;line-height:1.4}
+#ssResults .ssmeta{font-size:.68rem;font-weight:900;letter-spacing:.9px;text-transform:uppercase;opacity:.85;margin-bottom:3px}
+#ssResults .badge{display:inline-block;border-radius:999px;padding:1px 8px;margin-right:6px;font-size:.66rem;font-weight:900}
+#ssResults .b-198{background:rgba(157,92,255,.95);color:#fff}
+#ssResults .b-lab{background:rgba(0,194,199,.95);color:#04262a}
+#ssResults .b-drug{background:rgba(255,138,61,.95);color:#2b1400}
+#ssResults mark{background:rgba(255,194,51,.95);color:#231a02;padding:0 2px;border-radius:3px;font-weight:800}
+@media(max-width:620px){#ssResults{max-height:70vh}}
+</style>
+
+<div id="siteSearch">
+  <div class="ssbox">
+    <h2>&#128269; Search everything</h2>
+    <p class="sshint">Looks across <b>NUR 198</b>, <b>Labs &amp; Diagnostics</b>, and the <b>Drug Guide</b> at once. Try <i>blood transfusion</i>, <i>potassium</i>, <i>digoxin</i>. Press <b>/</b> to jump here.</p>
+    <div class="ssrow">
+      <input id="ssInput" type="search" placeholder="Search labs, drugs, topics&hellip;" autocomplete="off" spellcheck="false">
+      <button id="ssClear" title="Clear">&#10005;</button>
+    </div>
+    <div id="ssStatus"></div>
+    <div id="ssResults"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var IDX_URL='search-index.json';
+  var input=document.getElementById('ssInput'),
+      results=document.getElementById('ssResults'),
+      status=document.getElementById('ssStatus'),
+      clearBtn=document.getElementById('ssClear');
+  var DATA=null, loading=false, pending=null;
+
+  function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+
+  function load(cb){
+    if(DATA){cb();return;}
+    if(loading){pending=cb;return;}
+    loading=true; status.textContent='Loading the search index\u2026';
+    fetch(IDX_URL,{cache:'force-cache'})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(j){ DATA=j; loading=false; status.textContent=''; cb(); if(pending){var p=pending;pending=null;p();} })
+      .catch(function(e){ loading=false;
+        status.innerHTML='Could not load the search index ('+esc(String(e.message||e))+'). Try reloading the page.'; });
+  }
+
+  function terms(q){
+    return q.toLowerCase().split(/[^a-z0-9\u00c0-\u024f+]+/).filter(function(w){return w.length>1;});
+  }
+
+  function score(e,ws,pageTitle){
+    var h=e.h.toLowerCase(), t=e.t.toLowerCase(), pt=pageTitle.toLowerCase(), s=0;
+    for(var i=0;i<ws.length;i++){
+      var w=ws[i], inH=h.indexOf(w)>=0, inT=t.indexOf(w)>=0, inP=pt.indexOf(w)>=0;
+      if(!inH&&!inT&&!inP) return 0;            /* every term must appear somewhere */
+      if(inH) s+=12;
+      if(inP) s+=4;
+      var from=0,c=0; while((from=t.indexOf(w,from))>=0){c++;from+=w.length;} s+=c;
+      /* a word-boundary hit in the heading is the strongest signal */
+      if(new RegExp('\\b'+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).test(h)) s+=8;
+    }
+    return s;
+  }
+
+  function hi(text,ws){
+    var out=esc(text);
+    ws.forEach(function(w){
+      var re=new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
+      out=out.replace(re,'<mark>$1</mark>');
+    });
+    return out;
+  }
+
+  function linkFor(page,e){
+    if(e.a) return page.u+'#'+encodeURIComponent(e.a);
+    /* no id to anchor to - use a text fragment so the browser scrolls to it */
+    var frag=e.h.split(/\s+/).slice(0,8).join(' ').replace(/[^\w\s'\-,.()\/]/g,'').trim();
+    return frag.length>3 ? page.u+'#:~:text='+encodeURIComponent(frag) : page.u;
+  }
+
+  function run(){
+    var q=input.value.trim();
+    if(q.length<2){ results.classList.remove('on'); results.innerHTML=''; status.textContent=''; return; }
+    load(function(){
+      var ws=terms(q);
+      if(!ws.length){ results.classList.remove('on'); return; }
+      var hits=[];
+      for(var i=0;i<DATA.entries.length;i++){
+        var e=DATA.entries[i], pg=DATA.pages[e.p];
+        var s=score(e,ws,pg.t||'');
+        if(s>0) hits.push([s,e,pg]);
+      }
+      hits.sort(function(a,b){return b[0]-a[0];});
+      var total=hits.length;
+      hits=hits.slice(0,40);
+      if(!total){
+        results.classList.remove('on'); results.innerHTML='';
+        status.textContent='No matches for \u201c'+q+'\u201d.';
+        return;
+      }
+      status.innerHTML='<b>'+total+'</b> match'+(total===1?'':'es')+(total>40?' \u00b7 showing the best 40':'');
+      var html='';
+      hits.forEach(function(row){
+        var e=row[1], pg=row[2];
+        html+='<a class="ssr s-'+esc(pg.s)+'" href="'+esc(linkFor(pg,e))+'" target="_blank" rel="noopener">'+
+              '<div class="ssmeta"><span class="badge b-'+esc(pg.s)+'">'+
+              esc(pg.s==='198'?'NUR 198':pg.s==='lab'?'Labs & Dx':'Drug Guide')+'</span>'+esc(pg.t||'')+'</div>'+
+              '<div class="ssh">'+hi(e.h,ws)+'</div>'+
+              (e.t?'<div class="sst">'+hi(e.t,ws)+'</div>':'')+'</a>';
+      });
+      results.innerHTML=html;
+      results.classList.add('on');
+    });
+  }
+
+  var timer=null;
+  input.addEventListener('input',function(){ clearTimeout(timer); timer=setTimeout(run,130); });
+  input.addEventListener('focus',function(){ load(function(){}); });
+  input.addEventListener('keydown',function(ev){
+    if(ev.key==='Escape'){ input.value=''; run(); input.blur(); }
+    if(ev.key==='Enter'){ var a=results.querySelector('a.ssr'); if(a) window.open(a.href,'_blank','noopener'); }
+  });
+  clearBtn.addEventListener('click',function(){ input.value=''; run(); input.focus(); });
+  document.addEventListener('keydown',function(ev){
+    if(ev.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement||{}).tagName||'')){
+      ev.preventDefault(); input.focus(); input.scrollIntoView({block:'center',behavior:'smooth'});
+    }
+  });
+})();
+</script>
+<!-- ═══════════ /SITE SEARCH ═══════════ -->
+
    <div class="lead" id="start"><h2>🚀 Start here</h2>
      <p>Your one home base. Open <b>Study Plan</b> to see today's focus (recall first, then review), then use the <b>Mega Quiz</b> to test yourself. Each exam has its own full guide below. Do your <b>15-min dosage/pharm drill</b> every day — it's your biggest point-leak.</p></div>
 
