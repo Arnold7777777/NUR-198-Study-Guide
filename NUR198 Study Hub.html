@@ -120,6 +120,8 @@ body{
 #ssResults a.ssr:hover,#ssResults a.ssr:focus{background:rgba(255,255,255,.2);outline:none}
 #ssResults a.ssr.s-lab{border-left-color:rgba(0,194,199,.95)}
 #ssResults a.ssr.s-drug{border-left-color:rgba(255,138,61,.95)}
+#ssResults a.ssr.s-125{border-left-color:rgba(47,107,255,.95)}
+#ssResults a.ssr.s-175{border-left-color:rgba(18,184,134,.95)}
 #ssResults .ssh{font-weight:800;font-size:.94rem;line-height:1.35;margin-bottom:2px}
 #ssResults .sst{font-size:.83rem;opacity:.9;line-height:1.4}
 #ssResults .ssmeta{font-size:.68rem;font-weight:900;letter-spacing:.9px;text-transform:uppercase;opacity:.85;margin-bottom:3px}
@@ -127,6 +129,8 @@ body{
 #ssResults .b-198{background:rgba(157,92,255,.95);color:#fff}
 #ssResults .b-lab{background:rgba(0,194,199,.95);color:#04262a}
 #ssResults .b-drug{background:rgba(255,138,61,.95);color:#2b1400}
+#ssResults .b-125{background:rgba(47,107,255,.95);color:#fff}
+#ssResults .b-175{background:rgba(18,184,134,.95);color:#fff}
 #ssResults mark{background:rgba(255,194,51,.95);color:#231a02;padding:0 2px;border-radius:3px;font-weight:800}
 @media(max-width:620px){#ssResults{max-height:70vh}}
 </style>
@@ -134,7 +138,7 @@ body{
 <div id="siteSearch">
   <div class="ssbox">
     <h2>&#128269; Search everything</h2>
-    <p class="sshint">Looks across <b>NUR 198</b>, <b>Labs &amp; Diagnostics</b>, and the <b>Drug Guide</b> at once. Try <i>blood transfusion</i>, <i>potassium</i>, <i>digoxin</i>. Press <b>/</b> to jump here.</p>
+    <p class="sshint">Looks across <b>NUR 198</b>, <b>NUR 125</b>, <b>NUR 175</b>, <b>Labs &amp; Diagnostics</b>, and the <b>Drug Guide</b> &mdash; all at once. Try <i>blood transfusion</i>, <i>potassium</i>, <i>delirium</i>, <i>hand hygiene</i>. Press <b>/</b> to jump here.</p>
     <div class="ssrow">
       <input id="ssInput" type="search" placeholder="Search labs, drugs, topics&hellip;" autocomplete="off" spellcheck="false">
       <button id="ssClear" title="Clear">&#10005;</button>
@@ -152,6 +156,7 @@ body{
       status=document.getElementById('ssStatus'),
       clearBtn=document.getElementById('ssClear');
   var DATA=null, loading=false, pending=null;
+  var SITE_LABEL={'198':'NUR 198','125':'NUR 125','175':'NUR 175','lab':'Labs & Dx','drug':'Drug Guide'};
 
   function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
 
@@ -226,7 +231,7 @@ body{
         var e=row[1], pg=row[2];
         html+='<a class="ssr s-'+esc(pg.s)+'" href="'+esc(linkFor(pg,e))+'" target="_blank" rel="noopener">'+
               '<div class="ssmeta"><span class="badge b-'+esc(pg.s)+'">'+
-              esc(pg.s==='198'?'NUR 198':pg.s==='lab'?'Labs & Dx':'Drug Guide')+'</span>'+esc(pg.t||'')+'</div>'+
+              esc(SITE_LABEL[pg.s]||pg.s)+'</span>'+esc(pg.t||'')+'</div>'+
               '<div class="ssh">'+hi(e.h,ws)+'</div>'+
               (e.t?'<div class="sst">'+hi(e.t,ws)+'</div>':'')+'</a>';
       });
