@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 &middot; Respiratory I Guided Notes (Dr. K)</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:.7rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:.76rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:.7rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:.8rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">&#127968; Home</a>
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 &middot; Exam 2 &middot; Respiratory &middot; Dr. K's Framework</div>
+  <h1>Respiratory I: Upper Respiratory Disorders &amp; <span class="glow">Gas Exchange</span></h1>
+  <p>Dr. K's guided notes, filled in. Based on &ldquo;Respiratory I: Gas Exchange &mdash; Nursing Management of Clients with Upper Respiratory Disorders.&rdquo;</p>
+  <div class="bigq"><b class="q">The BIG question of this module: Can the patient oxygenate effectively?</b>
+   If not &mdash; <b>Why?</b> &middot; <b>What assessment findings support that?</b> &middot; <b>What should the nurse do first?</b>
+   <br>That is the clinical judgment thinking we are building all through NUR 198.</div>
+ </div>
+
+ <div class="bar">
+  <button id="toggle">&#128584; Hide answers &mdash; quiz me</button>
+  <span class="tip" id="tip">Every highlighted answer was a blank in Dr. K's handout.</span>
+ </div>
+
+ <div class="toc"><a href="#assess">Basic Respiratory Assessment Review</a><a href="#gas">Gas Exchange Overview &mdash; the 5 steps</a><a href="#vo">Ventilation vs Oxygenation</a><a href="#hypox">Hypoxemia vs Hypoxia</a><a href="#manif">Manifestations of Hypoxia</a><a href="#wob">Work of Breathing &mdash; Restrictive vs Obstructive</a><a href="#uri">Upper Respiratory Infections (URIs)</a><a href="#prior">Prioritization Practice</a><a href="#osa">Obstructive Sleep Apnea (OSA)</a><a href="#case">Respiratory Case Study #1</a><a href="#epi">Epistaxis</a><a href="#laryn">Laryngeal Obstruction &amp; Cancer of the Larynx</a><a href="#nclex">NCLEX-Style Questions</a><a href="#final">Final Clinical Judgment Reminder</a></div>
+ <div class="card" id="assess" style="--jewel:var(--teal)"><h2>&#129658; Basic Respiratory Assessment Review</h2>
+<p class="lead-in">When assessing a respiratory patient, I should ALWAYS look at:</p>
+<ul>
+<li><b>Respiratory rate</b> &mdash; <span class="fill">normal adult 12&ndash;20/min; under 12 or over 20 needs a second look</span> Count for a full minute if it is irregular.</li>
+<li><b>Respiratory depth</b> &mdash; <span class="fill">shallow vs deep &mdash; shallow breathing moves little air even at a normal rate</span></li>
+<li><b>Respiratory effort</b> &mdash; <span class="fill">relaxed vs labored; is the patient working to breathe or is it effortless?</span></li>
+<li><b>Work of breathing</b> &mdash; <span class="fill">retractions, nasal flaring, tripod positioning, grunting, pursed-lip breathing</span></li>
+<li><b>Lung sounds</b> &mdash; <span class="fill">all fields front and back &mdash; clear, crackles, wheezes, stridor, diminished, or absent</span></li>
+<li><b>Oxygen saturation</b> &mdash; <span class="fill">95&ndash;100% normally; 88&ndash;92% is the target in COPD/CO2 retainers</span></li>
+<li><b>Skin color</b> &mdash; <span class="fill">pink vs pale, dusky, mottled, or cyanotic &mdash; cyanosis is a LATE sign</span></li>
+<li><b>Mental status / LOC</b> &mdash; <span class="fill">restlessness, anxiety, and irritability come FIRST; confusion and somnolence come later</span></li>
+<li><b>Use of accessory muscles</b> &mdash; <span class="fill">sternocleidomastoid and scalene use, intercostal retractions &mdash; a sign of real distress</span></li>
+</ul>
+<p><mark>The two that change first are respiratory rate and mental status.</mark> Saturation and skin color change late &mdash; do not wait for them.</p>
+</div><div class="card" id="gas" style="--jewel:var(--sapphire)"><h2>&#128168; Gas Exchange Overview &mdash; the 5 steps</h2>
+<p>Respiratory function is the body moving oxygen from the <b>AIR</b> into the <b>CELLS</b>. Five things have to work. Ask which one broke.</p>
+<div class="flow">
+ <div class="stepbox"><b>Step 1</b><span>Ventilation &mdash; air moves in and out</span></div><div class="arrow">&rarr;</div>
+ <div class="stepbox"><b>Step 2</b><span>Air reaches the alveoli</span></div><div class="arrow">&rarr;</div>
+ <div class="stepbox"><b>Step 3</b><span>Gas exchange across the membrane</span></div><div class="arrow">&rarr;</div>
+ <div class="stepbox"><b>Step 4</b><span>Oxygen binds hemoglobin</span></div><div class="arrow">&rarr;</div>
+ <div class="stepbox"><b>Step 5</b><span>Perfusion delivers it to tissue</span></div>
+</div>
+
+<h3>Step 1: Ventilation</h3>
+<p class="q">Can the patient physically move air?</p>
+<p class="lead-in">Examples of ventilation problems:</p>
+<ul class="blanks"><li><span class="fill">Opioid overdose or oversedation &mdash; the drive to breathe is suppressed</span></li><li><span class="fill">Neuromuscular disease &mdash; Guillain-Barre, myasthenia gravis, spinal cord injury</span></li><li><span class="fill">Chest wall or mechanical limits &mdash; flail chest, obesity, post-op pain and splinting</span></li></ul>
+<p><b>Poor ventilation causes:</b> &uarr;CO<sub>2</sub> &rarr; <span class="fill">respiratory acidosis &mdash; pH falls, and the patient gets drowsy, headachy, then confused</span></p>
+
+<h3>Step 2: Air Reaches the Alveoli</h3>
+<p class="lead-in">Problems that interfere:</p>
+<ul class="blanks"><li><span class="fill">Secretions or mucus plugging</span></li><li><span class="fill">Bronchospasm and airway swelling (asthma, anaphylaxis)</span></li><li><span class="fill">Atelectasis, tumor, or a foreign body blocking the airway</span></li></ul>
+<p><b>Result:</b> less oxygen available for exchange.</p>
+
+<h3>Step 3: Gas Exchange</h3>
+<p><b>Oxygen moves:</b> <span class="fill">from the alveolus into the pulmonary capillary blood, down its pressure gradient</span></p>
+<p><b>Carbon dioxide moves:</b> <span class="fill">from the blood back into the alveolus, and out with exhalation</span></p>
+<p class="lead-in">Conditions that impair gas exchange:</p>
+<ul class="blanks"><li><span class="fill">Pneumonia &mdash; the alveoli fill with exudate</span></li><li><span class="fill">Pulmonary edema &mdash; fluid widens the distance oxygen must cross</span></li><li><span class="fill">ARDS, pulmonary fibrosis, or emphysema &mdash; the membrane itself is damaged or destroyed</span></li></ul>
+
+<h3>Step 4: Oxygen Binds to Hemoglobin</h3>
+<p>Even with perfect lungs, oxygen still needs a ride.</p>
+<p class="lead-in">Problems:</p>
+<ul class="blanks"><li><span class="fill">Anemia or acute blood loss &mdash; not enough hemoglobin to carry oxygen</span></li><li><span class="fill">Carbon monoxide poisoning &mdash; CO binds hemoglobin far more tightly than oxygen does</span></li></ul>
+<p><b>Low hemoglobin can cause:</b> <span class="fill">tissue hypoxia even when SpO2 and PaO2 look normal &mdash; there are simply fewer carriers</span></p>
+
+<h3>Step 5: Perfusion</h3>
+<p class="lead-in">Perfusion problems:</p>
+<ul class="blanks"><li><span class="fill">Shock or hypotension &mdash; not enough pressure to deliver blood</span></li><li><span class="fill">Heart failure or low cardiac output</span></li><li><span class="fill">Pulmonary embolism &mdash; blood cannot reach ventilated alveoli</span></li></ul>
+
+<h3>&#128202; BIG Picture</h3>
+<p>Respiratory problems usually come down to: poor air movement &middot; blocked alveoli &middot; impaired gas exchange &middot; low hemoglobin &middot; poor perfusion. <mark>Name which one before you pick an intervention.</mark></p>
+</div><div class="card" id="vo" style="--jewel:var(--amethyst)"><h2>&#128260; Ventilation vs Oxygenation</h2>
+<p>Two different failures. They are treated differently, so name which one you are looking at.</p>
+<table class="cmp">
+<thead><tr><th></th><th>Ventilation &mdash; "move AIR"</th><th>Oxygenation &mdash; "move OXYGEN"</th></tr></thead>
+<tbody>
+<tr><td class="k">Main problem</td><td><span class="fill">CO2 retention &mdash; hypercapnia</span></td><td><span class="fill">low oxygen in the blood &mdash; hypoxemia</span></td></tr>
+<tr><td class="k">What the labs show</td><td><span class="fill">&uarr;PaCO2 with a falling pH (respiratory acidosis)</span></td><td><span class="fill">&darr;PaO2 and &darr;SpO2, with PaCO2 often normal or low at first</span></td></tr>
+<tr><td class="k">Examples</td><td>COPD &middot; opioid overdose &middot; hypoventilation</td><td>Pulmonary edema &middot; pneumonia &middot; pulmonary embolism</td></tr>
+<tr><td class="k">Fix aimed at</td><td><span class="fill">helping them move air &mdash; reverse the sedation, support ventilation, BiPAP</span></td><td><span class="fill">improving exchange &mdash; oxygen, treat the pneumonia or the edema</span></td></tr>
+</tbody></table>
+<p><mark>Oxygen alone does not fix a ventilation problem.</mark> If the patient is not moving air, giving more oxygen does not remove the CO<sub>2</sub>.</p>
+</div><div class="card" id="hypox" style="--jewel:var(--garnet)"><h2>&#129656; Hypoxemia vs Hypoxia</h2>
+<table class="cmp">
+<thead><tr><th></th><th>Hypoxemia</th><th>Hypoxia</th></tr></thead>
+<tbody>
+<tr><td class="k">Where</td><td>Low oxygen in the <b>BLOOD</b></td><td>Low oxygen at the <b>TISSUE</b></td></tr>
+<tr><td class="k">Usually caused by</td><td><span class="fill">a problem in the lung &mdash; V/Q mismatch, shunt, poor diffusion, or hypoventilation</span></td><td><span class="fill">a problem with delivery or use &mdash; the lungs may be fine</span></td></tr>
+<tr><td class="k">Examples</td><td><span class="fill">pneumonia &middot; pulmonary edema &middot; PE &middot; atelectasis &middot; COPD exacerbation</span></td><td><span class="fill">anemia &middot; carbon monoxide poisoning &middot; shock or low cardiac output &middot; severe hemorrhage</span></td></tr>
+</tbody></table>
+<p><mark>A patient can have normal lungs and still be hypoxic.</mark> That is the whole point of this section &mdash; anemia, carbon monoxide, and shock all starve tissue while the lungs look fine.</p>
+<h3>&#129504; NCLEX clinical judgment thinking</h3>
+<p>When a patient deteriorates, ask which of the four broke:</p>
+<ul><li><b>Ventilation?</b> Are they moving air?</li><li><b>Gas exchange?</b> Is the membrane working?</li>
+<li><b>Perfusion?</b> Is blood getting there?</li><li><b>Hemoglobin?</b> Is there anything to carry it?</li></ul>
+</div><div class="card" id="manif" style="--jewel:var(--ruby)"><h2>&#128680; Manifestations of Hypoxia</h2>
+<table class="cmp">
+<thead><tr><th>Early signs &mdash; act here</th><th>Late signs &mdash; already in trouble</th></tr></thead>
+<tbody><tr>
+<td><span class="fill">Restlessness &middot; anxiety &middot; irritability &middot; tachypnea &middot; tachycardia &middot; mild hypertension &middot; pallor</span></td>
+<td><span class="fill">Cyanosis &middot; bradycardia &middot; hypotension &middot; dysrhythmias &middot; confusion &rarr; somnolence &rarr; unresponsive</span></td>
+</tr></tbody></table>
+<p><span class="never">Cyanosis is a late sign.</span> If you are waiting for it to confirm hypoxia, you waited too long.</p>
+
+<h3>Why does the body respond this way?</h3>
+<h4>Tachycardia &mdash; why?</h4><p><span class="fill">The heart speeds up to push the oxygen it does have around faster &mdash; a compensatory rise in cardiac output.</span></p>
+<h4>Tachypnea &mdash; why?</h4><p><span class="fill">Chemoreceptors sense the falling oxygen and rising CO2 and drive faster breathing to blow off CO2 and pull in more oxygen.</span></p>
+<h4>Restlessness &mdash; why?</h4><p><span class="fill">The brain is the most oxygen-sensitive organ in the body. Cerebral hypoxia shows up as restlessness and anxiety before anything else changes &mdash; which is exactly why a "difficult, agitated" patient may be hypoxic, not difficult.</span></p>
+</div><div class="card" id="wob" style="--jewel:var(--citrine)"><h2>&#128170; Work of Breathing &mdash; Restrictive vs Obstructive</h2>
+<table class="cmp">
+<thead><tr><th></th><th>Restrictive</th><th>Obstructive</th></tr></thead>
+<tbody>
+<tr><td class="k">Problem</td><td>Difficulty getting air <span class="fill">IN</span></td><td>Difficulty getting air <span class="fill">OUT</span></td></tr>
+<tr><td class="k">Examples</td><td><span class="fill">Pulmonary fibrosis &middot; pneumonia &middot; atelectasis &middot; pleural effusion &middot; obesity &middot; kyphoscoliosis &middot; neuromuscular disease</span></td><td><span class="fill">COPD &mdash; emphysema and chronic bronchitis &middot; asthma</span></td></tr>
+<tr><td class="k">Expected findings</td><td><span class="fill">Rapid shallow breathing &middot; decreased lung volumes &middot; decreased compliance &middot; dyspnea on exertion</span></td><td><span class="fill">Prolonged expiratory phase &middot; wheezing &middot; air trapping and barrel chest &middot; decreased FEV1/FVC</span></td></tr>
+</tbody></table>
+<p><mark>Restrictive = cannot fill. Obstructive = cannot empty.</mark></p>
+</div><div class="card" id="uri" style="--jewel:var(--emerald)"><h2>&#129440; Upper Respiratory Infections (URIs)</h2>
+<p>URIs involve the <b>nose, sinuses, pharynx, and larynx</b>.</p>
+<p><b>Most URIs are:</b> <span class="fill">viral</span></p>
+<p><b>Because of this, antibiotics are:</b> <span class="fill">not indicated &mdash; they do nothing for a virus. Reserve them for a confirmed bacterial cause such as strep.</span></p>
+
+<h3>Common manifestations</h3>
+<ul><li>Nasal congestion &middot; rhinorrhea &middot; sore throat &middot; hoarseness &middot; cough &middot; fatigue &middot; fever</li></ul>
+
+<h3>URI nursing priorities</h3>
+<ul><li>Maintain the <b>airway</b> &mdash; always first</li><li>Hydration to thin secretions</li>
+<li>Reduce aspiration risk</li><li>Patient education</li><li>Prevent complications</li></ul>
+
+<h3>&#128680; URI RED FLAG findings &mdash; require immediate follow-up</h3>
+<ul class="blanks"><li><span class="fill"><b>Stridor</b> &mdash; the upper airway is narrowing</span></li><li><span class="fill"><b>Drooling</b> or inability to swallow secretions</span></li><li><span class="fill">Muffled "hot potato" voice, or trouble speaking</span></li><li><span class="fill">Severe dyspnea, accessory muscle use, cyanosis, or a falling LOC</span></li></ul>
+
+<h3>Rhinitis / Rhinosinusitis</h3>
+<p class="lead-in">Expected findings:</p>
+<ul class="blanks"><li><span class="fill">Nasal congestion and rhinorrhea</span></li><li><span class="fill">Facial pain and pressure over the sinuses, worse when bending forward</span></li><li><span class="fill">Postnasal drip, headache, reduced sense of smell</span></li></ul>
+<p><b>Why does sinus pressure occur?</b> <span class="fill">Swollen, inflamed mucosa blocks the sinus openings so mucus cannot drain. The sinus is a fixed bony box &mdash; trapped mucus has nowhere to go, so pressure builds.</span></p>
+
+<h3>Pharyngitis</h3>
+<p class="lead-in">Expected findings:</p>
+<ul class="blanks"><li><span class="fill">Sore throat and pain with swallowing</span></li><li><span class="fill">Red, inflamed pharynx, sometimes with fever</span></li></ul>
+<p class="lead-in">Findings concerning for strep:</p>
+<ul class="blanks"><li><span class="fill">Fever over 101 F</span></li><li><span class="fill">Tonsillar exudate (white patches)</span></li><li><span class="fill">Tender, swollen anterior cervical nodes &mdash; and notably <b>no cough</b></span></li></ul>
+
+<h3>Peritonsillar Abscess</h3>
+<p>Concerning findings: <b>drooling &middot; muffled voice &middot; difficulty swallowing &middot; trismus</b> (cannot open the mouth).</p>
+<p><b>Why is drooling concerning?</b> <span class="fill">It means the patient can no longer swallow their own saliva &mdash; the airway is being threatened. Keep them upright, do not put anything in the mouth, have suction and emergency airway equipment ready, and notify the provider now.</span></p>
+
+<h3>Laryngitis</h3>
+<p><b>Main manifestation:</b> <span class="fill">hoarseness or complete loss of the voice</span></p>
+<p><b>Avoid:</b> <span class="fill">talking &mdash; and whispering, which strains the cords more than normal speech &middot; smoking and irritants &middot; alcohol and caffeine, which dry the throat</span></p>
+<p><b>Encourage:</b> <span class="fill">voice rest &middot; humidified air &middot; plenty of fluids</span></p>
+
+<h3>URI complications</h3>
+<ul><li>Airway obstruction &middot; sepsis &middot; meningitis &middot; dysphagia &middot; cellulitis &middot; rebound congestion</li></ul>
+<p class="lead-in"><b>Rebound congestion</b> (rhinitis medicamentosa) comes from using topical decongestant sprays longer than <span class="fill">3 days &mdash; the vessels rebound wider than before, so the patient feels more congested and uses more spray.</span></p>
+</div><div class="card" id="prior" style="--jewel:var(--topaz)"><h2>&#9878;&#65039; Prioritization Practice</h2>
+<p><b>Which URI patient worries you MOST, and why?</b></p>
+<table class="cmp">
+<thead><tr><th>Finding</th><th>What it tells you</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td class="k">Stridor</td><td><span class="fill">The upper airway is actively narrowing. This is an emergency now.</span></td><td><b>1st</b></td></tr>
+<tr><td class="k">Drooling</td><td><span class="fill">The patient cannot handle their own secretions &mdash; obstruction is close behind.</span></td><td><b>2nd</b></td></tr>
+<tr><td class="k">Cyanosis</td><td><span class="fill">A LATE sign. Hypoxia is already significant by the time you see it.</span></td><td>3rd</td></tr>
+<tr><td class="k">Confusion</td><td><span class="fill">Cerebral hypoxia &mdash; also late, and it means compensation is failing.</span></td><td>4th</td></tr>
+<tr><td class="k">Accessory muscle use</td><td><span class="fill">Real distress and increased work of breathing, but the airway is still open.</span></td><td>5th</td></tr>
+</tbody></table>
+<p><mark>Airway beats everything.</mark> Stridor and drooling are both telling you the airway is closing. Cyanosis and confusion mean the hypoxia is already severe &mdash; they are late, not early.</p>
+</div><div class="card" id="osa" style="--jewel:var(--sapphire)"><h2>&#128564; Obstructive Sleep Apnea (OSA)</h2>
+<p><b>OSA involves repeated:</b> <span class="fill">episodes of upper airway collapse during sleep &mdash; the airway closes, breathing stops for 10 seconds or more, and the patient partially wakes to reopen it</span></p>
+<p>This causes <b>hypoxia</b>, <b>hypercapnia</b>, and <b>sympathetic stimulation</b> over and over, all night.</p>
+
+<h3>Risk factors</h3>
+<ul class="blanks"><li><span class="fill">Obesity and a large neck circumference (over 17 in for men, 16 in for women)</span></li><li><span class="fill">Male sex and increasing age; risk rises in women after menopause</span></li><li><span class="fill">Large tonsils, a receding jaw, or a crowded upper airway</span></li><li><span class="fill">Alcohol or sedatives at bedtime, and smoking</span></li></ul>
+
+<h3>Manifestations</h3>
+<ul><li>Loud snoring &middot; daytime sleepiness &middot; morning headaches &middot; hypertension &middot; gasping during sleep</li></ul>
+<p><b>Why do patients wake up exhausted?</b> <span class="fill">The repeated arousals fragment sleep. They never stay in deep or REM sleep long enough to restore anything &mdash; so a full night in bed still produces no real rest.</span></p>
+
+<h3>CPAP vs BiPAP</h3>
+<table class="cmp">
+<thead><tr><th></th><th>CPAP</th><th>BiPAP</th></tr></thead>
+<tbody>
+<tr><td class="k">Provides</td><td><span class="fill">ONE continuous pressure, the same on inhale and exhale</span></td><td><span class="fill">TWO pressures &mdash; a higher one on inspiration (IPAP) and a lower one on expiration (EPAP)</span></td></tr>
+<tr><td class="k">Purpose</td><td><span class="fill">Splints the airway open so it cannot collapse</span></td><td><span class="fill">Splints the airway AND assists the breath, which also helps blow off CO2</span></td></tr>
+</tbody></table>
+<p><b>Why may patients tolerate BiPAP better?</b> <span class="fill">Because exhaling against the lower pressure takes much less work. Breathing out against the single high CPAP pressure is what most people cannot stand.</span></p>
+<p><mark>OSA plus opioids is a dangerous combination.</mark> Both suppress the airway and the drive to breathe &mdash; that is the next case.</p>
+</div><div class="card" id="case" style="--jewel:var(--ruby)"><h2>&#127973; Respiratory Case Study #1</h2>
+<p class="lead-in">Important cues: <b>obesity &middot; large neck circumference &middot; PCA morphine &middot; post-op &middot; increasing respiratory rate</b></p>
+<p><b>What complication should the nurse anticipate?</b> <span class="fill">Opioid-induced respiratory depression, on top of very likely undiagnosed OSA. The obesity, the neck, and the morphine PCA all stack in the same direction.</span></p>
+
+<h3>Signs of respiratory decline</h3>
+<p>Apnea &middot; bradypnea &middot; cyanosis &middot; somnolence &middot; snorting or gasping respirations</p>
+<p><b>What is the PRIORITY problem?</b> <span class="fill">Impaired gas exchange from opioid-induced respiratory depression with airway obstruction &mdash; an airway and breathing emergency.</span></p>
+
+<h3>Immediate nursing actions</h3>
+<ul class="blanks"><li><span class="fill"><b>Stop the opioid</b> &mdash; stop the PCA</span></li><li><span class="fill">Stimulate the patient and <b>open the airway</b> &mdash; reposition, sit them up, head-tilt chin-lift</span></li><li><span class="fill">Apply oxygen and get continuous SpO2; be ready to bag-mask if breathing is inadequate</span></li><li><span class="fill">Call for help / rapid response, and have naloxone ready per order</span></li></ul>
+
+<h3>Naloxone</h3>
+<p><b>Purpose:</b> <span class="fill">It is an opioid antagonist &mdash; it reverses the respiratory depression and sedation.</span></p>
+<p><b>Risk of giving it:</b> <span class="fill">It reverses the analgesia too, so severe pain returns suddenly, and it can trigger acute withdrawal. Its duration is SHORTER than most opioids, so the patient can re-sedate &mdash; keep monitoring and be ready to redose.</span></p>
+</div><div class="card" id="epi" style="--jewel:var(--citrine)"><h2>&#129656; Epistaxis</h2>
+<p class="lead-in">Risk factors: HTN &middot; anticoagulants &middot; trauma &middot; dry mucosa &middot; steroid nasal sprays</p>
+<h3>Correct management</h3>
+<p><b>Correct patient position:</b> <span class="fill">Sitting UP and leaning FORWARD</span></p>
+<p><b>Where should pressure be applied?</b> <span class="fill">Pinch the soft part of the nose &mdash; over the cartilage, not the bony bridge</span></p>
+<p><b>How long should pressure be maintained?</b> <span class="fill">10 to 15 minutes of continuous pressure, without letting go to peek</span></p>
+
+<h3>&#128680; NEVER do this during a nosebleed</h3>
+<p><span class="never">Do not tilt the head backward.</span> <span class="fill">Blood runs down the throat instead. The patient swallows it, which causes nausea and vomiting, risks aspiration, and hides how much they are actually losing.</span></p>
+<p><span class="never">Do not blow the nose forcefully.</span> <span class="fill">It dislodges the clot that just formed and starts the bleeding over again.</span></p>
+</div><div class="card" id="laryn" style="--jewel:var(--garnet)"><h2>&#128499;&#65039; Laryngeal Obstruction &amp; Cancer of the Larynx</h2>
+<p>The larynx <b>does not stretch</b>. Even small swelling can become life threatening fast.</p>
+<h3>&#128680; RED FLAG findings</h3>
+<ul class="blanks"><li><span class="fill">Stridor</span></li><li><span class="fill">Drooling or an inability to manage secretions</span></li><li><span class="fill">Severe dyspnea with retractions and accessory muscle use</span></li><li><span class="fill">Voice change or an inability to speak; restlessness progressing to a falling LOC</span></li></ul>
+
+<h3>Stridor vs Wheezing</h3>
+<table class="cmp">
+<thead><tr><th></th><th>Stridor</th><th>Wheezing</th></tr></thead>
+<tbody>
+<tr><td class="k">Usually indicates</td><td><span class="fill">UPPER airway narrowing &mdash; larynx or trachea</span></td><td><span class="fill">LOWER airway narrowing &mdash; bronchi and bronchioles</span></td></tr>
+<tr><td class="k">Heard</td><td><span class="fill">Loudest over the neck, usually on inspiration; often audible without a stethoscope</span></td><td><span class="fill">Over the lung fields, usually on expiration</span></td></tr>
+<tr><td class="k">Urgency</td><td><b>Emergency &mdash; airway</b></td><td>Serious, but the airway is open</td></tr>
+</tbody></table>
+
+<h3>Cancer of the Larynx</h3>
+<p class="lead-in">Risk factors: smoking &middot; alcohol &middot; HPV &middot; occupational exposure</p>
+<p>Concerning manifestations: persistent hoarseness &middot; dysphagia &middot; weight loss &middot; a lump in the throat</p>
+<p><b>Which symptom is often ignored early?</b> <span class="fill"><b>Persistent hoarseness.</b> People write it off as a cold or overuse &mdash; but hoarseness lasting more than 2 weeks needs to be evaluated.</span></p>
+</div><div class="card" id="nclex" style="--jewel:var(--amethyst)"><h2>&#127919; NCLEX-Style Questions</h2><div class="nq"><div class="stem">1. Which is an EARLY sign of hypoxia?</div><ol type="A"><li>Cyanosis</li><li>Bradycardia</li><li>Restlessness</li><li>Gray skin</li></ol><details><summary>Show the answer</summary><div class="ans"><b>Answer: C. Restlessness</b><br>Restlessness. The brain is the most oxygen-sensitive organ, so a change in behavior or LOC shows up before anything else. Cyanosis, bradycardia, and gray skin are all LATE &mdash; by then compensation has already failed.</div></details></div><div class="nq"><div class="stem">2. A patient with drooling, muffled voice, and difficulty swallowing is MOST concerning for:</div><ol type="A"><li>Asthma</li><li>Airway obstruction</li><li>Atelectasis</li><li>GERD</li></ol><details><summary>Show the answer</summary><div class="ans"><b>Answer: B. Airway obstruction</b><br>Airway obstruction. That triad means the patient cannot manage their own secretions and the upper airway is closing &mdash; think peritonsillar abscess or epiglottitis. Asthma causes wheezing, not drooling. GERD and atelectasis do not threaten the upper airway.</div></details></div><div class="nq"><div class="stem">3. Which patient should the nurse see FIRST?</div><ol type="A"><li>Sore throat</li><li>Hoarseness</li><li>Stridor with accessory muscle use</li><li>Nasal congestion</li></ol><details><summary>Show the answer</summary><div class="ans"><b>Answer: C. Stridor with accessory muscle use</b><br>Stridor with accessory muscle use. Stridor means the upper airway is narrowing and the accessory muscles say the patient is working hard to compensate. Airway always outranks the rest &mdash; sore throat, hoarseness, and congestion are uncomfortable but not urgent.</div></details></div></div><div class="card" id="final" style="--jewel:var(--emerald)"><h2>&#9989; Final Clinical Judgment Reminder</h2>
+<p><b>Do not memorize diseases. Think through the patient.</b></p>
+<ul>
+<li>What clues matter?</li>
+<li>What is the priority?</li>
+<li>What is happening physiologically?</li>
+<li>What intervention fixes the actual problem?</li>
+</ul>
+<p><mark>Can this patient maintain an airway? Are they oxygenating effectively?</mark> Those two questions answer most of this module.</p>
+</div>
+
+ <p style="text-align:center;font-size:.78rem;opacity:.8;margin-top:20px">
+  Filled from Dr. K's <i>Respiratory I</i> guided notes handout &middot; NUR 198 Exam 2 &mdash; Respiratory</p>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+</body></html>
