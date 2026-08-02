@@ -7074,31 +7074,5 @@ rationalize the answers for yourself-USE HER!)</strong></p>
 </section>
 </div>
 <button class="up" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
-<!-- hub-home-tab-manager -->
-<script>
-(function(){
-  function isHub(u){ return !!u && /Study(?:%20|\s|\+|_)*Hub/i.test(u); }
-  function onHomeClick(e){
-    var a = e.currentTarget, href = a.getAttribute('href');
-    var op = null; try { op = window.opener; } catch(_){}
-    if (!op || op.closed) return;                 // no hub tab -> navigate normally
-    var u = ''; try { u = op.location.href || ''; } catch(_){ u = ''; }
-    if (!isHub(u)) return;                        // opener isn't the hub -> navigate normally
-    e.preventDefault();
-    try { op.focus(); } catch(_){}
-    window.close();
-    setTimeout(function(){ location.href = href; }, 500);   // fallback if close is blocked
-  }
-  function wire(){
-    var els = document.querySelectorAll('a.hubHomeBtn');
-    for (var i=0;i<els.length;i++){
-      if (els[i].dataset.hubWired) continue;
-      els[i].dataset.hubWired = '1';
-      els[i].addEventListener('click', onHomeClick);
-    }
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
-  else wire();
-})();
-</script>
+
 </body></html>
