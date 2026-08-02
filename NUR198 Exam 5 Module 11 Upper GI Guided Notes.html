@@ -28,6 +28,8 @@
  .chk{list-style:none;margin:.4em 0;padding:0} .chk li{margin:.3em 0}.chk li:before{content:"\2705 ";}
  @media print{a.home,.bar{display:none} body{background:#fff;color:#000} .sec{background:#fff;border:1px solid #ccc} mark.ans{background:#d6f5e6;color:#05502f}}
 </style></head><body>
+<a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">🏠 Home</a>
+
 <a class="home" href="NUR198%20Study%20Hub.html">🏠 Home</a>
 <header><h1>🟣 Exam 5 · Module 11 — Upper GI Guided Notes</h1><p>GERD · Esophageal Cancer · Gastritis · PUD · Gastrectomy · Gastric Cancer · completed with answers</p></header>
 <div class="bar"><button class="toggle" onclick="document.body.classList.toggle(\'hideans\');this.textContent=document.body.classList.contains(\'hideans\')?\'👁 Show answers\':\'🙈 Hide answers (quiz me)\'">🙈 Hide answers (quiz me)</button><span class="legend">Answers highlighted in green. Hide them to self-test; tap a hidden box to peek.</span></div>
@@ -130,4 +132,31 @@
 <li>Why a patient develops dumping syndrome after a gastrectomy.</li>
 <li>Why gastrectomy patients need lifelong B12 replacement.</li></ul></section>
 <section id="summary" class="sec"><h2 class="sech">⏱️ One-Minute Summary</h2><ol>
-<li><mark class="ans">GERD = weak LES → reflux → lifestyle changes + PPI.</mark></li><li><mark class="ans">Gastric ulcer = pain WITH food; duodenal = pain RELIEVED by food.</mark></li><li><mark class="ans">H. pylori → treat with antibiotics + PPI; test with breath/stool/biopsy.</mark></li><li><mark class="ans">Emergencies: bleeding (melena/hematemesis) & perforation (rigid abdomen). Gastrectomy → lifelong B12 + dumping syndrome.</mark></li></ol></section></div></body></html>
+<li><mark class="ans">GERD = weak LES → reflux → lifestyle changes + PPI.</mark></li><li><mark class="ans">Gastric ulcer = pain WITH food; duodenal = pain RELIEVED by food.</mark></li><li><mark class="ans">H. pylori → treat with antibiotics + PPI; test with breath/stool/biopsy.</mark></li><li><mark class="ans">Emergencies: bleeding (melena/hematemesis) & perforation (rigid abdomen). Gastrectomy → lifelong B12 + dumping syndrome.</mark></li></ol></section></div><!-- hub-home-tab-manager -->
+<script>
+(function(){
+  function isHub(u){ return !!u && /Study(?:%20|\s|\+|_)*Hub/i.test(u); }
+  function onHomeClick(e){
+    var a = e.currentTarget, href = a.getAttribute('href');
+    var op = null; try { op = window.opener; } catch(_){}
+    if (!op || op.closed) return;                 // no hub tab -> navigate normally
+    var u = ''; try { u = op.location.href || ''; } catch(_){ u = ''; }
+    if (!isHub(u)) return;                        // opener isn't the hub -> navigate normally
+    e.preventDefault();
+    try { op.focus(); } catch(_){}
+    window.close();
+    setTimeout(function(){ location.href = href; }, 500);   // fallback if close is blocked
+  }
+  function wire(){
+    var els = document.querySelectorAll('a.hubHomeBtn');
+    for (var i=0;i<els.length;i++){
+      if (els[i].dataset.hubWired) continue;
+      els[i].dataset.hubWired = '1';
+      els[i].addEventListener('click', onHomeClick);
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
+  else wire();
+})();
+</script>
+</body></html>

@@ -194,6 +194,8 @@ a.fullsz:hover{background:#b58cff;color:#12101c} a.gdrive:hover{background:#34a8
 .imgnote{font-size:.84rem;color:#a99fc7;margin:2px 0 10px}
 </style>
 </head><body>
+<a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">🏠 Home</a>
+
 <a class="homebtn" href="NUR198%20Study%20Hub.html">🏠 Home</a>
 <header class="e1head"><h1>🌅 Exam 1 · Foundations Study Guide</h1><p>Module 1 Older Adult, Chronic Illness & Disability · Module 2 Fluid, Electrolyte & Acid–Base · Module 3 Perioperative, Pain & Integumentary</p></header>
 <nav class="e1nav"><a href="#snapshot">⭐ Focused Review</a><a href="#m1">M1 · Older Adult</a><a href="#m2">M2 · Fluid & Lyte</a><a href="#m3">M3 · Periop, Pain & Skin</a></nav>
@@ -401,4 +403,31 @@ a.fullsz:hover{background:#b58cff;color:#12101c} a.gdrive:hover{background:#34a8
 </section>
 
 
-</div></body></html>
+</div><!-- hub-home-tab-manager -->
+<script>
+(function(){
+  function isHub(u){ return !!u && /Study(?:%20|\s|\+|_)*Hub/i.test(u); }
+  function onHomeClick(e){
+    var a = e.currentTarget, href = a.getAttribute('href');
+    var op = null; try { op = window.opener; } catch(_){}
+    if (!op || op.closed) return;                 // no hub tab -> navigate normally
+    var u = ''; try { u = op.location.href || ''; } catch(_){ u = ''; }
+    if (!isHub(u)) return;                        // opener isn't the hub -> navigate normally
+    e.preventDefault();
+    try { op.focus(); } catch(_){}
+    window.close();
+    setTimeout(function(){ location.href = href; }, 500);   // fallback if close is blocked
+  }
+  function wire(){
+    var els = document.querySelectorAll('a.hubHomeBtn');
+    for (var i=0;i<els.length;i++){
+      if (els[i].dataset.hubWired) continue;
+      els[i].dataset.hubWired = '1';
+      els[i].addEventListener('click', onHomeClick);
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
+  else wire();
+})();
+</script>
+</body></html>

@@ -229,7 +229,7 @@ body{
       var html='';
       hits.forEach(function(row){
         var e=row[1], pg=row[2];
-        html+='<a class="ssr s-'+esc(pg.s)+'" href="'+esc(linkFor(pg,e))+'" target="_blank" rel="noopener">'+
+        html+='<a class="ssr s-'+esc(pg.s)+'" href="'+esc(linkFor(pg,e))+'" target="_blank">'+
               '<div class="ssmeta"><span class="badge b-'+esc(pg.s)+'">'+
               esc(SITE_LABEL[pg.s]||pg.s)+'</span>'+esc(pg.t||'')+'</div>'+
               '<div class="ssh">'+hi(e.h,ws)+'</div>'+

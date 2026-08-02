@@ -40,6 +40,8 @@
  .up{position:fixed;bottom:16px;right:16px;z-index:900;background:#5a2d82;color:#fff;border:1px solid var(--violet);border-radius:50%;width:44px;height:44px;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.5)}
  @media print{a.home,.bar,.up{display:none} body{background:#fff;color:#000;font-size:12px} .sec{background:#fff;border:1px solid #ccc} .sech{color:#000;background:#fff} mark.ans{background:#d6f5e6;color:#05502f} .wbfig figcaption{background:#eee}}
 </style></head><body>
+<a href="NUR198%20Study%20Hub.html" class="hubHomeBtn" title="Back to Study Hub" style="position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)">🏠 Home</a>
+
 <a class="home" href="NUR198%20Study%20Hub.html">🏠 Home</a>
 <header><h1>🔵 Exam 5 · Module 12 — Lower GI Workbook</h1><p>Clinical Reasoning Guided Notes · <b style="color:#fff">complete answer key</b> · every question answered · pair with the Exam 5 GI guide</p></header>
 <div class="bar"><button class="toggle" onclick="var b=document.body.classList.toggle('hideans');this.textContent=b?'👁 Show answers':'🙈 Hide answers (quiz me)'">🙈 Hide answers (quiz me)</button><span class="legend">Answers are highlighted green. Hide them to self-test, then tap a box to peek.</span></div>
@@ -7072,4 +7074,31 @@ rationalize the answers for yourself-USE HER!)</strong></p>
 </section>
 </div>
 <button class="up" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<!-- hub-home-tab-manager -->
+<script>
+(function(){
+  function isHub(u){ return !!u && /Study(?:%20|\s|\+|_)*Hub/i.test(u); }
+  function onHomeClick(e){
+    var a = e.currentTarget, href = a.getAttribute('href');
+    var op = null; try { op = window.opener; } catch(_){}
+    if (!op || op.closed) return;                 // no hub tab -> navigate normally
+    var u = ''; try { u = op.location.href || ''; } catch(_){ u = ''; }
+    if (!isHub(u)) return;                        // opener isn't the hub -> navigate normally
+    e.preventDefault();
+    try { op.focus(); } catch(_){}
+    window.close();
+    setTimeout(function(){ location.href = href; }, 500);   // fallback if close is blocked
+  }
+  function wire(){
+    var els = document.querySelectorAll('a.hubHomeBtn');
+    for (var i=0;i<els.length;i++){
+      if (els[i].dataset.hubWired) continue;
+      els[i].dataset.hubWired = '1';
+      els[i].addEventListener('click', onHomeClick);
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
+  else wire();
+})();
+</script>
 </body></html>
