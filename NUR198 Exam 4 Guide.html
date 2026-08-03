@@ -151,6 +151,12 @@
     padding:6px 12px;border-radius:18px;cursor:pointer;font-size:13px;font-weight:600;}
   .quiz-filters .fbtn.active{background:var(--gold);color:var(--ink);border-color:var(--gold);}
   .quiz-filters .grp-label{align-self:center;font-size:13px;color:var(--text-soft);margin-right:2px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+  .quiz-filters .fbtn em{font-style:normal;opacity:.72;font-weight:600;}
+  .quiz-filters .dfbtn:not(.active){opacity:.5;}
+  #q-diff{display:inline-block;font-size:13px;font-weight:700;padding:2px 9px;border-radius:10px;}
+  #q-diff.qd-easy{background:rgba(0,230,118,.26);color:#b9f6ca}
+  #q-diff.qd-moderate{background:rgba(255,213,79,.26);color:#ffecb3}
+  #q-diff.qd-hard{background:rgba(255,82,82,.28);color:#ffcdd2}
   #quiz-scorebar{background:rgba(6,32,35,0.6);border-radius:18px;padding:10px 18px;display:flex;justify-content:space-between;
     align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
   #quiz-scorebar span{font-size:.95rem;color:var(--mint);font-weight:700;}
@@ -2037,6 +2043,19 @@ body.nav-open #navScrim{opacity:1; pointer-events:auto}
       <button class="fbtn" data-grp="src" data-val="nclex">NCLEX</button>
       <button class="fbtn" data-grp="src" data-val="hesi">HESI</button>
     </div>
+    <div class="quiz-filters">
+      <span class="grp-label">Difficulty:</span>
+      <button class="fbtn dfbtn active" type="button" data-d="easy">🟢 Easy <em class="dcount"></em></button>
+      <button class="fbtn dfbtn active" type="button" data-d="moderate">🟡 Moderate <em class="dcount"></em></button>
+      <button class="fbtn dfbtn active" type="button" data-d="hard">🔴 Hard <em class="dcount"></em></button>
+    </div>
+    <div class="quiz-filters">
+      <span class="grp-label">How many:</span>
+      <button class="fbtn nfbtn" type="button" data-n="10">10</button>
+      <button class="fbtn nfbtn" type="button" data-n="25">25</button>
+      <button class="fbtn nfbtn" type="button" data-n="50">50</button>
+      <button class="fbtn nfbtn active" type="button" data-n="0">All that match</button>
+    </div>
     <div id="quiz-scorebar">
       <span id="q-progress">Question 0 / 0</span>
       <span id="q-score">Score: 0 ✓</span>
@@ -2224,12 +2243,32 @@ const QUIZ=[
 (function(){
   let filt={mod:"all",src:"all"};
   let list=[], idx=0, answered={}, picks={};
+  let wantDiff={easy:true,moderate:true,hard:true}, wantN=0;
+
+  /* difficulty is derived from the question, not hand-tagged */
+  const RE_PRI=/\b(priority|prioriti|first|initial|immediately|most important|most appropriate|best (?:action|response|initial)|next action|requires immediate)\b/i;
+  const RE_MATH=/\b(how many|mL\/hr|mcg\/kg|mg\/hr|units\/hr|gtt|calculate|round to|milliliters|tablets)\b/i;
+  const RE_VIG=/\b(a client|the client|a patient|the nurse is (caring|assessing|planning)|admitted with|post-?op)\b/i;
+  function diffOf(q){
+    if(q._d) return q._d;
+    const s=q.q||"";
+    if(q.type==='sata'||RE_PRI.test(s)||RE_MATH.test(s)) q._d='hard';
+    else if(s.length<=115 && !RE_VIG.test(s))            q._d='easy';
+    else                                                 q._d='moderate';
+    return q._d;
+  }
+  const DLABEL={easy:'\uD83D\uDFE2 Easy',moderate:'\uD83D\uDFE1 Moderate',hard:'\uD83D\uDD34 Hard'};
+  function qshuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
   const card=document.getElementById('quiz-card');
   const prog=document.getElementById('q-progress');
   const scoreEl=document.getElementById('q-score');
 
   function applyFilter(){
-    list=QUIZ.filter(q=>(filt.mod==="all"||q.m==(filt.mod*1))&&(filt.src==="all"||q.s===filt.src));
+    list=QUIZ.filter(q=>(filt.mod==="all"||q.m==(filt.mod*1))
+                      &&(filt.src==="all"||q.s===filt.src)
+                      &&wantDiff[diffOf(q)]);
+    /* a set size means "draw that many at random" */
+    if(wantN>0 && list.length>wantN) list=qshuffle(list).slice(0,wantN);
     idx=0; render();
   }
   function score(){return Object.values(answered).filter(a=>a===true).length;}
@@ -2237,6 +2276,9 @@ const QUIZ=[
     if(!list.length){card.innerHTML='<div class="quiz-empty">No questions match this filter.</div>';prog.textContent='Question 0 / 0';scoreEl.textContent='Score: 0 ✓';var _pb0=document.getElementById('quiz-progressbar');if(_pb0&&_pb0.firstElementChild)_pb0.firstElementChild.style.width='0%';return;}
     const q=list[idx], key=qKey(q);
     prog.textContent=`Question ${idx+1} / ${list.length}`;
+    let dt=document.getElementById('q-diff');
+    if(!dt){ dt=document.createElement('span'); dt.id='q-diff'; prog.parentNode.insertBefore(dt, prog.nextSibling); }
+    dt.className='qd-'+diffOf(q); dt.textContent=DLABEL[diffOf(q)];
     var _pb=document.getElementById('quiz-progressbar');if(_pb&&_pb.firstElementChild)_pb.firstElementChild.style.width=(((idx+1)/list.length)*100)+'%';
     scoreEl.textContent=`Score: ${score()} ✓`;
     let h=`<div class="q-meta"><span class="q-tag">Module ${q.m}</span><span class="q-tag">${q.s.toUpperCase()}</span><span class="q-tag">${q.type==='sata'?'SELECT ALL':'Multiple choice'}</span></div>`;
@@ -2268,10 +2310,32 @@ const QUIZ=[
     const s=(picks[key]||[]).slice().sort().join(','); const c=q.correct.slice().sort().join(',');
     answered[key]=(s===c&&s!==''); render();
   }
-  document.querySelectorAll('.fbtn').forEach(b=>{
+  document.querySelectorAll('.fbtn[data-grp]').forEach(b=>{
     b.addEventListener('click',()=>{
       document.querySelectorAll(`.fbtn[data-grp="${b.dataset.grp}"]`).forEach(x=>x.classList.remove('active'));
       b.classList.add('active'); filt[b.dataset.grp]=b.dataset.val; applyFilter();
+    });
+  });
+  /* difficulty: any combination can be on at once */
+  document.querySelectorAll('.dfbtn').forEach(b=>{
+    const d=b.dataset.d, em=b.querySelector('.dcount');
+    if(em) em.textContent='('+QUIZ.filter(q=>diffOf(q)===d).length+')';
+    b.addEventListener('click',()=>{
+      const on=!wantDiff[d];
+      /* never let all three be off - the quiz would be empty */
+      if(!on && !['easy','moderate','hard'].some(x=>x!==d && wantDiff[x])) return;
+      wantDiff[d]=on; b.classList.toggle('active',on);
+      b.setAttribute('aria-pressed',on?'true':'false');
+      applyFilter();
+    });
+  });
+  /* how many: one at a time */
+  document.querySelectorAll('.nfbtn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.nfbtn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); wantN=parseInt(b.dataset.n,10);
+      answered={}; picks={};
+      applyFilter();
     });
   });
   document.getElementById('btn-submit').addEventListener('click',submit);

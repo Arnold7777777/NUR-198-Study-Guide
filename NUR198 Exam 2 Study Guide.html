@@ -2569,6 +2569,11 @@ body{
 .filter-btn .cnt{font-size:13px;color:var(--muted);margin-left:4px;}
 .filter-btn.on{background:var(--card2);border-color:var(--magenta);color:#fff;}
 .filter-btn.on .cnt{color:var(--gold-soft);}
+.diff-btn,.num-btn{font-size:14.5px;padding:9px 15px;}
+.diff-btn .cnt{font-size:13px;color:var(--muted);margin-left:4px;}
+.diff-btn.on,.num-btn.on{background:var(--card2);border-color:var(--magenta);color:#fff;}
+.diff-btn.on .cnt{color:var(--gold-soft);}
+.diff-btn:not(.on){opacity:.45;}
 .shuffle-row{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--ink-soft);margin-top:14px;cursor:pointer;}
 .shuffle-row input{width:17px;height:17px;accent-color:var(--magenta);}
 
@@ -5740,6 +5745,37 @@ function topicGroup(t){
 let activePool = QUESTIONS.slice();
 let shuffleOn = true;
 let selectedGroups = new Set();
+let wantDiff = {easy:true, moderate:true, hard:true};
+let wantN = 0;   /* 0 = every question that matches */
+
+/* Difficulty is worked out from the question itself.
+   HARD     select-all and put-in-order items, anything asking for the
+            priority / first / best action, and any calculation
+   EASY     short factual recall with no patient scenario
+   MODERATE everything else - which on this bank is most of it, because
+            almost every stem is a full clinical vignette */
+const RE_PRI = /\b(priority|prioriti|first|initial|immediately|most important|most appropriate|best (?:action|response|initial)|next action|requires immediate)\b/i;
+const RE_MATH = /\b(how many|mL\/hr|mcg\/kg|mg\/hr|units\/hr|gtt|calculate|round to|milliliters|tablets)\b/i;
+const RE_VIG = /\b(a client|the client|a patient|the nurse is (caring|assessing|planning)|admitted with|post-?op)\b/i;
+function diffOf(q){
+  if(q._d) return q._d;
+  const t = q.q || &quot;&quot;;
+  if(q.fmt === &quot;sata&quot; || q.fmt === &quot;order&quot; || RE_PRI.test(t) || RE_MATH.test(t)) q._d = &quot;hard&quot;;
+  else if(t.length &lt;= 115 &amp;&amp; !RE_VIG.test(t))                                    q._d = &quot;easy&quot;;
+  else                                                                           q._d = &quot;moderate&quot;;
+  return q._d;
+}
+const DLABEL = {easy:&quot;\uD83D\uDFE2 Easy&quot;, moderate:&quot;\uD83D\uDFE1 Moderate&quot;, hard:&quot;\uD83D\uDD34 Hard&quot;};
+function toggleDiff(d){
+  const on = !wantDiff[d];
+  /* never let all three be switched off - there would be nothing to ask */
+  if(!on &amp;&amp; ![&quot;easy&quot;,&quot;moderate&quot;,&quot;hard&quot;].some(x =&gt; x !== d &amp;&amp; wantDiff[x])) return;
+  wantDiff[d] = on; refreshFilterUI();
+}
+function setNum(n){ wantN = n; refreshFilterUI(); }
+function currentPool(){
+  return QUESTIONS.filter(q =&gt; selectedGroups.has(topicGroup(q.topic)) &amp;&amp; wantDiff[diffOf(q)]);
+}
 
 function renderStart(){
   const groups = {};
@@ -5760,6 +5796,19 @@ function renderStart(){
       &lt;/div&gt;
       &lt;div style=&quot;margin:20px 0 8px;font-size:14px;color:var(--muted);font-weight:700;letter-spacing:.4px;&quot;&gt;TAP TO PICK SECTIONS (or leave all on)&lt;/div&gt;
       &lt;div class=&quot;filter-row&quot;&gt;${groupBtns}&lt;/div&gt;
+      &lt;div style=&quot;margin:20px 0 8px;font-size:14px;color:var(--muted);font-weight:700;letter-spacing:.4px;&quot;&gt;DIFFICULTY&lt;/div&gt;
+      &lt;div class=&quot;filter-row&quot;&gt;
+        &lt;button class=&quot;btn btn-ghost diff-btn on&quot; type=&quot;button&quot; data-d=&quot;easy&quot; onclick=&quot;toggleDiff('easy')&quot;&gt;🟢 Easy &lt;span class=&quot;cnt&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+        &lt;button class=&quot;btn btn-ghost diff-btn on&quot; type=&quot;button&quot; data-d=&quot;moderate&quot; onclick=&quot;toggleDiff('moderate')&quot;&gt;🟡 Moderate &lt;span class=&quot;cnt&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+        &lt;button class=&quot;btn btn-ghost diff-btn on&quot; type=&quot;button&quot; data-d=&quot;hard&quot; onclick=&quot;toggleDiff('hard')&quot;&gt;🔴 Hard &lt;span class=&quot;cnt&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div style=&quot;margin:20px 0 8px;font-size:14px;color:var(--muted);font-weight:700;letter-spacing:.4px;&quot;&gt;HOW MANY QUESTIONS&lt;/div&gt;
+      &lt;div class=&quot;filter-row&quot;&gt;
+        &lt;button class=&quot;btn btn-ghost num-btn&quot; type=&quot;button&quot; data-n=&quot;10&quot; onclick=&quot;setNum(10)&quot;&gt;10&lt;/button&gt;
+        &lt;button class=&quot;btn btn-ghost num-btn&quot; type=&quot;button&quot; data-n=&quot;25&quot; onclick=&quot;setNum(25)&quot;&gt;25&lt;/button&gt;
+        &lt;button class=&quot;btn btn-ghost num-btn&quot; type=&quot;button&quot; data-n=&quot;50&quot; onclick=&quot;setNum(50)&quot;&gt;50&lt;/button&gt;
+        &lt;button class=&quot;btn btn-ghost num-btn on&quot; type=&quot;button&quot; data-n=&quot;0&quot; onclick=&quot;setNum(0)&quot;&gt;All that match&lt;/button&gt;
+      &lt;/div&gt;
       &lt;div id=&quot;poolInfo&quot; style=&quot;font-size:14px;color:var(--gold-soft);margin:14px 0 4px;font-weight:700;&quot;&gt;&lt;/div&gt;
       &lt;label class=&quot;shuffle-row&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;shuf&quot; checked onchange=&quot;shuffleOn=this.checked&quot;&gt; Shuffle question order&lt;/label&gt;
       &lt;div class=&quot;actions&quot; style=&quot;justify-content:center;margin-top:18px;&quot;&gt;
@@ -5779,10 +5828,22 @@ function refreshFilterUI(){
   document.querySelectorAll(&quot;.filter-btn&quot;).forEach(b=&gt;{
     if(selectedGroups.has(b.dataset.g)) b.classList.add(&quot;on&quot;); else b.classList.remove(&quot;on&quot;);
   });
-  const pool = QUESTIONS.filter(q=&gt;selectedGroups.has(topicGroup(q.topic)));
+  document.querySelectorAll(&quot;.diff-btn&quot;).forEach(b=&gt;{
+    const d = b.dataset.d;
+    b.classList.toggle(&quot;on&quot;, !!wantDiff[d]);
+    b.setAttribute(&quot;aria-pressed&quot;, wantDiff[d] ? &quot;true&quot; : &quot;false&quot;);
+    const c = b.querySelector(&quot;.cnt&quot;);
+    if(c) c.textContent = QUESTIONS.filter(q=&gt;diffOf(q)===d).length;
+  });
+  document.querySelectorAll(&quot;.num-btn&quot;).forEach(b=&gt;{
+    b.classList.toggle(&quot;on&quot;, (+b.dataset.n) === wantN);
+  });
+  const pool = currentPool();
   const all = selectedGroups.size&gt;=6;
+  const n = wantN &gt; 0 ? Math.min(wantN, pool.length) : pool.length;
   const info=document.getElementById(&quot;poolInfo&quot;);
-  if(info) info.textContent = (all?&quot;All sections · &quot;:&quot;Selected · &quot;) + pool.length + &quot; questions&quot;;
+  if(info) info.textContent = (all?&quot;All sections · &quot;:&quot;Selected · &quot;) + n + &quot; question&quot; + (n===1?&quot;&quot;:&quot;s&quot;)
+    + ((wantN&gt;0 &amp;&amp; pool.length&gt;wantN) ? &quot; (picked at random from the &quot; + pool.length + &quot; that match)&quot; : &quot;&quot;);
 }
 
 function renderProgress(){
@@ -5791,7 +5852,7 @@ function renderProgress(){
   return `
     &lt;div class=&quot;bar-wrap&quot;&gt;
       &lt;div class=&quot;bar-track&quot;&gt;&lt;div class=&quot;bar-fill&quot; style=&quot;width:${pct}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class=&quot;bar-label&quot;&gt;&lt;span&gt;Question &lt;b&gt;${idx+1}&lt;/b&gt; of ${QUESTIONS.length}&lt;/span&gt;&lt;span&gt;Score: &lt;b&gt;${score}&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;bar-label&quot;&gt;&lt;span&gt;Question &lt;b&gt;${idx+1}&lt;/b&gt; of ${activePool.length}&lt;/span&gt;&lt;span&gt;Score: &lt;b&gt;${score}&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
     &lt;/div&gt;`;
 }
 
@@ -5873,12 +5934,14 @@ function renderQuestion(){
 
 /* ============== INTERACTIONS ============== */
 function startQuiz(){
-  // build pool from selected groups
-  activePool = QUESTIONS.filter(q=&gt;selectedGroups.has(topicGroup(q.topic)));
+  // build pool from the selected sections and difficulties
+  activePool = currentPool();
   if(activePool.length===0) activePool = QUESTIONS.slice();
-  if(shuffleOn){
+  /* a set size means &quot;draw that many at random&quot;, so always shuffle first */
+  if(shuffleOn || wantN&gt;0){
     for(let i=activePool.length-1;i&gt;0;i--){ const j=Math.floor(Math.random()*(i+1)); [activePool[i],activePool[j]]=[activePool[j],activePool[i]]; }
   }
+  if(wantN&gt;0 &amp;&amp; activePool.length&gt;wantN) activePool = activePool.slice(0, wantN);
   started=true; idx=0; answered=[]; correctFlags=[]; loadQuestion();
 }
 function loadQuestion(){
