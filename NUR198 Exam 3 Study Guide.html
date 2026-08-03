@@ -27,6 +27,23 @@
  body.hdr-collapsed .tab{padding:5px 12px;font-size:.82rem}
  body.hdr-collapsed #hdrNow{display:block}
  @media print{#hdrToggle{display:none}}
+
+ /* ── full collapse: title bar, tab bar and the inner page's menu bar all go ── */
+ body.all-collapsed header,
+ body.all-collapsed .tabbar{display:none}
+ /* floating replacement. position:fixed, so it costs zero vertical space. */
+ #miniBar{display:none;position:fixed;top:6px;left:6px;z-index:2147483100;
+   gap:4px;align-items:center;padding:4px;border-radius:22px;
+   background:rgba(20,11,36,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+   border:1px solid rgba(255,255,255,.25);box-shadow:0 4px 16px rgba(0,0,0,.6)}
+ body.all-collapsed #miniBar{display:flex}
+ #miniBar button{background:rgba(255,255,255,.1);color:#f4f0ff;
+   border:1px solid rgba(255,255,255,.22);border-radius:18px;
+   padding:7px 11px;font:800 16px 'Segoe UI',system-ui,sans-serif;
+   line-height:1;cursor:pointer}
+ #miniBar button:hover{background:rgba(181,140,255,.32)}
+ #miniBar button.mtActive{background:#b58cff;color:#1a0d2e;border-color:#b58cff}
+ @media print{#miniBar{display:none !important}}
 </style></head><body>
 <style id="a11yCSS">
 /* keep wide things inside the viewport so magnifying never forces sideways scrolling */
@@ -94,35 +111,73 @@ sub,sup{font-size:.72rem}
 <header><h1>🫀 NUR 198 · Exam 3 Study Guide — Cardiovascular (Modules 7–8)</h1>
 <p>Comprehensive Key Concepts (KCRs) plus the quick guide and practice quiz. Use the tabs.</p></header>
 <div class="tabbar">
-  <button id="hdrToggle" type="button" title="Hide or show the title bar" aria-expanded="true">⌃</button>
+  <button id="hdrToggle" type="button" title="Hide every bar" aria-expanded="true">⌃</button>
   <span id="hdrNow">NUR 198 &middot; Exam 3 &mdash; Cardiovascular</span>
   <button class="tab active" data-tab="kcrs">📖 Key Concepts (KCRs)</button>
   <button class="tab" data-tab="guide">📝 Guide + Quiz</button>
+</div>
+<div id="miniBar">
+  <button id="miniExpand" type="button" title="Show the bars again" aria-label="Show the bars again">⌄</button>
+  <button class="minitab mtActive" data-tab="kcrs" type="button" title="Key Concepts (KCRs)" aria-label="Key Concepts">📖</button>
+  <button class="minitab" data-tab="guide" type="button" title="Guide + Quiz" aria-label="Guide and Quiz">📝</button>
 </div>
 <div class="frames">
   <iframe class="tf show" data-tab="kcrs" src="NUR198%20Exam%203%20KCRs.html" loading="eager"></iframe>
   <iframe class="tf" data-tab="guide" src="NUR198%20Exam%203%20Guide%20and%20Quiz.html" loading="lazy"></iframe>
 </div>
 <script>
- var tabs=document.querySelectorAll('.tab'), frames=document.querySelectorAll('.tf');
- tabs.forEach(function(t){t.addEventListener('click',function(){
-   var id=t.dataset.tab;
-   tabs.forEach(function(x){x.classList.toggle('active',x===t);});
-   frames.forEach(function(f){f.classList.toggle('show',f.dataset.tab===id);});
- });});
- (function(){
-   var b=document.getElementById('hdrToggle'), K='e3HdrCollapsed';
-   function set(on,save){
-     document.body.classList.toggle('hdr-collapsed',on);
-     b.textContent = on ? '\u2304' : '\u2303';
-     b.setAttribute('aria-expanded', on ? 'false' : 'true');
-     b.title = on ? 'Show the title bar' : 'Hide the title bar';
-     if(save){ try{ localStorage.setItem(K, on?'1':'0'); }catch(e){} }
-   }
-   var saved=null; try{ saved=localStorage.getItem(K); }catch(e){}
-   set(saved==='1', false);
-   b.addEventListener('click',function(){ set(!document.body.classList.contains('hdr-collapsed'), true); });
- })();
+(function(){
+ var tabs   = document.querySelectorAll('.tab'),
+     minis  = document.querySelectorAll('.minitab'),
+     frames = document.querySelectorAll('.tf'),
+     K = 'e3ChromeCollapsed';
+
+ function selectTab(id){
+   tabs.forEach(function(x){ x.classList.toggle('active', x.dataset.tab===id); });
+   minis.forEach(function(x){ x.classList.toggle('mtActive', x.dataset.tab===id); });
+   frames.forEach(function(f){ f.classList.toggle('show', f.dataset.tab===id); });
+   applyFrames(document.body.classList.contains('all-collapsed'));
+ }
+ tabs .forEach(function(t){ t.addEventListener('click', function(){ selectTab(t.dataset.tab); }); });
+ minis.forEach(function(t){ t.addEventListener('click', function(){ selectTab(t.dataset.tab); }); });
+
+ /* The inner pages are same-origin, so the wrapper can hide their own menu bar
+    directly. Wrapped in try/catch in case a page is ever served cross-origin. */
+ function applyFrames(on){
+   frames.forEach(function(f){
+     try{
+       var d = f.contentDocument;
+       if(d && d.body) d.body.classList.toggle('e3-chrome-hidden', on);
+     }catch(e){}
+   });
+ }
+ frames.forEach(function(f){
+   f.addEventListener('load', function(){
+     applyFrames(document.body.classList.contains('all-collapsed'));
+   });
+ });
+
+ var b = document.getElementById('hdrToggle'),
+     x = document.getElementById('miniExpand');
+ function set(on, save){
+   document.body.classList.toggle('all-collapsed', on);
+   b.setAttribute('aria-expanded', on ? 'false' : 'true');
+   b.title = on ? 'Show the bars again' : 'Hide every bar';
+   applyFrames(on);
+   if(save){ try{ localStorage.setItem(K, on ? '1' : '0'); }catch(e){} }
+ }
+ var saved = null; try{ saved = localStorage.getItem(K); }catch(e){}
+ set(saved === '1', false);
+
+ b.addEventListener('click', function(){ set(true,  true); });
+ x.addEventListener('click', function(){ set(false, true); });
+ document.addEventListener('keydown', function(e){
+   if(e.key === 'Escape' && document.body.classList.contains('all-collapsed')) set(false, true);
+ });
+
+ /* iframes that were already loaded before this script ran */
+ setTimeout(function(){ applyFrames(document.body.classList.contains('all-collapsed')); }, 400);
+})();
 </script>
 
 <script id="a11yJS">

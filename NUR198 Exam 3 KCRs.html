@@ -219,6 +219,32 @@
   .qfr-q { color: #E1BEE7; flex: 1; }
   .qfr-a { color: #FFE082; font-weight: 700; flex: 1; text-align: right; }
 
+  /* ─── QUIZ SETUP ─── */
+  .qs-hidden{display:none !important}
+  #quizSetup{background:rgba(0,0,0,.5);border:1px solid rgba(255,200,0,.3);
+    border-radius:14px;padding:20px}
+  #quizSetup .qs-row{margin-bottom:18px}
+  #quizSetup .qs-lab{font-size:1rem;font-weight:800;color:#FFE082;margin-bottom:8px}
+  #quizSetup .qs-hint{font-weight:600;color:#B0BEC5;font-size:.85rem}
+  #quizSetup .qs-btns{display:flex;flex-wrap:wrap;gap:8px}
+  #quizSetup .qs-btns button{background:rgba(255,255,255,.1);color:#F0F0F0;
+    border:1px solid rgba(255,255,255,.28);border-radius:20px;
+    padding:10px 16px;font-size:15px;font-weight:700;cursor:pointer}
+  #quizSetup .qs-btns button:hover{background:rgba(255,255,255,.2)}
+  #quizSetup .qs-btns button.sel{background:#F9A825;color:#000;border-color:#F9A825}
+  #quizSetup .qs-btns button em{font-style:normal;opacity:.75;font-weight:600}
+  #qsAvail{font-size:1rem;color:#A5D6A7;font-weight:700;margin-bottom:14px}
+  #qsAvail.qs-warn{color:#FF8A80}
+  #qsStart{background:#00E676;color:#08240f;border:none;border-radius:24px;
+    padding:14px 30px;font-size:1.05rem;font-weight:900;cursor:pointer}
+  #qsStart:hover{background:#69F0AE}
+  #qsStart:disabled{background:rgba(255,255,255,.15);color:#90A4AE;cursor:not-allowed}
+  .qs-meta{display:inline-block;font-size:13px;padding:2px 9px;border-radius:10px;
+    margin-bottom:10px;margin-left:6px;font-weight:700}
+  .qs-easy{background:rgba(0,230,118,.28);color:#B9F6CA}
+  .qs-moderate{background:rgba(255,213,79,.28);color:#FFECB3}
+  .qs-hard{background:rgba(255,82,82,.3);color:#FFCDD2}
+
   /* ─── QUIZ SECTION ─── */
   #quiz-section {
     background: linear-gradient(150deg,
@@ -431,6 +457,19 @@ body.nav-open #topnav{transform:translateX(0)}
   z-index:2147481900; opacity:0; pointer-events:none; transition:opacity .2s;
 }
 body.nav-open #navScrim{opacity:1; pointer-events:auto}
+/* the wrapper page sets this class to reclaim the whole bar; the section menu
+   survives as a small floating button that costs no vertical space */
+body.e3-chrome-hidden #navBar{
+  position:fixed; top:auto; bottom:14px; left:12px; right:auto;
+  width:auto; min-height:0; padding:0;
+  background:transparent; border-bottom:none;
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+body.e3-chrome-hidden #navNow{display:none}
+body.e3-chrome-hidden #navToggle{
+  background:rgba(90,45,130,.95); border-color:rgba(255,255,255,.42);
+  box-shadow:0 6px 20px rgba(0,0,0,.65); padding:10px 15px;
+}
 @media print{#navBar,#navScrim,#topnav{display:none !important}}
 </style>
 <div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
@@ -4001,29 +4040,55 @@ body.nav-open #navScrim{opacity:1; pointer-events:auto}
 <!-- ════════════════ QUIZ ════════════════ -->
 <div id="quiz" class="section">
   <div class="sec-title">🧠 Interactive Quiz — Modules 7 &amp; 8</div>
-  <div class="sec-sub">370+ questions — 120 written MCQs plus 252 auto-generated from the 286 flashcards (reshuffled each session)</div>
+  <div class="sec-sub">370+ questions — 120 written MCQs plus 252 auto-generated from the 286 flashcards. Pick how many and how hard, then start.</div>
 
   <div id="quiz-section">
     <h2>🎯 Exam Prep Quiz</h2>
+
+    <div id="quizSetup">
+      <div class="qs-row">
+        <div class="qs-lab">How many questions?</div>
+        <div class="qs-btns" id="qsNum">
+          <button type="button" data-n="10">10</button>
+          <button type="button" data-n="25" class="sel">25</button>
+          <button type="button" data-n="50">50</button>
+          <button type="button" data-n="100">100</button>
+          <button type="button" data-n="0">All of them</button>
+        </div>
+      </div>
+      <div class="qs-row">
+        <div class="qs-lab">Difficulty <span class="qs-hint">(tap to turn each one on or off)</span></div>
+        <div class="qs-btns" id="qsDiff">
+          <button type="button" data-d="easy" class="sel">🟢 Easy <em>&mdash;</em></button>
+          <button type="button" data-d="moderate" class="sel">🟡 Moderate <em>&mdash;</em></button>
+          <button type="button" data-d="hard" class="sel">🔴 Hard <em>&mdash;</em></button>
+        </div>
+      </div>
+      <div id="qsAvail"></div>
+      <button id="qsStart" type="button">▶️ Start quiz</button>
+    </div>
+
+    <div id="quizRun" class="qs-hidden">
     <div id="quiz-score-bar">
       <span id="q-counter">Question 1 of 82</span>
       <span id="q-score">Score: 0/0 (0%)</span>
-      <button class="quiz-btn btn-restart" id="btn-restart-top">🔄 Restart</button>
+      <button class="quiz-btn btn-restart" id="btn-restart-top" type="button" title="Go back and change the number or difficulty">⚙️ Change / restart</button>
     </div>
     <div id="quiz-progress"><div id="quiz-progress-bar" style="width:0%"></div></div>
 
     <div id="quiz-card">
       <div id="quiz-q-num"></div>
-      <div id="quiz-q-type"></div>
+      <div id="quiz-q-type"></div><span id="quiz-q-diff" class="qs-meta"></span>
       <div class="sata-label" id="sata-notice" style="display:none">SELECT ALL THAT APPLY — check ALL correct answers, then submit</div>
       <div id="quiz-question"></div>
       <div id="quiz-options-container"></div>
       <div id="quiz-feedback"></div>
       <div class="quiz-btn-row">
-        <button class="quiz-btn btn-submit" id="btn-submit" id="btn-submit">✅ Submit</button>
-        <button class="quiz-btn btn-next" id="btn-next" id="btn-next" style="display:none">Next ➡️</button>
+        <button class="quiz-btn btn-submit" id="btn-submit" type="button">✅ Submit</button>
+        <button class="quiz-btn btn-next" id="btn-next" type="button" style="display:none">Next ➡️</button>
       </div>
     </div>
+    </div><!-- end quizRun -->
   </div>
 </div>
 
@@ -4259,6 +4324,69 @@ const allQuestions = [
 })();
 
 let currentQ = 0, score = 0, answered = 0, shuffled = [];
+let quizPool = [], quizCardHTML = '';
+
+/* ── Difficulty ──────────────────────────────────────────────────────
+   HARD     select-all-that-apply, anything asking for the priority /
+            first / best action, and every dosage calculation.
+   EASY     the short recall questions generated from the flashcards.
+   MODERATE everything else (the written clinical multiple-choice).      */
+const RE_PRIORITY = /\b(priority|prioriti|first|initial|immediately|most important|most appropriate|best (?:action|response|initial)|next action|which .{0,24}(?:requires immediate|is the priority))\b/i;
+const RE_MATH     = /\b(how many|mL\/hr|mcg\/kg|mg\/hr|units\/hr|gtt|drops per|calculate|round to|milliliters|tablets should)\b/i;
+
+function diffOf(q){
+  if(q._d) return q._d;
+  if(q.type === 'sata' || RE_PRIORITY.test(q.q) || RE_MATH.test(q.q))      q._d = 'hard';
+  else if(q.topic === 'Flashcard' && (q.q || '').length <= 140)            q._d = 'easy';
+  else                                                                    q._d = 'moderate';
+  return q._d;
+}
+
+const DIFF_LABEL = {easy:'\uD83D\uDFE2 Easy', moderate:'\uD83D\uDFE1 Moderate', hard:'\uD83D\uDD34 Hard'};
+let chosenN = 25, chosenDiff = {easy:true, moderate:true, hard:true};
+
+function matching(){
+  return allQuestions.filter(function(q){ return chosenDiff[diffOf(q)]; });
+}
+
+function refreshSetup(){
+  const counts = {easy:0, moderate:0, hard:0};
+  allQuestions.forEach(function(q){ counts[diffOf(q)]++; });
+  document.querySelectorAll('#qsDiff button').forEach(function(b){
+    const em = b.querySelector('em');
+    if(em) em.textContent = '(' + counts[b.dataset.d] + ')';
+    b.setAttribute('aria-pressed', chosenDiff[b.dataset.d] ? 'true' : 'false');
+  });
+  const pool = matching();
+  const n = chosenN === 0 ? pool.length : Math.min(chosenN, pool.length);
+  const avail = document.getElementById('qsAvail');
+  const start = document.getElementById('qsStart');
+  if(!pool.length){
+    avail.textContent = 'Pick at least one difficulty.';
+    avail.className = 'qs-warn';
+    start.disabled = true;
+  } else {
+    avail.textContent = 'Ready: ' + n + ' question' + (n === 1 ? '' : 's') +
+      (chosenN !== 0 && pool.length > chosenN ? ' (drawn at random from ' + pool.length + ' that match)' : '') + '.';
+    avail.className = '';
+    start.disabled = false;
+  }
+}
+
+function showSetup(){
+  document.getElementById('quizRun').classList.add('qs-hidden');
+  document.getElementById('quizSetup').classList.remove('qs-hidden');
+  refreshSetup();
+}
+
+function startQuiz(){
+  const pool = shuffle(matching());
+  quizPool = chosenN === 0 ? pool : pool.slice(0, chosenN);
+  if(!quizPool.length) return;
+  document.getElementById('quizSetup').classList.add('qs-hidden');
+  document.getElementById('quizRun').classList.remove('qs-hidden');
+  restartQuiz();
+}
 
 function shuffle(arr) {
   let a = [...arr];
@@ -4271,7 +4399,13 @@ function shuffle(arr) {
 
 function restartQuiz() {
   currentQ = 0; score = 0; answered = 0;
-  shuffled = shuffle(allQuestions);
+  /* the results screen replaces the card's contents, so put the card back
+     before reloading - otherwise loadQuestion() reaches for elements that
+     no longer exist and the quiz dead-ends */
+  const card = document.getElementById('quiz-card');
+  if(quizCardHTML && card && !document.getElementById('quiz-q-num')) card.innerHTML = quizCardHTML;
+  document.getElementById('q-score').textContent = 'Score: 0/0 (0%)';
+  shuffled = shuffle(quizPool.length ? quizPool : allQuestions);
   loadQuestion();
 }
 
@@ -4279,6 +4413,8 @@ function loadQuestion() {
   const q = shuffled[currentQ];
   document.getElementById('quiz-q-num').textContent = `Question ${currentQ+1} of ${shuffled.length}`;
   document.getElementById('quiz-q-type').textContent = q.type === 'sata' ? '📋 SELECT ALL THAT APPLY' : '🔘 Multiple Choice';
+  var dTag = document.getElementById('quiz-q-diff');
+  if(dTag){ var d = diffOf(q); dTag.textContent = DIFF_LABEL[d]; dTag.className = 'qs-meta qs-' + d; }
   document.getElementById('sata-notice').style.display = q.type === 'sata' ? 'inline-block' : 'none';
   document.getElementById('quiz-question').textContent = q.q;
   document.getElementById('quiz-feedback').className = '';
@@ -4387,7 +4523,8 @@ function showFinalScore() {
       <div style="font-size:3.5rem;font-weight:900;color:#FFE082;margin:16px 0;">${score}/${shuffled.length}</div>
       <div style="font-size:2rem;color:#4FC3F7;margin-bottom:12px;">${pct}%</div>
       <div style="font-size:1.3rem;color:#A5D6A7;margin-bottom:20px;">${grade}</div>
-      <button class="quiz-btn btn-restart" id="btn-final-restart" style="padding:14px 30px;font-size:1rem;">🔄 Try Again (Reshuffled)</button>
+      <button class="quiz-btn btn-restart" id="btn-final-restart" style="padding:14px 30px;font-size:1rem;">🔄 Same set again</button>
+      <button class="quiz-btn btn-next" id="btn-change" style="padding:14px 30px;font-size:1rem;">⚙️ Change number / difficulty</button>
     </div>`;
   document.getElementById('quiz-progress-bar').style.width = '100%';
   var fr = document.getElementById('btn-final-restart');
@@ -4403,24 +4540,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ── Quiz buttons ──
-  shuffled = shuffle(allQuestions);
-  loadQuestion();
+  // ── Quiz setup ──
+  var card = document.getElementById('quiz-card');
+  if (card) quizCardHTML = card.innerHTML;   // so the quiz can be rebuilt after the results screen
 
-  var btnRestartTop = document.getElementById('btn-restart-top');
-  if (btnRestartTop) btnRestartTop.addEventListener('click', restartQuiz);
+  document.querySelectorAll('#qsNum button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('#qsNum button').forEach(function(x){ x.classList.remove('sel'); });
+      b.classList.add('sel');
+      chosenN = parseInt(b.dataset.n, 10);
+      refreshSetup();
+    });
+  });
+  document.querySelectorAll('#qsDiff button').forEach(function(b){
+    b.addEventListener('click', function(){
+      chosenDiff[b.dataset.d] = !chosenDiff[b.dataset.d];
+      b.classList.toggle('sel', chosenDiff[b.dataset.d]);
+      refreshSetup();
+    });
+  });
+  var qsStart = document.getElementById('qsStart');
+  if (qsStart) qsStart.addEventListener('click', startQuiz);
+  refreshSetup();
 
-  var btnSubmit = document.getElementById('btn-submit');
-  if (btnSubmit) btnSubmit.addEventListener('click', submitAnswer);
-
-  var btnNext = document.getElementById('btn-next');
-  if (btnNext) btnNext.addEventListener('click', nextQuestion);
-
-  // Event delegation for dynamically injected buttons (final score screen)
+  // Delegated, because the results screen destroys and rebuilds these buttons
   document.addEventListener('click', function(e) {
-    var t = e.target;
+    var t = e.target && e.target.closest ? e.target.closest('button') : null;
     if (!t) return;
-    if (t.id === 'btn-final-restart') restartQuiz();
+    if      (t.id === 'btn-submit')        submitAnswer();
+    else if (t.id === 'btn-next')          nextQuestion();
+    else if (t.id === 'btn-final-restart') restartQuiz();
+    else if (t.id === 'btn-restart-top' ||
+             t.id === 'btn-change')        showSetup();
   });
 });
 </script>
