@@ -22,6 +22,29 @@ body{
 }
 </style>
 </head><body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
 <style id="navbtnCSS">
 #navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
 #navBtns a,#navBtns button{
@@ -33,14 +56,21 @@ body{
 #navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
 #navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
 #navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
-@media(max-width:560px){
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
   #navBtns{top:6px;right:6px;gap:5px}
-  #navBtns a,#navBtns button{padding:6px 10px;font-size:.72rem}
   #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
 }
 @media print{#navBtns{display:none}}
 </style>
 <div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
 <script>
 (function(){
   var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
@@ -176,7 +206,7 @@ body{
   border-bottom:2px solid var(--line);padding-bottom:8px;
 }
 .hi-pill{
-  font-size:12px;background:var(--gold);color:#2a1c00;font-weight:800;
+  font-size:13px;background:var(--gold);color:#2a1c00;font-weight:800;
   padding:3px 9px;border-radius:20px;letter-spacing:.4px;text-transform:uppercase;
 }
 
@@ -229,7 +259,7 @@ table.t tr:nth-child(even) td{background:rgba(255,255,255,.025);}
 /* stat callouts */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:16px 0;}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;}
-.stat .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.stat .lbl{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
 .stat .big{font-size:30px;font-weight:800;color:var(--gold);margin:4px 0;}
 .stat .sm{font-size:13px;color:var(--ink-soft);}
 
@@ -244,8 +274,8 @@ table.t tr:nth-child(even) td{background:rgba(255,255,255,.025);}
   background:var(--gold);color:#2a1c00;font-weight:800;font-size:14px;
   padding:4px 11px;border-radius:9px;white-space:nowrap;
 }
-.qsrc{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:2px 9px;}
-.qsata{font-size:12px;font-weight:800;color:#2a1c00;background:var(--teal);border-radius:20px;padding:2px 10px;}
+.qsrc{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:2px 9px;}
+.qsata{font-size:13px;font-weight:800;color:#2a1c00;background:var(--teal);border-radius:20px;padding:2px 10px;}
 .qstem{font-size:16px;font-weight:600;color:var(--ink);margin:4px 0 12px;}
 .opts{list-style:none;margin:0 0 12px;padding:0;}
 .opts li{
@@ -277,7 +307,7 @@ table.t tr:nth-child(even) td{background:rgba(255,255,255,.025);}
 
 /* back-to-top */
 .toplink{display:block;text-align:right;margin:4px 0 0;}
-.toplink a{color:var(--muted);font-size:12px;text-decoration:none;}
+.toplink a{color:var(--muted);font-size:13px;text-decoration:none;}
 .toplink a:hover{color:var(--blue);}
 
 /* svg figure frame */
@@ -568,7 +598,7 @@ body{
   border-bottom:2px solid var(--line);padding-bottom:8px;
 }
 .hi-pill{
-  font-size:12px;background:var(--gold);color:#2a1c00;font-weight:800;
+  font-size:13px;background:var(--gold);color:#2a1c00;font-weight:800;
   padding:3px 9px;border-radius:20px;letter-spacing:.4px;text-transform:uppercase;
 }
 
@@ -648,7 +678,7 @@ table.t tr:nth-child(even) td{background:rgba(255,255,255,.025);}
 /* stat callouts */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:16px 0;}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;}
-.stat .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.stat .lbl{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
 .stat .big{font-size:30px;font-weight:800;color:var(--gold);margin:4px 0;}
 .stat .sm{font-size:13px;color:var(--ink-soft);}
 
@@ -663,8 +693,8 @@ table.t tr:nth-child(even) td{background:rgba(255,255,255,.025);}
   background:var(--gold);color:#2a1c00;font-weight:800;font-size:14px;
   padding:4px 11px;border-radius:9px;white-space:nowrap;
 }
-.qsrc{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:2px 9px;}
-.qsata{font-size:12px;font-weight:800;color:#2a1c00;background:var(--teal);border-radius:20px;padding:2px 10px;}
+.qsrc{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:2px 9px;}
+.qsata{font-size:13px;font-weight:800;color:#2a1c00;background:var(--teal);border-radius:20px;padding:2px 10px;}
 .qstem{font-size:16px;font-weight:600;color:var(--ink);margin:4px 0 12px;}
 .opts{list-style:none;margin:0 0 12px;padding:0;}
 .opts li{
@@ -696,7 +726,7 @@ table.t tr:nth-child(even) td{background:rgba(255,255,255,.025);}
 
 /* back-to-top */
 .toplink{display:block;text-align:right;margin:4px 0 0;}
-.toplink a{color:var(--muted);font-size:12px;text-decoration:none;}
+.toplink a{color:var(--muted);font-size:13px;text-decoration:none;}
 .toplink a:hover{color:var(--blue);}
 
 /* svg figure frame */
@@ -857,7 +887,7 @@ SpO₂ &amp;lt;90%? → &lt;b&gt;1.&lt;/b&gt; Sit upright (HOB 90°) &amp;nbsp;&
     &lt;li&gt;Meds: decongestants, amoxicillin (bacterial only), NSAIDs/acetaminophen.&lt;/li&gt;
     &lt;li&gt;&lt;b&gt;Nursing:&lt;/b&gt; steam, sinus irrigation, hot packs, fluids; avoid air travel/swimming.&lt;/li&gt;
   &lt;/ul&gt;&lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;🗣️ Pharyngitis &lt;span style=&quot;font-size:12px;color:#9af5c6&quot;&gt;(NEW)&lt;/span&gt;&lt;/h3&gt;
+  &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;🗣️ Pharyngitis &lt;span style=&quot;font-size:13px;color:#9af5c6&quot;&gt;(NEW)&lt;/span&gt;&lt;/h3&gt;
   &lt;ul class=&quot;clean&quot;&gt;
     &lt;li&gt;Inflammation of the throat; most often &lt;b&gt;viral&lt;/b&gt;; bacterial usually group A strep.&lt;/li&gt;
     &lt;li&gt;Sore throat, pain on swallowing, red pharynx, fever, enlarged lymph nodes.&lt;/li&gt;
@@ -865,7 +895,7 @@ SpO₂ &amp;lt;90%? → &lt;b&gt;1.&lt;/b&gt; Sit upright (HOB 90°) &amp;nbsp;&
     &lt;li&gt;&lt;b&gt;Teaching:&lt;/b&gt; finish the FULL antibiotic course even when feeling better (prevents resistance / rheumatic fever).&lt;/li&gt;
     &lt;li&gt;Warm saline gargles, fluids, throat lozenges, soft diet.&lt;/li&gt;
   &lt;/ul&gt;&lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;🔇 Laryngitis &lt;span style=&quot;font-size:12px;color:#9af5c6&quot;&gt;(NEW)&lt;/span&gt;&lt;/h3&gt;
+  &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;🔇 Laryngitis &lt;span style=&quot;font-size:13px;color:#9af5c6&quot;&gt;(NEW)&lt;/span&gt;&lt;/h3&gt;
   &lt;ul class=&quot;clean&quot;&gt;
     &lt;li&gt;Inflammation of the larynx → &lt;b&gt;hoarseness or voice loss&lt;/b&gt;.&lt;/li&gt;
     &lt;li&gt;Causes: voice overuse, viral URI, GERD reflux, irritant/smoke exposure.&lt;/li&gt;
@@ -898,7 +928,7 @@ SpO₂ &amp;lt;90%? → &lt;b&gt;1.&lt;/b&gt; Sit upright (HOB 90°) &amp;nbsp;&
     &lt;li&gt;Post-total laryngectomy = &lt;b&gt;permanent stoma&lt;/b&gt; + new voice (electrolarynx, esophageal speech, TEP).&lt;/li&gt;
     &lt;li&gt;&lt;b&gt;Top post-op priority = airway&lt;/b&gt; (ABC). Humidify home air; NEVER smoke near stoma.&lt;/li&gt;
   &lt;/ul&gt;&lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;🚫 Laryngeal Obstruction &lt;span style=&quot;font-size:12px;color:#9af5c6&quot;&gt;(NEW)&lt;/span&gt;&lt;/h3&gt;
+  &lt;div class=&quot;card&quot;&gt;&lt;h3&gt;🚫 Laryngeal Obstruction &lt;span style=&quot;font-size:13px;color:#9af5c6&quot;&gt;(NEW)&lt;/span&gt;&lt;/h3&gt;
   &lt;ul class=&quot;clean&quot;&gt;
     &lt;li&gt;&lt;b&gt;Emergency&lt;/b&gt; — swelling of the larynx (anaphylaxis, edema, aspirated object) blocks airflow.&lt;/li&gt;
     &lt;li&gt;Signs: &lt;span class=&quot;hl-r&quot;&gt;stridor, inability to speak, gasping, cyanosis, panic&lt;/span&gt;.&lt;/li&gt;
@@ -1140,7 +1170,7 @@ paralyzed client is fully conscious and can feel pain. &lt;b&gt;Always co-admini
     &lt;li&gt;Empyema Tx: chest tube drainage + IV antibiotics.&lt;/li&gt;
   &lt;/ul&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;card&quot;&gt;&lt;h3&gt;🩺 Thoracotomy &lt;span style=&quot;font-size:12px;color:#9af5c6&quot;&gt;(NEW)&lt;/span&gt;&lt;/h3&gt;
+&lt;div class=&quot;card&quot;&gt;&lt;h3&gt;🩺 Thoracotomy &lt;span style=&quot;font-size:13px;color:#9af5c6&quot;&gt;(NEW)&lt;/span&gt;&lt;/h3&gt;
 &lt;ul class=&quot;clean&quot;&gt;
   &lt;li&gt;Surgical opening into the chest wall (e.g., lobectomy, pneumonectomy, tumor/bleeding repair).&lt;/li&gt;
   &lt;li&gt;&lt;b&gt;Post-op priorities:&lt;/b&gt; airway &amp;amp; breathing first; pain control so the client will deep-breathe &amp;amp; cough; splint incision; incentive spirometry.&lt;/li&gt;
@@ -1568,7 +1598,7 @@ ul.clean li::marker{color:var(--magenta);}
 .kt{color:var(--teal);font-weight:700;}
 
 /* little inline pill for &quot;exam trap&quot;/&quot;memory&quot; tags */
-.tag{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+.tag{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
   padding:2px 8px;border-radius:11px;vertical-align:middle;margin-left:6px;}
 .tag.trap{background:var(--orange);color:#3a1a00;}
 .tag.mem{background:var(--blue);color:#0a1a3a;}
@@ -2442,11 +2472,11 @@ body{
 }
 .q-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
 .q-num{font-size:13px;font-weight:800;color:var(--magenta);letter-spacing:.5px;}
-.fmt{font-size:11.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:3px 10px;border-radius:11px;}
+.fmt{font-size:13px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:3px 10px;border-radius:11px;}
 .fmt.mc{background:rgba(143,192,255,.16);color:var(--blue);border:1px solid var(--blue);}
 .fmt.sata{background:rgba(255,176,112,.16);color:var(--orange);border:1px solid var(--orange);}
 .fmt.order{background:rgba(95,224,210,.16);color:var(--teal);border:1px solid var(--teal);}
-.topic-pill{font-size:11.5px;color:var(--muted);background:var(--field);border:1px solid var(--line-soft);border-radius:11px;padding:3px 10px;}
+.topic-pill{font-size:13px;color:var(--muted);background:var(--field);border:1px solid var(--line-soft);border-radius:11px;padding:3px 10px;}
 .q-text{font-size:19px;font-weight:600;color:#fff;line-height:1.5;margin-bottom:6px;}
 .q-hint{font-size:13.5px;color:var(--muted);font-style:italic;margin-bottom:14px;}
 
@@ -2529,14 +2559,14 @@ body{
 .review-item.r .ri-mark{color:var(--green);}
 .review-item.w .ri-mark{color:var(--red);}
 
-.foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:26px;}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:26px;}
 .start-card{text-align:center;}
 .start-card .big{font-size:18px;color:var(--ink-soft);margin:8px 0 18px;}
 .legend{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0 0;}
-.legend span{font-size:12.5px;padding:4px 10px;border-radius:10px;}
+.legend span{font-size:13px;padding:4px 10px;border-radius:10px;}
 .filter-row{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
 .filter-btn{font-size:14.5px;padding:9px 15px;position:relative;}
-.filter-btn .cnt{font-size:12px;color:var(--muted);margin-left:4px;}
+.filter-btn .cnt{font-size:13px;color:var(--muted);margin-left:4px;}
 .filter-btn.on{background:var(--card2);border-color:var(--magenta);color:#fff;}
 .filter-btn.on .cnt{color:var(--gold-soft);}
 .shuffle-row{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--ink-soft);margin-top:14px;cursor:pointer;}
@@ -5999,4 +6029,21 @@ renderStart();
  });});
 </script>
 
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
 </body></html>
