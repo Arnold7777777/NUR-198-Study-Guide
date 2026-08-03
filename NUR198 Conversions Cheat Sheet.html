@@ -52,7 +52,7 @@ h2.sys{margin:34px 0 6px;font-size:1.3rem;color:var(--gold);border-bottom:2px so
 .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{border-collapse:collapse;width:100%;min-width:420px;font-size:.94rem}
 th{background:var(--panel2);color:var(--gold);text-align:left;padding:9px 11px;border:1px solid var(--line);
-  font-size:.78rem;text-transform:uppercase;letter-spacing:.5px}
+  font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px}
 td{padding:9px 11px;border:1px solid var(--line);vertical-align:top}
 tbody tr:nth-child(odd){background:rgba(255,255,255,.028)}
 td b,th b{color:var(--ink)}
@@ -63,7 +63,7 @@ td b,th b{color:var(--ink)}
 .ladder{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0 4px}
 .rung{background:var(--panel2);border:2px solid var(--line);border-radius:12px;padding:11px 16px;text-align:center;min-width:96px}
 .rung b{display:block;font-size:1.25rem;color:var(--gold)}
-.rung span{font-size:.72rem;color:var(--muted)}
+.rung span{font-size:0.82rem;color:var(--muted)}
 .arrow{font-weight:900;color:var(--accent);font-size:.86rem;text-align:center;line-height:1.15}
 
 /* callouts */
@@ -82,7 +82,7 @@ td b,th b{color:var(--ink)}
 .mcard{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--accent);
   border-radius:12px;padding:12px 14px}
 .mcard .v{font-size:1.22rem;font-weight:900;color:var(--gold);line-height:1.25}
-.mcard .l{font-size:.76rem;color:var(--muted);margin-top:3px}
+.mcard .l{font-size:0.82rem;color:var(--muted);margin-top:3px}
 
 /* practice */
 details.pq{background:var(--panel2);border:1px solid var(--line);border-radius:12px;margin:9px 0;overflow:hidden}
@@ -101,6 +101,29 @@ details.pq[open]>summary{background:rgba(255,255,255,.05);border-bottom:1px soli
 @media(max-width:560px){.conv .eq{display:none}header.top h1{font-size:1.45rem}.answer .big{font-size:1.7rem}}
 @media print{a.home,.jump,.tabs,.swap{display:none}}
 </style></head><body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
 <style id="navbtnCSS">
 #navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
 #navBtns a,#navBtns button{
@@ -112,14 +135,21 @@ details.pq[open]>summary{background:rgba(255,255,255,.05);border-bottom:1px soli
 #navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
 #navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
 #navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
-@media(max-width:560px){
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
   #navBtns{top:6px;right:6px;gap:5px}
-  #navBtns a,#navBtns button{padding:6px 10px;font-size:.72rem}
   #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
 }
 @media print{#navBtns{display:none}}
 </style>
 <div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
 <script>
 (function(){
   var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
@@ -444,4 +474,21 @@ water = 240 mL
 })();
 </script>
 
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
 </body></html>
