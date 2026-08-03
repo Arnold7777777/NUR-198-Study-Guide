@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · Week 11 — Upper GI Guided Notes (filled in)</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 · Week 11 · Module 11 · Upper GI</div>
+  <h1>Week 11 &mdash; <span class="glow">Upper GI</span> Guided Notes</h1>
+  <p>The Week 11 guided notes, filled in. Tap "Hide answers" to quiz yourself.</p>
+<div class="bigq"><b class="q">Is the mucosa irritated, eroded, or perforated?</b>Irritation is discomfort. Erosion bleeds. Perforation is a surgical emergency.</div>
+ </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc">
+  <a href="#objectives">0 &middot; Learning Objectives</a>
+  <a href="#cues">1 &middot; Clinical Judgment: Recognize Cues</a>
+  <a href="#gerd">2 &middot; GERD Review</a>
+  <a href="#esoph">3 &middot; Esophageal Cancer</a>
+  <a href="#stomach">4 &middot; Transition to Gastric Disorders</a>
+  <a href="#gastritis">5 &middot; Gastritis</a>
+  <a href="#manifestations">6 &middot; Manifestations &mdash; Why?</a>
+  <a href="#pharm">7 &middot; Pharmacology 💊⭐</a>
+  <a href="#pud">8 &middot; Peptic Ulcer Disease</a>
+  <a href="#gvd">9 &middot; Gastric vs Duodenal ⭐</a>
+  <a href="#reasoning">10 &middot; Clinical Reasoning &mdash; One Clue Each</a>
+  <a href="#complications">11 &middot; PUD Complications 🚨</a>
+  <a href="#bleed">12 &middot; Upper GI Bleed &mdash; Flow 🚨</a>
+  <a href="#gastrectomy">13 &middot; Gastrectomy</a>
+  <a href="#pernicious">14 &middot; Pernicious Anemia</a>
+  <a href="#dumping">15 &middot; Dumping Syndrome ⭐</a>
+  <a href="#gastriccancer">16 &middot; Gastric Cancer</a>
+  <a href="#casestudy">17 &middot; Case Study &mdash; the 6 Steps</a>
+  <a href="#four">18 &middot; The Four Things You MUST Remember</a>
+  <a href="#check">19 &middot; NCLEX Success Check</a>
+  <a href="#practice">Practice Questions</a>
+  <a href="#summary">⭐ Must-Not-Forget Strip</a>
+</div>
+
+<p class="lead-in"><i>Week 11 &mdash; Upper Gastrointestinal Disorders: GERD &middot; Esophageal Cancer &middot; Gastritis &middot; Peptic Ulcer Disease &middot; Gastrectomy &middot; Gastric Cancer. Every highlighted answer was a blank on the paper handout. Read the card, then hide the answers and say them out loud.</i></p>
+
+<!-- ===================== 0. OBJECTIVES ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="objectives">
+<h2>0 &middot; Learning Objectives 🎯</h2>
+<p class="lead-in"><i>By the end of today's lecture, I should be able to&hellip;</i></p>
+<ul class="blanks">
+  <li>✅ <b>Explain the pathophysiology of common upper GI disorders.</b> <span class="fill">Every one of them is the same story: <b>something breaks the protective mucus&ndash;bicarbonate barrier</b>, acid and pepsin reach living tissue, and the tissue inflames &rarr; erodes &rarr; bleeds &rarr; perforates.</span></li>
+  <li>✅ <b>Differentiate GERD, gastritis, gastric ulcers, duodenal ulcers, and cholecystitis.</b> <span class="fill">The separator is almost always <b>where the pain is and what food does to it</b> &mdash; see card 10.</span></li>
+  <li>✅ <b>Identify priority assessments and complications.</b> <span class="fill">Priority assessment in any upper GI patient = <b>signs of bleeding and signs of shock</b> (VS, hematemesis, melena, H&amp;H). The three complications that kill are <b>hemorrhage, perforation, and obstruction</b>.</span></li>
+  <li>✅ <b>Apply the NCLEX Clinical Judgment Model to GI case studies.</b> <span class="fill">Recognize cues &rarr; analyze cues &rarr; prioritize hypothesis &rarr; generate solutions &rarr; take action &rarr; evaluate outcomes.</span></li>
+</ul>
+<p><mark>The one question that unlocks this whole module: is the mucosa irritated, eroded, or perforated?</mark></p>
+</div>
+
+<!-- ===================== 1. RECOGNIZE CUES ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="cues">
+<h2>1 &middot; Clinical Judgment Framework &mdash; Step 1: Recognize Cues 🔍</h2>
+<p class="lead-in"><i>What cues are you looking for in an upper GI patient?</i></p>
+
+<ul class="blanks">
+  <li><b>History</b> &mdash; <span class="fill"><b>NSAID / aspirin / corticosteroid use</b> (ask how many and how often), alcohol, smoking, caffeine, prior ulcer or <b>H. pylori</b>, family history of ulcer or gastric cancer, recent major stress (burns, head injury, ICU stay, mechanical ventilation), heartburn pattern, weight change, and <b>what food does to the pain</b>.</span></li>
+  <li><b>Assessment</b> &mdash; <span class="fill"><b>Epigastric pain &mdash; location, timing relative to meals, what relieves it.</b> Then: nausea/vomiting, <b>hematemesis</b> (bright red or coffee-ground), <b>melena</b>, bloating and early satiety, dysphagia, weight loss, abdominal tenderness/rigidity, bowel sounds, and vital signs.</span></li>
+  <li><b>Risk Factors</b> &mdash; <span class="fill">H. pylori, NSAIDs, smoking, alcohol, physiologic stress, obesity, hiatal hernia, diet of smoked/salted/pickled foods, age &gt;50, and a history of gastric surgery.</span></li>
+  <li><b>Labs</b> &mdash; <span class="fill"><b>H&amp;H</b> (Hgb 12&ndash;16 g/dL female / 14&ndash;18 male; Hct 37&ndash;47% / 42&ndash;52%) &mdash; <i>remember it takes hours to drop, so a normal H&amp;H does not rule out an acute bleed</i>; stool for <b>occult blood</b>; <b>H. pylori</b> testing; <b>BUN</b> (rises in an upper GI bleed because blood is digested protein); electrolytes; albumin; type &amp; crossmatch; B12 level.</span></li>
+  <li><b>Diagnostics</b> &mdash; <span class="fill"><b>EGD (esophagogastroduodenoscopy) with biopsy</b> is the definitive study for all of them. Also: upper GI barium series, 24-hour esophageal pH monitoring and manometry for GERD, urea breath test / stool antigen for H. pylori, and <b>upright abdominal or chest x-ray</b> when perforation is suspected (looking for free air under the diaphragm).</span></li>
+</ul>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Give me patient assessment findings and help me identify the most important cues, the most likely problem, and the priority nursing action."</p>
+</div>
+
+<!-- ===================== 2. GERD ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="gerd">
+<h2>2 &middot; GERD Review 🔥</h2>
+
+<p><b>GERD occurs when</b> <span class="fill">the <b>lower esophageal sphincter (LES) is incompetent or relaxes when it shouldn't</b>, so acidic stomach contents reflux back up into the esophagus. <i>The esophagus has no protective mucus barrier the way the stomach does, so acid burns it directly.</i> Anything that raises intra-abdominal pressure (obesity, pregnancy, large meals, tight clothing, bending) or weakens the LES (nicotine, caffeine, chocolate, peppermint, alcohol, fatty food, calcium channel blockers, anticholinergics, hiatal hernia) makes it worse.</span></p>
+
+<h3>Classic manifestations</h3>
+<ul class="blanks">
+  <li>✅ <span class="fill"><b>Pyrosis (heartburn)</b> &mdash; burning behind the sternum, typically <b>30&ndash;60 minutes after eating</b> and worse lying flat or bending over.</span></li>
+  <li>✅ <span class="fill"><b>Regurgitation</b> &mdash; a sour, bitter taste of fluid rising into the throat or mouth, often at night.</span></li>
+  <li>✅ <span class="fill"><b>Dysphagia or odynophagia</b> &mdash; difficult or painful swallowing from esophageal inflammation, edema, or stricture.</span></li>
+  <li>✅ <span class="fill"><b>Respiratory / atypical symptoms</b> &mdash; chronic dry cough, hoarseness, sore throat, wheezing or asthma-like attacks at night, dental erosion, and <b>non-cardiac chest pain that mimics an MI</b>.</span></li>
+</ul>
+<p><span class="never">Chest pain is a cardiac problem until proven otherwise. Never label chest pain as "just reflux" without an ECG and troponin.</span></p>
+
+<h3>Major lifestyle modifications</h3>
+<ul class="blanks">
+  <li>✅ <span class="fill"><b>Elevate the head of the bed 6&ndash;8 inches</b> (blocks under the bed frame or a wedge &mdash; <i>not</i> a stack of pillows, which bends the body and raises abdominal pressure) and <b>do not eat within 3 hours of lying down</b>.</span></li>
+  <li>✅ <span class="fill"><b>Eat small, frequent meals</b> and stay upright for 2&ndash;3 hours after eating instead of eating three large ones.</span></li>
+  <li>✅ <span class="fill"><b>Avoid trigger foods</b> &mdash; caffeine, chocolate, peppermint, alcohol, fatty/fried food, tomato products, citrus, and carbonated drinks. <i>Most of these relax the LES; the acidic ones irritate directly.</i></span></li>
+  <li>✅ <span class="fill"><b>Stop smoking, lose weight if overweight, and avoid tight clothing or belts.</b> <i>Nicotine relaxes the LES; abdominal pressure pushes acid up.</i></span></li>
+</ul>
+
+<h3>Treatment &amp; the complication that matters</h3>
+<p><b>Drugs:</b> <span class="fill"><b>PPIs are first line</b> (omeprazole, pantoprazole &mdash; take 30&ndash;60 min <b>before</b> breakfast), then H2 blockers (famotidine, good for nighttime acid), and antacids for fast, short-lived relief.</span></p>
+<p><b>Surgery:</b> <span class="fill"><b>Nissen fundoplication</b> &mdash; the fundus is wrapped around the distal esophagus to reinforce the LES. Watch afterward for dysphagia, gas-bloat syndrome, and inability to belch or vomit.</span></p>
+<p><b>The complication to know:</b> <span class="fill">Chronic reflux &rarr; <b>Barrett's esophagus</b> (the squamous lining is replaced by columnar cells) &rarr; <mark>a premalignant change that leads to esophageal <b>adenocarcinoma</b></mark>. That is why these patients need surveillance EGD.</span></p>
+</div>
+
+<!-- ===================== 3. ESOPHAGEAL CANCER ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="esoph">
+<h2>3 &middot; Esophageal Cancer 🎗️</h2>
+
+<h3>Most patients are diagnosed&hellip;</h3>
+<ul class="blanks">
+  <li>❌ Early &mdash; <span class="fill">almost never. There is no early warning sign.</span></li>
+  <li>✅ <b>Late</b> &mdash; <span class="fill"><mark>The esophagus is stretchy and has no serosal layer, so the tumor grows and spreads before it causes symptoms.</mark> <b>Dysphagia &mdash; the first symptom &mdash; usually does not appear until 50&ndash;60% of the lumen is blocked</b>, and by then the tumor has typically invaded surrounding tissue. Progression is classic: solids first &rarr; then soft food &rarr; then liquids, plus odynophagia, weight loss, hoarseness, and regurgitation.</span></li>
+</ul>
+
+<h3>Treatment may include</h3>
+<ul class="blanks">
+  <li>✅ <span class="fill"><b>Surgery &mdash; esophagectomy / esophagogastrostomy</b>, in which the diseased segment is removed and the stomach is pulled up into the chest and anastomosed to the remaining esophagus. This is the only potentially curative option.</span></li>
+  <li>✅ <span class="fill"><b>Chemotherapy and radiation</b> &mdash; often given <b>neoadjuvantly</b> (before surgery) to shrink the tumor, or together as definitive therapy when the patient is not a surgical candidate.</span></li>
+  <li>✅ <span class="fill"><b>Palliative measures to keep the lumen open and the patient fed</b> &mdash; endoscopic dilation, a self-expanding esophageal stent, laser or photodynamic ablation, and <b>enteral feeding via gastrostomy or jejunostomy tube</b> when swallowing fails.</span></li>
+</ul>
+
+<h3>⭐ Major nursing concern after esophagectomy</h3>
+<p><span class="fill"><mark><b>Protecting the anastomosis and the airway &mdash; specifically, preventing aspiration and catching an anastomotic leak.</b></mark> The new suture line sits in the chest with no LES above it, and the incision is thoracic, so:
+<br>&rarr; <b>Keep the head of the bed elevated at least 30&ndash;45&deg; at ALL times, including during sleep</b> &mdash; reflux into an unprotected esophagus goes straight into the lungs.
+<br>&rarr; <span class="never">Never reposition, advance, or irrigate the NG tube without a surgeon's order &mdash; the tip sits at the suture line and moving it can rupture the anastomosis.</span>
+<br>&rarr; Watch for the leak: <b>fever, tachycardia, new or increasing pain, dyspnea, and subcutaneous emphysema in the neck or chest</b> &mdash; report immediately, it is a surgical emergency.
+<br>&rarr; Aggressive pulmonary care (incentive spirometer, splinted coughing, early ambulation) because a high thoracic incision makes people breathe shallowly &rarr; atelectasis and pneumonia.
+<br>&rarr; Nothing by mouth until the leak study (swallow study) is negative; then small amounts, upright, slowly.</span></p>
+</div>
+
+<!-- ===================== 4. TRANSITION ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="stomach">
+<h2>4 &middot; Transition to Gastric Disorders 🫙</h2>
+
+<p><b>Food now enters the:</b> <span class="fill"><b>stomach</b>, passing through the lower esophageal (cardiac) sphincter. It will leave through the <b>pyloric sphincter</b> into the duodenum &mdash; <i>remember that pylorus, because when scarring closes it you get pyloric stenosis, and when surgery removes it you get dumping syndrome.</i></span></p>
+
+<p><b>Main function of the stomach:</b> <span class="fill"><b>Store food, mix and churn it with gastric secretions into chyme, and release it into the duodenum in small controlled amounts.</b> It secretes four things you must know:
+<br>&rarr; <b>Hydrochloric acid</b> (parietal cells) &mdash; kills microbes and activates pepsinogen
+<br>&rarr; <b>Pepsinogen &rarr; pepsin</b> (chief cells) &mdash; <b>begins protein digestion</b>
+<br>&rarr; <b>Intrinsic factor</b> (parietal cells) &mdash; required to absorb <b>vitamin B12</b>
+<br>&rarr; <b>Mucus and bicarbonate</b> &mdash; the barrier that keeps the stomach from digesting itself.
+<br><mark>Nearly no nutrient absorption happens here &mdash; only alcohol, water, and some drugs. Absorption is the small intestine's job.</mark></span></p>
+</div>
+
+<!-- ===================== 5. GASTRITIS ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="gastritis">
+<h2>5 &middot; Gastritis 🫃</h2>
+
+<p><b>Definition:</b> <span class="fill"><b>Inflammation of the gastric mucosa.</b> The protective mucus&ndash;bicarbonate barrier is disrupted, so acid and pepsin contact the epithelium. <i>Gastritis is superficial and diffuse; a peptic ulcer is a deeper, discrete crater. Gastritis is what an ulcer looks like before it becomes an ulcer.</i></span></p>
+
+<h3>Causes</h3>
+<ul class="blanks">
+  <li><b>Acute:</b> <span class="fill"><b>NSAIDs and aspirin</b> (block prostaglandins &rarr; less mucus and bicarbonate), heavy alcohol, <b>H. pylori</b>, corticosteroids, spicy/irritating food, food poisoning, chemotherapy and radiation, bile reflux, and <b>severe physiologic stress</b> &mdash; burns (<b>Curling's ulcer</b>), head injury (<b>Cushing's ulcer</b>), sepsis, and mechanical ventilation. <i>Acute gastritis is self-limiting: remove the insult and the mucosa regenerates in a few days.</i></span></li>
+  <li><b>Chronic:</b> <span class="fill"><b>H. pylori is the most common cause</b> (type B, antrum). The other major type is <b>autoimmune (type A, fundus/body)</b>, in which antibodies destroy the parietal cells &rarr; no acid and <b>no intrinsic factor &rarr; pernicious anemia</b>. Add chronic NSAID or alcohol use, bile reflux, and age-related mucosal atrophy. <mark>Chronic atrophic gastritis is a risk factor for gastric cancer.</mark></span></li>
+</ul>
+
+<h3>Risk Factors &mdash; circle the ones that damage the stomach lining</h3>
+<p class="lead-in"><i>The trick here: they all do. What matters is knowing which mechanism each one uses &mdash; every single one either <b>raises acid</b> or <b>weakens defense</b>.</i></p>
+<ul class="blanks">
+  <li>✅ <b>NSAIDs</b> &mdash; <span class="fill">block prostaglandins &rarr; less mucus, bicarbonate, and mucosal blood flow. <b>The #1 preventable cause.</b></span></li>
+  <li>✅ <b>Smoking</b> &mdash; <span class="fill">reduces mucosal blood flow and bicarbonate, delays healing, and increases recurrence.</span></li>
+  <li>✅ <b>Alcohol</b> &mdash; <span class="fill">directly strips the mucus layer and causes hyperemia and erosion.</span></li>
+  <li>✅ <b>Stress</b> &mdash; <span class="fill"><b>physiologic</b> stress (burns, trauma, sepsis, ICU) shunts blood away from the gut &rarr; ischemic mucosa &rarr; stress ulcers. Emotional stress mostly acts indirectly (more acid, more NSAIDs, more alcohol, worse eating).</span></li>
+  <li>✅ <b>H. pylori</b> &mdash; <span class="fill">burrows under the mucus layer, makes urease to neutralize acid around itself, and provokes chronic inflammation. <b>The most common cause worldwide.</b></span></li>
+  <li>✅ <b>Radiation</b> &mdash; <span class="fill">kills the rapidly dividing epithelial cells that normally replace the lining every few days.</span></li>
+  <li>✅ <b>Autoimmune disease</b> &mdash; <span class="fill">antibodies destroy parietal cells &rarr; atrophic gastritis and pernicious anemia.</span></li>
+  <li>✅ <b>Caffeine</b> &mdash; <span class="fill">stimulates acid secretion and relaxes the LES.</span></li>
+  <li>✅ <b>Older age</b> &mdash; <span class="fill">the mucosa naturally thins and makes less mucus, plus older adults take more NSAIDs. <span class="never">Older adults may have <b>no pain at all</b> and present only with anemia, weakness, or a sudden bleed.</span></span></li>
+</ul>
+
+<h3>Pathophysiology &mdash; complete the chain</h3>
+<div class="flow">
+  <div class="stepbox"><b>START</b><span>Damage to stomach lining</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 1</b><span><span class="fill">Protective <b>mucus &amp; bicarbonate barrier breaks down</b></span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 2</b><span><span class="fill"><b>HCl and pepsin back-diffuse</b> into the mucosa</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 3</b><span><span class="fill"><b>Inflammation</b> &mdash; histamine release, edema, hyperemia (more acid, more damage)</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 4</b><span><span class="fill"><b>Mucosal erosion</b> exposes capillaries and deeper tissue</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>END</b><span>Possible bleeding or ulcer formation</span></div>
+</div>
+
+<h3>Diagnostics</h3>
+<p><b>Which test gives the definitive diagnosis?</b> <span class="fill"><b>EGD (upper endoscopy) with biopsy.</b> <i>The scope lets you see the mucosa directly, the biopsy tells you whether it is inflammation, H. pylori, or cancer, and bleeding can be treated in the same procedure.</i> Nursing care: NPO 6&ndash;8 hours before; consent; conscious sedation; afterward <b>keep NPO until the gag reflex returns</b>, then watch for the complications &mdash; bleeding, and perforation (sudden pain, fever, dyspnea, crepitus in the neck).</span></p>
+
+<p><b>How do we test for H. pylori?</b> <span class="fill">Four ways, and the first three prove <b>active</b> infection:
+<br>&rarr; <b>Urea breath test</b> &mdash; drink labeled urea; H. pylori's urease splits it and you exhale labeled CO&#8322;. Also the test of choice to <b>confirm eradication</b> 4 weeks after treatment.
+<br>&rarr; <b>Stool antigen test</b> &mdash; noninvasive, confirms active infection and cure.
+<br>&rarr; <b>Biopsy with rapid urease (CLO) test</b> during EGD &mdash; the gold standard when the patient is already being scoped.
+<br>&rarr; <b>Serum antibody (IgG)</b> &mdash; only proves <i>past exposure</i>; it stays positive for years after cure, so it cannot be used to confirm eradication.
+<br><mark>Teaching that gets tested: hold PPIs for 2 weeks and antibiotics/bismuth for 4 weeks before a breath or stool test &mdash; they suppress the organism and cause a false negative.</mark></span></p>
+
+<h3>Nursing Priorities</h3>
+<p><b>Priority nursing interventions:</b> <span class="fill"><b>First, assess for bleeding and hypovolemia</b> &mdash; vital signs, hematemesis or coffee-ground emesis, melena, H&amp;H, orthostatic changes &mdash; <i>because hemorrhage is the complication that turns a comfort problem into an emergency.</i> Then:
+<br>&rarr; Rest the stomach: <b>NPO</b> during acute symptoms, IV fluids and electrolyte replacement, then advance clear liquids &rarr; bland foods as tolerated.
+<br>&rarr; <b>Eliminate the cause</b> &mdash; stop NSAIDs/aspirin (switch to acetaminophen), stop alcohol, stop smoking, cut caffeine.
+<br>&rarr; Give acid suppression and mucosal protection on schedule; complete the full antibiotic course if H. pylori positive.
+<br>&rarr; Monitor intake &amp; output, daily weight, and electrolytes if vomiting.
+<br>&rarr; Teach: small frequent bland meals, no eating 2&ndash;3 hours before bed, and <b>report black tarry stools or vomiting blood immediately</b>.</span></p>
+</div>
+
+<!-- ===================== 6. MANIFESTATIONS ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="manifestations">
+<h2>6 &middot; Clinical Manifestations &mdash; explain WHY each one occurs 🤔</h2>
+
+<table class="cmp">
+<thead><tr><th>Manifestation</th><th>Why does it happen?</th></tr></thead>
+<tbody>
+<tr><td class="k">Epigastric pain</td><td><span class="fill">Acid and pepsin reach exposed nerve endings in an inflamed or eroded mucosa. <i>Pain sits high and mid-abdomen because that is where the stomach and duodenal bulb are.</i> <b>The timing relative to food is the diagnostic clue.</b></span></td></tr>
+<tr><td class="k">Nausea / Vomiting</td><td><span class="fill">Inflammation stimulates vagal afferents and the chemoreceptor trigger zone, and gastric emptying slows so food sits in an irritated stomach. <i>If vomiting is persistent, watch for hypokalemic, hypochloremic <b>metabolic alkalosis</b> and dehydration.</i></span></td></tr>
+<tr><td class="k">Burning</td><td><span class="fill">Hydrochloric acid in direct contact with unprotected epithelium &mdash; a literal chemical burn. In GERD, the same acid on esophageal mucosa (which has no mucus barrier at all) is felt as heartburn behind the sternum.</span></td></tr>
+<tr><td class="k">Bloating</td><td><span class="fill"><b>Delayed gastric emptying</b> plus gas produced by inflammation and, in H. pylori infection, by bacterial urease splitting urea into ammonia and CO&#8322;. Presents as fullness, belching, and early satiety.</span></td></tr>
+<tr><td class="k">Hematemesis</td><td><span class="fill">Erosion has opened a blood vessel in the mucosa. <mark><b>Bright red = brisk, active, ongoing bleeding. Coffee-ground = blood that sat in acid long enough to be converted to hematin</b> &mdash; slower or already stopped.</mark> Either one means the erosion is now a bleed.</span></td></tr>
+<tr><td class="k">Melena</td><td><span class="fill">Blood from an <b>upper</b> GI source is digested as it travels the length of the gut &mdash; hemoglobin is broken down to hematin, turning the stool <b>black, tarry, sticky, and foul-smelling</b>. Takes roughly 50 mL or more of blood. <i>Also explains the rising BUN with a normal creatinine: blood is protein being absorbed.</i></span></td></tr>
+<tr><td class="k">Weight loss</td><td><span class="fill">Two mechanisms: the patient stops eating because eating hurts (classic in <b>gastric</b> ulcers), and chronic gastritis causes anorexia, early satiety, and malabsorption. <span class="never">Unintentional weight loss plus dysphagia or persistent dyspepsia over age 50 is a red-flag combination &mdash; think malignancy and get the EGD.</span></span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== 7. PHARMACOLOGY ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="pharm">
+<h2>7 &middot; Pharmacology &mdash; four goals, not a drug list 💊⭐</h2>
+<p class="lead-in"><i>Instead of memorizing medications&hellip; complete the goal. Every upper GI drug fits into exactly one of these four boxes.</i></p>
+
+<ul class="blanks">
+  <li><b>Kill the</b> <span class="fill"><b>bacteria &mdash; <i>Helicobacter pylori</i></b>. <i>If you don't kill it, the ulcer comes back no matter how much acid you suppress.</i></span></li>
+  <li><b>Reduce</b> <span class="fill"><b>the acid</b> (gastric acid secretion) &mdash; so the injured mucosa gets a chance to heal.</span></li>
+  <li><b>Protect the</b> <span class="fill"><b>mucosa / stomach lining</b> &mdash; put a physical or chemical barrier between the acid and the raw tissue.</span></li>
+  <li><b>Prevent</b> <span class="fill"><b>recurrence and complications</b> &mdash; stop NSAIDs, add mucosal protection when NSAIDs are unavoidable, stop smoking and alcohol, and confirm H. pylori eradication so the ulcer does not come back and bleed or perforate.</span></li>
+</ul>
+
+<h3>Match each medication to its goal</h3>
+<table class="cmp">
+<thead><tr><th>Medication</th><th>Goal &mdash; and what you must teach</th></tr></thead>
+<tbody>
+<tr><td class="k">Antibiotics<br><span class="tiny">amoxicillin, clarithromycin, metronidazole, tetracycline</span></td><td><span class="fill"><b>KILL the H. pylori.</b> Always given in <b>combination</b> &mdash; never a single agent &mdash; because monotherapy breeds resistance. <mark><b>Triple therapy = PPI + clarithromycin + amoxicillin</b> (metronidazole substitutes if penicillin-allergic) for <b>14 days</b>.</mark> Quadruple therapy adds <b>bismuth + metronidazole + tetracycline</b> to a PPI. <b>Teach: finish the entire course even when you feel better</b>; expect a metallic taste; <span class="never">absolutely no alcohol with metronidazole &mdash; disulfiram-like reaction (flushing, vomiting, tachycardia).</span> Bismuth turns the stool and tongue black &mdash; that is harmless, but it can mask melena.</span></td></tr>
+<tr><td class="k">PPIs<br><span class="tiny">omeprazole, pantoprazole, esomeprazole</span></td><td><span class="fill"><b>REDUCE acid &mdash; the strongest suppression there is.</b> They irreversibly block the H&#8314;/K&#8314;-ATPase <b>proton pump</b>, the final common step of acid secretion. <b>Take 30&ndash;60 minutes before the first meal of the day</b>; do not crush enteric-coated forms. IV pantoprazole is the drug used in an active GI bleed. Long-term risks: <b>C. difficile and pneumonia, osteoporotic fractures, hypomagnesemia, and B12 deficiency</b> &mdash; so use the lowest effective dose.</span></td></tr>
+<tr><td class="k">H2 blockers<br><span class="tiny">famotidine, nizatidine</span></td><td><span class="fill"><b>REDUCE acid</b> by blocking <b>histamine-2 receptors</b> on the parietal cell. Weaker than a PPI but works well for nocturnal acid &mdash; <b>give at bedtime</b>. Separate from antacids by about 1 hour. Watch for confusion in older adults and in renal impairment (dose reduction).</span></td></tr>
+<tr><td class="k">Antacids<br><span class="tiny">aluminum/magnesium hydroxide, calcium carbonate</span></td><td><span class="fill"><b>REDUCE acid that is already there</b> &mdash; they chemically neutralize it. Fast relief, short duration. <b>Give 1&ndash;3 hours after meals and at bedtime</b>, and <b>separate from all other oral drugs by 1&ndash;2 hours</b> because they change gastric pH and block absorption. Side effects: <b>magnesium &rarr; diarrhea, aluminum and calcium &rarr; constipation</b> (which is why combination products exist). Caution with magnesium products in renal failure.</span></td></tr>
+<tr><td class="k">Sucralfate</td><td><span class="fill"><b>PROTECT.</b> In an acid environment it turns into a sticky paste that binds to the ulcer crater and forms a physical bandage &mdash; it does <i>not</i> reduce acid at all. <mark>Give on an <b>empty stomach, 1 hour before meals and at bedtime</b>, and separate from antacids by at least 30 minutes</mark> &mdash; <i>it needs acid to activate.</i> Main side effect is constipation; it also binds other drugs, so space them out.</span></td></tr>
+<tr><td class="k">Misoprostol</td><td><span class="fill"><b>PROTECT and PREVENT</b> &mdash; a synthetic <b>prostaglandin analog</b> that replaces exactly what NSAIDs destroy: mucus, bicarbonate, and mucosal blood flow. Used to prevent NSAID-induced ulcers in high-risk patients. <span class="never">CONTRAINDICATED IN PREGNANCY &mdash; it stimulates uterine contractions and causes abortion. Verify a negative pregnancy test and confirm reliable contraception before giving it.</span> Common side effects: diarrhea and cramping.</span></td></tr>
+</tbody>
+</table>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Quiz me on GERD, gastritis, and peptic ulcer medications. Explain what each medication does and when it should be used."</p>
+</div>
+
+<!-- ===================== 8. PUD ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="pud">
+<h2>8 &middot; Peptic Ulcer Disease 🕳️</h2>
+
+<p><b>Definition:</b> <span class="fill">An <b>erosion that breaks through the mucosa into the submucosa or muscle layer</b> of the stomach, duodenum, or lower esophagus &mdash; a discrete crater, not the diffuse surface inflammation of gastritis. <i>It happens when the aggressive forces (acid, pepsin, <b>H. pylori</b>, NSAIDs) overwhelm the defensive ones (mucus, bicarbonate, blood flow, cell renewal, prostaglandins).</i> <mark>Two causes account for nearly all of them: <b>H. pylori and NSAIDs.</b></mark></span></p>
+
+<h3>Diagnostics</h3>
+<p><b>What confirms PUD?</b> <span class="fill"><b>EGD with biopsy.</b> It visualizes the ulcer crater directly, allows biopsy to <b>rule out gastric cancer</b> (essential for gastric ulcers, which can be malignant), tests for H. pylori in the same pass, and lets the endoscopist stop active bleeding. A barium upper GI series can suggest an ulcer but cannot biopsy it &mdash; so it is not the confirming test.</span></p>
+
+<p><b>How do we determine if H. pylori is causing the ulcer?</b> <span class="fill">Test during the same EGD with a <b>biopsy and rapid urease (CLO) test</b>, or noninvasively with the <b>urea breath test or stool antigen test</b>. All three show <b>active</b> infection. <b>Serum antibody testing only proves past exposure</b> and stays positive after cure, so it cannot confirm eradication. Retest with breath or stool <b>4 weeks after finishing therapy</b> &mdash; and hold PPIs 2 weeks and antibiotics/bismuth 4 weeks first or you will get a false negative.</span></p>
+
+<h3>PUD Treatment &mdash; treatment goals</h3>
+<ul class="blanks">
+  <li>✅ <b>Kill</b> <span class="fill"><b>H. pylori</b> &mdash; triple therapy (PPI + clarithromycin + amoxicillin) or quadruple therapy (PPI + bismuth + metronidazole + tetracycline) for 14 days, then confirm eradication.</span></li>
+  <li>✅ <b>Reduce</b> <span class="fill"><b>gastric acid</b> &mdash; PPI as first line, H2 blocker or antacid as adjunct, and cut caffeine, alcohol, and smoking.</span></li>
+  <li>✅ <b>Protect</b> <span class="fill"><b>the mucosal lining</b> &mdash; sucralfate coats the crater; misoprostol restores prostaglandins in NSAID users.</span></li>
+  <li>✅ <b>Prevent</b> <span class="fill"><b>recurrence and the three complications (hemorrhage, perforation, obstruction)</b> &mdash; stop NSAIDs and aspirin (use acetaminophen instead), stop smoking (it is the #1 modifiable factor for recurrence), limit alcohol, manage stress, and complete the full antibiotic course.</span></li>
+</ul>
+</div>
+
+<!-- ===================== 9. GASTRIC VS DUODENAL ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="gvd">
+<h2>9 &middot; Gastric vs Duodenal Ulcers &mdash; the classic test point ⭐</h2>
+<p class="lead-in"><i>If you learn one thing this week, learn this table. The exam question is almost always "when does the pain happen and what does food do to it?"</i></p>
+
+<table class="cmp">
+<thead><tr><th>Finding</th><th>Gastric ulcer</th><th>Duodenal ulcer</th></tr></thead>
+<tbody>
+<tr><td class="k">Pain after meals</td><td><span class="fill"><b>YES &mdash; 30&ndash;60 minutes after eating</b>, and it usually resolves before the next meal. <i>Food entering the stomach triggers acid right where the crater is.</i></span></td><td><span class="fill"><b>YES, but delayed &mdash; 2&ndash;5 hours after eating</b>, when the stomach is empty again and acid reaches the bare duodenum.</span></td></tr>
+<tr><td class="k">Pain relieved by food</td><td><span class="fill"><b>NO &mdash; food makes it WORSE.</b> <mark>So the patient avoids eating &rarr; <b>weight loss</b>.</mark></span></td><td><span class="fill"><b>YES &mdash; eating or taking an antacid RELIEVES it</b> because food buffers the acid. <mark>So the patient eats more &rarr; <b>weight stays the same or goes up</b>.</mark></span></td></tr>
+<tr><td class="k">Night pain</td><td><span class="fill"><b>Uncommon.</b> Gastric ulcer pain tracks with meals, not with the clock.</span></td><td><span class="fill"><b>CLASSIC &mdash; wakes the patient at 1&ndash;2 a.m.</b> and is relieved by food or antacid. <i>Nocturnal acid secretion peaks with nothing in the stomach to buffer it.</i></span></td></tr>
+<tr><td class="k">Hematemesis</td><td><span class="fill"><b>MORE common</b> &mdash; the bleed is in the stomach itself, so blood is vomited before it moves on.</span></td><td><span class="fill"><b>LESS common</b> &mdash; blood is already past the pylorus and normally travels downstream.</span></td></tr>
+<tr><td class="k">Melena</td><td><span class="fill"><b>LESS common</b> than in duodenal ulcers, though still possible.</span></td><td><span class="fill"><b>MORE common</b> &mdash; the classic presenting sign, because the blood travels the whole gut and gets digested to black tar.</span></td></tr>
+<tr><td class="k">Extras worth knowing</td><td><span class="fill">Typically <b>age &gt;50</b>; <b>normal to LOW</b> acid secretion (the problem is a weak barrier, not too much acid); H. pylori in about half; strongly linked to <b>NSAIDs</b>; <span class="never">CAN BE MALIGNANT &mdash; every gastric ulcer must be biopsied.</span></span></td><td><span class="fill">Typically <b>age 35&ndash;45</b>; <b>HIGH</b> acid secretion; <b>H. pylori in 90&ndash;95%</b>; <b>rarely malignant</b>; higher risk of <b>perforation</b>.</span></td></tr>
+</tbody>
+</table>
+
+<p><mark><b>Memory hook: <u>G</u>astric = pain <u>G</u>ets worse with food, so weight <u>G</u>oes down. <u>D</u>uodenal = <u>D</u>elayed pain that food <u>D</u>iminishes, and it wakes you at night.</b></mark></p>
+</div>
+
+<!-- ===================== 10. CLINICAL REASONING ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="reasoning">
+<h2>10 &middot; Clinical Reasoning &mdash; how would you distinguish these disorders? 🧩</h2>
+
+<table class="cmp">
+<thead><tr><th>Disorder</th><th>One clue that gives it away</th></tr></thead>
+<tbody>
+<tr><td class="k">GERD</td><td><span class="fill"><b>Burning that rises up behind the sternum, worse lying flat or bending over, better sitting up or with an antacid</b> &mdash; plus a <b>sour regurgitation</b> in the throat at night. The pain is <i>retrosternal</i>, not epigastric.</span></td></tr>
+<tr><td class="k">Gastritis</td><td><span class="fill"><b>Diffuse epigastric burning that starts right after an identifiable insult</b> &mdash; an NSAID course, an alcohol binge, food poisoning &mdash; and gets better when the irritant is removed. No single localized crater, no meal-timing pattern.</span></td></tr>
+<tr><td class="k">Gastric ulcer</td><td><span class="fill"><b>Pain 30&ndash;60 minutes AFTER eating &mdash; food makes it worse, so the patient is losing weight.</b> Hematemesis more likely than melena. Older adult, often on NSAIDs.</span></td></tr>
+<tr><td class="k">Duodenal ulcer</td><td><span class="fill"><b>Pain 2&ndash;5 hours after eating and at 1&ndash;2 a.m. &mdash; food RELIEVES it, so the weight is stable or up.</b> Melena more likely than hematemesis. Almost always H. pylori positive.</span></td></tr>
+<tr><td class="k">Cholecystitis</td><td><span class="fill"><b>RIGHT UPPER QUADRANT pain radiating to the right shoulder or scapula, starting after a FATTY meal, WITH fever and an elevated WBC and a positive Murphy's sign</b> (the patient catches their breath when you press under the right costal margin during inspiration). <i>The location alone separates it &mdash; RUQ and referred to the shoulder, not epigastric.</i> Add nausea, vomiting, and sometimes jaundice.</span></td></tr>
+</tbody>
+</table>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Help me tell the difference between GERD, gastritis, gastric ulcers, duodenal ulcers, esophageal cancer, and gastric cancer. Give me the key clues for each disease."</p>
+</div>
+
+<!-- ===================== 11. COMPLICATIONS ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="complications">
+<h2>11 &middot; PUD Complications &mdash; the three that kill 🚨</h2>
+
+<table class="cmp">
+<thead><tr><th>Complication</th><th>Signs / Symptoms</th><th>Nursing Priority</th></tr></thead>
+<tbody>
+<tr><td class="k">Hemorrhage<br><span class="tiny">most common complication</span></td><td><span class="fill"><b>Hematemesis (bright red or coffee-ground) and/or melena</b>, then the shock picture: <b>tachycardia first, then hypotension</b>, cool clammy pale skin, weak thready pulse, tachypnea, dizziness, orthostatic changes, <b>restlessness and anxiety (the earliest sign of hypoperfusion)</b>, and falling urine output. Labs: <b>H&amp;H drop &mdash; but hours later</b>, and BUN rises with a normal creatinine.</span></td><td><span class="fill"><b>Protect the airway and restore volume.</b> Position side-lying or upright with suction at hand if vomiting <i>(aspiration will kill this patient before the blood loss does)</i>, give oxygen, keep the patient <b>NPO</b>, start <b>two large-bore IVs (18-gauge or larger)</b> with isotonic crystalloid, <b>type &amp; crossmatch</b>, notify the provider, vital signs q15 minutes, monitor I&amp;O with a goal urine output &ge;30 mL/hr, start an <b>IV PPI infusion</b>, and prepare for <b>emergent EGD</b> for cautery, clipping, or epinephrine injection. <span class="never">Do not leave the patient alone and do not give anything by mouth.</span></span></td></tr>
+<tr><td class="k">Perforation<br><span class="tiny">most lethal &mdash; surgical emergency</span></td><td><span class="fill"><mark><b>SUDDEN, SEVERE, sharp epigastric pain that radiates to the shoulder</b> (diaphragmatic irritation), and a <b>RIGID, BOARD-LIKE ABDOMEN</b> with rebound tenderness and <b>absent bowel sounds</b>.</mark> The patient lies still with knees drawn up, takes shallow rapid breaths, and refuses to move. Then fever, tachycardia, hypotension &mdash; chemical peritonitis becoming <b>septic shock</b>. Upright x-ray shows <b>free air under the diaphragm</b>. <i>Beware the false calm: pain may briefly ease as contents spread &mdash; that is not improvement.</i></span></td><td><span class="fill"><b>Call the provider / rapid response STAT and keep the patient strictly NPO &mdash; this is a surgical emergency, not a medication problem.</b> Then: nothing by mouth, <b>NG tube to intermittent suction</b> to stop further spillage, <b>aggressive IV fluids and broad-spectrum IV antibiotics</b>, oxygen, pain control, semi-Fowler's, continuous vital signs, and prepare for <b>emergency surgery</b> plus the upright abdominal/chest film. <span class="never">NEVER give food, fluids, laxatives, or an enema, and never delay to "watch it a while." Perforation is measured in hours.</span></span></td></tr>
+<tr><td class="k">Pyloric stenosis<br><span class="tiny">gastric outlet obstruction</span></td><td><span class="fill">Scarring and edema narrow the pylorus, so the stomach cannot empty: <b>fullness, bloating, epigastric distention, loud borborygmi, and PROJECTILE VOMITING of undigested food eaten hours or even a day earlier</b> (sour, foul, no bile). Visible peristaltic waves and a succussion splash. Weight loss, anorexia, constipation. <b>Labs: hypokalemic, hypochloremic METABOLIC ALKALOSIS</b> from vomiting all that HCl, plus dehydration.</span></td><td><span class="fill"><b>Decompress the stomach and correct the fluid and electrolyte deficits.</b> Keep <b>NPO</b>, insert an <b>NG tube to intermittent suction</b>, give <b>IV fluids with potassium and chloride replacement (normal saline)</b>, monitor strict I&amp;O, daily weight, electrolytes and ABGs, and watch for hypokalemia on the cardiac monitor. Then prepare for <b>endoscopic balloon dilation of the pylorus</b> or surgical pyloroplasty. Give acid suppression to reduce the inflammatory edema.</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== 12. UPPER GI BLEED FLOW ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="bleed">
+<h2>12 &middot; Upper GI Bleed &mdash; what you do, in order 🚨</h2>
+<p class="lead-in"><i>Hematemesis or melena plus a rising heart rate = act now. This is the order to say out loud in a priority question.</i></p>
+
+<div class="flow">
+  <div class="stepbox"><b>STEP 1</b><span><b>RECOGNIZE</b><br><span class="fill">Hematemesis (bright red or coffee-ground) or melena, <b>tachycardia</b>, restlessness, cool clammy skin, then hypotension</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 2</b><span><b>AIRWAY &amp; POSITION</b><br><span class="fill">Side-lying or upright with <b>suction ready</b>, oxygen on &mdash; <i>aspiration of vomited blood is the fastest way to die here</i></span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 3</b><span><b>CALL &amp; STAY</b><br><span class="fill">Notify the provider / rapid response and <b>do not leave the patient</b>; delegate someone to bring the crash cart</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 4</b><span><b>NPO + ACCESS</b><br><span class="fill">Strict NPO; <b>two large-bore IVs (18-gauge or larger)</b>; isotonic crystalloid (0.9% NaCl or LR) wide open</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 5</b><span><b>LABS &amp; BLOOD</b><br><span class="fill"><b>Type &amp; crossmatch</b>, H&amp;H, platelets, PT/INR, BMP; transfuse per order &mdash; <i>remember the H&amp;H lags behind the actual loss</i></span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 6</b><span><b>ACID SUPPRESSION</b><br><span class="fill"><b>IV PPI (pantoprazole) bolus then infusion</b> &mdash; a clot will not hold in an acid environment</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 7</b><span><b>STOP THE BLEED</b><br><span class="fill">Prepare for <b>emergent EGD</b> &mdash; cautery, clips, or epinephrine injection; surgery or embolization if endoscopy fails</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 8</b><span><b>RE-EVALUATE</b><br><span class="fill">VS q15 min, continuous monitor, <b>urine output &ge;30 mL/hr</b>, LOC, serial H&amp;H, and watch for re-bleeding</span></span></div>
+</div>
+
+<p><span class="never">Never give oral fluids, never lay a vomiting patient flat, and never dismiss a rising heart rate in a GI-bleed patient &mdash; tachycardia is the body compensating, and it appears long before the blood pressure falls.</span></p>
+</div>
+
+<!-- ===================== 13. GASTRECTOMY ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="gastrectomy">
+<h2>13 &middot; Gastrectomy 🔪</h2>
+
+<p><b>Why might a patient require a gastrectomy?</b> <span class="fill"><b>Gastric cancer is the most common reason</b> &mdash; resection is the only curative treatment. Otherwise it is for <b>peptic ulcer complications that medical therapy cannot fix</b>: uncontrollable hemorrhage, perforation, gastric outlet obstruction from pyloric scarring, or an ulcer that refuses to heal. Types: <b>subtotal</b> &mdash; Billroth I (gastroduodenostomy, remnant sewn to duodenum) and Billroth II (gastrojejunostomy, remnant sewn to jejunum) &mdash; or <b>total gastrectomy</b> with esophagojejunostomy.</span></p>
+
+<h3>Postoperative priorities</h3>
+<ul class="blanks">
+  <li>✅ <span class="fill"><b>Manage the NG tube &mdash; and never move it.</b> Expect drainage to be <b>bloody for the first 12&ndash;24 hours, then dark red/brown, then yellow-green</b>. <span class="never">Do not reposition, advance, or irrigate the NG tube without a surgeon's order &mdash; the tip rests against the fresh suture line.</span> Report <b>bright red bleeding that continues or restarts</b>, or a tube that stops draining while the abdomen distends.</span></li>
+  <li>✅ <span class="fill"><b>Respiratory care.</b> A high abdominal incision makes patients splint and breathe shallowly &rarr; atelectasis and pneumonia. <b>Incentive spirometer every hour while awake, splinted coughing and deep breathing, early ambulation</b>, and adequate pain control so they can actually do it.</span></li>
+  <li>✅ <span class="fill"><b>Assess for bleeding, shock, and anastomotic leak.</b> Vital signs, incision and drains, H&amp;H. A leak shows up as <b>fever, tachycardia, escalating abdominal pain, rigidity, and rising WBC</b> &mdash; report immediately. Also watch for VTE (SCDs, prophylactic anticoagulation) and paralytic ileus.</span></li>
+  <li>✅ <span class="fill"><b>Nutrition and the two lifelong problems.</b> Advance from NPO &rarr; clear liquids &rarr; <b>six small, dry meals a day</b> as ordered, monitoring for <b>dumping syndrome</b>. Teach that <b>vitamin B12 replacement is required for life</b> (no parietal cells &rarr; no intrinsic factor), plus iron, folate, and calcium monitoring, and daily weights.</span></li>
+</ul>
+</div>
+
+<!-- ===================== 14. PERNICIOUS ANEMIA ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="pernicious">
+<h2>14 &middot; Pernicious Anemia 🩸</h2>
+
+<p><b>Why does it occur?</b> <span class="fill">The <b>parietal cells are gone</b> &mdash; either surgically removed with the stomach (gastrectomy) or destroyed by autoimmune chronic atrophic gastritis. Parietal cells make <b>intrinsic factor</b>, so no parietal cells means <b>no intrinsic factor</b>, and without it vitamin B12 cannot be absorbed in the <b>terminal ileum</b> no matter how much is eaten. <i>Because the liver stores several years' worth of B12, symptoms may not appear until 2&ndash;5 years after surgery &mdash; which is exactly why patients stop their injections and then get sick.</i></span></p>
+
+<p><b>Intrinsic factor is needed to absorb:</b> <span class="fill"><mark><b>Vitamin B12 (cobalamin)</b> &mdash; absorbed in the terminal ileum.</mark></span></p>
+
+<p><b>What it looks like:</b> <span class="fill"><b>Megaloblastic (macrocytic) anemia</b> &mdash; large immature RBCs, high MCV, low B12 &mdash; with fatigue, pallor, dyspnea, a <b>beefy red smooth sore tongue (glossitis)</b>, and <mark>the finding that separates it from every other anemia: <b>NEUROLOGIC symptoms</b> &mdash; numbness and tingling in the hands and feet, ataxia, loss of position and vibration sense, and confusion.</mark> <span class="never">Neurologic damage can become permanent if replacement is delayed &mdash; and it is a fall risk right now.</span></span></p>
+
+<p><b>Treatment:</b> <span class="fill"><b>Lifelong vitamin B12 replacement, given by a route that bypasses the gut &mdash; usually monthly IM cyanocobalamin injections</b> (loading doses first), or high-dose intranasal or sublingual forms. <span class="never">Standard oral B12 will not work when intrinsic factor is missing, and stopping the injections means the anemia and the neuropathy come back.</span> Also monitor iron and folate, give safety and fall precautions for the neuropathy, and check for a reticulocyte rise within about a week as proof it is working.</span></p>
+</div>
+
+<!-- ===================== 15. DUMPING SYNDROME ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="dumping">
+<h2>15 &middot; Dumping Syndrome &mdash; the whole diet teaching ⭐</h2>
+
+<p><b>Why does it happen?</b> <span class="fill"><b>The pylorus &mdash; the valve that used to release chyme a teaspoon at a time &mdash; has been removed or bypassed</b>, so a large bolus of <b>hypertonic, undiluted food dumps straight into the jejunum</b>. <i>That hyperosmolar load pulls fluid out of the bloodstream into the intestinal lumen, causing sudden intestinal distention and a drop in circulating volume, and it triggers a release of vasoactive gut hormones.</i> That single mechanism explains every early symptom &mdash; and the rapid glucose absorption that follows explains the late ones.</span></p>
+
+<h3>Early symptoms &mdash; 15&ndash;30 minutes after eating</h3>
+<p><span class="fill"><b>The vasomotor / fluid-shift picture:</b> dizziness, <b>tachycardia and palpitations</b>, diaphoresis, pallor, weakness, a feeling of fullness, <b>hypotension</b>, and the abdominal set &mdash; cramping, loud borborygmi, nausea, and an urgent need to have a diarrheal stool. <i>It looks like hypovolemia, because it is.</i></span></p>
+
+<h3>Late symptoms &mdash; 1&ndash;3 hours after eating</h3>
+<p><span class="fill"><mark><b>Reactive hypoglycemia.</b></mark> The concentrated carbohydrate is absorbed all at once &rarr; blood glucose spikes &rarr; the pancreas over-releases insulin &rarr; <b>the glucose crashes below normal</b>: shakiness, sweating, anxiety, confusion, weakness, hunger, tachycardia, and dizziness. <i>Same symptoms as any hypoglycemia &mdash; the giveaway is the timing after a meal and the history of gastric surgery.</i></span></p>
+
+<h3>Teaching</h3>
+<ul class="blanks">
+  <li>✅ <span class="fill"><b>Eat six small meals a day instead of three large ones</b>, slowly and in a relaxed setting. <i>Small volume = a smaller bolus to dump.</i></span></li>
+  <li>✅ <span class="fill"><mark><b>HIGH protein, HIGH fat, LOW simple carbohydrate</b> &mdash; and avoid concentrated sweets entirely</mark> (no sugary drinks, candy, syrup, sweet desserts). <i>Sugar is the most osmotically active thing you can eat and it is what causes the late hypoglycemia.</i> Complex carbs and fiber are fine.</span></li>
+  <li>✅ <span class="fill"><b>Drink fluids BETWEEN meals, not with them</b> &mdash; no liquids for about 30 minutes before and 1 hour after eating. <i>Liquid is what washes the meal through into the jejunum.</i></span></li>
+  <li>✅ <span class="fill"><b>Lie down or recline for 20&ndash;30 minutes after eating</b> (left side-lying or low Fowler's). <i>Gravity is no longer being controlled by a pylorus, so lying down slows gastric emptying.</i> Report symptoms that persist &mdash; pectin or added fiber, an anticholinergic, or octreotide can be prescribed for severe cases.</span></li>
+</ul>
+</div>
+
+<!-- ===================== 16. GASTRIC CANCER ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="gastriccancer">
+<h2>16 &middot; Gastric Cancer 🎗️</h2>
+
+<h3>Risk factors</h3>
+<ul class="blanks">
+  <li>✅ <span class="fill"><b>Chronic <i>H. pylori</i> infection</b> &mdash; the single biggest modifiable risk factor. Years of inflammation &rarr; atrophic gastritis &rarr; metaplasia &rarr; carcinoma.</span></li>
+  <li>✅ <span class="fill"><b>Chronic atrophic gastritis and pernicious anemia</b>, and a <b>history of prior partial gastrectomy</b> (the remaining stump is at risk).</span></li>
+  <li>✅ <span class="fill"><b>Diet high in smoked, salted, pickled, and nitrate-preserved foods</b>, and low in fresh fruits and vegetables.</span></li>
+  <li>✅ <span class="fill"><b>Smoking and heavy alcohol use</b>, plus the non-modifiables: <b>age over 50&ndash;60, male sex, family history/genetic syndromes, obesity, blood type A</b>, and higher incidence in people of Japanese, Korean, Chinese, and Central/South American descent.</span></li>
+</ul>
+
+<p><b>Why it is found late:</b> <span class="fill">Early symptoms are <b>vague and look exactly like indigestion</b> &mdash; dyspepsia that does not respond to antacids, early satiety, bloating, mild epigastric discomfort. By the time there is <b>unexplained weight loss, anemia, persistent vomiting, or a palpable mass</b>, it has usually spread. <mark>Late/metastatic signs: <b>Virchow's node</b> (enlarged LEFT supraclavicular node) and a <b>Sister Mary Joseph nodule</b> at the umbilicus.</mark> <span class="never">New or persistent dyspepsia in an adult over 50 &mdash; especially with weight loss, anemia, dysphagia, or vomiting &mdash; is not "just reflux." It needs an EGD.</span></span></p>
+
+<p><b>How is it diagnosed?</b> <span class="fill"><b>EGD with biopsy is definitive</b> &mdash; direct visualization plus tissue. Staging then uses <b>endoscopic ultrasound and CT of the chest/abdomen/pelvis</b>, sometimes PET or diagnostic laparoscopy. Supporting studies: CBC (iron-deficiency anemia), stool for occult blood, upper GI barium series, and tumor markers <b>CEA and CA 19-9</b> (used for monitoring, not for diagnosis).</span></p>
+
+<p><b>Treatment:</b> <span class="fill"><b>Surgical resection is the only cure</b> &mdash; subtotal or total gastrectomy with lymph node dissection. <b>Chemotherapy</b> is usually given before (neoadjuvant, to shrink the tumor) and after surgery, with <b>radiation</b> added for some tumors and <b>targeted therapy such as trastuzumab</b> if the tumor is HER2-positive. When cure is not possible, treatment is palliative: stenting, partial resection or bypass for obstruction, pain and nutrition management. Nursing focus after resection: <b>nutrition, dumping syndrome prevention, lifelong B12, weight monitoring, and psychosocial support.</b></span></p>
+</div>
+
+<!-- ===================== 17. CASE STUDY ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="casestudy">
+<h2>17 &middot; Case Study Notes &mdash; walking the 6 steps 🧠</h2>
+<p class="lead-in"><i>Sample case: A 58-year-old man with rheumatoid arthritis takes ibuprofen several times a day. For three weeks he has had burning epigastric pain about 45 minutes after meals; today he vomited "coffee-ground" material twice. VS: HR 112, BP 96/58, RR 22, T 98.9&deg;F. Skin cool and clammy. He is anxious and asks you to keep the lights low. Hgb 9.2 g/dL.</i></p>
+
+<ul class="blanks">
+  <li><b>Recognize Cues</b> &mdash; <span class="fill"><b>Relevant:</b> chronic daily <b>NSAID</b> use; epigastric pain <b>45 minutes after eating</b>; <b>coffee-ground emesis</b>; <b>HR 112</b>; <b>BP 96/58</b>; RR 22; cool clammy skin; <b>anxiety/restlessness</b>; <b>Hgb 9.2 g/dL</b>. <b>Irrelevant right now:</b> temperature 98.9&deg;F and the request for low lights.</span></li>
+  <li><b>Analyze Cues</b> &mdash; <span class="fill">NSAIDs blocked prostaglandins &rarr; barrier failure &rarr; ulcer. Pain <b>after</b> meals with no relief from food points to a <b>gastric</b> ulcer. Coffee-ground emesis = blood already acted on by acid &rarr; the ulcer has eroded a vessel. <b>Tachycardia + hypotension + cool clammy skin + restlessness = compensating hypovolemic shock</b>, and the Hgb of 9.2 confirms real blood loss (and it will keep falling).</span></li>
+  <li><b>Prioritize Hypothesis</b> &mdash; <span class="fill"><b>#1: Actively bleeding gastric ulcer with hypovolemia &mdash; risk for hemorrhagic shock.</b> That outranks pain, nutrition, anxiety, and patient teaching, because <i>airway, circulation, and perfusion come first</i>. Also on the list: risk for aspiration if he vomits again.</span></li>
+  <li><b>Generate Solutions</b> &mdash; <span class="fill">Desired outcomes: bleeding stops, HR &lt;100, SBP &gt;90&ndash;100, urine output &ge;30 mL/hr, Hgb stabilizes, no aspiration. Interventions to choose from: NPO, oxygen, upright/side-lying with suction, two large-bore IVs with isotonic fluid, type &amp; crossmatch, IV PPI, notify provider, prepare for emergent EGD, stop the ibuprofen.</span></li>
+  <li><b>Take Action</b> &mdash; <span class="fill"><b>First:</b> position him upright or side-lying with suction ready and apply oxygen &mdash; protect the airway. <b>Then, essentially simultaneously:</b> keep him NPO, start two large-bore IVs with 0.9% NaCl, notify the provider, send type &amp; crossmatch and repeat H&amp;H, hang the IV pantoprazole, monitor VS q15 min continuously, insert a catheter or strictly measure output, and prepare him for endoscopy. <b>Hold the ibuprofen and all NSAIDs.</b></span></li>
+  <li><b>Evaluate Outcomes</b> &mdash; <span class="fill"><b>Improving:</b> HR falls toward 80&ndash;90, SBP rises above 100, skin warms and dries, he becomes calm and oriented, urine output &ge;30 mL/hr, no further emesis, Hgb stabilizes or rises after transfusion, and endoscopy shows the bleeding is controlled. <b>Worsening &mdash; escalate now:</b> more bright red emesis, HR still climbing, BP still falling, urine output dropping, or <b>sudden severe pain with a rigid abdomen &mdash; that is perforation, and it is a surgical emergency.</b></span></li>
+</ul>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Give me one patient scenario at a time about upper GI disorders and help me figure out what is happening and what I should do first." &middot; "Create 5 Next Generation NCLEX Bow Tie questions on upper GI disorders with detailed explanations."</p>
+</div>
+
+<!-- ===================== 18. FOUR THINGS ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="four">
+<h2>18 &middot; The Four Things You MUST Remember 🔑</h2>
+
+<h3>1. Follow the Pathophysiology</h3>
+<p><span class="fill"><b>Every upper GI disorder is one chain: barrier breaks &rarr; acid touches tissue &rarr; inflammation &rarr; erosion &rarr; ulcer &rarr; bleeding or perforation.</b> If you know where the patient sits on that chain, you know the symptoms, the diagnostics, the drugs, and the priority. <i>Burning = irritation. Blood = erosion. Rigid abdomen = perforation.</i></span></p>
+
+<h3>2. Find the Clue That Separates the Diseases</h3>
+<p><span class="fill"><mark><b>Timing of pain relative to food, and location.</b></mark> Retrosternal burning worse lying flat = <b>GERD</b>. Pain 30&ndash;60 min after eating, worse with food, weight loss = <b>gastric ulcer</b>. Pain 2&ndash;5 hours after eating and at night, relieved by food = <b>duodenal ulcer</b>. Diffuse burning right after an irritant = <b>gastritis</b>. RUQ pain radiating to the right shoulder after a fatty meal, with fever = <b>cholecystitis</b>.</span></p>
+
+<h3>3. Treatment Always Has the Same Goals</h3>
+<ul class="blanks">
+  <li>✅ <b>Kill</b> <span class="fill"><b>H. pylori</b> &mdash; combination antibiotic therapy (triple: PPI + clarithromycin + amoxicillin &times; 14 days), full course, then confirm eradication.</span></li>
+  <li>✅ <b>Reduce</b> <span class="fill"><b>acid</b> &mdash; PPI first line, H2 blocker, antacid.</span></li>
+  <li>✅ <b>Protect</b> <span class="fill"><b>the mucosa</b> &mdash; sucralfate (bandage) and misoprostol (replaces NSAID-blocked prostaglandins).</span></li>
+  <li>✅ <b>Prevent</b> <span class="fill"><b>recurrence and complications</b> &mdash; stop NSAIDs, smoking, and alcohol; use acetaminophen for pain; treat the H. pylori so the ulcer does not come back and bleed.</span></li>
+</ul>
+
+<h3>4. Recognize Emergencies 🚨</h3>
+<ul class="blanks">
+  <li><b>Hemorrhage:</b> <span class="fill"><b>Hematemesis (bright red or coffee-ground) or melena + tachycardia + hypotension + cool clammy skin + restlessness.</b> Action: protect the airway with suction and positioning, NPO, <b>two large-bore IVs</b> with isotonic fluid, type &amp; crossmatch, IV PPI, notify the provider, and prepare for <b>emergent EGD</b>. <i>Remember the H&amp;H lags &mdash; treat the vital signs, not the lab.</i></span></li>
+  <li><b>Perforation:</b> <span class="fill"><span class="never"><b>SUDDEN severe epigastric pain radiating to the shoulder + a RIGID, BOARD-LIKE abdomen + absent bowel sounds + rebound tenderness. This is a SURGICAL EMERGENCY.</b></span> Action: <b>strict NPO, notify the provider/rapid response STAT</b>, NG to suction, IV fluids and broad-spectrum antibiotics, upright x-ray for <b>free air under the diaphragm</b>, prepare for emergency surgery. <b>Nothing by mouth &mdash; no food, no fluids, no laxatives, no enemas.</b></span></li>
+</ul>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Give me NCLEX priority questions on upper GI disorders and explain why the priority answer is correct." &middot; <b>Study tip from the handout:</b> don't just ask for the answer &mdash; ask <i>why</i> the correct answer is correct, why the other choices are wrong, and what clues you should have recognized.</p>
+</div>
+
+<!-- ===================== 19. SUCCESS CHECK ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="check">
+<h2>19 &middot; NCLEX Success Check + One-Minute Summary ✅</h2>
+<p class="lead-in"><i>Cover the answers and say each one out loud before you look.</i></p>
+
+<ul class="blanks">
+  <li>☑ <b>How gastritis becomes an ulcer.</b> <span class="fill">Persistent inflammation keeps the mucus&ndash;bicarbonate barrier broken, so acid and pepsin keep back-diffusing. Superficial erosion deepens past the mucosa into the submucosa and muscle &rarr; a discrete crater, which is an ulcer. Keep going and it reaches a vessel (hemorrhage) or the full thickness of the wall (perforation).</span></li>
+  <li>☑ <b>The difference between gastric and duodenal ulcers.</b> <span class="fill"><b>Gastric:</b> pain 30&ndash;60 min after eating, food makes it worse, weight loss, hematemesis more common, normal/low acid, age &gt;50, <b>can be malignant &mdash; biopsy it</b>. <b>Duodenal:</b> pain 2&ndash;5 hours after eating and at 1&ndash;2 a.m., food relieves it, weight stable/up, melena more common, high acid, age 35&ndash;45, H. pylori in 90&ndash;95%, rarely malignant.</span></li>
+  <li>☑ <b>Why H. pylori matters.</b> <span class="fill">It is the leading cause of chronic gastritis and peptic ulcers and a <b>Class I carcinogen for gastric cancer</b>. It survives in acid by making urease. <b>Suppressing acid alone lets the ulcer heal and then relapse &mdash; only eradicating the organism cures it</b>, which is why combination antibiotic therapy is non-negotiable.</span></li>
+  <li>☑ <b>When a GI patient is becoming unstable.</b> <span class="fill">Watch the trend, not one number: <b>rising heart rate first</b>, then narrowing pulse pressure and falling BP; restlessness or new anxiety; cool clammy pale skin; urine output under 30 mL/hr; any hematemesis or melena; and the hard stop &mdash; <b>sudden severe pain with a rigid abdomen and absent bowel sounds</b>.</span></li>
+  <li>☑ <b>Why a patient develops dumping syndrome after a gastrectomy.</b> <span class="fill">The pylorus is gone, so hypertonic food dumps into the jejunum, pulls fluid out of the vasculature (early symptoms: 15&ndash;30 min &mdash; tachycardia, dizziness, sweating, cramping, diarrhea) and floods the blood with glucose &rarr; excess insulin &rarr; <b>rebound hypoglycemia 1&ndash;3 hours later</b>. Fix it with six small high-protein/high-fat/low-sugar meals, fluids between meals only, and lying down after eating.</span></li>
+  <li>☑ <b>Why gastrectomy patients need lifelong B12 replacement.</b> <span class="fill">The parietal cells that make <b>intrinsic factor</b> were removed, and without intrinsic factor B12 cannot be absorbed in the terminal ileum. Untreated &rarr; megaloblastic anemia plus <b>irreversible neurologic damage</b>. Replacement must bypass the gut &mdash; monthly IM injections for life.</span></li>
+</ul>
+
+<h3>One-Minute Summary &mdash; if I could only remember four things</h3>
+<ul class="blanks">
+  <li><b>1.</b> <span class="fill"><b>Barrier failure is the whole disease.</b> NSAIDs and H. pylori break the mucus barrier; acid does the rest. Every symptom, drug, and complication follows from that.</span></li>
+  <li><b>2.</b> <span class="fill"><b>Food is the diagnostic test. Gastric = worse with food, weight down. Duodenal = better with food, wakes at night.</b></span></li>
+  <li><b>3.</b> <span class="fill"><b>Kill, Reduce, Protect, Prevent</b> &mdash; every drug in this module belongs to one of those four goals.</span></li>
+  <li><b>4.</b> <span class="fill"><b>Blood means bleed; rigid means perforation.</b> Hematemesis/melena + tachycardia &rarr; airway, NPO, two large-bore IVs, EGD. Sudden pain + board-like abdomen &rarr; NPO and call surgery now.</span></li>
+</ul>
+</div>
+
+<!-- ===================== PRACTICE ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="practice">
+<h2>Practice Questions &mdash; tap to reveal 📝</h2>
+
+<div class="nq">
+<div class="stem">A client with a 3-week history of epigastric pain suddenly reports severe, sharp pain radiating to the right shoulder. The abdomen is rigid and board-like, and bowel sounds are absent. Which action does the nurse take <b>first</b>?</div>
+<ol>
+  <li>Administer the prescribed oral antacid</li>
+  <li>Place the client NPO and notify the provider immediately</li>
+  <li>Encourage the client to ambulate to relieve gas pain</li>
+  <li>Reassess the abdomen in 30 minutes</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; NPO and notify the provider immediately.</b> Sudden severe pain with a rigid, board-like abdomen and absent bowel sounds is a <b>perforated ulcer</b> with peritonitis. Gastric contents are spilling into the peritoneum, and this becomes septic shock within hours. NPO prevents further spillage while surgery is arranged.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Giving anything by mouth to a perforated patient adds volume to the spill and delays surgery &mdash; and an antacid cannot repair a hole in the stomach wall.<br>
+<b>3.</b> This is not gas. Ambulating a patient with peritonitis increases pain and spread, and wastes the time that determines survival.<br>
+<b>4.</b> "Reassess later" is never the answer when the assessment already shows an emergency. Perforation is measured in hours.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">A client reports gnawing epigastric pain that occurs 2&ndash;5 hours after meals and often wakes them around 1 a.m. The pain is relieved by eating crackers. Which condition does the nurse suspect?</div>
+<ol>
+  <li>Gastric ulcer</li>
+  <li>Duodenal ulcer</li>
+  <li>Cholecystitis</li>
+  <li>Esophageal cancer</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; duodenal ulcer.</b> Three findings name it: pain <b>hours after</b> eating (when the stomach is empty), <b>nocturnal pain around 1&ndash;2 a.m.</b>, and <b>relief with food</b>, because food buffers acid in the duodenal bulb.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> A gastric ulcer hurts <i>30&ndash;60 minutes after</i> eating and food makes it <i>worse</i> &mdash; the exact opposite pattern, which is why those patients lose weight.<br>
+<b>3.</b> Cholecystitis is RUQ pain radiating to the right shoulder after a <i>fatty</i> meal, with fever and a positive Murphy's sign &mdash; different location, and eating triggers it rather than relieving it.<br>
+<b>4.</b> Esophageal cancer presents with progressive <i>dysphagia</i> and weight loss, not meal-timed epigastric pain relieved by crackers.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">A client is scheduled for a urea breath test to evaluate for <i>H. pylori</i>. Which statement by the client indicates the <b>need for further teaching</b>?</div>
+<ol>
+  <li>"I'll keep taking my omeprazole every morning right up until the test."</li>
+  <li>"This test can also be used later to check that the infection is gone."</li>
+  <li>"If it's positive, I'll need more than one antibiotic."</li>
+  <li>"I'll need to hold my bismuth for several weeks before the test."</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 1 &mdash; continuing the PPI.</b> PPIs suppress <i>H. pylori</i> without eradicating it, so the urease reaction is blunted and the breath test comes back <b>falsely negative</b>. PPIs are held about <b>2 weeks</b>, and antibiotics and bismuth about <b>4 weeks</b>, before testing.</p>
+<p><b>Why the others are correct statements:</b><br>
+<b>2.</b> True &mdash; the breath test (or stool antigen) is the preferred way to confirm eradication about 4 weeks after treatment. Serum antibody cannot, because it stays positive for years.<br>
+<b>3.</b> True &mdash; single-antibiotic therapy breeds resistance, so triple or quadruple therapy is standard.<br>
+<b>4.</b> True &mdash; bismuth suppresses the organism the same way antibiotics do.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Two weeks after a subtotal gastrectomy, a client reports dizziness, palpitations, sweating, and cramping with diarrhea about 20 minutes after every meal. Which teaching does the nurse provide?</div>
+<ol>
+  <li>"Drink a full glass of water with each meal to help the food move along."</li>
+  <li>"Sit upright in a chair for at least an hour after you eat."</li>
+  <li>"Eat six small meals that are high in protein and fat and low in sugar, and drink fluids between meals."</li>
+  <li>"Add a sweetened nutrition drink with meals to keep your calories up."</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3.</b> This is <b>early dumping syndrome</b>. Small, low-simple-sugar, high-protein/high-fat meals reduce the osmotic load dumped into the jejunum, and keeping fluids away from meals stops the meal from being flushed through.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Liquid with meals is one of the main triggers &mdash; it washes the bolus into the jejunum faster. Fluids go 30 minutes before or 1 hour after.<br>
+<b>2.</b> Backwards &mdash; the client should <b>recline or lie down for 20&ndash;30 minutes</b> after eating to slow gastric emptying. Sitting upright uses gravity to speed it up.<br>
+<b>4.</b> Concentrated sweets are the worst possible choice: they are the most osmotically active and they cause the <i>late</i> reactive hypoglycemia 1&ndash;3 hours later.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">A client who had an esophagectomy yesterday has an NG tube that appears to have slipped out about 3 cm and is draining less. What is the nurse's <b>best</b> action?</div>
+<ol>
+  <li>Gently advance the tube back to its original marking</li>
+  <li>Irrigate the tube with 30 mL of normal saline to restore patency</li>
+  <li>Leave the tube as it is and notify the surgeon</li>
+  <li>Remove the tube and replace it with a new one</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; leave it alone and notify the surgeon.</b> After an esophagectomy the NG tip sits at or just past the <b>fresh anastomosis</b>. Any manipulation can tear the suture line and cause a leak &mdash; a life-threatening complication. Only the surgeon repositions or replaces that tube.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Advancing it blindly is exactly the maneuver that ruptures the anastomosis.<br>
+<b>2.</b> Irrigation pressures the suture line and is also not done without a specific order in these clients.<br>
+<b>4.</b> Removing and reinserting is the most dangerous option of all &mdash; a blind reinsertion can pass straight through the repair.</p>
+<p class="fine">While you wait: keep the HOB elevated at least 30&ndash;45&deg;, keep the client NPO, and assess for the leak triad &mdash; <b>fever, tachycardia, and new or increasing pain</b> &mdash; plus dyspnea and subcutaneous crepitus.</p>
+</div></details>
+</div>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Give me 10 NCLEX-style questions on upper GI disorders and explain each answer." &middot; "Give me difficult Med-Surg NCLEX questions on upper GI disorders that make me apply concepts instead of memorizing facts."</p>
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>⭐ Must-Not-Forget Strip &mdash; Week 11 Upper GI</h2>
+<p class="lead-in"><i>Read this one out loud the morning of the exam. The repetition is on purpose.</i></p>
+<ul class="blanks">
+  <li><b>1.</b> <span class="fill"><b>Gastric ulcer = pain 30&ndash;60 minutes AFTER eating, food makes it WORSE, weight goes DOWN, hematemesis, can be malignant &rarr; biopsy. Duodenal ulcer = pain 2&ndash;5 hours after eating and at 1&ndash;2 a.m., food RELIEVES it, weight stable or up, melena, H. pylori in 90&ndash;95%.</b> <mark>Timing plus what food does is the whole question.</mark></span></li>
+  <li><b>2.</b> <span class="fill"><span class="never"><b>Sudden severe epigastric pain + RIGID, BOARD-LIKE abdomen + absent bowel sounds = PERFORATION.</b></span> Strict NPO, notify the provider/rapid response STAT, NG to suction, IV fluids and broad-spectrum antibiotics, upright film for <b>free air under the diaphragm</b>, prepare for emergency surgery. Nothing by mouth &mdash; no food, fluids, laxatives, or enemas.</span></li>
+  <li><b>3.</b> <span class="fill"><b>Hematemesis (bright red = active; coffee-ground = older) or melena + rising HR = GI bleed.</b> Airway and positioning with suction &rarr; NPO &rarr; <b>two large-bore IVs</b> and isotonic fluid &rarr; type &amp; crossmatch &rarr; IV PPI &rarr; emergent EGD. <b>Tachycardia comes before hypotension, and the H&amp;H lags behind the loss.</b></span></li>
+  <li><b>4.</b> <span class="fill"><b>H. pylori: test with urea breath, stool antigen, or biopsy urease &mdash; not serum antibody (that is only past exposure).</b> Hold PPIs 2 weeks and antibiotics/bismuth 4 weeks first. <b>Triple therapy = PPI + clarithromycin + amoxicillin &times; 14 days</b> (metronidazole if PCN-allergic); quadruple adds bismuth + metronidazole + tetracycline. <b>Finish the whole course.</b></span></li>
+  <li><b>5.</b> <span class="fill"><b>Four drug goals: KILL (antibiotics) &middot; REDUCE (PPI before breakfast, H2 blocker at bedtime, antacid 1&ndash;3 hr after meals) &middot; PROTECT (sucralfate on an empty stomach 1 hr before meals) &middot; PREVENT (misoprostol &mdash; <span class="never">never in pregnancy</span>).</b></span></li>
+  <li><b>6.</b> <span class="fill"><b>Dumping syndrome: early at 15&ndash;30 min = fluid shift</b> (tachycardia, dizziness, sweating, cramping, diarrhea); <b>late at 1&ndash;3 hr = reactive hypoglycemia</b>. Teach <b>six small meals, high protein/high fat, LOW simple sugar, fluids only between meals, and lie down 20&ndash;30 minutes after eating.</b></span></li>
+  <li><b>7.</b> <span class="fill"><b>No stomach &rarr; no parietal cells &rarr; no intrinsic factor &rarr; no B12 absorption &rarr; pernicious anemia with irreversible neuropathy.</b> Treatment is <b>lifelong IM B12</b>, not oral.</span></li>
+  <li><b>8.</b> <span class="fill"><b>After esophagectomy or gastrectomy: HOB at least 30&ndash;45&deg; at all times, and <span class="never">NEVER reposition or irrigate the NG tube without a surgeon's order.</span></b> Anastomotic leak = <b>fever + tachycardia + new pain</b> &rarr; report immediately. And <b>chronic GERD &rarr; Barrett's esophagus &rarr; esophageal adenocarcinoma</b>, which is why esophageal cancer is almost always found late.</span></li>
+</ul>
+
+<p class="fine">🤖 <b>Final Claire challenge:</b> "Act as my nursing instructor. Give me six unfolding upper GI cases &mdash; GERD with Barrett's, NSAID gastritis, a bleeding gastric ulcer, a perforated duodenal ulcer, post-gastrectomy dumping syndrome, and gastric outlet obstruction &mdash; and make me name the biggest red flag and the nurse's first action before you reveal anything."</p>
+</div>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+</body></html>

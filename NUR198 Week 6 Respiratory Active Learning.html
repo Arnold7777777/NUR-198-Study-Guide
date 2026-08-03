@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · Week 6 Lecture Extension &mdash; Respiratory Active Learning</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 · Week 6 · Respiratory · Active Learning</div>
+  <h1>Week 6 Extension &mdash; <span class="glow">Respiratory Active Learning</span></h1>
+  <p>The active-learning packet with model answers, so you can test yourself first and then check.</p>
+<div class="bigq"><b class="q">Can you explain it without looking?</b>Test yourself first. Only then open the answer.</div>
+ </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc">
+ <a href="#purpose">Purpose</a>
+ <a href="#map">Part 1 &middot; Disease Map</a>
+ <a href="#dm-copd">COPD</a>
+ <a href="#dm-emphysema">Emphysema</a>
+ <a href="#dm-asthma">Asthma</a>
+ <a href="#dm-pe">Pulmonary Embolism</a>
+ <a href="#dm-cancer">Lung Cancer</a>
+ <a href="#dm-tube">Chest Tubes</a>
+ <a href="#dm-vent">Mechanical Ventilation</a>
+ <a href="#check">Step 2 &middot; Check Yourself</a>
+ <a href="#framework">NCLEX Framework</a>
+ <a href="#practice">Practice Q &amp; Rationales</a>
+ <a href="#case1">Case Study 1</a>
+ <a href="#case2">Case Study 2</a>
+ <a href="#selfcheck">Final Self-Check</a>
+ <a href="#summary">⭐ Must Not Forget</a>
+</div>
+
+<div class="card" style="--jewel:var(--amethyst)" id="purpose">
+<h2>Purpose 🎯</h2>
+<p>This packet strengthens your understanding of the respiratory content from lecture. It does <b>not</b> replace your notes or the PowerPoint &mdash; use it to <b>actively quiz yourself</b>, find your gaps, and practice clinical judgment.</p>
+<p><b>Use these together:</b> Lecture &middot; PowerPoint slides &middot; ATI Engage Med-Surg &middot; MCR topics &middot; Claire (ATI AI).</p>
+<p><mark>Do not simply reread your notes. Test yourself first, then use your resources to fill in what you missed.</mark></p>
+<p class="lead-in">🔒 Every answer on this page is hidden behind a <b>Model answer</b> button. Say your answer out loud &mdash; or write it &mdash; <em>before</em> you tap. If you tap first, you have not studied; you have read.</p>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="map">
+<h2>Part 1 &middot; Build Your Own Disease Map ⭐</h2>
+<h3>Step 1: Test Yourself</h3>
+<p>Choose one respiratory condition. Without looking at your notes, answer the five question groups below. Every condition on this page uses the <b>same five groups</b> &mdash; that repetition is the point.</p>
+<div class="flow">
+ <div class="stepbox"><b>Group 1</b><span>What is happening in the body?<br><em>Patho &middot; lung changes &middot; why symptoms</em></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Group 2</b><span>How do you know?<br><em>Assessment &middot; diagnostics &middot; deterioration</em></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Group 3</b><span>How do you fix it?<br><em>Priorities &middot; meds &middot; anticipated orders</em></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Group 4</b><span>Who is involved?<br><em>The team</em></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Group 5</b><span>How can it get worse / be prevented?<br><em>Complications &middot; teaching</em></span></div>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--sapphire)" id="dm-copd">
+<h2>🫁 Disease Map &middot; COPD</h2>
+
+<div class="nq">
+<div class="stem">1. What is happening in the body? (patho, lung changes, why the symptoms)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Airflow out of the lungs is chronically limited and not fully reversible</b> &mdash; a mix of chronic bronchitis (inflamed, mucus-filled airways) and emphysema (destroyed alveoli).</p>
+<ul>
+ <li><b>Lung change:</b> <span class="fill">airways narrow and collapse on exhalation, so air is trapped &rarr; residual volume rises and the chest hyperinflates</span></li>
+ <li><b>Why dyspnea:</b> <em>because</em> <span class="fill">hyperinflated lungs flatten the diaphragm, so it can no longer generate an effective breath &mdash; accessory muscles take over</span></li>
+ <li><b>Why the barrel chest:</b> <span class="fill">years of trapped air increase the anterior&ndash;posterior diameter</span></li>
+ <li><b>Why CO&#8322; retention:</b> <span class="fill">trapped air is never exhaled, so CO&#8322; accumulates &rarr; chronic respiratory acidosis with metabolic (renal) compensation &mdash; high PaCO&#8322; with a high HCO&#8322;&#8315; and a near-normal pH</span></li>
+</ul>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. How do you know? (expected findings, diagnostics, what says they are deteriorating)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Expected findings:</b> <span class="fill">barrel chest, prolonged expiration, pursed-lip breathing, tripod position, accessory muscle use, chronic productive cough, wheezes or diminished breath sounds, hyperresonance to percussion, clubbing, activity intolerance, weight loss</span></p>
+<p><b>Diagnostics:</b> <span class="fill">spirometry is definitive &mdash; a post-bronchodilator FEV1/FVC below 0.70; ABG showing chronic respiratory acidosis; chest x-ray with hyperinflation and a flattened diaphragm; CBC that may show polycythemia from chronic hypoxemia</span></p>
+<p><b>Their usual baseline SpO&#8322;:</b> <span class="fill">88&ndash;92% &mdash; titrate oxygen to that target, not to 98%</span></p>
+<p><b>🚨 Deterioration:</b> <span class="fill">rising respiratory rate then a falling one as they tire, inability to speak a full sentence, new drowsiness or confusion (CO&#8322; narcosis), a silent chest, and a PaCO&#8322; climbing above their baseline with a falling pH</span></p>
+<p><mark>In COPD, a change in mental status outranks the pulse-ox number.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. How do you fix it? (priority nursing interventions, medications, anticipated orders)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Priority nursing:</b> <span class="fill">sit them upright or let them tripod, give the prescribed bronchodilator, titrate O&#8322; to 88&ndash;92%, coach pursed-lip breathing, clear secretions, and reassess &mdash; open the airway before you order tests</span></p>
+<p><b>Medications:</b></p>
+<table class="cmp">
+<thead><tr><th>Class</th><th>Example</th><th>Job</th></tr></thead>
+<tbody>
+<tr><td class="k">Rescue SABA</td><td>albuterol</td><td><span class="fill">Fast bronchodilation &mdash; give first in distress</span></td></tr>
+<tr><td class="k">Anticholinergic</td><td>ipratropium, tiotropium</td><td><span class="fill">Dries secretions and dilates &mdash; tiotropium is maintenance only, never rescue</span></td></tr>
+<tr><td class="k">LABA</td><td>salmeterol</td><td><span class="fill">Long-acting control &mdash; scheduled, not PRN</span></td></tr>
+<tr><td class="k">Inhaled steroid</td><td>fluticasone</td><td><span class="fill">Reduces inflammation &mdash; rinse the mouth after to prevent thrush</span></td></tr>
+<tr><td class="k">Systemic steroid</td><td>prednisone, methylprednisolone</td><td><span class="fill">Short burst during an exacerbation &mdash; watch glucose</span></td></tr>
+<tr><td class="k">Antibiotic</td><td>per culture</td><td><span class="fill">Only when sputum turns purulent / infection is suspected</span></td></tr>
+</tbody>
+</table>
+<p><b>Anticipated orders:</b> <span class="fill">ABG, chest x-ray, sputum culture, nebulized bronchodilators, systemic corticosteroids, controlled oxygen, and BiPAP if the CO&#8322; keeps climbing</span></p>
+<p><span class="never">Never crank oxygen up to 10 L/min in a COPD patient without assessing ventilation</span> &mdash; <em>because</em> high-flow O&#8322; worsens V/Q matching and can blunt the drive to breathe, raising CO&#8322; further.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. Who is involved? (healthcare team)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Respiratory therapist (nebs, ABGs, BiPAP), pulmonologist, dietitian (small frequent high-calorie meals &mdash; eating is work), physical/occupational therapy and pulmonary rehab, pharmacist for inhaler technique, smoking-cessation counseling, case management/social work for home O&#8322; and equipment, and palliative care in advanced disease.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. How can this get worse, and how do you prevent it? (complications, teaching)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Complications:</b> <span class="fill">acute exacerbation, pneumonia, acute respiratory failure, cor pulmonale (right-sided heart failure from pulmonary hypertension), spontaneous pneumothorax from ruptured bullae, polycythemia and clotting risk</span></p>
+<p><b>Teaching / preventing exacerbations:</b></p>
+<ul>
+ <li><b>#1:</b> <span class="fill">stop smoking &mdash; it is the only thing that slows the decline in lung function</span></li>
+ <li><b>Vaccines:</b> <span class="fill">annual influenza, pneumococcal, COVID-19, and RSV per age recommendations</span></li>
+ <li><b>Breathing:</b> <span class="fill">pursed-lip breathing to keep airways open on exhalation; diaphragmatic breathing; exhale during the hard part of any activity</span></li>
+ <li><b>Inhalers:</b> <span class="fill">use a spacer, bronchodilator before steroid, rinse after steroid</span></li>
+ <li><b>Energy:</b> <span class="fill">pace activities, sit to do tasks, small frequent meals, rest before eating</span></li>
+ <li><b>Call the provider for:</b> <span class="fill">fever, a change in sputum color or amount, more dyspnea than usual, or needing the rescue inhaler more often</span></li>
+</ul>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--teal)" id="dm-emphysema">
+<h2>🫁 Disease Map &middot; Emphysema</h2>
+<p class="lead-in">Emphysema sits under the COPD umbrella. Map what makes it <em>different</em>.</p>
+
+<div class="nq">
+<div class="stem">1. What is happening in the body?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>The alveolar walls are destroyed.</b> <span class="fill">Alveoli merge into large floppy sacs (bullae), which destroys surface area for gas exchange and destroys the elastic recoil that normally pushes air out.</span></p>
+<p><b>Why dyspnea is the main complaint:</b> <em>because</em> <span class="fill">without elastic recoil the patient must actively force air out, and with less alveolar surface, less oxygen crosses into the blood &mdash; so they work harder for a worse result</span></p>
+<p><b>Common cause:</b> <span class="fill">smoking; in a young patient with no smoking history think alpha-1 antitrypsin deficiency</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. How do you know?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Findings:</b> <span class="fill">thin, underweight, barrel chest with increased AP diameter, pursed-lip breathing, tripod position, minimal cough or sputum, hyperresonance on percussion, markedly diminished breath sounds, prolonged expiration</span></p>
+<p><b>Diagnostics:</b> <span class="fill">spirometry with a low FEV1/FVC and a raised residual volume, a reduced diffusing capacity (DLCO), CT/chest x-ray showing hyperinflation and bullae</span></p>
+<p><b>🚨 Deterioration:</b> <span class="fill">increasing drowsiness &mdash; that is hypercarbia, and it is more worrying than the SpO&#8322;. Also sudden sharp chest pain with unilateral absent breath sounds, which is a ruptured bulla causing pneumothorax.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. How do you fix it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Priority:</b> <span class="fill">support ventilation, not just oxygenation &mdash; upright position, bronchodilator, controlled low-flow O&#8322; to a SpO&#8322; of 88&ndash;92%, and escalate to BiPAP if CO&#8322; rises and they are getting sleepy</span></p>
+<p><b>Meds and orders:</b> <span class="fill">bronchodilators, inhaled and sometimes systemic corticosteroids, antibiotics for infection, oxygen, ABG monitoring, and pulmonary rehabilitation. Lung volume reduction surgery or transplant in selected advanced cases.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. Who is involved?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Respiratory therapy, pulmonology, dietitian (these patients burn calories breathing and are often underweight), pulmonary rehab/PT, thoracic surgery if a bulla ruptures or for lung volume reduction, and home O&#8322; and equipment through case management.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. How can this get worse, and how do you prevent it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Complications:</b> <span class="fill">hypercarbic respiratory failure, spontaneous pneumothorax, cor pulmonale, recurrent pneumonia, severe weight loss and muscle wasting</span></p>
+<p><b>Teaching:</b> <span class="fill">smoking cessation, vaccines, pursed-lip breathing, energy conservation, high-calorie/high-protein small frequent meals, avoid crowds during flu season, and never turn the home oxygen up on their own</span></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--emerald)" id="dm-asthma">
+<h2>🫁 Disease Map &middot; Asthma</h2>
+
+<div class="nq">
+<div class="stem">1. What is happening in the body?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Three things at once, and all of them are reversible:</b> <span class="fill">bronchoconstriction (smooth muscle spasm), airway inflammation and edema, and thick mucus plugging</span></p>
+<p><b>Why the wheeze is on expiration:</b> <em>because</em> <span class="fill">airways narrow further as the chest deflates, so air is squeezed through narrowed tubes on the way out &mdash; and air is trapped behind the narrowing</span></p>
+<p><b>The key difference from COPD:</b> <span class="fill">asthma is episodic and reversible with a bronchodilator; COPD is chronic and only partly reversible</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. How do you know?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Findings:</b> <span class="fill">expiratory wheezing, cough (often at night), chest tightness, dyspnea, prolonged expiratory phase, tachypnea, accessory muscle use, anxiety, and an inability to speak in full sentences when it is severe</span></p>
+<p><b>Diagnostics:</b> <span class="fill">spirometry showing obstruction that improves after a bronchodilator, peak expiratory flow rate compared with the patient's personal best, and ABGs in an acute attack</span></p>
+<p><b>Peak flow zones:</b> <span class="fill">Green 80&ndash;100% of personal best = good control. Yellow 50&ndash;79% = caution, use the rescue inhaler and follow the action plan. Red under 50% = emergency, rescue inhaler and get help.</span></p>
+<p><b>🚨 The two findings that mean it is getting worse, not better:</b></p>
+<ul>
+ <li><span class="fill"><b>A silent chest</b> &mdash; no wheeze because no air is moving. This is worse than loud wheezing.</span></li>
+ <li><span class="fill"><b>A "normalizing" or rising PaCO&#8322;</b> &mdash; early in an attack they blow off CO&#8322; (respiratory alkalosis). A CO&#8322; that climbs back to normal means they are tiring out and respiratory failure is coming.</span></li>
+</ul>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. How do you fix it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Priority in an acute attack:</b> <span class="fill">sit upright, give the short-acting beta-agonist (albuterol) immediately, apply oxygen, stay with the patient and coach slow breathing, then reassess &mdash; the drug that opens the airway comes before any test</span></p>
+<table class="cmp">
+<thead><tr><th>Rescue (quick relief)</th><th>Control (daily, prevents)</th></tr></thead>
+<tbody>
+<tr><td><span class="fill">Albuterol (SABA), ipratropium, systemic corticosteroids in an exacerbation, IV magnesium sulfate in severe attacks</span></td><td><span class="fill">Inhaled corticosteroids (first-line), LABAs &mdash; only combined with an ICS, never alone &mdash; montelukast, cromolyn, and biologics such as omalizumab for severe allergic asthma</span></td></tr>
+</tbody>
+</table>
+<p><b>Anticipated orders:</b> <span class="fill">continuous or back-to-back nebulized albuterol, IV or oral corticosteroids, oxygen, peak flow measurement, ABG, chest x-ray to rule out pneumonia or pneumothorax</span></p>
+<p><span class="never">A LABA alone, without an inhaled steroid, is never appropriate in asthma.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. Who is involved?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Respiratory therapist, pulmonologist or allergist/immunologist, pharmacist for inhaler and spacer technique, school nurse or occupational health, and case management for medication access.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. How can this get worse, and how do you prevent it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Complications:</b> <span class="fill">status asthmaticus (an attack that does not respond to treatment), respiratory failure requiring intubation, pneumothorax, and airway remodeling from years of poor control</span></p>
+<p><b>Teaching:</b> <span class="fill">identify and avoid personal triggers (allergens, smoke, cold air, exercise, aspirin/NSAIDs, stress, respiratory infections), use a written asthma action plan with peak flow zones, correct inhaler technique with a spacer, rinse after steroid inhalers, premedicate before exercise if prescribed, take the controller every day even when well, and get the annual flu vaccine</span></p>
+<p><mark>Needing the rescue inhaler more than twice a week means the asthma is not controlled &mdash; that is a call to the provider, not a refill.</mark></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--ruby)" id="dm-pe">
+<h2>🚨 Disease Map &middot; Pulmonary Embolism</h2>
+
+<div class="nq">
+<div class="stem">1. What is happening in the body?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>A clot &mdash; usually a DVT that broke off from a leg vein &mdash; lodges in the pulmonary circulation and blocks blood flow to part of the lung.</b></p>
+<div class="flow">
+ <div class="stepbox"><b>Step 1</b><span>Clot blocks a pulmonary artery branch</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 2</b><span>That lung area is ventilated but not perfused &mdash; <b>V/Q mismatch</b></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 3</b><span>Hypoxemia despite good breathing effort</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 4</b><span>Pulmonary pressure rises &rarr; right ventricular strain &rarr; shock</span></div>
+</div>
+<p><b>Why the pain is sharp and worse on inspiration:</b> <span class="fill">infarcted lung tissue irritates the pleura &mdash; pleuritic pain</span></p>
+<p><b>Virchow's triad (why clots form):</b> <span class="fill">venous stasis, endothelial injury, and hypercoagulability &mdash; immobility, surgery, and cancer or estrogen therapy are the classic examples</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. How do you know?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Findings:</b> <span class="fill">SUDDEN dyspnea, pleuritic chest pain, tachypnea, tachycardia, hypoxemia, anxiety or a sense of impending doom, cough, hemoptysis, low-grade fever, and hypotension if the embolus is large</span></p>
+<p><b>Diagnostics:</b> <span class="fill">CT pulmonary angiography is the gold standard; D-dimer is useful mainly to rule PE out; V/Q scan when contrast is contraindicated (renal impairment, allergy); lower-extremity duplex ultrasound to find the source DVT; ABG usually shows respiratory alkalosis with hypoxemia; ECG most often shows sinus tachycardia</span></p>
+<p><b>🚨 Deterioration:</b> <span class="fill">a rising respiratory rate, falling SpO&#8322; despite oxygen, falling blood pressure, JVD, and a change in level of consciousness &mdash; that is right heart failure and obstructive shock</span></p>
+<p><mark>Sudden onset is the tell. "Suddenly short of breath" after surgery or immobility means PE until proven otherwise.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. How do you fix it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Priority order:</b></p>
+<div class="flow">
+ <div class="stepbox"><b>1</b><span>High-Fowler's + oxygen</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>2</b><span>Stay with the patient, get vitals and continuous monitoring</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>3</b><span>IV access</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>4</b><span>Notify the provider / rapid response</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>5</b><span>Anticoagulate as ordered</span></div>
+</div>
+<p><b>Medications:</b> <span class="fill">IV heparin infusion or low-molecular-weight heparin (enoxaparin) first, transitioning to warfarin or a DOAC such as apixaban or rivaroxaban; thrombolytics (alteplase) for a massive PE with hemodynamic instability</span></p>
+<p><b>Lab monitoring:</b> <span class="fill">aPTT for IV heparin, INR for warfarin (therapeutic 2&ndash;3 for VTE), platelets for heparin-induced thrombocytopenia; antidote for heparin is protamine sulfate, for warfarin it is vitamin K</span></p>
+<p><b>Anticipated orders:</b> <span class="fill">CT pulmonary angiogram, D-dimer, ABG, ECG, troponin and BNP for right-heart strain, oxygen, heparin protocol, and possibly an IVC filter if anticoagulation is contraindicated</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. Who is involved?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Rapid response team, hospitalist or pulmonologist, radiology, pharmacy for the heparin protocol and dosing, anticoagulation clinic for follow-up, physical therapy for safe mobilization, and interventional radiology or vascular surgery for thrombectomy or an IVC filter.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. How can this get worse, and how do you prevent it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Complications:</b> <span class="fill">obstructive shock and cardiac arrest, pulmonary infarction, right ventricular failure, chronic pulmonary hypertension, recurrent PE, and bleeding from the treatment itself</span></p>
+<p><b>Prevention &mdash; this is the high-yield part:</b> <span class="fill">early and frequent ambulation, sequential compression devices, prophylactic subcutaneous heparin or enoxaparin, leg and ankle exercises, adequate hydration, and no pillows under the knees or crossing of legs</span></p>
+<p><b>Discharge teaching on anticoagulants:</b> <span class="fill">use a soft toothbrush and an electric razor, report black stools, bleeding gums, unusual bruising, or a bad headache, keep vitamin K intake (green leafy vegetables) consistent rather than eliminated if on warfarin, keep lab appointments, and carry medical identification</span></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--garnet)" id="dm-cancer">
+<h2>🫁 Disease Map &middot; Lung Cancer</h2>
+
+<div class="nq">
+<div class="stem">1. What is happening in the body?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Malignant cells grow in lung tissue, obstruct airways, invade nearby structures, and spread.</b></p>
+<p><b>Two families:</b> <span class="fill">non&ndash;small cell lung cancer (about 85%, includes adenocarcinoma and squamous cell &mdash; often treated surgically if caught early) and small cell lung cancer (aggressive, spreads early, treated with chemotherapy and radiation rather than surgery)</span></p>
+<p><b>Why the symptoms:</b> <span class="fill">a tumor obstructing an airway causes cough, wheeze, and post-obstructive pneumonia; invasion of vessels causes hemoptysis; pleural involvement causes pain and effusion; pressure on the laryngeal nerve causes hoarseness</span></p>
+<p><b>Biggest risk factor:</b> <span class="fill">tobacco smoke; then radon, asbestos and other occupational exposures, air pollution, and family history</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. How do you know?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Findings:</b> <span class="fill">a persistent cough or a change in a chronic cough, hemoptysis, dyspnea, chest or shoulder pain, hoarseness, recurrent pneumonia or bronchitis, unexplained weight loss and fatigue, and clubbing</span></p>
+<p><b>Diagnostics:</b> <span class="fill">chest x-ray and CT to find it, PET to stage it, and bronchoscopy or needle biopsy for the definitive tissue diagnosis; sputum cytology and mediastinoscopy for lymph node involvement</span></p>
+<p><b>Screening:</b> <span class="fill">annual low-dose CT for adults roughly 50&ndash;80 years old with a 20 pack-year history who currently smoke or quit within the past 15 years</span></p>
+<p><b>🚨 Deterioration:</b> <span class="fill">facial and neck swelling with distended neck veins (superior vena cava syndrome &mdash; an oncologic emergency), sudden severe dyspnea with absent breath sounds on one side (effusion or pneumothorax), massive hemoptysis, or new neurologic changes suggesting brain metastases</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. How do you fix it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Treatment:</b> <span class="fill">surgical resection (wedge, lobectomy, or pneumonectomy) for early non&ndash;small cell disease, chemotherapy, radiation, immunotherapy, and targeted therapy based on tumor markers</span></p>
+<p><b>Priority nursing:</b> <span class="fill">maintain a patent airway and oxygenation first, manage pain so they can breathe deeply and cough, promote nutrition, monitor for infection during myelosuppression, and address the psychosocial and end-of-life needs directly rather than around them</span></p>
+<p><b>Postoperative thoracotomy care:</b> <span class="fill">chest tube management, splinted coughing and deep breathing, incentive spirometry, early mobility, and pain control before pulmonary hygiene &mdash; not after</span></p>
+<p><b>After a pneumonectomy:</b> <span class="fill">position on the back or the operative side as prescribed so the remaining lung can expand; that side has no lung to re-expand and usually no chest tube to suction</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. Who is involved?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Oncologist, thoracic surgeon, radiation oncologist, pulmonologist, respiratory therapy, pain management and palliative care, dietitian, social work and case management, chaplain, and home health or hospice.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. How can this get worse, and how do you prevent it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Complications:</b> <span class="fill">superior vena cava syndrome, malignant pleural effusion, pneumothorax, airway obstruction, hemorrhage, metastasis to brain, bone, liver, and adrenals, and paraneoplastic syndromes such as SIADH with small cell disease or hypercalcemia with squamous cell</span></p>
+<p><b>Prevention and teaching:</b> <span class="fill">smoking cessation at any stage still helps, avoid secondhand smoke, test the home for radon, use occupational protection from asbestos and other carcinogens, keep screening appointments, report new hoarseness/hemoptysis/weight loss, and infection precautions during chemotherapy</span></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--citrine)" id="dm-tube">
+<h2>🩺 Disease Map &middot; Chest Tubes</h2>
+
+<div class="nq">
+<div class="stem">1. What is happening in the body? (and what is the tube doing about it)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Something has entered the pleural space that does not belong there</b> &mdash; air (pneumothorax), blood (hemothorax), or fluid (effusion) &mdash; and it has destroyed the negative pressure that holds the lung open, so the lung collapses.</p>
+<p><b>The chest tube's job:</b> <span class="fill">remove the air or fluid and restore negative intrapleural pressure so the lung can re-expand</span></p>
+<p><b>Placement tells you what they are draining:</b> <span class="fill">a high/apical tube (about the 2nd&ndash;3rd intercostal space) removes air, because air rises; a low/basal tube (about the 5th&ndash;6th intercostal space, midaxillary) removes fluid or blood, because fluid settles</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. How do you know? (what is normal in the drainage system, and what is not)</div>
+<details><summary>Model answer</summary><div class="ans">
+<table class="cmp">
+<thead><tr><th>What you see</th><th>Expected ✅</th><th>Report / act ❌</th></tr></thead>
+<tbody>
+<tr><td class="k">Water-seal chamber</td><td><span class="fill">Tidaling &mdash; the fluid level rises and falls with breathing. <em>Intermittent</em> bubbling is expected with a pneumothorax as trapped air escapes.</span></td><td><span class="fill">CONTINUOUS bubbling = an air leak in the system. Check all connections first, then work toward the patient.</span></td></tr>
+<tr><td class="k">Tidaling stops</td><td><span class="fill">If the patient is comfortable and breath sounds are back &mdash; the lung has re-expanded.</span></td><td><span class="fill">If the patient is dyspneic &mdash; the tubing is kinked, clamped, obstructed, or dependent-looped. Assess the patient, not just the box.</span></td></tr>
+<tr><td class="k">Suction chamber (wet)</td><td><span class="fill">Gentle continuous bubbling &mdash; that is the suction working, not an air leak.</span></td><td><span class="fill">No bubbling = suction is not connected or is turned too low.</span></td></tr>
+<tr><td class="k">Drainage</td><td><span class="fill">Gradually decreasing, changing from bloody to serosanguineous to serous.</span></td><td><span class="fill">More than 100 mL/hr of fresh bright red blood, or a sudden stop with distress &mdash; notify the provider.</span></td></tr>
+<tr><td class="k">Insertion site</td><td><span class="fill">Occlusive dressing intact, site clean and dry.</span></td><td><span class="fill">Crepitus (subcutaneous emphysema &mdash; crackling under the skin), redness, drainage, or fever.</span></td></tr>
+</tbody>
+</table>
+<p><b>🚨 Signs of tension pneumothorax:</b> <span class="fill">severe dyspnea, absent breath sounds on one side, tracheal deviation AWAY from the affected side, distended neck veins, hypotension &mdash; this is an emergency</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. How do you fix it? (nursing priorities and emergency actions)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Routine care:</b> <span class="fill">keep the drainage system upright and BELOW the level of the chest, keep tubing free of kinks and dependent loops, assess breath sounds and respiratory status every shift and with any change, encourage deep breathing, coughing, and incentive spirometry to help the lung re-expand, mark and record drainage on the outside of the chamber, and keep sterile water and an occlusive dressing at the bedside</span></p>
+<h4>Emergencies &mdash; know these cold</h4>
+<div class="flow">
+ <div class="stepbox"><b>Tube disconnects from the drainage system</b><span><span class="fill">Put the free end into a bottle of STERILE WATER to restore a water seal, then get a new system.</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Tube pulls OUT of the chest</b><span><span class="fill">Cover the site immediately with a sterile dressing taped on THREE sides &mdash; that lets air out but not in &mdash; and notify the provider.</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>System tips over</b><span><span class="fill">Set it upright, check the water-seal level, and reassess the patient.</span></span></div>
+</div>
+<p><span class="never">Never clamp a chest tube routinely</span> &mdash; <em>because</em> trapped air has nowhere to go and can build into a tension pneumothorax. Brief clamping is only for changing the system or checking a leak, on an order. <span class="never">Never strip or milk the tubing routinely</span> and <span class="never">never empty the drainage chamber.</span></p>
+<p><b>At removal:</b> <span class="fill">medicate for pain first, then have the patient take a deep breath and bear down (Valsalva) or hold the breath as the tube is pulled, and apply an airtight petroleum-gauze occlusive dressing. A chest x-ray follows to confirm the lung stayed up.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. Who is involved?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">The provider or thoracic surgeon who inserts and removes the tube, respiratory therapy, radiology for the confirming chest x-ray, and physical therapy for safe mobility with the drainage system.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. How can this get worse, and how do you prevent it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Complications:</b> <span class="fill">tension pneumothorax, infection at the site or empyema, subcutaneous emphysema, bleeding, re-expansion pulmonary edema if a large effusion is drained too fast, and re-collapse after removal</span></p>
+<p><b>Prevention and teaching:</b> <span class="fill">keep the system below the chest and upright, do not lie on the tubing, sit up and use incentive spirometry regularly, report new shortness of breath or chest pain immediately, and ambulate with the drainage unit carried below chest level</span></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--amethyst)" id="dm-vent">
+<h2>🩺 Disease Map &middot; Mechanical Ventilation</h2>
+
+<div class="nq">
+<div class="stem">1. What is happening in the body? (why they need it, and what the machine changes)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>The patient cannot maintain adequate oxygenation, ventilation, or a patent airway on their own.</b></p>
+<p><b>Indications:</b> <span class="fill">hypoxemic respiratory failure, hypercarbic respiratory failure (a rising PaCO&#8322; with a falling pH), inability to protect the airway, apnea, and severe work of breathing that is exhausting them</span></p>
+<p><b>The key physiologic change:</b> <span class="fill">normal breathing pulls air in with NEGATIVE pressure; a ventilator pushes air in with POSITIVE pressure. Positive pressure in the chest reduces venous return, so it can lower cardiac output and blood pressure &mdash; especially with high PEEP.</span></p>
+<p><b>Common settings:</b> <span class="fill">FiO&#8322; (percent oxygen), tidal volume (roughly 6&ndash;8 mL/kg of ideal body weight, and 6 mL/kg in ARDS to prevent volutrauma), respiratory rate, and PEEP (usually starting around 5 cm H&#8322;O) which holds alveoli open at the end of exhalation</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. How do you know? (confirming placement, expected findings, alarms)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Confirming ET tube placement:</b> <span class="fill">continuous waveform capnography (ETCO&#8322;) plus equal bilateral breath sounds and symmetric chest rise; a chest x-ray is the definitive confirmation. Note and document the centimeter marking at the lips every shift so you know if it migrates.</span></p>
+<p><b>If breath sounds are heard only on the right:</b> <span class="fill">the tube has slipped into the right mainstem bronchus &mdash; notify the provider so it can be repositioned</span></p>
+<h4>🚨 The alarm table &mdash; memorize this one</h4>
+<table class="cmp">
+<thead><tr><th></th><th>HIGH pressure alarm</th><th>LOW pressure alarm</th></tr></thead>
+<tbody>
+<tr><td class="k">Means</td><td><span class="fill">Something is RESISTING the breath</span></td><td><span class="fill">Air is ESCAPING &mdash; a leak or disconnect</span></td></tr>
+<tr><td class="k">Causes</td><td><span class="fill">Secretions, biting the tube, kinked tubing, coughing, bronchospasm, water in the circuit, pneumothorax, decreasing lung compliance</span></td><td><span class="fill">Circuit disconnection, a cuff leak, or the tube coming out</span></td></tr>
+<tr><td class="k">You do</td><td><span class="fill">Assess the patient, suction if secretions, unkink tubing, drain condensation, use a bite block if needed &mdash; and if breath sounds are absent on one side, suspect pneumothorax and escalate</span></td><td><span class="fill">Trace the circuit from patient to machine, reconnect, check the cuff, and confirm the tube is still at the correct depth</span></td></tr>
+</tbody>
+</table>
+<p><b>🚨 If the patient is in distress and you cannot fix it fast:</b> <span class="fill">disconnect from the ventilator and manually ventilate with a bag-valve device on 100% oxygen while someone gets help. Think DOPE &mdash; Displacement, Obstruction, Pneumothorax, Equipment failure.</span></p>
+<p><span class="never">Never silence a ventilator alarm without assessing the patient first.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. How do you fix it? (daily nursing priorities and anticipated orders)</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>The VAP prevention bundle:</b> <span class="fill">head of bed elevated 30&ndash;45 degrees, oral care with chlorhexidine per protocol, subglottic suctioning, daily sedation interruption with a spontaneous breathing trial, DVT prophylaxis, and stress ulcer prophylaxis</span></p>
+<p><b>Suctioning:</b> <span class="fill">suction when indicated (secretions audible or visible, high pressure alarm, desaturation, restlessness) rather than on a schedule; hyperoxygenate first, limit each pass to about 10&ndash;15 seconds, and apply suction only while withdrawing</span></p>
+<p><b>Comfort and safety:</b> <span class="fill">establish a communication method (board, writing, eye blinks) before sedating, reorient frequently, assess pain and sedation with a scale, and prevent unplanned extubation by securing the tube and using restraints only per policy and order</span></p>
+<p><b>Anticipated orders:</b> <span class="fill">ABGs after every settings change, daily chest x-ray, continuous pulse oximetry and capnography, sedation and analgesia protocols, enteral nutrition, and a weaning/spontaneous breathing trial protocol</span></p>
+<p><b>Readiness to wean:</b> <span class="fill">the underlying cause is improving, they are hemodynamically stable, they can initiate their own breaths, oxygenation is adequate on low FiO&#8322; and PEEP, and they are awake enough to protect the airway</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. Who is involved?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Respiratory therapist (settings, weaning trials, ABGs), intensivist or pulmonologist, pharmacist for sedation and analgesia, dietitian for enteral feeding, speech-language pathologist after extubation or with a tracheostomy for swallow evaluation, PT/OT for early mobility, and palliative care and social work for goals-of-care conversations with the family.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. How can this get worse, and how do you prevent it?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Complications:</b> <span class="fill">ventilator-associated pneumonia, barotrauma and pneumothorax, volutrauma from large tidal volumes, decreased cardiac output and hypotension from positive pressure and PEEP, oxygen toxicity from prolonged high FiO&#8322;, unplanned extubation, tracheal injury from cuff overinflation, ICU delirium, muscle deconditioning, and ventilator dependence</span></p>
+<p><b>Prevention:</b> <span class="fill">the VAP bundle, lung-protective low tidal volumes, the lowest effective FiO&#8322; and PEEP, cuff pressure monitoring, daily sedation interruption and spontaneous breathing trials to shorten ventilator days, early mobility, and family involvement and reorientation to reduce delirium</span></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--emerald)" id="check">
+<h2>Step 2: Check Yourself ✅</h2>
+<p>Now go back to your <b>lecture notes</b>, the <b>PowerPoint</b>, <b>ATI Engage</b>, and <b>Claire AI</b>. Fill in what you missed and mark the areas that need another pass.</p>
+<p class="lead-in">Anything you could not say out loud before tapping the reveal goes on your review list. That list &mdash; not the whole packet &mdash; is what you restudy tomorrow.</p>
+<h3>Using Claire to Study Smarter 🤖</h3>
+<p class="lead-in">Instead of broad questions, try prompts such as: "Teach me COPD as if I am preparing for NCLEX." &middot; "Compare asthma, COPD, and emphysema in a table." &middot; "Create five ATI-style questions about pulmonary embolism with rationales." &middot; "Walk me through a mechanical ventilation case study." &middot; "Explain hypercarbia using patient examples." &middot; "Help me distinguish assessment findings that require intervention versus continued assessment."</p>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="framework">
+<h2>Framework for Answering NCLEX Questions ⭐</h2>
+<p class="lead-in">Before selecting an answer, run these in order. Same order, every question.</p>
+<div class="flow">
+ <div class="stepbox"><b>Step 1</b><span>What is the question asking?<br><em>Assessment · Intervention · Priority · Teaching · Evaluation</em></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 2</b><span>What abnormal cues stand out?</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 3</b><span>Is this an <b>A</b>irway, <b>B</b>reathing, or <b>C</b>irculation problem?</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 4</b><span>Do I have enough to act, or do I need more assessment?</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 5</b><span>Eliminate distractors</span></div>
+</div>
+<h4>Eliminate distractors by asking</h4>
+<ul>
+ <li>Does this answer <b>delay treatment</b>?</li>
+ <li>Does this answer <b>address the priority problem</b>?</li>
+ <li>Is this intervention <b>appropriate for the current situation</b>?</li>
+</ul>
+<div class="nq">
+<div class="stem">Model answer: how do I actually tell "assess more" from "act now"?</div>
+<details><summary>Model answer</summary><div class="ans">
+<table class="cmp">
+<thead><tr><th>Assess further when&hellip;</th><th>Intervene NOW when&hellip;</th></tr></thead>
+<tbody>
+<tr><td><span class="fill">The cue is vague or you cannot name the problem yet &mdash; "reports feeling tired," "states the pain is different," a single borderline value in a stable patient.</span></td><td><span class="fill">The cue names a threat to airway, breathing, or circulation &mdash; a silent chest, SpO&#8322; 86%, new confusion, a respiratory rate climbing 20 &rarr; 32, absent breath sounds on one side.</span></td></tr>
+<tr><td><span class="fill">Nothing will get worse in the next few minutes if you gather more data.</span></td><td><span class="fill">Waiting costs oxygen or perfusion. Then the answer is the action that opens the airway or improves ventilation &mdash; not a test, not documentation.</span></td></tr>
+</tbody>
+</table>
+<p><mark>Diagnostics never beat interventions when the patient is decompensating. ABGs, x-rays, and charting all delay treatment.</mark></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--citrine)" id="practice">
+<h2>Practice Questions 🧠</h2>
+<p class="lead-in">Answer all four before you open any reveal. The <b>Answer Key and Rationales</b> is attached to each question &mdash; correct answer plus why every distractor is wrong.</p>
+
+<div class="nq">
+<div class="stem">1. A nurse receives report on four clients. Which client should the nurse assess first?</div>
+<ol type="A">
+ <li>A client with COPD who reports fatigue after walking to the bathroom.</li>
+ <li>A client with asthma requesting the next scheduled nebulizer treatment.</li>
+ <li>A client with pulmonary embolism whose respiratory rate increased from 20/min to 32/min during the last hour.</li>
+ <li>A client with pneumonia whose temperature increased from 37.6&deg;C to 38.0&deg;C.</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Correct: C.</b> <span class="fill">The respiratory rate jumped 12 breaths in an hour in a client who already has a clot obstructing pulmonary blood flow. That is a trend, not a number, and it says the client is deteriorating toward respiratory failure or right heart strain.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Fatigue with exertion is expected in COPD; it is the disease behaving normally.</span><br>
+<b>B</b> &mdash; <span class="fill">A routine scheduled medication request. Important, but nobody is unstable.</span><br>
+<b>D</b> &mdash; <span class="fill">A 0.4&deg;C rise is mild and expected with pneumonia; there is no sign of acute instability.</span></p>
+<p><mark>When a question gives you two numbers, it is asking about the trend.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. A client with emphysema has an oxygen saturation of 91% while receiving prescribed oxygen therapy. During reassessment, the client becomes increasingly difficult to arouse. Which nursing action is most appropriate?</div>
+<ol type="A">
+ <li>Encourage pursed-lip breathing.</li>
+ <li>Assess for worsening carbon dioxide retention.</li>
+ <li>Increase oxygen to 10 L/min.</li>
+ <li>Document the findings.</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Correct: B.</b> <span class="fill">Increasing drowsiness in emphysema is the classic sign of rising CO&#8322; and impending respiratory failure. The mental status change matters more than the SpO&#8322; of 91%, which is acceptable for this client &mdash; oxygenation looks fine while ventilation is failing.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Pursed-lip breathing helps, but it requires a cooperative, alert client and it is not enough for someone you cannot rouse.</span><br>
+<b>C</b> &mdash; <span class="fill">Raising the oxygen without assessing treats a number, not the problem. The problem is CO&#8322; that is not being exhaled, and more oxygen can make the retention worse.</span><br>
+<b>D</b> &mdash; <span class="fill">Documentation never substitutes for action when a client is deteriorating.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. A postoperative thoracotomy client has shallow respirations, a respiratory rate of 30/min, and an oxygen saturation of 89%. Which intervention should the nurse implement first?</div>
+<ol type="A">
+ <li>Encourage use of the incentive spirometer.</li>
+ <li>Obtain a chest x-ray.</li>
+ <li>Administer intravenous fluids.</li>
+ <li>Reinforce splinting techniques.</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Correct: A.</b> <span class="fill">Shallow breathing after chest surgery collapses alveoli. Incentive spirometry expands the lungs, reverses hypoventilation and atelectasis, and improves oxygenation right now &mdash; it directly treats the cause.</span></p>
+<p><b>B</b> &mdash; <span class="fill">A chest x-ray gives information but moves no air. It delays treatment.</span><br>
+<b>C</b> &mdash; <span class="fill">Fluids do nothing for impaired lung expansion and could worsen it.</span><br>
+<b>D</b> &mdash; <span class="fill">Splinting supports the incision and makes deep breathing tolerable, but it is a support for the intervention, not the intervention.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. A client with COPD develops increased shortness of breath, diminished breath sounds, and an oxygen saturation of 88%. Which intervention should the nurse implement first?</div>
+<ol type="A">
+ <li>Obtain arterial blood gases.</li>
+ <li>Administer the prescribed bronchodilator.</li>
+ <li>Encourage increased oral fluids.</li>
+ <li>Review the client's previous imaging results.</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Correct: B.</b> <span class="fill">Diminished breath sounds with increased dyspnea means air is not moving &mdash; bronchospasm and airway narrowing. The bronchodilator opens the airway and fixes the actual problem within minutes.</span></p>
+<p><b>A</b> &mdash; <span class="fill">ABGs tell you how bad it is but delay treatment. Draw them after you have treated.</span><br>
+<b>C</b> &mdash; <span class="fill">Hydration thins secretions over hours, not in an acute episode &mdash; and pushing fluids on a dyspneic client risks aspiration.</span><br>
+<b>D</b> &mdash; <span class="fill">Old imaging describes the past. It does not treat the present.</span></p>
+<p><mark>Airway before assessment data. Every time.</mark></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--ruby)" id="case1">
+<h2>🚨 Case Study 1 &middot; Clinical Judgment Measurement Model</h2>
+<p class="lead-in">A 67-year-old client presents with:</p>
+<ul>
+ <li>Sudden onset shortness of breath</li>
+ <li>Sharp chest pain that worsens with inspiration</li>
+ <li>Heart rate 124/min &middot; Respiratory rate 34/min</li>
+ <li>Oxygen saturation 86% on room air</li>
+ <li>Hip replacement surgery 10 days ago</li>
+ <li>Blood-streaked sputum</li>
+</ul>
+
+<div class="nq">
+<div class="stem">Recognize Cues &mdash; What findings are most concerning?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Sudden dyspnea, pleuritic chest pain, tachycardia at 124, tachypnea at 34, hypoxemia at 86% on room air, hemoptysis, and recent orthopedic surgery with the immobility that follows it.</span></p>
+<p><b>The two that carry the most weight:</b> <span class="fill">SpO&#8322; 86% on room air (a direct oxygenation failure) and the word "sudden" combined with hip surgery 10 days ago (the risk factor that names the diagnosis).</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Analyze Cues &mdash; What diagnosis best explains the presentation?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b><span class="fill">Pulmonary embolism</span>,</b> <span class="fill">most likely from a DVT that formed in the operative leg during postoperative immobility. Sudden onset, pleuritic pain, tachycardia, hypoxemia, and hemoptysis together are the textbook picture, and orthopedic surgery is a top-tier risk factor.</span></p>
+<p><b>Why not pneumonia?</b> <span class="fill">Pneumonia builds over days with fever, productive purulent sputum, and crackles &mdash; it is not sudden.</span> <b>Why not MI?</b> <span class="fill">MI pain is usually pressure that does not change with breathing, and it does not produce blood-streaked sputum.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Prioritize Hypotheses &mdash; What is your greatest concern?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b><span class="fill">Impaired oxygenation from obstruction of pulmonary blood flow</span></b> &mdash; <span class="fill">blood cannot reach ventilated alveoli, so oxygen cannot get into the blood no matter how fast the client breathes. If the clot is large enough, the right ventricle fails against the pressure and the client goes into obstructive shock and arrest.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Generate Solutions &mdash; What interventions should be prioritized?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Support oxygenation, complete a focused respiratory and cardiovascular assessment, notify the provider promptly, establish IV access, and anticipate diagnostic evaluation and anticoagulation.</span></p>
+<ul>
+ <li><b>Anticipate orders for:</b> <span class="fill">CT pulmonary angiography, ABG, D-dimer, ECG, continuous monitoring, oxygen, and an IV heparin protocol &mdash; with thrombolytics considered if the client becomes hemodynamically unstable</span></li>
+</ul>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Take Action &mdash; What should the nurse do immediately?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b>Prioritize breathing and circulation while escalating care.</b></p>
+<div class="flow">
+ <div class="stepbox"><b>1</b><span><span class="fill">Sit the client up in high-Fowler's and apply oxygen</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>2</b><span><span class="fill">Stay with the client; full vital signs and continuous pulse oximetry and cardiac monitoring</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>3</b><span><span class="fill">Establish/confirm IV access</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>4</b><span><span class="fill">Notify the provider or call rapid response</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>5</b><span><span class="fill">Carry out anticoagulation and diagnostic orders</span></span></div>
+</div>
+<p><span class="never">Do not ambulate this client and do not leave the room to chart.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Evaluate Outcomes &mdash; How will you know the interventions are effective?</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">SpO&#8322; rises toward 92% or better, respiratory rate falls back toward normal, heart rate slows, chest pain decreases, the client is calm and oriented, blood pressure stays stable, and anticoagulation labs (aPTT or anti-Xa) reach the therapeutic range without bleeding.</span></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--sapphire)" id="case2">
+<h2>Case Study 2 &middot; Clinical Judgment Measurement Model</h2>
+<p class="lead-in">A 72-year-old client with severe emphysema presents with:</p>
+<ul>
+ <li>Respiratory rate 30/min</li>
+ <li>Oxygen saturation 90% on prescribed oxygen</li>
+ <li>Barrel chest &middot; Accessory muscle use &middot; Diminished breath sounds</li>
+ <li>Increasing drowsiness</li>
+</ul>
+
+<div class="nq">
+<div class="stem">Recognize Cues</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Barrel chest, diminished breath sounds, accessory muscle use, respiratory rate 30, and &mdash; the one that changed &mdash; increasing drowsiness.</span></p>
+<p><b>Which are chronic and which are new?</b> <span class="fill">Barrel chest is chronic and expected. Diminished breath sounds and accessory muscle use are baseline-plus. The increasing drowsiness is NEW, and new is what you act on.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Analyze Cues</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b><span class="fill">The new drowsiness means worsening carbon dioxide retention (hypercarbia)</span></b> &mdash; <span class="fill">the client is breathing fast but shallowly and moving very little air, so CO&#8322; builds up. High CO&#8322; is a sedative to the brain, which is why they get sleepy. The SpO&#8322; of 90% is normal for this client and is falsely reassuring: oxygenation is adequate while ventilation is failing.</span></p>
+<p><mark>SpO&#8322; measures oxygenation. It tells you nothing about CO&#8322;. Only an ABG and the client's mental status do.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Prioritize Hypotheses</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><b><span class="fill">Impending respiratory failure from hypercarbia</span></b> &mdash; <span class="fill">respiratory acidosis with a falling pH, progressing to obtundation, apnea, and the need for intubation if nothing changes.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Generate Solutions</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Support ventilation as well as oxygenation, reassess frequently, and notify the provider of the change in condition.</span></p>
+<ul>
+ <li><b>Anticipate:</b> <span class="fill">ABG, bronchodilator and corticosteroid, chest x-ray, oxygen titrated to a SpO&#8322; of 88&ndash;92%, and BiPAP &mdash; which is the intervention that actually moves CO&#8322; &mdash; with intubation if the client cannot protect the airway</span></li>
+</ul>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Take Action</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">Stay with the client, sit them fully upright, stimulate and reorient them, keep the oxygen at the prescribed rate rather than turning it up, give the prescribed respiratory medications, obtain the ABG, notify the provider immediately, and continue close monitoring with the equipment for BiPAP or intubation ready.</span></p>
+<p><span class="never">Do not increase the oxygen flow to fix drowsiness</span> &mdash; <em>because</em> the problem is CO&#8322; that is not being exhaled, and extra oxygen does not remove CO&#8322;.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">Evaluate Outcomes</div>
+<details><summary>Model answer</summary><div class="ans">
+<p><span class="fill">The client becomes more alert and oriented, work of breathing decreases with less accessory muscle use, respiratory rate falls toward baseline, breath sounds improve as air moves, and a repeat ABG shows a falling PaCO&#8322; with a pH returning toward normal.</span></p>
+<p><b>The single best indicator here:</b> <span class="fill">improved level of consciousness &mdash; because that is the sign that went wrong first.</span></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="selfcheck">
+<h2>Final Self-Check ⭐</h2>
+<p class="lead-in">Before the exam, ask yourself &mdash; and answer out loud, not in your head:</p>
+<ul>
+ <li>Can I explain the pathophysiology without looking at my notes?</li>
+ <li>Can I recognize this disease from assessment findings alone?</li>
+ <li>Can I identify which finding is most concerning?</li>
+ <li>Can I distinguish when NCLEX wants another assessment versus immediate intervention?</li>
+ <li>Can I explain why the correct answer is right and why every distractor is wrong?</li>
+</ul>
+<div class="nq">
+<div class="stem">Model answer: what does "good enough" sound like for each of these?</div>
+<details><summary>Model answer</summary><div class="ans">
+<ul>
+ <li><b>Patho:</b> <span class="fill">You can say the chain out loud &mdash; cause &rarr; lung change &rarr; symptom &mdash; in about three sentences without a pause.</span></li>
+ <li><b>Recognize from findings:</b> <span class="fill">Given only "sudden dyspnea, pleuritic pain, tachycardia, recent surgery," you say PE before you finish reading.</span></li>
+ <li><b>Most concerning finding:</b> <span class="fill">You pick the one that CHANGED and the one that threatens airway, breathing, or circulation &mdash; not the ugliest number.</span></li>
+ <li><b>Assess vs. act:</b> <span class="fill">You can state the rule: if waiting costs oxygen or perfusion, act; if the cue is vague and nothing gets worse in the next few minutes, gather more data.</span></li>
+ <li><b>Rationales:</b> <span class="fill">For each wrong option you can name its specific flaw &mdash; delays treatment, treats the wrong problem, or is right but not first.</span></li>
+</ul>
+</div></details>
+</div>
+<p class="lead-in">🤖 After this packet, use ATI Engage Dynamic Quizzing and Claire to generate more questions on anything you had to peek at.</p>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>⭐ If You Remember Nothing Else</h2>
+<ul>
+ <li><b>Trend beats number.</b> RR 20 &rarr; 32 in an hour is the sicker client, even if someone else's single value looks worse.</li>
+ <li><b>Mental status beats pulse ox in COPD/emphysema.</b> New drowsiness = <span class="fill">CO&#8322; retention and impending respiratory failure</span>.</li>
+ <li><b>Target SpO&#8322; in COPD is</b> <span class="fill">88&ndash;92%</span>. <span class="never">Do not crank the oxygen to fix drowsiness.</span></li>
+ <li><b>A silent chest in asthma is worse than a loud wheeze</b> &mdash; <span class="fill">no air is moving</span>.</li>
+ <li><b>"Sudden" dyspnea after surgery or immobility</b> = <span class="fill">pulmonary embolism until proven otherwise</span>.</li>
+ <li><b>Chest tube:</b> <span class="fill">continuous bubbling in the water seal = air leak; tube out of the chest = sterile dressing taped on three sides; tube off the system = end into sterile water</span>. <span class="never">Never clamp routinely.</span></li>
+ <li><b>Ventilator:</b> <span class="fill">HIGH pressure = obstruction (suction, unkink); LOW pressure = leak or disconnect (trace the circuit)</span>. In distress &rarr; <span class="fill">bag them with 100% O&#8322; and think DOPE</span>.</li>
+ <li><b>Interventions beat diagnostics</b> when the patient is decompensating. <span class="fill">ABGs, x-rays, and charting all delay treatment.</span></li>
+</ul>
+</div>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+</body></html>

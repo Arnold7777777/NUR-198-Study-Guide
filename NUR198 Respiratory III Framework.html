@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · Respiratory III Framework (filled in)</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 · Exam 2 · Respiratory III · Dr. K's Framework</div>
+  <h1>Respiratory III &mdash; <span class="glow">Lung Cancer, PE, COPD &amp; Asthma</span></h1>
+  <p>Dr. K's Respiratory III framework, filled in. Tap "Hide answers" to quiz yourself.</p>
+<div class="bigq"><b class="q">Is this an airway problem, a perfusion problem, or a mass problem?</b>Asthma and COPD block airflow. PE blocks blood flow. Cancer takes up space. The priority follows from which one it is.</div>
+ </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc">
+  <a href="#howto">0 &middot; How to Use This Framework</a>
+  <a href="#lc-risk">1 &middot; Lung Cancer &mdash; Risk &amp; Manifestations</a>
+  <a href="#lc-signs">1a &middot; Lung Cancer Manifestations</a>
+  <a href="#lc-dx">1b &middot; Lung Cancer Diagnostics 🧪</a>
+  <a href="#broncho">1c &middot; Bronchoscopy &amp; Thoracoscopy</a>
+  <a href="#lc-mgmt">1d &middot; Lung Cancer Management</a>
+  <a href="#pe-patho">2 &middot; PE &mdash; Patho &amp; Virchow's Triad</a>
+  <a href="#pe-cues">2b &middot; PE Manifestations &amp; Cues 🚨</a>
+  <a href="#pe-dx">2c &middot; PE Diagnostics 🧪</a>
+  <a href="#pe-drugs">2d &middot; Anticoagulation 💊</a>
+  <a href="#pe-teach">2e &middot; PE Teaching</a>
+  <a href="#copd-big">3 &middot; COPD &mdash; Big Picture</a>
+  <a href="#copd-types">3b &middot; Blue Bloater vs Pink Puffer</a>
+  <a href="#copd-assess">3c &middot; COPD Assessment Findings</a>
+  <a href="#copd-dx">3d &middot; COPD Diagnostics &amp; Complications</a>
+  <a href="#copd-exac">3e &middot; Acute COPD Exacerbation</a>
+  <a href="#copd-o2">3f &middot; ⭐ Oxygen Therapy 88&ndash;92%</a>
+  <a href="#asthma-patho">4 &middot; Asthma &mdash; Patho &amp; Triggers</a>
+  <a href="#asthma-signs">4b &middot; Asthma Findings &amp; PFTs</a>
+  <a href="#status">4c &middot; 🚨 Status Asthmaticus</a>
+  <a href="#asthma-meds">4d &middot; Asthma Medications 💊</a>
+  <a href="#asthma-case">4e &middot; Asthma Case Study</a>
+  <a href="#cmp">5 &middot; Asthma vs COPD side by side</a>
+  <a href="#wrapup">6 &middot; Module Wrap-Up</a>
+  <a href="#practice">Practice Questions</a>
+  <a href="#summary">⭐ Must-Not-Forget Strip</a>
+</div>
+
+<p class="lead-in"><i>Dr. K's Respiratory III framework, filled in. Every highlighted answer was a blank or an open prompt on the paper handout. The section order matches your printed copy so you can follow along line by line.</i></p>
+
+<!-- ===================== 0. HOW TO USE ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="howto">
+<h2>0 &middot; How to Use This Framework 🧭</h2>
+
+<p><b>This is not a list of diseases to memorize.</b> <i>It is one thinking process you run on every respiratory disorder.</i> Learn the six questions and you can reason through a disease you have never seen.</p>
+
+<div class="flow">
+  <div class="stepbox"><b>Step 1</b><span><b>Pathophysiology</b><br>What is going wrong in the lungs?</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 2</b><span><b>Assessment</b><br>What clues is the patient giving me?</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 3</b><span><b>Diagnostics</b><br>What test confirms my suspicion?</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 4</b><span><b>Priority</b><br>Airway? Breathing? Circulation?</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 5</b><span><b>Interventions</b><br>What fixes the immediate threat?</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 6</b><span><b>Teaching</b><br>What prevents this from recurring?</span></div>
+</div>
+
+<p><mark>Sort every respiratory patient into one of three buckets first:</mark> <b>airflow problem</b> (asthma, COPD &mdash; air cannot get out), <b>perfusion problem</b> (PE &mdash; blood cannot get through), or <b>mass problem</b> (cancer &mdash; something is taking up space). The bucket tells you the priority before you know a single lab value.</p>
+</div>
+
+<!-- ===================== 1. LUNG CANCER ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="lc-risk">
+<h2>1 &middot; Lung Cancer Framework &mdash; Risk Factors 🚬</h2>
+
+<h3>Major risk factors</h3>
+<ul class="blanks">
+  <li><b>Smoking</b> &mdash; <span class="fill">the single biggest one, responsible for the large majority of cases. <i>Carcinogens in tobacco smoke cause repeated DNA damage in the bronchial lining, and the damaged cells eventually stop repairing correctly.</i> Risk is measured in <b>pack-years</b> (packs per day &times; years smoked) and starts falling &mdash; but never back to zero &mdash; after quitting.</span></li>
+  <li><b>Secondhand smoke exposure</b> &mdash; <span class="fill">a nonsmoker living or working with a smoker inhales the same carcinogens. This is why "never smoker" does not mean "no risk."</span></li>
+  <li><b>Environmental exposures</b> &mdash; <span class="fill"><b>radon</b> (the #1 cause in nonsmokers &mdash; odorless gas that seeps into basements), <b>asbestos</b> (multiplies smoking risk enormously; also causes mesothelioma), arsenic, diesel exhaust, air pollution, and occupational dusts.</span></li>
+  <li><b>Advanced age</b> &mdash; <span class="fill">most diagnoses happen after age 65. <i>Cell damage is cumulative, and decades of exposure are what it takes.</i></span></li>
+  <li><b>Family history</b> &mdash; <span class="fill">a first-degree relative with lung cancer raises risk independently of smoking, suggesting inherited susceptibility to carcinogen damage.</span></li>
+</ul>
+
+<h3>Clinical Judgment Question &mdash; Why is lung cancer often diagnosed late?</h3>
+<p><span class="fill"><b>Because the lung tissue itself has no pain receptors and the early symptoms look exactly like ordinary smoker's cough or bronchitis.</b> <i>A tumor can grow for a long time in a large, air-filled organ before it blocks enough airway or presses on enough structure to be noticed &mdash; and by then it has often spread.</i> Patients (and clinicians) tend to blame the chronic cough, fatigue and weight loss on smoking or aging, so the workup gets delayed.</span></p>
+<p class="fine"><b>Screening that helps:</b> annual <b>low-dose CT</b> for adults roughly <b>50&ndash;80 years old with a 20+ pack-year history</b> who currently smoke or quit within the last 15 years. Chest X-ray is <span class="never">not</span> recommended as a screening tool &mdash; it misses small tumors.</p>
+</div>
+
+<div class="card" style="--jewel:var(--amethyst)" id="lc-signs">
+<h2>1a &middot; Expected Manifestations 🔍</h2>
+
+<ul class="blanks">
+  <li><b>Chronic cough</b> &mdash; <span class="fill">a cough that is <b>new, or that has changed</b> in a long-time smoker. <i>The tumor irritates the airway lining.</i> "Changed" is the word that matters on an exam.</span></li>
+  <li><b>Hemoptysis</b> &mdash; <span class="fill">blood in the sputum, from the tumor eroding into airway blood vessels.</span></li>
+  <li><b>Weight loss</b> &mdash; <span class="fill">unintentional loss with anorexia; <i>tumors are metabolically expensive and release cytokines that drive cachexia.</i> A classic late red flag.</span></li>
+  <li><b>Fatigue</b> &mdash; <span class="fill">from anemia, the metabolic demand of the tumor, and poor gas exchange.</span></li>
+  <li><b>Recurrent respiratory infections</b> &mdash; <span class="fill">the same pneumonia in the same lobe over and over. <i>A mass partially blocks a bronchus, secretions pool behind it, and bacteria grow.</i> Repeat pneumonia in one spot should always raise suspicion.</span></li>
+  <li><b>Dyspnea</b> &mdash; <span class="fill">airway obstruction, pleural effusion, or loss of functioning lung tissue.</span></li>
+  <li><b>Chest pain</b> &mdash; <span class="fill">usually dull and persistent; means the tumor has reached the pleura, chest wall, or ribs (structures that <i>do</i> have pain fibers).</span></li>
+</ul>
+
+<h3>Which finding concerns you most and why?</h3>
+<p><span class="fill"><b>Hemoptysis &mdash; and if the patient is actively bleeding a large volume, it is an airway emergency, not just a worrying symptom.</b> <i>Blood in the airway can obstruct ventilation before it ever causes a hemodynamic problem, so the person drowns before they bleed out.</i> It also signals that the tumor has invaded vasculature. Position the patient with the bleeding side <b>down</b>, give oxygen, suction, and get help.<br>On a stable patient, the finding that most changes your suspicion is <b>new hemoptysis plus unintentional weight loss</b> &mdash; that combination is cancer until proven otherwise.</span></p>
+<p class="fine"><b>Also know the "late/spread" clues:</b> hoarseness (recurrent laryngeal nerve), face and arm swelling with distended neck veins (<b>superior vena cava syndrome</b> &mdash; an oncologic emergency), dysphagia, bone pain, new neuro deficits, and <b>clubbing</b> of the fingers.</p>
+</div>
+<!-- ===================== 1b. LUNG CANCER DIAGNOSTICS ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="lc-dx">
+<h2>1b &middot; Diagnostics Framework 🧪</h2>
+
+<table class="cmp">
+<thead><tr><th>Diagnostic Test</th><th>Why Is It Ordered?</th></tr></thead>
+<tbody>
+<tr><td class="k">Chest X-ray</td><td><span class="fill"><b>First, cheapest look.</b> Shows a mass, nodule, pleural effusion, or an area of collapsed lung (atelectasis) behind an obstructing tumor. <i>It detects &mdash; it never diagnoses.</i> A lesion has to be about 1 cm before it shows up at all.</span></td></tr>
+<tr><td class="k">CT Scan</td><td><span class="fill"><b>Detail and staging.</b> Gives exact size, location, and whether lymph nodes, the mediastinum, chest wall, liver or adrenals are involved &mdash; and it maps the route for a biopsy. Often done with IV contrast, so check <b>kidney function and iodine/contrast allergy</b> first.</span></td></tr>
+<tr><td class="k">Bronchoscopy</td><td><span class="fill"><b>Direct look inside the airways</b> with a flexible scope through the mouth or nose. Lets the provider see the lesion, take washings, brushings and biopsies, and sometimes relieve an obstruction or remove secretions. Best for <b>central</b> tumors near the large bronchi.</span></td></tr>
+<tr><td class="k">Thoracoscopy</td><td><span class="fill"><b>Scope into the pleural space</b> through small chest-wall incisions (VATS). Reaches the <b>outer/peripheral</b> lesions bronchoscopy cannot, biopsies the pleura, and drains a malignant effusion. It is surgery &mdash; general anesthesia and usually a chest tube afterward.</span></td></tr>
+<tr><td class="k">Biopsy</td><td><span class="fill"><b>The only test that actually makes the diagnosis.</b> <i>Imaging shows a shadow; tissue shows what the cells are.</i> The cell type &mdash; <b>small cell vs non-small cell</b> &mdash; determines whether treatment is surgical or chemo/radiation-based, so nothing is decided until the pathology returns.</span></td></tr>
+</tbody>
+</table>
+<p><mark>Imaging finds it. Only biopsy names it.</mark></p>
+</div>
+
+<!-- ===================== 1c. BRONCHOSCOPY / THORACOSCOPY ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="broncho">
+<h2>1c &middot; Bronchoscopy Framework 🔦</h2>
+
+<h3>Before the Procedure &mdash; nursing responsibilities</h3>
+<ul class="blanks">
+  <li><b>Verify consent</b> &mdash; <span class="fill">the <b>provider</b> obtains informed consent; the nurse confirms it is signed, dated, and that the patient can explain the procedure in their own words. Consent must be signed <b>before</b> sedation is given.</span></li>
+  <li><b>NPO status</b> &mdash; <span class="fill">usually <b>NPO 4&ndash;8 hours</b> beforehand (commonly "nothing after midnight"). Also hold/clarify anticoagulants, check coagulation labs and platelets, remove dentures, and establish IV access.</span></li>
+  <li><b>Patient education</b> &mdash; <span class="fill">explain that they will get moderate sedation and a numbing spray, that a sore throat and hoarseness afterward are normal, that <b>blood-streaked sputum after a biopsy is expected</b>, and that they will need a ride home.</span></li>
+</ul>
+
+<h3>Why is NPO status important?</h3>
+<p><span class="fill"><b>To prevent aspiration.</b> <i>The patient receives sedation and a topical anesthetic sprayed on the throat, both of which knock out the gag and cough reflexes that normally keep stomach contents out of the lungs.</i> Food or fluid in the stomach can be regurgitated and inhaled &mdash; and aspiration into a lung that is already compromised is exactly what you cannot afford. An empty stomach also gives a clearer view and less vomiting risk.</span></p>
+
+<h3>After the Procedure &mdash; priority assessments</h3>
+<ul class="blanks">
+  <li><b>Respiratory status</b> &mdash; <span class="fill">rate, effort, breath sounds, and <b>stridor</b>. <i>Laryngeal edema or laryngospasm from the scope can close the airway.</i> Stridor, drooling, or a rising respiratory rate = <span class="never">call for help immediately</span>.</span></li>
+  <li><b>Gag reflex</b> &mdash; <span class="fill">check with a tongue blade against the back of the throat before <b>anything</b> goes in the mouth &mdash; including ice chips. Usually returns in 1&ndash;2 hours.</span></li>
+  <li><b>Bleeding</b> &mdash; <span class="fill">a small amount of blood-streaked sputum after biopsy is expected; <b>frank red blood, or more than about 30 mL, is not</b> &mdash; report it.</span></li>
+  <li><b>Oxygenation</b> &mdash; <span class="fill">continuous pulse oximetry, supplemental O&#8322; as ordered, and semi-Fowler's position. Also watch for a <b>pneumothorax</b> after transbronchial biopsy and for fever in the first 24 hours.</span></li>
+</ul>
+
+<h3>Why must the gag reflex return before eating?</h3>
+<p><span class="fill"><b>Because the gag reflex is the body's mechanical guard against aspiration, and the topical anesthetic deliberately turns it off.</b> <i>Without it, food or fluid slides past the larynx and into the trachea without the patient ever coughing or feeling it &mdash; a "silent" aspiration.</i> Confirm the gag is intact first, then start with sips of water, then advance.</span></p>
+
+<h3>Thoracoscopy Framework &mdash; Potential Complications</h3>
+<ul class="blanks">
+  <li><b>Bleeding</b> &mdash; <span class="fill">the pleura and lung are highly vascular. Watch for rising heart rate, falling blood pressure, and <b>chest tube drainage &gt;100 mL/hr</b> or bright red output.</span></li>
+  <li><b>Pneumonia</b> &mdash; <span class="fill">post-op pain makes patients breathe shallowly and avoid coughing, so secretions pool. <i>Prevent it: pain control, incentive spirometry, splinted coughing, early ambulation.</i></span></li>
+  <li><b>Pneumothorax</b> &mdash; <span class="fill">the pleural space was entered, so air can remain or leak in and collapse the lung. This is why a chest tube usually stays in until the lung re-expands on X-ray.</span></li>
+</ul>
+
+<h3>What assessment findings might indicate a pneumothorax?</h3>
+<p><span class="fill"><b>Sudden sharp chest pain and dyspnea with absent or diminished breath sounds on the affected side.</b> Add: hyperresonance on percussion, unequal chest rise, tachypnea, tachycardia, falling SpO&#8322;, and restlessness/anxiety.<br><b>If it becomes a tension pneumothorax:</b> <span class="never">tracheal deviation AWAY from the affected side, distended neck veins, hypotension, and severe distress &mdash; that is a medical emergency requiring immediate needle decompression, not a call-back-later finding.</span></span></p>
+<p class="fine"><b>Chest tube quick rules:</b> gentle bubbling in the water seal on exhalation = expected air leak; <b>continuous</b> bubbling = leak in the system, check connections. Tidaling (fluid moving with breathing) = system working. No tidaling = lung re-expanded <i>or</i> tube blocked. <span class="never">Never clamp a chest tube for more than a moment and never routinely milk or strip it.</span></p>
+</div>
+
+<!-- ===================== 1d. MANAGEMENT ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="lc-mgmt">
+<h2>1d &middot; Lung Cancer Management 🩺</h2>
+
+<ul class="blanks">
+  <li><b>Surgery</b> &mdash; <span class="fill">wedge resection, <b>lobectomy</b> (one lobe) or <b>pneumonectomy</b> (whole lung). <i>The only potentially curative option, and only for non-small cell cancer caught early enough that the patient's lung function can survive losing tissue.</i></span></li>
+  <li><b>Radiation</b> &mdash; <span class="fill">shrinks the tumor before surgery, cleans up after it, or relieves obstruction and bone pain. Teach skin care over the treatment field, expect fatigue, and watch for radiation pneumonitis (dry cough, dyspnea, fever weeks later).</span></li>
+  <li><b>Chemotherapy</b> &mdash; <span class="fill">the mainstay for <b>small cell</b> cancer, which is nearly always spread by diagnosis. Nursing focus is <b>myelosuppression</b> &mdash; infection risk from neutropenia, bleeding from thrombocytopenia, fatigue from anemia &mdash; plus nausea and mucositis. <b>A fever in a neutropenic patient is an emergency.</b></span></li>
+  <li><b>Immunotherapy</b> &mdash; <span class="fill">checkpoint inhibitors that release the brakes on the patient's own T cells. Side effects are <b>autoimmune</b>, not classic chemo effects: colitis, pneumonitis, hepatitis, thyroid and adrenal problems. New dyspnea or persistent diarrhea must be reported.</span></li>
+  <li><b>Palliative care</b> &mdash; <span class="fill">symptom control &mdash; pain, dyspnea, effusion drainage &mdash; provided <b>alongside</b> active treatment at any stage. <i>It is not the same as hospice, and it is not giving up.</i></span></li>
+</ul>
+
+<h3>Nursing Priority &mdash; what concerns arise after a lung resection?</h3>
+<p><span class="fill"><b>Priority is gas exchange and the chest drainage system, because the remaining lung is now doing all the work.</b> Specifically:
+<br>&bull; <b>Respiratory:</b> SpO&#8322;, breath sounds bilaterally, respiratory rate and effort; semi-Fowler's; incentive spirometry and splinted coughing every hour while awake.
+<br>&bull; <b>Chest tube</b> (after lobectomy): assess drainage volume and color, water seal, air leak, and insertion site for subcutaneous emphysema (crackling under the skin).
+<br>&bull; <b>Hemorrhage:</b> drainage &gt;100 mL/hr, tachycardia, hypotension.
+<br>&bull; <b>Pain:</b> untreated thoracotomy pain leads directly to splinting &rarr; atelectasis &rarr; pneumonia. Medicate <b>before</b> deep breathing exercises.
+<br>&bull; <b>Arrhythmias:</b> atrial fibrillation is common after thoracic surgery.
+<br>&bull; <b>After a pneumonectomy specifically:</b> there is usually <b>no chest tube</b> (or a clamped one) because the empty space is meant to fill with fluid. Position on the <b>back or the operative side</b> so the remaining lung can fully expand, <span class="never">never fully on the unoperated side</span>. Keep IV fluids conservative &mdash; the one remaining lung floods easily &mdash; and report tracheal deviation, which signals mediastinal shift.</span></p>
+</div>
+<!-- ===================== 2. PULMONARY EMBOLISM ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="pe-patho">
+<h2>2 &middot; Pulmonary Embolism Framework &mdash; Pathophysiology 🩸</h2>
+
+<p class="lead-in"><i>Complete the flow:</i></p>
+
+<div class="flow">
+  <div class="stepbox"><b>Start</b><span><b>DVT forms</b><br>usually in a deep leg or pelvic vein</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Blank 1</b><span><span class="fill"><b>a piece breaks off and embolizes</b> &mdash; it travels up the vena cava, through the right atrium and right ventricle, and into the pulmonary artery</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Blank 2</b><span><span class="fill"><b>it lodges and obstructs pulmonary blood flow</b> &mdash; that lung segment is still ventilated but no longer perfused (<b>dead space / V&#775;/Q&#775; mismatch</b>)</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Result</b><span><b>Impaired oxygenation</b><br>hypoxemia, and strain on the right ventricle</span></div>
+</div>
+
+<p><mark>PE is a perfusion problem wearing a breathing problem's clothes.</mark> <i>The alveoli are open and full of air &mdash; there is simply no blood arriving to pick the oxygen up. That is why giving oxygen alone often does not fix the SpO&#8322;.</i></p>
+
+<h3>Risk Factors &mdash; check the ones that increase clot formation</h3>
+<p class="lead-in"><i>Every one of these maps onto <b>Virchow's triad</b>: <b>stasis</b> of blood, <b>hypercoagulability</b>, and <b>endothelial (vessel wall) injury</b>. If a risk factor hits one of those three, it counts.</i></p>
+<ul class="blanks">
+  <li><b>Surgery</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; hits all three: immobility on the table and after (stasis), tissue trauma (vessel injury), and a post-op inflammatory clotting surge. <b>Orthopedic hip and knee surgery is the highest-risk of all.</b></span></li>
+  <li><b>Smoking</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; damages the endothelial lining and increases platelet stickiness and fibrinogen. Combined with oral contraceptives the risk multiplies rather than adds.</span></li>
+  <li><b>Obesity</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; venous stasis in the legs, chronic low-grade inflammation, and reduced mobility.</span></li>
+  <li><b>Pregnancy</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; estrogen raises clotting factors (hypercoagulability by design, to survive delivery) and the enlarging uterus compresses the iliac veins (stasis). Risk stays elevated into the postpartum period.</span></li>
+  <li><b>Immobility</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; the purest form of stasis. Bedrest, casts, long flights, long car rides. <i>The calf muscle pump is what moves venous blood; stop walking and the blood sits.</i></span></li>
+  <li><b>Cancer</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; tumors release procoagulant substances, and treatment adds central lines and immobility. Malignancy is one of the strongest hypercoagulable states.</span></li>
+  <li><b>Oral contraceptives</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; estrogen-containing contraceptives increase circulating clotting factors. This is why the teaching point "do not smoke on the pill" exists.</span></li>
+  <li><b>Atrial fibrillation</b> &mdash; <span class="fill">✅ <b>Yes, it does cause clots</b> &mdash; blood pools in the quivering atrium and clots form. <b>But know the nuance:</b> <i>an a-fib clot forms in the LEFT atrium, so it exits into the systemic arteries and usually causes a <b>stroke</b>, not a PE.</i> PE comes from the <b>venous</b> side. If a question asks specifically what causes a PE, a-fib is the weaker answer; if it asks what causes clots, it counts.</span></li>
+</ul>
+</div>
+
+<div class="card" style="--jewel:var(--garnet)" id="pe-cues">
+<h2>2b &middot; Clinical Manifestations &amp; Recognizing Cues 🚨</h2>
+
+<h3>Classic PE findings</h3>
+<ul class="blanks">
+  <li><b>Sudden dyspnea</b> &mdash; <span class="fill">the hallmark. <b>Abrupt</b> is the key word &mdash; the patient can often name the minute it started.</span></li>
+  <li><b>Chest pain</b> &mdash; <span class="fill">sharp and <b>pleuritic</b> &mdash; it gets worse with a deep breath, <i>because the infarcted lung segment irritates the pleura.</i> That is different from the crushing, radiating pressure of an MI.</span></li>
+  <li><b>Tachycardia</b> &mdash; <span class="fill">the heart speeds up to compensate for the blocked pulmonary circulation and the falling cardiac output. Often the earliest objective sign.</span></li>
+  <li><b>Anxiety</b> &mdash; <span class="fill">a sense of impending doom. <i>Do not dismiss it as psychological &mdash; it is an early sign of cerebral hypoxia.</i></span></li>
+  <li><b>Hemoptysis</b> &mdash; <span class="fill">blood-streaked sputum from pulmonary infarction; a later, less common finding.</span></li>
+</ul>
+<p class="fine">Also: tachypnea, low-grade fever, restlessness, cough, hypoxemia, and (with a massive PE) hypotension, JVD, cyanosis and syncope. ABG early on shows <b>respiratory alkalosis with hypoxemia</b> &mdash; the patient is blowing off CO&#8322; from hyperventilating.</p>
+
+<h3>Why does a PE cause sudden shortness of breath?</h3>
+<p><span class="fill"><b>Because the blockage is mechanical and instantaneous &mdash; blood flow to that part of the lung stops the second the clot wedges in.</b> <i>That region keeps receiving air but gets no blood, so it becomes wasted ventilation (dead space); meanwhile the blood that is still flowing gets crowded into the remaining lung, so it cannot fully oxygenate.</i> The lung also releases mediators that cause reflex bronchoconstriction and reduce surfactant, and the sudden rise in pulmonary vascular resistance strains the right ventricle. Result: severe hypoxemia and air hunger in a patient who was fine ten minutes ago.</span></p>
+
+<h3>Recognizing Cues Framework</h3>
+<p><b>Patient has:</b> recent hip replacement &middot; obesity &middot; smoking history &middot; sudden chest pain &middot; hemoptysis</p>
+
+<h4>What is your priority hypothesis?</h4>
+<p><span class="fill"><b>Pulmonary embolism.</b> <i>Three strong risk factors (major orthopedic surgery with immobility, obesity, smoking) plus the classic sudden pleuritic chest pain and hemoptysis is the textbook picture.</i> <b>Hip and knee replacement is the single highest-risk surgery for DVT/PE</b>, and the clot usually announces itself in the first days to weeks after the operation. Treat this as PE until imaging says otherwise &mdash; do not wait for confirmation to act.</span></p>
+
+<h4>What data should be collected immediately?</h4>
+<ul class="blanks">
+  <li><b>Oxygen saturation</b> &mdash; <span class="fill">✅ <b>Yes, first.</b> It is instant, noninvasive, and directly measures the threatened function. Hypoxia drives the entire response.</span></li>
+  <li><b>Respiratory rate</b> &mdash; <span class="fill">✅ <b>Yes.</b> Tachypnea is one of the most sensitive early signs and needs no equipment at all.</span></li>
+  <li><b>Heart rhythm</b> &mdash; <span class="fill">✅ <b>Yes.</b> Tachycardia is expected; new right-heart strain patterns or a new arrhythmia signal a large, hemodynamically significant PE.</span></li>
+  <li><b>Blood pressure</b> &mdash; <span class="fill">✅ <b>Yes.</b> <b>Hypotension is the line between a PE and a massive PE</b> &mdash; it is what makes the patient a candidate for thrombolytics.</span></li>
+  <li><b>Lung sounds</b> &mdash; <span class="fill">✅ <b>Yes</b>, but understand what they will tell you: <i>lung sounds are often clear in PE, because the problem is on the blood side, not the air side.</i> You listen mainly to <b>rule out</b> pneumothorax, pneumonia and pulmonary edema &mdash; clear lungs plus severe hypoxia actually strengthens the PE hypothesis.</span></li>
+</ul>
+<h4>Why?</h4>
+<p><span class="fill"><b>Because all five together tell you how much of the pulmonary circulation is blocked and whether the patient is still compensating.</b> <i>SpO&#8322; and respiratory rate size up the gas-exchange failure; heart rate, rhythm and blood pressure size up whether the right ventricle is losing the fight.</i> Every one of them can be obtained in under two minutes at the bedside without waiting on a lab or radiology &mdash; and that speed is the whole point, because PE kills within the first hour.</span></p>
+<p><b>While you assess &mdash; do these:</b> stay with the patient, raise the head of bed to high-Fowler's, apply oxygen, call the provider/rapid response, and keep IV access. <span class="never">Do not leave the patient alone and do not ambulate them.</span></p>
+</div>
+
+<div class="card" style="--jewel:var(--garnet)" id="pe-dx">
+<h2>2c &middot; PE Diagnostics Framework 🧪</h2>
+
+<table class="cmp">
+<thead><tr><th>Test</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td class="k">CT Angiography</td><td><span class="fill"><b>The definitive test &mdash; the gold standard for diagnosing PE.</b> IV contrast lights up the pulmonary arteries and the clot shows up as a filling defect. <i>Nursing: assess kidney function (creatinine/GFR) and iodine-contrast allergy before, hold metformin, and push fluids afterward to flush the contrast.</i> If contrast is contraindicated (renal failure, severe allergy, pregnancy), a <b>V&#775;/Q&#775; scan</b> is used instead.</span></td></tr>
+<tr><td class="k">D-Dimer</td><td><span class="fill"><b>A screening/rule-out blood test</b> that measures a fragment released when a clot breaks down. Normal is roughly <b>&lt;0.50 mcg/mL FEU</b> (assay-dependent). <i>It is very sensitive but not at all specific &mdash; it also rises with surgery, trauma, infection, pregnancy, cancer and old age.</i> So: <b>a normal D-dimer in a low-risk patient essentially rules PE out; an elevated D-dimer proves nothing and sends you to CT angiography.</b></span></td></tr>
+</tbody>
+</table>
+<p class="fine">Supporting studies: <b>ABG</b> (hypoxemia with respiratory alkalosis early), <b>ECG</b> (sinus tachycardia is most common; right-heart strain patterns in a large PE), <b>chest X-ray</b> (usually normal &mdash; its job is to rule out the other causes), <b>venous duplex ultrasound</b> of the legs to find the source DVT, and <b>troponin/BNP</b> to gauge right-ventricular strain.</p>
+
+<h3>NCLEX Connection &mdash; Why should metformin be held before CT angiography?</h3>
+<p><span class="fill"><b>Because IV contrast can injure the kidneys, and if the kidneys stop clearing metformin it accumulates and causes lactic acidosis &mdash; which can be fatal.</b> <i>Metformin does not harm the kidney itself; the contrast does. The danger is the combination.</i> Standard practice is to hold metformin at the time of the study and for <b>48 hours after</b>, then restart only once kidney function has been rechecked and is stable. Also hydrate the patient before and after to protect the kidneys.</span></p>
+<p class="fine">Watch for lactic acidosis: hyperventilation/Kussmaul breathing, muscle pain, unusual fatigue, abdominal pain, hypotension.</p>
+</div>
+
+<div class="card" style="--jewel:var(--garnet)" id="pe-drugs">
+<h2>2d &middot; PE Management Framework &mdash; Anticoagulation 💊</h2>
+
+<table class="cmp">
+<thead><tr><th>Medication</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td class="k">Heparin<br>(unfractionated, IV)</td><td><span class="fill"><b>Stops the clot from getting bigger and stops new clots forming &mdash; it does not dissolve the clot that is already there.</b> Used IV as a continuous drip for acute PE because it works immediately and can be turned off fast. <i>Monitor <b>aPTT</b> (goal about 1.5&ndash;2.5&times; control, roughly 46&ndash;70 seconds) and daily <b>platelets</b> for heparin-induced thrombocytopenia (HIT).</i> Antidote: <b>protamine sulfate</b>.</span></td></tr>
+<tr><td class="k">Enoxaparin<br>(Lovenox, LMWH)</td><td><span class="fill"><b>Same job as heparin</b> &mdash; prevents clot extension &mdash; but given <b>subcutaneously</b> with a predictable response, so no routine aPTT monitoring is needed and the patient can go home on it. <i>Give in the abdomen, at least 2 inches from the umbilicus; do not expel the air bubble, do not aspirate, do not massage the site.</i> Still monitor platelets and for bleeding. Antidote: protamine (only partly effective).</span></td></tr>
+<tr><td class="k">Warfarin<br>(Coumadin)</td><td><span class="fill"><b>Long-term oral prevention of new clots.</b> Blocks vitamin K&ndash;dependent clotting factors, so it takes <b>3&ndash;5 days</b> to become therapeutic &mdash; which is why heparin/enoxaparin "bridges" the patient until it works. <i>Monitor <b>PT/INR</b>, goal <b>2.0&ndash;3.0</b> for PE/DVT.</i> Antidote: <b>vitamin K (phytonadione)</b>. Teaching: keep green leafy vegetable intake <b>consistent</b> rather than avoiding it, and check every new drug and supplement for interactions.</span></td></tr>
+<tr><td class="k">Thrombolytics<br>(alteplase / tPA)</td><td><span class="fill"><b>The only ones that actually dissolve the existing clot</b> &mdash; "clot busters." Reserved for a <b>massive PE with hemodynamic instability</b> (hypotension, shock, right-heart failure), because the bleeding risk is enormous. <i>Absolute contraindications: active internal bleeding, recent surgery or trauma, history of hemorrhagic stroke, uncontrolled severe hypertension, intracranial tumor.</i> <span class="never">Hold all non-essential injections and invasive procedures while a thrombolytic is running, and monitor neuro status closely &mdash; intracranial hemorrhage is the feared complication.</span></span></td></tr>
+</tbody>
+</table>
+<p class="fine">Also part of management: <b>oxygen</b> and high-Fowler's positioning, IV access, hemodynamic monitoring, pain control, and an <b>IVC filter</b> for patients who cannot receive anticoagulants or who keep clotting despite them. Newer oral anticoagulants (apixaban, rivaroxaban) are increasingly used instead of warfarin and need no INR monitoring.</p>
+
+<h3>Nursing Priority &mdash; the MOST important assessment after anticoagulants are started</h3>
+<p><span class="fill"><b>Assess for bleeding &mdash; and neurologic status is the piece that must not be missed, because intracranial hemorrhage is the complication that kills.</b> <i>Anticoagulants do not distinguish between the clot you want gone and the clot holding a small vessel closed.</i>
+<br>&bull; <b>Neuro:</b> new headache, confusion, change in level of consciousness, unequal pupils, one-sided weakness &rarr; suspect bleeding in the brain and act immediately.
+<br>&bull; <b>Overt bleeding:</b> gums, nose, IV sites, hematuria, bloody or tarry stools, hematemesis, unexplained bruising.
+<br>&bull; <b>Occult bleeding:</b> falling H&amp;H, new abdominal or flank/back pain, tachycardia and hypotension with no visible source.
+<br>&bull; <b>Labs:</b> aPTT for heparin, INR for warfarin, platelets for HIT, H&amp;H for blood loss.
+<br><b>Safety teaching:</b> electric razor, soft toothbrush, no contact sports, no NSAIDs or aspirin unless prescribed, medical alert ID, report falls even without visible injury.</span></p>
+</div>
+
+<div class="card" style="--jewel:var(--garnet)" id="pe-teach">
+<h2>2e &middot; Patient Teaching Framework &mdash; why do we teach&hellip; ✅</h2>
+
+<ul class="blanks">
+  <li><b>Smoking cessation?</b> &mdash; <span class="fill"><b>Because nicotine and tobacco smoke injure the vessel lining and make blood stickier</b> &mdash; damaged endothelium plus increased platelet aggregation and fibrinogen is two-thirds of Virchow's triad in one habit. <i>Risk is multiplied, not just added, when combined with estrogen contraceptives.</i></span></li>
+  <li><b>Compression stockings?</b> &mdash; <span class="fill"><b>Because graduated external pressure squeezes the superficial veins and pushes blood back toward the heart instead of letting it pool in the calf</b> &mdash; it attacks stasis directly. Apply them in the morning <b>before</b> getting out of bed while the legs are least swollen, make sure they are not rolled or bunched (a rolled stocking becomes a tourniquet), and remove and check the skin daily.</span></li>
+  <li><b>Frequent walking?</b> &mdash; <span class="fill"><b>Because the calf muscles are the pump that moves venous blood out of the legs &mdash; walking is the single most effective mechanical clot prevention there is.</b> <i>Deep veins have no pump of their own; they depend on muscle contraction.</i> For patients who cannot walk (long flights, post-op bedrest), teach ankle pumps and leg exercises hourly. <span class="never">Never massage or rub a leg suspected of DVT &mdash; it can dislodge the clot.</span></span></li>
+  <li><b>Hydration?</b> &mdash; <span class="fill"><b>Because dehydration concentrates the blood, and thick, sluggish blood clots more easily.</b> Adequate fluids keep viscosity and flow normal. This matters most in exactly the situations that already cause stasis: post-op, illness with fever, and long travel.</span></li>
+</ul>
+</div>
+<!-- ===================== 3. COPD ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="copd-big">
+<h2>3 &middot; COPD Framework &mdash; Big Picture 🫁</h2>
+
+<p class="lead-in"><i>COPD causes&hellip; leading to&hellip; leading to&hellip;</i></p>
+
+<div class="flow">
+  <div class="stepbox"><b>COPD causes</b><span><span class="fill"><b>Chronic, not-fully-reversible airflow obstruction</b> &mdash; inflamed, narrowed, mucus-filled airways plus loss of the elastic recoil that normally squeezes air out</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Leading to</b><span><span class="fill"><b>Air trapping and hyperinflation</b> &mdash; the patient can get air in but cannot get it all out, so stale air stacks up in the lungs</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Leading to</b><span><span class="fill"><b>Impaired gas exchange</b> &mdash; chronic hypoxemia and CO&#8322; retention, increased work of breathing, and eventually <b>cor pulmonale</b> (right-sided heart failure)</span></span></div>
+</div>
+
+<h3>Understand air trapping &mdash; it explains almost every COPD finding ⭐</h3>
+<p><b>Exhalation is normally passive</b>, powered by the elastic recoil of the lung. <i>In COPD that recoil is destroyed and the small airways lose their structural support, so they collapse partway through exhalation and shut the air in behind them.</i></p>
+<ul class="blanks">
+  <li><b>Residual volume rises</b> &rarr; <span class="fill">the chest sits permanently over-inflated &rarr; <b>barrel chest</b>, and each new breath starts from an already-full lung, so tidal volume shrinks.</span></li>
+  <li><b>The diaphragm flattens</b> &rarr; <span class="fill">a flat diaphragm is a mechanically weak diaphragm, so <b>accessory muscles</b> take over and the work of breathing skyrockets &mdash; this is why COPD patients lose weight.</span></li>
+  <li><b>CO&#8322; cannot get out</b> &rarr; <span class="fill">chronic hypercapnia, which the kidneys compensate for by retaining bicarbonate &mdash; giving the classic <b>compensated respiratory acidosis</b> on ABG.</span></li>
+  <li><b>Alveoli over-stretch and rupture</b> &rarr; <span class="fill">blebs and bullae form, and one can burst &rarr; <b>spontaneous pneumothorax</b>.</span></li>
+</ul>
+<p><mark>COPD is not trouble getting air in. It is trouble getting air out.</mark></p>
+</div>
+
+<div class="card" style="--jewel:var(--emerald)" id="copd-types">
+<h2>3b &middot; Chronic Bronchitis vs Emphysema 🔵🌸</h2>
+
+<h3>Chronic Bronchitis &mdash; think "Blue Bloater"</h3>
+<h4>What is happening in the lungs?</h4>
+<p><span class="fill"><b>The airways themselves are chronically inflamed and drowning in mucus.</b> <i>Long-term irritation makes the mucus-producing glands enlarge and multiply while the cilia that would normally sweep that mucus out are destroyed &mdash; so thick secretions sit in the bronchi, narrow them, and block airflow.</i> Clinically it is defined as a <b>productive cough for at least 3 months a year, 2 years in a row</b>. The mucus plugs also make the lungs a perfect culture medium, which is why these patients get infection after infection.
+<br><b>Why "blue bloater":</b> mucus-blocked airways mean poor gas exchange &rarr; hypoxemia and <b>cyanosis</b> (blue) &rarr; chronic hypoxia drives pulmonary vasoconstriction &rarr; right heart failure &rarr; <b>peripheral edema, JVD and weight gain</b> (bloated). Chronic hypoxia also stimulates erythropoietin, so these patients often have <b>polycythemia</b>.</span></p>
+<ul class="blanks">
+  <li><b>Productive cough</b> &mdash; <span class="fill">the defining feature; worst in the morning when a night's worth of secretions has pooled.</span></li>
+  <li><b>Mucus production</b> &mdash; <span class="fill">thick and copious, from hypertrophied goblet cells and mucous glands.</span></li>
+  <li><b>Hypoxia</b> &mdash; <span class="fill">air cannot reach alveoli past the mucus, so ventilation and perfusion do not match &rarr; cyanosis, and eventually cor pulmonale.</span></li>
+</ul>
+
+<h3>Emphysema &mdash; think "Pink Puffer"</h3>
+<h4>What is happening to the alveoli?</h4>
+<p><span class="fill"><b>The alveolar walls are being destroyed, so many small sacs merge into a few large floppy ones.</b> <i>That does two things at once: it wipes out the surface area available for gas exchange, and it destroys the elastic recoil and the tethering that holds small airways open &mdash; so the airways collapse on exhalation and trap air.</i> The pulmonary capillary bed is destroyed along with the walls. Smoking is the usual cause; in a young non-smoker with emphysema, think <b>alpha-1 antitrypsin deficiency</b>.
+<br><b>Why "pink puffer":</b> these patients keep their oxygen levels near-normal for a long time by working extremely hard to breathe &mdash; "puffing" through pursed lips &mdash; so they stay pink but become exhausted and thin.</span></p>
+<ul class="blanks">
+  <li><b>Barrel chest</b> &mdash; <span class="fill">years of trapped air permanently expand the rib cage; the anteroposterior diameter approaches the side-to-side diameter (about 1:1 instead of the normal 1:2).</span></li>
+  <li><b>Dyspnea</b> &mdash; <span class="fill">the main complaint, and it is present at rest in advanced disease. Cough is minimal &mdash; the opposite of bronchitis.</span></li>
+  <li><b>Thin extremities</b> &mdash; <span class="fill">muscle wasting and weight loss, <i>because breathing itself burns an enormous number of calories and eating makes them breathless.</i> Teach small, frequent, high-calorie, high-protein meals and rest before eating.</span></li>
+  <li><b>Pursed-lip breathing</b> &mdash; <span class="fill">a self-taught compensation &mdash; see the mechanism below.</span></li>
+</ul>
+<p class="fine"><b>Reality check:</b> most patients have features of both. The blue bloater / pink puffer split is a teaching tool for recognizing the extremes, not two separate diseases.</p>
+</div>
+
+<div class="card" style="--jewel:var(--emerald)" id="copd-assess">
+<h2>3c &middot; Assessment Framework &mdash; why each finding happens 🔍</h2>
+
+<table class="cmp">
+<thead><tr><th>Manifestation</th><th>Why Does It Occur?</th></tr></thead>
+<tbody>
+<tr><td class="k">Barrel Chest</td><td><span class="fill"><b>Chronic air trapping keeps the lungs hyperinflated, so the rib cage remodels around the extra volume.</b> The anteroposterior diameter increases until it roughly equals the transverse diameter (<b>1:1</b>, normally about <b>1:2</b>). <i>It is a structural, permanent change &mdash; a visual record of years of not being able to exhale.</i></span></td></tr>
+<tr><td class="k">Tripod Position</td><td><span class="fill"><b>Sitting up and leaning forward with the arms braced on the knees or a table anchors the shoulder girdle so the accessory muscles can pull the rib cage open.</b> <i>Normally the pectoral and neck muscles move the arms; when the arms are fixed, those muscles work in reverse and lift the chest instead.</i> Leaning forward also lets gravity pull the abdominal organs down and away from the flattened diaphragm. <b>It is a compensation &mdash; a patient who assumes it spontaneously is telling you they are in distress.</b></span></td></tr>
+<tr><td class="k">Clubbing</td><td><span class="fill"><b>Long-standing hypoxemia causes soft tissue changes in the nail beds</b> &mdash; the angle between the nail and the finger flattens and then exceeds 180&deg;, and the fingertip becomes bulbous. <i>It develops over months to years, so it tells you the hypoxia is chronic, not new.</i> Also seen in lung cancer, bronchiectasis, cystic fibrosis and cyanotic heart disease.</span></td></tr>
+<tr><td class="k">Pursed-Lip Breathing</td><td><span class="fill"><b>Exhaling slowly through pursed lips creates back-pressure inside the airways that splints them open, so they do not collapse before the air gets out.</b> <i>It also slows the respiratory rate, lengthens exhalation, and lets the lungs empty more completely &mdash; which reduces trapped air, lowers CO&#8322;, and eases the sensation of breathlessness.</i></span></td></tr>
+</tbody>
+</table>
+
+<h3>Why does pursed-lip breathing help COPD patients? ⭐</h3>
+<p><span class="fill"><b>Because it keeps the floppy small airways from collapsing during exhalation, which is exactly the defect in COPD.</b> <i>Breathing out against partially closed lips raises pressure inside the airway above the pressure of the surrounding lung tissue, so the airway stays open long enough to empty. Less trapped air means the next breath starts from a lower, more efficient lung volume.</i>
+<br><b>How to teach it:</b> inhale slowly through the <b>nose</b> for about 2 counts, then exhale gently through <b>pursed lips</b> (like blowing out a candle or whistling) for about 4 counts &mdash; <b>exhalation roughly twice as long as inhalation</b>. Do not force or blow hard. Use it during activity, stair climbing, and any episode of breathlessness.
+<br><b>Pair it with diaphragmatic (belly) breathing</b> and with the tripod position for the most relief.</span></p>
+</div>
+
+<div class="card" style="--jewel:var(--emerald)" id="copd-dx">
+<h2>3d &middot; COPD Diagnostics &amp; Complications 🧪</h2>
+
+<table class="cmp">
+<thead><tr><th>Test</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td class="k">Chest X-ray</td><td><span class="fill"><b>Shows the structural consequences of air trapping</b> &mdash; hyperinflated lung fields, a <b>flattened diaphragm</b>, increased AP diameter, and a narrow "hanging" heart. <i>It does not diagnose COPD;</i> during an exacerbation its real job is to rule out <b>pneumonia, pneumothorax, and heart failure</b>.</span></td></tr>
+<tr><td class="k">PFTs<br>(pulmonary function tests)</td><td><span class="fill"><b>The test that actually confirms COPD and grades how severe it is.</b> A post-bronchodilator <b>FEV&#8321;/FVC ratio less than 0.70</b> establishes fixed airflow obstruction, and the <b>FEV&#8321; % predicted</b> stages the disease. <i>Key distinction: in COPD the obstruction does <b>not</b> reverse with a bronchodilator; in asthma it does.</i> Increased residual volume and total lung capacity confirm air trapping.</span></td></tr>
+<tr><td class="k">ABGs</td><td><span class="fill"><b>Measure the actual gas exchange and tell you whether this is the patient's chronic baseline or an acute crisis.</b> Stable COPD typically shows <b>compensated respiratory acidosis</b>: &uarr;PaCO&#8322;, &uarr;HCO&#8323;&#8315;, and a <b>near-normal pH</b>, with a low PaO&#8322;. <i>A falling pH with a rising PaCO&#8322; means compensation has failed &mdash; the patient is tiring and heading for respiratory failure.</i></span></td></tr>
+<tr><td class="k">CBC</td><td><span class="fill"><b>Looks for the two things chronic hypoxia and exacerbations do to the blood.</b> <b>Polycythemia</b> &mdash; elevated RBC, hemoglobin and hematocrit &mdash; because chronic hypoxia drives erythropoietin (thicker blood, higher clot risk). An elevated <b>WBC</b> points to the infection that most often triggers an exacerbation.</span></td></tr>
+</tbody>
+</table>
+
+<h3>COPD Complications Framework</h3>
+<table class="cmp">
+<thead><tr><th>Potential complication</th><th>Why does it happen?</th></tr></thead>
+<tbody>
+<tr><td class="k">Pneumonia</td><td><span class="fill"><b>Thick retained mucus plus destroyed cilia equals a warm, undrained culture medium.</b> <i>Bacteria that would normally be swept out sit and multiply.</i> Pneumonia is the <b>most common trigger of an acute exacerbation</b> and the most common cause of death in COPD. <b>Prevention:</b> annual influenza vaccine, pneumococcal vaccine, hand hygiene, avoid sick contacts, hydration to thin secretions, and report a change in sputum color or amount early.</span></td></tr>
+<tr><td class="k">Atelectasis</td><td><span class="fill"><b>A mucus plug blocks a bronchiole and the alveoli beyond it collapse</b> because no air can get in to keep them open. <i>Shallow breathing and skipped coughing make it worse.</i> Look for diminished breath sounds over one area, low-grade fever, and falling SpO&#8322;. <b>Prevention:</b> incentive spirometry, effective coughing, ambulation, position changes.</span></td></tr>
+<tr><td class="k">Pneumothorax</td><td><span class="fill"><b>Over-stretched alveolar walls form thin-walled blebs and bullae, and one ruptures</b>, letting air escape into the pleural space and collapse the lung. <i>Suspect it when a COPD patient's dyspnea suddenly worsens</i> with sharp unilateral chest pain, absent breath sounds on that side, and hyperresonance. Tension pneumothorax adds tracheal deviation and hypotension &mdash; <span class="never">emergency</span>.</span></td></tr>
+<tr><td class="k">Cor Pulmonale</td><td><span class="fill"><b>Right-sided heart failure caused by lung disease.</b> <i>Chronic alveolar hypoxia makes the pulmonary arterioles constrict &rarr; pulmonary hypertension &rarr; the right ventricle has to pump against high resistance &rarr; it hypertrophies, then fails.</i> Signs are all <b>backward, systemic congestion</b>: JVD, dependent peripheral edema, hepatomegaly and ascites, weight gain, fatigue. <b>The best prevention is treating the hypoxia</b> &mdash; long-term oxygen therapy is one of the few things proven to prolong life in COPD.</span></td></tr>
+<tr><td class="k">Respiratory Failure</td><td><span class="fill"><b>The respiratory muscles finally cannot keep up with the work of breathing.</b> Defined roughly as <b>PaO&#8322; &lt;60 mmHg and/or PaCO&#8322; &gt;50 mmHg with pH &lt;7.35</b>. <i>Watch for the deceptive signs of CO&#8322; narcosis: confusion, drowsiness, headache, a slowing respiratory rate, and a patient who "finally settles down."</i> <span class="never">A COPD patient who becomes sleepy and quiet is not improving &mdash; they are decompensating.</span> Treatment escalates to <b>BiPAP</b> and then intubation.</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="--jewel:var(--emerald)" id="copd-exac">
+<h2>3e &middot; Acute COPD Exacerbation Framework 🚑</h2>
+
+<p><b>Patient arrives with:</b> dyspnea &middot; increased sputum &middot; low SpO&#8322;</p>
+
+<h3>What should the nurse do first?</h3>
+<p><span class="fill"><b>Sit the patient upright &mdash; high-Fowler's or leaning forward on the overbed table &mdash; and apply controlled low-flow oxygen titrated to an SpO&#8322; of 88&ndash;92%, then give the prescribed short-acting bronchodilator.</b> <i>Positioning costs nothing, takes two seconds, and immediately improves ventilation; oxygen treats the hypoxemia that is the actual threat to life.</i> Both address <b>B</b> in ABC before anything else.
+<br><b>Then, in order:</b> nebulized albuterol (+ ipratropium) &rarr; systemic corticosteroid &rarr; antibiotics if the sputum has changed color/increased (infection is the usual trigger) &rarr; ABG and chest X-ray &rarr; continuous monitoring, staying with the patient &rarr; escalate to <b>BiPAP</b> if the CO&#8322; keeps climbing and the pH keeps falling.</span></p>
+
+<div class="flow">
+  <div class="stepbox"><b>Step 1</b><span>Sit upright / tripod &mdash; free the diaphragm</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 2</b><span>Controlled O&#8322; to <b>88&ndash;92%</b>, nasal cannula 1&ndash;2 L to start</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 3</b><span>Nebulized <b>albuterol</b> &plusmn; ipratropium</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 4</b><span><b>Corticosteroid</b> &plusmn; antibiotic for infection</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 5</b><span>Reassess: SpO&#8322;, ABG, mental status &rarr; <b>BiPAP</b> if worsening</span></div>
+</div>
+
+<h3>Why is positioning important?</h3>
+<p><span class="fill"><b>Because sitting upright lets gravity pull the abdominal organs downward and away from the diaphragm, so the lungs have room to expand.</b> <i>Lying flat pushes the abdominal contents up against an already flattened, weakened diaphragm and shrinks the space available for air &mdash; the exact opposite of what a hyperinflated chest needs.</i> Upright and leaning forward also anchors the shoulder girdle so the accessory muscles can help, and it improves the mechanics of coughing so secretions actually clear. <mark>Position first &mdash; it is the fastest intervention you own.</mark></span></p>
+<p class="fine"><b>Also teach for home:</b> call the provider for increased dyspnea at rest, a change in sputum color or amount, fever, or needing the rescue inhaler far more often &mdash; catching an exacerbation early keeps it out of the ICU.</p>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="copd-o2">
+<h2>3f &middot; Oxygen Therapy Framework &mdash; the 88&ndash;92% rule ⭐</h2>
+
+<h3>Target oxygen saturation</h3>
+<p><b>Target SpO&#8322;:</b> <span class="fill"><b>88&ndash;92%</b> for a patient with COPD who retains CO&#8322; (corresponding to a PaO&#8322; of roughly <b>60&ndash;70 mmHg</b>). Start low &mdash; <b>1&ndash;3 L/min by nasal cannula</b> or 24&ndash;28% by Venturi mask &mdash; and titrate. <i>Note the contrast: for most other patients the goal is &gt;94%; for COPD, more is not better.</i></span></p>
+
+<h3>Why don't we aggressively administer oxygen to every COPD patient? ⭐</h3>
+<p><span class="fill"><b>Because in a chronic CO&#8322; retainer, flooding the patient with oxygen can make them stop breathing adequately and drive the CO&#8322; even higher &mdash; producing drowsiness, confusion, and respiratory arrest.</b> Three mechanisms, and exams may ask for any of them:
+<br><b>1. Loss of the hypoxic drive (the classic nursing-exam answer).</b> <i>Normally a rising CO&#8322; is what tells the brain to breathe. In someone chronically hypercapnic, the brain has stopped responding to CO&#8322; and now uses a <b>low oxygen level</b> as its stimulus to breathe. Erase the low oxygen with high-flow O&#8322; and you erase the trigger &mdash; the respiratory rate and depth fall.</i>
+<br><b>2. Worsened V&#775;/Q&#775; mismatch.</b> The lung normally shunts blood away from poorly ventilated areas by constricting those vessels. High oxygen releases that constriction, so blood floods back into areas that cannot exchange gas &mdash; increasing dead space and CO&#8322;.
+<br><b>3. The Haldane effect.</b> Hemoglobin loaded with oxygen holds less CO&#8322;, so CO&#8322; is dumped into the plasma and the measured PaCO&#8322; rises.
+<br><b>What this does NOT mean:</b> <span class="never">never withhold oxygen from a hypoxic patient who is in respiratory distress.</span> <i>Hypoxia kills faster than hypercapnia.</i> Give oxygen &mdash; give it <b>controlled and titrated</b> to 88&ndash;92%, and monitor level of consciousness and respiratory rate closely.</span></p>
+<p><mark>The sign that oxygen is too high: the patient gets sleepy and calm, and the respiratory rate drops. That is CO&#8322; narcosis, not improvement.</mark></p>
+<p class="fine"><b>Home oxygen safety teaching:</b> no smoking or open flame in the room, no petroleum-based products around the face, keep the tubing untangled, use water-based lubricant for dry nares, and <span class="never">never change the flow rate without an order</span>.</p>
+</div>
+<!-- ===================== 4. ASTHMA ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="asthma-patho">
+<h2>4 &middot; Asthma Framework &mdash; Pathophysiology 🌬️</h2>
+
+<p class="lead-in"><i>Complete the flow:</i></p>
+
+<div class="flow">
+  <div class="stepbox"><b>Start</b><span><b>Trigger</b><br>allergen, irritant, cold air, exercise, infection</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Blank 1</b><span><span class="fill"><b>Airway inflammation</b> &mdash; mast cells degranulate and release histamine, leukotrienes and prostaglandins &rarr; the bronchial lining swells (<b>mucosal edema</b>)</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Blank 2</b><span><span class="fill"><b>Bronchoconstriction plus thick mucus plugging</b> &mdash; the smooth muscle around the airways clamps down and the lumen fills with secretions</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Result</b><span><b>Airflow obstruction</b><br>worst on exhalation &mdash; but <b>reversible</b></span></div>
+</div>
+
+<p><mark>Three things narrow the asthmatic airway: muscle spasm, swelling, and mucus.</mark> <i>That is why one drug is never enough &mdash; a bronchodilator only fixes the muscle. The steroid is what fixes the swelling, and it is the reason a controller inhaler must be taken every day even when the patient feels fine.</i></p>
+
+<h3>Risk Factors &mdash; circle all that apply</h3>
+<ul class="blanks">
+  <li><b>Allergies</b> &mdash; <span class="fill">✅ <b>Yes.</b> Atopy (eczema, allergic rhinitis, food and environmental allergies) is the strongest predictor of childhood asthma &mdash; the same IgE-mediated response that causes hives in the skin causes bronchospasm in the lungs.</span></li>
+  <li><b>Smoking</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; active and secondhand. Smoke inflames the airway, paralyzes the cilia, and makes the airway permanently more twitchy. Secondhand exposure in childhood is a major cause.</span></li>
+  <li><b>GERD</b> &mdash; <span class="fill">✅ <b>Yes.</b> <i>Refluxed acid microaspirated into the airway irritates it directly, and acid in the esophagus also triggers a vagal reflex that causes bronchoconstriction.</i> Asthma that is worse at night should make you think about reflux &mdash; treat the GERD and the asthma often improves.</span></li>
+  <li><b>Family history</b> &mdash; <span class="fill">✅ <b>Yes.</b> Asthma and atopy run strongly in families; a parent with asthma substantially raises a child's risk.</span></li>
+  <li><b>Environmental irritants</b> &mdash; <span class="fill">✅ <b>Yes</b> &mdash; dust mites, cockroach and mouse antigen, pet dander, mold, pollen, air pollution, occupational chemicals and fumes.</span></li>
+</ul>
+<p><b>All five apply.</b> <i>The item to slow down on is GERD &mdash; students often skip it because it does not sound respiratory.</i></p>
+
+<h3>Trigger Avoidance Framework</h3>
+<table class="cmp">
+<thead><tr><th>Potential Trigger</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td class="k">Smoke</td><td><span class="fill"><b>A direct chemical irritant that inflames the airway lining and paralyzes the cilia</b>, so the mucus the attack produces cannot be cleared. Tobacco, wood stoves, fireplaces and campfires all count. <i>Teach: no smoking in the home or car, ever &mdash; airing the room out afterward does not remove the residue.</i></span></td></tr>
+<tr><td class="k">Perfume</td><td><span class="fill"><b>Strong odors and volatile chemicals set off reflex bronchospasm in a hyperresponsive airway even though there is no allergy involved.</b> <i>The nerves in an asthmatic airway are hypersensitive &mdash; they react to the smell, not to an immune trigger.</i> Same for scented candles, air fresheners, cleaning products and hairspray. Teach fragrance-free products and ventilation while cleaning.</span></td></tr>
+<tr><td class="k">Cold Air</td><td><span class="fill"><b>Cold, dry air cools and dries the airway surface, which triggers mediator release and bronchoconstriction.</b> This is also why exercise triggers asthma &mdash; fast mouth-breathing dries the airway. <i>Teach: breathe through the nose, wear a scarf or mask over the nose and mouth in cold weather, and warm up gradually; a rescue inhaler <b>15&ndash;20 minutes before exercise</b> prevents exercise-induced symptoms.</i></span></td></tr>
+<tr><td class="k">NSAIDs</td><td><span class="fill"><b>Aspirin and NSAIDs block the COX pathway, which shunts arachidonic acid down the leukotriene pathway instead &mdash; and leukotrienes are potent bronchoconstrictors.</b> <i>Some patients have aspirin-exacerbated respiratory disease: asthma + nasal polyps + NSAID sensitivity.</i> Reaction can be severe and fast. Teach: use <b>acetaminophen</b> for pain/fever instead, and read OTC labels for hidden ibuprofen/aspirin. <b>Beta blockers</b> matter for the same reason &mdash; they oppose bronchodilation.</span></td></tr>
+<tr><td class="k">Stress</td><td><span class="fill"><b>Strong emotion and stress change the breathing pattern &mdash; rapid, shallow, mouth breathing dries and cools the airway &mdash; and stimulate the vagal/parasympathetic pathway that constricts bronchial smooth muscle.</b> <i>Anxiety also heightens the perception of breathlessness, which fuels more anxiety, which worsens the attack.</i> Teach relaxation and pursed-lip/diaphragmatic breathing. <b>Never dismiss an anxious asthmatic as "just anxious" &mdash; anxiety is also an early sign of hypoxia.</b></span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="--jewel:var(--citrine)" id="asthma-signs">
+<h2>4b &middot; Asthma Manifestations &amp; Pulmonary Function Testing 🔍</h2>
+
+<h3>Expected findings</h3>
+<ul class="blanks">
+  <li><b>Wheezing</b> &mdash; <span class="fill">a high-pitched whistle, <b>expiratory first</b>, then inspiratory as obstruction worsens.</span></li>
+  <li><b>Dyspnea</b> &mdash; <span class="fill">air hunger and a prolonged expiratory phase; the patient cannot get air <b>out</b>.</span></li>
+  <li><b>Chest tightness</b> &mdash; <span class="fill">the sensation of the bronchial smooth muscle contracting and the chest staying hyperinflated. Patients often describe it as a band or a weight.</span></li>
+  <li><b>Cough</b> &mdash; <span class="fill">often dry and worse at night or early morning. <i>Cough-variant asthma may present with cough as the <b>only</b> symptom.</i></span></li>
+  <li><b>Tachycardia</b> &mdash; <span class="fill">from hypoxia, from the sympathetic stress response, and from the beta-agonist rescue inhaler itself. <i>A pulse rising alongside worsening work of breathing is a warning sign.</i></span></li>
+</ul>
+<p class="fine">Add: tachypnea, accessory muscle use and retractions, tripod position, inability to speak full sentences, anxiety and restlessness, and diaphoresis.</p>
+
+<h3>Why does wheezing occur?</h3>
+<p><span class="fill"><b>Because air is being forced through airways that are too narrow, and the turbulence makes the airway walls vibrate &mdash; like air squeezing through a pinched straw.</b> <i>The narrowing comes from all three asthma changes at once: bronchospasm, mucosal swelling, and mucus.</i> It is loudest on <b>exhalation</b> because airways naturally narrow further as the chest deflates and intrathoracic pressure rises.
+<br><span class="never">Critical: wheezing that suddenly disappears in a patient who is still struggling is NOT improvement. A "silent chest" means airflow has dropped too low to make any sound &mdash; that is impending respiratory arrest. Get help immediately.</span></span></p>
+
+<h3>Pulmonary Function Testing Framework &mdash; Purpose</h3>
+<p><span class="fill"><b>To measure how much air the patient can move and how fast, and &mdash; the part that makes the diagnosis &mdash; to prove the obstruction is <em>reversible</em>.</b> <i>Spirometry is done, a bronchodilator is given, and spirometry is repeated: an <b>increase in FEV&#8321; of at least 12% and 200 mL</b> confirms asthma. A COPD patient's numbers barely budge.</i> PFTs also establish a baseline, grade severity, and track response to therapy over time. A methacholine challenge can be used when spirometry is normal but asthma is still suspected.</span></p>
+
+<h4>Peak flow meter &mdash; the home version she must know 📈</h4>
+<ul class="blanks">
+  <li><b>Green zone: 80&ndash;100% of personal best</b> &mdash; <span class="fill">good control; continue the daily controller medication.</span></li>
+  <li><b>Yellow zone: 50&ndash;79%</b> &mdash; <span class="fill">caution &mdash; the airway is narrowing. Use the <b>rescue inhaler</b> and follow the written asthma action plan; call the provider if the readings stay here.</span></li>
+  <li><b>Red zone: below 50%</b> &mdash; <span class="fill"><span class="never">Medical emergency</span> &mdash; use the rescue inhaler immediately and get emergency care.</span></li>
+</ul>
+<p class="fine">Teach: measure at the same time each day, stand up, take the <b>best of three</b> attempts, and establish "personal best" while well. <i>A falling peak flow drops <b>before</b> the patient feels much worse &mdash; that early warning is the entire value of the device.</i></p>
+</div>
+
+<!-- ===================== STATUS ASTHMATICUS ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="status">
+<h2>4c &middot; 🚨 Asthma Complications &mdash; Status Asthmaticus</h2>
+
+<h3>What is it?</h3>
+<p><span class="fill"><b>A severe, prolonged asthma attack that does NOT respond to the usual rescue treatment &mdash; repeated bronchodilators and corticosteroids do not break it.</b> <i>The inflammation, bronchospasm and mucus plugging feed each other, so every breath adds more trapped air to a chest that is already full.</i> It is the extreme end of an exacerbation, and it can develop over hours or over days.</span></p>
+
+<h3>Why is it life threatening?</h3>
+<p><span class="fill"><b>Because the patient cannot exhale, so air stacks up until the lungs are so hyperinflated that ventilation essentially stops &mdash; and the respiratory muscles exhaust themselves trying.</b> The chain:
+<br>&bull; <b>Progressive air trapping</b> &rarr; the lungs cannot empty &rarr; each breath moves less and less air.
+<br>&bull; <b>Muscle fatigue</b> &rarr; the work of breathing becomes unsustainable &rarr; ventilation collapses.
+<br>&bull; <b>Severe hypoxemia + rising CO&#8322;</b> &rarr; <b>respiratory acidosis</b> &rarr; confusion, then loss of consciousness.
+<br>&bull; <b>Rising intrathoracic pressure</b> &rarr; reduced venous return and cardiac output &rarr; hypotension; risk of <b>pneumothorax</b>.
+<br>&bull; End point: <b>respiratory arrest, then cardiac arrest.</b></span></p>
+
+<h3>⚠️ The findings that mean "this patient is about to arrest"</h3>
+<ul class="blanks">
+  <li><span class="never"><b>Silent chest</b> &mdash; wheezing stops but the patient is still in distress. No airflow = no sound. This is the classic exam answer for "which finding requires immediate intervention."</span></li>
+  <li><span class="never"><b>A "normal" or rising PaCO&#8322; on ABG.</b> <i>An asthmatic in distress should be hyperventilating and blowing OFF CO&#8322; &mdash; so a low PaCO&#8322; is expected. A PaCO&#8322; that has risen to normal means the patient is tiring and can no longer move air.</i></span></li>
+  <li><span class="never"><b>Decreasing level of consciousness, drowsiness, or a patient who suddenly stops fighting.</b> Calm is not improvement here.</span></li>
+  <li><span class="never"><b>Inability to speak more than one or two words, cyanosis, bradycardia, or a falling respiratory rate in a still-obstructed patient.</b></span></li>
+</ul>
+<p><mark>Loud wheezing means air is still moving. A quiet chest in a struggling asthmatic is the emergency.</mark></p>
+
+<h3>Emergency Interventions &mdash; priority treatments</h3>
+<ul class="blanks">
+  <li><b>Oxygen</b> &mdash; <span class="fill">high-flow, humidified, titrated to keep SpO&#8322; <b>&gt;94%</b> (asthma is <i>not</i> COPD &mdash; there is no 88&ndash;92% restriction here). Sit the patient upright.</span></li>
+  <li><b>Albuterol</b> &mdash; <span class="fill">short-acting beta&#8322; agonist by nebulizer, often given <b>continuously or back-to-back</b> in status asthmaticus. Opens the airway within minutes.</span></li>
+  <li><b>Ipratropium</b> &mdash; <span class="fill">anticholinergic added to albuterol in the emergency setting; it blocks the parasympathetic constriction pathway, so the two drugs open the airway by two different mechanisms and work better together than either alone.</span></li>
+  <li><b>Corticosteroids</b> &mdash; <span class="fill">IV methylprednisolone or oral prednisone &mdash; given <b>early</b> even though they take <b>4&ndash;6 hours</b> to work, <i>because they treat the airway swelling that the bronchodilators cannot touch, and that swelling is what makes the attack keep coming back.</i></span></li>
+</ul>
+<p class="fine">Also: IV access and fluids (these patients are dehydrated from the work of breathing), continuous pulse oximetry and cardiac monitoring, ABGs, magnesium sulfate IV as a smooth-muscle relaxant in severe cases, and <b>preparation for intubation</b> at the bedside. <span class="never">Do not give sedatives to an asthmatic in distress &mdash; they blunt the respiratory drive. And never leave the patient alone.</span></p>
+
+<h3>Why is albuterol usually given first?</h3>
+<p><span class="fill"><b>Because it is the fastest &mdash; it relaxes the bronchial smooth muscle within about 5 minutes, so it directly relieves the bronchospasm that is choking the patient right now.</b> <i>There is a second reason that matters just as much: opening the airway first is what allows the other drugs and the oxygen to actually reach the lower airways. Give a steroid into a clamped-shut airway and much of it never gets there.</i> Corticosteroids are essential but take hours; albuterol buys the time for them to work.</span></p>
+
+<h3>Inhaler Teaching Framework</h3>
+<div class="flow">
+  <div class="stepbox"><b>Step 1</b><span><b>Bronchodilator first</b><br>albuterol (the rescue/SABA) &mdash; opens the airway</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 2</b><span><b>Wait about 5 minutes</b><br>let the airway actually open</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 3</b><span><b>Then the corticosteroid</b><br>it now travels deeper into the lung</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>Step 4</b><span><b>Rinse mouth and spit</b><br>after every steroid dose</span></div>
+</div>
+
+<h4>After using an inhaled corticosteroid, the patient should&hellip;</h4>
+<p><span class="fill"><b>Rinse the mouth with water and spit it out (and brush the teeth) after every dose.</b></span></p>
+<h4>Why?</h4>
+<p><span class="fill"><b>Because steroid that settles on the mouth and throat suppresses the local immune defenses and lets <em>Candida</em> overgrow &mdash; oral thrush.</b> <i>Rinsing washes the leftover drug off the mucosa before it can do that.</i> It also prevents hoarseness/dysphonia and a dry irritated throat. Spitting rather than swallowing keeps the extra drug from being absorbed systemically. <b>Using a spacer</b> with the MDI does the same job from the other end &mdash; it keeps large droplets from ever landing in the mouth and gets more drug into the lungs.</span></p>
+<p class="fine"><b>MDI technique to teach:</b> shake &rarr; exhale fully &rarr; seal lips (or use spacer) &rarr; press and inhale slowly and deeply &rarr; <b>hold breath about 10 seconds</b> &rarr; wait about 1 minute between puffs of the same drug. <b>Rescue vs controller:</b> the rescue inhaler (albuterol) is for symptoms <i>right now</i> and should be carried at all times; the controller (inhaled corticosteroid, montelukast) is taken <b>daily whether or not she feels symptoms</b> &mdash; it prevents attacks and does nothing during one. <span class="never">Needing the rescue inhaler more than 2 days a week means the asthma is NOT controlled &mdash; report it, do not just refill it.</span></p>
+</div>
+
+<div class="card" style="--jewel:var(--citrine)" id="asthma-meds">
+<h2>4d &middot; Asthma Medication Framework 💊</h2>
+
+<table class="cmp">
+<thead><tr><th>Medication Type</th><th>Example</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td class="k">Short-Acting<br>Beta Agonist</td><td>Albuterol</td><td><span class="fill"><b>RESCUE.</b> Stimulates beta&#8322; receptors on bronchial smooth muscle &rarr; rapid bronchodilation in about <b>5&ndash;15 minutes</b>, lasting 4&ndash;6 hours. Used for an acute attack and <b>15&ndash;20 minutes before exercise</b>. <i>Not a daily controller.</i> Side effects: tachycardia, tremor, jitteriness, nervousness, hypokalemia. <b>Always the first inhaler when two are due.</b></span></td></tr>
+<tr><td class="k">Anticholinergic</td><td>Ipratropium</td><td><span class="fill"><b>Blocks acetylcholine at muscarinic receptors, which prevents the parasympathetic system from constricting the airway &mdash; and dries secretions.</b> Slower onset than albuterol (about 15 minutes), so it is an <b>add-on, not a rescue drug on its own</b>; combined with albuterol in acute exacerbations and used as maintenance in COPD. Side effects: dry mouth (sip water, sugar-free gum), blurred vision if sprayed in the eyes. Caution with <b>glaucoma and BPH</b>.</span></td></tr>
+<tr><td class="k">Inhaled<br>Corticosteroid</td><td><span class="fill"><b>Fluticasone</b> (Flovent) &mdash; also budesonide (Pulmicort) or beclomethasone</span></td><td><span class="fill"><b>CONTROLLER &mdash; the most important long-term asthma drug.</b> Suppresses airway inflammation and mucosal edema and reduces airway hyperresponsiveness, so attacks happen less often and less severely. <i>Taken <b>every day</b>, even when the patient feels perfectly well; it does <b>nothing</b> during an acute attack.</i> <span class="never">Never substitute it for the rescue inhaler.</span> Side effects: <b>oral thrush</b> and hoarseness &mdash; rinse and spit, use a spacer. Effect builds over 1&ndash;2 weeks.</span></td></tr>
+<tr><td class="k">Leukotriene<br>Modifier</td><td>Montelukast</td><td><span class="fill"><b>CONTROLLER, oral, once daily.</b> Blocks leukotriene receptors, so it prevents the bronchoconstriction, swelling and mucus that leukotrienes drive. <i>Especially useful for allergic, exercise-induced, and NSAID/aspirin-sensitive asthma, and it treats allergic rhinitis at the same time.</i> Usually taken <b>in the evening</b>. <span class="never">Not a rescue drug &mdash; it has no role in an acute attack.</span> Teach the family to report <b>mood or behavior changes, agitation, depression or suicidal thoughts</b> &mdash; this is an FDA boxed warning.</span></td></tr>
+</tbody>
+</table>
+<p class="fine">Also know: <b>long-acting beta agonists</b> (salmeterol) are controllers that must <span class="never">never be used alone or as a rescue inhaler</span> &mdash; only combined with an inhaled corticosteroid. <b>Theophylline</b> has a narrow therapeutic range (10&ndash;20 mcg/mL); watch for nausea, tachycardia and seizures, and remember caffeine adds to the toxicity. <b>Omalizumab</b> and other biologics are for severe allergic asthma.</p>
+</div>
+
+<div class="card" style="--jewel:var(--citrine)" id="asthma-case">
+<h2>4e &middot; Asthma Case Study Framework 🧠</h2>
+
+<p><b>Patient presents with:</b> wheezing &middot; tachypnea &middot; short phrases &middot; tripod position &middot; chest tightness</p>
+
+<h3>What cues suggest respiratory distress?</h3>
+<p><span class="fill"><b>All five &mdash; and two of them tell you it is <em>severe</em>.</b>
+<br>&bull; <b>Speaking in short phrases</b> &mdash; ⭐ the strongest cue. <i>How many words a patient can say in one breath is a bedside measure of how much air they can move.</i> Full sentences = mild. Phrases = moderate&ndash;severe. Single words = <b>severe</b>. Cannot speak = <span class="never">emergency</span>.
+<br>&bull; <b>Tripod position</b> &mdash; the patient is instinctively recruiting accessory muscles; nobody sits like that unless they need to.
+<br>&bull; <b>Tachypnea</b> &mdash; increased work of breathing and an attempt to compensate for hypoxemia.
+<br>&bull; <b>Wheezing</b> &mdash; confirms narrowed airways with air still moving. <i>Reassuring in a grim way: it is worse when it stops.</i>
+<br>&bull; <b>Chest tightness</b> &mdash; the subjective marker of bronchospasm and hyperinflation.
+<br><b>Also look for:</b> accessory muscle use and retractions, nasal flaring, restlessness/anxiety, falling SpO&#8322;, and a peak flow below 50% of personal best.</span></p>
+
+<h3>What is your priority nursing action?</h3>
+<p><span class="fill"><b>Stay with the patient, sit them upright, and administer oxygen &mdash; then give the prescribed short-acting bronchodilator (albuterol nebulizer).</b> <i>Priority is <b>airway and breathing</b>: the patient is hypoxic and obstructed right now, and oxygen plus a bronchodilator are the two interventions that reverse the immediate threat.</i> Assessment and treatment happen simultaneously here &mdash; you do not complete a head-to-toe on a patient in respiratory distress. <span class="never">Never leave a patient in acute respiratory distress alone, and never lay them flat.</span></span></p>
+
+<h3>What interventions should occur FIRST? (in order)</h3>
+<div class="flow">
+  <div class="stepbox"><b>STEP 1</b><span><b>Position upright</b> &mdash; high-Fowler's or tripod. Free the diaphragm. Costs nothing, works instantly.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 2</b><span><b>Oxygen</b> &mdash; titrate to SpO&#8322; <b>&gt;94%</b>, continuous pulse oximetry.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 3</b><span><b>Albuterol nebulizer</b> &plusmn; ipratropium &mdash; reverse the bronchospasm.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 4</b><span><b>Corticosteroid</b> (IV/PO) &mdash; treat the swelling that the bronchodilator cannot reach.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 5</b><span><b>Reassess</b> &mdash; breath sounds, speech, SpO&#8322;, peak flow, mental status. Calm coaching, stay present.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 6</b><span><b>Escalate</b> &mdash; if a silent chest, rising CO&#8322;, or decreasing LOC appears, call rapid response and prepare for intubation.</span></div>
+</div>
+<p class="fine"><b>Once stable, teach:</b> identify and avoid triggers, use the peak flow meter and the written action plan, carry the rescue inhaler at all times, take the controller daily, correct MDI/spacer technique, rinse after steroids, and get the annual flu vaccine.</p>
+</div>
+<!-- ===================== 5. ASTHMA VS COPD ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="cmp">
+<h2>5 &middot; Asthma vs COPD &mdash; the two that get confused ⭐</h2>
+
+<p class="lead-in"><i>Both obstruct airflow and both wheeze. <b>The word that separates them is "reversible."</b></i></p>
+
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Asthma</th><th>COPD</th></tr></thead>
+<tbody>
+<tr><td class="k">Core problem</td><td><span class="fill">Reversible bronchospasm + inflammation of airways that are structurally normal between attacks</span></td><td><span class="fill">Permanent structural damage &mdash; destroyed alveoli and/or chronically inflamed, mucus-filled airways</span></td></tr>
+<tr><td class="k">Reversibility</td><td><span class="fill"><b>Reversible</b> &mdash; FEV&#8321; improves &ge;12% and 200 mL after a bronchodilator</span></td><td><span class="fill"><b>Not fully reversible</b> &mdash; FEV&#8321;/FVC stays &lt;0.70 even after a bronchodilator</span></td></tr>
+<tr><td class="k">Typical onset</td><td><span class="fill">Childhood or young adulthood; often with allergies/eczema</span></td><td><span class="fill">Usually after age 40, after decades of smoking or exposure</span></td></tr>
+<tr><td class="k">Main cause</td><td><span class="fill">Allergic/atopic and irritant triggers; family history</span></td><td><span class="fill">Smoking (&gt;80% of cases); also occupational exposure, alpha-1 antitrypsin deficiency</span></td></tr>
+<tr><td class="k">Symptom pattern</td><td><span class="fill"><b>Episodic</b> &mdash; attacks with symptom-free periods; often worse at night/early morning</span></td><td><span class="fill"><b>Progressive and constant</b> &mdash; slowly worsening dyspnea over years, punctuated by exacerbations</span></td></tr>
+<tr><td class="k">Cough / sputum</td><td><span class="fill">Dry cough, little sputum (except mucus plugs during an attack)</span></td><td><span class="fill">Chronic productive cough with copious sputum (chronic bronchitis type)</span></td></tr>
+<tr><td class="k">Chest shape</td><td><span class="fill">Normal between attacks</span></td><td><span class="fill"><b>Barrel chest</b>, clubbing &mdash; permanent changes from years of trapping</span></td></tr>
+<tr><td class="k">ABG when stable</td><td><span class="fill">Normal between attacks. During an attack: hypoxemia with <b>respiratory alkalosis</b> &mdash; and a <b>rising/normalizing PaCO&#8322; is the danger sign</b></span></td><td><span class="fill"><b>Compensated respiratory acidosis</b> at baseline: &uarr;PaCO&#8322;, &uarr;HCO&#8323;&#8315;, near-normal pH, low PaO&#8322;</span></td></tr>
+<tr><td class="k">SpO&#8322; target 🎯</td><td><span class="fill"><b>&gt;94%</b> &mdash; treat hypoxia freely</span></td><td><span class="fill"><b>88&ndash;92%</b> in CO&#8322; retainers &mdash; controlled, titrated oxygen</span></td></tr>
+<tr><td class="k">Goal of treatment</td><td><span class="fill"><b>Control and prevent</b> &mdash; a well-controlled asthmatic has no symptoms and normal function</span></td><td><span class="fill"><b>Slow progression and manage symptoms</b> &mdash; damage cannot be undone; smoking cessation and long-term O&#8322; are what extend life</span></td></tr>
+<tr><td class="k">Cornerstone drug</td><td><span class="fill">Daily <b>inhaled corticosteroid</b> (controller) + albuterol as rescue</span></td><td><span class="fill">Long-acting bronchodilators (LABA/LAMA such as tiotropium); steroids for exacerbations</span></td></tr>
+</tbody>
+</table>
+<p><mark>One sentence: asthma is an airway that closes and reopens; COPD is an airway that is permanently damaged and cannot empty.</mark></p>
+</div>
+
+<!-- ===================== 6. WRAP-UP ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="wrapup">
+<h2>6 &middot; Module Wrap-Up Framework 🧭</h2>
+
+<p class="lead-in"><i>For every respiratory disorder ask&hellip; (this is the framework Dr. K wants you to leave the module with)</i></p>
+
+<table class="cmp">
+<thead><tr><th>Ask&hellip;</th><th>Lung cancer</th><th>PE</th><th>COPD</th><th>Asthma</th></tr></thead>
+<tbody>
+<tr><td class="k">What is happening in the lungs?</td><td><span class="fill">A mass takes up space and obstructs</span></td><td><span class="fill">A clot blocks perfusion &mdash; ventilation without blood flow</span></td><td><span class="fill">Permanent obstruction &rarr; air trapping</span></td><td><span class="fill">Reversible spasm + swelling + mucus</span></td></tr>
+<tr><td class="k">What findings support it?</td><td><span class="fill">Changed chronic cough, hemoptysis, weight loss, repeat pneumonia in one spot</span></td><td><span class="fill">SUDDEN dyspnea, pleuritic pain, tachycardia, anxiety, often clear lungs</span></td><td><span class="fill">Barrel chest, pursed lips, prolonged expiration, chronic productive cough</span></td><td><span class="fill">Expiratory wheeze, chest tightness, episodic, trigger-related</span></td></tr>
+<tr><td class="k">What is the priority problem?</td><td><span class="fill">Airway obstruction / impaired gas exchange (and bleeding if hemoptysis is large)</span></td><td><span class="fill">Impaired perfusion &rarr; hypoxemia and right-heart strain</span></td><td><span class="fill">Impaired gas exchange with CO&#8322; retention</span></td><td><span class="fill">Ineffective airway clearance / impaired gas exchange</span></td></tr>
+<tr><td class="k">What intervention addresses the patho?</td><td><span class="fill">Remove or shrink the mass: surgery, chemo, radiation, immunotherapy</span></td><td><span class="fill">Anticoagulate to stop clot growth; thrombolytics only if unstable</span></td><td><span class="fill">Bronchodilators, controlled O&#8322; 88&ndash;92%, pursed-lip breathing, smoking cessation</span></td><td><span class="fill">Albuterol first (spasm), then corticosteroid (swelling)</span></td></tr>
+<tr><td class="k">What complication am I preventing?</td><td><span class="fill">Metastasis, pneumothorax, post-op pneumonia, SVC syndrome</span></td><td><span class="fill">Bleeding from anticoagulation; another embolus; right-heart failure</span></td><td><span class="fill">Pneumonia, pneumothorax, cor pulmonale, respiratory failure</span></td><td><span class="fill">Status asthmaticus &rarr; respiratory arrest</span></td></tr>
+<tr><td class="k">What education keeps them safe?</td><td><span class="fill">Smoking cessation, report new hemoptysis/weight loss, infection precautions during chemo</span></td><td><span class="fill">Walk, hydrate, compression stockings, bleeding precautions, INR/diet consistency</span></td><td><span class="fill">Pursed-lip breathing, energy conservation, vaccines, O&#8322; safety, when to call</span></td><td><span class="fill">Trigger avoidance, peak flow zones, action plan, rescue vs controller, rinse after steroids</span></td></tr>
+</tbody>
+</table>
+<p><i>That framework will help you move beyond memorization and start thinking like a nurse.</i></p>
+</div>
+
+<!-- ===================== PRACTICE ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="practice">
+<h2>Practice Questions &mdash; clinical judgment 🧠</h2>
+
+<div class="nq">
+<div class="stem">1. A client with severe asthma has been wheezing loudly for 30 minutes. The nurse reassesses and now hears almost no breath sounds, and the client can no longer speak. Which action is the priority?</div>
+<ol>
+  <li>Document that the wheezing has resolved and continue to monitor</li>
+  <li>Call the rapid response team and prepare for intubation</li>
+  <li>Encourage pursed-lip breathing and offer reassurance</li>
+  <li>Recheck the peak flow reading</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; call rapid response and prepare for intubation.</b> <i>A silent chest in a client who is still in distress means airflow has dropped below the level that can generate any sound. This is impending respiratory arrest.</i></p>
+<p><b>1</b> is the trap and it is dangerous &mdash; disappearing wheeze with worsening distress is deterioration, not resolution. <b>3</b> treats a mild episode; coaching does nothing when there is essentially no airflow, and it delays definitive care. <b>4</b> requires a forceful exhalation the client cannot produce and wastes time you do not have.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. A client with COPD is admitted with an SpO&#8322; of 84% and increased dyspnea. The provider orders oxygen. Which nursing action is most appropriate?</div>
+<ol>
+  <li>Withhold oxygen because it will suppress the client's drive to breathe</li>
+  <li>Apply a non-rebreather at 15 L/min and titrate to 98%</li>
+  <li>Start 2 L/min by nasal cannula, target SpO&#8322; 88&ndash;92%, and monitor level of consciousness</li>
+  <li>Apply oxygen only if the client becomes confused</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; low-flow, titrated to 88&ndash;92%, with close monitoring.</b> <i>The goal is enough oxygen to correct dangerous hypoxemia without wiping out the hypoxic respiratory drive or worsening V/Q mismatch and CO&#8322; retention.</i></p>
+<p><b>1</b> is the classic over-correction &mdash; hypoxia kills faster than hypercapnia, so oxygen is never withheld from a hypoxic client. <b>2</b> pushes the saturation far above target and risks CO&#8322; narcosis and respiratory arrest. <b>4</b> waits for a sign of decompensation before treating a client who is already hypoxic at 84%.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. Two days after a total hip replacement, a client suddenly reports sharp chest pain and shortness of breath. Vital signs: HR 122, RR 32, BP 108/64, SpO&#8322; 87%. Lungs are clear bilaterally. What should the nurse do FIRST?</div>
+<ol>
+  <li>Obtain a stat D-dimer</li>
+  <li>Raise the head of the bed, apply oxygen, and stay with the client while calling the provider</li>
+  <li>Ambulate the client to improve circulation</li>
+  <li>Administer the prescribed PRN opioid for the chest pain</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; position, oxygen, and get help without leaving the client.</b> <i>This is a classic PE: recent orthopedic surgery, sudden onset, hypoxia, tachycardia, and clear lungs (the problem is perfusion, not air).</i> Treat the hypoxia while the workup is arranged.</p>
+<p><b>1</b> is a supporting test only &mdash; and a positive D-dimer would not change what you do in the next two minutes; CT angiography is the definitive study. <b>3</b> is actively harmful: ambulating can dislodge more clot. <b>4</b> treats a symptom and can further depress respirations while the underlying hypoxia goes untreated.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. A client is being discharged with both albuterol and fluticasone metered-dose inhalers. Which statement indicates the teaching was effective?</div>
+<ol>
+  <li>"I'll use the fluticasone whenever I start to feel wheezy."</li>
+  <li>"I'll use the albuterol first, wait about five minutes, then take the fluticasone and rinse my mouth."</li>
+  <li>"I can stop the fluticasone once I've gone a week without symptoms."</li>
+  <li>"I'll take both inhalers back to back so I don't forget one."</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2.</b> <i>The bronchodilator opens the airway so the steroid reaches deeper into the lungs, and rinsing prevents oral thrush and hoarseness.</i></p>
+<p><b>1</b> confuses controller with rescue &mdash; fluticasone has no rapid effect and will not stop an attack. <b>3</b> is the most common real-world error: the controller is what keeps the client symptom-free, so stopping it invites the next attack. <b>4</b> skips the wait, so the steroid is delivered into an airway that has not opened yet and less of it reaches the lower airways.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. A client on a heparin infusion for pulmonary embolism reports a new headache and is difficult to arouse. Which action takes priority?</div>
+<ol>
+  <li>Administer the prescribed PRN acetaminophen</li>
+  <li>Recheck the aPTT in the morning as scheduled</li>
+  <li>Stop the infusion, notify the provider immediately, and prepare protamine sulfate</li>
+  <li>Reposition the client and darken the room</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3.</b> <i>A new headache plus a decreasing level of consciousness in an anticoagulated client is intracranial hemorrhage until proven otherwise &mdash; the deadliest complication of anticoagulation.</i> Protamine sulfate is the heparin antidote.</p>
+<p><b>1</b> masks a critical neurologic sign. <b>2</b> delays action on an emergency that is already visible at the bedside. <b>4</b> treats it as a comfort problem and loses the window in which bleeding can be reversed.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">6. A client is scheduled for a bronchoscopy with biopsy this morning. Which finding requires the nurse to notify the provider before the procedure?</div>
+<ol>
+  <li>The client reports mild anxiety about the procedure</li>
+  <li>The client ate breakfast two hours ago</li>
+  <li>The client's chest X-ray shows a right upper lobe mass</li>
+  <li>The client asks whether the throat will be numbed</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; the client is not NPO.</b> <i>Sedation and topical throat anesthesia abolish the gag reflex, so a full stomach creates a serious aspiration risk. The procedure will need to be delayed.</i></p>
+<p><b>1</b> is expected and is addressed with teaching and reassurance. <b>3</b> is the reason the procedure is being done. <b>4</b> is a normal question &mdash; answer it, and reinforce that the client stays NPO afterward until the gag reflex returns.</p>
+</div></details>
+</div>
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>⭐ Must-Not-Forget Strip</h2>
+
+<ul class="blanks">
+  <li><b>1. COPD SpO&#8322; target is 88&ndash;92%.</b> <i>Higher saturations can knock out the hypoxic drive, worsen V/Q mismatch and raise CO&#8322;.</i> But <span class="never">never withhold oxygen from a hypoxic patient</span> &mdash; give it controlled and titrated. If a COPD patient gets sleepy and calm, suspect CO&#8322; narcosis, not improvement.</li>
+  <li><b>2. COPD is an exhalation problem.</b> Air trapping &rarr; barrel chest, flattened diaphragm, hypercapnia, blebs. <b>Pursed-lip breathing</b> splints the airways open so the lungs can empty &mdash; in 2 counts through the nose, out 4 counts through pursed lips.</li>
+  <li><b>3. A silent chest in an asthmatic is an emergency.</b> <span class="never">No wheeze + still in distress = no airflow = about to arrest.</span> Same for a PaCO&#8322; that rises to "normal" in an acute attack.</li>
+  <li><b>4. Status asthmaticus</b> = a severe attack that does not respond to standard treatment. Oxygen &rarr; albuterol (fastest, opens the airway so everything else can work) &rarr; ipratropium &rarr; corticosteroid (takes 4&ndash;6 hours but treats the swelling). Never sedate; never leave the patient.</li>
+  <li><b>5. Rescue vs controller.</b> <b>Albuterol = rescue</b>, carried at all times, works in minutes. <b>Inhaled corticosteroid and montelukast = controllers</b>, taken daily even when well, useless in an attack. <b>If both are due: bronchodilator first, wait 5 minutes, then steroid, then rinse and spit.</b> Needing the rescue inhaler more than 2 days a week = poor control.</li>
+  <li><b>6. PE is sudden.</b> Sudden dyspnea + pleuritic chest pain + tachycardia + anxiety + <b>clear lungs</b> in a patient with a Virchow's triad risk factor (stasis, hypercoagulability, vessel injury). <b>D-dimer rules out; CT angiography confirms.</b> Hold metformin 48 hours after contrast &mdash; contrast-induced kidney injury &rarr; metformin accumulation &rarr; lactic acidosis.</li>
+  <li><b>7. Anticoagulants stop clots from growing; only thrombolytics dissolve them.</b> Heparin &rarr; aPTT + platelets, antidote protamine. Warfarin &rarr; INR 2&ndash;3, antidote vitamin K, consistent green vegetable intake. <b>The priority assessment after starting any of them is bleeding &mdash; and a new headache or change in LOC means intracranial hemorrhage.</b></li>
+  <li><b>8. Lung cancer is found late</b> because lung tissue has no pain fibers and the early symptoms look like smoker's cough. <b>Only a biopsy diagnoses it.</b> After bronchoscopy, <span class="never">nothing by mouth until the gag reflex returns</span>. After pneumonectomy, position on the back or the operative side and keep IV fluids conservative.</li>
+</ul>
+</div>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+</body></html>

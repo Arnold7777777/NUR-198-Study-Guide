@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · Electrolyte Review Guide (answered)</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 · Electrolytes · Review</div>
+  <h1>Electrolyte <span class="glow">Review Guide</span></h1>
+  <p>Every practice question answered, with the reasoning shown.</p>
+<div class="bigq"><b class="q">High or low &mdash; and which system does it hit first?</b>Heart, neuro, or muscle. Whichever it is, that is where the priority assessment goes.</div>
+ </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc">
+  <a href="#rules">Rules Before You Start</a>
+  <a href="#ranges">🧪 Normal Ranges</a>
+  <a href="#lowhigh">⭐ Low vs High &mdash; Side by Side</a>
+  <a href="#clues">Electrolyte Quick Clues</a>
+  <a href="#kills">🚨 What Kills First</a>
+  <a href="#q1">Questions 1&ndash;5</a>
+  <a href="#q6">Questions 6&ndash;10</a>
+  <a href="#q11">Questions 11&ndash;15</a>
+  <a href="#q16">Questions 16&ndash;20</a>
+  <a href="#q21">Questions 21&ndash;25</a>
+  <a href="#summary">⭐ Must-Not-Forget Strip</a>
+</div>
+
+<p class="lead-in"><i>This is your practice set with every answer written in &mdash; correct option first, then why each other option is wrong. Tap "Hide answers" to quiz yourself, and tap "Show the answer" on any question to check your reasoning.</i></p>
+
+<!-- ===================== RULES BEFORE YOU START ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="rules">
+<h2>Rules Before You Start 🧭</h2>
+<p class="lead-in"><i>Ask yourself these five questions in this order on every electrolyte item. The answer to question 5 is almost always the correct option.</i></p>
+
+<ul class="blanks">
+  <li><b>1. Is the electrolyte HIGH or LOW?</b> <span class="fill">Compare the value to the normal range <i>before</i> you read the options. Half of electrolyte questions are answered the second you label the value, because high and low give opposite pictures.</span></li>
+  <li><b>2. What system is most affected?</b> <span class="fill"><b>Sodium &rarr; brain.</b> <b>Potassium &rarr; heart.</b> <b>Calcium and magnesium &rarr; nerves and muscle</b> (and the heart when they get severe).</span></li>
+  <li><b>3. Is this a heart problem, a neuro problem, or a muscle problem?</b> <span class="fill">Heart &rarr; get an <b>ECG / telemetry</b>. Neuro &rarr; get a <b>LOC and seizure-precaution</b> check. Muscle &rarr; check <b>strength, reflexes, and respiratory effort</b>. The system tells you the assessment.</span></li>
+  <li><b>4. What assessment matters MOST?</b> <span class="fill">The one attached to the system that can stop working in the next few minutes &mdash; <mark>airway and cardiac rhythm before anything else</mark>, then level of consciousness, then everything else.</span></li>
+  <li><b>5. What kills first?</b> <span class="fill"><b>Potassium kills the heart</b> (lethal dysrhythmias &rarr; cardiac arrest). <b>Sodium kills the brain</b> (cerebral edema, herniation, seizures). <b>Magnesium kills the drive to breathe</b> (respiratory depression, then cardiac arrest). Calcium kills two ways &mdash; low = laryngospasm and tetany, high = dysrhythmias and arrest.</span></li>
+</ul>
+
+<p class="fine">🤖 Ask Claire: "Give me an electrolyte value and one sentence of assessment data. Make me say high or low, which system, and what my first action is &mdash; then tell me if I picked the right priority."</p>
+</div>
+
+<!-- ===================== NORMAL RANGES ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="ranges">
+<h2>🧪 Normal Ranges &mdash; Learn These Cold</h2>
+<p><b>You cannot label a value high or low if you do not know the range.</b> <i>Every question below starts here.</i></p>
+
+<table class="cmp">
+<thead><tr><th>Lab</th><th>Normal range (with units)</th><th>The number that should scare you</th></tr></thead>
+<tbody>
+<tr><td class="k">Sodium (Na&#8314;)</td><td><span class="fill"><b>135&ndash;145 mEq/L</b></span></td><td><span class="fill">&lt;120 or &gt;160 &mdash; seizure and coma range either way</span></td></tr>
+<tr><td class="k">Potassium (K&#8314;)</td><td><span class="fill"><b>3.5&ndash;5.0 mEq/L</b></span></td><td><span class="fill">&lt;2.5 or &gt;6.5 &mdash; and <b>any</b> level with ECG changes</span></td></tr>
+<tr><td class="k">Calcium, total</td><td><span class="fill"><b>9.0&ndash;10.5 mg/dL</b></span></td><td><span class="fill">&lt;7 (tetany, laryngospasm) or &gt;13 (dysrhythmias, coma)</span></td></tr>
+<tr><td class="k">Calcium, ionized</td><td><span class="fill"><b>4.5&ndash;5.6 mg/dL</b> &mdash; <i>the active form; this is the one that causes symptoms</i></span></td><td><span class="fill">Falls when albumin is low or when the patient is alkalotic</span></td></tr>
+<tr><td class="k">Magnesium (Mg&#178;&#8314;)</td><td><span class="fill"><b>1.3&ndash;2.1 mEq/L</b> (about <b>1.8&ndash;2.6 mg/dL</b>)</span></td><td><span class="fill">&gt;4 &mdash; reflexes disappear, then respirations do</span></td></tr>
+<tr><td class="k">Phosphorus</td><td><span class="fill"><b>3.0&ndash;4.5 mg/dL</b></span></td><td><span class="fill">Moves <b>opposite</b> calcium &mdash; high phos usually means low calcium</span></td></tr>
+<tr><td class="k">Chloride (Cl&#8315;)</td><td><span class="fill"><b>98&ndash;106 mEq/L</b></span></td><td><span class="fill">Tracks sodium and acid&ndash;base; low Cl&#8315; with vomiting = metabolic alkalosis</span></td></tr>
+<tr><td class="k">Serum osmolality</td><td><span class="fill"><b>275&ndash;295 mOsm/kg</b></span></td><td><span class="fill">High = cells are drying out &middot; Low = cells are swelling</span></td></tr>
+</tbody>
+</table>
+
+<p><mark>Memory hook: 135&ndash;145 sodium, 3.5&ndash;5.0 potassium, 9&ndash;10.5 calcium, 1.3&ndash;2.1 magnesium.</mark> Say them as one string until they are automatic.</p>
+</div>
+
+<!-- ===================== LOW VS HIGH ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="lowhigh">
+<h2>⭐ Low vs High &mdash; Side by Side</h2>
+<p class="lead-in"><i>The whole test is this table. Almost every stem gives you signs and asks you to name the imbalance, or gives you the imbalance and asks what you will see.</i></p>
+
+<h3>Sodium &mdash; the brain electrolyte 🧠</h3>
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Hyponatremia &lt;135</th><th>Hypernatremia &gt;145</th></tr></thead>
+<tbody>
+<tr><td class="k">What water does</td><td><span class="fill">Water moves <b>INTO</b> the cell &rarr; <b>cells swell</b> &rarr; brain swells</span></td><td><span class="fill">Water pulled <b>OUT</b> of the cell &rarr; <b>cells shrink</b> &rarr; brain shrivels</span></td></tr>
+<tr><td class="k">Signs</td><td><span class="fill">Headache, confusion, lethargy, muscle cramps, nausea, seizures, coma</span></td><td><span class="fill">Intense thirst, dry sticky mucous membranes, flushed skin, restlessness &rarr; agitation, fever, weakness, seizures if severe</span></td></tr>
+<tr><td class="k">Usual cause</td><td><span class="fill">Too much <b>water</b> &mdash; SIADH, excess D5W or hypotonic fluid, heart or liver failure, water intoxication, diuretics</span></td><td><span class="fill">Too <b>little water</b> &mdash; dehydration, fever, tube feeds without free water, diabetes insipidus, no access to fluids</span></td></tr>
+<tr><td class="k">Priority</td><td><span class="fill"><b>Neuro checks + seizure precautions.</b> Fluid restriction if dilutional; <b>3% saline</b> only if severe and symptomatic</span></td><td><span class="fill"><b>Give free water</b> &mdash; PO water or hypotonic IV fluid <b>slowly</b>; correcting too fast causes cerebral edema</span></td></tr>
+</tbody>
+</table>
+
+<h3>Potassium &mdash; the heart electrolyte 💓</h3>
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Hypokalemia &lt;3.5</th><th>Hyperkalemia &gt;5.0</th></tr></thead>
+<tbody>
+<tr><td class="k">Muscle</td><td><span class="fill">Weak, flabby, <b>hypoactive</b> &mdash; weakness, leg cramps, decreased reflexes, <b>paralytic ileus</b> (silent belly)</span></td><td><span class="fill">Early twitching and cramping, then weakness and <b>flaccid paralysis</b>; <b>hyperactive</b> bowel &rarr; diarrhea</span></td></tr>
+<tr><td class="k">ECG</td><td><span class="fill"><b>Flattened / inverted T waves, ST depression, prominent U waves</b>, PVCs</span></td><td><span class="fill"><b>Tall peaked T waves &rarr; flat/absent P &rarr; widened QRS &rarr; sine wave &rarr; VF or asystole</b></span></td></tr>
+<tr><td class="k">Usual cause</td><td><span class="fill">Vomiting, diarrhea, NG suction, <b>loop and thiazide diuretics</b>, corticosteroids, alkalosis, insulin</span></td><td><span class="fill"><b>Kidney failure</b>, K&#8314;-sparing diuretics, ACE inhibitors/ARBs, acidosis, crush injury/burns, blood transfusions, salt substitutes</span></td></tr>
+<tr><td class="k">Priority</td><td><span class="fill">Replace K&#8314; &mdash; <span class="never">never IV push, never as a bolus</span>; always diluted, on a pump, max about 10 mEq/hr on a general unit. Check urine output first and check magnesium &mdash; low Mg blocks K&#8314; correction</span></td><td><span class="fill"><b>ECG / telemetry first.</b> Then calcium gluconate to protect the heart &rarr; insulin + D50 or albuterol to shift &rarr; binder or dialysis to remove</span></td></tr>
+</tbody>
+</table>
+
+<h3>Calcium &mdash; the twitchy electrolyte ⚡</h3>
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Hypocalcemia &lt;9.0</th><th>Hypercalcemia &gt;10.5</th></tr></thead>
+<tbody>
+<tr><td class="k">Nerve/muscle</td><td><span class="fill"><b>Everything is turned UP.</b> Tingling around the mouth and fingertips, muscle twitching, cramps, tetany, <b>+ Chvostek and + Trousseau</b>, seizures, <b>laryngospasm</b></span></td><td><span class="fill"><b>Everything is turned DOWN.</b> Lethargy, confusion, profound muscle weakness, <b>decreased deep tendon reflexes</b>, constipation, bone pain, kidney stones</span></td></tr>
+<tr><td class="k">ECG</td><td><span class="fill">Prolonged ST and <b>prolonged QT</b> &rarr; risk of torsades</span></td><td><span class="fill"><b>Shortened QT</b>, bradycardia, heart block</span></td></tr>
+<tr><td class="k">Usual cause</td><td><span class="fill">Thyroid/parathyroid surgery, low vitamin D, low albumin, pancreatitis, <b>low magnesium</b>, massive transfusion (citrate), alkalosis</span></td><td><span class="fill">Hyperparathyroidism, <b>malignancy with bone metastases</b>, prolonged immobility, thiazides, excess calcium or vitamin D intake</span></td></tr>
+<tr><td class="k">Priority</td><td><span class="fill">Seizure precautions and <b>airway at the bedside</b> &mdash; <i>laryngospasm is the killer</i>. IV calcium gluconate for severe/symptomatic</span></td><td><span class="fill">Isotonic IV fluid to dilute and flush, <b>mobilize the patient</b>, fall precautions, telemetry, strain urine for stones</span></td></tr>
+</tbody>
+</table>
+
+<h3>Magnesium &mdash; the sedative electrolyte 😴</h3>
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Hypomagnesemia &lt;1.3</th><th>Hypermagnesemia &gt;2.1</th></tr></thead>
+<tbody>
+<tr><td class="k">Picture</td><td><span class="fill"><b>Looks exactly like low calcium</b> &mdash; hyperactive reflexes, tremor, twitching, + Chvostek and + Trousseau, tetany, seizures, torsades</span></td><td><span class="fill"><b>Looks sedated</b> &mdash; flushing, warmth, hypotension, drowsiness, <b>diminished then absent deep tendon reflexes</b>, shallow respirations, bradycardia, cardiac arrest</span></td></tr>
+<tr><td class="k">Usual cause</td><td><span class="fill"><b>Alcohol use disorder</b>, malnutrition, diarrhea, NG suction, loop diuretics, PPIs</span></td><td><span class="fill"><b>Renal failure</b> (cannot excrete it), magnesium-containing antacids and laxatives, IV magnesium for preeclampsia</span></td></tr>
+<tr><td class="k">Priority</td><td><span class="fill">Seizure precautions; replace magnesium <b>and</b> recheck potassium and calcium &mdash; <i>they will not correct until magnesium does</i></span></td><td><span class="fill"><b>Check deep tendon reflexes and respiratory rate every hour</b> &mdash; <i>reflexes disappear before breathing does, so they are your early warning</i>. Stop all Mg sources. Antidote = <b>IV calcium gluconate</b></span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== QUICK CLUES ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="clues">
+<h2>Electrolyte Quick Clues 🔎</h2>
+<p class="lead-in"><i>The one-line version. If a stem gives you one of these words, it is telling you the answer.</i></p>
+
+<table class="cmp">
+<thead><tr><th>Electrolyte</th><th>LOW</th><th>HIGH</th></tr></thead>
+<tbody>
+<tr><td class="k">Sodium</td><td><span class="fill"><b>Swollen brain</b> &mdash; confused, headache, seizing</span></td><td><span class="fill"><b>Dry brain</b> &mdash; thirsty, sticky mouth, restless</span></td></tr>
+<tr><td class="k">Potassium</td><td><span class="fill"><b>Weak and sluggish</b> &mdash; flat T waves, U waves, silent bowel</span></td><td><span class="fill"><b>Deadly heart</b> &mdash; peaked T waves, wide QRS, arrest</span></td></tr>
+<tr><td class="k">Calcium</td><td><span class="fill"><b>Twitchy</b> &mdash; tingling lips, tetany, Chvostek, Trousseau</span></td><td><span class="fill"><b>Sedated</b> &mdash; weak, constipated, stones, bones, groans</span></td></tr>
+<tr><td class="k">Magnesium</td><td><span class="fill"><b>Hyperactive</b> &mdash; tremors, brisk reflexes, seizures (calcium's twin)</span></td><td><span class="fill"><b>Depressed</b> &mdash; no reflexes, shallow breathing, low BP</span></td></tr>
+</tbody>
+</table>
+
+<h3>The single-word triggers 🔑</h3>
+<table class="cmp">
+<thead><tr><th>If the stem says&hellip;</th><th>Think&hellip;</th></tr></thead>
+<tbody>
+<tr><td class="k">Peaked T waves</td><td><span class="fill"><b>Hyperkalemia</b> &mdash; get the ECG and call, this is the emergency</span></td></tr>
+<tr><td class="k">Flat T waves + U wave</td><td><span class="fill"><b>Hypokalemia</b></span></td></tr>
+<tr><td class="k">Numbness/tingling around the mouth</td><td><span class="fill"><b>Hypocalcemia</b> (or hypomagnesemia &mdash; they mimic each other)</span></td></tr>
+<tr><td class="k">Chvostek (cheek tap &rarr; face twitch) or Trousseau (BP cuff &rarr; hand spasm)</td><td><span class="fill"><b>Hypocalcemia</b> &mdash; neuromuscular irritability</span></td></tr>
+<tr><td class="k">Absent deep tendon reflexes</td><td><span class="fill"><b>Hypermagnesemia</b> &mdash; check the respiratory rate next</span></td></tr>
+<tr><td class="k">New confusion + low sodium</td><td><span class="fill"><b>Cerebral edema</b> &mdash; neuro checks, seizure precautions, this patient is seen first</span></td></tr>
+<tr><td class="k">Furosemide, thiazide, vomiting, diarrhea, NG suction</td><td><span class="fill"><b>Hypokalemia</b> (plus low magnesium and low chloride)</span></td></tr>
+<tr><td class="k">Kidney failure / dialysis patient</td><td><span class="fill"><b>Hyperkalemia, hypermagnesemia, hyperphosphatemia, hypocalcemia</b></span></td></tr>
+<tr><td class="k">Spironolactone, ACE inhibitor, ARB, salt substitute</td><td><span class="fill"><b>Hyperkalemia</b> &mdash; teach to avoid high-potassium foods</span></td></tr>
+<tr><td class="k">Thyroidectomy / parathyroid surgery</td><td><span class="fill"><b>Hypocalcemia</b> &mdash; tingling and tetany, keep an airway at the bedside</span></td></tr>
+<tr><td class="k">Cancer with bone metastasis, immobility</td><td><span class="fill"><b>Hypercalcemia</b> &mdash; weakness, constipation, stones</span></td></tr>
+<tr><td class="k">Alcohol use disorder, malnutrition</td><td><span class="fill"><b>Hypomagnesemia</b> &mdash; and the potassium will not correct until you fix it</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== WHAT KILLS FIRST ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="kills">
+<h2>🚨 What Kills First &mdash; The Priority Order</h2>
+<p><b>When two patients both have an abnormal electrolyte, this is how you choose.</b> <i>Assess the one whose organ can stop in the next few minutes.</i></p>
+
+<div class="flow">
+  <div class="stepbox"><b>1 &mdash; RHYTHM</b><span><b>Potassium or calcium abnormality WITH ECG changes.</b> Widened QRS, peaked T waves, torsades. <i>This patient arrests first &mdash; nothing outranks it.</i></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>2 &mdash; AIRWAY / BREATHING</b><span><b>Hypermagnesemia with absent reflexes and shallow respirations</b>, or <b>hypocalcemia with stridor/laryngospasm</b>. <i>The drive to breathe or the airway itself is going.</i></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>3 &mdash; BRAIN</b><span><b>Severe sodium change with neuro symptoms</b> &mdash; Na &lt;120 with confusion, or a seizing patient. <i>Cerebral edema &rarr; herniation.</i></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>4 &mdash; MUSCLE / GI</b><span>Weakness, cramps, constipation, nausea. <b>Real, but not lethal today.</b> These are your last patients.</span></div>
+</div>
+
+<p><span class="never">Never choose the mildly abnormal lab with a comfort symptom over a near-normal lab with a lethal rhythm change.</span> <mark>The ECG change outranks the number every single time.</mark></p>
+</div>
+
+<!-- ===================== QUESTIONS 1-5 ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="q1">
+<h2>Mixed Practice Questions &mdash; 1 to 5 📝</h2>
+
+<div class="nq">
+<div class="stem"><b>1.</b> A patient has a sodium level of 124 mEq/L. Which assessment finding is <b>MOST</b> concerning?</div>
+<ol>
+  <li>Dry skin</li>
+  <li>Confusion</li>
+  <li>Constipation</li>
+  <li>Bradycardia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; confusion.</b> Sodium 124 mEq/L is well below 135. <i>Water follows the low sodium into the brain cells, they swell, and intracranial pressure rises</i> &mdash; so confusion is the first sign that the brain is in trouble and the last warning before seizures and coma.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Dry skin points to fluid volume deficit or <i>high</i> sodium, not low, and dry skin never killed anyone.<br>
+<b>3.</b> Constipation belongs to hypercalcemia and hypokalemia, and it is a comfort problem, not an emergency.<br>
+<b>4.</b> Bradycardia is the cardiac slowing you see with hyperkalemia, hypercalcemia, and hypermagnesemia &mdash; low sodium acts on the brain, not the conduction system.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>2. True or False:</b> Hypernatremia is commonly caused by too much water.</div>
+<ol>
+  <li>True</li>
+  <li>False</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: FALSE.</b> Hypernatremia is usually caused by too <b>little</b> water, not too much salt. <i>The sodium looks high because the water it was dissolved in is gone.</i> Think fever, dehydration, diarrhea, diabetes insipidus, tube feedings without free-water flushes, and older adults who cannot get themselves a drink.</p>
+<p><b>Why "true" is wrong:</b> too much water does the opposite &mdash; it <b>dilutes</b> the sodium and causes <b>hypo</b>natremia (SIADH, water intoxication, too much D5W). <mark>High sodium = dry. Low sodium = waterlogged.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>3.</b> A nurse is assessing a patient with potassium 6.2 mEq/L. What is the <b>PRIORITY</b> assessment?</div>
+<ol>
+  <li>Skin turgor</li>
+  <li>Lung sounds</li>
+  <li>ECG rhythm</li>
+  <li>Bowel sounds</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; ECG rhythm.</b> Potassium controls how cardiac cells repolarize, <i>so a high level can flip the heart into ventricular fibrillation or asystole with almost no warning.</i> Put the patient on telemetry and get a 12-lead: peaked T waves &rarr; flattened P waves &rarr; widened QRS is the countdown.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Skin turgor assesses hydration &mdash; useful data, zero urgency.<br>
+<b>2.</b> Lung sounds screen for fluid overload; potassium does not cause crackles.<br>
+<b>4.</b> Hyperkalemia does cause hyperactive bowel sounds and diarrhea, and that is a real finding &mdash; but a noisy belly is not what kills this patient.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>4.</b> Which patient is <b>MOST</b> likely experiencing hypokalemia?</div>
+<ol>
+  <li>Patient with diarrhea and muscle weakness</li>
+  <li>Patient with peaked T waves</li>
+  <li>Patient with bradycardia and absent reflexes</li>
+  <li>Patient with hypertension and edema</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 1 &mdash; diarrhea and muscle weakness.</b> <b>GI losses are the most common cause of hypokalemia</b> &mdash; stool is potassium-rich. <i>Low potassium makes muscle cells harder to depolarize,</i> so the patient is weak and flabby with sluggish reflexes and a quiet abdomen. Cause plus symptom in one option is the giveaway.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>2.</b> Peaked T waves are the signature of <b>hyper</b>kalemia &mdash; the exact opposite. Hypokalemia flattens the T wave and adds a U wave.<br>
+<b>3.</b> Bradycardia with absent deep tendon reflexes is <b>hypermagnesemia</b> &mdash; the sedated picture.<br>
+<b>4.</b> Hypertension with edema describes fluid volume excess. It says nothing about potassium, and the swelling and high pressure point you toward sodium and water, not K&#8314;.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>5. True or False:</b> Peaked T waves are associated with hyperkalemia.</div>
+<ol>
+  <li>True</li>
+  <li>False</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b> Tall, narrow, <b>peaked (tented) T waves are the earliest ECG change in hyperkalemia</b>, <i>because excess potassium speeds up repolarization.</i> As the level climbs the P wave flattens and disappears, the QRS widens into a sine wave, and the rhythm degenerates into VF or asystole.</p>
+<p><b>Why "false" is wrong:</b> the only other T-wave pattern you need is the opposite one &mdash; <b>flat or inverted T waves with a U wave means hypo</b>kalemia. Peaked = high, flat = low.</p>
+</div></details>
+</div>
+</div>
+
+<!-- ===================== QUESTIONS 6-10 ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="q6">
+<h2>Mixed Practice Questions &mdash; 6 to 10 📝</h2>
+
+<div class="nq">
+<div class="stem"><b>6.</b> A patient with sodium 154 mEq/L is <b>MOST</b> likely to exhibit:</div>
+<ol>
+  <li>Seizures from cerebral edema</li>
+  <li>Dry mucous membranes and thirst</li>
+  <li>Tetany</li>
+  <li>Bounding pulses</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; dry mucous membranes and thirst.</b> Sodium 154 mEq/L pulls water <i>out</i> of the cells into the bloodstream, so the cells are dehydrated. <b>Thirst is the body's first defense</b>, and dry sticky mucous membranes are the most reliable bedside sign of a true water deficit.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Cerebral <b>edema</b> is a <b>hypo</b>natremia problem &mdash; cells swell when sodium is low. High sodium <i>shrinks</i> brain cells. (Hypernatremia can still seize, but the mechanism is shrinkage or over-rapid correction, not edema.)<br>
+<b>3.</b> Tetany is hypocalcemia (or hypomagnesemia).<br>
+<b>4.</b> Bounding pulses mean fluid volume <b>excess</b>; this patient is volume depleted, so expect weak, thready pulses and tachycardia.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>7.</b> Which electrolyte imbalance is <b>MOST</b> associated with seizures and tetany?</div>
+<ol>
+  <li>Hypercalcemia</li>
+  <li>Hypermagnesemia</li>
+  <li>Hypocalcemia</li>
+  <li>Hypernatremia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; hypocalcemia.</b> Calcium is what keeps nerve membranes calm. <i>When it drops, the threshold for firing drops with it,</i> so nerves fire spontaneously &rarr; perioral tingling, twitching, carpopedal spasm, tetany, laryngospasm, and seizures. Chvostek's and Trousseau's signs come from the same mechanism.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> <b>Hyper</b>calcemia does the reverse &mdash; it sedates. Expect lethargy, weakness, and <b>decreased</b> reflexes.<br>
+<b>2.</b> Hypermagnesemia is also a depressant: absent reflexes, shallow breathing, hypotension. (It is <b>hypo</b>magnesemia that seizes.)<br>
+<b>4.</b> Hypernatremia causes thirst, restlessness, and agitation; severe cases can seize, but tetany is not its picture.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>8. True or False:</b> Hypocalcemia increases neuromuscular excitability.</div>
+<ol>
+  <li>True</li>
+  <li>False</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b> <mark>Low calcium = twitchy.</mark> <i>Calcium stabilizes the nerve cell membrane, so less calcium means the nerve fires more easily.</i> That is why you get tingling, cramps, hyperactive deep tendon reflexes, tetany, positive Chvostek and Trousseau signs, and a prolonged QT interval.</p>
+<p><b>Why "false" is wrong:</b> decreased excitability &mdash; sedation, weakness, constipation, sluggish reflexes &mdash; is what <b>high</b> calcium (and high magnesium) look like.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>9.</b> A patient receiving furosemide is at highest risk for which electrolyte imbalance?</div>
+<ol>
+  <li>Hyperkalemia</li>
+  <li>Hypokalemia</li>
+  <li>Hypercalcemia</li>
+  <li>Hypermagnesemia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; hypokalemia.</b> Furosemide is a <b>loop diuretic</b>: it blocks reabsorption in the loop of Henle, <i>so sodium, potassium, chloride, calcium, and magnesium all leave in the urine together.</i> Potassium loss is the one that shows up on the monitor, so check K&#8314; before you give it and teach potassium-rich foods or give the ordered supplement.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Hyperkalemia comes from potassium-<b>sparing</b> diuretics (spironolactone), ACE inhibitors/ARBs, and kidney failure &mdash; not loops.<br>
+<b>3.</b> Loops <b>waste</b> calcium; it is <b>thiazides</b> that hold on to calcium and can raise it.<br>
+<b>4.</b> Loops waste magnesium too, so the risk is <b>hypo</b>magnesemia &mdash; and that low magnesium is often why the potassium will not come back up.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>10.</b> Which patient should the nurse assess <b>FIRST</b>?</div>
+<ol>
+  <li>Patient with sodium 130 and mild headache</li>
+  <li>Patient with potassium 6.4 and widened QRS</li>
+  <li>Patient with calcium 8.0 and constipation</li>
+  <li>Patient with magnesium 1.7 and nausea</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; potassium 6.4 with a widened QRS.</b> <b>Hyperkalemia plus an ECG change is a pre-arrest rhythm.</b> <i>A widening QRS means the conduction system is already failing and the next step is a sine wave, then VF.</i> This patient needs IV calcium gluconate to stabilize the myocardium immediately.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Sodium 130 is mildly low with a mild symptom &mdash; watch the neuro status, but nothing is imminent.<br>
+<b>3.</b> Calcium 8.0 is only slightly low and constipation is a comfort issue; there is no tetany or airway symptom in the stem.<br>
+<b>4.</b> Magnesium 1.7 mEq/L is <b>normal</b>. Nausea has many causes and none of them beat a widening QRS.</p>
+</div></details>
+</div>
+</div>
+
+<!-- ===================== QUESTIONS 11-15 ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="q11">
+<h2>Mixed Practice Questions &mdash; 11 to 15 📝</h2>
+
+<div class="nq">
+<div class="stem"><b>11. True or False:</b> Hyperkalemia can cause life-threatening dysrhythmias.</div>
+<ol>
+  <li>True</li>
+  <li>False</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b> <span class="never">Hyperkalemia is the electrolyte most likely to kill your patient today.</span> <i>Excess extracellular potassium keeps cardiac cells partially depolarized so they cannot reset,</i> which produces peaked T waves, a widening QRS, then ventricular fibrillation or asystole. Continuous cardiac monitoring is non-negotiable.</p>
+<p><b>Why "false" is wrong:</b> nothing about hyperkalemia is benign at high levels &mdash; and the danger does not track neatly with the number. <mark>A patient at 6.0 with a wide QRS is sicker than a patient at 6.8 with a normal ECG.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>12.</b> A patient reports numbness and tingling around the mouth. Which electrolyte imbalance should the nurse suspect <b>FIRST</b>?</div>
+<ol>
+  <li>Hypernatremia</li>
+  <li>Hypocalcemia</li>
+  <li>Hypermagnesemia</li>
+  <li>Hyperkalemia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; hypocalcemia.</b> <b>Perioral numbness and tingling is the classic first symptom of low calcium</b>, along with paresthesia of the fingers and toes. <i>Irritable nerve membranes fire on their own.</i> Follow it up by checking Chvostek's and Trousseau's signs and keeping the airway equipment nearby &mdash; laryngospasm is the feared next step.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Hypernatremia gives thirst, dry sticky mucous membranes, and restlessness &mdash; not focal tingling.<br>
+<b>3.</b> Hypermagnesemia depresses &mdash; drowsiness and disappearing reflexes, the opposite of tingling.<br>
+<b>4.</b> Hyperkalemia can cause paresthesia, but its hallmark is the ECG change and muscle weakness, and it does not favor the perioral area.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>13.</b> A patient with chronic kidney disease is <b>MOST</b> at risk for which imbalance?</div>
+<ol>
+  <li>Hypokalemia</li>
+  <li>Hyperkalemia</li>
+  <li>Hyponatremia</li>
+  <li>Hypocalcemia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; hyperkalemia.</b> <b>The kidney is the only meaningful route for getting potassium out of the body.</b> <i>When the GFR falls, potassium accumulates,</i> which is why CKD patients get potassium-restricted diets, avoid salt substitutes, and are watched closely on ACE inhibitors and spironolactone.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Hypokalemia is a losing problem &mdash; diuretics, vomiting, diarrhea &mdash; not a retaining one.<br>
+<b>3.</b> Dilutional hyponatremia genuinely does occur in CKD from water retention, but it is not the imbalance most likely to kill and is not the classic association.<br>
+<b>4.</b> Hypocalcemia is also real in CKD (the kidney cannot activate vitamin D and phosphorus rises), but it develops over months. <mark>Potassium is the answer because it is both the most characteristic and the most lethal.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>14. True or False:</b> Hypomagnesemia and hypocalcemia can look similar clinically.</div>
+<ol>
+  <li>True</li>
+  <li>False</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b> They are clinical twins &mdash; both cause <b>hyperactive reflexes, tremors, twitching, positive Chvostek and Trousseau signs, tetany, and seizures</b>. <i>Low magnesium also suppresses parathyroid hormone, which drops the calcium as well</i>, so the two frequently occur together.</p>
+<p><b>The exam point:</b> <mark>if the calcium will not come up despite replacement, check the magnesium.</mark> Correcting magnesium is what lets calcium &mdash; and potassium &mdash; be corrected at all.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>15.</b> A patient has muscle weakness, an irregular pulse, and flattened T waves. Which imbalance is <b>MOST</b> likely?</div>
+<ol>
+  <li>Hyperkalemia</li>
+  <li>Hypokalemia</li>
+  <li>Hypercalcemia</li>
+  <li>Hypernatremia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; hypokalemia.</b> All three findings line up: <b>flattened T waves (often with a U wave), an irregular pulse from PVCs, and generalized weakness.</b> <i>Low potassium makes both cardiac and skeletal muscle sluggish to depolarize.</i> Also expect decreased reflexes, leg cramps, and a quiet abdomen from paralytic ileus.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Hyperkalemia gives <b>peaked</b> T waves, not flat ones.<br>
+<b>3.</b> Hypercalcemia causes weakness too, but the ECG shows a <b>shortened QT</b> and the story usually includes constipation, stones, and bone pain.<br>
+<b>4.</b> Hypernatremia is a neuro and hydration picture &mdash; thirst and dry membranes &mdash; with no signature T-wave change.</p>
+</div></details>
+</div>
+</div>
+
+<!-- ===================== QUESTIONS 16-20 ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="q16">
+<h2>Mixed Practice Questions &mdash; 16 to 20 📝</h2>
+
+<div class="nq">
+<div class="stem"><b>16.</b> A patient with severe vomiting is <b>MOST</b> at risk for:</div>
+<ol>
+  <li>Hyperkalemia</li>
+  <li>Hypokalemia</li>
+  <li>Hypermagnesemia</li>
+  <li>Hypernatremia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; hypokalemia.</b> Vomiting loses potassium two ways: <b>directly in the gastric fluid, and indirectly through the metabolic alkalosis it creates</b>. <i>Losing acid raises the pH, and potassium shifts into the cells in exchange for hydrogen ions</i> &mdash; so the serum level falls even further. The same is true of continuous NG suction.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Hyperkalemia goes with acid<b>osis</b> and kidney failure, not with losing acid out the top.<br>
+<b>3.</b> Hypermagnesemia requires retaining magnesium (renal failure, Mg antacids); vomiting <i>loses</i> magnesium.<br>
+<b>4.</b> Sodium is lost in vomit as well, so hypernatremia is not the expected direction &mdash; and volume loss, not sodium excess, is what you see.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>17. True or False:</b> Hypercalcemia commonly causes hyperactive reflexes and tetany.</div>
+<ol>
+  <li>True</li>
+  <li>False</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: FALSE.</b> High calcium <b>depresses</b> neuromuscular activity &mdash; lethargy, confusion, profound muscle weakness, <b>diminished deep tendon reflexes</b>, constipation, and a shortened QT. <i>Extra calcium raises the threshold nerves must reach in order to fire.</i></p>
+<p><b>Why "true" is wrong:</b> hyperactive reflexes and tetany are the <b>hypo</b>calcemia picture. Remember it as <mark>calcium low = twitchy &middot; calcium high = sleepy</mark>, and add "stones, bones, groans, and psychiatric overtones" for the high side.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>18.</b> A nurse notes a patient has diminished reflexes, shallow respirations, and muscle weakness. Which imbalance is <b>MOST</b> likely?</div>
+<ol>
+  <li>Hypermagnesemia</li>
+  <li>Hypocalcemia</li>
+  <li>Hypernatremia</li>
+  <li>Hypokalemia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 1 &mdash; hypermagnesemia.</b> Magnesium is the body's natural sedative. <i>Too much of it blocks acetylcholine release at the neuromuscular junction,</i> so you get flushing, hypotension, drowsiness, <b>reflexes that fade and then disappear, and respiratory depression</b>. Assess deep tendon reflexes and respiratory rate before every dose of IV magnesium &mdash; <b>losing the patellar reflex is your warning to stop</b>. Antidote: IV calcium gluconate.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>2.</b> Hypocalcemia gives the opposite: brisk reflexes, twitching, tetany.<br>
+<b>3.</b> Hypernatremia presents with thirst, dry membranes, and restlessness.<br>
+<b>4.</b> Hypokalemia does cause weakness and can weaken the respiratory muscles, but reflexes are decreased rather than <i>absent</i>, and the giveaway ECG finding (flat T, U wave) is missing here while the whole picture screams sedation.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>19.</b> Which intervention is <b>MOST</b> important for a patient with severe hyperkalemia?</div>
+<ol>
+  <li>Encourage bananas</li>
+  <li>Place on telemetry monitoring</li>
+  <li>Restrict fluids</li>
+  <li>Encourage ambulation</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; place on telemetry.</b> <b>Continuous cardiac monitoring is the priority</b> <i>because the fatal complication is a dysrhythmia that can appear before any other symptom does.</i> The monitor is what tells you when to move from "watch and treat" to "push calcium gluconate now."</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Bananas are high in potassium &mdash; this would make the emergency worse. <span class="never">Never add potassium to a hyperkalemic patient.</span><br>
+<b>3.</b> Fluid restriction does nothing for potassium; if anything, patients who still make urine may get fluids plus a loop diuretic to help excrete it.<br>
+<b>4.</b> Ambulation is unrelated, and a weak patient with an unstable rhythm should not be walking the hall.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>20. True or False:</b> Low sodium causes brain cells to swell.</div>
+<ol>
+  <li>True</li>
+  <li>False</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b> When serum sodium falls, the blood becomes <b>hypotonic relative to the cell</b>, <i>so water moves down its gradient into the cell.</i> Brain cells swell inside a rigid skull &rarr; rising ICP &rarr; headache, confusion, lethargy, seizures, coma.</p>
+<p><b>Why "false" is wrong:</b> the shrinking side belongs to <b>hyper</b>natremia, where the blood is hypertonic and pulls water out of brain cells. <mark>Low sodium = swollen brain. High sodium = dry brain.</mark></p>
+</div></details>
+</div>
+</div>
+
+<!-- ===================== QUESTIONS 21-25 ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="q21">
+<h2>Mixed Practice Questions &mdash; 21 to 25 📝</h2>
+
+<div class="nq">
+<div class="stem"><b>21.</b> A patient with hyponatremia is becoming increasingly confused. Which IV fluid would the nurse anticipate?</div>
+<ol>
+  <li>0.45% NS</li>
+  <li>D5W</li>
+  <li>3% saline</li>
+  <li>Sterile water</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; 3% saline.</b> This is <b>symptomatic</b> hyponatremia: the confusion means the brain is already swelling. <i>Hypertonic saline raises serum osmolality so water is pulled back out of the brain cells.</i> Give it <b>on an infusion pump</b>, recheck sodium frequently, and <span class="never">never correct sodium faster than about 8&ndash;12 mEq/L in 24 hours</span> &mdash; too-fast correction causes osmotic demyelination.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> 0.45% NS is <b>hypotonic</b> &mdash; it drives more water into the cells and worsens the cerebral edema.<br>
+<b>2.</b> D5W is isotonic in the bag but acts hypotonic once the dextrose is metabolized, leaving free water behind. Same problem.<br>
+<b>4.</b> <span class="never">Sterile water is never given IV</span> &mdash; it causes massive hemolysis of red blood cells.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>22.</b> A patient has a positive Chvostek's sign. Which electrolyte imbalance is <b>MOST</b> likely?</div>
+<ol>
+  <li>Hyperkalemia</li>
+  <li>Hypocalcemia</li>
+  <li>Hypernatremia</li>
+  <li>Hypermagnesemia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; hypocalcemia.</b> <b>Chvostek's sign</b> = tap over the facial nerve just in front of the ear and the facial muscles twitch. <b>Trousseau's sign</b> = inflate a BP cuff above systolic for a few minutes and the hand goes into carpal spasm. <i>Both prove the nerve is hyper-irritable from low calcium.</i> (Low magnesium produces the same two signs &mdash; check both labs.)</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Hyperkalemia shows itself on the ECG and as weakness, not facial twitching.<br>
+<b>3.</b> Hypernatremia produces thirst, dry membranes, and restlessness.<br>
+<b>4.</b> Hyper<b>magnesemia</b> makes reflexes vanish &mdash; a positive Chvostek would be the opposite of what you expect.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>23. True or False:</b> Hypermagnesemia is commonly seen in patients with renal failure.</div>
+<ol>
+  <li>True</li>
+  <li>False</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b> <b>Magnesium is excreted by the kidney</b>, so failing kidneys let it build up. <i>The classic exam scenario is a renal patient given a magnesium-containing antacid or laxative</i> &mdash; teach patients with CKD to check labels for magnesium (milk of magnesia, Maalox, Mag-Ox) before taking any OTC product.</p>
+<p><b>Why "false" is wrong:</b> the same logic that makes renal patients hyperkalemic makes them hypermagnesemic &mdash; anything the kidney normally throws away accumulates. Watch reflexes and respirations.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>24.</b> Which food selection by a patient taking spironolactone indicates a need for further teaching?</div>
+<ol>
+  <li>Chicken</li>
+  <li>Rice</li>
+  <li>Banana</li>
+  <li>Bread</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; banana.</b> Spironolactone is a <b>potassium-sparing</b> diuretic, <i>so it blocks aldosterone and the body holds onto potassium.</i> Adding high-potassium foods on top of that risks hyperkalemia. Teach the patient to limit <b>bananas, oranges and orange juice, potatoes, tomatoes, avocado, spinach, cantaloupe, dried fruit &mdash; and especially salt substitutes,</b> which are potassium chloride.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Chicken contains some potassium but is a standard protein choice and is not a teaching red flag.<br>
+<b>2.</b> Rice is low in potassium &mdash; it is actually on the "safe" list.<br>
+<b>4.</b> Bread is low in potassium as well. <mark>The question wants the one food that pushes potassium higher when the drug already is.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>25.</b> A patient has sodium 120 mEq/L, headache, lethargy, and muscle cramps. What is the <b>PRIORITY</b> concern?</div>
+<ol>
+  <li>Constipation</li>
+  <li>Cerebral edema</li>
+  <li>Dehydration</li>
+  <li>Hyperactivity</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; cerebral edema.</b> Sodium 120 mEq/L is <b>severe</b> hyponatremia, and the headache plus lethargy tell you the brain is already involved. <i>Water has shifted into brain cells and ICP is rising.</i> Priority nursing actions: <b>frequent neuro checks, seizure precautions, protect the airway,</b> restrict free water, and anticipate hypertonic saline on a pump.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Constipation is not a hyponatremia finding, and it is never the priority over a neuro change.<br>
+<b>3.</b> Dehydration may or may not be present &mdash; most hyponatremia is a water <b>excess</b> problem &mdash; and it does not explain the headache and lethargy.<br>
+<b>4.</b> Hyperactivity is the opposite of what you see; low sodium <b>depresses</b> the level of consciousness.</p>
+</div></details>
+</div>
+
+<p class="fine">🤖 Ask Claire: "Give me ten more electrolyte questions where two options are both abnormal labs, and make me justify which patient I would see first before you tell me the answer."</p>
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>⭐ Remember &mdash; The Must-Not-Forget Strip</h2>
+<p class="lead-in"><i>If you review nothing else the morning of the exam, review these eight.</i></p>
+
+<ul class="blanks">
+  <li><b>1.</b> <span class="fill"><b>The ranges:</b> Na 135&ndash;145 mEq/L &middot; K 3.5&ndash;5.0 mEq/L &middot; Ca 9.0&ndash;10.5 mg/dL &middot; Mg 1.3&ndash;2.1 mEq/L &middot; Phos 3.0&ndash;4.5 mg/dL. <b>Label the value high or low before you read the options.</b></span></li>
+  <li><b>2.</b> <span class="fill"><b>Sodium is a WATER problem, not a salt problem.</b> Low sodium = too much water = swollen brain cells = confusion and seizures. High sodium = too little water = shriveled cells = thirst and dry sticky membranes.</span></li>
+  <li><b>3.</b> <span class="fill"><b>POTASSIUM KILLS FIRST.</b> Peaked T waves &rarr; flat P &rarr; wide QRS &rarr; sine wave &rarr; VF. In any hyperkalemia question the answer involves the <b>ECG/telemetry</b>, then calcium gluconate to protect, insulin+D50 or albuterol to shift, binder or dialysis to remove.</span></li>
+  <li><b>4.</b> <span class="fill"><span class="never">Never give potassium IV push or as a bolus.</span> Always diluted, always on a pump, and check urine output first &mdash; no urine means no way to get rid of extra potassium.</span></li>
+  <li><b>5.</b> <span class="fill"><b>Calcium low = twitchy</b> (perioral tingling, Chvostek, Trousseau, tetany, laryngospasm, long QT). <b>Calcium high = sedated</b> (weak, constipated, confused, short QT, stones and bone pain).</span></li>
+  <li><b>6.</b> <span class="fill"><b>Magnesium is the mirror of calcium in symptoms, and the mirror of potassium in cause.</b> Low Mg looks like low Ca (twitchy, seizures). High Mg sedates &mdash; <b>check reflexes and respiratory rate</b>, reflexes disappear first. Renal failure raises it; the antidote is IV calcium gluconate.</span></li>
+  <li><b>7.</b> <span class="fill"><b>Know the drug&ndash;electrolyte pairs:</b> furosemide/thiazides &rarr; <b>low</b> K, Mg (thiazides raise Ca) &middot; spironolactone, ACE inhibitors, ARBs, salt substitutes &rarr; <b>high</b> K &middot; Mg-containing antacids in renal failure &rarr; <b>high</b> Mg.</span></li>
+  <li><b>8.</b> <span class="fill"><b>Priority order when two patients are both abnormal:</b> lethal rhythm &rarr; airway/breathing &rarr; brain (LOC, seizures) &rarr; muscle and GI comfort. <mark>An ECG change always outranks a lab number.</mark></span></li>
+</ul>
+</div>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+</body></html>

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · Module 8 — Cardiac Guided Notes (filled in)</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 · Exam 3 · Module 8 · Cardiovascular</div>
+  <h1>Module 8 &mdash; <span class="glow">Cardiac Guided Notes</span></h1>
+  <p>Every blank from the Module 8 handout, filled in. Tap "Hide answers" to quiz yourself.</p>
+<div class="bigq"><b class="q">Which side of the heart failed, and where is the fluid backing up?</b>Left-sided backs up into the lungs. Right-sided backs up into the body.</div>
+ </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc">
+  <a href="#valves">1 &middot; Valve Disorders</a>
+  <a href="#pulmhtn">2 &middot; Pulmonary HTN</a>
+  <a href="#hf">3 &middot; Heart Failure</a>
+  <a href="#hfcompare">3b &middot; Left vs Right HF</a>
+  <a href="#edema">4 &middot; Pulmonary Edema</a>
+  <a href="#cardiomyo">5 &middot; Cardiomyopathy</a>
+  <a href="#quicktable">Quick Review Table</a>
+  <a href="#minicase">Mini Case</a>
+  <a href="#myocarditis">6 &middot; Myocarditis</a>
+  <a href="#pericarditis">7 &middot; Pericarditis</a>
+  <a href="#tamponade">7b &middot; Cardiac Tamponade 🚨</a>
+  <a href="#endocarditis">8 &middot; Endocarditis</a>
+  <a href="#inflamcmp">Myo vs Peri vs Endo</a>
+  <a href="#pad">9 &middot; PAD</a>
+  <a href="#pvd">10 &middot; PVD</a>
+  <a href="#dvt">11 &middot; DVT</a>
+  <a href="#raynaud">12 &middot; Raynaud</a>
+  <a href="#aneurysm">13 &middot; Aortic Aneurysm</a>
+  <a href="#quickcmp">14 &middot; Quick Comparison</a>
+  <a href="#rhythms">Bonus &middot; Dysrhythmias 🚨</a>
+  <a href="#dosage">15 &middot; Dosage Calc</a>
+  <a href="#reflection">Final Reflection</a>
+  <a href="#summary">⭐ Must-Not-Forget Strip</a>
+</div>
+
+<p class="lead-in"><i>Directions from the handout: complete these while reviewing ATI and lecture. Keep answers short. If something doesn't click, ask Claire for another practice scenario.</i></p>
+
+<!-- ===================== 1. VALVE DISORDERS ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="valves">
+<h2>1 &middot; Cardiac Valve Disorders 🫀</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Heart valves help blood flow in <span class="fill">one (forward) direction only &mdash; they are one-way doors</span>.</li>
+  <li><span class="fill">Stenosis</span> (too narrow) &mdash; <i>the valve won't open all the way, so blood can't get forward.</i></li>
+  <li><span class="fill">Regurgitation</span> (too leaky, also called insufficiency) &mdash; <i>the valve won't close all the way, so blood flows backward.</i></li>
+  <li>This can make the heart work <span class="fill">harder &mdash; the chamber behind the bad valve hypertrophies and then dilates, and cardiac output eventually drops</span>.</li>
+</ul>
+
+<h3>Common Symptoms</h3>
+<ul>
+  <li>Fatigue &mdash; <i>low cardiac output</i></li>
+  <li>Shortness of breath &mdash; <i>blood backing up toward the lungs</i></li>
+  <li>Murmur &mdash; <i>turbulent flow across the damaged valve</i></li>
+</ul>
+
+<h4>The two that show up most on exams</h4>
+<table class="cmp">
+<thead><tr><th>Valve problem</th><th>What you hear / see</th><th>What it leads to</th></tr></thead>
+<tbody>
+<tr><td class="k">Mitral stenosis</td><td><span class="fill">Rumbling <b>diastolic</b> murmur, loud S1, dyspnea, hemoptysis</span></td><td><span class="fill">Left atrium enlarges &rarr; atrial fibrillation &rarr; clot &rarr; stroke; pulmonary congestion</span></td></tr>
+<tr><td class="k">Aortic stenosis</td><td><span class="fill">Harsh <b>systolic</b> murmur; classic triad = angina, syncope, exertional dyspnea</span></td><td><span class="fill">Left ventricular hypertrophy &rarr; left-sided heart failure &rarr; sudden death with exertion</span></td></tr>
+<tr><td class="k">Mitral regurgitation</td><td><span class="fill">Blowing <b>systolic</b> murmur at the apex</span></td><td><span class="fill">Blood pushed backward into the left atrium and lungs &rarr; pulmonary congestion, afib</span></td></tr>
+<tr><td class="k">Aortic regurgitation</td><td><span class="fill">Blowing <b>diastolic</b> murmur, widened pulse pressure, bounding pulses</span></td><td><span class="fill">Left ventricle volume-overloads and dilates &rarr; left-sided heart failure</span></td></tr>
+</tbody>
+</table>
+<p class="fine">Memory: <b>S</b>ystolic murmurs = <b>A</b>ortic <b>S</b>tenosis + <b>M</b>itral <b>R</b>egurg (SAS-MR). Diastolic = the other two.</p>
+
+<h3>Think Like a Nurse</h3>
+<p><b>A client says, "I get tired just walking to the mailbox." What body system is not getting enough blood flow?</b></p>
+<p><span class="fill">The <b>systemic circulation</b> &mdash; the whole body, and especially the skeletal muscles. The damaged valve drops stroke volume, so cardiac output can't rise to meet the oxygen demand of walking, and she fatigues. Fatigue with ordinary activity is an early sign of falling cardiac output, not "just deconditioning."</span></p>
+
+<h3>Nursing care you must know</h3>
+<ul class="blanks">
+  <li><b>Mechanical valve replacement:</b> <span class="fill">lifelong warfarin, INR goal usually 2.5&ndash;3.5; teach bleeding precautions and consistent vitamin K intake</span></li>
+  <li><b>Tissue (biologic) valve:</b> <span class="fill">no lifelong anticoagulation, but it wears out in ~10&ndash;15 years &mdash; often chosen for older adults</span></li>
+  <li><b>Before dental work:</b> <span class="fill">prophylactic antibiotics for prosthetic valves or prior endocarditis &mdash; <i>because oral bacteria seed damaged valves</i></span></li>
+  <li><b>Activity teaching:</b> <span class="fill">pace activities, rest between them, and report new dyspnea, fainting, or a heart rate that stays fast at rest</span></li>
+</ul>
+
+<p><b>Easy Memory Trick (from the handout):</b> Bad valve = bad flow = <mark>heart works harder</mark>.</p>
+<p class="fine">🤖 <b>Ask Claire:</b> "Explain stenosis versus regurgitation in simple terms and give me two NCLEX questions."</p>
+</div>
+
+<!-- ===================== 2. PULMONARY HYPERTENSION ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="pulmhtn">
+<h2>2 &middot; Pulmonary Hypertension 🌬️</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Pulmonary hypertension is high blood pressure in the <span class="fill">pulmonary (lung) circulation &mdash; the pulmonary arteries. Mean pulmonary artery pressure &gt;20 mmHg at rest (older texts say &ge;25 mmHg)</span>.</li>
+  <li>The <span class="fill">RIGHT</span> ventricle has to work harder to pump blood.</li>
+  <li>Over time, this may lead to <span class="fill">RIGHT-sided heart failure &mdash; when it is caused by lung disease it is called <b>cor pulmonale</b></span>.</li>
+</ul>
+
+<h3>Common Symptoms</h3>
+<ul>
+  <li>Shortness of breath (first with exertion, later at rest)</li>
+  <li>Fatigue</li>
+  <li>Chest pain, plus <span class="fill">exertional dizziness or syncope, and later JVD, peripheral edema, and ascites once the right ventricle fails</span></li>
+</ul>
+
+<h3>Think Like a Nurse</h3>
+<p><b>Why does climbing stairs become difficult for these patients?</b></p>
+<p><span class="fill">Climbing stairs raises oxygen demand, so the heart must push more blood through the lungs. The pulmonary vessels are stiff and narrowed, so the right ventricle cannot increase output against that resistance. Less blood reaches the left heart &rarr; cardiac output stays flat &rarr; dyspnea, fatigue, and sometimes syncope with exertion.</span></p>
+
+<h4>💊 Drug notes</h4>
+<ul class="blanks">
+  <li><b>Sildenafil / tadalafil:</b> <span class="fill">vasodilate the pulmonary arteries; <span class="never">never give with nitrates &mdash; profound hypotension</span></span></li>
+  <li><b>Bosentan (endothelin receptor antagonist):</b> <span class="fill">monitor liver enzymes monthly; teratogenic &mdash; pregnancy test required</span></li>
+  <li><b>Epoprostenol / treprostinil (IV prostacyclin):</b> <span class="fill">continuous infusion through a central line. <span class="never">Never let the infusion stop or run dry &mdash; abrupt withdrawal causes rebound pulmonary hypertensive crisis and can be fatal.</span> Teach backup pump and cassette.</span></li>
+</ul>
+
+<p><b>Remember:</b> Pulmonary hypertension stresses the <mark>RIGHT side of the heart</mark>.</p>
+</div>
+
+<!-- ===================== 3. HEART FAILURE ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="hf">
+<h2>3 &middot; Heart Failure ⭐</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Heart failure means the heart cannot pump enough blood to meet the body's <span class="fill">metabolic demands &mdash; its needs for oxygen and nutrients</span>.</li>
+</ul>
+
+<h3>Left-Sided Heart Failure &mdash; think LEFT = LUNGS</h3>
+<p><b>Common findings:</b></p>
+<ul class="blanks">
+  <li><span class="fill">Crackles (rales) in the lung bases &mdash; <i>fluid backing up into the alveoli</i></span></li>
+  <li><span class="fill">Dyspnea on exertion, then at rest</span></li>
+  <li><span class="fill"><b>Orthopnea</b> &mdash; can't lie flat, sleeps on 2&ndash;3 pillows</span></li>
+  <li><span class="fill"><b>Paroxysmal nocturnal dyspnea (PND)</b> &mdash; wakes up at night gasping</span></li>
+  <li><span class="fill">Persistent dry or frothy cough; pink frothy sputum if it progresses to pulmonary edema</span></li>
+  <li><span class="fill">S3 gallop, tachycardia, falling SpO&#8322;</span></li>
+  <li><span class="fill">Fatigue, weakness, confusion or restlessness &mdash; <i>the brain is the first organ to complain about low output</i></span></li>
+  <li><span class="fill">Nocturia, pale cool skin, weak pulses, oliguria during the day</span></li>
+</ul>
+
+<h3>Right-Sided Heart Failure &mdash; think RIGHT = REST OF BODY</h3>
+<p><b>Common findings:</b></p>
+<ul class="blanks">
+  <li><span class="fill"><b>Jugular venous distention (JVD)</b> &mdash; <i>the classic right-sided sign</i></span></li>
+  <li><span class="fill">Dependent, pitting peripheral edema (ankles/feet, or sacrum if bedbound)</span></li>
+  <li><span class="fill">Rapid <b>weight gain</b> &mdash; the earliest and most reliable sign of fluid retention</span></li>
+  <li><span class="fill">Hepatomegaly, splenomegaly, right upper quadrant tenderness</span></li>
+  <li><span class="fill">Ascites and increased abdominal girth</span></li>
+  <li><span class="fill">Anorexia, nausea, early satiety &mdash; <i>venous congestion of the GI tract</i></span></li>
+  <li><span class="fill">Fatigue and dependent edema that improves overnight when the legs are level with the heart</span></li>
+</ul>
+
+<h3>🧪 Labs &amp; numbers</h3>
+<ul class="blanks">
+  <li><b>BNP (B-type natriuretic peptide):</b> <span class="fill">&lt;100 pg/mL = heart failure unlikely; &gt;100 pg/mL suggests HF; &gt;400&ndash;500 pg/mL strongly supports it and generally tracks with severity. <i>The stretched ventricle secretes it.</i> Use BNP to tell cardiac dyspnea from pulmonary dyspnea.</span></li>
+  <li><b>Watch out:</b> <span class="fill">Sacubitril/valsartan (Entresto) falsely <b>raises</b> BNP &mdash; order <b>NT-proBNP</b> instead. BNP also rises with age and renal failure, and is falsely low in obesity.</span></li>
+  <li><b>Ejection fraction:</b> <span class="fill">normal 55&ndash;70%. HFrEF (systolic) &le;40%; 41&ndash;49% is borderline; HFpEF (diastolic) has a normal EF but a stiff ventricle that won't fill.</span></li>
+  <li><b>Daily weight teaching:</b> <span class="fill">same time each morning, same scale, after voiding, before breakfast, same amount of clothing. Report a gain of <b>2&ndash;3 lb in 24 hours or 5 lb in a week</b>.</span></li>
+  <li><b>Diet:</b> <span class="fill">sodium restriction (commonly 2&ndash;3 g/day), fluid restriction if ordered, read labels for hidden sodium (canned soup, deli meat, frozen meals)</span></li>
+</ul>
+
+<h4>💊 Heart failure drugs &mdash; the one thing to remember about each</h4>
+<table class="cmp">
+<thead><tr><th>Drug class</th><th>Nursing point</th></tr></thead>
+<tbody>
+<tr><td class="k">ACE inhibitors (&ndash;pril)</td><td><span class="fill">Watch for dry cough, angioedema, hyperkalemia, first-dose hypotension</span></td></tr>
+<tr><td class="k">ARBs (&ndash;sartan) / ARNI</td><td><span class="fill">Used when the ACE cough is intolerable; still causes hyperkalemia. Entresto requires a 36-hour washout from an ACE inhibitor.</span></td></tr>
+<tr><td class="k">Beta blockers (carvedilol, metoprolol succinate)</td><td><span class="fill">Start low, go slow; hold and reassess if apical pulse &lt;50&ndash;60 or systolic BP is low. Never stop abruptly &mdash; rebound tachycardia and ischemia.</span></td></tr>
+<tr><td class="k">Loop diuretics (furosemide)</td><td><span class="fill">Best sign it worked = weight loss and increased urine output. Monitor for <b>hypokalemia</b>, hyponatremia, orthostatic hypotension, ototoxicity with rapid IV push.</span></td></tr>
+<tr><td class="k">Spironolactone</td><td><span class="fill">Potassium-<b>sparing</b> &rarr; risk of <b>hyper</b>kalemia; teach to avoid salt substitutes (they are potassium chloride)</span></td></tr>
+<tr><td class="k">Digoxin</td><td><span class="fill">Take apical pulse for a full minute; hold if &lt;60 and notify. Therapeutic level 0.5&ndash;2 ng/mL. Toxicity = anorexia, nausea, vomiting, visual halos / yellow-green vision, bradycardia. <b>Hypokalemia potentiates toxicity</b> &mdash; so a patient on furosemide + digoxin is the high-risk one.</span></td></tr>
+</tbody>
+</table>
+
+<h3>Think Like a Nurse</h3>
+<p><b>A patient has crackles and cannot lie flat. Which side of the heart is likely failing?</b></p>
+<p><span class="fill">The <b>LEFT</b> side. Crackles and orthopnea mean fluid is backing up into the lungs, which is what happens when the left ventricle can't move blood forward. Priority action: raise the head of the bed, apply oxygen, and recheck SpO&#8322; &mdash; <i>because oxygenation comes before anything else.</i></span></p>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Create three heart failure cases where I decide if it is left-sided or right-sided."</p>
+</div>
+
+<!-- ===================== 3b. LEFT vs RIGHT ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="hfcompare">
+<h2>3b &middot; Left vs Right Heart Failure &mdash; the table to memorize ⭐</h2>
+<p class="lead-in"><i>If you remember nothing else: <b>LEFT = LUNGS. RIGHT = REST OF THE BODY.</b></i></p>
+
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>LEFT-sided HF</th><th>RIGHT-sided HF</th></tr></thead>
+<tbody>
+<tr><td class="k">Where does blood back up?</td><td><span class="fill">Backward into the <b>pulmonary</b> veins and lungs</span></td><td><span class="fill">Backward into the <b>systemic venous</b> system &mdash; neck, liver, abdomen, legs</span></td></tr>
+<tr><td class="k">Most common cause</td><td><span class="fill">Hypertension, MI/CAD, aortic or mitral valve disease</span></td><td><span class="fill"><b>Left-sided failure</b> is the #1 cause; then cor pulmonale from COPD or pulmonary hypertension</span></td></tr>
+<tr><td class="k">Hallmark assessment finding</td><td><span class="fill"><b>Crackles</b> + orthopnea</span></td><td><span class="fill"><b>JVD</b> + dependent pitting edema</span></td></tr>
+<tr><td class="k">Respiratory findings</td><td><span class="fill">Dyspnea, PND, cough, frothy sputum, &darr; SpO&#8322;</span></td><td><span class="fill">Usually clear lungs unless the left side is failing too</span></td></tr>
+<tr><td class="k">GI / abdominal</td><td><span class="fill">Generally none</span></td><td><span class="fill">Hepatomegaly, ascites, RUQ pain, anorexia and nausea</span></td></tr>
+<tr><td class="k">Heart sound</td><td><span class="fill">S3 gallop (volume overload)</span></td><td><span class="fill">Right-sided S3/S4, and a murmur if tricuspid regurgitation develops</span></td></tr>
+<tr><td class="k">Weight gain / edema</td><td><span class="fill">Weight gain from pulmonary congestion; less visible peripheral edema early</span></td><td><span class="fill">Obvious weight gain, ankle/sacral edema, growing abdominal girth</span></td></tr>
+<tr><td class="k">What kills first</td><td><span class="fill"><b>Flash pulmonary edema &rarr; hypoxemic respiratory failure</b></span></td><td><span class="fill">Progressive low output, liver congestion, and worsening hypoxemia from the underlying lung disease</span></td></tr>
+<tr><td class="k">Priority nursing action</td><td><span class="fill">High Fowler's, oxygen, loop diuretic, monitor SpO&#8322; &mdash; <i>fix oxygenation first</i></span></td><td><span class="fill">Daily weights, strict I&amp;O, sodium/fluid restriction, assess edema and abdominal girth</span></td></tr>
+</tbody>
+</table>
+
+<div class="nq">
+<div class="stem">A client with heart failure has gained 4 lb since yesterday, has 3+ pitting edema to the knees, and reports his rings are tight. Lungs are clear. Which side of the heart is failing, and what does the nurse do first?</div>
+<ol>
+  <li>Left-sided; place in high Fowler's and give oxygen</li>
+  <li>Right-sided; notify the provider of the weight gain and obtain a set of vital signs with lung sounds</li>
+  <li>Left-sided; restrict fluids to 1,000 mL/day</li>
+  <li>Right-sided; encourage ambulation to mobilize the edema</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<b>2 is correct.</b> Clear lungs + edema + rapid weight gain = <b>right-sided</b> congestion. A 4 lb gain in 24 hours exceeds the 2&ndash;3 lb report threshold, so the nurse assesses (vitals, lung sounds, JVD) and notifies the provider, because the diuretic dose likely needs to change before the left side gets involved.<br>
+<b>1</b> &mdash; wrong side, and there is no hypoxemia yet with clear lungs.<br>
+<b>3</b> &mdash; a nurse does not set a fluid restriction independently, and it does nothing about today's 4 lb.<br>
+<b>4</b> &mdash; ambulation is fine long-term but it is not the response to acute fluid retention, and it delays reporting a red-flag weight change.
+</div></details>
+</div>
+</div>
+
+<!-- ===================== 4. PULMONARY EDEMA ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="edema">
+<h2>4 &middot; Pulmonary Edema 🚨</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Pulmonary edema occurs when fluid backs up into the <span class="fill">lungs &mdash; specifically the <b>alveoli</b> and interstitial space, where gas exchange is supposed to happen</span>.</li>
+</ul>
+
+<h3>Classic Symptoms</h3>
+<ul>
+  <li>Severe shortness of breath, sitting bolt upright, air hunger</li>
+  <li>Crackles throughout, not just the bases</li>
+  <li><b>Pink frothy sputum</b> &mdash; <i>fluid plus red cells whipped into foam</i></li>
+  <li>Plus: <span class="fill">severe anxiety and a sense of impending doom, tachycardia, tachypnea, falling SpO&#8322;, cyanosis, cool clammy skin</span></li>
+</ul>
+
+<h3>Priority Nursing Actions</h3>
+<div class="flow">
+  <div class="stepbox"><b>STEP 1</b><span><span class="fill">Sit them <b>upright</b> &mdash; high Fowler's with legs dependent (dangling)</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 2</b><span><span class="fill">High-flow <b>oxygen</b> by non-rebreather; anticipate CPAP/BiPAP, then intubation if it keeps worsening</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 3</b><span><span class="fill">Call for help / notify the provider &mdash; this is a rapid-response situation</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 4</b><span><span class="fill">IV <b>loop diuretic</b> (furosemide) &plus; IV nitroglycerin per order to drop preload</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 5</b><span><span class="fill">Continuous SpO&#8322;, cardiac monitor, vitals; insert urinary catheter to measure output; morphine only if ordered</span></span></div>
+</div>
+<p class="fine">Why legs dependent? <i>It pools blood in the legs and reduces venous return, so less volume arrives at the already-flooded lungs.</i></p>
+<p><span class="never">Never lay a patient with pulmonary edema flat &mdash; it dumps more blood into the lungs and can arrest them.</span></p>
+
+<h3>Think Like a Nurse</h3>
+<p><b>Why is pulmonary edema a medical emergency?</b></p>
+<p><span class="fill">Because the alveoli are filling with fluid, oxygen physically cannot cross into the blood. Hypoxemia gets worse by the minute and progresses to respiratory failure and cardiac arrest. It is an <b>airway/oxygenation</b> problem, so it outranks every other need on your patient list.</span></p>
+
+<p><b>Remember:</b> <mark>Fluid in the lungs = oxygen cannot get where it needs to go.</mark></p>
+</div>
+
+<!-- ===================== 5. CARDIOMYOPATHY ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="cardiomyo">
+<h2>5 &middot; Cardiomyopathy 🫁</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Cardiomyopathy is disease of the <span class="fill">heart (myocardial) muscle itself &mdash; not the valves, not the coronary arteries</span>.</li>
+  <li>It can make the heart pump <span class="fill">less</span> effectively.</li>
+</ul>
+
+<h3>Possible Symptoms</h3>
+<ul>
+  <li>Fatigue &middot; Dyspnea &middot; Edema</li>
+  <li>Plus: <span class="fill">dysrhythmias and palpitations, chest pain, syncope, and sudden cardiac death (especially hypertrophic)</span></li>
+</ul>
+
+<h4>The three types</h4>
+<table class="cmp">
+<thead><tr><th>Type</th><th>What's wrong</th><th>Key nursing point</th></tr></thead>
+<tbody>
+<tr><td class="k">Dilated (most common)</td><td><span class="fill">Ventricles stretch out and become floppy &rarr; low ejection fraction</span></td><td><span class="fill">Treat like systolic heart failure; avoid alcohol (a common cause); anticoagulation for clot risk in the dilated chamber</span></td></tr>
+<tr><td class="k">Hypertrophic (HCM)</td><td><span class="fill">Thickened septum obstructs outflow; the stiff ventricle can't fill. The young athlete who collapses during a game.</span></td><td><span class="fill">Avoid strenuous exercise, dehydration, and Valsalva. <span class="never">Avoid nitrates, diuretics, and positive inotropes &mdash; they shrink the ventricle and worsen the obstruction.</span> Beta blockers or verapamil are used. Screen first-degree relatives.</span></td></tr>
+<tr><td class="k">Restrictive (rarest)</td><td><span class="fill">Stiff, non-compliant walls that cannot fill during diastole; EF may be normal</span></td><td><span class="fill">Looks like right-sided failure &mdash; JVD, ascites, edema. Treat the underlying cause (amyloidosis, sarcoidosis).</span></td></tr>
+</tbody>
+</table>
+
+<h3>Think Like a Nurse</h3>
+<p><b>Why might these patients develop heart failure?</b></p>
+<p><span class="fill">Because the pump muscle itself is damaged. If it can't contract (dilated) or can't fill (hypertrophic/restrictive), stroke volume and cardiac output fall, so blood backs up behind the failing chamber &mdash; into the lungs, the body, or both. Cardiomyopathy is a direct road to heart failure and to lethal dysrhythmias, which is why many of these patients get an ICD.</span></p>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Explain cardiomyopathy like I'm studying for ATI and give me three practice questions."</p>
+</div>
+
+<!-- ===================== QUICK REVIEW TABLE ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="quicktable">
+<h2>Quick Review Table &mdash; the handout grid, filled in 📋</h2>
+<table class="cmp">
+<thead><tr><th>Disease</th><th>Biggest Problem</th><th>Nurse Worries About</th></tr></thead>
+<tbody>
+<tr><td class="k">Valve Disorder</td>
+  <td><span class="fill">Blood cannot move forward normally &mdash; it is either blocked (stenosis) or leaks backward (regurgitation), so cardiac output falls</span></td>
+  <td><span class="fill">Heart failure, atrial fibrillation with clot &rarr; stroke, infective endocarditis, activity intolerance and syncope</span></td></tr>
+<tr><td class="k">Pulmonary HTN</td>
+  <td><span class="fill">High pressure in the pulmonary arteries forces the right ventricle to pump against resistance it cannot beat</span></td>
+  <td><span class="fill">Right-sided heart failure (cor pulmonale), worsening hypoxemia, exertional syncope, sudden death</span></td></tr>
+<tr><td class="k">Left HF</td>
+  <td><span class="fill">Blood backs up into the lungs &mdash; pulmonary congestion</span></td>
+  <td><span class="fill">Crackles, orthopnea, falling SpO&#8322;, and a flip into acute pulmonary edema</span></td></tr>
+<tr><td class="k">Right HF</td>
+  <td><span class="fill">Blood backs up into the systemic venous circulation &mdash; the rest of the body</span></td>
+  <td><span class="fill">JVD, pitting edema, rapid weight gain, ascites and liver congestion, poor nutrition from GI congestion</span></td></tr>
+<tr><td class="k">Pulmonary Edema</td>
+  <td><span class="fill">The alveoli flood, so gas exchange stops</span></td>
+  <td><span class="fill">Severe hypoxemia &rarr; respiratory failure and arrest &mdash; a true emergency, minutes matter</span></td></tr>
+<tr><td class="k">Cardiomyopathy</td>
+  <td><span class="fill">The heart muscle itself is diseased, so it cannot contract or cannot fill</span></td>
+  <td><span class="fill">Low cardiac output, lethal dysrhythmias and sudden cardiac death, clot formation, progression to end-stage heart failure</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== MINI CASE ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="minicase">
+<h2>Mini Case 🚨</h2>
+<p class="lead-in"><i>Your patient suddenly develops: RR 34 &middot; SpO&#8322; 84% &middot; crackles &middot; pink frothy sputum &middot; severe anxiety.</i></p>
+
+<p><b>What complication is occurring?</b></p>
+<p><span class="fill"><b>Acute pulmonary edema</b> from decompensated left-sided heart failure. Pink frothy sputum plus crackles plus an SpO&#8322; of 84% is that picture and nothing else. The "severe anxiety" is air hunger, not a psychiatric symptom &mdash; <i>never treat sudden anxiety in a cardiac patient as anxiety until you have ruled out hypoxia.</i></span></p>
+
+<p><b>What should the nurse do first?</b></p>
+<p><span class="fill"><b>Sit the patient straight up (high Fowler's) with the legs dangling and apply high-flow oxygen by non-rebreather</b> &mdash; <i>because oxygenation is failing right now, and position plus oxygen are the two things the nurse can do in the first ten seconds without an order.</i> Then call the rapid response team, get the provider, and anticipate IV furosemide, nitroglycerin, a cardiac monitor, and possible BiPAP.</span></p>
+
+<p class="fine">🤖 <b>Claire Challenge:</b> "Create five ATI-style questions about heart failure and pulmonary edema that focus on recognizing the patient who is deteriorating."</p>
+</div>
+
+<!-- ===================== 6. MYOCARDITIS ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="myocarditis">
+<h2>6 &middot; Myocarditis 🦠</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Myocarditis is inflammation of the <span class="fill">myocardium &mdash; the heart muscle</span>.</li>
+  <li>It often occurs after a <span class="fill">viral</span> infection <span class="fill">(coxsackievirus B is classic; also influenza, COVID-19, adenovirus). It can also follow radiation, some chemo agents, or an autoimmune process.</span></li>
+</ul>
+
+<h3>Symptoms</h3>
+<ul>
+  <li>Chest pain &middot; Fatigue &middot; Shortness of breath</li>
+  <li>Plus: <span class="fill">fever, tachycardia out of proportion to the fever, dysrhythmias, S3 gallop, and rising troponin</span></li>
+</ul>
+
+<h3>Think Like a Nurse</h3>
+<p><b>Why can myocarditis decrease cardiac output?</b></p>
+<p><span class="fill">Inflamed, swollen myocardium contracts weakly, so stroke volume drops &mdash; and cardiac output = stroke volume &times; heart rate. The inflammation also irritates the conduction system, causing dysrhythmias that reduce filling time. Severe cases progress to dilated cardiomyopathy, heart failure, or sudden death.</span></p>
+
+<h4>Nursing care</h4>
+<ul class="blanks">
+  <li><span class="fill">Rest &mdash; restrict activity while inflammation is active, <i>because exertion worsens myocardial damage and can trigger fatal dysrhythmias</i></span></li>
+  <li><span class="fill">Continuous cardiac monitoring; watch for the signs of heart failure listed above</span></li>
+  <li><span class="fill">Avoid alcohol and NSAIDs early in viral myocarditis; treat the cause and support the pump</span></li>
+</ul>
+</div>
+
+<!-- ===================== 7. PERICARDITIS ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="pericarditis">
+<h2>7 &middot; Pericarditis 🫧</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Pericarditis is inflammation of the <span class="fill">pericardium &mdash; the sac (membrane)</span> surrounding the heart.</li>
+  <li>Chest pain often improves when the patient: <span class="fill"><b>sits up and leans forward</b> &mdash; <i>this pulls the inflamed pericardium away from the diaphragm and chest wall.</i> It gets worse lying flat, with deep breathing, coughing, or swallowing.</span></li>
+</ul>
+
+<h4>Other findings</h4>
+<ul class="blanks">
+  <li><span class="fill"><b>Pericardial friction rub</b> &mdash; a scratchy, grating sound best heard at the left lower sternal border with the patient leaning forward, at end-expiration</span></li>
+  <li><span class="fill">ECG: diffuse ST elevation in nearly all leads with PR depression (not the localized pattern of an MI)</span></li>
+  <li><span class="fill">Low-grade fever, elevated WBC, elevated ESR/CRP</span></li>
+  <li><span class="fill">Treatment: NSAIDs or aspirin plus <b>colchicine</b>; corticosteroids only if those fail</span></li>
+</ul>
+
+<h3>Think Like a Nurse</h3>
+<p><b>How is pericarditis pain different from an MI?</b></p>
+<p><span class="fill"><b>Position and breathing change pericarditis pain; nothing changes MI pain.</b> Pericarditis: sharp, stabbing, pleuritic, worse lying flat and with inspiration, better sitting forward, friction rub present, diffuse ST elevation, troponin normal or only mildly up. MI: crushing pressure or squeezing, radiates to jaw/left arm/back, constant regardless of position or breathing, associated with diaphoresis and nausea, ST elevation only in the leads over the infarct, troponin clearly rising.</span></p>
+
+<p><b>Memory Trick:</b> <mark>Lean forward = pain improves.</mark></p>
+</div>
+
+<!-- ===================== 7b. TAMPONADE ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="tamponade">
+<h2>7b &middot; Cardiac Tamponade &mdash; the complication that kills 🚨</h2>
+<p class="lead-in"><i>Pericarditis &rarr; pericardial effusion &rarr; tamponade. Fluid in the sac squeezes the heart so it cannot fill.</i></p>
+
+<h3>⭐ Beck's triad &mdash; know all three</h3>
+<div class="flow">
+  <div class="stepbox"><b>1</b><span><span class="fill"><b>Hypotension</b> with a narrowed pulse pressure &mdash; <i>the ventricles can't fill, so output falls</i></span></span></div>
+  <div class="arrow">➕</div>
+  <div class="stepbox"><b>2</b><span><span class="fill"><b>Jugular venous distention</b> &mdash; <i>blood can't get into the heart, so it stacks up in the neck veins</i></span></span></div>
+  <div class="arrow">➕</div>
+  <div class="stepbox"><b>3</b><span><span class="fill"><b>Muffled / distant heart sounds</b> &mdash; <i>fluid between the heart and your stethoscope</i></span></span></div>
+</div>
+
+<h4>Also expect</h4>
+<ul class="blanks">
+  <li><span class="fill"><b>Pulsus paradoxus</b> &mdash; systolic BP drops more than 10 mmHg on inspiration</span></li>
+  <li><span class="fill">Tachycardia, dyspnea, restlessness, cool clammy skin (obstructive shock)</span></li>
+  <li><span class="fill">Low-voltage QRS or electrical alternans on the ECG</span></li>
+</ul>
+
+<h4>Priority action</h4>
+<p><span class="fill"><b>Notify the provider immediately and prepare for pericardiocentesis</b> &mdash; <i>because removing even 20&ndash;50 mL of fluid restores filling and output within seconds.</i> Meanwhile: high Fowler's, oxygen, IV fluids to support preload, continuous monitoring. <span class="never">Never assume a hypotensive pericarditis patient just needs "more time on the diuretic" &mdash; hypotension + JVD together is tamponade until proven otherwise.</span></span></p>
+</div>
+
+<!-- ===================== 8. ENDOCARDITIS ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="endocarditis">
+<h2>8 &middot; Endocarditis 🦠</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Endocarditis is infection of the <span class="fill">endocardium &mdash; the inner</span> lining of the heart, <span class="fill">and especially the heart <b>valves</b>, where bacteria build vegetations</span>.</li>
+</ul>
+
+<h3>Patients often have</h3>
+<ul>
+  <li>Fever (often with chills and night sweats)</li>
+  <li>Heart murmur &mdash; <b>new or newly changed</b></li>
+  <li>Plus: <span class="fill"><b>Splinter hemorrhages</b> under the nails, <b>Osler nodes</b> (painful, on finger/toe pads &mdash; "Ouch-ler"), <b>Janeway lesions</b> (painless, on palms/soles), <b>Roth spots</b> in the retina, petechiae, and signs of embolic stroke</span></li>
+</ul>
+
+<h3>Why are blood cultures important?</h3>
+<p><span class="fill">They identify the organism causing the infection so the right antibiotic can be chosen &mdash; usually <i>Streptococcus viridans</i> or <i>Staphylococcus aureus</i>. Draw at least <b>two to three sets from different sites before the first antibiotic dose</b>, <i>because one dose can make the culture negative and leave the team guessing.</i> Treatment is 4&ndash;6 weeks of IV antibiotics, often at home through a central line.</span></p>
+
+<h4>Who is at risk / how to prevent it</h4>
+<ul class="blanks">
+  <li><span class="fill">Prosthetic valves, prior endocarditis, certain congenital heart defects, IV drug use, indwelling central lines, recent dental or invasive procedures</span></li>
+  <li><span class="fill">Prophylactic antibiotics before dental and invasive procedures for high-risk patients; meticulous oral hygiene; report any fever that lasts more than a couple of days</span></li>
+</ul>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Compare myocarditis, pericarditis, and endocarditis using simple patient cases."</p>
+</div>
+
+<!-- ===================== INFLAMMATORY COMPARISON ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="inflamcmp">
+<h2>Myocarditis vs Pericarditis vs Endocarditis &mdash; don't mix these up ⭐</h2>
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Myocarditis</th><th>Pericarditis</th><th>Endocarditis</th></tr></thead>
+<tbody>
+<tr><td class="k">Layer involved</td><td><span class="fill">Middle layer &mdash; the muscle</span></td><td><span class="fill">Outer sac around the heart</span></td><td><span class="fill">Inner lining and the valves</span></td></tr>
+<tr><td class="k">Usual cause</td><td><span class="fill">Viral infection</span></td><td><span class="fill">Viral illness, post-MI (Dressler's), uremia, cardiac surgery</span></td><td><span class="fill">Bacteria in the bloodstream landing on a damaged valve</span></td></tr>
+<tr><td class="k">Signature finding</td><td><span class="fill">Fatigue and dyspnea after a viral illness, tachycardia, rising troponin</span></td><td><span class="fill">Friction rub; pain better leaning forward</span></td><td><span class="fill">Fever + <b>new murmur</b> + splinter hemorrhages / Osler nodes</span></td></tr>
+<tr><td class="k">Key test</td><td><span class="fill">Echocardiogram + troponin; endomyocardial biopsy if needed</span></td><td><span class="fill">ECG with diffuse ST elevation; echo to look for effusion</span></td><td><span class="fill"><b>Blood cultures</b> &times; 2&ndash;3 sets + echo (TEE) for vegetations</span></td></tr>
+<tr><td class="k">Feared complication</td><td><span class="fill">Dilated cardiomyopathy, heart failure, lethal dysrhythmia</span></td><td><span class="fill"><b>Cardiac tamponade</b></span></td><td><span class="fill"><b>Embolism</b> &mdash; vegetation breaks off &rarr; stroke, splenic/renal infarct, PE; plus valve destruction &rarr; heart failure</span></td></tr>
+<tr><td class="k">Core treatment</td><td><span class="fill">Rest, treat heart failure, monitor rhythm</span></td><td><span class="fill">NSAIDs + colchicine; pericardiocentesis if tamponade</span></td><td><span class="fill">4&ndash;6 weeks IV antibiotics; valve surgery if destroyed</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== 9. PAD ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="pad">
+<h2>9 &middot; Peripheral Arterial Disease (PAD) 🦵</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>PAD is decreased blood flow through the <span class="fill">arteries &mdash; usually from atherosclerotic plaque, so oxygenated blood cannot get <b>down to</b> the tissue</span>.</li>
+</ul>
+
+<h3>Symptoms</h3>
+<ul>
+  <li>Pain with walking (<b>intermittent claudication</b>)</li>
+  <li>Cool extremity &middot; Weak or absent pulse</li>
+  <li>Plus: <span class="fill">shiny, taut, hairless skin; thick brittle nails; pallor when the leg is elevated and <b>dependent rubor</b> when it hangs down; painful, round, "punched-out" ulcers on the toes, heel, or lateral malleolus; ankle-brachial index &le;0.90</span></li>
+</ul>
+
+<h3>Pain usually improves with</h3>
+<p><span class="fill"><b>Rest</b> &mdash; and with the legs in a <b>dependent</b> position (dangling off the bed), <i>because gravity helps pull arterial blood down into the leg.</i> Later-stage PAD hurts at rest too, and those patients often sleep in a chair.</span></p>
+
+<h4>Nursing care</h4>
+<ul class="blanks">
+  <li><span class="fill">Keep the legs <b>below</b> heart level; <span class="never">never elevate the legs of a PAD patient above the heart &mdash; it drains what little arterial flow they have.</span></span></li>
+  <li><span class="fill"><span class="never">Never apply compression stockings to an arterial ulcer or unassessed leg</span> &mdash; compression on ischemic tissue causes necrosis.</span></li>
+  <li><span class="fill">Keep warm with socks or a blanket, never a heating pad or hot water &mdash; <i>neuropathy plus poor perfusion means burns they cannot feel.</i></span></li>
+  <li><span class="fill">Stop smoking (the single most important change), walk to the point of claudication then rest, control diabetes/lipids/BP, meticulous foot care, inspect feet daily</span></li>
+  <li><span class="fill"><b>Acute arterial occlusion = 6 Ps</b>: pain, pallor, pulselessness, paresthesia, paralysis, poikilothermia (cold). Report immediately &mdash; the limb has hours.</span></li>
+</ul>
+
+<p><b>Memory Trick:</b> <mark>PAD = Pain with Activity.</mark></p>
+</div>
+
+<!-- ===================== 10. PVD ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="pvd">
+<h2>10 &middot; Peripheral Venous Disease (PVD) 🦵</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Venous disease is a problem returning blood <span class="fill">back <b>to</b> (upward toward)</span> the heart &mdash; <span class="fill">the valves in the veins fail, so blood pools in the legs</span>.</li>
+</ul>
+
+<h3>Symptoms</h3>
+<ul>
+  <li>Leg swelling (edema that is worse at the end of the day)</li>
+  <li>Brown skin discoloration &mdash; <i>hemosiderin staining from leaked red cells</i></li>
+  <li>Aching, heavy, cramping legs</li>
+  <li>Plus: <span class="fill">warm extremity with <b>present</b> pulses, irregularly shaped weepy ulcers over the <b>medial malleolus</b>, varicose veins, stasis dermatitis</span></li>
+</ul>
+
+<h3>Pain often improves with</h3>
+<p><span class="fill"><b>Elevating the legs above heart level</b> and with walking and compression stockings &mdash; <i>because gravity and the calf-muscle pump help push pooled blood back toward the heart.</i> It gets worse with prolonged standing or sitting with the legs down.</span></p>
+
+<h4>⭐ PAD vs PVD &mdash; the exam trap</h4>
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>PAD (arterial)</th><th>PVD (venous)</th></tr></thead>
+<tbody>
+<tr><td class="k">Pain pattern</td><td><span class="fill">With activity, relieved by rest and dangling</span></td><td><span class="fill">Dull ache after standing all day, relieved by elevation</span></td></tr>
+<tr><td class="k">Skin</td><td><span class="fill">Pale, shiny, hairless, cool, thick nails</span></td><td><span class="fill">Brown/bronze stained, warm, edematous</span></td></tr>
+<tr><td class="k">Pulses</td><td><span class="fill">Weak or absent</span></td><td><span class="fill">Present (may be hard to palpate through edema)</span></td></tr>
+<tr><td class="k">Ulcer location / look</td><td><span class="fill">Toes, heels, lateral malleolus &mdash; deep, round, punched-out, very painful, minimal drainage</span></td><td><span class="fill">Medial malleolus &mdash; shallow, irregular edges, heavy drainage, less painful</span></td></tr>
+<tr><td class="k">Position the legs</td><td><span class="fill"><b>DOWN</b> (dependent)</span></td><td><span class="fill"><b>UP</b> (elevated)</span></td></tr>
+<tr><td class="k">Compression stockings?</td><td><span class="fill">❌ No &mdash; dangerous in arterial disease</span></td><td><span class="fill">✅ Yes &mdash; the mainstay of treatment</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== 11. DVT ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="dvt">
+<h2>11 &middot; Deep Vein Thrombosis (DVT) 🚨</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>A DVT is a blood clot in a <span class="fill">deep</span> vein &mdash; <span class="fill">most often the calf, popliteal, femoral, or iliac veins of the leg or pelvis</span>.</li>
+</ul>
+
+<h3>Risk Factors</h3>
+<ul>
+  <li>Surgery (especially orthopedic hip/knee) &middot; Immobility</li>
+  <li>Plus: <span class="fill"><b>Virchow's triad</b> &mdash; venous stasis, hypercoagulability, endothelial injury. Practically: long flights, bed rest, casts, pregnancy, estrogen/oral contraceptives, smoking, obesity, cancer, central lines, prior DVT.</span></li>
+</ul>
+
+<h3>Symptoms</h3>
+<ul>
+  <li>Swelling &mdash; <b>unilateral</b>, one calf larger than the other</li>
+  <li>Pain / tenderness along the vein &middot; Warmth</li>
+  <li>Plus: <span class="fill">redness, a firm cord-like vein, low-grade fever. Measure both calves at the same marked spot &mdash; a difference greater than ~3 cm is significant.</span></li>
+</ul>
+
+<h3>Biggest Complication</h3>
+<p><span class="fill"><b>Pulmonary embolism</b> &mdash; the clot breaks loose, travels through the right heart, and lodges in the pulmonary artery. Signs: <i>sudden</i> dyspnea, pleuritic chest pain, tachycardia, tachypnea, hypoxemia, anxiety with a sense of impending doom, sometimes hemoptysis. <b>Action: raise the head of the bed, give oxygen, call rapid response, stay with the patient.</b> The long-term complication is chronic venous insufficiency (post-thrombotic syndrome).</span></p>
+
+<h3>Think Like a Nurse</h3>
+<p><b>Why should you avoid massaging the affected leg?</b></p>
+<p><span class="fill">Because rubbing the leg can dislodge the clot and send it to the lungs as a <b>pulmonary embolism</b>. Same reason you don't do vigorous calf exercises or check a Homans sign on a known DVT. Teach the patient and the family not to rub the leg.</span></p>
+
+<h4>💊 Treatment</h4>
+<ul class="blanks">
+  <li><b>Heparin IV:</b> <span class="fill">monitor <b>aPTT</b> (goal ~1.5&ndash;2.5 &times; control); antidote <b>protamine sulfate</b>; watch platelet count for HIT</span></li>
+  <li><b>Enoxaparin (LMWH):</b> <span class="fill">subcut in the abdomen, 2 inches from the umbilicus. Do <b>not</b> expel the air bubble and do <b>not</b> rub the site.</span></li>
+  <li><b>Warfarin:</b> <span class="fill">monitor <b>INR</b>, goal 2&ndash;3 for DVT; antidote <b>vitamin K</b>; keep green-vegetable intake consistent rather than eliminating it; takes 3&ndash;5 days to work, so it overlaps with heparin</span></li>
+  <li><b>DOACs (apixaban, rivaroxaban):</b> <span class="fill">no routine lab monitoring; antidote for factor Xa inhibitors is andexanet alfa</span></li>
+  <li><b>Nursing:</b> <span class="fill">elevate the extremity, warm moist compresses if ordered, no massage, bleeding precautions (soft toothbrush, electric razor, no NSAIDs/aspirin without an order), early ambulation once anticoagulated</span></li>
+</ul>
+
+<p class="fine">🤖 <b>Ask Claire:</b> "Create five DVT scenarios where I identify who is at greatest risk for pulmonary embolism."</p>
+</div>
+
+<!-- ===================== 12. RAYNAUD ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="raynaud">
+<h2>12 &middot; Raynaud Syndrome ❄️</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>Raynaud syndrome causes temporary decreased blood flow to the: <span class="fill"><b>fingers and toes</b> (and sometimes the nose, ears, and tip of the tongue) from sudden vasospasm of the small arteries. Classic color change: <b>white &rarr; blue &rarr; red</b> &mdash; pallor, then cyanosis, then rubor with throbbing as flow returns. Usually bilateral, lasts minutes to hours.</span></li>
+  <li>Common triggers: <span class="fill"><b>Cold exposure</b> (including the freezer aisle and air conditioning) and <b>emotional stress</b>; also nicotine and caffeine</span></li>
+  <li>Teach patients to avoid: <span class="fill">cold &mdash; wear gloves and layers, warm the car before driving; <b>all tobacco/nicotine and caffeine</b>; vasoconstricting drugs such as decongestants, ergot, and some beta blockers; stress (use relaxation techniques); trauma to fingertips. Treat an attack by warming the hands in warm &mdash; not hot &mdash; water.</span></li>
+</ul>
+
+<h4>Other points</h4>
+<ul class="blanks">
+  <li><span class="fill">Most common in young women; secondary Raynaud is associated with autoimmune disease, especially scleroderma and lupus</span></li>
+  <li><span class="fill">First-line drugs are calcium channel blockers such as nifedipine &mdash; <i>they relax the vessel wall and reduce attack frequency</i></span></li>
+  <li><span class="fill">Report fingertip ulcers or skin breakdown &mdash; that means prolonged ischemia, and it can progress to gangrene</span></li>
+</ul>
+</div>
+
+<!-- ===================== 13. ANEURYSM ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="aneurysm">
+<h2>13 &middot; Aortic Aneurysm 🚨</h2>
+
+<h3>Fill in the Blanks</h3>
+<ul class="blanks">
+  <li>An aneurysm is a weakened and enlarged <span class="fill">area of an artery wall &mdash; in this module, the <b>aorta</b> (abdominal aortic aneurysm is the most common)</span>.</li>
+</ul>
+
+<h3>Symptoms of Rupture</h3>
+<ul>
+  <li><b>Sudden severe pain</b> &mdash; <i>often described as tearing or ripping, in the abdomen, flank, or back</i></li>
+  <li><b>Hypotension</b></li>
+  <li>Plus: <span class="fill">tachycardia, pallor, cool clammy skin, decreased or absent peripheral pulses, altered level of consciousness, syncope &mdash; the picture of <b>hypovolemic shock</b></span></li>
+</ul>
+
+<h4>Before rupture</h4>
+<ul class="blanks">
+  <li><span class="fill">Often silent. May have a <b>pulsatile mass</b> near the umbilicus, a bruit over the aorta, or vague back/abdominal fullness.</span></li>
+  <li><span class="fill"><span class="never">Never palpate a known or suspected pulsatile abdominal mass deeply &mdash; you can precipitate rupture.</span> Auscultate; do not press.</span></li>
+  <li><span class="fill">Control blood pressure aggressively (beta blockers) and avoid straining, heavy lifting, and Valsalva &mdash; <i>every BP spike stresses the weak wall.</i></span></li>
+</ul>
+
+<h3>Think Like a Nurse</h3>
+<p><b>Why is rupture life-threatening?</b></p>
+<p><span class="fill">The aorta carries the body's entire cardiac output. When it tears, the patient bleeds internally at enormous speed &mdash; liters in minutes &mdash; and goes into hypovolemic shock before anyone can see external blood. <b>Action: notify the surgical team / call a code, large-bore IVs, type and crossmatch, keep NPO, prepare for emergency surgery.</b> Mortality without immediate surgery is near total.</span></p>
+
+<p><b>Memory Trick:</b> <mark>Aneurysm ruptures = internal bleeding until proven otherwise.</mark></p>
+
+<p class="fine"><b>Post-op after AAA repair:</b> check peripheral pulses and extremity color/temperature hourly (graft occlusion), monitor urine output &ge;30 mL/hr (renal perfusion), watch for abdominal distention and back pain (bleeding), keep BP in the ordered range &mdash; too high stresses the graft, too low clots it.</p>
+</div>
+
+<!-- ===================== 14. QUICK COMPARISON ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="quickcmp">
+<h2>14 &middot; Quick Comparison &mdash; biggest danger 📋</h2>
+<table class="cmp">
+<thead><tr><th>Disease</th><th>Biggest Danger</th></tr></thead>
+<tbody>
+<tr><td class="k">PAD</td><td><span class="fill"><b>Critical limb ischemia</b> &mdash; tissue dies from lack of arterial flow, leading to non-healing ulcers, gangrene, and amputation. An acute occlusion (the 6 Ps) is a limb-threatening emergency.</span></td></tr>
+<tr><td class="k">PVD</td><td><span class="fill"><b>Venous stasis ulcers that will not heal</b>, with cellulitis and infection on top of them &mdash; chronic disability rather than sudden death.</span></td></tr>
+<tr><td class="k">DVT</td><td><span class="fill"><b>Pulmonary embolism</b> &mdash; sudden, and it can kill in minutes.</span></td></tr>
+<tr><td class="k">Raynaud</td><td><span class="fill">Prolonged vasospasm &rarr; <b>fingertip ulceration and gangrene</b> with permanent tissue loss.</span></td></tr>
+<tr><td class="k">Aortic Aneurysm</td><td><span class="fill"><b>Rupture</b> &rarr; massive internal hemorrhage &rarr; hypovolemic shock and death.</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== BONUS: DYSRHYTHMIAS ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="rhythms">
+<h2>Bonus &middot; Dysrhythmias &mdash; shock it, pace it, or compress it 🚨</h2>
+<p class="lead-in"><i>Not printed in the Module 8 handout, but it is on Exam 3 and it is the single most common "what do you do first" question. Learn the decision, not the squiggles.</i></p>
+
+<h3>The one question that decides everything: <mark>Does the patient have a pulse?</mark></h3>
+<div class="flow">
+  <div class="stepbox"><b>STEP 1</b><span><span class="fill">Assess responsiveness and check a <b>carotid pulse</b> for no more than 10 seconds</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 2</b><span><span class="fill"><b>No pulse?</b> Start high-quality CPR, call the code, attach the monitor/defibrillator pads</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 3</b><span><span class="fill">Look at the rhythm: is it <b>VF or pulseless VT</b>?</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>YES = SHOCKABLE</b><span><span class="fill"><b>Defibrillate immediately</b> (unsynchronized, high energy), then resume compressions right away for 2 minutes. Epinephrine 1 mg IV every 3&ndash;5 min; amiodarone after the third shock.</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>NO = NOT SHOCKABLE</b><span><span class="fill"><b>Asystole and PEA:</b> CPR + epinephrine 1 mg IV every 3&ndash;5 min and hunt the reversible causes (H's and T's). <span class="never">Never defibrillate asystole.</span></span></span></div>
+</div>
+
+<h3>If there IS a pulse</h3>
+<div class="flow">
+  <div class="stepbox"><b>UNSTABLE</b><span><span class="fill">Hypotension, altered mental status, chest pain, signs of shock, acute heart failure &rarr; <b>synchronized cardioversion</b> (sedate first if time allows)</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STABLE &amp; FAST</b><span><span class="fill">Vagal maneuvers, then <b>adenosine 6 mg rapid IV push</b> followed by a 20 mL flush and arm elevation (then 12 mg). Warn the patient about a few seconds of flushing, chest pressure, and a flat line on the monitor.</span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>TOO SLOW</b><span><span class="fill">Symptomatic bradycardia &rarr; <b>atropine 1 mg IV</b> (repeat q3&ndash;5 min, max 3 mg); if no response, <b>transcutaneous pacing</b> or a dopamine/epinephrine infusion</span></span></div>
+</div>
+
+<h4>⭐ Defibrillation vs synchronized cardioversion &mdash; know the difference cold</h4>
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Defibrillation</th><th>Synchronized cardioversion</th></tr></thead>
+<tbody>
+<tr><td class="k">Used for</td><td><span class="fill"><b>VF and pulseless VT</b> &mdash; no pulse</span></td><td><span class="fill">Unstable <b>with</b> a pulse: SVT, atrial fib/flutter with RVR, VT with a pulse</span></td></tr>
+<tr><td class="k">Timing</td><td><span class="fill">Unsynchronized &mdash; fires the instant you press the button</span></td><td><span class="fill">Synced to the <b>R wave</b>, so it will not fire during the T wave &mdash; <i>a shock on the T wave can cause VF</i></span></td></tr>
+<tr><td class="k">Sedation</td><td><span class="fill">None &mdash; the patient is unresponsive</span></td><td><span class="fill">Yes, sedate first when there is time (the patient is awake)</span></td></tr>
+<tr><td class="k">Nurse safety</td><td colspan="2"><span class="fill"><span class="never">"I'm clear, you're clear, everybody clear" &mdash; look before you shock, oxygen away from the bed, no one touching the patient or the bed.</span></span></td></tr>
+</tbody>
+</table>
+
+<h4>Rhythm cheat line</h4>
+<ul class="blanks">
+  <li><b>Atrial fibrillation:</b> <span class="fill">irregularly irregular, no P waves. Danger = clot forms in the quivering atrium &rarr; <b>stroke</b>. Rate control + anticoagulation.</span></li>
+  <li><b>Ventricular tachycardia with a pulse:</b> <span class="fill">stable &rarr; antiarrhythmic (amiodarone); unstable &rarr; synchronized cardioversion; pulseless &rarr; defibrillate.</span></li>
+  <li><b>Torsades de pointes:</b> <span class="fill">give IV <b>magnesium sulfate</b>; look for a long QT and stop the drug causing it.</span></li>
+  <li><b>PVCs:</b> <span class="fill">worrisome when they are &gt;6/min, multifocal, or land on the T wave (R-on-T) &mdash; check <b>potassium and magnesium</b> first.</span></li>
+  <li><b>Third-degree (complete) heart block:</b> <span class="fill">P waves and QRS marching independently &rarr; prepare for <b>pacing</b>; atropine usually will not fix it.</span></li>
+</ul>
+<p><span class="never">Never delay defibrillation in VF to start an IV, intubate, or find a doctor &mdash; survival drops roughly 7&ndash;10% for every minute without a shock.</span></p>
+</div>
+
+<!-- ===================== 15. DOSAGE ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="dosage">
+<h2>15 &middot; Dosage Calculation Review 🧮</h2>
+<p><b>Formula:</b> Desired &divide; Have &times; Quantity = Amount to Give</p>
+
+<h4>Practice 1 &mdash; Order: Furosemide 40 mg IV &middot; Available: 20 mg/mL</h4>
+<p><b>How many mL?</b> <span class="fill">40 mg &divide; 20 mg &times; 1 mL = <b>2 mL</b>. <i>Push slowly &mdash; no faster than 20 mg/min &mdash; because rapid IV furosemide causes ototoxicity.</i></span></p>
+
+<h4>Practice 2 &mdash; Order: Metoprolol 50 mg PO &middot; Available: 25 mg tablets</h4>
+<p><b>How many tablets?</b> <span class="fill">50 mg &divide; 25 mg &times; 1 tab = <b>2 tablets</b>. <i>Check the apical pulse and BP first; hold and notify if the pulse is under 60 or the systolic BP is below the ordered parameter.</i></span></p>
+
+<h4>Practice 3 &mdash; Order: Heparin 5,000 units &middot; Available: 10,000 units/mL</h4>
+<p><b>How many mL?</b> <span class="fill">5,000 units &divide; 10,000 units &times; 1 mL = <b>0.5 mL</b>. <i>Heparin is a high-alert drug &mdash; independent double-check with a second nurse before giving.</i></span></p>
+</div>
+
+<!-- ===================== FINAL REFLECTION ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="reflection">
+<h2>Final Reflection &mdash; the four questions, answered 🧠</h2>
+<p class="lead-in"><i>For every disease in this module: What is happening? What finding worries you most? What could kill the patient first? What should the nurse do first?</i></p>
+
+<table class="cmp">
+<thead><tr><th>Disease</th><th>What's happening</th><th>Finding that worries you most</th><th>Nurse's FIRST action</th></tr></thead>
+<tbody>
+<tr><td class="k">Left HF</td>
+  <td><span class="fill">Left ventricle can't move blood forward, so it backs into the lungs</span></td>
+  <td><span class="fill">New crackles with falling SpO&#8322; and orthopnea</span></td>
+  <td><span class="fill">High Fowler's + oxygen, then reassess</span></td></tr>
+<tr><td class="k">Right HF</td>
+  <td><span class="fill">Right ventricle fails, blood backs into the body</span></td>
+  <td><span class="fill">Weight gain &gt;2&ndash;3 lb in 24 hours with JVD</span></td>
+  <td><span class="fill">Assess (weight, lungs, edema, vitals) and notify the provider</span></td></tr>
+<tr><td class="k">Pulmonary edema</td>
+  <td><span class="fill">Alveoli flood &mdash; gas exchange stops</span></td>
+  <td><span class="fill">Pink frothy sputum with SpO&#8322; in the 80s</span></td>
+  <td><span class="fill">Sit upright with legs dependent + high-flow oxygen, call rapid response</span></td></tr>
+<tr><td class="k">Tamponade</td>
+  <td><span class="fill">Fluid in the pericardial sac stops the heart from filling</span></td>
+  <td><span class="fill">Beck's triad: hypotension + JVD + muffled heart sounds</span></td>
+  <td><span class="fill">Notify the provider and set up for pericardiocentesis</span></td></tr>
+<tr><td class="k">Endocarditis</td>
+  <td><span class="fill">Bacteria colonize a valve and grow vegetations</span></td>
+  <td><span class="fill">Fever + a new murmur, or sudden focal neuro change (embolic stroke)</span></td>
+  <td><span class="fill">Blood cultures before antibiotics, then give the antibiotic on time</span></td></tr>
+<tr><td class="k">DVT</td>
+  <td><span class="fill">Clot in a deep leg vein</span></td>
+  <td><span class="fill">Sudden dyspnea and pleuritic chest pain = PE</span></td>
+  <td><span class="fill">Raise the head of the bed, oxygen, call rapid response, do not massage the leg</span></td></tr>
+<tr><td class="k">Aortic aneurysm</td>
+  <td><span class="fill">Weakened aortic wall balloons out</span></td>
+  <td><span class="fill">Sudden tearing back/abdominal pain with hypotension</span></td>
+  <td><span class="fill">Call for emergency surgical help, large-bore IV access, type and crossmatch, NPO</span></td></tr>
+<tr><td class="k">VF / pulseless VT</td>
+  <td><span class="fill">The ventricles quiver instead of pumping &mdash; no cardiac output</span></td>
+  <td><span class="fill">Unresponsive with no pulse</span></td>
+  <td><span class="fill">Start CPR and <b>defibrillate</b> as soon as the pads are on</span></td></tr>
+</tbody>
+</table>
+
+<p class="fine">🤖 <b>Final Claire Challenge:</b> "Act like an ATI tutor and give me 10 difficult cardiovascular cases involving valve disorders, heart failure, DVT, PAD, pulmonary edema, and aneurysms. Make me identify the biggest red flag and the nurse's first action before revealing the answer."</p>
+</div>
+
+<!-- ===================== SUMMARY STRIP ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>⭐ The Must-Not-Forget Strip</h2>
+<ul class="blanks">
+  <li><b>1.</b> <span class="fill"><b>LEFT = LUNGS</b> (crackles, orthopnea, PND, frothy sputum). <b>RIGHT = REST OF BODY</b> (JVD, peripheral edema, weight gain, ascites). Left-sided failure is the most common cause of right-sided failure.</span></li>
+  <li><b>2.</b> <span class="fill"><b>BNP &lt;100 pg/mL</b> makes heart failure unlikely; higher values mean the ventricle is stretched. Entresto raises BNP &mdash; use NT-proBNP for those patients.</span></li>
+  <li><b>3.</b> <span class="fill"><b>Weight is the earliest fluid sign.</b> Report 2&ndash;3 lb in 24 hours or 5 lb in a week. Same scale, same time, after voiding.</span></li>
+  <li><b>4.</b> <span class="fill"><b>Pink frothy sputum = pulmonary edema = emergency.</b> Sit them <b>up</b> with legs dangling and give oxygen before anything else. <span class="never">Never lay them flat.</span></span></li>
+  <li><b>5.</b> <span class="fill"><b>Stenosis = too narrow. Regurgitation = too leaky.</b> Either way the heart works harder and cardiac output eventually falls.</span></li>
+  <li><b>6.</b> <span class="fill"><b>Pericarditis</b> hurts less leaning forward and has a friction rub. Its emergency is <b>tamponade &mdash; Beck's triad: hypotension, JVD, muffled heart sounds</b> &rarr; pericardiocentesis. <b>Endocarditis</b> = fever + new murmur &rarr; <b>blood cultures before antibiotics</b>. <b>Myocarditis</b> = after a virus &rarr; rest and watch the rhythm.</span></li>
+  <li><b>7.</b> <span class="fill"><b>PAD legs go DOWN, PVD legs go UP.</b> No compression stockings and no heating pads in arterial disease. DVT: <span class="never">never massage the leg</span> &mdash; PE is the killer.</span></li>
+  <li><b>8.</b> <span class="fill"><b>No pulse + VF/pulseless VT &rarr; DEFIBRILLATE.</b> No pulse + asystole/PEA &rarr; <b>CPR and epinephrine, never shock.</b> Pulse present but unstable &rarr; <b>synchronized cardioversion.</b></span></li>
+</ul>
+</div>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+</body></html>

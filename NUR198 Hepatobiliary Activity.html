@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · Hepatobiliary Activity (worked through)</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 · Module 10 · Hepatobiliary Activity</div>
+  <h1>Hepatobiliary <span class="glow">Activity</span></h1>
+  <p>The in-class activity, worked through with the reasoning shown. Tap "Hide answers" to quiz yourself.</p>
+<div class="bigq"><b class="q">What is the priority, and how do you know?</b>This activity is clinical judgment practice &mdash; the reasoning matters more than the answer.</div>
+ </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc">
+  <a href="#howto">How to use this page</a>
+  <a href="#numbers">🧪 The numbers first</a>
+  <a href="#case1">Case 1 &middot; The Liver Is Failing</a>
+  <a href="#bowtie1">Bow-Tie 1 &middot; Cirrhosis Complication 🚨</a>
+  <a href="#paracentesis">Matrix &middot; Ascites &amp; Paracentesis</a>
+  <a href="#cloze1">Cloze &middot; Hepatic Encephalopathy</a>
+  <a href="#priority1">Hard Prioritization</a>
+  <a href="#case2">Case 2 &middot; "He Isn't Acting Right"</a>
+  <a href="#ammonia">STOP &middot; Why ammonia hits the brain</a>
+  <a href="#bowtie2">Bow-Tie 2 &middot; RUQ Pain</a>
+  <a href="#matrixportal">Matrix &middot; Portal HTN vs Liver Failure</a>
+  <a href="#cloze2">Cloze &middot; Portal Hypertension</a>
+  <a href="#priority2">Prioritization &middot; Who first?</a>
+  <a href="#case3">Case 3 &middot; "Something Isn't Right"</a>
+  <a href="#lactulose">STOP &middot; How lactulose actually works ⭐</a>
+  <a href="#matrixlabs">Matrix Challenge &middot; Labs by disease ⭐</a>
+  <a href="#cues4">Cue Recognition &middot; Pick FOUR 🚨</a>
+  <a href="#bowtie3">Bow-Tie 3 &middot; Alcohol + Hematemesis 🚨</a>
+  <a href="#rank4">Rank All Four</a>
+  <a href="#whatchanged">"What Changed?"</a>
+  <a href="#cloze3">Cloze &middot; Complete the Pathway</a>
+  <a href="#labdetective">Lab Detective</a>
+  <a href="#linda">Linda Hart &middot; Cholecystitis Activity</a>
+  <a href="#summary">⭐ Must-Not-Forget Strip</a>
+</div>
+
+<!-- ===================== HOW TO USE ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="howto">
+<h2>How to use this page 🗺️</h2>
+
+<p class="lead-in"><i>This is the Clinical Reasoning Workbook &mdash; Hepatobiliary, worked all the way through. Every answer, every checkbox, and every "explain WHY" is filled in. Read the case, answer out loud, <b>then</b> tap to reveal.</i></p>
+
+<p><b>The colors mean something.</b> Navigate by color when you are tired:</p>
+<table class="cmp">
+<thead><tr><th>Color</th><th>What lives there</th></tr></thead>
+<tbody>
+<tr><td class="k">Ruby</td><td>Bleeding &mdash; hemorrhage, varices, the things that kill in minutes</td></tr>
+<tr><td class="k">Amethyst</td><td>The brain &mdash; ammonia, encephalopathy, the cloze exercises</td></tr>
+<tr><td class="k">Garnet</td><td>Prioritization &mdash; "who do you see first"</td></tr>
+<tr><td class="k">Sapphire</td><td>The full unfolding cases</td></tr>
+<tr><td class="k">Citrine</td><td>The gallbladder &mdash; cholecystitis, Linda Hart</td></tr>
+<tr><td class="k">Emerald</td><td>Portal hypertension vs loss of liver function</td></tr>
+<tr><td class="k">Teal</td><td>Procedures and trends &mdash; paracentesis, "what changed"</td></tr>
+<tr><td class="k">Topaz</td><td>Highest yield &mdash; labs, mechanisms, the summary</td></tr>
+</tbody>
+</table>
+
+<p><b>The one habit this whole workbook is teaching:</b> <mark>do not answer "what is wrong." Answer "what will kill this patient first, and what do I do about it in the next five minutes."</mark></p>
+
+<div class="flow">
+  <div class="stepbox"><b>STEP 1</b><span>Recognize cues &mdash; what is abnormal?</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 2</b><span>Analyze cues &mdash; what do they mean together?</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 3</b><span>Prioritize &mdash; which one is lethal soonest?</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 4</b><span>Take action &mdash; the FIRST thing</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>STEP 5</b><span>Evaluate &mdash; how will I know it worked?</span></div>
+</div>
+</div>
+
+<!-- ===================== NUMBERS ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="numbers">
+<h2>🧪 The numbers first &mdash; you cannot recognize cues you cannot grade ⭐</h2>
+
+<p class="lead-in"><i>Every case in this packet hands you a lab value and expects you to know instantly whether it is a little off or a code. Learn this table before you do anything else on this page.</i></p>
+
+<table class="cmp">
+<thead><tr><th>Lab</th><th>Normal</th><th>What a high one is telling you</th></tr></thead>
+<tbody>
+<tr><td class="k">AST</td><td><span class="fill">8&ndash;48 units/L</span></td><td><span class="fill">Liver <b>cell injury</b> (also muscle/heart). AST &gt; ALT roughly 2:1 &rarr; think alcohol-related liver disease.</span></td></tr>
+<tr><td class="k">ALT</td><td><span class="fill">7&ndash;55 units/L</span></td><td><span class="fill">The more <b>liver-specific</b> injury marker. ALT &gt; AST &rarr; think viral hepatitis.</span></td></tr>
+<tr><td class="k">Total bilirubin</td><td><span class="fill">0.3&ndash;1.0 mg/dL</span></td><td><span class="fill">Bile is not getting out. Jaundice becomes visible around <b>2&ndash;3 mg/dL</b> &mdash; sclera first.</span></td></tr>
+<tr><td class="k">Albumin</td><td><span class="fill">3.5&ndash;5.0 g/dL</span></td><td><span class="fill">A <b>low</b> one = the liver has stopped <b>building</b>. Low oncotic pressure &rarr; edema and ascites.</span></td></tr>
+<tr><td class="k">INR</td><td><span class="fill">0.8&ndash;1.1 (not on anticoagulants)</span></td><td><span class="fill">A <b>high</b> one = clotting factors are not being made. This is the best real-time measure of liver <b>synthetic function</b> &mdash; bleeding risk.</span></td></tr>
+<tr><td class="k">Ammonia</td><td><span class="fill">15&ndash;45 mcg/dL (some labs report 10&ndash;80)</span></td><td><span class="fill">The liver has stopped <b>detoxifying</b>. High &rarr; the brain is at risk.</span></td></tr>
+<tr><td class="k">Lipase</td><td><span class="fill">0&ndash;160 units/L</span></td><td><span class="fill">The <b>pancreas</b>, and almost nothing else. Most specific pancreatic marker &mdash; often 3&times; normal or more in acute pancreatitis.</span></td></tr>
+<tr><td class="k">Amylase</td><td><span class="fill">30&ndash;110 units/L</span></td><td><span class="fill">Pancreas, but also salivary glands and bowel &mdash; less specific than lipase.</span></td></tr>
+<tr><td class="k">WBC</td><td><span class="fill">5,000&ndash;10,000/mm&#179;</span></td><td><span class="fill">Infection or inflammation. In hepatobiliary: cholecystitis, cholangitis, pancreatitis, or SBP.</span></td></tr>
+<tr><td class="k">Platelets</td><td><span class="fill">150,000&ndash;400,000/mm&#179;</span></td><td><span class="fill">A <b>low</b> one in cirrhosis = the enlarged spleen is eating them (portal hypertension &rarr; splenomegaly). More bleeding risk.</span></td></tr>
+</tbody>
+</table>
+
+<p><b>The four jobs of the liver this whole packet tests:</b></p>
+<div class="flow">
+  <div class="stepbox"><b>DETOX</b><span>Ammonia &rarr; urea. Fails &rarr; <b>encephalopathy</b></span></div>
+  <div class="stepbox"><b>BUILD</b><span>Albumin + clotting factors. Fails &rarr; <b>ascites &amp; bleeding</b></span></div>
+  <div class="stepbox"><b>EXCRETE</b><span>Bilirubin into bile. Fails &rarr; <b>jaundice, dark urine, clay stool</b></span></div>
+  <div class="stepbox"><b>METABOLIZE</b><span>Drugs. Fails &rarr; <b>normal doses become toxic</b></span></div>
+</div>
+</div>
+
+<!-- ===================== CASE 1 ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="case1">
+<h2>Case 1 &middot; The Liver Is Failing &mdash; What Do You Notice First? 🩺</h2>
+
+<p class="lead-in"><i>A nurse is caring for a client with suspected liver dysfunction.</i></p>
+
+<h3>Assessment findings</h3>
+<p>Yellow sclera &middot; bruising on arms &middot; increasing abdominal girth &middot; confusion &middot; hand flapping when arms are extended &middot; dark urine &middot; clay-colored stool</p>
+
+<h3>Laboratory findings</h3>
+<table class="cmp">
+<thead><tr><th>Lab</th><th>Value</th><th>Read it</th></tr></thead>
+<tbody>
+<tr><td class="k">AST</td><td>248 units/L</td><td><span class="fill">&uarr;&uarr; about 5&times; normal &mdash; hepatocytes are being destroyed</span></td></tr>
+<tr><td class="k">ALT</td><td>312 units/L</td><td><span class="fill">&uarr;&uarr; about 6&times; normal &mdash; same story, liver-specific</span></td></tr>
+<tr><td class="k">Total bilirubin</td><td>6.8 mg/dL</td><td><span class="fill">&uarr;&uarr; nearly 7&times; normal &mdash; explains the yellow sclera, dark urine and clay stool</span></td></tr>
+<tr><td class="k">Albumin</td><td>2.1 g/dL</td><td><span class="fill">&darr;&darr; the liver has stopped building &mdash; explains the ascites and edema</span></td></tr>
+<tr><td class="k">INR</td><td>2.7</td><td><span class="fill">&uarr;&uarr; more than double normal &mdash; this client bleeds and will not stop</span></td></tr>
+<tr><td class="k">Ammonia</td><td>118 mcg/dL</td><td><span class="fill">&uarr;&uarr; roughly 3&times; normal &mdash; the brain is being poisoned right now</span></td></tr>
+</tbody>
+</table>
+
+<h3>1 &middot; Recognize Cues &mdash; select the findings that require follow-up</h3>
+<ul class="blanks">
+  <li><b>Yellow sclera</b> &mdash; <span class="fill">❌ Abnormal, but <i>expected</i> in liver failure and not dangerous by itself. Uncomfortable, not lethal.</span></li>
+  <li><b>Bruising on arms</b> &mdash; <span class="fill">✅ Visible evidence that clotting has failed &mdash; this client will hemorrhage from a small injury.</span></li>
+  <li><b>Increasing abdominal girth</b> &mdash; <span class="fill">✅ The word is <b>increasing</b>. Growing ascites pushes the diaphragm up and impairs breathing &mdash; a <b>B</b> problem.</span></li>
+  <li><b>Confusion</b> &mdash; <span class="fill">✅ A change in level of consciousness is <b>never</b> "just" anything. Ammonia is affecting the brain.</span></li>
+  <li><b>Hand flapping</b> (asterixis) &mdash; <span class="fill">✅ Classic neuro sign of hepatic encephalopathy. Pair it with the confusion and you have a brain in trouble.</span></li>
+  <li><b>Dark urine</b> &mdash; <span class="fill">❌ Expected &mdash; bilirubin the liver couldn't excrete into bile is being dumped by the kidneys instead.</span></li>
+  <li><b>Clay-colored stool</b> &mdash; <span class="fill">❌ Expected &mdash; no bile reaching the gut means no brown pigment. Confirms the diagnosis; doesn't change tonight's plan.</span></li>
+  <li><b>Albumin 2.1 g/dL</b> &mdash; <span class="fill">❌ (borderline) Very abnormal and it <i>explains</i> the ascites &mdash; but it is a chronic, slow number. Report it, don't run for it.</span></li>
+  <li><b>INR 2.7</b> &mdash; <span class="fill">✅ Bleeding risk. Hold invasive procedures, no IM injections, soft toothbrush, watch for occult bleeding.</span></li>
+  <li><b>Ammonia 118 mcg/dL</b> &mdash; <span class="fill">✅ The number behind the confusion and the asterixis. This is the one that becomes coma.</span></li>
+</ul>
+
+<p class="fine">⚠️ <b>Honest note about this item:</b> the packet says "select the <b>five</b>," but the printed answer key lists <b>six</b> (bruising, increasing abdominal girth, confusion, hand flapping, INR 2.7, ammonia 118). If a real exam forces you to five, drop <b>bruising</b> &mdash; the INR 2.7 is the same information in numeric form, so it is the least additive of the six.</p>
+
+<h3>2 &middot; Analyze Cues &mdash; match each cue to the liver function that is failing</h3>
+<table class="cmp">
+<thead><tr><th>Cue</th><th>Failed liver function</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td class="k">Confusion and hand flapping</td><td><span class="fill"><b>Ammonia detoxification</b></span></td><td><span class="fill"><i>The liver normally converts ammonia from gut protein breakdown into urea. It can't &rarr; ammonia crosses into the brain.</i></span></td></tr>
+<tr><td class="k">Bruising and INR 2.7</td><td><span class="fill"><b>Clotting factor production</b></span></td><td><span class="fill"><i>The liver makes factors II, VII, IX, X and fibrinogen. No factors &rarr; no clot.</i></span></td></tr>
+<tr><td class="k">Ascites and albumin 2.1</td><td><span class="fill"><b>Albumin production</b></span></td><td><span class="fill"><i>Albumin holds fluid inside the vessel. Low albumin &rarr; oncotic pressure drops &rarr; fluid leaks into the peritoneum and tissues.</i></span></td></tr>
+<tr><td class="k">Yellow sclera and bilirubin 6.8</td><td><span class="fill"><b>Bilirubin excretion</b></span></td><td><span class="fill"><i>The liver conjugates bilirubin and dumps it into bile. Backed up &rarr; it stains sclera, skin and urine.</i></span></td></tr>
+<tr><td class="k">Medication toxicity risk</td><td><span class="fill"><b>Drug metabolism</b></span></td><td><span class="fill"><i>A damaged liver cannot clear drugs. <b>Normal doses become overdoses</b> &mdash; especially sedatives, opioids, benzodiazepines and acetaminophen.</i></span></td></tr>
+</tbody>
+</table>
+
+<h3>3 &middot; Prioritize Hypotheses &mdash; which problem is the highest priority?</h3>
+<div class="nq">
+<div class="stem">A. Jaundice related to bilirubin buildup &middot; B. Ascites related to low albumin &middot; C. Hepatic encephalopathy related to ammonia buildup &middot; D. Impaired nutrition related to liver dysfunction</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>C &mdash; Hepatic encephalopathy.</b> <i>Because it is the only option on the list that ends in a lost airway.</i> Rising ammonia takes the client from confused &rarr; lethargic &rarr; obtunded &rarr; comatose. A client who cannot protect an airway aspirates or stops breathing. Everything else on this list is uncomfortable or chronic.</p>
+<p><b>Why A is wrong:</b> jaundice causes itching and distress, not death. It is a <i>sign</i> of the disease, not a complication to treat tonight.</p>
+<p><b>Why B is wrong:</b> ascites <b>is</b> a real priority when it compresses the diaphragm &mdash; that is a breathing problem &mdash; but it develops over days, and nothing here says she is in respiratory distress. If the case had said "RR 30, SpO&#8322; 88%," B would beat C.</p>
+<p><b>Why D is wrong:</b> nutrition matters enormously in cirrhosis, but it is a long-horizon problem. Nobody codes tonight from poor nutrition.</p>
+<p><mark>Priority rule: neuro changes outrank everything except an airway you are already losing or blood you are already seeing.</mark></p>
+</div></details>
+</div>
+
+<h3>4 &middot; Take Action &mdash; which intervention should the nurse anticipate?</h3>
+<div class="nq">
+<div class="stem">A. Administer lactulose as prescribed &middot; B. Encourage a high-protein meal &middot; C. Place the client flat in bed &middot; D. Administer acetaminophen for discomfort</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>A &mdash; Administer lactulose.</b> <i>Because it is the only option that removes ammonia.</i> Lactulose traps ammonia in the colon and drags it out in the stool. Titrate to <b>2&ndash;3 soft stools per day</b>.</p>
+<p><b>Why B is wrong:</b> protein is broken down by gut bacteria into <b>more ammonia</b>. Loading a client who is actively encephalopathic with a high-protein meal pours fuel on the fire. <span class="fine">(For your own knowledge: current hepatology no longer supports long-term protein restriction &mdash; malnourished cirrhotics actually need 1.2&ndash;1.5 g/kg/day. But on an NCLEX-style item, "encourage a high-protein meal" during acute encephalopathy is the wrong answer every time.)</span></p>
+<p><b>Why C is wrong:</b> flat is the worst position here. With a tense ascitic abdomen, lying flat pushes the diaphragm up and worsens breathing &mdash; and a confused client lying flat is an aspiration waiting to happen. <b>Semi- to high-Fowler's.</b></p>
+<p><b>Why D is wrong:</b> <span class="never">Acetaminophen is metabolized by the liver and is hepatotoxic &mdash; you do not hand it to a failing liver.</span> NSAIDs are no better (bleeding risk with INR 2.7, plus renal injury &rarr; hepatorenal syndrome).</p>
+</div></details>
+</div>
+
+<h3>5 &middot; Evaluate Outcomes &mdash; which finding best indicates the intervention worked?</h3>
+<div class="nq">
+<div class="stem">A. Client has three soft stools and improved orientation &middot; B. Client reports decreased itching &middot; C. Client has increased appetite &middot; D. Client's urine becomes lighter yellow</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>A &mdash; Three soft stools and improved orientation.</b> <i>Because you evaluate a drug against the problem it was given for.</i> Lactulose was given to clear ammonia; the stool proves the drug is working mechanically and the improved orientation proves it is working <b>clinically</b>. You need both &mdash; stools without mental improvement means keep going; mental improvement is the real endpoint.</p>
+<p><b>Why B, C and D are wrong:</b> all three are measures of <b>bilirubin</b> clearing (itching, urine color) or general recovery (appetite). None of them tells you a thing about the ammonia or the brain, which is what you treated.</p>
+<p class="fine">⚠️ More than 3&ndash;4 stools a day is <b>too much</b> lactulose &mdash; it causes dehydration, hypokalemia and hypernatremia, and all three of those make encephalopathy <i>worse</i>. Hold and call.</p>
+</div></details>
+</div>
+</div>
+
+<!-- ===================== BOW-TIE 1 ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="bowtie1">
+<h2>🚨 Bow-Tie Case 1 &middot; Cirrhosis Complication</h2>
+
+<p class="lead-in"><i>A nurse is caring for a client with cirrhosis. Vomiting bright red blood &middot; black tarry stool &middot; BP 86/48 &middot; HR 132 &middot; cool clammy skin &middot; abdomen distended &middot; history of portal hypertension.</i></p>
+
+<p><b>Read the vital signs as a sentence:</b> <span class="fill">BP 86/48 with HR 132 and cool clammy skin is <b>hypovolemic shock</b>. The heart is racing to compensate for volume it does not have, and the body has shunted blood away from the skin to protect the core. This client is bleeding <i>right now</i>.</span></p>
+
+<h3>Condition</h3>
+<ul class="blanks">
+  <li><b>Ascites</b> &mdash; <span class="fill">❌ The abdomen is distended, but ascites does not cause hematemesis or shock.</span></li>
+  <li><b>Bleeding esophageal varices</b> &mdash; <span class="fill">✅ <b>THE ANSWER.</b> Portal hypertension history + bright red emesis + melena + shock. Nothing else fits.</span></li>
+  <li><b>Hepatic encephalopathy</b> &mdash; <span class="fill">❌ No confusion, no asterixis. <i>(But note: this GI bleed is a huge protein load and will likely cause encephalopathy in 24&ndash;48 hours.)</i></span></li>
+  <li><b>Acute pancreatitis</b> &mdash; <span class="fill">❌ No epigastric pain boring to the back, no elevated lipase, and pancreatitis does not cause bright red hematemesis.</span></li>
+</ul>
+
+<h3>Two Nursing Actions</h3>
+<ul class="blanks">
+  <li><b>Apply supplemental oxygen</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> She is losing red cells, which are the oxygen carriers. Maximize the oxygen on the cells she has left. Airway and breathing come first, always.</span></li>
+  <li><b>Prepare for endoscopy</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> <b>EGD is both the diagnosis and the treatment</b> &mdash; band ligation or sclerotherapy stops the bleeding at the source. Nothing you hang stops a varix from bleeding.</span></li>
+  <li><b>Administer lactulose</b> &mdash; <span class="fill">❌ Not now. It is a reasonable order <i>later</i> to clear the blood-protein load, but you cannot give oral lactulose to a client actively vomiting blood.</span></li>
+  <li><b>Encourage oral fluids</b> &mdash; <span class="fill">❌ <span class="never">Keep NPO.</span> Oral fluid in an actively vomiting client = aspiration, and water will not replace blood. Volume goes in through a <b>large-bore IV</b>.</span></li>
+  <li><b>Place client in high-Fowler's and leave unattended</b> &mdash; <span class="fill">❌ The <i>position</i> is right (upright protects the airway from aspirating blood). <span class="never">"Leave unattended" makes the whole option wrong &mdash; you never leave an actively hemorrhaging client.</span> This is a classic test trick: half-right options are wrong options.</span></li>
+  <li><b>Obtain stool culture</b> &mdash; <span class="fill">❌ The black stool is <b>digested blood</b> (melena), not infection. A culture takes days and changes nothing about a hemorrhage.</span></li>
+</ul>
+
+<h3>Two Parameters to Monitor</h3>
+<ul class="blanks">
+  <li><b>Blood pressure</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> Direct measure of whether the bleeding and the resuscitation are winning.</span></li>
+  <li><b>Heart rate</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> Tachycardia is the <i>earliest</i> compensation &mdash; the HR climbs before the BP falls, and a falling HR with a falling BP is a peri-arrest sign.</span></li>
+  <li><b>Ammonia level</b> &mdash; <span class="fill">❌ Relevant to this client's future, useless in the next ten minutes.</span></li>
+  <li><b>Bowel sounds</b> &mdash; <span class="fill">❌ Not a hemodynamic measure.</span></li>
+  <li><b>Stool color</b> &mdash; <span class="fill">❌ Worth documenting, but it <b>lags</b> &mdash; it takes hours for blood to travel. Vitals change in minutes.</span></li>
+  <li><b>Blood glucose</b> &mdash; <span class="fill">❌ Worth checking in liver failure (the liver stores glycogen), but not a bleeding parameter.</span></li>
+</ul>
+
+<h3>What the whole care bundle looks like</h3>
+<div class="flow">
+  <div class="stepbox"><b>AIRWAY</b><span>Upright, suction at bedside, be ready to intubate if LOC drops</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>BREATHING</b><span>Oxygen on</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>CIRCULATION</b><span>Two large-bore IVs, isotonic fluid, type &amp; crossmatch, blood products</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>DRUGS</b><span>Octreotide (splanchnic vasoconstriction), IV PPI, prophylactic antibiotic</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>DEFINITIVE</b><span>EGD &rarr; band ligation. Balloon tamponade or TIPS if it fails.</span></div>
+</div>
+
+<p><b>Long-term prevention once she survives:</b> <span class="fill">non-selective beta blocker &mdash; <b>propranolol</b> or <b>nadolol</b> &mdash; to lower portal pressure, plus repeat banding sessions. <span class="never">Never place an NG tube blindly in a client with known varices without a provider order</span> &mdash; and avoid straining, retching, and anything that spikes intra-abdominal pressure.</span></p>
+</div>
+
+<!-- ===================== PARACENTESIS MATRIX ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="paracentesis">
+<h2>Matrix Practice &middot; Ascites and Paracentesis 💧</h2>
+
+<p class="lead-in"><i>For each intervention, indicate whether it is Appropriate or Not Appropriate.</i></p>
+
+<table class="cmp">
+<thead><tr><th>Intervention</th><th>Answer</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td class="k">Assess respiratory status before and after the procedure</td><td><span class="fill">✅ <b>Appropriate</b></span></td><td><span class="fill"><i>Relieving the pressure is the entire point &mdash; the diaphragm can move again. Before/after respiratory assessment is how you prove it worked.</i></span></td></tr>
+<tr><td class="k">Have client void before paracentesis</td><td><span class="fill">✅ <b>Appropriate</b></span></td><td><span class="fill"><i>A full bladder sits directly in the needle's path. Emptying it prevents accidental bladder puncture. This is the #1 tested pre-procedure step.</i></span></td></tr>
+<tr><td class="k">Monitor blood pressure after fluid removal</td><td><span class="fill">✅ <b>Appropriate</b></span></td><td><span class="fill"><i>Removing several liters drops intra-abdominal pressure fast; fluid shifts back out of the vessels and the client can become <b>hypotensive</b>. Watch for it during and after.</i></span></td></tr>
+<tr><td class="k">Place client flat immediately after large-volume fluid removal</td><td><span class="fill">❌ <b>Not Appropriate</b></span></td><td><span class="fill"><i>You just made it possible for her to breathe &mdash; do not undo it. Keep her semi-Fowler's or in a position of comfort, and keep the puncture site up and dry. Flat also increases leakage from the site.</i></span></td></tr>
+<tr><td class="k">Monitor for bleeding from the puncture site</td><td><span class="fill">✅ <b>Appropriate</b></span></td><td><span class="fill"><i>This client's INR is prolonged and platelets are low. A puncture in a cirrhotic does not seal the way a normal one does. Also watch for persistent ascitic fluid leak.</i></span></td></tr>
+<tr><td class="k">Anticipate albumin replacement if a large volume is removed</td><td><span class="fill">✅ <b>Appropriate</b></span></td><td><span class="fill"><i>Roughly <b>6&ndash;8 g of IV albumin per liter removed</b> when more than 5 L comes off &mdash; it holds volume in the vessels and prevents post-paracentesis circulatory collapse and kidney injury.</i></span></td></tr>
+</tbody>
+</table>
+
+<h3>The full nursing sequence</h3>
+<div class="flow">
+  <div class="stepbox"><b>BEFORE</b><span>Consent &middot; <b>void</b> &middot; baseline weight, abdominal girth, VS &middot; check INR/platelets</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>POSITION</b><span>Upright &mdash; high-Fowler's or sitting on the edge of the bed, so fluid pools low and bowel floats away</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>DURING</b><span>VS q15min &middot; watch for dizziness, pallor, &darr;BP &middot; measure and describe the fluid</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>AFTER</b><span>Dressing &middot; VS &middot; <b>repeat weight and girth</b> &middot; monitor for leak, bleeding, hypotension, fever</span></div>
+</div>
+
+<p><b>Report immediately after a tap:</b> <span class="fill">fever or rising WBC (<b>spontaneous bacterial peritonitis</b> &mdash; suspect it with fever, abdominal pain and worsening encephalopathy in any ascites client), persistent hypotension, hematuria, or continuous fluid leak from the site.</span></p>
+
+<p><b>Medical management of ascites when it isn't tapped:</b> <span class="fill"><b>Sodium restriction</b> (about 2 g/day) + <b>spironolactone</b> (a potassium-<i>sparing</i> diuretic that blocks the aldosterone driving the retention), often with furosemide. Monitor <b>daily weight</b> &mdash; same scale, same time, same clothing &mdash; because 1 kg = 1 L of fluid, and weight moves before girth does.</span></p>
+</div>
+
+<!-- ===================== CLOZE 1 ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="cloze1">
+<h2>Cloze Practice &middot; Hepatic Encephalopathy 🧠</h2>
+
+<p class="lead-in"><i>Complete the sentence using the correct options. Word bank: hepatic encephalopathy &middot; ammonia &middot; bilirubin &middot; lactulose &middot; spironolactone &middot; mental status &middot; stool color</i></p>
+
+<p>The client with cirrhosis who develops confusion, asterixis, and fetor hepaticus is most likely experiencing <span class="fill"><b>hepatic encephalopathy</b></span> caused by elevated <span class="fill"><b>ammonia</b></span>. The nurse should anticipate administration of <span class="fill"><b>lactulose</b></span> and monitor for improvement in <span class="fill"><b>mental status</b></span>.</p>
+
+<h3>Why the distractors are wrong</h3>
+<ul class="blanks">
+  <li><b>bilirubin</b> &mdash; <span class="fill">Bilirubin causes <b>jaundice and itching</b>, not confusion. It is elevated in this client too, but it is not what is scrambling her brain.</span></li>
+  <li><b>spironolactone</b> &mdash; <span class="fill">Treats <b>ascites</b> by blocking aldosterone. Correct drug, wrong problem.</span></li>
+  <li><b>stool color</b> &mdash; <span class="fill">You do monitor <b>stool frequency and consistency</b> on lactulose &mdash; but the outcome that matters is the <b>brain</b>. Stool is the process measure; mental status is the goal.</span></li>
+</ul>
+
+<p><b>What is fetor hepaticus?</b> <span class="fill">A sweet, musty, sulfur-like odor on the breath, from mercaptans the liver failed to clear. If you smell it, the liver is decompensated &mdash; it travels with encephalopathy.</span></p>
+</div>
+
+<!-- ===================== PRIORITIZATION 1 ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="priority1">
+<h2>Hard Prioritization Question 🥇</h2>
+
+<div class="nq">
+<div class="stem">A nurse receives report on four clients. Which client should the nurse assess <b>first</b>?
+<ol>
+  <li>A client with hepatitis A who reports fatigue and poor appetite</li>
+  <li>A client with cirrhosis who has ascites and reports mild shortness of breath</li>
+  <li>A client with cirrhosis who vomited 300 mL of bright red blood</li>
+  <li>A client with cholelithiasis who reports right upper quadrant pain after eating</li>
+</ol></div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>3 &mdash; the client who vomited 300 mL of bright red blood.</b> <i>Because active hemorrhage in a client who cannot clot is the fastest route to death on this list.</i> In cirrhosis, bright red hematemesis means <b>ruptured esophageal varices</b> until proven otherwise &mdash; and 300 mL is not a small amount when the INR is prolonged and there is nothing to stop it.</p>
+<p><b>Why 1 is not first:</b> fatigue and poor appetite are <b>expected findings</b> in hepatitis A. Textbook symptoms of a known diagnosis never win a prioritization question.</p>
+<p><b>Why 2 is not first:</b> this is the strongest distractor and you should feel the pull &mdash; it is a <b>breathing</b> complaint, and B beats C. But the word is <b>mild</b>, and the cause (ascites pushing on the diaphragm) develops over days. Client 3 is losing blood volume by the minute. <mark>Go to the client who is losing something you cannot replace fast enough.</mark> Client 2 is second.</p>
+<p><b>Why 4 is not first:</b> RUQ pain after eating is the <b>classic, expected</b> presentation of gallstones &mdash; fat triggers gallbladder contraction against a stone. It hurts a great deal, and it needs treatment, but the client is stable. <i>Reassess this one if fever or jaundice appears &mdash; that means it has progressed to cholecystitis or cholangitis.</i></p>
+</div></details>
+</div>
+
+<p class="fine">🤖 <b>Claire prompt:</b> "Give me a liver failure case one cue at a time. Make me identify which liver function is failing, prioritize the most dangerous complication, and explain the rationale before you reveal the answer."</p>
+</div>
+
+<!-- ===================== CASE 2 ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="case2">
+<h2>Case 2 &middot; "The Patient Doesn't Look Right&hellip;" 🩺</h2>
+
+<p class="lead-in"><i>You are caring for a 58-year-old client admitted with cirrhosis. The nursing assistant reports, "He just isn't acting like he was this morning."</i></p>
+
+<p><b>Before you read a single vital sign:</b> <span class="fill">That sentence from the assistant <b>is</b> the assessment finding. "Different from this morning" in a cirrhotic client means <b>go look now</b>. Unlicensed staff spend more time at the bedside than you do &mdash; a change they notice is data, not gossip.</span></p>
+
+<h3>Step 1 &middot; Recognize the Cues &mdash; highlight EVERY cue that concerns you</h3>
+<p><b>Answer: all nine.</b> <i>Every box on this list is abnormal.</i> But they are not equally urgent &mdash; here is how to sort them:</p>
+
+<table class="cmp">
+<thead><tr><th>Cue</th><th>Concerning?</th><th>What it means &amp; how urgent</th></tr></thead>
+<tbody>
+<tr><td class="k">Drowsy but arousable</td><td><span class="fill">✅ 🚨</span></td><td><span class="fill"><b>URGENT.</b> A declining LOC is the single most important cue here. Drowsy today is obtunded tonight.</span></td></tr>
+<tr><td class="k">Oriented to person only</td><td><span class="fill">✅ 🚨</span></td><td><span class="fill"><b>URGENT.</b> Orientation is lost in order: <b>time &rarr; place &rarr; person</b>. Losing everything but person means he has already lost two levels.</span></td></tr>
+<tr><td class="k">Firm, distended abdomen</td><td><span class="fill">✅</span></td><td><span class="fill">Ascites. Watch breathing; also think SBP if he has fever or pain. Important, not immediately lethal.</span></td></tr>
+<tr><td class="k">+3 pedal edema</td><td><span class="fill">✅</span></td><td><span class="fill">Low albumin &rarr; fluid leaves the vessels. Chronic and slow. Elevate, protect skin, daily weight.</span></td></tr>
+<tr><td class="k">Jaundice</td><td><span class="fill">✅</span></td><td><span class="fill">Bilirubin excretion has failed. Expected in cirrhosis. Manage the itching; it does not change the priority.</span></td></tr>
+<tr><td class="k">Asterixis (hands flap)</td><td><span class="fill">✅ 🚨</span></td><td><span class="fill"><b>URGENT.</b> A physical sign of ammonia on the brain. With drowsiness, this is encephalopathy, not "just tired."</span></td></tr>
+<tr><td class="k">Albumin 2.3 g/dL</td><td><span class="fill">✅</span></td><td><span class="fill">&darr;&darr; The liver stopped building. Explains the edema and the ascites. Chronic marker.</span></td></tr>
+<tr><td class="k">INR 2.4</td><td><span class="fill">✅</span></td><td><span class="fill">&uarr;&uarr; Bleeding risk. Fall precautions matter enormously now &mdash; a confused client with an INR of 2.4 who falls can bleed intracranially.</span></td></tr>
+<tr><td class="k">Ammonia 108 mcg/dL</td><td><span class="fill">✅ 🚨</span></td><td><span class="fill"><b>URGENT.</b> The number that explains the drowsiness and the flap. This is the treatable one.</span></td></tr>
+</tbody>
+</table>
+
+<p><b>The vital signs are the trap:</b> <span class="fill">BP 112/68, HR 94, RR 18, temp 98.7&deg;F &mdash; <mark>all normal.</mark> Students see normal vitals and relax. <b>Hepatic encephalopathy does not change vital signs until the client is already obtunded.</b> Normal vitals do not mean a stable patient; they mean you have to look at the neuro exam.</span></p>
+
+<h3>Step 2 &middot; Which cues are connected?</h3>
+<p><b>The packet's chain, finished:</b></p>
+<div class="flow">
+  <div class="stepbox"><b>CONFUSION</b><span>ammonia crossing into the brain</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>ASTERIXIS</b><span>same cause &mdash; detox failure</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>EDEMA</b><span>low albumin &mdash; build failure</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>FIRM ABDOMEN</b><span>ascites &mdash; low albumin + portal hypertension</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>ONE ORGAN</b><span><span class="fill">All of it is <b>hepatocellular failure + portal hypertension</b>. The jaundice and the INR are the same organ failing at two more of its jobs.</span></span></div>
+</div>
+
+<p><b>Say it in one sentence:</b> <span class="fill">"This is not four problems. It is one liver that has stopped detoxifying (confusion, asterixis), stopped building (edema, ascites, INR), and stopped excreting (jaundice) &mdash; and the detox failure is the part that can kill him today."</span></p>
+
+<h3>Step 3 &middot; Which complication is MOST likely occurring?</h3>
+<div class="nq">
+<div class="stem">A. Portal hypertension &middot; B. Hepatic encephalopathy &middot; C. Acute pancreatitis &middot; D. Acute cholecystitis</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; Hepatic encephalopathy.</b> <i>Because drowsiness + disorientation + asterixis + ammonia 108 is the complete picture and nothing else explains all four.</i></p>
+<p><b>Why A is wrong:</b> he <b>has</b> portal hypertension &mdash; that is what the ascites is &mdash; but portal hypertension does not cause confusion. It is the background, not the acute change.</p>
+<p><b>Why C is wrong:</b> no severe epigastric pain radiating to the back, no nausea/vomiting, no elevated lipase, no relief with leaning forward.</p>
+<p><b>Why D is wrong:</b> no RUQ pain, no fever, no Murphy's sign, no leukocytosis. Cholecystitis clients look sick <i>and hurt</i>; this client is quietly slipping away.</p>
+</div></details>
+</div>
+
+<h3>Step 4 &middot; Which nursing intervention should occur FIRST?</h3>
+<div class="nq">
+<div class="stem">A. Encourage a high-protein meal &middot; B. Assess airway and level of consciousness &middot; C. Place the patient flat &middot; D. Encourage ambulation</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; Assess airway and level of consciousness.</b> <i>Because assessment precedes intervention, and because a drowsy client's next problem is a lost gag reflex.</i> You need to know: can he swallow? Can he protect his airway? Is he safe to receive anything by mouth &mdash; including the lactulose you are about to give?</p>
+<p><b>Why A is wrong:</b> protein &rarr; gut bacteria &rarr; more ammonia. It is the opposite of the treatment. It is also unsafe to feed a client whose swallow you haven't assessed.</p>
+<p><b>Why C is wrong:</b> flat is dangerous twice over &mdash; it compresses the diaphragm against a tense ascitic abdomen, and it puts a drowsy client at risk of aspirating. <b>Semi- to high-Fowler's.</b></p>
+<p><b>Why D is wrong:</b> a drowsy, disoriented client with an INR of 2.4 who ambulates is a client who falls and bleeds. Fall precautions, not ambulation.</p>
+<p><mark>The rule: when the answer choices include "assess" and the client's status just changed, assess is almost always first &mdash; especially when the assessment is airway.</mark></p>
+</div></details>
+</div>
+
+<h3>Step 5 &middot; How will you know your intervention worked? Select ALL.</h3>
+<ul class="blanks">
+  <li><b>Improved orientation</b> &mdash; <span class="fill">✅ The <b>primary</b> outcome. The brain is what you were treating.</span></li>
+  <li><b>Ammonia decreases</b> &mdash; <span class="fill">✅ Supports it &mdash; though be aware ammonia levels correlate loosely with symptoms. <b>Treat the client, not the number.</b></span></li>
+  <li><b>Three soft stools per day</b> &mdash; <span class="fill">✅ Proof the lactulose is doing its mechanical job. This is the dosing target.</span></li>
+  <li><b>Decreased asterixis</b> &mdash; <span class="fill">✅ An objective, visible neuro improvement you can check at the bedside without a lab.</span></li>
+  <li><b>Weight gain</b> &mdash; <span class="fill">❌ Weight <b>gain</b> in a cirrhotic means <b>more fluid</b> &mdash; worsening ascites or edema. That is deterioration, not improvement.</span></li>
+</ul>
+
+<h3>The packet's own rationale, unpacked</h3>
+<p><i>"Students often jump to the ascites. But what can kill the patient first? The confused patient. Always think ABCs &rarr; Brain &rarr; Airway &rarr; then everything else."</i></p>
+<p><b>What that actually means:</b> <span class="fill">The reason a neuro change outranks a big abdomen is that <b>the brain controls the airway</b>. Level of consciousness and airway protection are not two separate concerns &mdash; the LOC <i>is</i> the airway assessment. When the brain goes, the gag reflex goes, then the tongue obstructs, then he aspirates. That is why "confused" jumps the line ahead of "distended."</span></p>
+
+<p class="fine">🤖 <b>Claire prompt:</b> "I have hepatic encephalopathy. Ask me assessment questions one at a time. Don't tell me what's wrong until I identify the abnormal cues. Then ask me WHY each symptom occurs."</p>
+</div>
+
+<!-- ===================== AMMONIA STOP ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="ammonia">
+<h2>🛑 STOP &mdash; Explain WHY: why does ammonia affect the brain? 🧠</h2>
+
+<p><b>The full answer:</b> <span class="fill">Gut bacteria break down dietary and blood protein and release <b>ammonia</b>. Ammonia travels via the portal vein to the liver, which converts it to <b>urea</b> for the kidneys to excrete. In cirrhosis this fails <b>two ways at once</b>: the damaged hepatocytes can't run the urea cycle, <i>and</i> scarring forces blood through collateral vessels that <b>bypass the liver entirely</b> (portosystemic shunting). Ammonia therefore reaches systemic circulation, and because it is small and lipid-soluble it <b>crosses the blood&ndash;brain barrier</b>. Inside the brain, astrocytes detoxify it by combining it with glutamate to make <b>glutamine</b>. Glutamine is osmotically active, so it pulls water into the astrocytes &rarr; they swell &rarr; <b>cerebral edema</b> and disrupted neurotransmission. The result is depressed level of consciousness, asterixis, and eventually coma.</span></p>
+
+<div class="flow">
+  <div class="stepbox"><b>1</b><span>Gut bacteria digest protein &rarr; <b>ammonia</b></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>2</b><span>Liver can't convert it to urea &amp; blood shunts around the liver</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>3</b><span>Ammonia crosses the <b>blood&ndash;brain barrier</b></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>4</b><span>Astrocytes convert it to <b>glutamine</b> &rarr; cells swell</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>5</b><span>Cerebral edema &rarr; &darr;LOC, asterixis, coma</span></div>
+</div>
+
+<h3>The stages &mdash; so you can chart a direction, not just a snapshot</h3>
+<table class="cmp">
+<thead><tr><th>Stage</th><th>What you see</th><th>Nursing focus</th></tr></thead>
+<tbody>
+<tr><td class="k">I</td><td><span class="fill">Subtle personality change, shortened attention, <b>day/night sleep reversal</b>, mild tremor</span></td><td><span class="fill">Catch it here. Ask family "is he himself?"</span></td></tr>
+<tr><td class="k">II</td><td><span class="fill">Lethargy, <b>disoriented to time</b>, inappropriate behavior, <b>asterixis appears</b></span></td><td><span class="fill">Lactulose, fall precautions, reorient, find the precipitant</span></td></tr>
+<tr><td class="k">III</td><td><span class="fill">Somnolent but rousable, grossly disoriented, marked confusion</span></td><td><span class="fill">NPO risk &mdash; consider rectal lactulose. Airway watch.</span></td></tr>
+<tr><td class="k">IV</td><td><span class="fill">Coma, unresponsive to pain</span></td><td><span class="fill"><b>Intubate to protect the airway.</b> ICU.</span></td></tr>
+</tbody>
+</table>
+
+<h3>⭐ Why did the ammonia go up TODAY? Always hunt the precipitant</h3>
+<p><span class="fill">Encephalopathy in a stable cirrhotic almost always has a <b>trigger</b>, and finding it is nursing work: <b>GI bleeding</b> (blood is a huge protein load &mdash; check for melena), <b>infection</b> especially SBP, <b>constipation</b> (ammonia sits in the gut and gets absorbed), <b>dehydration or over-diuresis</b>, <b>hypokalemia</b> and <b>alkalosis</b> (both push ammonium NH&#8324;&#8314; toward absorbable ammonia NH&#8323;), <b>sedatives, opioids and benzodiazepines</b> the liver can't clear, a <b>missed lactulose dose</b>, a large protein load, renal failure, or a recent TIPS procedure.</span></p>
+
+<p><span class="never">Never give a sedative or benzodiazepine to a confused cirrhotic "to calm them down" without a provider discussion &mdash; the liver cannot clear it and you will deepen the encephalopathy you were asked to treat.</span></p>
+</div>
+
+<!-- ===================== BOW-TIE 2 ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="bowtie2">
+<h2>Bow Tie 2 &middot; Severe Abdominal Pain 🍕</h2>
+
+<p class="lead-in"><i>Pain began suddenly after eating pizza &middot; right upper quadrant &middot; radiates to the right shoulder &middot; temp 101.8&deg;F &middot; positive Murphy's sign &middot; nausea &middot; vomiting &middot; WBC 16,800.</i></p>
+
+<h3>Choose the MOST likely condition</h3>
+<ul class="blanks">
+  <li><b>Acute pancreatitis</b> &mdash; <span class="fill">❌ Wrong location and wrong radiation. Pancreatitis is <b>epigastric/LUQ boring straight through to the back</b>, relieved by leaning forward or curling into a fetal position. No lipase given.</span></li>
+  <li><b>Cholecystitis</b> &mdash; <span class="fill">✅ <b>THE ANSWER.</b> Fatty meal trigger + RUQ pain radiating to the <b>right shoulder</b> + fever + positive Murphy's + WBC 16,800. Textbook.</span></li>
+  <li><b>Hepatitis</b> &mdash; <span class="fill">❌ Presents with fatigue, anorexia, nausea, jaundice and a dull RUQ ache with elevated AST/ALT &mdash; not sudden severe post-meal pain with a positive Murphy's.</span></li>
+  <li><b>Cirrhosis</b> &mdash; <span class="fill">❌ A chronic disease. Ascites, jaundice, encephalopathy, varices &mdash; not an acute painful attack after dinner.</span></li>
+</ul>
+
+<h3>Choose TWO nursing interventions</h3>
+<ul class="blanks">
+  <li><b>Maintain NPO status</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> <i>Food &mdash; especially fat &mdash; releases CCK, which makes the inflamed gallbladder contract against the obstruction.</i> NPO rests the gallbladder and prepares her for surgery.</span></li>
+  <li><b>Apply a heating pad directly to the abdomen</b> &mdash; <span class="fill">❌ <span class="never">No direct heat on an acute inflamed abdomen.</span> Heat increases blood flow and inflammation, can mask worsening pain, and risks burns.</span></li>
+  <li><b>Administer prescribed IV antibiotics</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> Fever + WBC 16,800 means this is <b>infected</b>, not just inflamed. Untreated it progresses to gangrene, perforation and sepsis.</span></li>
+  <li><b>Encourage fatty meals</b> &mdash; <span class="fill">❌ The exact trigger that caused the attack. Fat &rarr; CCK &rarr; gallbladder contraction &rarr; pain.</span></li>
+  <li><b>Prepare for immediate paracentesis</b> &mdash; <span class="fill">❌ Paracentesis drains <b>ascites</b>. There is no ascites here. Wrong disease entirely.</span></li>
+  <li><b>Administer IV fluids</b> &mdash; <span class="fill">⚠️ Clinically correct and she absolutely needs them (NPO, febrile, vomiting) &mdash; but it is the <b>generic</b> answer. The two the key wants are the two that treat <i>this</i> disease: rest the gallbladder (NPO) and kill the infection (antibiotics). If the item allowed three, fluids is the third.</span></li>
+</ul>
+
+<h3>Choose TWO parameters to monitor</h3>
+<ul class="blanks">
+  <li><b>Temperature</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> Tracks the infection and the antibiotic response. A rising temp with rigors suggests it has spread to the bile duct (<b>cholangitis</b>).</span></li>
+  <li><b>WBC</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> Same reason &mdash; a falling WBC means the antibiotics are working; a climbing one means she is heading to the OR.</span></li>
+  <li><b>Lipase</b> &mdash; <span class="fill">❌ A pancreatic marker. Worth <i>one</i> check to rule out gallstone pancreatitis, but not a monitoring parameter for cholecystitis.</span></li>
+  <li><b>Mental status</b> &mdash; <span class="fill">❌ Belongs to liver failure. <i>(It becomes relevant only if she becomes septic &mdash; new confusion in an older adult is a sepsis sign.)</i></span></li>
+  <li><b>INR</b> &mdash; <span class="fill">❌ Relevant before surgery and if the duct has been obstructed a long time (no bile &rarr; no vitamin K absorption) &mdash; but not the acute monitoring priority.</span></li>
+  <li><b>Bilirubin</b> &mdash; <span class="fill">❌ Rises only if a stone has moved into the <b>common bile duct</b>. Important to notice, but it is a diagnostic detour, not the parameter tracking her infection.</span></li>
+</ul>
+
+<h3>🛑 Clinical Reasoning &mdash; how did you know this wasn't pancreatitis? Write TWO reasons</h3>
+<ul class="blanks">
+  <li><b>Reason 1 &mdash; the pain map.</b> <span class="fill">Cholecystitis pain sits in the <b>RUQ and radiates to the right shoulder or scapula</b> (the inflamed gallbladder irritates the phrenic nerve). Pancreatitis pain sits <b>epigastric or LUQ and bores straight through to the back</b>, and the client is more comfortable leaning forward. Different location, different radiation, different position of comfort.</span></li>
+  <li><b>Reason 2 &mdash; the physical sign.</b> <span class="fill">A <b>positive Murphy's sign</b> &mdash; the client stops mid-inspiration when you press under the right costal margin &mdash; is a <b>gallbladder</b> finding. Pancreatitis has its own signs: <b>Cullen's</b> (periumbilical bruising) and <b>Grey Turner's</b> (flank bruising), which indicate retroperitoneal bleeding.</span></li>
+  <li><b>Bonus reason 3 &mdash; the trigger and the labs.</b> <span class="fill">The pain started right after a <b>fatty meal</b>, which is the classic gallbladder trigger. And no lipase elevation was given &mdash; in pancreatitis, lipase is usually 3&times; normal or higher, and it is the single most specific test.</span></li>
+</ul>
+
+<h3>Cholecystitis at a glance</h3>
+<table class="cmp">
+<thead><tr><th>Question</th><th>Answer</th></tr></thead>
+<tbody>
+<tr><td class="k">Best first imaging</td><td><span class="fill"><b>RUQ ultrasound</b> &mdash; sees stones, thickened wall, pericholecystic fluid. Non-invasive, no radiation, no contrast.</span></td></tr>
+<tr><td class="k">Confirmatory if US is unclear</td><td><span class="fill"><b>HIDA scan</b> (cholescintigraphy) &mdash; if the gallbladder does not fill, the cystic duct is obstructed.</span></td></tr>
+<tr><td class="k">Definitive treatment</td><td><span class="fill"><b>Laparoscopic cholecystectomy</b>, usually within 72 hours. ERCP first if a stone is in the common bile duct.</span></td></tr>
+<tr><td class="k">Post-lap-chole shoulder pain</td><td><span class="fill">Expected &mdash; from the <b>CO&#8322; used to inflate the abdomen</b> irritating the diaphragm. Treat with <b>ambulation</b>, position changes and heat <i>to the shoulder</i>. Reassure &mdash; it is not a complication.</span></td></tr>
+<tr><td class="k">Discharge diet teaching</td><td><span class="fill"><b>Low-fat, small frequent meals</b>, gradually liberalized. Loose stools for a few weeks are normal &mdash; bile now drips continuously instead of being stored.</span></td></tr>
+<tr><td class="k">Call the provider for</td><td><span class="fill">Fever, worsening or persistent pain, <b>jaundice, clay-colored stools, dark urine</b> (a retained duct stone), or drainage/redness at a port site.</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== MATRIX PORTAL ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="matrixportal">
+<h2>Matrix &middot; Portal Hypertension vs Loss of Liver Function 🔀</h2>
+
+<p class="lead-in"><i>Your patient has cirrhosis. Is each finding a <b>plumbing</b> problem (blood cannot get through the scarred liver, so pressure backs up) or a <b>factory</b> problem (the hepatocytes have stopped doing their chemistry)?</i></p>
+
+<table class="cmp">
+<thead><tr><th>Finding</th><th>Portal HTN</th><th>Loss of liver function</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td class="k">Esophageal varices</td><td><span class="fill">✅</span></td><td><span class="fill">&mdash;</span></td><td><span class="fill"><i>Pure pressure. Blood detours into thin collateral veins in the esophagus and stomach because it can't get through the liver.</i></span></td></tr>
+<tr><td class="k">Elevated ammonia</td><td><span class="fill">&mdash;</span></td><td><span class="fill">✅</span></td><td><span class="fill"><i>The urea cycle has failed. (Shunting makes it worse, but the failure is chemical.)</i></span></td></tr>
+<tr><td class="k">Low albumin</td><td><span class="fill">&mdash;</span></td><td><span class="fill">✅</span></td><td><span class="fill"><i>The liver is the only place albumin is made. Nothing to do with pressure.</i></span></td></tr>
+<tr><td class="k">Ascites</td><td><span class="fill">✅</span></td><td><span class="fill">✅</span></td><td><span class="fill"><i><b>BOTH.</b> High pressure pushes fluid out; low albumin fails to pull it back. See the STOP box below.</i></span></td></tr>
+<tr><td class="k">Elevated INR</td><td><span class="fill">&mdash;</span></td><td><span class="fill">✅</span></td><td><span class="fill"><i>Clotting factors are proteins the liver builds. Pure synthetic failure.</i></span></td></tr>
+<tr><td class="k">Splenomegaly</td><td><span class="fill">✅</span></td><td><span class="fill">&mdash;</span></td><td><span class="fill"><i>The spleen drains into the portal system. Back-pressure engorges it &rarr; it enlarges and destroys platelets &rarr; <b>thrombocytopenia</b>.</i></span></td></tr>
+<tr><td class="k">Jaundice</td><td><span class="fill">&mdash;</span></td><td><span class="fill">✅</span></td><td><span class="fill"><i>The liver can't conjugate and excrete bilirubin into bile.</i></span></td></tr>
+<tr><td class="k">Spider angiomas</td><td><span class="fill">&mdash;</span></td><td><span class="fill">✅</span></td><td><span class="fill"><i>The liver normally metabolizes estrogen. It can't &rarr; estrogen rises &rarr; spider angiomas, palmar erythema, gynecomastia, testicular atrophy. <b>(Caput medusae, by contrast, IS portal hypertension.)</b></i></span></td></tr>
+</tbody>
+</table>
+
+<h3>🛑 STOP &mdash; most students miss this. Ascites is caused by&hellip;</h3>
+<ul class="blanks">
+  <li>☐ ONLY portal hypertension &mdash; <span class="fill">❌ Incomplete. Pressure alone would push fluid out, but healthy albumin would pull much of it back.</span></li>
+  <li>☐ ONLY low albumin &mdash; <span class="fill">❌ Incomplete. Low albumin alone causes generalized edema, but it doesn't preferentially fill the <b>peritoneum</b> &mdash; that takes portal pressure.</span></li>
+  <li>☑ <b>BOTH portal hypertension AND low albumin</b> &mdash; <span class="fill">✅ <b>CORRECT.</b></span></li>
+</ul>
+
+<p><b>Explain WHY:</b> <span class="fill">Fluid stays inside a capillary because of a tug-of-war between <b>hydrostatic pressure</b> pushing out and <b>oncotic pressure</b> (albumin) pulling in. In cirrhosis, <b>both</b> sides lose at the same time: portal hypertension <i>raises</i> the pushing-out pressure in the splanchnic capillaries, and low albumin <i>lowers</i> the pulling-in pressure. Fluid escapes into the peritoneal cavity and stays there. <b>A third mechanism piles on:</b> the splanchnic vessels dilate, so the body senses low effective arterial volume, activates <b>RAAS</b>, and retains sodium and water &mdash; which is exactly why the treatment is <b>spironolactone</b> (blocks aldosterone), <b>sodium restriction</b>, and <b>IV albumin</b>. Three causes, three treatments &mdash; that's why the answer has to be "both."</span></p>
+
+<p><mark>Every single cirrhosis complication is either "pressure backed up" or "the factory closed." Sort the finding into one of those two buckets and the pathophysiology answers itself.</mark></p>
+</div>
+
+<!-- ===================== CLOZE 2 ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="cloze2">
+<h2>Cloze &middot; Portal Hypertension 🩸</h2>
+
+<p class="lead-in"><i>Word bank: portal hypertension &middot; esophageal varices &middot; GI bleeding &middot; jaundice &middot; ammonia &middot; albumin</i></p>
+
+<p>The client develops <span class="fill"><b>portal hypertension</b></span> because scar tissue prevents blood from flowing normally through the liver.</p>
+<p>As pressure increases, blood is redirected into fragile <span class="fill"><b>esophageal varices</b></span> that can rupture and cause life-threatening <span class="fill"><b>GI bleeding</b></span>.</p>
+
+<h3>Why the distractors don't fit</h3>
+<ul class="blanks">
+  <li><b>jaundice</b> &mdash; <span class="fill">A bilirubin/excretion problem, not a pressure problem. It doesn't rupture and it doesn't bleed.</span></li>
+  <li><b>ammonia</b> &mdash; <span class="fill">A detox problem. Shunting does raise it, but ammonia isn't a vessel and can't be "redirected into."</span></li>
+  <li><b>albumin</b> &mdash; <span class="fill">A synthesis problem. It contributes to ascites, not to variceal rupture.</span></li>
+</ul>
+
+<p><b>Why varices bleed so catastrophically:</b> <span class="fill">Three things stack. (1) These are thin-walled veins that were never built to carry that pressure. (2) The client's <b>INR is prolonged</b> because the liver isn't making clotting factors. (3) <b>Platelets are low</b> because the enlarged spleen destroys them. High pressure + no clotting factors + no platelets = a bleed that does not stop on its own.</span></p>
+</div>
+
+<!-- ===================== PRIORITIZATION 2 ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="priority2">
+<h2>Prioritization &middot; Which patient should the nurse assess FIRST? 🥇</h2>
+
+<div class="nq">
+<div class="stem">
+<ol>
+  <li>Cirrhosis &middot; increasing abdominal girth &middot; RR 18</li>
+  <li>Hepatitis &middot; AST 620 &middot; ALT 710 &middot; alert</li>
+  <li>Pancreatitis &middot; pain 10/10 &middot; lipase elevated &middot; BP stable</li>
+  <li>Cirrhosis &middot; vomited bright red blood &middot; BP 82/46 &middot; HR 132</li>
+</ol></div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>4 &mdash; the cirrhotic who vomited bright red blood with BP 82/46 and HR 132.</b> <i>Because this client is not "at risk for" shock &mdash; she is already in it.</i> A systolic in the 80s with a heart rate of 132 is decompensating hypovolemic shock from ruptured varices in someone who cannot clot. Minutes matter.</p>
+<h4>Why every other patient is NOT first</h4>
+<p><b>Patient 1 &mdash; increasing girth, RR 18.</b> The word "increasing" makes you look, and you should &mdash; but <b>RR 18 is normal</b>. Her breathing is not yet compromised. Assess her second and get a girth and weight, because if that RR climbs she becomes urgent fast.</p>
+<p><b>Patient 2 &mdash; AST 620, ALT 710, alert.</b> These are frightening numbers and they will pull your eye. <mark>Do not let a scary lab beat an unstable patient.</mark> Transaminases tell you liver cells are being <i>injured</i>; they say nothing about whether the liver still <i>works</i>. The function labs &mdash; INR, albumin, bilirubin, ammonia &mdash; and the client's mental status tell you that, and this client is <b>alert</b>. <i>Caveat worth knowing: if this patient became confused or the INR rose above 1.5, that is fulminant hepatic failure and he jumps straight to first.</i></p>
+<p><b>Patient 3 &mdash; pancreatitis, 10/10 pain, BP stable.</b> This is the hardest one to walk past, because 10/10 pain is genuinely urgent and demands treatment. But <b>pain does not kill; hemorrhage does</b>, and the phrase "BP stable" is the exam telling you he is perfusing. He is third. Medicate him as soon as patient 4 is handed off.</p>
+<p><b>The ranking: 4 &rarr; 1 &rarr; 3 &rarr; 2.</b> Unstable vital signs &rarr; potential breathing problem &rarr; severe pain with stable vitals &rarr; abnormal labs in an alert client.</p>
+</div></details>
+</div>
+
+<p class="fine">🤖 <b>Claire prompt:</b> "Pretend you're giving me ATI questions. Don't tell me the diagnosis. Give me one symptom at a time. Make me identify the disease, the pathophysiology, the priority complication, and the priority intervention. Then explain WHY each wrong answer is wrong."</p>
+</div>
+
+<!-- ===================== CASE 3 ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="case3">
+<h2>Clinical Judgment Case &middot; "Something Isn't Right&hellip;" 🩺</h2>
+
+<p class="lead-in"><i>You are caring for a 63-year-old client admitted with cirrhosis. The nursing assistant reports, "He keeps asking me the same question over and over."</i></p>
+
+<h3>STEP 1 &middot; Highlight EVERY abnormal finding</h3>
+
+<table class="cmp">
+<thead><tr><th>Finding</th><th>Normal or abnormal?</th></tr></thead>
+<tbody>
+<tr><td class="k">BP 118/74</td><td><span class="fill">✅ Normal</span></td></tr>
+<tr><td class="k">HR 88</td><td><span class="fill">✅ Normal</span></td></tr>
+<tr><td class="k">RR 18</td><td><span class="fill">✅ Normal</span></td></tr>
+<tr><td class="k">Temp 98.4&deg;F</td><td><span class="fill">✅ Normal &mdash; <i>and worth noting: no fever argues against infection/SBP as the precipitant</i></span></td></tr>
+<tr><td class="k">SpO&#8322; 97%</td><td><span class="fill">✅ Normal</span></td></tr>
+<tr><td class="k">Bowel sounds present</td><td><span class="fill">✅ Normal &mdash; <i>and clinically useful: a working gut means oral lactulose can move</i></span></td></tr>
+<tr><td class="k">Increasing abdominal girth</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; worsening ascites</span></td></tr>
+<tr><td class="k">Jaundice</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; bilirubin excretion failing</span></td></tr>
+<tr><td class="k">Disoriented to time</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; and it is a <i>change</i>. Time is the first orientation lost.</span></td></tr>
+<tr><td class="k">Asterixis present</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; never a normal finding, always neurologic</span></td></tr>
+<tr><td class="k">AST 162 units/L</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; &uarr;&uarr; roughly 3&times; normal (8&ndash;48)</span></td></tr>
+<tr><td class="k">ALT 104 units/L</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; &uarr;&uarr; about 2&times; normal (7&ndash;55). <i>AST &gt; ALT fits alcohol-related liver disease.</i></span></td></tr>
+<tr><td class="k">Albumin 2.0 g/dL</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; &darr;&darr; (3.5&ndash;5.0). Explains the ascites.</span></td></tr>
+<tr><td class="k">INR 2.8</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; &uarr;&uarr; (0.8&ndash;1.1). Serious bleeding risk.</span></td></tr>
+<tr><td class="k">Total bilirubin 5.4 mg/dL</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; &uarr;&uarr; (0.3&ndash;1.0). Explains the jaundice.</span></td></tr>
+<tr><td class="k">Ammonia 126 mcg/dL</td><td><span class="fill">🔴 <b>ABNORMAL</b> &mdash; &uarr;&uarr; roughly 3&times; normal (15&ndash;45). The explanation for the neuro change.</span></td></tr>
+</tbody>
+</table>
+
+<p><b>The pattern to name out loud:</b> <span class="fill">Normal vital signs, wrecked labs, and a changing brain. <mark>This client will not be caught by the monitor &mdash; only by the nurse who does a neuro check.</mark></span></p>
+
+<h3>STEP 2 &middot; Which THREE cues concern you the MOST?</h3>
+<ul class="blanks">
+  <li><b>1.</b> <span class="fill"><b>Disoriented to time</b> &mdash; <i>a NEW change in level of consciousness. The assistant's report ("asks the same question over and over") is short-term memory failure, which is stage I&ndash;II encephalopathy.</i></span></li>
+  <li><b>2.</b> <span class="fill"><b>Asterixis</b> &mdash; <i>an objective neurologic sign confirming the confusion is metabolic, not just "he's tired." Confusion + asterixis together is diagnostic enough to act.</i></span></li>
+  <li><b>3.</b> <span class="fill"><b>Ammonia 126 mcg/dL</b> &mdash; <i>the mechanism and the number you can treat. It ties the other two together.</i></span></li>
+  <li><b>Runner-up:</b> <span class="fill"><b>INR 2.8</b> &mdash; <i>because a confused client with an INR of 2.8 who falls can have an intracranial bleed. It changes your safety plan even though it isn't the diagnosis.</i></span></li>
+</ul>
+
+<h3>STEP 3 &middot; What complication is MOST likely developing?</h3>
+<div class="nq">
+<div class="stem">○ Portal hypertension &nbsp; ○ Hepatic encephalopathy &nbsp; ○ Acute pancreatitis &nbsp; ○ Cholecystitis</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Hepatic encephalopathy.</b></p>
+<p><b>Explain WHY:</b> the triad is here &mdash; <b>a change in mental status</b> (disoriented to time, repetitive questioning), <b>asterixis</b>, and an <b>ammonia of 126</b> in a client with known cirrhosis whose liver labs show it has stopped detoxifying, building and excreting. The word "developing" matters: this is a <i>new</i> change on top of chronic disease, which is exactly what a decompensation looks like.</p>
+<p><b>Why not portal hypertension:</b> the increasing girth is portal hypertension &mdash; but portal hypertension is his chronic <b>baseline</b>, not the new complication, and it does not cause confusion.</p>
+<p><b>Why not acute pancreatitis:</b> no severe epigastric pain radiating to the back, no vomiting, no lipase elevation, and he is afebrile.</p>
+<p><b>Why not cholecystitis:</b> no RUQ pain, no fever (98.4&deg;F), no Murphy's sign, no leukocytosis. Cholecystitis clients are in pain and febrile.</p>
+</div></details>
+</div>
+
+<h3>STEP 4 &middot; Which provider order should the nurse complete FIRST?</h3>
+<div class="nq">
+<div class="stem">A. Administer lactulose &middot; B. Obtain daily weight &middot; C. Teach low sodium diet &middot; D. Apply sequential compression devices</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>A &mdash; Administer lactulose.</b> <i>Because it is the only order on the list that treats the problem that is actively getting worse.</i> Every other option is appropriate care that can happen in the next hour; lactulose is what stops him from progressing toward coma. <span class="fine">(Assessment note: assess his swallow and LOC as you give it &mdash; if he cannot swallow safely, the answer becomes a lactulose retention enema, not oral.)</span></p>
+<p><b>Why B is wrong:</b> daily weight is the right way to trend ascites and you should absolutely do it &mdash; it is monitoring, not treatment, and it changes nothing in the next hour.</p>
+<p><b>Why C is wrong:</b> <span class="never">You cannot teach a confused client.</span> Teaching requires a client who can retain information &mdash; he is disoriented to time and asking the same question repeatedly. Do this at discharge, and include a family member.</p>
+<p><b>Why D is wrong:</b> SCDs are genuinely a good order for him (immobile, and with an INR of 2.8 you would rather use mechanical than pharmacologic VTE prophylaxis) &mdash; but a DVT is a risk, while the encephalopathy is a reality. <b>Treat the actual problem before the potential one.</b></p>
+</div></details>
+</div>
+
+<h3>STEP 5 &middot; How will you know your intervention worked? Circle ALL.</h3>
+<ul class="blanks">
+  <li><b>Improved orientation</b> &mdash; <span class="fill">✅ The goal. Can he tell you the day now?</span></li>
+  <li><b>Three soft stools</b> &mdash; <span class="fill">✅ The dosing target &mdash; proof the lactulose reached the colon and is doing its job.</span></li>
+  <li><b>Decreased ammonia</b> &mdash; <span class="fill">✅ Supporting evidence. <i>But treat the client, not the number &mdash; ammonia levels correlate imperfectly with symptoms.</i></span></li>
+  <li><b>Decreased asterixis</b> &mdash; <span class="fill">✅ A visible, objective neuro improvement you can check at the bedside.</span></li>
+  <li><b>Increased bilirubin</b> &mdash; <span class="fill">❌ A rising bilirubin means the liver is getting <b>worse</b>. That is deterioration &mdash; and it has nothing to do with ammonia anyway.</span></li>
+</ul>
+</div>
+
+<!-- ===================== LACTULOSE ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="lactulose">
+<h2>🛑 STOP &mdash; Explain WHY lactulose works. Don't say "it lowers ammonia." Explain HOW ⭐💊</h2>
+
+<p><b>The mechanism, in full:</b> <span class="fill">Lactulose is a <b>non-absorbable disaccharide</b> &mdash; the human small intestine has no enzyme to break it down, so it travels intact all the way to the <b>colon</b>. There, colonic bacteria ferment it into <b>lactic and acetic acid</b>, which <b>drops the pH of the colon</b>. That acidic environment does the real work: it converts ammonia (<b>NH&#8323;</b>, a small uncharged molecule that diffuses easily across the gut wall into the blood) into <b>ammonium (NH&#8324;&#8314;)</b>, which carries a <b>charge</b> and therefore <b>cannot cross</b> the intestinal membrane. The ammonia is trapped in the lumen. Better still, because the colon is now more acidic than the blood, ammonia actually diffuses <b>out of the blood into the gut</b> to be trapped there too. Finally, lactulose is an <b>osmotic laxative</b> &mdash; it pulls water into the bowel and speeds transit, so the trapped ammonium is <b>evacuated in the stool</b> before it can be reabsorbed, and there is less dwell time for bacteria to make more.</span></p>
+
+<div class="flow">
+  <div class="stepbox"><b>1</b><span>Not absorbed in the small intestine &rarr; reaches the <b>colon</b> intact</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>2</b><span>Bacteria ferment it &rarr; lactic + acetic acid &rarr; <b>colon pH drops</b></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>3</b><span>Acid converts NH&#8323; &rarr; <b>NH&#8324;&#8314;</b>, which is charged and <b>cannot be absorbed</b></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>4</b><span>Ammonia also pulled <b>out of the blood</b> into the acidic gut</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>5</b><span>Osmotic laxative effect <b>flushes it out in stool</b></span></div>
+</div>
+
+<h3>Nursing implications you will be tested on 💊</h3>
+<table class="cmp">
+<thead><tr><th>Question</th><th>Answer</th></tr></thead>
+<tbody>
+<tr><td class="k">Dosing goal</td><td><span class="fill"><b>2&ndash;3 soft stools per day.</b> Titrate to that number, not to a lab value.</span></td></tr>
+<tr><td class="k">Too few stools</td><td><span class="fill">Under-treated &mdash; the ammonia sits and is reabsorbed. Expect the dose to go up.</span></td></tr>
+<tr><td class="k">Too many stools (&gt;4&ndash;5/day, watery)</td><td><span class="fill">Hold and notify. Causes <b>dehydration, hypokalemia and hypernatremia</b> &mdash; and every one of those <b>worsens</b> encephalopathy. This is the counterintuitive point examiners love.</span></td></tr>
+<tr><td class="k">If the client is too obtunded to swallow</td><td><span class="fill">Give it as a <b>retention enema</b> &mdash; same mechanism, delivered directly to the colon. <span class="never">Never force oral medication into a client who cannot protect their airway.</span></span></td></tr>
+<tr><td class="k">Taste / adherence</td><td><span class="fill">It is sickly sweet and clients hate it. Mix with juice or water; explain <i>why</i> the diarrhea is the point &mdash; clients stop it on their own because they think it's a side effect.</span></td></tr>
+<tr><td class="k">The add-on drug</td><td><span class="fill"><b>Rifaximin</b> &mdash; a poorly absorbed antibiotic that kills the ammonia-<i>producing</i> gut bacteria. Added to lactulose to prevent recurrence.</span></td></tr>
+<tr><td class="k">Best evaluation</td><td><span class="fill"><b>Level of consciousness and orientation</b>, checked the same way each shift. Handwriting samples and asking for the date are simple bedside trends.</span></td></tr>
+<tr><td class="k">Also monitor</td><td><span class="fill"><b>Potassium and sodium</b> (lost in stool), fluid status, daily weight, and skin integrity around the perineum.</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== MATRIX LABS ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="matrixlabs">
+<h2>Matrix Challenge &middot; Which Laboratory Goes With Which Disease? ⭐🧪</h2>
+
+<p class="lead-in"><i>✅ = classic/expected &middot; ⚠️ = possible, depends on severity or complication &middot; ❌ = not typical</i></p>
+
+<table class="cmp">
+<thead><tr><th>Lab</th><th>Hepatitis</th><th>Cirrhosis</th><th>Pancreatitis</th><th>Cholecystitis</th></tr></thead>
+<tbody>
+<tr><td class="k">AST &uarr;&uarr;</td><td><span class="fill">✅ markedly</span></td><td><span class="fill">✅ mild&ndash;moderate</span></td><td><span class="fill">⚠️ if alcohol-related</span></td><td><span class="fill">⚠️ mild if duct involved</span></td></tr>
+<tr><td class="k">ALT &uarr;&uarr;</td><td><span class="fill">✅ ALT &gt; AST</span></td><td><span class="fill">✅ AST &gt; ALT</span></td><td><span class="fill">⚠️ &gt;3&times; suggests <b>gallstone</b> pancreatitis</span></td><td><span class="fill">⚠️ mild</span></td></tr>
+<tr><td class="k">Lipase &uarr;&uarr;</td><td><span class="fill">❌</span></td><td><span class="fill">❌</span></td><td><span class="fill">✅ <b>the defining lab</b> &mdash; most specific</span></td><td><span class="fill">❌ unless a stone blocks the pancreatic duct too</span></td></tr>
+<tr><td class="k">Bilirubin &uarr;</td><td><span class="fill">✅ jaundice</span></td><td><span class="fill">✅ jaundice</span></td><td><span class="fill">⚠️ if gallstone-related</span></td><td><span class="fill">✅ if the stone is in the <b>common bile duct</b></span></td></tr>
+<tr><td class="k">Albumin &darr;</td><td><span class="fill">⚠️ usually normal in acute; low in chronic/fulminant</span></td><td><span class="fill">✅ <b>hallmark</b> &mdash; chronic synthetic failure</span></td><td><span class="fill">❌</span></td><td><span class="fill">❌</span></td></tr>
+<tr><td class="k">INR &uarr;</td><td><span class="fill">⚠️ INR &ge;1.5 + encephalopathy = <b>acute liver failure</b></span></td><td><span class="fill">✅ <b>hallmark</b></span></td><td><span class="fill">⚠️ only if severe/DIC</span></td><td><span class="fill">⚠️ prolonged obstruction &rarr; no bile &rarr; no vitamin K absorbed</span></td></tr>
+<tr><td class="k">Ammonia &uarr;</td><td><span class="fill">⚠️ only if fulminant</span></td><td><span class="fill">✅ &rarr; encephalopathy</span></td><td><span class="fill">❌</span></td><td><span class="fill">❌</span></td></tr>
+<tr><td class="k">WBC &uarr;</td><td><span class="fill">❌ viral hepatitis usually normal or low</span></td><td><span class="fill">⚠️ raises the flag for <b>SBP</b></span></td><td><span class="fill">✅ inflammation</span></td><td><span class="fill">✅ <b>infection</b> &mdash; expected</span></td></tr>
+</tbody>
+</table>
+
+<h3>Think Like a Nurse &mdash; can one disease have more than one laboratory abnormality?</h3>
+<p><b>Answer:</b> <span class="fill"><b>YES</b> &mdash; and expecting one-lab-one-disease is exactly what makes matrix items feel impossible.</span></p>
+<ul class="blanks">
+  <li><b>Example 1 &mdash; cirrhosis.</b> <span class="fill">A single decompensated cirrhotic can have <b>&darr;albumin, &uarr;INR, &uarr;bilirubin, &uarr;ammonia, &darr;platelets, &darr;sodium and mildly &uarr;AST/ALT all at once</b>, because one organ is failing at four different jobs simultaneously. That is the whole point of Case 1 and Case 3.</span></li>
+  <li><b>Example 2 &mdash; gallstone pancreatitis.</b> <span class="fill">One stone lodged at the ampulla gives you <b>&uarr;lipase</b> (pancreatic duct blocked), <b>&uarr;bilirubin</b> (bile duct blocked), <b>&uarr;ALT</b> (backpressure on the liver) and <b>&uarr;WBC</b> (inflammation) &mdash; four "different disease" labs from one stone.</span></li>
+  <li><b>The reasoning move:</b> <span class="fill">Don't ask "which disease owns this lab?" Ask <b>"which organ, and which job of that organ, produces this value?"</b> Then check whether one lesion could explain all of them. Anatomy beats memorization.</span></li>
+</ul>
+</div>
+
+<!-- ===================== CUE RECOGNITION ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="cues4">
+<h2>🚨 Cue Recognition &mdash; select the FOUR findings that require immediate follow-up</h2>
+
+<ul class="blanks">
+  <li><b>Asterixis</b> &mdash; <span class="fill">✅ <b>FOLLOW UP.</b> <i>Never a normal finding.</i> It is objective evidence of ammonia affecting the brain &mdash; the client is encephalopathic whether or not they "seem" confused yet.</span></li>
+  <li><b>Bilirubin 4.8 mg/dL</b> &mdash; <span class="fill">❌ Abnormal (normal 0.3&ndash;1.0) and it will cause visible jaundice and itching &mdash; but it does not threaten the airway, the circulation, or the brain. This is the <b>fifth-place</b> answer, and the one most students wrongly pick.</span></li>
+  <li><b>Confusion</b> &mdash; <span class="fill">✅ <b>FOLLOW UP.</b> A change in LOC is the earliest sign of neurologic deterioration and the one that ends in a lost airway.</span></li>
+  <li><b>INR 3.1</b> &mdash; <span class="fill">✅ <b>FOLLOW UP.</b> Nearly three times normal. Hold invasive procedures, no IM injections, no razors, soft toothbrush, fall precautions, watch for occult bleeding &mdash; and it is catastrophic in a client who is <i>already</i> bleeding.</span></li>
+  <li><b>Mild nausea</b> &mdash; <span class="fill">❌ Common, expected, and treatable with a PRN antiemetic. Uncomfortable is not urgent.</span></li>
+  <li><b>Blood glucose 102 mg/dL</b> &mdash; <span class="fill">❌ <b>Normal.</b> A distractor put there to see if you know the range. <i>(Do note that severe liver failure can cause <b>hypo</b>glycemia because the liver stores and releases glycogen &mdash; but 102 is fine.)</i></span></li>
+  <li><b>Vomited bright red blood</b> &mdash; <span class="fill">✅ <b>FOLLOW UP &mdash; and this one is #1 of the four.</b> Active upper GI hemorrhage, almost certainly ruptured varices. Airway (aspiration of blood), breathing, circulation, shock.</span></li>
+  <li><b>Temperature 98.7&deg;F</b> &mdash; <span class="fill">❌ <b>Normal.</b> <i>(Worth remembering: fever in a client with ascites means SBP until proven otherwise &mdash; but this client doesn't have one.)</i></span></li>
+</ul>
+
+<p><b>The four, in the order you would act on them:</b> <span class="fill"><b>1. Vomiting bright red blood</b> (active hemorrhage &rarr; airway + shock) &rarr; <b>2. Confusion</b> (LOC change &rarr; airway risk) &rarr; <b>3. Asterixis</b> (confirms the encephalopathy) &rarr; <b>4. INR 3.1</b> (why the bleeding will not stop). <mark>Notice that #1 and #4 are the same emergency, and #2 and #3 are the same emergency &mdash; four cues, two problems.</mark></span></p>
+</div>
+
+<!-- ===================== BOW-TIE 3 ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="bowtie3">
+<h2>🚨 Bow Tie 3 &middot; Alcohol History + Hematemesis</h2>
+
+<p class="lead-in"><i>History of alcohol abuse &middot; abdominal distention &middot; spider angiomas &middot; hypotension &middot; HR 126 &middot; vomited 400 mL bright red blood &middot; black stool.</i></p>
+
+<p><b>Read the history first:</b> <span class="fill">Alcohol history + abdominal distention + spider angiomas tells you this client has <b>cirrhosis with portal hypertension</b> before you read a single vital sign. That background turns "vomited blood" into "ruptured varices" instantly.</span></p>
+
+<h3>Choose ONE condition</h3>
+<ul class="blanks">
+  <li><b>Bleeding esophageal varices</b> &mdash; <span class="fill">✅ <b>THE ANSWER.</b> Cirrhosis background + 400 mL bright red hematemesis + melena + hypotension + HR 126 = variceal hemorrhage with hypovolemic shock.</span></li>
+  <li><b>Acute pancreatitis</b> &mdash; <span class="fill">❌ <b>Why not:</b> pancreatitis presents with severe epigastric pain boring to the back, nausea/vomiting (of stomach contents, not blood), and a lipase 3&times; normal. It does <b>not</b> cause massive bright red hematemesis and melena. The alcohol history is the only overlap &mdash; and one shared risk factor is not a diagnosis.</span></li>
+  <li><b>Acute hepatitis</b> &mdash; <span class="fill">❌ <b>Why not:</b> hepatitis presents subacutely &mdash; fatigue, anorexia, nausea, RUQ tenderness, jaundice, AST/ALT in the hundreds. Clients with acute hepatitis are miserable, not hemorrhaging into a basin. Nothing about hepatitis explains hypotension with HR 126.</span></li>
+  <li><b>Cholecystitis</b> &mdash; <span class="fill">❌ <b>Why not:</b> cholecystitis is RUQ pain after a fatty meal, radiating to the right shoulder, with fever, a positive Murphy's sign and leukocytosis. There is no pain, no fever, and no Murphy's here &mdash; and the gallbladder does not bleed into the stomach.</span></li>
+</ul>
+
+<h3>Choose TWO nursing actions</h3>
+<ul class="blanks">
+  <li><b>Prepare for upper endoscopy</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> EGD both finds and <b>treats</b> the bleed &mdash; band ligation or sclerotherapy. It is the definitive intervention.</span></li>
+  <li><b>Administer lactulose</b> &mdash; <span class="fill">❌ Not now &mdash; and dangerous by mouth in someone actively vomiting blood. <i>It becomes appropriate later, because all that blood in the gut is a massive protein load that will drive ammonia up.</i></span></li>
+  <li><b>Start large-bore IV access</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> Two large-bore lines (18-gauge or larger) &mdash; volume and blood products cannot run fast through a small catheter. Draw type and crossmatch with the first stick.</span></li>
+  <li><b>Encourage oral fluids</b> &mdash; <span class="fill">❌ <span class="never">Keep NPO.</span> Aspiration risk with active hematemesis, and she is going to endoscopy.</span></li>
+  <li><b>Place client in Trendelenburg</b> &mdash; <span class="fill">❌ <b>No longer recommended for shock</b> &mdash; it doesn't improve cardiac output, it worsens ventilation by pushing the abdominal contents onto the diaphragm, and in an actively vomiting client it invites aspiration. Keep her <b>upright or in modified Trendelenburg/supine with legs elevated at most</b>, and protect the airway.</span></li>
+  <li><b>Prepare for paracentesis</b> &mdash; <span class="fill">❌ Treats ascites. She has ascites &mdash; but she is bleeding to death, and a tap does nothing about that.</span></li>
+</ul>
+
+<h3>Choose TWO parameters to monitor</h3>
+<ul class="blanks">
+  <li><b>Blood pressure</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> Directly measures perfusion and tells you whether resuscitation is keeping up with the blood loss.</span></li>
+  <li><b>Heart rate</b> &mdash; <span class="fill">✅ <b>ANSWER.</b> The <b>earliest</b> compensatory change &mdash; it rises before the BP falls, and it is your first sign the bleeding has resumed.</span></li>
+  <li><b>Lipase</b> &mdash; <span class="fill">❌ Pancreatic. Wrong organ.</span></li>
+  <li><b>Stool color</b> &mdash; <span class="fill">❌ Document it, but it <b>lags by hours</b>. Vitals change in minutes.</span></li>
+  <li><b>Bilirubin</b> &mdash; <span class="fill">❌ A chronic marker of liver function, not a hemorrhage parameter.</span></li>
+  <li><b>Pain score</b> &mdash; <span class="fill">❌ <b>Variceal bleeding is classically painless</b>, which is part of why it is so dangerous. A normal pain score would falsely reassure you.</span></li>
+</ul>
+
+<p><b>Also expect:</b> <span class="fill">H&amp;H (which lags in acute bleeding &mdash; a normal hemoglobin early does <i>not</i> mean she hasn't lost volume), type and crossmatch, platelets and INR, urine output as a perfusion measure, level of consciousness, and continuous monitoring. Drugs: <b>octreotide</b> to constrict splanchnic vessels, <b>IV PPI</b>, and <b>prophylactic antibiotics</b> (bacterial infection is common after a variceal bleed and worsens survival).</span></p>
+</div>
+
+<!-- ===================== RANK FOUR ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="rank4">
+<h2>Clinical Prioritization &middot; Four patients arrive simultaneously 🥇</h2>
+
+<table class="cmp">
+<thead><tr><th>Patient</th><th>Presentation</th></tr></thead>
+<tbody>
+<tr><td class="k">A</td><td>Hepatitis &middot; AST 720 &middot; ALT 810 &middot; alert &middot; complains of fatigue</td></tr>
+<tr><td class="k">B</td><td>Cirrhosis &middot; increasing confusion &middot; ammonia 142 &middot; asterixis</td></tr>
+<tr><td class="k">C</td><td>Pancreatitis &middot; pain 10/10 &middot; lipase 960 &middot; BP 138/80</td></tr>
+<tr><td class="k">D</td><td>Cholecystitis &middot; RUQ pain &middot; temp 101.1&deg;F &middot; positive Murphy's sign</td></tr>
+</tbody>
+</table>
+
+<h3>Who is FIRST?</h3>
+<p><span class="fill"><b>Patient B.</b> <i>Because a client with worsening confusion is a client losing the ability to protect an airway.</i> "Increasing" confusion means this is a trajectory, not a snapshot &mdash; ammonia 142 with asterixis on top of it means he is moving toward stage III&ndash;IV encephalopathy. Nobody else on this list has an <b>A</b> or <b>B</b> problem.</span></p>
+
+<h3>Now rank ALL FOUR &mdash; and defend it</h3>
+<div class="flow">
+  <div class="stepbox"><b>1st &mdash; B</b><span>Brain &rarr; airway. Deteriorating <i>now</i>.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>2nd &mdash; D</b><span>Fever + infected obstructed organ &rarr; sepsis risk</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>3rd &mdash; C</b><span>Severe pain, but <b>perfusing</b></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>4th &mdash; A</b><span>Ugly labs, <b>alert</b> client, expected symptom</span></div>
+</div>
+
+<ul class="blanks">
+  <li><b>1st &mdash; B.</b> <span class="fill">The only client with a neurologic change in progress. LOC <b>is</b> the airway assessment. Assess, protect, give lactulose, hunt the precipitant (GI bleed? infection? constipation? sedative? missed dose?).</span></li>
+  <li><b>2nd &mdash; D.</b> <span class="fill">Temp 101.1&deg;F with a positive Murphy's is an <b>infected, obstructed</b> gallbladder. Left alone it becomes gangrenous, perforates, or ascends the bile duct to cholangitis &rarr; <b>septic shock</b>. She needs cultures, antibiotics, fluids and a surgeon &mdash; that is a "hours" clock, not a "days" clock.</span></li>
+  <li><b>3rd &mdash; C.</b> <span class="fill">10/10 pain is real suffering and demands prompt treatment &mdash; but <b>BP 138/80 means he is perfusing</b>, and lipase 960 confirms a diagnosis that is already known. Pain is urgent; it is not immediately lethal. Medicate him the moment B and D are stabilized. <i>(He jumps the line if he develops hypotension, tachycardia, hypoxia, Cullen's/Grey Turner's signs, or a fever &mdash; those mean necrotizing or hemorrhagic pancreatitis.)</i></span></li>
+  <li><b>4th &mdash; A.</b> <span class="fill">AST 720 and ALT 810 are alarming numbers and your eye goes straight to them &mdash; but <b>transaminases measure injury, not function</b>, and the client is <b>alert</b> with <b>fatigue</b>, which is the expected symptom of hepatitis. <i>(He instantly becomes first if he develops confusion or an INR &ge;1.5 &mdash; that combination is <b>acute liver failure</b>.)</i></span></li>
+</ul>
+
+<p><b>The debatable pair, addressed honestly:</b> <span class="fill">C vs D is the one reasonable people argue about. The case for C first is that severe uncontrolled pain is a genuine emergency and pancreatitis can turn hemorrhagic. The case for D first &mdash; the one I'd defend &mdash; is that <b>infection with fever outranks pain with stable vitals</b>, because sepsis is the process that kills. If your instructor asks, say that out loud: "D before C because D has an infectious source and a fever, and C is perfusing." <mark>In prioritization, the defensible reasoning earns the point, not the letter.</mark></span></p>
+</div>
+
+<!-- ===================== WHAT CHANGED ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="whatchanged">
+<h2>"What Changed?" &middot; Reading a trend 📈</h2>
+
+<table class="cmp">
+<thead><tr><th></th><th>0800</th><th>1200</th></tr></thead>
+<tbody>
+<tr><td class="k">Mental status</td><td>Alert &times;4, answers appropriately</td><td>Confused, difficulty following commands</td></tr>
+<tr><td class="k">Neuro exam</td><td>No asterixis noted</td><td>Asterixis present</td></tr>
+<tr><td class="k">Ammonia</td><td>68 mcg/dL</td><td>122 mcg/dL</td></tr>
+</tbody>
+</table>
+
+<h3>Which cue changed FIRST?</h3>
+<p><span class="fill"><b>The mental status</b> &mdash; specifically the shift from alert and oriented &times;4 to confused with difficulty following commands. <i>Level of consciousness is the earliest and most sensitive indicator of neurologic change; the lab only confirmed what the client's behavior already showed.</i> The ammonia was climbing underneath the whole time, but you saw the <b>brain</b> before you saw the <b>number</b>. <mark>That is the lesson of this exercise: the nurse at the bedside detects deterioration before the lab does.</mark></span></p>
+
+<h3>Which intervention should occur FIRST?</h3>
+<p><span class="fill"><b>Assess airway and level of consciousness, and make the client safe</b> &mdash; can he follow commands, protect his airway, and swallow? Bed low, side rails up per policy, call light within reach, fall precautions, remove hazards, reorient. <b>Then</b> administer the ordered lactulose and notify the provider of the change. <i>Assessment before intervention &mdash; you cannot safely give an oral medication to a client whose swallow you have not verified.</i></span></p>
+
+<h3>Which complication is developing?</h3>
+<p><span class="fill"><b>Hepatic encephalopathy, worsening &mdash; roughly stage II</b> (lethargy, disorientation, asterixis appearing). The word "developing" is the tell: this is an acute decompensation on a chronic disease, over four hours.</span></p>
+
+<h3>⭐ The question the packet is really asking</h3>
+<p><b>What made the ammonia double in four hours?</b> <span class="fill">Ammonia does not rise on its own &mdash; find the <b>precipitant</b>, because treating it is as important as the lactulose. Check for: <b>a GI bleed</b> (check stool for melena, check for hematemesis, check H&amp;H &mdash; blood is a huge protein load), <b>infection/SBP</b> (temp, WBC, abdominal tenderness), <b>constipation</b> (when was the last stool?), <b>dehydration or too much diuretic</b>, <b>hypokalemia or alkalosis</b>, <b>any sedative/opioid/benzodiazepine given this morning</b>, and <b>whether the 0800 lactulose dose was actually given and taken</b>. That last one is the most common and the most fixable.</span></p>
+</div>
+
+<!-- ===================== CLOZE 3 ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="cloze3">
+<h2>Cloze &middot; Complete the Pathway 🔗</h2>
+
+<p class="lead-in"><i>Word bank as printed: hypertension &middot; esophageal varices &middot; GI bleeding &middot; albumin &middot; pancreas</i></p>
+
+<div class="flow">
+  <div class="stepbox"><b>1</b><span>Scar tissue forms</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>2</b><span>Blood cannot flow normally through the <span class="fill"><b>liver</b></span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>3</b><span>Pressure builds</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>4</b><span>Portal <span class="fill"><b>hypertension</b></span> develops</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>5</b><span>Blood is diverted into fragile <span class="fill"><b>esophageal varices</b></span></span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>6</b><span>Client develops life-threatening <span class="fill"><b>GI bleeding</b></span></span></div>
+</div>
+
+<p class="fine">⚠️ <b>Note on the word bank:</b> the printed choices don't include "liver," so blank 2 has to be answered from knowledge rather than from the list. The two words left over &mdash; <b>albumin</b> and <b>pancreas</b> &mdash; are distractors: albumin belongs to the <i>synthesis</i> pathway (&rarr; ascites and edema), and the pancreas is a different organ entirely.</p>
+
+<p><b>Say the whole chain in one breath:</b> <span class="fill">"Scarring blocks flow through the <b>liver</b> &rarr; pressure backs up into the <b>portal</b> system &rarr; blood finds collateral routes through fragile <b>esophageal veins</b> &rarr; those rupture &rarr; <b>massive GI bleeding</b> in a client who has no clotting factors and no platelets."</span></p>
+
+<p><b>Where else does the back-pressure go?</b> <span class="fill">The portal system has several escape routes, and each one is a physical finding: <b>esophagus and stomach</b> &rarr; varices &middot; <b>abdominal wall</b> &rarr; caput medusae &middot; <b>rectum</b> &rarr; hemorrhoids &middot; <b>spleen</b> &rarr; splenomegaly with low platelets &middot; <b>peritoneum</b> &rarr; ascites.</span></p>
+</div>
+
+<!-- ===================== LAB DETECTIVE ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="labdetective">
+<h2>Lab Detective &middot; Which client is at greatest risk for deterioration? 🕵️</h2>
+
+<table class="cmp">
+<thead><tr><th>Client</th><th>Data</th><th>Read it</th></tr></thead>
+<tbody>
+<tr><td class="k">A</td><td>AST 210 &middot; ALT 240 &middot; alert</td><td><span class="fill">❌ Liver cells are inflamed and being injured &mdash; but the client is <b>alert</b>, and nothing here says the liver has stopped <i>working</i>. Injury without failure. Monitor.</span></td></tr>
+<tr><td class="k">B</td><td>Albumin 2.1 &middot; mild edema</td><td><span class="fill">❌ Chronic synthetic failure with a mild physical consequence. Real, slow, and manageable with sodium restriction, diuretics and daily weights. Nobody deteriorates from this today.</span></td></tr>
+<tr><td class="k">C</td><td>INR 3.8 &middot; vomiting bright red blood &middot; BP 86/50</td><td><span class="fill">✅ <b>GREATEST RISK &mdash; THE ANSWER.</b></span></td></tr>
+<tr><td class="k">D</td><td>Lipase 920 &middot; pain 8/10 &middot; BP 130/84</td><td><span class="fill">❌ Acute pancreatitis with severe pain, and he needs prompt analgesia, NPO and fluids &mdash; but <b>BP 130/84 means he is perfusing</b>. Painful, stable, second in line.</span></td></tr>
+</tbody>
+</table>
+
+<h3>Explain WHY</h3>
+<p><span class="fill"><b>Client C has three lethal findings that multiply each other.</b> (1) He is <b>actively hemorrhaging</b> &mdash; bright red hematemesis, almost certainly ruptured varices. (2) His <b>INR is 3.8</b>, so he has no ability to form a clot and stop it himself. (3) His <b>BP is already 86/50</b>, which means he has lost enough volume that compensation has failed &mdash; he is in shock <i>now</i>, not at risk of it. <mark>Bleeding + can't clot + already hypotensive is the fastest-moving combination in this whole workbook.</mark> The other three clients each have <b>one</b> abnormal system and stable perfusion.</span></p>
+
+<p><b>The reasoning rule to carry into the exam:</b> <span class="fill">Don't rank clients by <b>how abnormal the number is</b>. Rank them by <b>how fast the abnormality kills</b>. Client A has the most impressive-looking labs on paper and is the safest person in the room; Client C's most abnormal value (INR 3.8) is dangerous only because of what he is doing <i>with</i> it.</span></p>
+
+<p class="fine">🤖 <b>Claire prompt:</b> "Act as my clinical instructor. Give me hepatobiliary patients one cue at a time (history, assessment, labs, medications, imaging). Do not tell me the diagnosis. Make me identify the disease, explain the pathophysiology, identify the highest-priority complication, choose the first nursing intervention, and defend why the other interventions are lower priority. After I answer, explain both the correct reasoning and the common mistakes nursing students make."</p>
+</div>
+
+<!-- ===================== LINDA HART ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="linda">
+<h2>Linda Hart &middot; Acute Cholecystitis Learning Activity 🟡</h2>
+
+<p class="lead-in"><i>The activity Claire generated from the prompt above. Here it is worked through &mdash; the chart, the reflection worksheet, and all four self-assessment questions.</i></p>
+
+<h3>The chart</h3>
+<table class="cmp">
+<thead><tr><th>Data</th><th>Value</th><th>What it tells you</th></tr></thead>
+<tbody>
+<tr><td class="k">56-year-old female</td><td>&mdash;</td><td><span class="fill">Fits the classic gallstone risk profile &mdash; female, middle-aged, and (below) diabetic and likely overweight.</span></td></tr>
+<tr><td class="k">BP 140/90</td><td>Elevated</td><td><span class="fill">Known hypertension &mdash; but pain and stress raise it too.</span></td></tr>
+<tr><td class="k">HR 92</td><td>High-normal</td><td><span class="fill">Consistent with pain, fever and mild volume depletion.</span></td></tr>
+<tr><td class="k">RR 24/min</td><td>🔴 Elevated</td><td><span class="fill">Above normal (12&ndash;20). Splinting from pain, plus a systemic inflammatory response. <b>This is the vital sign most likely to be skimmed past</b> &mdash; a rising RR is an early sepsis criterion.</span></td></tr>
+<tr><td class="k">Temp 38.5&deg;C</td><td>🔴 Fever</td><td><span class="fill">= <b>101.3&deg;F</b>. Infection, not simple biliary colic.</span></td></tr>
+<tr><td class="k">SpO&#8322; 96%</td><td>Normal</td><td><span class="fill">Oxygenation is fine &mdash; her airway and breathing are not the priority.</span></td></tr>
+<tr><td class="k">WBC 14,000/mm&#179;</td><td>🔴 Elevated</td><td><span class="fill">Normal 5,000&ndash;10,000. Confirms an acute infectious/inflammatory process.</span></td></tr>
+<tr><td class="k">CRP 18 mg/L</td><td>🔴 Elevated</td><td><span class="fill">An acute-phase protein made by the liver in response to inflammation. Non-specific, but it rises early and trends with treatment response.</span></td></tr>
+<tr><td class="k">Amylase 112 U/L</td><td>✅ Normal</td><td><span class="fill"><b>This is a rule-OUT.</b> Normal pancreatic enzymes argue strongly against pancreatitis.</span></td></tr>
+<tr><td class="k">Lipase 78 U/L</td><td>✅ Normal</td><td><span class="fill"><b>The single most useful negative in the chart.</b> Lipase is the most specific pancreatic marker &mdash; normal lipase with RUQ pain and fever points at the gallbladder, not the pancreas.</span></td></tr>
+<tr><td class="k">Hx: Type 2 diabetes</td><td>&mdash;</td><td><span class="fill">🔴 Matters more than students think: diabetics can have <b>blunted or atypical pain</b>, are at higher risk of <b>gangrenous and emphysematous cholecystitis</b>, and heal more slowly. Also &mdash; she is NPO, so <b>monitor glucose and adjust insulin</b>.</span></td></tr>
+<tr><td class="k">Hx: Hypertension</td><td>&mdash;</td><td><span class="fill">Relevant to surgical risk and to what "normal BP" means for her &mdash; a BP of 110/70 in a chronic hypertensive may represent relative hypotension.</span></td></tr>
+<tr><td class="k">Oct 2022: ER for RUQ pain, "suspected gastritis"</td><td>&mdash;</td><td><span class="fill">🔴 <b>The missed episode.</b> This was probably biliary colic. A history of recurrent RUQ pain attributed to something else is a huge cue.</span></td></tr>
+<tr><td class="k">Jan 2023: bloating and dyspepsia</td><td>&mdash;</td><td><span class="fill">🔴 Chronic cholecystitis presents exactly like this &mdash; vague fat intolerance, bloating, belching, dyspepsia. A second missed episode.</span></td></tr>
+</tbody>
+</table>
+
+<h3>💊 Medication check &mdash; the safety catch in this chart</h3>
+<ul class="blanks">
+  <li><b>Lactated Ringer's 125 mL/hr</b> &mdash; <span class="fill">Appropriate isotonic fluid for a febrile, vomiting, NPO client. <i>Note it contains no dextrose &mdash; check her blood glucose while she is NPO.</i></span></li>
+  <li><b>Ceftriaxone 1 g IV q12h</b> &mdash; <span class="fill">Covers the gut organisms that infect an obstructed gallbladder. <b>⚠️ Compatibility alert: ceftriaxone and calcium-containing solutions like Lactated Ringer's can precipitate.</b> Do not run them together in the same line &mdash; use a separate line, or flush the line thoroughly between infusions. Also confirm "no known drug allergies" against any penicillin/cephalosporin history before the first dose.</span></li>
+  <li><b>Ondansetron 4 mg IV q8h PRN nausea</b> &mdash; <span class="fill">Appropriate. Monitor for <b>QT prolongation</b>, headache and constipation. Give it <i>before</i> she is actively vomiting rather than after.</span></li>
+  <li><b>What's missing that you should anticipate:</b> <span class="fill">An <b>analgesic</b> order, an <b>NPO</b> order, a <b>RUQ ultrasound</b>, blood cultures if she spikes higher, and a surgical consult.</span></li>
+</ul>
+
+<h3>📝 Reflection Worksheet</h3>
+<ul class="blanks">
+  <li><b>Event &mdash; describe how you approached the diagnostic interpretation.</b> <span class="fill">I read the chart in the order a nurse thinks, not the order it's printed: vital signs first (fever 38.5&deg;C, RR 24 &mdash; she is systemically ill), then the labs as a <b>pattern</b> rather than a list (WBC and CRP up = inflammation/infection; amylase and lipase normal = <b>not</b> the pancreas), then the history (two prior episodes of RUQ pain and dyspepsia that were never worked up). I deliberately asked what each abnormal value <i>rules out</i> as well as what it rules in, because the normal lipase was the most decisive number in the whole chart.</span></li>
+  <li><b>Analysis &mdash; what cues led you to suspect acute cholecystitis?</b> <span class="fill">Four clusters. (1) <b>Localization:</b> a documented history of right upper quadrant pain. (2) <b>Infection:</b> temp 38.5&deg;C with WBC 14,000 and CRP 18 &mdash; this is inflamed <i>and</i> infected, which separates acute cholecystitis from simple biliary colic (colic hurts but has no fever and no leukocytosis). (3) <b>Exclusion:</b> normal amylase and lipase take pancreatitis off the table. (4) <b>Risk and pattern:</b> a 56-year-old woman with diabetes and a two-year history of recurrent RUQ pain, bloating and dyspepsia &mdash; the classic slow build of gallbladder disease that finally obstructed.</span></li>
+  <li><b>Action &mdash; explain the nursing interventions and their expected outcomes.</b> <span class="fill"><b>Keep her NPO</b> &rarr; no CCK release, no gallbladder contraction against the obstruction &rarr; less pain, and she stays surgery-ready. <b>Maintain the IV fluids</b> &rarr; corrects the deficit from fever and vomiting &rarr; stable BP and urine output &ge;0.5 mL/kg/hr. <b>Give ceftriaxone on schedule</b> &rarr; treats the infection &rarr; temp trending down and WBC/CRP falling over 24&ndash;48 hours. <b>Assess and treat pain</b> &rarr; she can breathe deeply instead of splinting &rarr; RR returns toward normal, no atelectasis. <b>Give ondansetron PRN and monitor I&amp;O</b> &rarr; controlled nausea, no further volume loss. <b>Monitor blood glucose</b> &rarr; NPO plus infection stress destabilizes diabetes both directions. <b>Prepare her for RUQ ultrasound and probable laparoscopic cholecystectomy</b> &rarr; informed, less anxious client. <b>Watch for deterioration</b> &rarr; rising fever with rigors, jaundice, worsening pain, hypotension or new confusion mean cholangitis, perforation or sepsis &mdash; escalate immediately.</span></li>
+</ul>
+
+<h3>Assessment / Self-Reflection Questions</h3>
+
+<div class="nq">
+<div class="stem"><b>Clinical Reasoning:</b> What key clinical cues led to the diagnosis of acute cholecystitis in Linda Hart's case?</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>The short version:</b> RUQ pain history + fever + leukocytosis + elevated CRP + <b>normal pancreatic enzymes</b> in a middle-aged diabetic woman with two years of unexplained RUQ pain and dyspepsia.</p>
+<p><b>Cues that ruled it IN:</b> the documented right upper quadrant location; temp 38.5&deg;C and WBC 14,000 (infection, not just a stone passing); CRP 18 (an active inflammatory process); RR 24 (systemic response and splinting); and the two prior visits &mdash; "suspected gastritis" in 2022 and "bloating and dyspepsia" in 2023 &mdash; which are textbook chronic cholecystitis symptoms that were attributed to the stomach.</p>
+<p><b>Cues that ruled OTHER things OUT:</b> normal amylase (112) and lipase (78) make pancreatitis very unlikely. No mention of jaundice, so the stone is probably in the cystic duct rather than the common bile duct.</p>
+<p><b>What you would go get next:</b> a focused pain assessment (onset, relation to fatty meals, radiation to the right shoulder or scapula), <b>Murphy's sign</b>, liver function tests and bilirubin (is the common duct involved?), and a <b>RUQ ultrasound</b> &mdash; the first-line imaging test, looking for stones, a gallbladder wall thicker than 3&ndash;4 mm, and pericholecystic fluid. A <b>HIDA scan</b> is the confirmatory test if the ultrasound is equivocal.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>Case Study Discussion:</b> Discuss the importance of the elevated CRP and WBC levels in confirming the diagnosis.</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>What they add:</b> they are what separates <b>acute cholecystitis</b> from <b>biliary colic</b>. Biliary colic is a stone transiently blocking the cystic duct &mdash; severe pain after a fatty meal, resolving in a few hours, with a <b>normal</b> WBC and <b>no</b> fever. When the obstruction persists, the trapped bile irritates the wall, bacteria colonize it, and now you get fever, a WBC of 14,000 and a CRP of 18. Those two numbers are the evidence that this has crossed from an obstruction into an <b>infection</b>, which is why she gets IV antibiotics and admission rather than discharge with pain medication.</p>
+<p><b>What each one is:</b> the <b>WBC</b> is the body's cellular response to infection. <b>CRP</b> is an acute-phase protein made by the liver in response to inflammatory cytokines &mdash; it rises within hours and falls as the process resolves, which makes it useful for <b>trending the response to antibiotics</b>.</p>
+<p><b>The critical caveat &mdash; say this part out loud:</b> <mark>neither test is specific to the gallbladder.</mark> A WBC of 14,000 and CRP of 18 could be pneumonia, appendicitis, a UTI, or diverticulitis. They <b>support</b> the diagnosis; they do not <b>confirm</b> it. Confirmation comes from combining them with the <b>localizing</b> findings &mdash; RUQ pain, a positive Murphy's sign &mdash; and with <b>imaging</b>. That is the whole lesson: labs are one leg of a three-legged stool made of history, physical exam and diagnostics.</p>
+<p><b>Nursing use:</b> trend them. A WBC and CRP that fall over 24&ndash;48 hours mean the antibiotics are working. Ones that keep climbing, especially with a rising fever, rigors or new jaundice, mean gangrene, perforation or ascending cholangitis &mdash; report it. <i>And remember she is diabetic and 56: an immunocompromised or older client may mount a smaller WBC response than the severity of the disease deserves.</i></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>NCLEX-style:</b> What nursing intervention should be prioritized immediately after the diagnosis of acute cholecystitis?</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Priority: keep her NPO and get the prescribed IV fluids and IV antibiotic infusing.</b></p>
+<p><b>Why NPO is the nursing-priority answer:</b> <i>anything entering the stomach &mdash; especially fat &mdash; triggers CCK, which makes the inflamed, obstructed gallbladder contract.</i> That worsens the pain, worsens the inflammation, and risks perforation. NPO also keeps her ready for surgery. It costs nothing, it is entirely within nursing scope, and it takes effect immediately.</p>
+<p><b>Why the antibiotic is time-critical:</b> she is febrile with a WBC of 14,000. Untreated biliary infection progresses to <b>gangrenous cholecystitis, perforation, empyema, ascending cholangitis and septic shock</b>. Antibiotic timing is a measurable quality outcome in suspected sepsis &mdash; do not let this dose sit in the medication room. <span class="fine">(Remember the ceftriaxone/Lactated Ringer's compatibility issue &mdash; separate line or thorough flush.)</span></p>
+<p><b>The rest of the immediate bundle, in order:</b></p>
+<div class="flow">
+  <div class="stepbox"><b>1</b><span><b>NPO</b> &mdash; rest the gallbladder</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>2</b><span><b>IV fluids + antibiotics</b> &mdash; perfusion and infection</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>3</b><span><b>Pain control</b> + antiemetic</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>4</b><span><b>Position</b> semi-Fowler's; monitor VS, I&amp;O, glucose</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>5</b><span><b>Prepare</b> for ultrasound &amp; surgery</span></div>
+</div>
+<p><b>Common wrong answers and why:</b> "encourage a low-fat diet" &mdash; she is NPO, that is <i>discharge</i> teaching. "Apply heat to the abdomen" &mdash; <span class="never">never apply direct heat to an acutely inflamed abdomen.</span> "Prepare for immediate surgery" &mdash; surgery is the definitive plan, but she is stabilized with fluids and antibiotics first. "Ambulate to relieve gas" &mdash; wrong problem.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>Ethical and Professional:</b> How would you demonstrate respect for Linda Hart's autonomy and preferences during her treatment?</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Autonomy means she makes the decisions &mdash; my job is to make sure she can.</b></p>
+<ul class="blanks">
+  <li><b>Give her real information, in her language.</b> <span class="fill">Explain in plain terms what cholecystitis is, what the ultrasound will involve, and what a laparoscopic cholecystectomy is &mdash; including the option of managing it with antibiotics first. Use <b>teach-back</b>: "tell me in your own words what's going to happen tomorrow." Offer a qualified <b>interpreter</b> if English is not her preferred language &mdash; never a family member.</span></li>
+  <li><b>Informed consent is the provider's conversation; advocacy is mine.</b> <span class="fill">If she signs a consent and then tells me she doesn't understand the risks, or she changes her mind, <b>I stop and get the provider back</b>. Witnessing a signature is not the same as consent being informed.</span></li>
+  <li><b>Ask, don't assume.</b> <span class="fill">Ask about her goals, her fears, her responsibilities at home, her religious or cultural practices, dietary preferences, and how she likes to receive information. Ask who she wants included in decisions &mdash; and check that against her wishes, not the loudest family member.</span></li>
+  <li><b>Honor her right to refuse or delay.</b> <span class="fill">She may refuse surgery, refuse a medication, or want time. My response is to make sure the refusal is <b>informed</b> &mdash; explain the consequences without coercion, document it, notify the provider, and <b>keep caring for her the same way</b>. A refusal is not a reason for a change in tone.</span></li>
+  <li><b>Treat her pain and believe her.</b> <span class="fill">Respect includes not making her prove her pain. Assess it, medicate it, reassess it, and document what she says in her own words.</span></li>
+  <li><b>Include her in her diabetes care.</b> <span class="fill">She has managed this illness for years. Ask how she usually handles her medications and meals, and involve her in the NPO/insulin plan rather than doing it around her.</span></li>
+  <li><b>Privacy and dignity.</b> <span class="fill">Curtains and doors closed for exams, drape her, discuss her information only with those she has authorized, and don't discuss her case in the hallway.</span></li>
+</ul>
+</div></details>
+</div>
+
+<h3>Discharge teaching to prevent the next episode</h3>
+<p><span class="fill"><b>Low-fat diet with small frequent meals</b> &mdash; large fatty meals are the trigger. <b>Gradual</b> weight loss if indicated &mdash; rapid weight loss, crash dieting and prolonged fasting actually <i>promote</i> gallstone formation. <b>Good glycemic control</b> &mdash; diabetes is an independent risk factor. Stay <b>active</b> and well <b>hydrated</b>. <b>When to call:</b> fever, worsening or persistent RUQ pain, <b>jaundice, clay-colored stools or dark urine</b> (a retained duct stone), vomiting that won't stop, or redness/drainage at an incision. After a lap chole: expect <b>right shoulder pain</b> from the CO&#8322; &mdash; walk it off &mdash; and expect looser stools for a few weeks.</span></p>
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>⭐ Remember &mdash; The Must-Not-Forget Strip</h2>
+
+<p class="lead-in"><i>Eight things. If you remember nothing else from this activity, remember these &mdash; the repetition is on purpose.</i></p>
+
+<ul class="blanks">
+  <li><b>1.</b> <span class="fill"><b>BLEEDING BEATS EVERYTHING.</b> Bright red hematemesis in a cirrhotic = <b>ruptured esophageal varices</b> = the first client you see, every time. Oxygen &rarr; two large-bore IVs &rarr; NPO &rarr; type &amp; cross &rarr; octreotide/PPI &rarr; <b>EGD with banding</b>. Monitor <b>BP and HR</b>. Varices are painless &mdash; a calm pain score means nothing.</span></li>
+  <li><b>2.</b> <span class="fill"><b>THE BRAIN IS THE AIRWAY.</b> Confusion + asterixis + &uarr;ammonia = <b>hepatic encephalopathy</b>. It outranks ascites, jaundice, edema and scary transaminases because it ends in a lost airway. First action = <b>assess LOC and airway</b>, then lactulose, then hunt the precipitant.</span></li>
+  <li><b>3.</b> <span class="fill"><b>LACTULOSE, EXPLAINED PROPERLY:</b> non-absorbable &rarr; reaches the colon &rarr; bacteria ferment it &rarr; <b>colon turns acidic</b> &rarr; NH&#8323; becomes charged <b>NH&#8324;&#8314;</b> that <b>cannot be absorbed</b> &rarr; osmotic laxative flushes it out. Goal <b>2&ndash;3 soft stools/day</b>. Too many stools &rarr; dehydration + hypokalemia &rarr; <b>worse</b> encephalopathy. Evaluate with <b>mental status</b>, not the ammonia number.</span></li>
+  <li><b>4.</b> <span class="fill"><b>SORT EVERY CIRRHOSIS FINDING INTO TWO BUCKETS.</b> <b>Portal hypertension (pressure):</b> varices, splenomegaly, caput medusae. <b>Loss of liver function (the factory):</b> ammonia, albumin, INR, jaundice, spider angiomas. <b>Ascites is BOTH</b> &mdash; high hydrostatic pressure pushing out plus low oncotic pressure failing to pull back, with RAAS-driven sodium retention on top.</span></li>
+  <li><b>5.</b> <span class="fill"><b>KNOW WHICH LAB MEANS INJURY AND WHICH MEANS FAILURE.</b> AST/ALT = the liver is being <b>injured</b>. <b>INR, albumin, bilirubin and ammonia = the liver has stopped <i>working</i></b>. An alert client with AST 720 is safer than a confused client with AST 162 &mdash; never let a big number beat an unstable patient.</span></li>
+  <li><b>6.</b> <span class="fill"><b>RUQ + fatty meal + right shoulder radiation + fever + positive Murphy's + &uarr;WBC = CHOLECYSTITIS.</b> Actions: <b>NPO</b> (no CCK, no contraction) + <b>IV antibiotics</b> + fluids + pain control. Monitor <b>temp and WBC</b>. <span class="never">No direct heat on an acute abdomen.</span> Pancreatitis is <b>epigastric, bores to the back, relieved by leaning forward, lipase 3&times; normal</b>.</span></li>
+  <li><b>7.</b> <span class="fill"><b>PARACENTESIS:</b> consent &rarr; <b>VOID</b> &rarr; baseline weight, girth, VS &rarr; sit her <b>upright</b> &rarr; VS during &rarr; watch for <b>hypotension</b> after large-volume removal &rarr; anticipate <b>albumin 6&ndash;8 g per liter removed</b> &rarr; repeat weight and girth &rarr; monitor the site for leak and bleeding. <span class="never">Do not lay her flat afterward &mdash; you just gave her diaphragm room to move.</span> Fever after = think SBP.</span></li>
+  <li><b>8.</b> <span class="fill"><b>THE LIVER CAN'T CLEAR DRUGS.</b> <span class="never">No acetaminophen, no NSAIDs, and no sedatives or benzodiazepines "to calm them down."</span> Normal doses become toxic doses, and sedatives deepen encephalopathy. Add fall precautions and bleeding precautions to every cirrhotic: soft toothbrush, electric razor, no IM injections, pressure to sites, watch for occult bleeding.</span></li>
+</ul>
+
+<p><b>The one sentence that answers most of this exam:</b> <mark>Ask which of the liver's four jobs failed &mdash; detox, build, excrete, metabolize &mdash; then ask whether the client is bleeding or losing consciousness, because those two are the only things that move to the front of the line.</mark></p>
+
+<p class="fine">🤖 <b>Final Claire challenge:</b> "Give me eight unfolding hepatobiliary cases &mdash; two variceal bleeds, two encephalopathies, two cholecystitis, one pancreatitis and one acute hepatitis &mdash; one cue at a time. Make me name the failing liver function, the priority complication and my first action before you reveal anything, and then tell me the most common mistake students make on that case."</p>
+</div>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+</body></html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · Cardiac Concepts &mdash; Stop Memorizing, Start Thinking</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 · Exam 3 · Cardiac Remediation</div>
+  <h1>Cardiac Concepts &mdash; <span class="glow">Stop Memorizing, Start Thinking</span></h1>
+  <p>The five cardiac concepts and the thinking process that gets you to the answer.</p>
+<div class="bigq"><b class="q">What is wrong with the heart, is blood reaching the body, and what kills first?</b>Electrical problem, pump problem, or vessel problem &mdash; name it before you look at the options.</div>
+ </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc">
+ <a href="#start">Step 1 &middot; Start Here</a>
+ <a href="#cad">1 &middot; CAD &rarr; MI</a>
+ <a href="#hf">2 &middot; Heart Failure</a>
+ <a href="#dys">3 &middot; Dysrhythmias</a>
+ <a href="#htn">4 &middot; Hypertension</a>
+ <a href="#shock">5 &middot; Shock</a>
+ <a href="#framework">The NCLEX Framework</a>
+ <a href="#practice">10 Practice Questions</a>
+ <a href="#five">The 5 Questions, Every Time</a>
+ <a href="#summary">⭐ Must Not Forget</a>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="start">
+<h2>Step 1 &middot; Every Cardiac Question Starts Here ⭐</h2>
+<p class="lead-in">Before you look at the answer choices. Every time. Same three questions.</p>
+
+<div class="flow">
+ <div class="stepbox"><b>Ask 1</b><span>What is wrong with the <b>heart</b>?</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Ask 2</b><span>Is <b>blood reaching the body</b>?</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Ask 3</b><span>What will <b>kill first</b>?</span></div>
+</div>
+
+<h3>✅ 1. What is wrong with the heart?</h3>
+<table class="cmp">
+<thead><tr><th>Type of problem</th><th>What it means</th><th>Classic examples</th></tr></thead>
+<tbody>
+<tr><td class="k">⚡ Electrical</td><td><span class="fill">The signal is wrong &mdash; too fast, too slow, or disorganized. The muscle may be fine; the wiring is not.</span></td><td><span class="fill">A-fib, VT, VF, bradycardia, heart block, asystole</span></td></tr>
+<tr><td class="k">💪 Pumping</td><td><span class="fill">The muscle cannot move blood forward, so it backs up behind the failing side.</span></td><td><span class="fill">Heart failure, cardiogenic shock, MI damage, pulmonary edema</span></td></tr>
+<tr><td class="k">🩸 Blood vessel</td><td><span class="fill">The pipes are narrowed, blocked, or under too much pressure, so tissue does not get oxygen.</span></td><td><span class="fill">CAD, angina, MI, hypertension, PAD</span></td></tr>
+</tbody>
+</table>
+
+<h3>✅ 2. Is blood reaching the body?</h3>
+<ul class="blanks">
+ <li><b>Yes = stable</b> &rarr; <span class="fill">awake and oriented, BP holding, warm dry skin, urine output at least 30 mL/hr, pulses present. You have time to assess.</span></li>
+ <li><b>No = priority</b> &rarr; <span class="fill">confusion, low BP, cold clammy skin, urine &lt;30 mL/hr, weak or absent pulses. You act now.</span></li>
+</ul>
+<p><mark>Perfusion is the whole question. Everything else is detail.</mark></p>
+
+<h3>✅ 3. What will kill the patient first?</h3>
+<div class="flow">
+ <div class="stepbox"><b>No oxygen</b><span><span class="fill">Airway/breathing first &mdash; the brain dies in minutes without O&#8322;.</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>No perfusion</b><span><span class="fill">Blood is not moving &mdash; organs start failing (brain, kidney, skin show it first).</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Dangerous rhythm</b><span><span class="fill">VF or pulseless VT &mdash; no cardiac output at all. Defibrillate.</span></span></div>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--ruby)" id="cad">
+<h2>❤️ 1 &middot; Coronary Artery Disease &rarr; Myocardial Infarction 🚨</h2>
+<p><b>The problem is a <span class="fill">blood vessel</span> problem.</b> <em>Because the pipe narrows, the muscle behind it starves.</em></p>
+
+<h4>What happens?</h4>
+<div class="flow">
+ <div class="stepbox"><b>Step 1</b><span>Plaque narrows the artery</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 2</b><span>Heart muscle gets less oxygen</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 3</b><span>Chest pain (angina)</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 4</b><span>Complete blockage = <b>MI</b></span></div>
+</div>
+
+<h4>Think NCLEX 🧠</h4>
+<p><mark>Chest pain + diaphoresis + nausea = think heart first.</mark></p>
+<p><b>Why does that combination mean heart?</b> <span class="fill">Diaphoresis and nausea are sympathetic and vagal responses to a dying myocardium &mdash; they mean the body is in distress, not just uncomfortable. Indigestion does not make you cold and sweaty.</span></p>
+
+<table class="cmp">
+<thead><tr><th></th><th>Stable angina</th><th>Unstable angina</th><th>MI</th></tr></thead>
+<tbody>
+<tr><td class="k">Trigger</td><td><span class="fill">Exertion or stress &mdash; predictable</span></td><td><span class="fill">At rest, new, or worsening</span></td><td><span class="fill">Any time, often at rest</span></td></tr>
+<tr><td class="k">Relieved by rest / nitro</td><td><span class="fill">Yes</span></td><td><span class="fill">Not fully</span></td><td><span class="fill">No</span></td></tr>
+<tr><td class="k">Troponin</td><td><span class="fill">Normal</span></td><td><span class="fill">Normal</span></td><td><span class="fill">Elevated &mdash; muscle is dying</span></td></tr>
+<tr><td class="k">Meaning</td><td><span class="fill">Demand &gt; supply, temporarily</span></td><td><span class="fill">Warning shot &mdash; treat as ACS</span></td><td><span class="fill">Tissue death. Time = muscle.</span></td></tr>
+</tbody>
+</table>
+<p><span class="never">Never walk, feed, or delay a patient with active chest pain.</span> Get the <b>12-lead ECG</b>.</p>
+</div>
+
+<div class="card" style="--jewel:var(--sapphire)" id="hf">
+<h2>❤️ 2 &middot; Heart Failure</h2>
+<p><b>The problem is a <span class="fill">pumping</span> problem.</b> <em>Because the heart cannot move blood forward, it backs up behind the side that failed.</em></p>
+
+<div class="flow">
+ <div class="stepbox"><b>Left fails</b><span>➡️ Fluid backs into the <b>lungs</b></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>You see</b><span><span class="fill">Crackles, dyspnea, orthopnea, cough, frothy/pink sputum, low SpO&#8322;</span></span></div>
+</div>
+<div class="flow">
+ <div class="stepbox"><b>Right fails</b><span>➡️ Fluid backs into the <b>body</b></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>You see</b><span><span class="fill">Peripheral edema, JVD, ascites, weight gain, enlarged liver</span></span></div>
+</div>
+
+<h4>Remember</h4>
+<table class="cmp">
+<thead><tr><th>Side</th><th>Memory hook</th><th>Backs up into</th><th>Hallmark finding</th></tr></thead>
+<tbody>
+<tr><td class="k">Left</td><td><b>L = Lungs</b></td><td><span class="fill">Pulmonary circulation</span></td><td><span class="fill">Crackles</span></td></tr>
+<tr><td class="k">Right</td><td><b>R = Rest of the body</b></td><td><span class="fill">Systemic circulation</span></td><td><span class="fill">Peripheral edema and JVD</span></td></tr>
+</tbody>
+</table>
+<p><mark>Daily weight is the earliest sign. 1 kg gained ≈ 1 L of fluid retained.</mark> Teach her to report <span class="fill">2&ndash;3 lb in 24 hours or 5 lb in a week</span>.</p>
+</div>
+
+<div class="card" style="--jewel:var(--amethyst)" id="dys">
+<h2>❤️ 3 &middot; Dysrhythmias</h2>
+<p><b>The problem is an <span class="fill">electrical</span> problem.</b> <em>Because the signal is disorganized, the pump may or may not still be filling and ejecting.</em></p>
+
+<h4>Ask yourself four questions</h4>
+<div class="flow">
+ <div class="stepbox"><b>✔ 1 Regular?</b><span><span class="fill">Are the R&ndash;R intervals the same? Irregularly irregular &rarr; think A-fib.</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>✔ 2 Rate?</b><span><span class="fill">&lt;60 = brady, 60&ndash;100 = normal, &gt;100 = tachy.</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>✔ 3 P waves?</b><span><span class="fill">One upright P before every QRS? No P waves &rarr; not sinus.</span></span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>✔ 4 QRS?</b><span><span class="fill">Narrow = above the ventricles. Wide = ventricular &rarr; more dangerous.</span></span></div>
+</div>
+
+<h4>Then ask&hellip;</h4>
+<p><mark>Is this rhythm perfusing the patient?</mark> <b>If not &rarr; priority.</b></p>
+
+<table class="cmp">
+<thead><tr><th></th><th>Perfusing (stable)</th><th>Not perfusing (unstable)</th></tr></thead>
+<tbody>
+<tr><td class="k">Looks like</td><td><span class="fill">Awake, talking, BP adequate, no chest pain, warm skin</span></td><td><span class="fill">Confused or unresponsive, hypotensive, chest pain, cold clammy, low urine output</span></td></tr>
+<tr><td class="k">You do</td><td><span class="fill">Assess, monitor, treat the cause, give the ordered drug</span></td><td><span class="fill">Treat the rhythm now &mdash; electricity, CPR, or rapid escalation</span></td></tr>
+<tr><td class="k">No pulse at all</td><td colspan="2"><span class="fill">VF or pulseless VT &rarr; CPR + <b>defibrillate</b>. Asystole/PEA &rarr; CPR + epinephrine, <span class="never">never shock asystole</span>.</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="--jewel:var(--teal)" id="htn">
+<h2>❤️ 4 &middot; Hypertension</h2>
+<p><b>The problem is a <span class="fill">blood vessel</span> problem that turns into a pump problem.</b></p>
+
+<div class="flow">
+ <div class="stepbox"><b>Step 1</b><span>High pressure</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 2</b><span>Heart works harder</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 3</b><span>Heart gets thicker</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 4</b><span>Eventually weak</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Step 5</b><span><b>Heart failure</b></span></div>
+</div>
+
+<p><b>Don't memorize. Follow the chain.</b> <span class="fill">The heart is pushing against high afterload every beat, so the left ventricle hypertrophies. Thick muscle is stiff muscle &mdash; it fills poorly and outgrows its own blood supply, so it eventually fails.</span></p>
+<p><b>Normal BP:</b> <span class="fill">less than 120/80 mm Hg</span>. <b>Hypertension:</b> <span class="fill">130/80 mm Hg or higher on two separate readings</span>. <b>Hypertensive crisis:</b> <span class="fill">above 180/120 mm Hg &mdash; 🚨 check for organ damage (chest pain, vision change, headache, neuro change)</span>.</p>
+<p><mark>Hypertension is silent. The damage is the diagnosis.</mark></p>
+</div>
+
+<div class="card" style="--jewel:var(--garnet)" id="shock">
+<h2>❤️ 5 &middot; Shock 🚨</h2>
+<p><b>Cardiogenic shock = <span class="fill">the heart cannot pump</span>. Everything else comes from that.</b></p>
+
+<div class="flow">
+ <div class="stepbox"><b>Start</b><span>Pump fails</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Then</b><span>Cardiac output drops</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Then</b><span>Tissues do not get oxygen</span></div>
+ <div class="arrow">➜</div>
+ <div class="stepbox"><b>Then</b><span>Organs fail in order</span></div>
+</div>
+
+<table class="cmp">
+<thead><tr><th>Sign</th><th>Why it happens</th></tr></thead>
+<tbody>
+<tr><td class="k">Low BP</td><td><span class="fill">Less blood ejected per beat &rarr; less pressure in the system.</span></td></tr>
+<tr><td class="k">Fast HR</td><td><span class="fill">Compensation &mdash; the body speeds up to make up for the small stroke volume.</span></td></tr>
+<tr><td class="k">Cold skin</td><td><span class="fill">Blood is shunted away from the skin to protect heart and brain.</span></td></tr>
+<tr><td class="k">Poor urine output</td><td><span class="fill">Kidneys are not being perfused. &lt;30 mL/hr is the red flag.</span></td></tr>
+<tr><td class="k">Confusion</td><td><span class="fill">The brain is not being perfused &mdash; often the <b>earliest</b> sign, and the one students skip.</span></td></tr>
+</tbody>
+</table>
+<p><mark>New confusion in a cardiac patient is a perfusion emergency until proven otherwise.</mark></p>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="framework">
+<h2>The NCLEX Framework ⭐</h2>
+<p class="lead-in">Every question. <b>STOP.</b> Then ask:</p>
+<ul class="blanks">
+ <li><b>① Is oxygen getting there?</b> <span class="fill">Check SpO&#8322;, respiratory rate, work of breathing, lung sounds, color.</span></li>
+ <li><b>② Is blood getting there?</b> <span class="fill">Check BP, pulses, cap refill, skin temperature, urine output, level of consciousness.</span></li>
+ <li><b>③ Is the patient stable?</b> <span class="fill">Stable = you may assess further. Unstable = you act first.</span></li>
+ <li><b>④ What assessment finding worries me MOST?</b> <span class="fill">The one that shows a change &mdash; new confusion, dropping SpO&#8322;, rising respiratory rate, falling urine output.</span></li>
+ <li><b>⑤ Which intervention fixes the actual problem?</b> <span class="fill">Not the one that documents it, delays it, or treats a symptom &mdash; the one that restores oxygen or perfusion.</span></li>
+</ul>
+</div>
+
+<div class="card" style="--jewel:var(--citrine)" id="practice">
+<h2>Practice Questions 🧠</h2>
+<p class="lead-in">Run the same three questions on each one before you open the answer.</p>
+
+<div class="nq">
+<div class="stem">1. A client suddenly develops crushing chest pain that radiates to the left arm and is diaphoretic. What is the priority?</div>
+<ol type="A"><li>Obtain a pain history</li><li>Perform a 12-lead ECG</li><li>Offer food</li><li>Encourage ambulation</li></ol>
+<p><b>Break it down:</b> ✔ Chest pain ✔ Diaphoresis &rarr; Could this be an MI? <b>YES.</b> Which action confirms it fastest?</p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; Perform a 12-lead ECG.</b> <span class="fill">It is the fastest test that identifies ST elevation, and it drives every decision after it (cath lab vs. medical management). Standard is within 10 minutes of the complaint.</span></p>
+<p><b>A</b> &mdash; <span class="fill">A full pain history is assessment you can gather while the ECG runs; alone it delays diagnosis.</span><br>
+<b>C</b> &mdash; <span class="fill">Keep the client NPO. Food adds cardiac workload and blocks an urgent cath.</span><br>
+<b>D</b> &mdash; <span class="fill">Ambulating raises oxygen demand in a heart that already cannot meet demand. <span class="never">Never.</span></span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">2. A client with left-sided heart failure is becoming increasingly short of breath. Which assessment finding is expected?</div>
+<ol type="A"><li>Ascites</li><li>Crackles</li><li>Pedal pulses absent</li><li>Cool fingers only</li></ol>
+<p><b>Break it down:</b> Left side &rarr; blood backs into&hellip; <b>lungs.</b> Look for lung symptoms.</p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; Crackles.</b> <span class="fill">Pressure backs up into the pulmonary veins, fluid leaks into alveoli, and you hear crackles in the bases first.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Ascites is fluid backing into the abdomen &mdash; that is right-sided failure.</span><br>
+<b>C</b> &mdash; <span class="fill">Absent pedal pulses points to arterial occlusion or PAD, not heart failure.</span><br>
+<b>D</b> &mdash; <span class="fill">Cool fingers alone is nonspecific and could be room temperature or vasoconstriction.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">3. The monitor shows ventricular tachycardia. The client is unresponsive and has no pulse. Priority?</div>
+<ol type="A"><li>Oxygen</li><li>Defibrillation</li><li>IV fluids</li><li>ECG</li></ol>
+<p><b>Break it down:</b> No pulse. ABC. Can blood circulate? <b>No.</b> Treat the rhythm immediately.</p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; Defibrillation</b> (with CPR until the defibrillator is ready). <span class="fill">Pulseless VT is a shockable rhythm; only defibrillation stops the chaotic activity so a perfusing rhythm can return. Every minute of delay drops survival.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Oxygen is part of resuscitation but does nothing if no blood is circulating.</span><br>
+<b>C</b> &mdash; <span class="fill">Fluids do not fix an electrical problem.</span><br>
+<b>D</b> &mdash; <span class="fill">You already know the rhythm from the monitor. Ordering a 12-lead here only delays the shock.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">4. A client with heart failure gains 5 lb (2.3 kg) in 3 days. What does this most likely indicate?</div>
+<ol type="A"><li>Dehydration</li><li>Fluid retention</li><li>Improved nutrition</li><li>Medication compliance</li></ol>
+<p><b>Break it down:</b> Heart failure &rarr; poor pumping &rarr; fluid backs up. <mark>Weight gain = fluid until proven otherwise.</mark></p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; Fluid retention.</b> <span class="fill">2.3 kg is roughly 2.3 L of retained fluid. Tissue cannot be gained that fast. This client needs the provider notified before she is in pulmonary edema.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Dehydration causes weight loss, not gain.</span><br>
+<b>C</b> &mdash; <span class="fill">Real tissue gain takes weeks, not 3 days.</span><br>
+<b>D</b> &mdash; <span class="fill">If she were taking her diuretic correctly, weight would be stable or down.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">5. Which client should the nurse assess FIRST?</div>
+<ol type="A"><li>BP 168/94</li><li>HR 108 after walking</li><li>Chest pain rated 8/10 with diaphoresis</li><li>Mild ankle swelling</li></ol>
+<p><b>Break it down:</b> Ask: <b>Who might be dying RIGHT NOW?</b></p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>C &mdash; Chest pain 8/10 with diaphoresis.</b> <span class="fill">This is active myocardial ischemia. Muscle is dying while you decide.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Elevated but not a crisis (&gt;180/120) and no organ-damage symptoms.</span><br>
+<b>B</b> &mdash; <span class="fill">An expected response to activity in a client who just walked.</span><br>
+<b>D</b> &mdash; <span class="fill">Chronic and slow. Needs assessment, not first.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">6. A client with atrial fibrillation is at greatest risk for:</div>
+<ol type="A"><li>Pneumonia</li><li>Stroke</li><li>GI bleed</li><li>Renal stones</li></ol>
+<p><b>Break it down:</b> AFib &rarr; blood pools &rarr; clot forms &rarr; where could it travel?</p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; Stroke.</b> <span class="fill">The atria quiver instead of contracting, so blood stagnates in the left atrial appendage and clots. That clot leaves the left heart and the first major branches go to the brain. This is why these clients get anticoagulated.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Not caused by the rhythm.</span><br>
+<b>C</b> &mdash; <span class="fill">A risk of the anticoagulant we give, not of the AFib itself &mdash; and it is not the greatest risk.</span><br>
+<b>D</b> &mdash; <span class="fill">No relationship to atrial fibrillation.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">7. A client reports chest pain only when climbing stairs and it resolves after resting. This is most consistent with:</div>
+<ol type="A"><li>Stable angina</li><li>Myocarditis</li><li>Cardiac tamponade</li><li>Pulmonary edema</li></ol>
+<p><b>Break it down:</b> Exercise &rarr; pain &rarr; rest &rarr; pain gone. Think <b>oxygen demand &gt; oxygen supply</b>.</p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>A &mdash; Stable angina.</b> <span class="fill">Predictable, brought on by exertion, relieved by rest or nitroglycerin. The narrowed artery can supply a resting heart but not a working one.</span></p>
+<p><b>B</b> &mdash; <span class="fill">Myocarditis pain is constant and comes with fever and fatigue, not an exertion pattern.</span><br>
+<b>C</b> &mdash; <span class="fill">Tamponade is an emergency: muffled heart sounds, JVD, hypotension. It does not come and go with stairs.</span><br>
+<b>D</b> &mdash; <span class="fill">Pulmonary edema presents as severe dyspnea and crackles, not a resolving chest pain.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">8. Which assessment finding suggests decreased cardiac output?</div>
+<ol type="A"><li>Warm skin</li><li>Urine output 15 mL/hr</li><li>Bounding pulses</li><li>BP 138/82</li></ol>
+<p><b>Break it down:</b> Poor pump &rarr; poor kidney perfusion &rarr; low urine output.</p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; Urine output 15 mL/hr.</b> <span class="fill">Below 30 mL/hr means the kidneys are not being perfused, which means forward flow has dropped. Urine output is your cheapest perfusion monitor.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Warm skin means peripheral perfusion is intact &mdash; a normal finding.</span><br>
+<b>C</b> &mdash; <span class="fill">Bounding pulses suggest volume overload or high output, not low output. Low output gives you weak, thready pulses.</span><br>
+<b>D</b> &mdash; <span class="fill">138/82 is only mildly elevated and does not indicate low output.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">9. Which intervention is most important for a client experiencing acute pulmonary edema?</div>
+<ol type="A"><li>Lay the client flat</li><li>High-Fowler's position</li><li>Encourage oral fluids</li><li>Ambulate the client</li></ol>
+<p><b>Break it down:</b> Pulmonary edema &rarr; fluid in lungs &rarr; improve breathing FIRST.</p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; High-Fowler's position</b> (upright, legs dependent). <span class="fill">Sitting up lets the diaphragm drop and pools blood in the legs, which lowers preload and takes fluid off the lungs immediately. It costs nothing and works in seconds &mdash; that is why it comes before drugs.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Lying flat pushes more fluid into the lungs and worsens the dyspnea. <span class="never">Never lay a client in pulmonary edema flat.</span></span><br>
+<b>C</b> &mdash; <span class="fill">More fluid is the opposite of what this client needs.</span><br>
+<b>D</b> &mdash; <span class="fill">Ambulating a hypoxic client in acute distress increases oxygen demand and risks collapse.</span></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem">10. The nurse is caring for four cardiac clients. Which client is the priority?</div>
+<ol type="A"><li>BP 150/88 taking morning medications</li><li>Heart failure client with new confusion and oxygen saturation of 86%</li><li>Stable atrial fibrillation with HR 82</li><li>Client awaiting discharge after hypertension education</li></ol>
+<p><b>Break it down:</b> Don't look at diagnoses. Look at: <b>Who is losing oxygen? Who has poor perfusion? Who is unstable?</b></p>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>B &mdash; New confusion with SpO&#8322; 86%.</b> <span class="fill">Two failures at once: oxygenation and cerebral perfusion. New confusion is a change, and change is what the NCLEX rewards you for catching.</span></p>
+<p><b>A</b> &mdash; <span class="fill">Elevated but being treated; no symptoms of organ damage.</span><br>
+<b>C</b> &mdash; <span class="fill">The word "stable" with a controlled rate tells you this one is perfusing.</span><br>
+<b>D</b> &mdash; <span class="fill">Discharge teaching is important but nobody is unstable.</span></p>
+</div></details>
+</div>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="five">
+<h2>The 5 Questions to Ask on EVERY Cardiac NCLEX Question ⭐</h2>
+<p class="lead-in">Before choosing an answer, ask yourself:</p>
+<ol>
+ <li><b>What is the heart problem?</b> <span class="fill">Blocked artery, weak pump, rhythm problem, or high pressure &mdash; name it out loud.</span></li>
+ <li><b>Can the heart still deliver oxygenated blood to the body?</b> <span class="fill">Look at LOC, BP, skin, pulses, urine output.</span></li>
+ <li><b>Which assessment finding shows the patient is becoming unstable?</b> <span class="fill">The one that is new or trending the wrong way &mdash; confusion, falling SpO&#8322;, rising RR, dropping urine.</span></li>
+ <li><b>What threatens life first?</b> <span class="fill">Airway, breathing, circulation, then perfusion &mdash; in that order.</span></li>
+ <li><b>Which intervention treats the underlying problem instead of the symptom?</b> <span class="fill">Fix the cause of the poor oxygen or poor perfusion; do not document, reposition, or reassess your way out of an emergency.</span></li>
+</ol>
+<p><mark>Slow down and answer these five before you read the options. You are looking for patterns, not facts &mdash; that is the skill being tested.</mark></p>
+</div>
+
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>⭐ If You Remember Nothing Else</h2>
+<ul>
+ <li><b>Name the problem type first:</b> <span class="fill">electrical, pump, or vessel</span>. Everything follows from that.</li>
+ <li><b>Perfusing = stable. Not perfusing = priority.</b> <span class="fill">LOC, BP, skin, urine output tell you which.</span></li>
+ <li><b>Chest pain + diaphoresis + nausea</b> &rarr; <span class="fill">think heart &mdash; get the 12-lead ECG</span>.</li>
+ <li><b>L = Lungs (crackles). R = Rest of the body (edema, JVD).</b></li>
+ <li><b>Weight gain in heart failure = fluid</b> <span class="fill">until proven otherwise &mdash; 1 kg ≈ 1 L</span>.</li>
+ <li><b>No pulse + VT or VF</b> &rarr; <span class="fill">CPR and defibrillate</span>. <span class="never">Never shock asystole.</span></li>
+ <li><b>AFib</b> &rarr; <span class="fill">blood pools &rarr; clot &rarr; stroke</span>.</li>
+ <li><b>New confusion or urine &lt;30 mL/hr</b> = <span class="fill">the heart is not perfusing. Act.</span></li>
+</ul>
+<p><b>Stop memorizing. Follow the chain.</b></p>
+</div>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+</body></html>

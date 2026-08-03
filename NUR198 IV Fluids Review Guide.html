@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · IV Fluids Review Guide</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+ border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6);
+ border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px}
+
+/* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center;
+ background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line);
+ border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45);
+ border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)}
+
+/* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px;
+ padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px}
+
+/* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85);
+ border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9);
+ cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px}
+
+/* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28);
+ border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}}
+
+/* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px;
+ background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px;
+ text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){
+ table.cmp thead{display:none}
+ table.cmp td{display:block;border-top:none;padding:3px 11px}
+ table.cmp td.k{color:#ffd75e;padding-top:9px}
+ table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9);
+ border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9);
+ border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32);
+ border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style></head>
+<body>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<div class="wrap">
+ <div class="hero">
+  <div class="crumb">NUR 198 · Fluids · IV Therapy</div>
+  <h1>IV Fluids <span class="glow">Review Guide</span></h1>
+  <p>Isotonic, hypotonic, hypertonic &mdash; where the fluid goes and why it matters.</p>
+<div class="bigq"><b class="q">Where is the fluid now, and where do I need it to go?</b>Every IV fluid question is a fluid-shift question.</div>
+ </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc">
+  <a href="#bigq">The BIG Question</a>
+  <a href="#tonicity">⭐ Tonicity at a Glance</a>
+  <a href="#iso">1 &middot; Isotonic Fluids</a>
+  <a href="#hypo">2 &middot; Hypotonic Fluids</a>
+  <a href="#hyper">3 &middot; Hypertonic Fluids</a>
+  <a href="#solutions">🧪 The Solutions Table</a>
+  <a href="#d5w">The D5W Trick</a>
+  <a href="#sodium">Sodium Tricks</a>
+  <a href="#clues">NCLEX Clues</a>
+  <a href="#neverdo">🚨 The Never-Dos</a>
+  <a href="#practice">Practice Questions</a>
+  <a href="#rapid">Rapid Fire Questions</a>
+  <a href="#summary">⭐ Must-Not-Forget Strip</a>
+</div>
+
+<p class="lead-in"><i>Read the tonicity cards first, then work the questions. Tap "Hide answers" to quiz yourself; tap "Show the answer" on any question to check your reasoning.</i></p>
+
+<!-- ===================== THE BIG QUESTION ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="bigq">
+<h2>The BIG Question 🧭</h2>
+<p><b>"Where is the fluid right now&hellip; and where do I need it to go?"</b></p>
+<p><i>Everything about IV fluids comes back to fluid shifts.</i> There are only three compartments and water always moves toward the saltier one.</p>
+
+<div class="flow">
+  <div class="stepbox"><b>ASK 1 &mdash; IS THE PATIENT DRY OR OVERLOADED?</b><span>Dry = low BP, tachycardia, dry mucosa, poor turgor, low urine output, weight loss. Overloaded = crackles, edema, JVD, bounding pulse, weight gain, high BP.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>ASK 2 &mdash; ARE THE CELLS SWOLLEN OR SHRUNKEN?</b><span>Look at the <b>sodium</b>. Low Na = swollen cells (confusion, seizures). High Na = shriveled cells (thirst, dry sticky mouth).</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>ASK 3 &mdash; WHERE DOES THE FLUID NEED TO GO?</b><span>Into the <b>vessel</b> &rarr; isotonic. Into the <b>cell</b> &rarr; hypotonic. Out of the <b>cell</b> &rarr; hypertonic.</span></div>
+</div>
+
+<p><mark>Normal serum osmolality is 275&ndash;295 mOsm/kg.</mark> A solution is <b>isotonic</b> if it sits in that range, <b>hypotonic</b> below it, <b>hypertonic</b> above it.</p>
+</div>
+
+<!-- ===================== TONICITY AT A GLANCE ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="tonicity">
+<h2>⭐ Tonicity at a Glance</h2>
+<p class="lead-in"><i>If you learn one table on this page, learn this one. Every question below is an application of it.</i></p>
+
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>ISOTONIC</th><th>HYPOTONIC</th><th>HYPERTONIC</th></tr></thead>
+<tbody>
+<tr><td class="k">Osmolality</td><td><span class="fill">~275&ndash;295 mOsm/L &mdash; same as plasma</span></td><td><span class="fill">&lt;275 mOsm/L &mdash; more dilute than plasma</span></td><td><span class="fill">&gt;295 mOsm/L &mdash; more concentrated than plasma</span></td></tr>
+<tr><td class="k">Where the water goes</td><td><span class="fill"><b>Stays in the vessel</b> (extracellular space)</span></td><td><span class="fill"><b>Moves INTO the cell</b></span></td><td><span class="fill"><b>Pulled OUT of the cell</b> into the vessel</span></td></tr>
+<tr><td class="k">What the cell does</td><td><span class="fill">Stays the same size</span></td><td><span class="fill"><b>Swells</b> (and can burst)</span></td><td><span class="fill"><b>Shrinks</b></span></td></tr>
+<tr><td class="k">Main examples</td><td><span class="fill">0.9% NS, Lactated Ringer's, D5W in the bag</span></td><td><span class="fill">0.45% NS, 0.33% NS, D5W once metabolized</span></td><td><span class="fill">3% NS, 5% NS, D10W, D5&frac12;NS, D5NS, D5LR</span></td></tr>
+<tr><td class="k">Use it when&hellip;</td><td><span class="fill">The <b>vascular space</b> is empty &mdash; hemorrhage, shock, dehydration, sepsis, DKA, vomiting/diarrhea</span></td><td><span class="fill">The <b>cells</b> are dry &mdash; hypernatremia, cellular dehydration, DKA <i>after</i> the pressure is restored, maintenance fluid</span></td><td><span class="fill">The cells are <b>too full</b> &mdash; severe symptomatic hyponatremia, cerebral edema, raised ICP</span></td></tr>
+<tr><td class="k">Biggest danger</td><td><span class="fill"><b>Fluid overload</b> &rarr; pulmonary edema</span></td><td><span class="fill"><b>Cerebral edema</b> and cardiovascular collapse (fluid leaves the vessel)</span></td><td><span class="fill"><b>Fluid overload and pulmonary edema</b> &mdash; the vascular space fills fast</span></td></tr>
+<tr><td class="k">One-line memory</td><td><span class="fill">"Fills the tank."</span></td><td><span class="fill">"Feeds the cell."</span></td><td><span class="fill">"Drains the cell."</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== ISOTONIC ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="iso">
+<h2>1 &middot; Isotonic Fluids 💧</h2>
+
+<h3>Examples</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>0.9% Normal Saline (NS)</b> &mdash; 308 mOsm/L, Na&#8314; 154, Cl&#8315; 154</span></li>
+  <li><span class="fill"><b>Lactated Ringer's (LR)</b> &mdash; 273 mOsm/L; Na&#8314; 130, K&#8314; 4, Ca&#178;&#8314; 3, Cl&#8315; 109, lactate 28. Closest thing to plasma</span></li>
+  <li><span class="fill"><b>D5W in the bag</b> (252 mOsm/L) &mdash; but it <b>behaves hypotonic in the body</b>. See the D5W trick below</span></li>
+</ul>
+
+<h3>What happens? 🔬</h3>
+<div class="flow">
+  <div class="stepbox"><b>FLUID IN</b><span>Solution osmolality <b>matches</b> the inside of the cell (~285 mOsm).</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>NO GRADIENT</b><span>There is nothing pulling water in either direction across the membrane.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>CELL UNCHANGED</b><span><b>Cell stays exactly the same size.</b> All the volume stays outside the cell.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>VESSEL FILLS</b><span><b>Circulating volume expands</b> &rarr; BP up, heart rate down, urine output up, perfusion restored.</span></div>
+</div>
+
+<h3>Used for ✅</h3>
+<ul class="blanks">
+  <li><b>Hypovolemia</b> &mdash; <span class="fill">the tank is empty and needs refilling</span></li>
+  <li><b>Dehydration</b> &mdash; <span class="fill">vomiting, diarrhea, burns, fever, third-spacing</span></li>
+  <li><b>Shock</b> &mdash; <span class="fill">first-line resuscitation before blood or pressors</span></li>
+  <li><b>Blood loss</b> &mdash; <span class="fill">holds the pressure until blood products arrive; <b>0.9% NS is the only fluid that runs with blood</b></span></li>
+  <li><b>Sepsis</b> &mdash; <span class="fill">large-volume crystalloid (usually 30 mL/kg) is the sepsis bundle standard</span></li>
+  <li><b>Also:</b> <span class="fill">DKA resuscitation, hypercalcemia (dilute and flush the calcium), and as the flush/carrier for many IV medications</span></li>
+</ul>
+
+<p><b>Think:</b> <mark>"Patient is dry and needs volume."</mark></p>
+
+<h3>Watch for ⚠️</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>Fluid overload</b> &mdash; the whole risk of isotonic fluid, because none of it goes into the cells</span></li>
+  <li><span class="fill"><b>Crackles</b> in the lung bases &mdash; <i>the earliest sign that fluid is backing into the lungs</i></span></li>
+  <li><span class="fill"><b>Edema</b>, especially dependent and periorbital, plus JVD</span></li>
+  <li><span class="fill"><b>Increased BP</b> and a bounding pulse</span></li>
+  <li><span class="fill"><b>Shortness of breath</b>, orthopnea, frothy sputum &rarr; pulmonary edema</span></li>
+  <li><span class="fill"><b>Daily weight is the most sensitive monitor</b> &mdash; 1 kg gained = about 1 L of retained fluid</span></li>
+</ul>
+
+<h3>Cautions and contraindications ❌</h3>
+<table class="cmp">
+<thead><tr><th>Situation</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td class="k">Heart failure, renal failure, older adults</td><td><span class="fill">These patients cannot mobilize an extra liter &mdash; <b>run slowly, weigh daily, listen to lungs every shift</b></span></td></tr>
+<tr><td class="k">Large volumes of 0.9% NS</td><td><span class="fill">The chloride load causes <b>hyperchloremic metabolic acidosis</b>; this is why LR is often preferred for big resuscitations</span></td></tr>
+<tr><td class="k">LR in <b>liver failure</b></td><td><span class="fill"><span class="never">Avoid &mdash; the liver is what converts lactate to bicarbonate.</span> A failing liver cannot, so the lactate accumulates</span></td></tr>
+<tr><td class="k">LR with <b>blood products</b></td><td><span class="fill"><span class="never">Never &mdash; the calcium in LR binds the citrate anticoagulant and can clot the line.</span> <b>0.9% NS only</b> with blood</span></td></tr>
+<tr><td class="k">LR in hyperkalemia / severe renal failure</td><td><span class="fill">LR contains <b>4 mEq/L of potassium</b> &mdash; small, but avoided when potassium is already high</span></td></tr>
+<tr><td class="k">LR in lactic acidosis</td><td><span class="fill">Adds more lactate to a patient who already cannot clear it</span></td></tr>
+<tr><td class="k">NS in hypernatremia</td><td><span class="fill">0.9% NS has <b>154 mEq/L of sodium</b> &mdash; it will not bring a high sodium down</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== HYPOTONIC ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="hypo">
+<h2>2 &middot; Hypotonic Fluids 🫧</h2>
+
+<h3>Examples</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>0.45% NS (half-normal saline)</b> &mdash; 154 mOsm/L</span></li>
+  <li><span class="fill"><b>0.33% NS (one-third normal saline)</b> &mdash; about 103 mOsm/L</span></li>
+  <li><span class="fill"><b>0.225% NS (quarter-normal)</b> &mdash; about 77 mOsm/L, mostly pediatrics</span></li>
+  <li><span class="fill"><b>D5W after it is metabolized</b> &mdash; the dextrose burns off and leaves free water</span></li>
+</ul>
+
+<h3>What happens? 🔬</h3>
+<div class="flow">
+  <div class="stepbox"><b>FLUID IN</b><span>Solution is <b>more dilute</b> than the inside of the cell.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>GRADIENT PULLS INWARD</b><span>The cell is now the "saltier" side, so water moves toward it.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>FLUID MOVES INTO THE CELL</b><span><b>Cells swell.</b> Cellular dehydration is corrected.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>THE VESSEL EMPTIES</b><span>Volume leaves the bloodstream &mdash; <b>BP can drop</b>. Never the fluid for a hypotensive patient.</span></div>
+</div>
+
+<h3>Used for ✅</h3>
+<ul class="blanks">
+  <li><b>Hypernatremia</b> &mdash; <span class="fill"><i>hypernatremia is usually a <b>WATER</b> problem, not a salt problem</i>, so the treatment is giving water back</span></li>
+  <li><b>Cellular dehydration</b> &mdash; <span class="fill">the cells are the dry compartment, not the vessels</span></li>
+  <li><b>Maintenance fluid</b> &mdash; <span class="fill">for the NPO patient who needs daily water and some electrolytes but is not volume depleted</span></li>
+  <li><b>DKA &mdash; later phase</b> &mdash; <span class="fill">switch from NS to 0.45% NS <i>after</i> blood pressure and perfusion are restored, to rehydrate the cells</span></li>
+  <li><b>Diabetes insipidus</b> &mdash; <span class="fill">massive free-water loss that has to be replaced</span></li>
+</ul>
+
+<p><b>Think:</b> <mark>"Cells are thirsty &mdash; they are leaking fluid."</mark></p>
+
+<h3>Watch for ⚠️</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>Cerebral edema</b> &mdash; <i>brain cells swell just like every other cell, and the skull cannot expand</i></span></li>
+  <li><span class="fill"><b>Increased ICP</b> &mdash; headache, vomiting, widening pulse pressure, bradycardia, pupil changes</span></li>
+  <li><span class="fill"><b>Confusion and decreasing LOC</b> &mdash; the first and most important sign; stop the infusion and call</span></li>
+  <li><span class="fill"><b>Hypotension and worsening shock</b> &mdash; fluid is leaving the vascular space</span></li>
+  <li><span class="fill"><b>Hemolysis</b> if the solution is too dilute &mdash; red cells swell and rupture</span></li>
+  <li><span class="fill"><b>Correct hypernatremia slowly</b> &mdash; dropping sodium too fast causes cerebral edema. General target is no more than about 8&ndash;12 mEq/L in 24 hours</span></li>
+</ul>
+
+<h3>Avoid in ❌</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>Brain injury</b> &mdash; <span class="never">never give hypotonic fluid to a patient with a head injury or raised ICP.</span> <i>It drives water straight into already swollen brain cells.</i></span></li>
+  <li><span class="fill"><b>Stroke</b> &mdash; same reason; the ischemic brain is already edematous</span></li>
+  <li><span class="fill"><b>Burns</b> &mdash; burn patients are losing plasma into the tissues and need <b>isotonic</b> (LR) resuscitation, not free water</span></li>
+  <li><span class="fill"><b>Hypovolemia, shock, hypotension, trauma</b> &mdash; hypotonic fluid makes the pressure worse</span></li>
+  <li><span class="fill"><b>Liver disease with third-spacing</b> &mdash; free water worsens ascites and dilutional hyponatremia</span></li>
+</ul>
+</div>
+
+<!-- ===================== HYPERTONIC ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="hyper">
+<h2>3 &middot; Hypertonic Fluids 🧲</h2>
+
+<h3>Examples</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>3% NS</b> &mdash; about 1026 mOsm/L. The one used for symptomatic hyponatremia and cerebral edema</span></li>
+  <li><span class="fill"><b>5% NS</b> &mdash; about 1710 mOsm/L, ICU only</span></li>
+  <li><span class="fill"><b>D10W</b> &mdash; about 505 mOsm/L; also used to treat hypoglycemia</span></li>
+  <li><span class="fill"><b>D5&frac12;NS (406), D5NS (560), D5LR (525)</b> &mdash; hypertonic in the bag; commonly used as maintenance/replacement fluids</span></li>
+  <li><span class="fill"><b>Colloids</b> (albumin, hetastarch) act the same way &mdash; they pull fluid into the vessel by oncotic pull</span></li>
+</ul>
+
+<h3>What happens? 🔬</h3>
+<div class="flow">
+  <div class="stepbox"><b>FLUID IN</b><span>Solution is <b>far more concentrated</b> than the cell.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>GRADIENT PULLS OUTWARD</b><span>The bloodstream is now the "saltier" side.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>WATER LEAVES THE CELL</b><span><b>Cells shrink.</b> Swollen brain cells shrink back down &rarr; ICP falls.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>VASCULAR SPACE FILLS FAST</b><span>Volume expands quickly &mdash; <b>which is exactly why it can flood the lungs.</b></span></div>
+</div>
+
+<h3>Used for ✅</h3>
+<ul class="blanks">
+  <li><b>Severe hyponatremia</b> &mdash; <span class="fill">specifically <b>symptomatic</b> hyponatremia (seizures, confusion, coma), usually Na below about 120 mEq/L</span></li>
+  <li><b>Cerebral edema</b> &mdash; <span class="fill">pulls water out of swollen brain tissue and lowers ICP</span></li>
+  <li><b>Traumatic brain injury with raised ICP</b> &mdash; <span class="fill">3% saline is the safe choice here; hypotonic fluids are the dangerous one</span></li>
+  <li><b>Third-spacing / low oncotic states</b> &mdash; <span class="fill">albumin pulls fluid back into the vessel in liver failure and burns</span></li>
+</ul>
+
+<p><b>Think:</b> <mark>"Pull fluid OUT of swollen cells."</mark></p>
+
+<h3>Watch for ⚠️</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>Pulmonary edema</b> &mdash; crackles, dyspnea, frothy sputum. <i>The vascular space fills faster than the heart can pump it forward.</i></span></li>
+  <li><span class="fill"><b>Fluid overload</b> &mdash; JVD, bounding pulse, rapid weight gain, rising BP</span></li>
+  <li><span class="fill"><b>CHF exacerbation</b> &mdash; a failing heart cannot handle a sudden preload increase</span></li>
+  <li><span class="fill"><b>Sodium climbing too fast</b> &mdash; risks <b>osmotic demyelination syndrome</b>; recheck sodium every few hours</span></li>
+  <li><span class="fill"><b>Cellular dehydration</b> &mdash; thirst, dry mucous membranes, restlessness</span></li>
+  <li><span class="fill"><b>The IV site</b> &mdash; concentrated solutions are vesicant; assess for phlebitis and infiltration frequently</span></li>
+</ul>
+
+<h3>Avoid in ❌</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>Heart failure and renal failure</b> &mdash; these patients cannot offload the extra volume</span></li>
+  <li><span class="fill"><b>Dehydration and hypernatremia</b> &mdash; the cells are already dry; hypertonic fluid dries them further</span></li>
+  <li><span class="fill"><b>Any patient you cannot monitor closely</b> &mdash; 3% saline belongs in a monitored setting on a pump</span></li>
+</ul>
+</div>
+
+<!-- ===================== SOLUTIONS TABLE ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="solutions">
+<h2>🧪 The Solutions Table &mdash; Side by Side</h2>
+<p class="lead-in"><i>One row per bag you will actually hang. Cover the right-hand columns and quiz yourself off the name.</i></p>
+
+<table class="cmp">
+<thead><tr><th>Solution</th><th>Tonicity (mOsm/L)</th><th>Give it for</th><th>Watch for / avoid</th></tr></thead>
+<tbody>
+<tr><td class="k">0.9% NS</td><td><span class="fill"><b>Isotonic</b> &mdash; 308</span></td><td><span class="fill">Shock, hemorrhage, dehydration, sepsis, DKA, hypercalcemia; <b>the only fluid compatible with blood</b>; medication carrier</span></td><td><span class="fill">Fluid overload; hyperchloremic metabolic acidosis with large volumes; will not lower a high sodium</span></td></tr>
+<tr><td class="k">Lactated Ringer's</td><td><span class="fill"><b>Isotonic</b> &mdash; 273</span></td><td><span class="fill">Burns, trauma, surgery, large-volume resuscitation, metabolic acidosis <i>(lactate &rarr; bicarbonate)</i></span></td><td><span class="fill"><span class="never">Not in liver failure. Never with blood products.</span> Avoid in hyperkalemia (K&#8314; 4 mEq/L) and lactic acidosis</span></td></tr>
+<tr><td class="k">D5W</td><td><span class="fill"><b>Isotonic in the bag (252) &rarr; hypotonic in the body</b></span></td><td><span class="fill">Free water, keeping a vein open, diluting IV medications, hypernatremia; supplies ~170 kcal/L</span></td><td><span class="fill"><span class="never">Never in head injury or raised ICP.</span> Not for resuscitation. Raises glucose &mdash; caution in diabetes</span></td></tr>
+<tr><td class="k">0.45% NS</td><td><span class="fill"><b>Hypotonic</b> &mdash; 154</span></td><td><span class="fill">Hypernatremia, cellular dehydration, DKA after pressure is restored, routine maintenance</span></td><td><span class="fill"><span class="never">Never in head injury, stroke, or burns.</span> Cerebral edema; worsens hypotension</span></td></tr>
+<tr><td class="k">0.33% NS</td><td><span class="fill"><b>Hypotonic</b> &mdash; ~103</span></td><td><span class="fill">Free-water replacement with a little sodium; cellular rehydration</span></td><td><span class="fill">Same as 0.45% NS, and more so &mdash; cell swelling and hemolysis</span></td></tr>
+<tr><td class="k">3% NS</td><td><span class="fill"><b>Hypertonic</b> &mdash; ~1026</span></td><td><span class="fill"><b>Symptomatic hyponatremia, cerebral edema, raised ICP</b></span></td><td><span class="fill"><span class="never">Infusion pump + frequent sodium checks, always.</span> Pulmonary edema, CHF, ODS from over-fast correction</span></td></tr>
+<tr><td class="k">D10W</td><td><span class="fill"><b>Hypertonic</b> &mdash; 505</span></td><td><span class="fill">Hypoglycemia, calorie support, weaning off TPN</span></td><td><span class="fill">Hyperglycemia, vein irritation, rebound hypoglycemia if stopped abruptly</span></td></tr>
+<tr><td class="k">D5&frac12;NS</td><td><span class="fill"><b>Hypertonic in the bag</b> &mdash; 406</span></td><td><span class="fill">Very common maintenance fluid; often ordered with 20 mEq KCl</span></td><td><span class="fill">Fluid overload; glucose; behaves closer to isotonic once dextrose is used up</span></td></tr>
+<tr><td class="k">Albumin (colloid)</td><td><span class="fill"><b>Acts hypertonic</b> &mdash; oncotic pull</span></td><td><span class="fill">Third-spacing, burns, liver failure with ascites, low-albumin shock</span></td><td><span class="fill">Fluid overload and pulmonary edema; it is a blood product &mdash; monitor for reaction</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===================== D5W TRICK ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="d5w">
+<h2>The D5W Trick 🍬</h2>
+<p><b>D5W is the one bag that changes its answer depending on where it is.</b></p>
+
+<div class="flow">
+  <div class="stepbox"><b>IN THE BAG</b><span><b>Isotonic</b> &mdash; 252 mOsm/L, close enough to plasma that it does not lyse red cells on the way in.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>IN THE BODY</b><span>Cells take up and burn the <b>dextrose</b> for energy within minutes.</span></div>
+  <div class="arrow">➜</div>
+  <div class="stepbox"><b>WHAT IS LEFT</b><span><b>Free water only.</b> Now the solution is <b>hypotonic</b> &mdash; water shifts into the cells.</span></div>
+</div>
+
+<ul class="blanks">
+  <li><b>Starts:</b> <span class="fill">isotonic in the bag</span></li>
+  <li><b>Acts:</b> <span class="fill">hypotonic in the body</span></li>
+  <li><b>Why?</b> <span class="fill">The sugar gets metabolized &rarr; only free water remains &rarr; that water follows the osmotic gradient <b>into the cells</b>.</span></li>
+</ul>
+
+<p><b>Exam consequences:</b> <span class="never">D5W is never appropriate for a head-injured patient, a stroke patient, or anyone with raised ICP</span>, and it is <b>not</b> a resuscitation fluid &mdash; it will not hold a blood pressure up. <mark>If an option says D5W "stays in the bloodstream" or "pulls water out of cells," it is wrong.</mark></p>
+</div>
+
+<!-- ===================== SODIUM TRICKS ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="sodium">
+<h2>Sodium Tricks 🧂</h2>
+<p class="lead-in"><i>Sodium and water are the same question asked two ways. Fix the water and the sodium fixes itself.</i></p>
+
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>HIGH sodium (hypernatremia &gt;145)</th><th>LOW sodium (hyponatremia &lt;135)</th></tr></thead>
+<tbody>
+<tr><td class="k">What it really means</td><td><span class="fill"><b>Too little WATER</b></span></td><td><span class="fill"><b>Too much WATER</b></span></td></tr>
+<tr><td class="k">The cells are</td><td><span class="fill"><b>Dehydrated / shrunken</b></span></td><td><span class="fill"><b>Swollen</b> &mdash; including brain cells</span></td></tr>
+<tr><td class="k">Signs</td><td><span class="fill">Thirst, dry sticky mucous membranes, flushed skin, restlessness &rarr; agitation, weakness</span></td><td><span class="fill">Headache, confusion, lethargy, muscle cramps, nausea, seizures</span></td></tr>
+<tr><td class="k">Think&hellip;</td><td><span class="fill"><b>Hypotonic fluids</b> (0.45% NS, D5W) &mdash; give the water back</span></td><td><span class="fill"><b>Hypertonic fluid</b> (3% NS) if symptomatic &mdash; otherwise fluid restriction</span></td></tr>
+<tr><td class="k">Correction rule</td><td><span class="fill">Lower it <b>slowly</b> &mdash; dropping sodium too fast swells the brain</span></td><td><span class="fill">Raise it <b>slowly</b> &mdash; roughly no more than <b>8&ndash;12 mEq/L in 24 hours</b>; too fast causes osmotic demyelination</span></td></tr>
+</tbody>
+</table>
+
+<p><mark>Both directions are corrected slowly, and both are corrected with the fluid that is the opposite of the problem.</mark></p>
+</div>
+
+<!-- ===================== NCLEX CLUES ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="clues">
+<h2>NCLEX Clues 🔎</h2>
+
+<table class="cmp">
+<thead><tr><th>The stem says&hellip;</th><th>You choose&hellip;</th></tr></thead>
+<tbody>
+<tr><td class="k"><b>Dry patient</b> &mdash; low BP, tachycardia, dry mucosa, poor turgor, low urine output</td><td><span class="fill">&rarr; <b>ISOTONIC</b> (0.9% NS or LR) &mdash; fill the vessel first, always</span></td></tr>
+<tr><td class="k"><b>Swollen brain</b> &mdash; severe hyponatremia with confusion or seizures, cerebral edema</td><td><span class="fill">&rarr; <b>HYPERTONIC</b> (3% NS) &mdash; pull water out of the cells</span></td></tr>
+<tr><td class="k"><b>High sodium</b> &mdash; thirst, dry sticky membranes, Na &gt;145</td><td><span class="fill">&rarr; <b>HYPOTONIC carefully</b> (0.45% NS) &mdash; slow, with neuro checks</span></td></tr>
+<tr><td class="k"><b>Fluid overload</b> &mdash; crackles, edema, SOB, weight gain, JVD</td><td><span class="fill">&rarr; <b>Slow the fluid, reassess, sit the patient upright, notify the provider</b> &mdash; anticipate a diuretic</span></td></tr>
+<tr><td class="k"><b>Head injury / raised ICP</b></td><td><span class="fill">&rarr; <b>Never hypotonic.</b> 3% saline is the anticipated fluid</span></td></tr>
+<tr><td class="k"><b>Blood transfusion running</b></td><td><span class="fill">&rarr; <b>0.9% NS only</b> &mdash; no LR, no dextrose solutions</span></td></tr>
+<tr><td class="k"><b>Burns in the first 24 hours</b></td><td><span class="fill">&rarr; <b>Lactated Ringer's</b>, titrated to urine output</span></td></tr>
+<tr><td class="k"><b>DKA</b></td><td><span class="fill">&rarr; <b>0.9% NS first</b> for the pressure, then 0.45% NS, then add dextrose once glucose reaches about 200 mg/dL</span></td></tr>
+</tbody>
+</table>
+
+<p class="fine">🤖 Ask Claire: "Give me ten one-line IV fluid scenarios. Make me pick isotonic, hypotonic, or hypertonic and say what I would assess before hanging it."</p>
+</div>
+
+<!-- ===================== NEVER-DOS ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="neverdo">
+<h2>🚨 The Never-Dos &mdash; These Are Exam Answers <i>and</i> Patient Safety</h2>
+
+<h3>1. Hypotonic fluid in a head injury ❌</h3>
+<p><span class="never">Never hang 0.45% NS, 0.33% NS, or D5W on a patient with a head injury, stroke, brain tumor, or any raised ICP.</span> <i>Free water moves straight into brain cells that are already swollen inside a skull that cannot expand.</i> <b>If you see one of these ordered for a neuro patient, that is the order you question.</b> The right fluid for cerebral edema is <b>3% saline</b>.</p>
+
+<h3>2. 3% saline handling ⚠️</h3>
+<ul class="blanks">
+  <li><span class="fill"><b>Always on an infusion pump</b> &mdash; <i>never by gravity, never "wide open."</i> The rate is the whole safety margin.</span></li>
+  <li><span class="fill"><b>Frequent serum sodium checks</b> (commonly every 2&ndash;4 hours during active correction) &mdash; you are titrating to the sodium, not to a set volume.</span></li>
+  <li><span class="fill"><b>Do not raise sodium faster than roughly 8&ndash;12 mEq/L in 24 hours.</b> Too fast &rarr; <b>osmotic demyelination syndrome</b> &mdash; dysarthria, dysphagia, quadriparesis, and it is permanent.</span></li>
+  <li><span class="fill"><b>Continuous monitoring</b> &mdash; neuro checks, lung sounds, and the IV site. Stop and call for new dyspnea or crackles.</span></li>
+  <li><span class="fill"><b>Large vein or central access</b>, and check the site often &mdash; concentrated saline is irritating and infiltration causes tissue damage.</span></li>
+</ul>
+
+<h3>3. Lactated Ringer's &mdash; two hard stops ❌</h3>
+<ul class="blanks">
+  <li><span class="fill"><span class="never">Not in liver failure.</span> <i>The liver is what converts lactate into bicarbonate. A failing liver cannot, so lactate builds up and the acidosis worsens.</i></span></li>
+  <li><span class="fill"><span class="never">Never with blood products.</span> <i>LR contains calcium, and calcium binds the citrate anticoagulant in banked blood &mdash; clots can form in the tubing.</i> <b>Prime and flush with 0.9% NS only.</b></span></li>
+  <li><span class="fill">Also avoid with <b>hyperkalemia</b> (LR carries 4 mEq/L of K&#8314;) and in <b>lactic acidosis</b>.</span></li>
+</ul>
+
+<h3>4. The rest of the absolutes ❌</h3>
+<ul class="blanks">
+  <li><span class="fill"><span class="never">Never infuse sterile water IV.</span> It is profoundly hypotonic and causes <b>hemolysis</b> &mdash; red cells swell and rupture.</span></li>
+  <li><span class="fill"><span class="never">Never bolus 3% saline or run a hypertonic solution without a pump.</span></span></li>
+  <li><span class="fill"><span class="never">Never keep infusing when new crackles, dyspnea, or a falling O&#8322; saturation appear.</span> Slow or stop the fluid, sit the patient upright, get vitals and lung sounds, and notify the provider.</span></li>
+  <li><span class="fill"><b>Never use D5W to resuscitate.</b> It leaves the vascular space almost immediately and will not hold a blood pressure.</span></li>
+  <li><span class="fill"><b>Question, don't just hang.</b> If the fluid ordered contradicts the sodium or the neuro status, clarify before you start it &mdash; that is the nurse's job on every fluid question.</span></li>
+</ul>
+</div>
+
+<!-- ===================== PRACTICE QUESTIONS ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="practice">
+<h2>Practice Questions 📝</h2>
+
+<div class="nq">
+<div class="stem"><b>1.</b> A client is admitted with severe dehydration after several days of vomiting and diarrhea. BP 82/48 mmHg, HR 128/min, mucous membranes dry, urine output decreased. Which IV fluid would the nurse anticipate administering <b>first</b>?</div>
+<ol>
+  <li>0.45% Normal Saline</li>
+  <li>3% Normal Saline</li>
+  <li>Lactated Ringer's</li>
+  <li>D5W</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; Lactated Ringer's.</b> This client is <b>hypovolemic</b> and needs the vascular space refilled right now. <i>Isotonic fluid stays where you put it &mdash; in the bloodstream &mdash; so BP rises, heart rate falls, and the kidneys get perfused again.</i> LR also replaces the electrolytes lost in vomit and stool.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> 0.45% NS is hypotonic &mdash; it shifts water <i>into</i> the cells and leaves the vessel, dropping an already low BP further.<br>
+<b>2.</b> 3% saline is for symptomatic hyponatremia and cerebral edema, not volume loss; it would also pull water out of cells that are already dry.<br>
+<b>4.</b> D5W acts hypotonic once the dextrose is metabolized &mdash; no lasting volume expansion.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>2.</b> A client has severe hyponatremia and increasing confusion. Which provider order should the nurse <b>question</b>?</div>
+<ol>
+  <li>Seizure precautions</li>
+  <li>Frequent neurologic assessments</li>
+  <li>Administration of 3% saline</li>
+  <li>Administration of 0.45% Normal Saline</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 4 &mdash; 0.45% Normal Saline.</b> This client's sodium is already low and the brain is already swelling. <i>A hypotonic fluid adds more free water, drives it into the brain cells, and makes the cerebral edema worse.</i> <mark>Read the word "question" carefully &mdash; it is asking for the wrong order, not the right one.</mark></p>
+<p><b>Why the others are appropriate:</b><br>
+<b>1.</b> Seizure precautions are exactly right &mdash; severe hyponatremia seizes.<br>
+<b>2.</b> Frequent neuro checks are how you detect deterioration and how you monitor the response to treatment.<br>
+<b>3.</b> 3% saline is the treatment for symptomatic hyponatremia &mdash; on a pump, with frequent sodium levels.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>3.</b> A patient has a traumatic brain injury with increased intracranial pressure. Which IV fluid would the nurse anticipate?</div>
+<ol>
+  <li>0.45% Normal Saline</li>
+  <li>D5W</li>
+  <li>3% Normal Saline</li>
+  <li>Sterile water infusion</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; 3% Normal Saline.</b> Hypertonic saline raises serum osmolality, <i>so water is pulled out of the swollen brain tissue and back into the vasculature &mdash; brain volume drops and ICP falls.</i> Give it on a pump with frequent sodium levels and continuous neuro assessment.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> 0.45% NS is hypotonic &mdash; <span class="never">the single most dangerous fluid choice in a head injury.</span><br>
+<b>2.</b> D5W behaves hypotonic in the body for the same reason. Same danger.<br>
+<b>4.</b> <span class="never">Sterile water is never infused IV</span> &mdash; it causes hemolysis.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>4.</b> A nurse is reviewing laboratory values before initiating IV therapy. Which patient would most likely benefit from a <b>hypotonic</b> solution?</div>
+<ol>
+  <li>Patient with a sodium level of 154 mEq/L</li>
+  <li>Patient with pulmonary edema</li>
+  <li>Patient with severe burns and hypotension</li>
+  <li>Patient with traumatic brain injury</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 1 &mdash; sodium 154 mEq/L.</b> Hypernatremia is a <b>water deficit</b>, and the cells are shrunken. <i>Hypotonic fluid supplies free water that moves into the cells and dilutes the sodium back toward normal</i> &mdash; done slowly, with neuro checks.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>2.</b> Pulmonary edema means there is already too much fluid; this patient needs a diuretic, not more volume.<br>
+<b>3.</b> Burns with hypotension need <b>isotonic LR</b> for aggressive volume resuscitation &mdash; hypotonic fluid would leave the vessel and worsen the shock.<br>
+<b>4.</b> A TBI patient must <b>never</b> receive hypotonic fluid &mdash; it worsens cerebral edema.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>5.</b> A patient is receiving a continuous 0.9% Normal Saline infusion. Which assessment finding indicates the patient may be developing <b>fluid overload</b>?</div>
+<ol>
+  <li>Dry mucous membranes</li>
+  <li>Heart rate 118 beats/minute</li>
+  <li>Crackles in bilateral lung bases</li>
+  <li>Poor skin turgor</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; bilateral basilar crackles.</b> <b>Crackles mean fluid has moved into the alveoli.</b> <i>Because isotonic fluid stays entirely in the extracellular space, overload shows up in the lungs first.</i> Slow the infusion, sit the patient upright, check O&#8322; saturation and vitals, and notify the provider.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> Dry mucous membranes are a sign of fluid <b>deficit</b> &mdash; the opposite problem.<br>
+<b>2.</b> Tachycardia accompanies overload sometimes, but it is nonspecific &mdash; pain, fever, anxiety, and hypovolemia all cause it.<br>
+<b>4.</b> Poor skin turgor is also a deficit sign; overload gives you edema instead.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>6.</b> A patient is receiving D5W. Which statement by the nurse is <b>most accurate</b>?</div>
+<ol>
+  <li>"This fluid stays in the bloodstream permanently."</li>
+  <li>"This solution acts hypertonic after metabolism."</li>
+  <li>"This solution eventually acts hypotonic."</li>
+  <li>"This fluid rapidly pulls water out of cells."</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; it eventually acts hypotonic.</b> D5W is isotonic in the bag at 252 mOsm/L, <i>but the cells burn the dextrose within minutes and only free water is left behind &mdash; which then shifts into the cells.</i> That is why D5W is a free-water source, not a volume expander.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> It leaves the vascular space almost immediately; nothing stays there "permanently."<br>
+<b>2.</b> Hypertonic is backwards &mdash; the solution gets <i>more</i> dilute as the sugar disappears.<br>
+<b>4.</b> Pulling water out of cells is what 3% saline and D10W do; D5W pushes water in.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>7.</b> A nurse is prioritizing patients receiving IV fluids. Which patient requires <b>immediate</b> intervention?</div>
+<ol>
+  <li>Patient receiving LR with BP 110/72</li>
+  <li>Patient receiving 3% saline reporting shortness of breath</li>
+  <li>Patient receiving D5W with glucose 128 mg/dL</li>
+  <li>Patient receiving 0.45% saline with sodium 148 mEq/L</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; 3% saline with new shortness of breath.</b> <b>Hypertonic saline expands the vascular space fast, and dyspnea is the first sign of pulmonary edema.</b> <i>This is an airway/breathing problem developing in real time.</i> Stop or slow the infusion, sit the patient upright, get O&#8322; saturation and lung sounds, and notify the provider.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> BP 110/72 on LR is a normal, reassuring finding &mdash; the fluid is doing its job.<br>
+<b>3.</b> Glucose 128 mg/dL with a dextrose infusion running is expected and not urgent.<br>
+<b>4.</b> 0.45% saline for a sodium of 148 is <b>appropriate therapy</b> &mdash; hypotonic fluid is exactly what you give for hypernatremia. Monitor, but nothing is wrong.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>8.</b> A patient with severe dehydration is receiving isotonic fluid. Which assessment finding <b>best</b> indicates improvement?</div>
+<ol>
+  <li>Sodium level drops rapidly</li>
+  <li>Lung crackles develop</li>
+  <li>Urine output increases</li>
+  <li>Patient becomes increasingly confused</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; urine output increases.</b> <b>Urine output is the bedside measure of kidney perfusion</b> (goal at least about 0.5 mL/kg/hr, or roughly 30 mL/hr in an adult). <i>The kidneys only make urine when there is enough volume and pressure reaching them,</i> so rising output means the tank is filling. Expect the heart rate to fall and the BP to rise alongside it.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> A <b>rapid</b> sodium drop is a complication, not a goal &mdash; fast shifts swell the brain.<br>
+<b>2.</b> Crackles mean you have overshot into fluid overload.<br>
+<b>4.</b> Increasing confusion signals a worsening neurologic or perfusion state, never improvement.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>9.</b> A nurse understands that which IV solution would <b>MOST</b> likely cause cells to swell?</div>
+<ol>
+  <li>3% saline</li>
+  <li>Lactated Ringer's</li>
+  <li>D10W</li>
+  <li>0.45% saline</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 4 &mdash; 0.45% saline.</b> At 154 mOsm/L it is roughly half the concentration of plasma. <i>Water moves from the dilute solution toward the saltier inside of the cell,</i> so the cell takes on water and swells. That is useful in hypernatremia and dangerous in a brain injury.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> 3% saline is hypertonic &mdash; it <b>shrinks</b> cells.<br>
+<b>2.</b> LR is isotonic &mdash; cells stay exactly the same size.<br>
+<b>3.</b> D10W is hypertonic in the bag (505 mOsm/L) and is given for hypoglycemia and calories, not free water.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>10.</b> A patient with CHF is receiving IV fluids. Which prescription would require the <b>MOST</b> caution?</div>
+<ol>
+  <li>25 mL/hr NS</li>
+  <li>50 mL/hr LR</li>
+  <li>150 mL/hr 3% saline</li>
+  <li>Saline lock only</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; 150 mL/hr of 3% saline.</b> Two problems stacked on each other: <b>a hypertonic fluid that rapidly pulls water into the vascular space, running at a high rate, in a heart that already cannot handle its preload.</b> <i>Expect flash pulmonary edema.</i> Verify the order, use a pump, and monitor lung sounds, respiratory status, and sodium closely.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>1.</b> 25 mL/hr of NS is a deliberately low, CHF-appropriate rate.<br>
+<b>2.</b> 50 mL/hr of LR is modest and isotonic &mdash; monitor, but reasonable.<br>
+<b>4.</b> A saline lock delivers no continuous volume at all, which is the safest option on the list.</p>
+</div></details>
+</div>
+</div>
+
+<!-- ===================== RAPID FIRE ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="rapid">
+<h2>Rapid Fire IV Fluid Questions ⚡</h2>
+
+<h3>Rules &mdash; ask yourself</h3>
+<ul class="blanks">
+  <li><b>Is the patient DRY or OVERLOADED?</b> <span class="fill">Dry &rarr; low BP, tachycardia, dry mucosa, low urine output &rarr; <b>give isotonic.</b> Overloaded &rarr; crackles, edema, JVD, weight gain &rarr; <b>slow the fluid and reassess.</b></span></li>
+  <li><b>Are the CELLS swollen or dehydrated?</b> <span class="fill">Look at the sodium. <b>Low Na = swollen cells. High Na = dehydrated cells.</b></span></li>
+  <li><b>Where does the fluid need to go?</b> <span class="fill">Into the <b>vessel</b> &rarr; isotonic. Into the <b>cell</b> &rarr; hypotonic. Out of the <b>cell</b> &rarr; hypertonic.</span></li>
+</ul>
+
+<div class="nq">
+<div class="stem"><b>1.</b> A patient has vomiting, diarrhea, hypotension, and tachycardia. Which fluid type would the nurse anticipate?</div>
+<ol><li>Hypotonic</li><li>Hypertonic</li><li>Isotonic</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; isotonic.</b> The patient is hypovolemic and needs circulating volume replaced fast; <i>isotonic fluid stays in the bloodstream where the deficit is.</i></p>
+<p><b>Why not the others:</b> <b>hypotonic</b> would shift fluid out of the vessel and drop the BP further; <b>hypertonic</b> would dehydrate cells that are already losing water, and is not a resuscitation fluid.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>2.</b> A patient has a sodium of 158 mEq/L and severe dehydration. Which fluid type would the nurse anticipate?</div>
+<ol><li>Hypotonic</li><li>Hypertonic</li><li>Isotonic</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 1 &mdash; hypotonic.</b> Hypernatremia means the cells are dehydrated; <i>hypotonic fluid moves water back INTO the cells and dilutes the sodium.</i> Lower it slowly with neuro checks.</p>
+<p><b>Why not the others:</b> <b>hypertonic</b> would raise a sodium that is already dangerously high; <b>isotonic</b> 0.9% NS carries 154 mEq/L of sodium, so it will not bring 158 down. (If the patient were profoundly hypotensive, isotonic goes first to save the pressure, then you switch.)</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>3.</b> A patient with severe hyponatremia develops seizures. Which fluid type is anticipated?</div>
+<ol><li>Hypotonic</li><li>Hypertonic</li><li>Isotonic</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; hypertonic.</b> Seizures make this <b>symptomatic</b> hyponatremia. <i>3% saline raises serum osmolality and pulls water out of the swollen brain cells.</i> Pump, frequent sodium levels, seizure precautions, airway ready.</p>
+<p><b>Why not the others:</b> <b>hypotonic</b> would add more free water to a swelling brain &mdash; the worst possible choice; <b>isotonic</b> will not raise the sodium quickly enough to stop the seizing.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>4.</b> A patient with traumatic brain injury has cerebral edema. Which fluid type is safest?</div>
+<ol><li>Hypotonic</li><li>Hypertonic</li><li>D5W</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; hypertonic.</b> <i>It pulls water OUT of swollen brain cells, shrinking brain volume and lowering ICP.</i></p>
+<p><b>Why not the others:</b> <b>hypotonic</b> pushes water into the brain &mdash; <span class="never">contraindicated in any raised-ICP patient</span>; <b>D5W</b> is functionally hypotonic once the dextrose is metabolized, so it is the same mistake wearing a different label.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>5.</b> A patient with septic shock has BP 78/40 mmHg. Which fluid type is priority?</div>
+<ol><li>Isotonic</li><li>Hypotonic</li><li>Hypertonic</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 1 &mdash; isotonic.</b> Sepsis causes vasodilation and capillary leak, so the vascular space is functionally empty. <i>Isotonic crystalloid is the first-line resuscitation</i> (commonly 30 mL/kg), before vasopressors.</p>
+<p><b>Why not the others:</b> <b>hypotonic</b> leaves the vessel and worsens the hypotension; <b>hypertonic</b> is not a sepsis resuscitation fluid and risks pulmonary edema in a leaky vasculature.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>6.</b> A patient has cellular dehydration and hypernatremia. Which fluid type helps move water INTO the cells?</div>
+<ol><li>Hypertonic</li><li>Isotonic</li><li>Hypotonic</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; hypotonic.</b> <i>A solution more dilute than the cell creates a gradient that pulls water inward,</i> which is exactly what a dehydrated cell needs.</p>
+<p><b>Why not the others:</b> <b>hypertonic</b> pulls water out &mdash; the opposite; <b>isotonic</b> creates no gradient at all, so the cell size does not change.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>7.</b> A CHF patient begins developing crackles while receiving IV fluids. Which fluid type most likely contributed?</div>
+<ol><li>Isotonic</li><li>Hypotonic</li><li>No fluid type causes this</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 1 &mdash; isotonic.</b> <i>Every drop of isotonic fluid stays in the extracellular space,</i> so in a failing heart the volume backs up into the pulmonary circulation &rarr; crackles and pulmonary edema.</p>
+<p><b>Why not the others:</b> <b>hypotonic</b> shifts fluid into cells and is the less likely culprit for vascular overload; <b>"no fluid type causes this"</b> is simply false &mdash; fluid overload is the most common IV therapy complication, and hypertonic solutions do it too.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>8.</b> A patient is confused with a sodium of 118 mEq/L. Which fluid type is anticipated?</div>
+<ol><li>Hypertonic</li><li>Hypotonic</li><li>D5W</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 1 &mdash; hypertonic.</b> Sodium 118 mEq/L with confusion is <b>severe symptomatic hyponatremia</b>. <i>Hypertonic saline pulls water out of the swollen cells and raises the sodium</i> &mdash; slowly, no more than about 8&ndash;12 mEq/L in 24 hours.</p>
+<p><b>Why not the others:</b> <b>hypotonic</b> adds free water and deepens the hyponatremia; <b>D5W</b> acts hypotonic and would do the same damage.</p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>9.</b> A patient has dry mucous membranes, poor skin turgor, and low urine output. Which fluid type would likely be ordered first?</div>
+<ol><li>Hypertonic</li><li>Isotonic</li><li>Hypotonic</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 2 &mdash; isotonic.</b> This is classic dehydration with hypovolemia. <i>Isotonic fluid replaces vascular volume so the kidneys are perfused and urine output comes back up.</i></p>
+<p><b>Why not the others:</b> <b>hypertonic</b> would pull water out of already dry cells; <b>hypotonic</b> would not hold the blood pressure. <mark>Vascular volume is always restored before you worry about cell water.</mark></p>
+</div></details>
+</div>
+
+<div class="nq">
+<div class="stem"><b>10.</b> A patient with increased intracranial pressure should avoid which fluid type?</div>
+<ol><li>Hypertonic</li><li>Isotonic</li><li>Hypotonic</li></ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: 3 &mdash; hypotonic.</b> <span class="never">Hypotonic fluid moves water INTO cells, including brain cells, and worsens cerebral edema and ICP.</span></p>
+<p><b>Why not the others:</b> <b>hypertonic</b> is the <i>treatment</i> for raised ICP; <b>isotonic</b> (0.9% NS) is the standard maintenance fluid for neuro patients because it does not shift water across the membrane at all.</p>
+</div></details>
+</div>
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>⭐ Remember &mdash; The Must-Not-Forget Strip</h2>
+<p class="lead-in"><i>Seven things. If you can say these out loud, you can answer any IV fluid question on the exam.</i></p>
+
+<ul class="blanks">
+  <li><b>1.</b> <span class="fill"><b>ISOTONIC fills the tank</b> (0.9% NS, LR &mdash; ~275&ndash;295 mOsm/L). Cells stay the same size. Give it for shock, hemorrhage, dehydration, sepsis, burns. <b>Watch for fluid overload &mdash; crackles first.</b></span></li>
+  <li><b>2.</b> <span class="fill"><b>HYPOTONIC feeds the cell</b> (0.45% NS, 0.33% NS &mdash; &lt;275). Cells swell. Give it for hypernatremia and cellular dehydration. <span class="never">Never in head injury, stroke, or burns.</span></span></li>
+  <li><b>3.</b> <span class="fill"><b>HYPERTONIC drains the cell</b> (3% NS, D10W &mdash; &gt;295). Cells shrink. Give it for symptomatic hyponatremia and cerebral edema. <b>Watch for pulmonary edema.</b></span></li>
+  <li><b>4.</b> <span class="fill"><b>D5W starts isotonic and acts hypotonic</b> &mdash; the dextrose is metabolized and only free water is left. Not a resuscitation fluid, and <b>never</b> for a head injury.</span></li>
+  <li><b>5.</b> <span class="fill"><b>Sodium is a WATER problem.</b> High Na = too little water &rarr; hypotonic, slowly. Low Na = too much water &rarr; hypertonic if symptomatic, otherwise fluid restriction. <mark>Correct either direction no faster than about 8&ndash;12 mEq/L in 24 hours.</mark></span></li>
+  <li><b>6.</b> <span class="fill"><b>3% saline rules:</b> infusion pump, frequent sodium levels, continuous neuro and respiratory monitoring, large vein or central line. Too-fast correction &rarr; <b>osmotic demyelination</b>, and it is permanent.</span></li>
+  <li><b>7.</b> <span class="fill"><b>LR has two hard stops:</b> <span class="never">not in liver failure</span> (the liver converts lactate to bicarbonate and a failing one cannot) and <span class="never">never with blood products</span> (its calcium binds the citrate anticoagulant and can clot the line &mdash; use 0.9% NS only). Also avoid in hyperkalemia and lactic acidosis.</span></li>
+  <li><b>8.</b> <span class="fill"><b>The moment you see new crackles, dyspnea, or a falling O&#8322; saturation on any fluid:</b> slow or stop the infusion, sit the patient upright, get vitals and lung sounds, notify the provider. <b>Daily weight is your earliest warning</b> &mdash; 1 kg = 1 L.</span></li>
+</ul>
+
+<p class="fine">🤖 Ask Claire: "Act as my instructor. Give me eight IV fluid scenarios &mdash; include a head injury, a CHF patient, a septic patient, a blood transfusion, and a sodium of 118 &mdash; and make me name the fluid, the rate concern, and the one thing I would assess before hanging it."</p>
+</div>
+</div>
+<script>
+(function(){
+ var btn=document.getElementById('toggle'), tip=document.getElementById('tip');
+ btn.addEventListener('click',function(){
+   var on=document.body.classList.toggle('quizmode');
+   btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me';
+   tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in Dr. K's handout.";
+   if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');});
+   window.scrollTo({top:0,behavior:'smooth'});
+ });
+ document.addEventListener('click',function(e){
+   if(!document.body.classList.contains('quizmode')) return;
+   var f=e.target.closest('.fill'); if(f) f.classList.add('show');
+ });
+})();
+</script>
+
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+</body></html>
