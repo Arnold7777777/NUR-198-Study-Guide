@@ -20,8 +20,14 @@
  /* main */
  .main{margin-left:var(--sb);transition:margin .25s;min-height:100vh}
  body.nav-collapsed .main{margin-left:0}
+ /* the fixed Look Up / ABSN cluster floats over the top-right corner, so the
+    countdown chips need room or the buttons sit on top of them */
  .topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;padding:14px 22px;
+   padding-right:238px;
    background:linear-gradient(135deg,rgba(90,45,130,.95),rgba(142,45,107,.9));border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+ /* under 1024px the nav cluster sheds its text labels and needs far less room */
+ @media(max-width:1024px){.topbar{padding-right:118px}}
+ @media(max-width:560px){.topbar{padding-right:104px}}
  .menubtn{background:rgba(255,255,255,.12);border:1px solid var(--line);color:#fff;border-radius:10px;
    width:42px;height:42px;font-size:1.2rem;cursor:pointer;flex:0 0 auto}
  .menubtn:hover{background:rgba(255,255,255,.22)}
@@ -36,7 +42,8 @@
  .lead p{margin:0;color:var(--soft);font-size:.95rem}
  .sec{margin:30px 0 8px;display:flex;align-items:center;gap:10px;font-size:1.15rem;font-weight:800;color:var(--gold)}
  .sec .bar{height:2px;background:var(--line);flex:1;border:0}
- .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+ .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+ @media(max-width:640px){.cards{grid-template-columns:1fr}}
  .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;
    transition:.15s;position:relative;border-left:5px solid var(--violet)}
  .card:hover{background:var(--panel2);transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.4)}
@@ -48,8 +55,9 @@
  .card.star{border-left-color:var(--gold)}
  .tag{display:inline-block;font-size:0.82rem;background:rgba(181,140,255,.18);color:var(--violet);
    border:1px solid var(--violet);border-radius:20px;padding:1px 9px;margin-top:8px;font-weight:700}
- @media(max-width:860px){:root{--sb:250px} body:not(.nav-open) .sidebar{transform:translateX(-100%)} .main{margin-left:0!important}
-   body.nav-open .sidebar{transform:none} .countbar{display:none}}
+ @media(max-width:1140px){:root{--sb:270px} body:not(.nav-open) .sidebar{transform:translateX(-100%)} .main{margin-left:0!important}
+   body.nav-open .sidebar{transform:none}}
+ @media(max-width:860px){.countbar{display:none}}
  /* The drawer used to cover the only button that closed it, with nothing else to
     tap. Now: a scrim behind it, an X inside it, and Escape all close it. */
  #navScrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:35;
@@ -60,8 +68,12 @@
    border-radius:11px;font-size:1.25rem;font-weight:800;cursor:pointer;line-height:1;
    display:none;align-items:center;justify-content:center;z-index:2}
  #navClose:hover{background:rgba(255,255,255,.28)}
- .sidebar{position:relative}
- @media(max-width:860px){
+ /* NOTE: do NOT set position:relative here - .sidebar is position:fixed, and
+    overriding it drops the whole sidebar into the page flow and pushes the
+    content down by its full height. A fixed element is already a valid
+    containing block for the absolutely-positioned close button. */
+ /* the drawer now engages up to 1140px, so its close button has to as well */
+ @media(max-width:1140px){
    #navClose{display:flex}
    .sidebar .brand{padding-right:50px}
  }
@@ -146,7 +158,7 @@ sub,sup{font-size:.72rem}
   <a class="navlink" href="#podcasts"><span class="ic">🎧</span> Podcasts</a>
   <a class="navlink" href="#infographics"><span class="ic">🖼️</span> Infographics</a>
   <a class="navlink" href="#videos"><span class="ic">🎬</span> Videos</a>
-  <div class="sbfoot">🎯 Exam 5 + ATI: <b style="color:var(--gold)">Aug 5</b><br>🎯 Final: <b style="color:var(--gold)">Aug 11</b><br><br>Tip: every card opens in its own tab.</div>
+  <div class="sbfoot">🎯 3 tests (Fundamentals ATI &middot; Mental Health ATI &middot; Exam 5 GI): <b style="color:var(--gold)">Aug 6</b><br>🎯 Final: <b style="color:var(--gold)">Aug 11</b><br><br>Tip: every card opens in its own tab.</div>
 </nav>
 <div class="main">
  <div id="navScrim"></div>
@@ -517,7 +529,7 @@ sub,sup{font-size:.72rem}
 </div>
 <script>
  var body=document.body, btn=document.getElementById('menubtn');
- function isMobile(){return window.matchMedia('(max-width:860px)').matches;}
+ function isMobile(){return window.matchMedia('(max-width:1140px)').matches;}
  btn.addEventListener('click',function(){
    if(isMobile()){ body.classList.toggle('nav-open'); }
    else { body.classList.toggle('nav-collapsed'); }
@@ -536,6 +548,19 @@ sub,sup{font-size:.72rem}
      if(e.key==='Escape' && body.classList.contains('nav-open')) close();
    });
  })();
+ // The nav cluster is fixed over the top-right and changes width with the
+ // breakpoint, so reserve exactly as much room as it actually takes rather
+ // than guessing a padding per breakpoint.
+ (function(){
+   var nb=document.getElementById('navBtns'), tb=document.querySelector('.topbar');
+   if(!nb||!tb) return;
+   function fit(){ tb.style.paddingRight=(Math.ceil(nb.getBoundingClientRect().width)+26)+'px'; }
+   fit();
+   window.addEventListener('resize',fit);
+   if(window.ResizeObserver) new ResizeObserver(fit).observe(nb);
+   setTimeout(fit,400);   /* after webfonts settle */
+ })();
+
  // countdowns
  function days(to){var now=new Date(); now.setHours(0,0,0,0); var t=new Date(to); return Math.max(0,Math.round((t-now)/86400000));}
  document.getElementById('cd1').textContent=days('2026-08-06');  /* Fundamentals ATI + Mental Health ATI + Exam 5 GI */
