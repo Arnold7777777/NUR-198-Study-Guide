@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Look It Up &middot; all your study sites at once</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199;
+ --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85;
+ --line:rgba(255,255,255,.30)}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font:16px/1.55 "Segoe UI",system-ui,-apple-system,sans-serif;
+ min-height:100vh;padding:0 0 70px}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1040px;margin:0 auto;padding:0 14px}
+
+/* the search bar is the page */
+.top{position:sticky;top:0;z-index:50;background:rgba(14,8,26,.90);
+ backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+ border-bottom:1px solid var(--line);padding:12px 0 10px;margin-bottom:14px}
+.top .wrap{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+h1{font-size:1.12rem;margin:0;white-space:nowrap;font-weight:900}
+#q{flex:1 1 240px;min-width:170px;font:700 1.15rem "Segoe UI",system-ui,sans-serif;
+ padding:14px 16px;border-radius:14px;border:2px solid rgba(255,255,255,.34);
+ background:rgba(0,0,0,.50);color:#fff}
+#q:focus{outline:none;border-color:rgba(var(--topaz),.95);background:rgba(0,0,0,.62)}
+#q::placeholder{color:#c7b5e8;font-weight:600}
+#clr{background:rgba(255,255,255,.14);color:#fff;border:1px solid var(--line);
+ border-radius:12px;width:46px;height:48px;font-size:1.1rem;cursor:pointer;flex:0 0 auto}
+#clr:hover{background:rgba(255,255,255,.28)}
+
+.lede{font-size:.92rem;opacity:.95;margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px}
+.chips button{background:rgba(0,0,0,.36);border:1px solid var(--line);color:#fff;
+ border-radius:999px;padding:8px 14px;font:700 .9rem inherit;cursor:pointer}
+.chips button:hover{background:rgba(var(--amethyst),.7)}
+.chips .lab{font-size:.82rem;opacity:.85;align-self:center;font-weight:800;
+ letter-spacing:.8px;text-transform:uppercase;margin-right:2px}
+
+#status{font-size:.95rem;font-weight:800;color:#ffe49b;margin:2px 0 14px;min-height:1.2em}
+
+.grp{margin-bottom:20px}
+.grp h2{font-size:1.06rem;margin:0 0 4px;font-weight:900;display:flex;
+ align-items:baseline;gap:9px;flex-wrap:wrap}
+.grp h2 .n{font-size:.85rem;font-weight:800;background:rgba(0,0,0,.42);
+ border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.grp .why{font-size:.85rem;opacity:.9;font-style:italic;margin:0 0 9px}
+
+.hit{display:block;text-decoration:none;color:#fff;background:rgba(var(--sapphire),.58);
+ backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);
+ border-radius:14px;padding:12px 15px;margin-bottom:9px;box-shadow:0 6px 20px rgba(0,0,0,.34)}
+.hit:hover{background:rgba(var(--amethyst),.68)}
+.learn .hit{background:rgba(var(--emerald),.58)} .learn .hit:hover{background:rgba(var(--emerald),.72)}
+.ref .hit{background:rgba(var(--teal),.55)} .ref .hit:hover{background:rgba(var(--teal),.70)}
+.hit .pg{font-size:1.03rem;font-weight:900;display:block;margin-bottom:2px}
+.hit .site{font-size:0.82rem;font-weight:800;letter-spacing:.7px;text-transform:uppercase;
+ opacity:.92;background:rgba(0,0,0,.34);border-radius:999px;padding:2px 9px;margin-left:6px}
+.hit .secs{font-size:.88rem;opacity:.97;margin-top:5px}
+.hit .secs b{color:#ffe49b}
+.hit em{font-style:normal;background:rgba(var(--topaz),.92);color:#231a02;
+ border-radius:4px;padding:0 4px;font-weight:800}
+
+/* drill cards */
+.qz{background:rgba(var(--garnet),.55);backdrop-filter:blur(7px);
+ border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);
+ border-radius:14px;padding:12px 15px;margin-bottom:9px}
+.qz .stem{font-weight:800;font-size:.96rem;margin-bottom:7px}
+.qz ol{margin:0 0 8px;padding-left:22px;font-size:.9rem}
+.qz li{margin-bottom:3px}
+.qz details summary{cursor:pointer;list-style:none;display:inline-block;
+ background:rgba(var(--emerald),.92);border-radius:999px;padding:6px 15px;
+ font-weight:900;font-size:.85rem}
+.qz details[open] summary{background:rgba(255,255,255,.24)}
+.qz .ans{margin-top:8px;font-size:.9rem}
+.qz .src{font-size:0.82rem;opacity:.9;margin-top:7px}
+.qz .src a{color:#ffe49b}
+
+.more{background:rgba(0,0,0,.4);border:1px solid var(--line);color:#fff;border-radius:12px;
+ padding:10px 18px;font:800 .9rem inherit;cursor:pointer;margin-bottom:6px}
+.more:hover{background:rgba(0,0,0,.6)}
+.none{background:rgba(0,0,0,.36);border:1px dashed var(--line);border-radius:14px;
+ padding:16px 18px;font-size:.95rem}
+.foot{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);
+ font-size:.82rem;opacity:.85}
+@media(max-width:620px){h1{font-size:1rem}#q{font-size:1.05rem}}
+@media print{.top,.chips{display:none}}
+</style></head><body>
+<style id="a11yCSS">
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%}
+small,.eyebrow,.tiny,.fine,.foot{font-size:.82rem}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+ padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+ border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+ color:#fff;white-space:nowrap;line-height:1.3;
+ backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#navBtns .nbLook{background:linear-gradient(135deg,#1d4ed8,#2f6bff)}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover{filter:brightness(1.15)}
+@media(max-width:1024px){#navBtns{top:6px;right:6px;gap:5px}
+ #navBtns .nbLabel{display:none}
+ #navBtns a{padding:8px 11px;font-size:1rem;line-height:1}}
+@media(max-width:560px){#navBtns a{padding:7px 9px;font-size:.95rem}}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbHome" href="NUR198%20Study%20Hub.html" title="NUR 198 Study Hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" title="ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+
+<div class="top"><div class="wrap">
+  <h1>&#128269; Look It Up</h1>
+  <input id="q" type="search" placeholder="Type a topic&hellip; hyperkalemia, delegation, chest tube" autocomplete="off" autofocus>
+  <button id="clr" type="button" title="Clear">&#10005;</button>
+</div></div>
+
+<div class="wrap">
+<p class="lede">Searches <b>NUR 198</b>, <b>NUR 125</b>, <b>NUR 175</b>, <b>Labs &amp; Diagnostics</b> and the <b>Drug Guide</b> at once &mdash; plus <b>2,847 quiz questions</b> &mdash; then splits the results by what you want to do with them. Press <b>/</b> anywhere to jump back to the box.</p>
+
+<div class="chips" id="chips">
+  <span class="lab">🧪 Fundamentals ATI</span>
+  <button>delegation</button><button>therapeutic communication</button><button>infection control</button>
+  <button>pressure injury</button><button>restraints</button><button>fall risk</button>
+  <button>hand hygiene</button><button>sterile technique</button><button>informed consent</button>
+  <button>body mechanics</button><button>vital signs</button><button>medication administration</button>
+</div>
+<div class="chips" id="chips2">
+  <span class="lab">🧠 Mental Health ATI</span>
+  <button>schizophrenia</button><button>bipolar</button><button>lithium</button>
+  <button>SSRI</button><button>serotonin syndrome</button><button>suicide risk</button>
+  <button>anxiety</button><button>substance withdrawal</button><button>eating disorder</button>
+  <button>therapeutic milieu</button><button>defense mechanisms</button><button>seclusion</button>
+</div>
+<div class="chips" id="chips3">
+  <span class="lab">🍽️ Exam 5 GI</span>
+  <button>GERD</button><button>peptic ulcer</button><button>H. pylori</button>
+  <button>dumping syndrome</button><button>bowel obstruction</button><button>appendicitis</button>
+  <button>diverticulitis</button><button>ulcerative colitis</button><button>Crohn</button>
+  <button>ostomy</button><button>NG tube</button><button>pancreatitis</button>
+</div>
+
+<div id="status"></div>
+<div id="out"></div>
+
+<div class="foot">Study material only &mdash; always check your course materials, the package insert and facility policy.</div>
+</div>
+
+<script>
+(function(){
+var IDX=null, QB=null, loading=false;
+var q=document.getElementById('q'), out=document.getElementById('out'),
+    status=document.getElementById('status');
+
+/* which bucket a page belongs in */
+function bucket(p){
+  var u=decodeURIComponent(p.u).toLowerCase(), s=p.s;
+  if(s==='drug'||s==='lab') return 'ref';
+  if(/quiz|mega|clinical judgment/.test(u)) return 'drill';
+  return 'learn';
+}
+function siteName(k){
+  return {'198':'NUR 198','125':'NUR 125','175':'NUR 175','lab':'Labs & Dx','drug':'Drugs'}[k]||k;
+}
+function esc(s){var d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}
+function mark(s,t){
+  if(!t) return esc(s);
+  var i=s.toLowerCase().indexOf(t.toLowerCase());
+  if(i<0) return esc(s);
+  return esc(s.slice(0,i))+'<em>'+esc(s.slice(i,i+t.length))+'</em>'+esc(s.slice(i+t.length));
+}
+/* a short readable window of text around the match */
+function snippet(txt,t){
+  var i=txt.toLowerCase().indexOf(t.toLowerCase());
+  if(i<0) return txt.slice(0,150);
+  var a=Math.max(0,i-60), b=Math.min(txt.length,i+t.length+110);
+  return (a?'…':'')+txt.slice(a,b)+(b<txt.length?'…':'');
+}
+
+function load(cb){
+  if(IDX&&QB) return cb();
+  if(loading) return;
+  loading=true; status.textContent='Loading the index…';
+  var need=2, done=function(){ if(--need===0){ loading=false; cb(); } };
+  fetch('search-index.json').then(function(r){return r.json();})
+    .then(function(j){IDX=j;done();}).catch(function(){IDX={pages:[],entries:[]};done();});
+  fetch('quiz-bank.json').then(function(r){return r.json();})
+    .then(function(j){QB=j;done();}).catch(function(){QB=[];done();});
+}
+
+function run(){
+  var t=q.value.trim();
+  if(t.length<2){ out.innerHTML=''; status.textContent=''; return; }
+  load(function(){ render(t); });
+  if(IDX&&QB) render(t);
+}
+
+function render(t){
+  var lt=t.toLowerCase();
+  var word=new RegExp('\\b'+lt.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
+
+  /* collapse the many section hits on one page into a single row */
+  var byPage={};
+  IDX.entries.forEach(function(e){
+    var h=(e.h||'').toLowerCase(), b=(e.t||'').toLowerCase();
+    var inH=h.indexOf(lt)>-1, inB=b.indexOf(lt)>-1;
+    if(!inH&&!inB) return;
+    var sc = (inH?60:0) + (inB?10:0) + (word.test(h)?40:0) + (word.test(b)?12:0);
+    var p=IDX.pages[e.p]; if(!p) return;
+    if((decodeURIComponent(p.u).toLowerCase()).indexOf(lt)>-1) sc+=45;
+    var k=e.p;
+    if(!byPage[k]) byPage[k]={p:p,score:0,secs:[],n:0};
+    byPage[k].score=Math.max(byPage[k].score,sc)+2;
+    byPage[k].n++;
+    if(byPage[k].secs.length<3 && e.h)
+      byPage[k].secs.push({h:e.h,a:e.a,t:e.t||'',sc:sc});
+  });
+  /* A 253-section omnibus page matches everything, so it drowned out the guide
+     that is actually about the topic. Damp it by how broad the page is. */
+  var breadth={};
+  IDX.entries.forEach(function(e){ breadth[e.p]=(breadth[e.p]||0)+1; });
+  var rows=Object.keys(byPage).map(function(k){
+    var r=byPage[k];
+    r.score -= Math.min(26, (breadth[k]||0)/6);
+    return r;
+  }).sort(function(a,b){return b.score-a.score;});
+  rows.forEach(function(r){ r.secs.sort(function(a,b){return b.sc-a.sc;}); });
+
+  var groups={learn:[],drill:[],ref:[]};
+  rows.forEach(function(r){ groups[bucket(r.p)].push(r); });
+
+  /* quiz questions that actually ask about it */
+  var qs=QB.filter(function(x){
+    return (x.q+' '+(x.o||[]).join(' ')+' '+(x.r||'')).toLowerCase().indexOf(lt)>-1;
+  }).sort(function(a,b){
+    var A=a.q.toLowerCase().indexOf(lt)>-1?1:0, B=b.q.toLowerCase().indexOf(lt)>-1?1:0;
+    return B-A;
+  });
+
+  var total=rows.length;
+  status.textContent = total||qs.length
+    ? total+' page'+(total===1?'':'s')+' and '+qs.length+' quiz question'+(qs.length===1?'':'s')+' mention "'+t+'"'
+    : 'Nothing found for "'+t+'".';
+
+  var html='';
+  function section(cls,icon,title,why,list){
+    if(!list.length) return '';
+    var s='<div class="grp '+cls+'"><h2>'+icon+' '+title+' <span class="n">'+list.length+'</span></h2>'
+         +'<p class="why">'+why+'</p>';
+    list.slice(0,8).forEach(function(r){
+      var best=r.secs[0];
+      var href=r.p.u+(best&&best.a?'#'+best.a:(best?'#:~:text='+encodeURIComponent(best.h.slice(0,60)):''));
+      s+='<a class="hit" target="_blank" rel="noopener" href="'+esc(href)+'">'
+        +'<span class="pg">'+esc(r.p.t||'(untitled)')+'<span class="site">'+siteName(r.p.s)+'</span></span>';
+      if(best){
+        s+='<span class="secs"><b>'+mark(best.h,t)+'</b>';
+        if(best.t) s+=' &mdash; '+mark(snippet(best.t,t),t);
+        s+='</span>';
+      }
+      if(r.n>1) s+='<span class="secs" style="opacity:.85">'+r.n+' sections on this page mention it</span>';
+      s+='</a>';
+    });
+    if(list.length>8) s+='<button class="more" data-g="'+cls+'">Show the other '+(list.length-8)+'</button>';
+    return s+'</div>';
+  }
+
+  html+=section('learn','\uD83D\uDCD8','Learn it',
+    'The guides and filled-in notes that actually teach this.',groups.learn);
+  if(qs.length){
+    html+='<div class="grp"><h2>\uD83E\uDDE0 Drill it <span class="n">'+qs.length+'</span></h2>'
+        +'<p class="why">Questions from your own banks that ask about this. Answer first, then open the rationale.</p>';
+    qs.slice(0,6).forEach(function(x){
+      html+='<div class="qz"><div class="stem">'+mark(x.q,t)+'</div><ol>';
+      (x.o||[]).forEach(function(o){ html+='<li>'+esc(o)+'</li>'; });
+      html+='</ol><details><summary>Show the answer</summary><div class="ans">'
+           +(x.r?mark(x.r,t):'(no rationale saved for this one)')+'</div></details>'
+           +'<div class="src">from <a target="_blank" rel="noopener" href="'+esc(x.u)+'">'+esc(x.src)+'</a>'
+           +(x.diff?' &middot; '+esc(x.diff):'')+'</div></div>';
+    });
+    if(qs.length>6) html+='<button class="more" data-g="qz">Show 6 more questions</button>';
+    html+='</div>';
+  }
+  html+=section('drill','\uD83C\uDFAF','Quiz pages','Whole quizzes covering this area.',groups.drill);
+  html+=section('ref','\uD83D\uDC8A','Reference','Drug cards and lab values.',groups.ref);
+
+  if(!html) html='<div class="none">Nothing matched <b>'+esc(t)+'</b>. '
+    +'Try a shorter word, or the plain-English version &mdash; "potassium" instead of "hyperkalemia", '
+    +'"breathing" instead of "ventilation".</div>';
+  out.innerHTML=html;
+
+  /* the "show more" buttons */
+  out.querySelectorAll('.more').forEach(function(b){
+    b.addEventListener('click',function(){
+      var g=b.getAttribute('data-g');
+      if(g==='qz'){
+        var frag='';
+        qs.slice(6,18).forEach(function(x){
+          frag+='<div class="qz"><div class="stem">'+mark(x.q,t)+'</div><ol>';
+          (x.o||[]).forEach(function(o){ frag+='<li>'+esc(o)+'</li>'; });
+          frag+='</ol><details><summary>Show the answer</summary><div class="ans">'
+               +(x.r?mark(x.r,t):'')+'</div></details></div>';
+        });
+        b.insertAdjacentHTML('beforebegin',frag);
+      } else {
+        var list=groups[g]||[], frag='';
+        list.slice(8).forEach(function(r){
+          var best=r.secs[0];
+          var href=r.p.u+(best&&best.a?'#'+best.a:'');
+          frag+='<a class="hit" target="_blank" rel="noopener" href="'+esc(href)+'">'
+              +'<span class="pg">'+esc(r.p.t||'')+'<span class="site">'+siteName(r.p.s)+'</span></span>'
+              +(best?'<span class="secs"><b>'+mark(best.h,t)+'</b></span>':'')+'</a>';
+        });
+        b.insertAdjacentHTML('beforebegin',frag);
+      }
+      b.remove();
+    });
+  });
+}
+
+var timer=null;
+q.addEventListener('input',function(){ clearTimeout(timer); timer=setTimeout(run,180); });
+document.getElementById('clr').addEventListener('click',function(){
+  q.value=''; out.innerHTML=''; status.textContent=''; q.focus();
+});
+['chips','chips2','chips3'].forEach(function(id){
+  var el=document.getElementById(id); if(!el) return;
+  el.addEventListener('click',function(e){
+    if(e.target.tagName==='BUTTON'){
+      q.value=e.target.textContent; run(); q.focus();
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  });
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='/'&&document.activeElement!==q){ e.preventDefault(); q.focus(); q.select(); }
+  if(e.key==='Escape'&&document.activeElement===q){ q.value=''; out.innerHTML=''; status.textContent=''; }
+});
+/* ?q=term opens straight into a search */
+(function(){
+  var p=new URLSearchParams(location.search).get('q');
+  if(p){ q.value=p; run(); }
+})();
+load(function(){ if(q.value.trim().length>1) render(q.value.trim()); });
+})();
+</script>
+</body></html>
