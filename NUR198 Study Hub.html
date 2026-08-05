@@ -50,6 +50,26 @@
    border:1px solid var(--violet);border-radius:20px;padding:1px 9px;margin-top:8px;font-weight:700}
  @media(max-width:860px){:root{--sb:250px} body:not(.nav-open) .sidebar{transform:translateX(-100%)} .main{margin-left:0!important}
    body.nav-open .sidebar{transform:none} .countbar{display:none}}
+ /* The drawer used to cover the only button that closed it, with nothing else to
+    tap. Now: a scrim behind it, an X inside it, and Escape all close it. */
+ #navScrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:35;
+   opacity:0;pointer-events:none;transition:opacity .2s}
+ body.nav-open #navScrim{opacity:1;pointer-events:auto}
+ #navClose{position:absolute;top:12px;right:12px;width:40px;height:40px;
+   background:rgba(255,255,255,.14);border:1px solid var(--line);color:#fff;
+   border-radius:11px;font-size:1.25rem;font-weight:800;cursor:pointer;line-height:1;
+   display:none;align-items:center;justify-content:center;z-index:2}
+ #navClose:hover{background:rgba(255,255,255,.28)}
+ .sidebar{position:relative}
+ @media(max-width:860px){
+   #navClose{display:flex}
+   .sidebar .brand{padding-right:50px}
+ }
+ /* .topbar makes its own stacking context, so raising the button alone does
+    nothing - lift the whole bar above the scrim (but below the drawer) so the
+    hamburger keeps working as a toggle while the menu is open */
+ body.nav-open .topbar{z-index:36}
+ @media print{#navScrim,#navClose{display:none!important}}
 </style><style id="bgInject">
 html{min-height:100%}
 body{
@@ -113,6 +133,7 @@ sub,sup{font-size:.72rem}
 
 
 <nav class="sidebar" id="sidebar">
+  <button id="navClose" type="button" aria-label="Close the menu" title="Close the menu">✕</button>
   <div class="brand">🩺 NUR198</div>
   <div class="brandsub">Study Hub · everything in one place</div>
   <a class="navlink" href="#start"><span class="ic">🚀</span> Start Here</a>
@@ -127,7 +148,8 @@ sub,sup{font-size:.72rem}
   <div class="sbfoot">🎯 Exam 5 + ATI: <b style="color:var(--gold)">Aug 5</b><br>🎯 Final: <b style="color:var(--gold)">Aug 11</b><br><br>Tip: every card opens in its own tab.</div>
 </nav>
 <div class="main">
- <div class="topbar">
+ <div id="navScrim"></div>
+<div class="topbar">
    <button class="menubtn" id="menubtn" title="Toggle menu">☰</button>
    <h1>🩺 NUR198 Study Hub</h1>
    <div class="countbar">
@@ -491,6 +513,16 @@ sub,sup{font-size:.72rem}
  document.querySelectorAll('.sidebar .navlink').forEach(function(a){
    a.addEventListener('click',function(){ if(isMobile()) body.classList.remove('nav-open'); });
  });
+ // ...and by the X, the backdrop, or Escape
+ (function(){
+   function close(){ body.classList.remove('nav-open'); }
+   var x=document.getElementById('navClose'), sc=document.getElementById('navScrim');
+   if(x)  x.addEventListener('click',close);
+   if(sc) sc.addEventListener('click',close);
+   document.addEventListener('keydown',function(e){
+     if(e.key==='Escape' && body.classList.contains('nav-open')) close();
+   });
+ })();
  // countdowns
  function days(to){var now=new Date(); now.setHours(0,0,0,0); var t=new Date(to); return Math.max(0,Math.round((t-now)/86400000));}
  document.getElementById('cd1').textContent=days('2026-08-05');
