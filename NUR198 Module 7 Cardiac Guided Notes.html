@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · Module 7 — Cardiac Guided Notes (filled in)</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199; --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85; --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif; min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg"); background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px); border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6); border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px} /* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center; background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line); border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45); border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)} /* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px); border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px; padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px} /* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85); border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9); cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px} /* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28); border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}} /* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px; background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px; text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){ table.cmp thead{display:none} table.cmp td{display:block;border-top:none;padding:3px 11px} table.cmp td.k{color:#ffd75e;padding-top:9px} table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9); border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9); border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32); border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style><style id="skimCSS">
+#skimBtn{position:fixed;left:12px;bottom:12px;z-index:9000; display:flex;align-items:center;gap:8px; background:rgba(157,92,255,.92);border:1px solid rgba(255,255,255,.45);color:#fff; border-radius:14px;padding:11px 14px;cursor:pointer; font:800 .95rem 'Segoe UI',system-ui,sans-serif; box-shadow:0 6px 20px rgba(0,0,0,.45);backdrop-filter:blur(6px); max-width:calc(100vw - 24px)}
+#skimBtn:hover{background:rgba(157,92,255,1)}
+#skimBtn .n{font-weight:900;font-size:.88rem;opacity:.92;white-space:nowrap}
+body.skimOn #skimBtn{background:rgba(255,194,51,.95);color:#231a02; border-color:rgba(0,0,0,.35)}
+body.skimOn .skimHide{display:none !important}
+body.skimOn .skimKeep{outline:0} #skimBtn{touch-action:none;cursor:grab}
+#skimBtn.dragging{opacity:.92;cursor:grabbing} #skimBtn:focus-visible{outline:3px solid #ffd76a;outline-offset:2px}
+@media print{#skimBtn{display:none}}
+</style> <style id="noteChunkCSS">
+/* ---- section folding ------------------------------------------------- */
+details.nsec{border:1px solid rgba(255,255,255,.20);border-radius:14px; margin:0 0 14px;overflow:hidden;background:rgba(0,0,0,.20)}
+details.nsec[open]{background:rgba(0,0,0,.28)}
+details.nsec > summary{cursor:pointer;list-style:none;display:flex;gap:10px; align-items:center;flex-wrap:wrap;padding:13px 15px;font-weight:900;font-size:1.08rem; line-height:1.35;background:rgba(255,255,255,.07)}
+details.nsec > summary::-webkit-details-marker{display:none}
+details.nsec > summary::after{content:"\25B8";margin-left:auto;font-weight:900; opacity:.8;transition:transform .15s ease;font-size:1.1rem}
+details.nsec[open] > summary::after{transform:rotate(90deg)}
+details.nsec > .nsecbody{padding:4px 13px 14px}
+.nsec .nsn{font-weight:700;font-size:.92rem;opacity:.9;white-space:nowrap} /* ---- list chunking --------------------------------------------------- */
+details.nchunk{border:1px solid rgba(255,255,255,.18);border-radius:11px; background:rgba(0,0,0,.18);margin:0 0 8px;overflow:hidden}
+details.nchunk > summary{cursor:pointer;list-style:none;display:flex;gap:9px; align-items:center;flex-wrap:wrap;padding:9px 12px;font-weight:800;font-size:.97rem}
+details.nchunk > summary::-webkit-details-marker{display:none}
+details.nchunk > summary::after{content:"\25B8";margin-left:auto;font-weight:900;opacity:.75}
+details.nchunk[open] > summary::after{transform:rotate(90deg)}
+details.nchunk .ckshut,details.nchunk .ckopen{font-weight:900;font-size:1rem;color:#fff}
+details.nchunk[open] > summary .ckshut{display:none}
+details.nchunk:not([open]) > summary .ckopen{display:none}
+details.nchunk > ul{margin:0;padding:2px 12px 11px 2em}
+/* the "expand everything" control, for when she wants the old single scroll back */
+#allBtn{display:block;width:100%;margin:0 0 14px;padding:13px 170px 13px 13px;border-radius:13px; border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);color:#fff; font:900 1rem 'Segoe UI',system-ui,sans-serif;cursor:pointer}
+#allBtn:hover{background:rgba(255,255,255,.28)}
+@media(max-width:1024px){#allBtn{padding-right:150px}}
+@media print{details.nsec,details.nchunk{display:block} details.nsec > .nsecbody,details.nchunk > ul{display:block !important}}
+</style>
+</head>
+<body><button type="button" id="allBtn">&#9662; Expand everything</button>
+<style id="navDragCSS">
+#navBtns{touch-action:none;cursor:grab}
+#navBtns.dragging{opacity:.9;cursor:grabbing}
+#navBtns.hidden-by-overlay{display:none !important} #navBtns.dragging @media print{#navBtns{display:none !important}}
+</style>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){ #nav a{white-space:normal} .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+} /* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem} /* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){ header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){ header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style> <style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{ display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif; padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer; border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5); color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbLook{background:linear-gradient(135deg,#1d4ed8,#2f6bff)}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the cluster stops sitting on top of page headings */
+@media(max-width:1024px){ #navBtns{top:6px;right:6px;gap:5px} #navBtns .nbLabel{display:none} #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){ #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbLook" href="https://arnold7777777.github.io/NUR-198-Study-Guide/Look%20It%20Up.html" target="_blank" rel="noopener" title="Look up any topic across all your sites">&#128269;<span class="nbLabel"> Look Up</span></a><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){ var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/'; window.nbToAbsn=function(ev){ if(ev&&ev.preventDefault)ev.preventDefault(); /* On a sub-page: try to close this tab so the study hub behind it is revealed. Browsers only allow close() on script-opened tabs, so fall back to navigating. */ try{ window.close(); }catch(e){} setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120); return false; };
+})();
+</script> <div class="wrap"> <div class="hero"> <div class="crumb">NUR 198 · Exam 3 · Module 7 · Cardiovascular</div> <h1>Module 7 &mdash; <span class="glow">Cardiac Guided Notes</span></h1> <p>Every blank from the Module 7 handout, filled in. Tap "Hide answers" to quiz yourself.</p>
+<div class="bigq"><b class="q">Is the heart getting blood, and is it moving blood forward?</b>Perfusion problem or pump problem &mdash; that split drives almost every cardiac answer.</div> </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc"> <a href="#assess">1 · Assessment</a> <a href="#cad">2 · CAD</a> <a href="#angina">3 · Angina</a> <a href="#acs">4 · ACS</a> <a href="#mi">5 · MI</a> <a href="#markers">5b · Troponin &amp; markers</a> <a href="#chestpain">5c · Chest-pain priority</a> <a href="#ecg">6 · ECG basics</a> <a href="#rhythm">7 · Reading a rhythm</a> <a href="#brady">8 · Bradycardia</a> <a href="#tachy">9 · Tachycardia</a> <a href="#htn">10 · Hypertension</a> <a href="#reflect">Part 1 reflection</a> <a href="#afib">11 · A-Fib</a> <a href="#vt">12 · VT</a> <a href="#vf">13 · VF</a> <a href="#asystole">14 · Asystole</a> <a href="#cardiovert">15 · Cardioversion</a> <a href="#defib">16 · Defibrillation</a> <a href="#pacer">17 · Pacemakers</a> <a href="#aicd">18 · AICD</a> <a href="#revasc">19 · PCI &amp; CABG</a> <a href="#wrapup">20 · Wrap-up</a> <a href="#summary">⭐ Must not forget</a>
+</div> <div class="card" style="--jewel:var(--sapphire)" id="assess">
+<details class="nsec" open><summary>1 &middot; Cardiovascular Assessment 🩺<span class="nsn">16 items</span></summary><div class="nsecbody">
+<p class="lead-in">Baseline first. You cannot call something abnormal until you know what normal looks like.</p> <h3>Normal Findings</h3>
+<ul class="blanks"> <li><b>Normal heart rate:</b> <span class="fill">60</span> to <span class="fill">100</span> bpm</li> <li><b>Normal rhythm:</b> <span class="fill">normal sinus rhythm &mdash; regular R&ndash;R intervals, one upright P wave before every QRS</span></li> <li><b>Normal capillary refill:</b> Less than <span class="fill">3</span> seconds <em>(many texts use &lt;2 seconds &mdash; either way it should be brisk; sluggish refill = poor peripheral perfusion)</em></li> <li><b>Skin should be:</b> <span class="fill">warm, dry, intact, and normal color for the patient &mdash; no pallor, cyanosis, mottling, or diaphoresis</span></li> <li><b>Peripheral pulses should be:</b> <span class="fill">palpable, regular, equal bilaterally, and 2+ (normal) in strength</span></li>
+</ul>
+<p><em>Pulse scale:</em> 0 = absent &middot; 1+ = weak/thready &middot; <b>2+ = normal</b> &middot; 3+ = full &middot; 4+ = bounding.</p> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">Which finding concerns you more?</p>
+<ul> <li>HR 55 while sleeping &mdash; <span class="fill">❌ Expected. Vagal tone rises during sleep; an asymptomatic, perfusing patient with HR 55 is not the emergency.</span></li> <li>HR 110 with chest pain and diaphoresis &mdash; <span class="fill">✅ This one. Tachycardia + chest pain + diaphoresis is the classic ACS picture.</span></li>
+</ul>
+<p><b>Why?</b> <span class="fill">A number alone is never the answer &mdash; symptoms are. HR 55 in a comfortable sleeping patient is a normal variant, but HR 110 with chest pain and diaphoresis means the heart is ischemic and the sympathetic system is compensating. Faster rate also shortens diastole, which is exactly when the coronary arteries fill, so ischemia feeds itself.</span></p>
+<p class="lead-in">🤖 Ask Claire: "Explain normal versus abnormal cardiac assessment findings and quiz me with 3 questions."</p>
+</div> <div class="card" style="--jewel:var(--teal)" id="cad">
+</div></details><details class="nsec"><summary>2 &middot; Coronary Artery Disease (CAD) 🫀<span class="nsn">7 items</span></summary><div class="nsecbody"> <h3>Fill in the Blanks</h3>
+<ul class="blanks"> <li>CAD occurs when <span class="fill">atherosclerotic plaque (fatty/cholesterol deposits, mostly LDL, plus inflammatory cells and fibrous tissue)</span> builds up inside the coronary arteries.</li> <li>This reduces <span class="fill">blood flow &rarr; oxygen delivery (myocardial perfusion)</span> to the heart muscle.</li>
+</ul> <h3>Common Risk Factors</h3>
+<p><b>Modifiable:</b> <span class="fill">hypertension, hyperlipidemia (&uarr; LDL, &darr; HDL), smoking/vaping, diabetes mellitus, obesity (especially central), physical inactivity, high-sodium and high-saturated-fat diet, chronic stress, excess alcohol</span></p>
+<p><b>Non-modifiable:</b> <span class="fill">age (men &gt;45, women &gt;55), male sex or postmenopausal female, family history of premature CAD, genetics/ethnicity</span></p>
+<p><mark>Diabetes is the sneaky one</mark> &mdash; <em>because neuropathy blunts pain, diabetics can infarct without ever reporting chest pain.</em></p> <h4>Memory Tip</h4>
+<p>Blocked artery = less oxygen = chest pain.</p> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">A patient develops chest pain while climbing stairs but feels better after resting. Why did the pain stop?</p>
+<p><span class="fill">Resting dropped myocardial oxygen <b>demand</b> back below what the narrowed artery can <b>supply</b>. The plaque is still there &mdash; the pain stopped because demand fell, not because the blockage cleared. That supply/demand pattern is the definition of stable angina.</span></p>
+<p class="lead-in">🤖 Ask Claire: "Give me one patient scenario with CAD and make me identify the pathophysiology."</p>
+</div> <div class="card" style="--jewel:var(--topaz)" id="angina">
+</div></details><details class="nsec"><summary>3 &middot; Angina ⭐<span class="nsn">27 items</span></summary><div class="nsecbody"> <h3>Stable Angina</h3>
+<ul class="blanks"> <li><b>Occurs with:</b> <span class="fill">exertion or anything that raises oxygen demand &mdash; exercise, stairs, emotional stress, heavy meals, cold air. Predictable and reproducible; usually lasts &lt;5&ndash;15 minutes</span></li> <li><b>Improves with:</b> <span class="fill">rest (within a few minutes)</span></li> <li><b>May improve after taking:</b> <span class="fill">sublingual nitroglycerin 0.4 mg &mdash; relief usually within 5 minutes</span></li>
+</ul> <h3>Unstable Angina</h3>
+<ul class="blanks"> <li><b>Occurs:</b> <span class="fill">at rest, with minimal exertion, or as new-onset pain &mdash; and is increasing in frequency, severity, or duration. Unpredictable, and NOT relieved by rest or nitroglycerin</span></li> <li><b>Is considered a warning sign for:</b> <span class="fill">myocardial infarction &mdash; it is part of acute coronary syndrome and means a plaque has ruptured with partial clot formation</span></li>
+</ul> <table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Stable angina</th><th>Unstable angina</th></tr></thead>
+<tbody>
+<tr><td class="k">Trigger</td><td>Exertion / stress &mdash; predictable</td><td>At rest or minimal effort &mdash; unpredictable</td></tr>
+<tr><td class="k">Relieved by</td><td>Rest + nitroglycerin</td><td><span class="never">Not reliably relieved</span> by either</td></tr>
+<tr><td class="k">Cause</td><td>Fixed narrowing, demand outruns supply</td><td>Plaque rupture + partial thrombus</td></tr>
+<tr><td class="k">Troponin</td><td>Normal</td><td><b>Normal</b> &mdash; this is what separates it from NSTEMI</td></tr>
+<tr><td class="k">Category</td><td>Chronic CAD</td><td><b>Acute coronary syndrome &mdash; emergency</b></td></tr>
+</tbody>
+</table> <h3>💊 Nitroglycerin rules you must know</h3>
+<details class="nchunk" open><summary><span class="ckshut">Show 5 more</span><span class="ckopen">Hide these 5</span></summary><ul><li><b>Dose:</b> <span class="fill">1 tablet (0.4 mg) SL every 5 minutes, up to 3 doses total</span></li><li><b>Call 911:</b> <span class="fill">if the pain is unimproved or worsening 5 minutes after the FIRST dose &mdash; do not wait until all three are gone</span></li><li><b>Hold if:</b> <span class="fill">systolic BP &lt;90 mmHg (or &gt;30 mmHg below baseline), HR &lt;50 or &gt;100 &mdash; check BP before every dose</span></li><li><b>Position:</b> <span class="fill">sit or lie down before taking it &mdash; nitro drops preload and causes orthostatic hypotension/syncope</span></li><li><span class="never">Absolute contraindication</span>: <span class="fill">any PDE-5 inhibitor &mdash; sildenafil/Viagra within 24 hours, tadalafil/Cialis within 48 hours. The combination causes profound, refractory hypotension.</span></li></ul></details><details class="nchunk" open><summary><span class="ckshut">Show 3 more</span><span class="ckopen">Hide these 3</span></summary><ul><li><b>Also caution in:</b> <span class="fill">right ventricular / inferior wall MI &mdash; that ventricle is preload-dependent, so nitrates can crash the BP</span></li><li><b>Expected side effects:</b> <span class="fill">throbbing headache (treat with acetaminophen), flushing, dizziness &mdash; these are expected, not reasons to stop</span></li><li><b>Storage:</b> <span class="fill">original dark glass bottle, tightly capped, away from light/heat/moisture; replace per the label (about every 6 months once opened)</span></li></ul></details> <h3>Quick Check</h3>
+<p class="q">Nitroglycerin no longer relieves the patient's chest pain. What should you suspect?</p>
+<p><span class="fill">Acute coronary syndrome &mdash; assume myocardial infarction until proven otherwise. Unrelieved pain means the vessel is occluded, not just narrowed. Priority: stay with the patient, get a 12-lead ECG within 10 minutes, notify the provider/activate the chest-pain protocol, give aspirin, and draw troponin.</span></p>
+<h4>Remember</h4>
+<p><mark>Stable = predictable. Unstable = dangerous.</mark></p>
+</div> <div class="card" style="--jewel:var(--citrine)" id="acs">
+</div></details><details class="nsec"><summary>4 &middot; Acute Coronary Syndrome (ACS) ⚠️<span class="nsn">16 items</span></summary><div class="nsecbody">
+<p class="lead-in">ACS is an umbrella term for sudden, reduced blood flow to the heart. Select all that apply:</p>
+<ul> <li>Stable angina &mdash; <span class="fill">❌ NOT included. It is chronic, predictable CAD, not an acute plaque event.</span></li> <li>Unstable angina &mdash; <span class="fill">✅ Included. Ischemia at rest with a negative troponin.</span></li> <li>NSTEMI &mdash; <span class="fill">✅ Included. Partial occlusion with a POSITIVE troponin (myocardial cells died).</span></li> <li>STEMI &mdash; <span class="fill">✅ Included. Complete occlusion, ST elevation, positive troponin &mdash; the most urgent.</span></li>
+</ul> <table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Unstable angina</th><th>NSTEMI</th><th>STEMI</th></tr></thead>
+<tbody>
+<tr><td class="k">Occlusion</td><td>Partial</td><td>Partial / intermittent</td><td><b>Complete</b></td></tr>
+<tr><td class="k">ECG</td><td>Normal, or ST depression / T inversion</td><td>ST depression and/or T-wave inversion &mdash; <b>no</b> ST elevation</td><td><b>ST elevation &ge;1 mm in 2 contiguous leads</b> (&plusmn; new LBBB, later Q waves)</td></tr>
+<tr><td class="k">Troponin</td><td><b>Negative</b></td><td><b>Positive</b></td><td><b>Positive</b></td></tr>
+<tr><td class="k">Damage</td><td>Ischemia only &mdash; reversible</td><td>Partial-thickness necrosis (subendocardial)</td><td>Full-thickness (transmural) necrosis</td></tr>
+<tr><td class="k">Treatment</td><td>Antiplatelet, anticoagulant, anti-ischemic; angiography</td><td>Medical management + angiography, usually within 24&ndash;72 h. <span class="never">No fibrinolytics</span></td><td><b>Immediate reperfusion</b> &mdash; PCI within 90 min of door, or fibrinolytics within 30 min if PCI unavailable</td></tr>
+</tbody>
+</table>
+<p><mark>One-line separator: UA vs NSTEMI = troponin. NSTEMI vs STEMI = ST elevation.</mark></p> <h3>Common Symptoms</h3>
+<p><b>Classic:</b> <span class="fill">substernal chest pressure/tightness/heaviness radiating to the left arm, jaw, neck, shoulder, or back; unrelieved by rest or nitro; lasting &gt;15&ndash;20 minutes</span></p>
+<p><b>Plus:</b> <span class="fill">dyspnea, diaphoresis (cold clammy sweat), nausea/vomiting, dizziness, extreme fatigue, palpitations, anxiety or a sense of impending doom, pallor, tachycardia</span></p>
+<p><b>Atypical (women, older adults, diabetics):</b> <span class="fill">shortness of breath, unusual fatigue or weakness, indigestion/epigastric pain, back or jaw pain, nausea, syncope &mdash; often with NO chest pain at all ("silent MI")</span></p> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">A diabetic patient reports nausea and sweating but no chest pain. Should ACS still be considered?</p>
+<ul> <li>Yes &mdash; <span class="fill">✅ Correct.</span></li> <li>No &mdash; <span class="fill">❌ Wrong &mdash; this is exactly the patient who dies from a missed MI.</span></li>
+</ul>
+<p><b>Why?</b> <span class="fill">Diabetic autonomic neuropathy blunts the pain signal, so a diabetic can infarct silently. Nausea and diaphoresis are sympathetic/vagal responses to ischemia and count as anginal equivalents. Treat this as ACS until ruled out: 12-lead ECG within 10 minutes, troponin, continuous monitoring, aspirin.</span></p>
+<p class="lead-in">🤖 Ask Claire: "Create 3 ATI-style ACS questions that require me to identify the most concerning assessment finding."</p>
+</div> <div class="card" style="--jewel:var(--ruby)" id="mi">
+</div></details><details class="nsec"><summary>5 &middot; Myocardial Infarction (MI) 🚨<span class="nsn">13 items</span></summary><div class="nsecbody"> <h3>Fill in the Blanks</h3>
+<p>An MI occurs when blood flow to the heart is blocked long enough to cause: <span class="fill">irreversible myocardial cell death (necrosis/infarction). Ischemia is reversible; infarction is not &mdash; and necrosis begins within about 20&ndash;30 minutes of complete occlusion, which is why <b>time = muscle</b>.</span></p> <h3>Priority Assessments</h3>
+<ul class="blanks"> <li><b>Monitor ECG because:</b> <span class="fill">lethal dysrhythmias are the #1 cause of death in the first hours after an MI &mdash; ventricular fibrillation especially. The ECG also shows whether the infarct is extending (new/worsening ST changes).</span></li> <li><b>Monitor urine output because:</b> <span class="fill">urine output is a direct window into perfusion. <mark>Less than 30 mL/hr</mark> means the kidneys are not being perfused, which means cardiac output has fallen &mdash; an early sign of cardiogenic shock.</span></li> <li><b>Monitor BP because:</b> <span class="fill">a falling BP means the pump is failing (cardiogenic shock), and adequate systolic pressure is also required before giving nitroglycerin, morphine, or beta blockers. Coronary arteries perfuse during diastole &mdash; hypotension worsens the infarct.</span></li>
+</ul> <h3>💊 MONA &mdash; then vs. now</h3>
+<p class="lead-in">She still teaches the mnemonic, but the modern evidence changed how it's used. Know both.</p>
+<table class="cmp">
+<thead><tr><th>Letter</th><th>Old "MONA" habit</th><th>Current practice</th></tr></thead>
+<tbody>
+<tr><td class="k">A &mdash; Aspirin</td><td>Given somewhere in the sequence</td><td><span class="fill">Give it <b>FIRST</b> &mdash; 162&ndash;325 mg non-enteric-coated, <b>chewed</b> for fast absorption. Biggest early mortality benefit of anything on this list.</span></td></tr>
+<tr><td class="k">O &mdash; Oxygen</td><td>Given to everyone with chest pain</td><td><span class="fill">Only if <b>SpO&#8322; &lt;90%</b> or the patient is dyspneic. Routine oxygen in a normoxic patient causes vasoconstriction and may increase infarct size.</span></td></tr>
+<tr><td class="k">N &mdash; Nitroglycerin</td><td>SL &times;3 for anyone with chest pain</td><td><span class="fill">Still first-line for ongoing ischemic pain &mdash; but check SBP each dose, and hold with PDE-5 inhibitor use or suspected RV infarct.</span></td></tr>
+<tr><td class="k">M &mdash; Morphine</td><td>Early, freely, for pain</td><td><span class="fill">Now a lower-priority (class IIb) option &mdash; only for pain refractory to nitrates. It slows absorption of oral antiplatelets and can mask worsening ischemia.</span></td></tr>
+</tbody>
+</table>
+<p><b>Also standard now:</b> P2Y12 inhibitor (clopidogrel/ticagrelor), anticoagulant (heparin), high-intensity statin, beta blocker within 24 h if not in shock, ACE inhibitor.</p> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">Your patient is pale, diaphoretic, BP 82/48, HR 120, and increasingly restless. What complication worries you most?</p>
+<p><span class="fill"><b>Cardiogenic shock.</b> The infarcted muscle can no longer pump, so cardiac output falls &rarr; hypotension, compensatory tachycardia, cold clammy vasoconstricted skin. <mark>Restlessness is early cerebral hypoperfusion/hypoxia</mark> &mdash; it is a change in level of consciousness, not anxiety, and it is the earliest sign.</span></p>
+<p class="q">What should you do first?</p>
+<p><span class="fill">Stay with the patient and call for help / activate rapid response while you assess ABCs &mdash; because this patient is decompensating and cannot be left alone. Then in rapid sequence: oxygen if SpO&#8322; &lt;90%, keep them flat or low-Fowler's, confirm IV access, 12-lead ECG and continuous monitoring, recheck BP, and anticipate fluids or inotropes/vasopressors per provider. <span class="never">Do NOT give nitroglycerin or morphine with a systolic of 82</span> &mdash; both drop preload and BP further.</span></p>
+<p class="lead-in">🤖 Ask Claire: "Give me an unfolding MI case and reveal one clue at a time."</p>
+</div> <div class="card" style="--jewel:var(--emerald)" id="markers">
+</div></details><details class="nsec"><summary>5b &middot; Cardiac Markers &mdash; troponin timing 🧪<span class="nsn">10 items</span></summary><div class="nsecbody">
+<p class="lead-in">Not in the handout blanks, but she asks it every exam. Troponin is the answer to "which lab confirms MI?"</p>
+<table class="cmp">
+<thead><tr><th>Marker</th><th>Rises</th><th>Peaks</th><th>Returns to normal</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td class="k">Troponin I &amp; T</td><td><span class="fill">3&ndash;4 hours after injury (high-sensitivity assays detect it in 1&ndash;3 h)</span></td><td><span class="fill">10&ndash;24 hours</span></td><td><span class="fill">Troponin I ~7&ndash;10 days; Troponin T up to 10&ndash;14 days</span></td><td><b>Most specific to cardiac muscle</b> &mdash; the gold standard. Normal is roughly &lt;0.04 ng/mL (assay-dependent).</td></tr>
+<tr><td class="k">CK-MB</td><td><span class="fill">4&ndash;6 hours</span></td><td><span class="fill">18&ndash;24 hours</span></td><td><span class="fill">2&ndash;3 days</span></td><td>Short window makes it useful for detecting <b>re-infarction</b>.</td></tr>
+<tr><td class="k">Myoglobin</td><td><span class="fill">1&ndash;3 hours &mdash; earliest to rise</span></td><td><span class="fill">~12 hours</span></td><td><span class="fill">~24 hours</span></td><td>Fast but <b>not cardiac-specific</b> (any muscle injury). Best used to rule OUT.</td></tr>
+</tbody>
+</table>
+<p><b>Serial draws:</b> <span class="fill">troponin is drawn on arrival and repeated (commonly at 3&ndash;6 hours, sometimes again at 12) &mdash; because a single early normal troponin does NOT rule out MI if the pain started less than 3 hours ago.</span></p>
+<p><b>Test-taking trap:</b> <mark>Normal troponin + chest pain 1 hour ago does not mean "no MI." Keep monitoring.</mark></p>
+</div> <div class="card" style="--jewel:var(--ruby)" id="chestpain">
+</div></details><details class="nsec"><summary>5c &middot; Chest-Pain Priority Sequence 🚨<span class="nsn">1 item</span></summary><div class="nsecbody">
+<p class="lead-in">When the question says "a patient reports crushing chest pain &mdash; what does the nurse do FIRST?", this is the order.</p>
+<div class="flow"> <div class="stepbox"><b>Step 1</b><span><b>Stay &amp; assess.</b> Do not leave the patient. ABCs, vital signs, PQRST pain assessment, level of consciousness.</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 2</b><span><b>12-lead ECG within 10 minutes.</b> This is what separates STEMI from everything else &mdash; it decides the whole treatment path.</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 3</b><span><b>Aspirin 162&ndash;325 mg chewed</b> (non-enteric) unless contraindicated. Fastest mortality win.</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 4</b><span><b>O&#8322; only if SpO&#8322; &lt;90%</b> &middot; two large-bore IVs &middot; continuous cardiac monitoring &middot; position of comfort (semi-Fowler's).</span></div>
+</div>
+<div class="flow"> <div class="stepbox"><b>Step 5</b><span><b>Nitroglycerin SL 0.4 mg q5min &times;3</b> &mdash; check BP before each dose. Hold if SBP &lt;90.</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 6</b><span><b>Draw troponin</b> (serial) + CBC, BMP, coags, lipids. Notify provider / activate chest-pain protocol.</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 7</b><span><b>Reperfuse.</b> STEMI &rarr; cath lab, door-to-balloon &le;90 min; or fibrinolytics &le;30 min if PCI unavailable.</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 8</b><span><b>Keep watching for VF.</b> Defibrillator at the bedside &mdash; the first hours are the highest-risk window.</span></div>
+</div>
+<p><b>Priority rule:</b> <span class="fill">Assessment before intervention, EXCEPT when the intervention is time-critical and standing-order driven. In practice: stay with the patient, get the ECG, give the aspirin &mdash; those three happen almost simultaneously.</span></p>
+</div> <div class="card" style="--jewel:var(--amethyst)" id="ecg">
+</div></details><details class="nsec"><summary>6 &middot; ECG Basics 📈<span class="nsn">12 items</span></summary><div class="nsecbody">
+<h3>Fill in the Blanks</h3>
+<ul class="blanks"> <li><b>P wave =</b> <span class="fill">atrial depolarization &mdash; the electrical signal spreading through the atria, which triggers atrial contraction</span></li> <li><b>QRS complex =</b> <span class="fill">ventricular depolarization &mdash; the signal spreading through the ventricles, which triggers ventricular contraction (atrial repolarization is hidden inside it)</span></li> <li><b>T wave =</b> <span class="fill">ventricular repolarization &mdash; the ventricles electrically resetting/relaxing</span></li>
+</ul>
+<h4>Easy Memory Trick</h4>
+<p><b>P = Push</b> (atria contract) &middot; <b>QRS = Squeeze</b> (ventricles contract) &middot; <b>T = Time to recover</b> (ventricles relax)</p>
+<h4>Normal intervals worth memorizing</h4>
+<ul> <li><b>PR interval:</b> <span class="fill">0.12&ndash;0.20 seconds (3&ndash;5 small boxes). Longer = AV block.</span></li> <li><b>QRS duration:</b> <span class="fill">0.06&ndash;0.10 seconds (&lt;0.12). Wide QRS = the beat came from the ventricles or conduction is blocked.</span></li> <li><b>Paper speed:</b> <span class="fill">1 small box = 0.04 sec, 1 large box = 0.20 sec; count QRS complexes in a 6-second strip and multiply by 10 for the rate</span></li>
+</ul>
+<p><mark>Narrow QRS = the signal came from above the ventricles. Wide QRS = ventricular origin = worry.</mark></p>
+<p class="lead-in">🤖 Ask Claire: "Explain the P wave, QRS complex, and T wave in simple language and then quiz me with 5 questions."</p>
+</div> <div class="card" style="--jewel:var(--amethyst)" id="rhythm">
+</div></details><details class="nsec"><summary>7 &middot; Reading a Rhythm 🔍<span class="nsn">7 items</span></summary><div class="nsecbody">
+<p class="lead-in">Before naming any rhythm, ask the same four questions every single time.</p>
+<div class="flow"> <div class="stepbox"><b>Q1 &mdash; rate</b><span>Fast or slow? <span class="fill">Count QRS complexes in a 6-second strip &times;10. &lt;60 = brady, 60&ndash;100 = normal, &gt;100 = tachy.</span></span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Q2 &mdash; rhythm</b><span>Regular or irregular? <span class="fill">Measure R&ndash;R intervals. Equal = regular. Irregularly irregular with no pattern = think A-fib.</span></span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Q3 &mdash; P waves</b><span>P before every QRS? <span class="fill">One upright P for every QRS, 1:1, all the same shape = sinus. No P waves = A-fib. P with no QRS = block.</span></span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Q4 &mdash; patient</b><span>Is the patient stable? <span class="fill">Pulse, BP, level of consciousness, chest pain, shortness of breath, skin. Unstable = poor perfusion = act now.</span></span></div>
+</div> <h3>Golden Rule ⭐</h3>
+<p>Treat the <span class="fill">patient</span>, not the <span class="fill">monitor</span>.</p> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">Telemetry shows VT. Before staring at the monitor, what should you check?</p>
+<p><span class="fill">Go to the room and check the <b>patient</b> &mdash; responsiveness and a central (carotid) pulse. <em>Because the entire treatment path splits on that one finding:</em> pulse present &rarr; antiarrhythmics or synchronized cardioversion; no pulse &rarr; CPR and defibrillation. It may also be artifact from a loose lead or a shivering/brushing-teeth patient &mdash; but you confirm that at the bedside, not at the desk.</span></p>
+</div> <div class="card" style="--jewel:var(--teal)" id="brady">
+</div></details><details class="nsec"><summary>8 &middot; Bradycardia 🐢<span class="nsn">5 items</span></summary><div class="nsecbody">
+<p><b>Defined as HR less than</b> <span class="fill">60</span> <b>bpm</b></p>
+<p><b>Symptoms of poor perfusion:</b> <span class="fill">hypotension, dizziness/lightheadedness, syncope or near-syncope, confusion or restlessness, extreme fatigue and weakness, chest pain, shortness of breath, pale/cool/clammy skin, urine output &lt;30 mL/hr</span></p>
+<p><b>Medication commonly used if symptomatic:</b> <span class="fill">atropine 1 mg IV push, repeated every 3&ndash;5 minutes to a maximum total of 3 mg (2020 AHA dosing). If atropine fails &rarr; transcutaneous pacing, or a dopamine or epinephrine infusion.</span></p>
+<p><span class="never">Asymptomatic bradycardia is not treated</span> &mdash; <em>an athlete or a sleeping patient with HR 50 and warm, dry skin needs monitoring, not atropine.</em></p>
+<p><b>⚠️ Atropine caution:</b> <span class="fill">it works at the AV node, so it is unreliable in Mobitz type II and third-degree (complete) heart block with a wide QRS &mdash; go straight to transcutaneous pacing in those.</span></p> <h3>Quick Question</h3>
+<p class="q">Why can severe bradycardia cause confusion?</p>
+<p><span class="fill">Cardiac output = heart rate &times; stroke volume. When the rate falls far enough, stroke volume cannot compensate, so cardiac output drops and <mark>the brain is under-perfused</mark>. Less oxygen to the cerebral cortex shows up first as restlessness, then confusion, then syncope. Confusion here is a perfusion sign, not a psych sign.</span></p>
+<p class="lead-in">🤖 Ask Claire: "Create 5 symptomatic bradycardia cases and make me decide if atropine is appropriate."</p>
+</div> <div class="card" style="--jewel:var(--citrine)" id="tachy">
+</div></details><details class="nsec"><summary>9 &middot; Tachycardia 🐇<span class="nsn">12 items</span></summary><div class="nsecbody">
+<p><b>Defined as HR greater than</b> <span class="fill">100</span> <b>bpm</b></p>
+<h4>Common causes</h4>
+<ul> <li>Pain</li> <li>Fever</li> <li>Anxiety</li> <li><span class="fill">Hypovolemia / dehydration / hemorrhage (often the FIRST sign of blood loss)</span></li> <li><span class="fill">Hypoxia, anemia, infection/sepsis, hyperthyroidism</span></li> <li><span class="fill">Stimulants &mdash; caffeine, nicotine, cocaine, albuterol, epinephrine; also alcohol/drug withdrawal</span></li>
+</ul>
+<h4>Treatment</h4>
+<p>Treat the <span class="fill">underlying cause</span> &mdash; <span class="fill">give analgesia for pain, antipyretics/cooling for fever, fluids for hypovolemia, oxygen for hypoxia, reassurance or anxiolytics for anxiety. Slowing the rate without fixing the cause removes the patient's compensation.</span></p>
+<h4>Remember</h4>
+<p>Sinus tachycardia is often the body's response to another problem. <mark>Why it still hurts the heart: a fast rate shortens diastole, and the coronary arteries fill during diastole &mdash; so the heart works harder on less blood.</mark></p>
+<p class="lead-in">🤖 Ask Claire: "Help me distinguish when tachycardia is compensatory versus when it is dangerous."</p>
+</div> <div class="card" style="--jewel:var(--garnet)" id="htn">
+</div></details><details class="nsec"><summary>10 &middot; Hypertension 🩸<span class="nsn">15 items</span></summary><div class="nsecbody">
+<p><b>Hypertension means:</b> <span class="fill">persistently elevated arterial blood pressure. Per ACC/AHA: <b>Normal</b> &lt;120/&lt;80 &middot; <b>Elevated</b> 120&ndash;129/&lt;80 &middot; <b>Stage 1</b> 130&ndash;139 or 80&ndash;89 &middot; <b>Stage 2</b> &ge;140 or &ge;90 &middot; <b>Hypertensive crisis</b> &gt;180 and/or &gt;120. Diagnosis requires elevated readings on at least two separate occasions.</span></p>
+<p><b>Major complications:</b> <span class="fill">stroke (hemorrhagic and ischemic), myocardial infarction and CAD, left ventricular hypertrophy &rarr; heart failure, chronic kidney disease/renal failure, retinopathy and vision loss, peripheral artery disease, and aortic aneurysm/dissection</span></p> <h3>Lifestyle Changes</h3>
+<ul class="blanks"> <li><b>Diet:</b> <span class="fill">DASH pattern &mdash; fruits, vegetables, whole grains, low-fat dairy, lean protein; limit saturated fat</span></li> <li><b>Sodium:</b> <span class="fill">&lt;2,300 mg/day, ideally 1,500 mg/day; read labels, avoid canned/processed/deli foods and salt substitutes containing potassium if on an ACE inhibitor or ARB</span></li> <li><b>Weight:</b> <span class="fill">lose excess weight &mdash; roughly 1 mmHg drop per kilogram lost</span></li> <li><b>Exercise:</b> <span class="fill">at least 150 minutes/week of moderate aerobic activity (about 30 min, 5 days a week)</span></li> <li><b>Alcohol / tobacco:</b> <span class="fill">limit alcohol to &le;2 drinks/day (men) or &le;1 (women); stop all tobacco and nicotine</span></li> <li><b>Other:</b> <span class="fill">stress management, adequate sleep, home BP monitoring, and &mdash; the big one &mdash; take the medication every day even when you feel fine</span></li>
+</ul> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">Why is hypertension often called the "silent killer"?</p>
+<p><span class="fill">Because it produces no symptoms for years while it is damaging arteries, the heart, brain, kidneys, and eyes. Patients feel completely well, so they stop the medication &mdash; and the first "symptom" is often the stroke, MI, or kidney failure itself. <mark>Nursing implication: adherence teaching is the intervention.</mark></span></p>
+<p class="lead-in">🤖 Ask Claire: "Explain hypertension like I'm studying for the NCLEX and give me 5 practice questions."</p>
+</div> <div class="card" style="--jewel:var(--emerald)" id="reflect">
+</div></details><details class="nsec"><summary>End of Part 1 &mdash; Reflection Table ✅<span class="nsn">32 items</span></summary><div class="nsecbody">
+<table class="cmp">
+<thead><tr><th>Disease</th><th>What is happening?</th><th>Biggest concern</th><th>Nurse's first priority</th></tr></thead>
+<tbody>
+<tr><td class="k">CAD</td><td><span class="fill">Plaque narrows coronary arteries; supply cannot meet demand</span></td><td><span class="fill">Progression to plaque rupture &rarr; ACS/MI</span></td><td><span class="fill">Risk-factor modification and teaching: report any new chest pain immediately</span></td></tr>
+<tr><td class="k">Stable Angina</td><td><span class="fill">Temporary, reversible ischemia when demand rises</span></td><td><span class="fill">The pattern changing &mdash; longer, more frequent, or at rest</span></td><td><span class="fill">Stop the activity, rest, SL nitroglycerin, assess pain and vital signs</span></td></tr>
+<tr><td class="k">Unstable Angina</td><td><span class="fill">Plaque rupture with partial clot; ischemia at rest, troponin still negative</span></td><td><span class="fill">It is a pre-infarction warning &mdash; MI may be hours away</span></td><td><span class="fill">12-lead ECG within 10 min + troponin, aspirin, continuous monitoring, notify provider</span></td></tr>
+<tr><td class="k">ACS</td><td><span class="fill">Acute spectrum of coronary occlusion: UA, NSTEMI, STEMI</span></td><td><span class="fill">Infarction and lethal dysrhythmia (VF)</span></td><td><span class="fill">Stay with patient; ECG, aspirin, O&#8322; if SpO&#8322; &lt;90%, IV access, monitor</span></td></tr>
+<tr><td class="k">MI</td><td><span class="fill">Prolonged occlusion &rarr; irreversible myocardial necrosis</span></td><td><span class="fill">Ventricular fibrillation early; cardiogenic shock and heart failure after</span></td><td><span class="fill">Rapid reperfusion (PCI &le;90 min) while watching the rhythm, BP, and urine output</span></td></tr>
+<tr><td class="k">Bradycardia</td><td><span class="fill">SA node or conduction is too slow &rarr; cardiac output falls</span></td><td><span class="fill">Syncope, hypotension, progression to arrest</span></td><td><span class="fill">Assess perfusion first; if symptomatic, atropine and/or transcutaneous pacing; hold rate-slowing drugs</span></td></tr>
+<tr><td class="k">Tachycardia</td><td><span class="fill">Rate too fast &rarr; short filling time, low stroke volume, high O&#8322; demand</span></td><td><span class="fill">Myocardial ischemia and decompensation; a masked underlying problem (bleeding, sepsis, hypoxia)</span></td><td><span class="fill">Find and treat the cause &mdash; pain, fever, volume, oxygen, anxiety</span></td></tr>
+<tr><td class="k">Hypertension</td><td><span class="fill">Chronically high afterload injuring vessels and end organs</span></td><td><span class="fill">Stroke, MI, heart failure, kidney failure &mdash; all silent until they happen</span></td><td><span class="fill">Accurate BP technique, medication adherence and lifestyle teaching, recognize hypertensive crisis (&gt;180/&gt;120)</span></td></tr>
+</tbody>
+</table> <h3>Final Challenge</h3>
+<p class="lead-in">For every disease above, answer these four. Keep it short.</p>
+<ul class="blanks"> <li><b>What is the pathophysiology?</b> <span class="fill">Name the blocked or failing structure and what it stops doing &mdash; column 2 above.</span></li> <li><b>What assessment finding would make me most worried?</b> <span class="fill">Anything showing perfusion has failed: altered level of consciousness/restlessness, systolic &lt;90, urine &lt;30 mL/hr, cool clammy skin, a new lethal rhythm.</span></li> <li><b>What could kill the patient first?</b> <span class="fill">Airway &rarr; breathing &rarr; circulation, in that order. In cardiac patients it is almost always a lethal ventricular dysrhythmia or cardiogenic shock.</span></li> <li><b>What is my highest-priority nursing intervention?</b> <span class="fill">Stay with the patient, support ABCs, and get the one time-critical thing done &mdash; ECG, oxygen if hypoxic, defibrillation, or reperfusion.</span></li>
+</ul>
+</div> <div class="card" style="--jewel:var(--sapphire)" id="afib">
+</div></details><details class="nsec"><summary>11 &middot; Atrial Fibrillation (A-Fib) 🌀<span class="nsn">18 items</span></summary><div class="nsecbody">
+<h3>Fill in the Blanks</h3>
+<ul class="blanks"> <li>In atrial fibrillation, the atria <span class="fill">quiver/fibrillate chaotically (multiple disorganized ectopic foci firing at 350&ndash;600/min)</span> instead of contracting effectively.</li> <li>Because the atria do not empty well, blood can <span class="fill">pool and stagnate &mdash; especially in the left atrial appendage &mdash; and form a thrombus</span>.</li> <li>The biggest long-term complication is <span class="fill">embolic stroke</span>.</li>
+</ul>
+<p><b>On the strip:</b> <span class="fill">no identifiable P waves (chaotic fibrillatory waves instead), irregularly irregular R&ndash;R intervals, usually a narrow QRS</span></p>
+<p><b>Also loses the "atrial kick":</b> <span class="fill">the atrial contraction that normally tops off ventricular filling &mdash; losing it cuts cardiac output by roughly 20&ndash;30%, which is why patients feel fatigued, dizzy, and short of breath</span></p> <h4>Medications may be used to:</h4>
+<ul class="blanks"> <li>Control the <span class="fill">rate</span> &mdash; <span class="fill">beta blockers (metoprolol), calcium channel blockers (diltiazem), digoxin</span></li> <li>Control the <span class="fill">rhythm</span> &mdash; <span class="fill">amiodarone, sotalol, flecainide; or synchronized cardioversion / ablation</span></li> <li>Prevent <span class="fill">clots (stroke)</span> &mdash; <span class="fill">anticoagulants: warfarin (INR goal 2&ndash;3) or a DOAC such as apixaban or rivaroxaban</span></li>
+</ul>
+<p><span class="never">Never cardiovert A-fib lasting &gt;48 hours without anticoagulation first</span> &mdash; <em>restoring organized contraction can launch an existing clot as a stroke.</em></p> <h4>Memory Trick</h4>
+<p>A-Fib = <b>A</b>tria <b>F</b>ibrillate &rarr; Blood <b>F</b>orms Clots &rarr; Stroke Risk</p> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">Your patient has A-fib and suddenly cannot move their right arm. What complication do you suspect?</p>
+<p><span class="fill"><b>Embolic (ischemic) stroke</b> &mdash; a clot from the fibrillating left atrium traveled to the cerebral circulation. Priority: activate the stroke alert/rapid response, note the <mark>last known well time</mark>, perform a focused neuro exam, keep the patient NPO (swallow screen first), and prepare for an emergent non-contrast head CT to decide about thrombolytics.</span></p>
+<p class="lead-in">🤖 Ask Claire: "Give me three A-fib cases and make me identify the priority complication."</p>
+</div> <div class="card" style="--jewel:var(--ruby)" id="vt">
+</div></details><details class="nsec"><summary>12 &middot; Ventricular Tachycardia (VT) 🚨<span class="nsn">8 items</span></summary><div class="nsecbody">
+<h3>Fill in the Blanks</h3>
+<ul class="blanks"> <li>VT starts in the <span class="fill">ventricles &mdash; an irritable ectopic focus below the bundle of His. Strip shows 3+ consecutive wide, bizarre QRS complexes at 100&ndash;250/min with no visible P waves</span>.</li> <li>This rhythm can decrease <span class="fill">cardiac output &mdash; the rate is too fast for the ventricles to fill and there is no atrial kick, so stroke volume and perfusion collapse</span>.</li>
+</ul> <div class="flow"> <div class="stepbox"><b>Check first</b><span>Responsiveness + <b>central pulse</b>. Everything branches here.</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Pulse present &mdash; stable</b><span>Oxygen, IV, 12-lead, antiarrhythmic (amiodarone/procainamide/sotalol), find the cause (K&#8314;, Mg&#178;&#8314;, ischemia, drugs).</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Pulse present &mdash; unstable</b><span><b>Synchronized cardioversion</b> with sedation if the patient is hypotensive, altered, or in chest pain.</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>NO pulse</b><span><b>CPR + defibrillation</b> &mdash; pulseless VT is treated exactly like VF.</span></div>
+</div> <p><b>If the patient has a pulse:</b> Assess <span class="fill">the patient's stability (pulse quality, blood pressure, level of consciousness, chest pain, shortness of breath)</span> first.</p>
+<p><b>If the patient has NO pulse:</b> Start <span class="fill">high-quality CPR (and call a code)</span> and prepare for <span class="fill">immediate defibrillation &mdash; unsynchronized shock &mdash; plus epinephrine 1 mg q3&ndash;5 min and amiodarone 300 mg after the third shock</span>.</p> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">Why can VT quickly become fatal?</p>
+<p><span class="fill">Because the ventricles are beating too fast to fill, cardiac output falls toward zero &mdash; and VT readily degenerates into ventricular fibrillation. Once there is no perfusion, brain injury starts within about 4&ndash;6 minutes. <mark>VT with a pulse can become VT without a pulse in seconds</mark>, so the patient needs continuous monitoring, IV access, and a defibrillator at the bedside.</span></p>
+<h4>Remember</h4>
+<p>No pulse = treat the patient, not just the rhythm.</p>
+</div> <div class="card" style="--jewel:var(--ruby)" id="vf">
+</div></details><details class="nsec"><summary>13 &middot; Ventricular Fibrillation (VF) 🚨<span class="nsn">11 items</span></summary><div class="nsecbody">
+<ul class="blanks"> <li><b>VF causes the ventricles to:</b> <span class="fill">quiver chaotically instead of contracting &mdash; totally disorganized electrical activity with no recognizable P wave, QRS, or T wave, just an erratic wavy baseline</span></li> <li><b>Cardiac output becomes:</b> <span class="fill">zero &mdash; there is no effective contraction, so the patient is pulseless, apneic, and unresponsive. This IS cardiac arrest.</span></li> <li><b>Priority treatment:</b> <span class="fill">immediate <b>defibrillation</b> (unsynchronized shock) with high-quality CPR before and immediately after each shock; then epinephrine 1 mg IV q3&ndash;5 min and amiodarone 300 mg after the third shock. <mark>Every minute without defibrillation drops survival by about 7&ndash;10%.</mark></span></li>
+</ul>
+<h3>Quick Check</h3>
+<p class="q">Can a patient in VF be awake?</p>
+<ul> <li>Yes &mdash; <span class="fill">❌ No. There is no cardiac output, so there is no cerebral perfusion.</span></li> <li>No &mdash; <span class="fill">✅ Correct. A VF patient is always pulseless and unresponsive.</span></li>
+</ul>
+<p><b>So if the monitor shows VF and the patient is talking to you:</b> <span class="fill">it is artifact &mdash; a loose or disconnected lead, movement, shivering, or brushing teeth. Check the patient and the leads, never shock a talking patient.</span></p>
+<p class="lead-in">🤖 Ask Claire: "Create five VF scenarios and ask me what I should do first."</p>
+</div> <div class="card" style="--jewel:var(--ruby)" id="asystole">
+</div></details><details class="nsec"><summary>14 &middot; Asystole 🚨<span class="nsn">9 items</span></summary><div class="nsecbody">
+<ul class="blanks"> <li><b>Asystole means:</b> <span class="fill">no electrical activity in the heart at all &mdash; a flat line. No contraction, no cardiac output, no pulse. Confirm it in two different leads and check that the leads are attached and the gain is up before calling it.</span></li>
+</ul>
+<p><b>Should you defibrillate?</b></p>
+<ul> <li>Yes &mdash; <span class="fill">❌ No. <span class="never">Asystole is NOT a shockable rhythm.</span></span></li> <li>No &mdash; <span class="fill">✅ Correct. Defibrillation depolarizes electrical activity so the SA node can resume &mdash; with a flat line there is nothing to depolarize.</span></li>
+</ul>
+<p><b>Treatment includes:</b> <span class="fill">immediate high-quality CPR, epinephrine 1 mg IV/IO every 3&ndash;5 minutes, airway management/ventilation, and searching for reversible causes (the H's and T's: hypoxia, hypovolemia, hydrogen ion/acidosis, hypo-/hyperkalemia, hypothermia; tension pneumothorax, tamponade, toxins, thrombosis &mdash; pulmonary or coronary).</span></p>
+<h4>Memory Trick</h4>
+<p><mark>Flat line = CPR + epinephrine, not a shock.</mark></p>
+<h4>Shockable vs. not &mdash; know this cold</h4>
+<table class="cmp">
+<thead><tr><th>Shockable ⚡</th><th>NOT shockable ❌</th></tr></thead>
+<tbody>
+<tr><td><span class="fill">Ventricular fibrillation &middot; Pulseless ventricular tachycardia</span></td><td><span class="fill">Asystole &middot; Pulseless electrical activity (PEA) &mdash; both get CPR + epinephrine</span></td></tr>
+</tbody>
+</table>
+</div> <div class="card" style="--jewel:var(--topaz)" id="cardiovert">
+</div></details><details class="nsec"><summary>15 &middot; Synchronized Cardioversion ⚡<span class="nsn">8 items</span></summary><div class="nsecbody">
+<p><b>Used for patients who have:</b></p>
+<ul> <li>A pulse &mdash; <span class="fill">✅ Yes. Cardioversion is for an unstable patient who still has a perfusing (but bad) rhythm.</span></li> <li>No pulse &mdash; <span class="fill">❌ No. A pulseless patient gets CPR and defibrillation instead.</span></li>
+</ul>
+<p><b>Typical rhythms:</b> <span class="fill">unstable A-fib with RVR, atrial flutter, SVT, and VT <b>with</b> a pulse in a patient who is hypotensive, altered, or having chest pain</span></p>
+<p><b>The shock is timed with the</b> <span class="fill">R wave of the QRS complex &mdash; the machine's "sync" button must be on and you must see sync markers on each R wave</span>.</p>
+<p><b>The patient often requires:</b> <span class="fill">sedation/analgesia (procedural sedation, e.g., midazolam &plusmn; an analgesic) plus informed consent, and &mdash; for A-fib lasting more than 48 hours &mdash; anticoagulation or a TEE beforehand</span></p> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">Why is cardioversion synchronized instead of delivered randomly?</p>
+<p><span class="fill">To avoid delivering the shock on the T wave. The T wave is the relative refractory period &mdash; the heart's vulnerable window &mdash; and a shock landing there ("<mark>R-on-T</mark>") can throw the patient into ventricular fibrillation. Syncing to the R wave guarantees the energy lands on depolarization, not repolarization.</span></p>
+</div> <div class="card" style="--jewel:var(--ruby)" id="defib">
+</div></details><details class="nsec"><summary>16 &middot; Defibrillation 🚨<span class="nsn">6 items</span></summary><div class="nsecbody">
+<p><b>Used for:</b> <span class="fill">ventricular fibrillation and pulseless ventricular tachycardia &mdash; those two rhythms only</span></p>
+<p><b>The patient is usually:</b></p>
+<ul> <li>Awake &mdash; <span class="fill">❌ No. If they are awake and perfusing, this is the wrong treatment.</span></li> <li>Pulseless &mdash; <span class="fill">✅ Yes. Unresponsive, pulseless, not breathing normally.</span></li>
+</ul>
+<p><b>Nursing steps:</b> <span class="fill">continue compressions while the pads go on &rarr; select unsynchronized mode &rarr; charge &rarr; call "CLEAR!" and visually confirm no one (including you) is touching the patient or the bed &rarr; shock &rarr; <mark>resume compressions immediately for 2 minutes</mark> before rechecking the rhythm. Remove transdermal patches and do not place pads directly over an implanted device.</span></p>
+<table class="cmp">
+<thead><tr><th>&nbsp;</th><th>Synchronized cardioversion</th><th>Defibrillation</th></tr></thead>
+<tbody>
+<tr><td class="k">Patient</td><td><b>Has a pulse</b>, unstable</td><td><b>Pulseless</b>, unresponsive</td></tr>
+<tr><td class="k">Timing</td><td>Synced to the R wave</td><td>Unsynchronized &mdash; delivered immediately</td></tr>
+<tr><td class="k">Energy</td><td>Lower</td><td>Higher</td></tr>
+<tr><td class="k">Rhythms</td><td>Unstable A-fib/flutter, SVT, VT with a pulse</td><td>VF, pulseless VT</td></tr>
+<tr><td class="k">Consent/sedation</td><td>Yes &mdash; usually both</td><td>No &mdash; emergency, no time</td></tr>
+</tbody>
+</table>
+<h4>Remember</h4>
+<p>Defibrillation is an emergency treatment for life-threatening rhythms without effective circulation.</p>
+<p class="lead-in">🤖 Ask Claire: "Compare synchronized cardioversion and defibrillation using patient scenarios."</p>
+</div> <div class="card" style="--jewel:var(--emerald)" id="pacer">
+</div></details><details class="nsec"><summary>17 &middot; Pacemakers 🔋<span class="nsn">8 items</span></summary><div class="nsecbody">
+<p><b>A pacemaker helps treat:</b> <span class="fill">symptomatic bradycardia, sick sinus syndrome, second-degree (Mobitz II) and third-degree/complete heart block, and chronic bradydysrhythmias that do not respond to medication &mdash; it delivers an electrical impulse when the heart's own rate falls below the set rate</span></p> <h3>Patient Teaching</h3>
+<ul class="blanks"> <li><b>Carry your:</b> <span class="fill">pacemaker identification card at all times (device type, model, settings, manufacturer), and wear a medical-alert bracelet</span></li> <li><b>Report:</b> <span class="fill">a pulse rate BELOW the set rate; dizziness, fainting, or new palpitations; hiccups or muscle twitching; shortness of breath, chest pain, or swelling; and redness, swelling, drainage, or fever at the incision site. Check and record your own pulse daily.</span></li> <li><b>Avoid:</b> <span class="fill">MRI (unless the device is MRI-conditional), arc welding, large industrial magnets, diathermy, and TENS units; no heavy lifting or raising the arm above the shoulder on that side for about 4&ndash;6 weeks; no contact sports; keep cell phones at least 6 inches away and use the opposite ear; walk briskly through antitheft/security gates rather than lingering. Microwaves are safe.</span></li>
+</ul> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">A patient reports hiccups after pacemaker insertion. Why should the nurse notify the provider?</p>
+<p><span class="fill">Persistent hiccups (or chest-wall twitching) suggest the pacing <b>lead has migrated or dislodged</b> and is now stimulating the diaphragm or phrenic nerve. A displaced lead means the pacemaker may not be capturing the ventricle &mdash; so the patient can drop back into symptomatic bradycardia. It is an early, easy-to-dismiss sign of device failure and needs a chest x-ray and interrogation.</span></p>
+</div> <div class="card" style="--jewel:var(--emerald)" id="aicd">
+</div></details><details class="nsec"><summary>18 &middot; Implantable Cardioverter-Defibrillator (AICD) 🔋<span class="nsn">14 items</span></summary><div class="nsecbody">
+<p><b>Purpose:</b> <span class="fill">to continuously monitor the rhythm and automatically terminate life-threatening ventricular dysrhythmias (VT/VF) &mdash; it is implanted in patients at risk for sudden cardiac death, such as survivors of cardiac arrest, sustained VT, or an ejection fraction &le;35%</span></p>
+<h4>The device can:</h4>
+<ul> <li>Pace the heart</li> <li>Detect dangerous rhythms</li> <li>Deliver a <span class="fill">shock (antitachycardia pacing, then synchronized cardioversion or defibrillation)</span> if needed</li>
+</ul>
+<h3>Teaching</h3>
+<ul class="blanks"> <li><b>Inform healthcare providers before:</b> <span class="fill">any MRI, surgery, electrocautery, diathermy, radiation therapy, or lithotripsy &mdash; and tell airport/store security about the device</span></li> <li><b>Avoid placing:</b> <span class="fill">cell phones, strong magnets, MP3 players, or tight straps/shoulder bags</span> directly over the device.</li>
+</ul>
+<h3>Quick Check</h3>
+<p class="q">If the AICD fires, should the patient notify their provider?</p>
+<ul> <li>Yes &mdash; <span class="fill">✅ Correct. Every firing means the device detected a lethal rhythm &mdash; the provider needs to interrogate the device.</span></li> <li>No &mdash; <span class="fill">❌ Wrong. "It worked, so I'm fine" is exactly the thinking that gets a patient into trouble.</span></li>
+</ul>
+<p><b>How to teach it:</b> <span class="fill">one shock and you feel fine &rarr; call the provider that day. <mark>Multiple shocks, or a shock with chest pain, dizziness, or shortness of breath &rarr; call 911.</mark> Bystanders touching the patient during a discharge may feel a harmless tingle &mdash; that is not dangerous. Do not drive until cleared.</span></p>
+</div> <div class="card" style="--jewel:var(--teal)" id="revasc">
+</div></details><details class="nsec"><summary>19 &middot; Coronary Revascularization Procedures 🩹<span class="nsn">9 items</span></summary><div class="nsecbody"> <h3>PCI (Stent)</h3>
+<ul class="blanks"> <li><b>Purpose:</b> <span class="fill">to open the blocked coronary artery and restore blood flow &mdash; a catheter (usually radial or femoral) is threaded to the lesion, a balloon inflates, and a stent holds the vessel open. For STEMI the goal is <mark>door-to-balloon within 90 minutes</mark>.</span></li> <li><b>After the procedure, assess:</b> <span class="fill">the insertion site for bleeding, hematoma, or swelling; distal pulses, color, temperature, capillary refill, and sensation in that extremity; vital signs and cardiac rhythm (reperfusion dysrhythmias); recurrent chest pain, which may mean the vessel re-occluded; and urine output/renal function because of the contrast dye. Keep the extremity straight, maintain bedrest per protocol, and encourage fluids to flush the contrast.</span></li>
+</ul> <h3>CABG</h3>
+<ul class="blanks"> <li><b>Purpose:</b> <span class="fill">to bypass the blockage by grafting a new vessel around it &mdash; used for left main disease, multi-vessel disease, or lesions PCI cannot fix. It reroutes blood; it does not remove the plaque.</span></li> <li><b>A graft may come from the:</b> <span class="fill">internal mammary (internal thoracic) artery in the chest &mdash; the best long-term patency; the greater saphenous vein from the leg; or the radial artery from the forearm</span></li>
+</ul> <h3>Think Like a Nurse 🧠</h3>
+<p class="q">Why is checking the incision and circulation important after these procedures?</p>
+<p><span class="fill">Because the two things most likely to kill this patient early are <b>bleeding</b> and <b>loss of perfusion</b>. These patients are on antiplatelets and anticoagulants, so a puncture site or sternal/leg incision can bleed or form an expanding hematoma fast &mdash; and retroperitoneal bleeding after a femoral stick may show up only as back pain and falling BP. Checking pulses, color, temperature, and sensation distal to the site tells you whether the artery is still open or has clotted/occluded. The incision also tells you early about infection.</span></p>
+<p class="lead-in">🤖 Ask Claire: "Create a patient scenario after PCI and another after CABG. Ask me what complication I should monitor for."</p>
+</div> <div class="card" style="--jewel:var(--citrine)" id="wrapup">
+</div></details><details class="nsec"><summary>20 &middot; Module 7 Wrap-Up 🏁<span class="nsn">44 items</span></summary><div class="nsecbody"> <h3>Match the Condition to the Biggest Danger</h3>
+<table class="cmp">
+<thead><tr><th>Condition</th><th>Biggest Danger</th></tr></thead>
+<tbody>
+<tr><td class="k">Atrial fibrillation</td><td><span class="fill">Embolic stroke from a clot formed in the quivering atria (plus loss of atrial kick &rarr; lower cardiac output)</span></td></tr>
+<tr><td class="k">Ventricular tachycardia</td><td><span class="fill">Falling cardiac output and rapid deterioration into pulseless VT or ventricular fibrillation</span></td></tr>
+<tr><td class="k">Ventricular fibrillation</td><td><span class="fill">Zero cardiac output &mdash; death within minutes unless defibrillated</span></td></tr>
+<tr><td class="k">Asystole</td><td><span class="fill">No electrical activity at all; not shockable, and the poorest survival rate of any arrest rhythm</span></td></tr>
+<tr><td class="k">Symptomatic bradycardia</td><td><span class="fill">Low cardiac output &rarr; hypotension, syncope, altered mental status, progression to arrest</span></td></tr>
+<tr><td class="k">STEMI</td><td><span class="fill">Complete coronary occlusion &rarr; expanding infarct, lethal dysrhythmia (VF), and cardiogenic shock. Time = muscle.</span></td></tr>
+</tbody>
+</table> <h3>Prioritization Practice</h3>
+<div class="nq">
+<div class="stem">Which patient should you assess FIRST?</div>
+<ol> <li><b>Patient A</b> &mdash; HR 42, sleeping comfortably</li> <li><b>Patient B</b> &mdash; A-fib, HR 118, talking with family</li> <li><b>Patient C</b> &mdash; STEMI, BP 78/46, cool and clammy</li> <li><b>Patient D</b> &mdash; Pacemaker placed yesterday, mild soreness at incision</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Your answer:</b> <span class="fill">Patient C</span></p>
+<p><b>Explain why:</b> <span class="fill">Patient C is in <b>cardiogenic shock</b> &mdash; a STEMI with a systolic of 78 and cool, clammy skin means the pump has failed and no organ is being perfused. This is an unstable circulation problem and it is actively killing the patient.</span></p>
+<ul> <li><b>A is wrong:</b> <span class="fill">HR 42 while sleeping comfortably is bradycardia without symptoms &mdash; no hypotension, no altered LOC. Monitor, don't treat.</span></li> <li><b>B is wrong:</b> <span class="fill">A-fib at 118 is a known chronic rhythm and the patient is alert and talking &mdash; perfusing. Needs rate control and anticoagulation, not first priority.</span></li> <li><b>D is wrong:</b> <span class="fill">Mild incisional soreness the day after implantation is an expected finding. Redness, drainage, fever, or hiccups would change that.</span></li>
+</ul>
+</div></details>
+</div> <h3>Mini Case Study</h3>
+<div class="nq">
+<div class="stem">A client suddenly becomes unresponsive. No pulse. No respirations. Monitor shows ventricular fibrillation. What should the nurse do FIRST, and what happens next?</div>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>FIRST:</b> <span class="fill">Call for help / activate the code team and <b>begin high-quality CPR immediately</b>, starting with chest compressions &mdash; 100&ndash;120/min, 2&ndash;2.4 inches deep, full recoil, minimal interruptions. Compressions keep the coronary and cerebral circulation primed so the shock is more likely to work.</span></p>
+<p><b>NEXT:</b> <span class="fill"><b>Defibrillate as soon as the defibrillator arrives</b> (unsynchronized), then immediately resume compressions for 2 minutes before rechecking the rhythm. Then: epinephrine 1 mg IV/IO every 3&ndash;5 minutes, amiodarone 300 mg after the third shock, airway and ventilation, and treat reversible causes. If the defibrillator is already at the bedside on a monitored, witnessed arrest, shock first &mdash; but never delay compressions waiting for equipment.</span></p>
+</div></details>
+</div> <div class="flow"> <div class="stepbox"><b>Step 1</b><span>Check responsiveness &amp; pulse (&le;10 sec)</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 2</b><span>Call code / get defibrillator</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 3</b><span>Start compressions &mdash; C-A-B</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 4</b><span>Defibrillate (VF / pulseless VT)</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 5</b><span>Resume CPR 2 min &middot; epinephrine &middot; amiodarone</span></div>
+</div> <h3>One-Minute Review</h3>
+<ul class="blanks"> <li><b>CAD</b> &mdash; Blocked artery &rarr; <span class="fill">less oxygen to the heart muscle (ischemia &rarr; chest pain)</span></li> <li><b>Stable Angina</b> &mdash; Pain with activity &rarr; relieved by <span class="fill">rest and sublingual nitroglycerin</span></li> <li><b>MI</b> &mdash; Heart muscle begins to <span class="fill">die (necrosis &mdash; irreversible)</span></li> <li><b>A-Fib</b> &mdash; Biggest complication = <span class="fill">stroke</span></li> <li><b>Bradycardia</b> &mdash; Symptomatic treatment may include <span class="fill">atropine, then transcutaneous pacing</span></li> <li><b>Pulseless VT</b> &mdash; Treat with <span class="fill">CPR + defibrillation</span></li> <li><b>VF</b> &mdash; Treat with <span class="fill">CPR + defibrillation</span></li> <li><b>Asystole</b> &mdash; Treat with <span class="fill">CPR + epinephrine (no shock)</span></li> <li><b>Pacemaker</b> &mdash; Used for <span class="fill">symptomatic bradycardia and heart block (too slow)</span></li> <li><b>AICD</b> &mdash; Protects against dangerous <span class="fill">ventricular rhythms &mdash; VT and VF (too fast/lethal)</span></li> <li><b>PCI</b> &mdash; Opens blocked <span class="fill">coronary arteries (balloon + stent)</span></li> <li><b>CABG</b> &mdash; Creates a new route for <span class="fill">blood flow around the blockage, using a grafted artery or vein</span></li>
+</ul>
+<p class="lead-in">🤖 Favorite prompt: "Claire, act like an experienced cardiac ICU nurse and ATI instructor. Give me one patient scenario at a time. Don't ask me for the diagnosis first &mdash; ask me: (1) What assessment finding worries you the most? (2) What could kill this patient first? (3) What should the nurse do next? Then explain the reasoning and the pathophysiology."</p>
+</div> <div class="card" style="--jewel:var(--topaz)" id="summary">
+</div></details><details class="nsec"><summary>⭐ The 8 Things You Must Not Forget<span class="nsn">8 items</span></summary><div class="nsecbody">
+<ol> <li><b>Stable = predictable, relieved by rest and nitro. Unstable = at rest, unrelieved, and it is an emergency.</b> <em>Unstable angina is ACS.</em></li> <li><b>UA vs NSTEMI = troponin. NSTEMI vs STEMI = ST elevation.</b> Troponin rises in 3&ndash;4 hours, peaks 10&ndash;24 hours, stays up 7&ndash;14 days &mdash; so it is drawn serially.</li> <li><b>Chest pain order: stay with the patient &rarr; 12-lead ECG within 10 minutes &rarr; chewed aspirin &rarr; O&#8322; only if SpO&#8322; &lt;90% &rarr; nitro (check BP) &rarr; troponin &rarr; reperfusion.</b> STEMI: PCI &le;90 min.</li> <li><b>Nitroglycerin:</b> 0.4 mg SL q5min &times;3, sit down first, hold if SBP &lt;90, <span class="never">never with sildenafil/tadalafil</span>, and call 911 if pain persists 5 minutes after the first dose.</li> <li><b>Shockable = VF and pulseless VT only.</b> Asystole and PEA get CPR + epinephrine. <span class="never">Never defibrillate a flat line.</span></li> <li><b>Cardioversion = has a pulse, synced to the R wave, sedate first. Defibrillation = pulseless, unsynchronized, go now.</b></li> <li><b>A-fib &rarr; clot &rarr; stroke.</b> Rate control, rhythm control, and anticoagulation &mdash; and never cardiovert &gt;48-hour A-fib without anticoagulation.</li> <li><b>Treat the patient, not the monitor.</b> The first assessment for any bad rhythm is responsiveness, pulse, BP, and level of consciousness &mdash; restlessness and urine &lt;30 mL/hr are your earliest perfusion failures.</li>
+</ol>
+</div>
+</div>
+<script>
+(function(){ var btn=document.getElementById('toggle'), tip=document.getElementById('tip'); btn.addEventListener('click',function(){ var on=document.body.classList.toggle('quizmode'); btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me'; tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in the handout."; if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');}); window.scrollTo({top:0,behavior:'smooth'}); }); document.addEventListener('click',function(e){ if(!document.body.classList.contains('quizmode')) return; var f=e.target.closest('.fill'); if(f) f.classList.add('show'); });
+})();
+</script> <script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging the whole page sideways */
+(function(){ function wrap(){ document.querySelectorAll('table').forEach(function(t){ var p=t.parentNode; if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return; var d=document.createElement('div'); d.className='a11y-tblwrap'; p.insertBefore(d,t); d.appendChild(t); }); } if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap); else wrap(); setTimeout(wrap,1200); /* catch tables built by the page's own scripts */
+})();
+</script>
+<script id="navDragJS">
+(function(){ var nb=document.getElementById('navBtns'); if(!nb||nb.dataset.dragReady) return; nb.dataset.dragReady='1'; /* ── 1. modifier and middle clicks must open a new tab ─────────────── The ABSN link called preventDefault() every time, which killed ctrl/cmd/shift-click and middle-click. Let those through. */ function passthrough(e){ return e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button===1; } nb.addEventListener('click',function(e){ var a=e.target.closest('a'); if(!a) return; if(passthrough(e)){ e.stopImmediatePropagation(); } /* before the page's own handler */ },true); nb.addEventListener('auxclick',function(e){ var a=e.target.closest('a'); if(a&&e.button===1){ e.stopImmediatePropagation(); window.open(a.href,'_blank','noopener'); e.preventDefault(); } },true); /* every button in the cluster also gets a right-click / long-press menu that works, because they stay real <a href> elements */ /* ── 2. a grip so it is obvious the cluster can be moved ───────────── */ /* ── 3. drag, and remember where she put it ─────────────────────────── */ var KEY='nbPos'; function clampPos(l,t){ var r=nb.getBoundingClientRect(); var maxL=Math.max(0,window.innerWidth-r.width-4); var maxT=Math.max(0,window.innerHeight-r.height-4); return [Math.min(Math.max(0,l),maxL), Math.min(Math.max(0,t),maxT)]; } function place(l,t){ var p=clampPos(l,t); nb.style.left=p[0]+'px'; nb.style.top=p[1]+'px'; nb.style.right='auto'; nb.style.bottom='auto'; } function save(){ try{ localStorage.setItem(KEY,JSON.stringify({l:parseFloat(nb.style.left)||0, t:parseFloat(nb.style.top)||0})); }catch(e){} } function reset(){ nb.style.left=''; nb.style.top=''; nb.style.right=''; nb.style.bottom=''; try{ localStorage.removeItem(KEY); }catch(e){} } try{ var s=JSON.parse(localStorage.getItem(KEY)||'null'); if(s&&typeof s.l==='number') place(s.l,s.t); }catch(e){} var dragging=false,ox=0,oy=0,moved=false; function down(x,y,e){ var r=nb.getBoundingClientRect(); dragging=true; moved=false; ox=x-r.left; oy=y-r.top; nb.classList.add('dragging'); if(e&&e.preventDefault) e.preventDefault(); } function move(x,y){ if(!dragging) return; moved=true; place(x-ox,y-oy); } function up(){ if(!dragging) return; dragging=false; nb.classList.remove('dragging'); if(moved) save(); } nb.addEventListener('mousedown',function(e){ if(e.button===0) down(e.clientX,e.clientY,e); }); window.addEventListener('mousemove',function(e){ move(e.clientX,e.clientY); }); window.addEventListener('mouseup',up); nb.addEventListener('touchstart',function(e){ var t=e.touches[0]; down(t.clientX,t.clientY,e); },{passive:false}); window.addEventListener('touchmove',function(e){ if(!dragging) return; var t=e.touches[0]; move(t.clientX,t.clientY); e.preventDefault(); },{passive:false}); window.addEventListener('touchend',up); nb.addEventListener('dblclick',function(e){ e.preventDefault(); reset(); }); /* keyboard: focus the grip and nudge with the arrows */ nb.addEventListener('keydown',function(e){ var step=e.shiftKey?24:6, r=nb.getBoundingClientRect(), l=r.left, t=r.top, hit=true; if(e.key==='ArrowLeft') l-=step; else if(e.key==='ArrowRight') l+=step; else if(e.key==='ArrowUp') t-=step; else if(e.key==='ArrowDown') t+=step; else if(e.key==='Home'||e.key==='Escape'){ reset(); e.preventDefault(); return; } else hit=false; if(hit){ place(l,t); save(); e.preventDefault(); } }); window.addEventListener('resize',function(){ if(nb.style.left) place(parseFloat(nb.style.left),parseFloat(nb.style.top)); }); /* ── 4. step aside for full-screen viewers ─────────────────────────── Some overlays (the NUR 175 image lightbox, the drug guide drawer) sit below this cluster in the stacking order, so the cluster covered their Close buttons. Find them once, then just watch whether they are shown. */ var overlays=[]; try{ document.querySelectorAll('body *').forEach(function(el){ if(overlays.length>40) return; if(el===nb||nb.contains(el)) return; var cs=getComputedStyle(el); if(cs.position!=='fixed') return; var z=parseInt(cs.zIndex,10); if(!(z>=1000)) return; /* covers most of the screen in at least one dimension */ var w=parseFloat(cs.width), h=parseFloat(cs.height); var full=(cs.inset==='0px'||cs.top==='0px'&&cs.left==='0px'&&cs.right==='0px'&&cs.bottom==='0px'); if(full||(w>=window.innerWidth*0.9&&h>=window.innerHeight*0.9)) overlays.push(el); }); }catch(e){} function check(){ var open=overlays.some(function(el){ var cs=getComputedStyle(el); return cs.display!=='none'&&cs.visibility!=='hidden'&&parseFloat(cs.opacity||'1')>0.05; }); nb.classList.toggle('hidden-by-overlay',open); } if(overlays.length){ check(); var t=null; new MutationObserver(function(){ clearTimeout(t); t=setTimeout(check,60); }) .observe(document.body,{attributes:true,subtree:true, attributeFilter:['class','style','hidden']}); }
+})();
+</script>
+<script id="skimJS">
+(function(){ /* What counts as a line of prose on these pages is NOT <p>. The 125 eBook units use <p class="ebp">, but 175 is card-based divs and 198 mixes divs, p and li. So the candidate set is "leaf text blocks": an element whose children are all inline. Measured before choosing: on a 125 eBook unit that is 2,352 blocks of which ~456 are long unmarked prose; on the card pages it is a handful, which is the honest answer - those pages are already skimmable. */ var INLINE = {B:1,I:1,EM:1,STRONG:1,SPAN:1,A:1,CODE:1,MARK:1,U:1,BR:1,SMALL:1, SUB:1,SUP:1,ABBR:1,WBR:1,IMG:1}; var SIGNAL = 'b,strong,mark,u,code'; /* never touch: chrome, tables, quizzes, contents lists, captions, footers */ var SAFE = '#skimBtn,nav,header,#vwBar,.bar,.nb,.nbWrap,table,thead,tbody,tr,td,th,' + '.stem,.q,.qa,.qt,.ans,.ansbox,.rationale,.fill,.blanks,.fp,.fpk,.nq,' + '.toc,.foot,.cap,.chip,.chip-row,.sec-sub,.bn,.dvname,button,summary,' + '[class*="nav"],[class*="btn"],[class*="quiz"]'; var MIN = 110; /* below this a line is a label or a rule, not padding */ var NUM = /\d\s*(mg|mcg|g|kg|lb|ml|l|mmol|meq|mmhg|%|hr|hrs|min|sec|day|wk|yr|bpm|cm|mm|units?|°)/i; var btn, marked=false, hid=0, total=0; function leaf(el){ for(var i=0;i<el.children.length;i++) if(!INLINE[el.children[i].tagName]) return false; return true; } function mark(){ if(marked) return; var all = document.querySelectorAll('p,li,div,dd'); for(var i=0;i<all.length;i++){ var el=all[i]; if(el.closest(SAFE)) continue; if(!leaf(el)) continue; var t=(el.textContent||'').trim(); if(!t) continue; total++; if(t.length < MIN) continue; if(el.querySelector(SIGNAL)) continue; if(NUM.test(t)) continue; el.classList.add('skimHide'); hid++; } marked=true; } var wasShut=[]; function openAll(open){ if(open){ wasShut=[].slice.call(document.querySelectorAll('details:not([open])')); wasShut.forEach(function(d){ d.open=true; }); } else { wasShut.forEach(function(d){ d.open=false; }); wasShut=[]; } } function paint(on){ btn.querySelector('.lbl').textContent = on ? 'Skimming' : 'Skim mode'; btn.querySelector('.n').textContent = on ? (hid ? ('hid ' + hid + ' of ' + total) : 'nothing to hide here') : ''; } function toggle(){ var on=!document.body.classList.contains('skimOn'); if(on) mark(); document.body.classList.toggle('skimOn', on); openAll(on); paint(on); try{ localStorage.setItem('skimOn', on?'1':'0'); }catch(e){} } function build(){ /* an iframe shell has no prose of its own - the inner document carries its own button, so a second dead one on the wrapper would just be a lie */ /* textContent, not innerText: innerText is render-aware, so on a page whose content sits inside collapsed <details> it reads near-zero and this test would suppress the button on a perfectly good page. That happened. */ if(document.querySelector('iframe') && (document.body.textContent||'').trim().length < 6000) return; btn=document.createElement('button'); btn.type='button'; btn.id='skimBtn'; btn.setAttribute('aria-label','Toggle skim mode - hide the long prose, keep the rules'); btn.innerHTML='⚡ <span class="lbl">Skim mode</span> <span class="n"></span>'; btn.addEventListener('click', toggle); document.body.appendChild(btn); paint(false); /* ---- draggable, because a button welded to a corner covers what she is reading and at 300% zoom there is not much screen left to lose. Travel under 6px counts as a click, 6px or more is a drag and the click is swallowed. */ var KEYPOS='skimBtnPos'; function clamp(x,y){ var r=btn.getBoundingClientRect(), m=4; return [Math.max(m,Math.min(x,window.innerWidth-r.width-m)), Math.max(m,Math.min(y,window.innerHeight-r.height-m))]; } function place(x,y,save){ var p=clamp(x,y); btn.style.left=p[0]+'px'; btn.style.top=p[1]+'px'; btn.style.right='auto'; btn.style.bottom='auto'; if(save){ try{ localStorage.setItem(KEYPOS,JSON.stringify(p)); }catch(e){} } } function restore(){ try{ var p=JSON.parse(localStorage.getItem(KEYPOS)||'null'); if(p && p.length===2) place(p[0],p[1],false); }catch(e){} } var down=null, moved=false; btn.addEventListener('pointerdown',function(e){ if(e.button && e.button!==0) return; var r=btn.getBoundingClientRect(); down={x:e.clientX,y:e.clientY,dx:e.clientX-r.left,dy:e.clientY-r.top}; moved=false; btn.setPointerCapture&&btn.setPointerCapture(e.pointerId); }); btn.addEventListener('pointermove',function(e){ if(!down) return; if(!moved && Math.abs(e.clientX-down.x)<6 && Math.abs(e.clientY-down.y)<6) return; moved=true; btn.classList.add('dragging'); place(e.clientX-down.dx, e.clientY-down.dy, false); e.preventDefault(); }); function end(e){ if(!down) return; down=null; if(moved){ btn.classList.remove('dragging'); var r=btn.getBoundingClientRect(); place(r.left,r.top,true); /* swallow the click this drag would otherwise fire */ var kill=function(ev){ ev.stopPropagation(); ev.preventDefault(); btn.removeEventListener('click',kill,true); }; btn.addEventListener('click',kill,true); setTimeout(function(){ btn.removeEventListener('click',kill,true); },0); } } btn.addEventListener('pointerup',end); btn.addEventListener('pointercancel',end); /* arrows nudge it, so moving it never needs a precise drag */ btn.addEventListener('keydown',function(e){ var d={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key]; if(!d) return; e.preventDefault(); var step=e.shiftKey?48:12, r=btn.getBoundingClientRect(); place(r.left+d[0]*step, r.top+d[1]*step, true); }); window.addEventListener('resize',function(){ var r=btn.getBoundingClientRect(); place(r.left,r.top,false); }); restore(); /* ---- never sit under the nav cluster ---------------------------- */ function unstack(){ var nb=document.getElementById('navBtns'); if(!nb || !btn) return; var a=btn.getBoundingClientRect(), b=nb.getBoundingClientRect(); var hit = !(a.right < b.left-4 || a.left > b.right+4 || a.bottom < b.top-4 || a.top > b.bottom+4); if(!hit) return; var below = b.bottom + 10; var top = (below + a.height + 6 <= window.innerHeight) ? below : Math.max(6, b.top - a.height - 10); btn.style.top = top + 'px'; btn.style.left = Math.max(6, Math.min(a.left, window.innerWidth - a.width - 6)) + 'px'; btn.style.right = 'auto'; btn.style.bottom = 'auto'; } setTimeout(unstack, 60); window.addEventListener('resize', function(){ setTimeout(unstack, 60); }); var want=false; try{ want=localStorage.getItem('skimOn')==='1'; }catch(e){} if(want) toggle(); } if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
+</script>
+</div></details>
+<script id="noteChunkJS">
+(function(){ var btn=document.getElementById('allBtn'); if(!btn) return; function all(){ return [].slice.call(document.querySelectorAll('details.nsec,details.nchunk')); } function set(open){ all().forEach(function(d){ d.open=open; }); btn.textContent = open ? '\u25B4 Collapse everything' : '\u25BE Expand everything'; btn.dataset.open = open ? '1' : ''; } btn.addEventListener('click', function(){ set(!btn.dataset.open); }); /* printing needs everything visible, and the browser prints the DOM as it stands */ window.addEventListener('beforeprint', function(){ all().forEach(function(d){ d.open=true; }); });
+})();
+</script>
+</body></html>
