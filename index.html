@@ -1,0 +1,410 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=NUR198%20Study%20Hub.html"><title>NUR198 Study Hub</title></head><body style="font-family:sans-serif;background:#140b24;color:#fff;text-align:center;padding-top:60px">
+<style id="navDragCSS">
+#navBtns{touch-action:none;cursor:grab}
+#navBtns.dragging{opacity:.9;cursor:grabbing}
+#navBtns.hidden-by-overlay{display:none !important}
+
+
+#navBtns.dragging 
+@media print{#navBtns{display:none !important}}
+</style>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbLook{background:linear-gradient(135deg,#1d4ed8,#2f6bff)}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbLook" href="https://arnold7777777.github.io/NUR-198-Study-Guide/Look%20It%20Up.html" target="_blank" rel="noopener" title="Look up any topic across all your sites">&#128269;<span class="nbLabel"> Look Up</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" title="Go to the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+
+
+<p>Opening the Study Hub… <a style="color:#b58cff" href="NUR198%20Study%20Hub.html">click here</a>a> if it doesn't load.</p><script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+<script id="navDragJS">
+(function(){
+  var nb=document.getElementById('navBtns');
+  if(!nb||nb.dataset.dragReady) return;
+  nb.dataset.dragReady='1';
+
+  /* ── 1. modifier and middle clicks must open a new tab ───────────────
+     The ABSN link called preventDefault() every time, which killed
+     ctrl/cmd/shift-click and middle-click. Let those through. */
+  function passthrough(e){
+    return e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button===1;
+  }
+  nb.addEventListener('click',function(e){
+    var a=e.target.closest('a'); if(!a) return;
+    if(passthrough(e)){ e.stopImmediatePropagation(); }   /* before the page's own handler */
+  },true);
+  nb.addEventListener('auxclick',function(e){
+    var a=e.target.closest('a');
+    if(a&&e.button===1){ e.stopImmediatePropagation();
+      window.open(a.href,'_blank','noopener'); e.preventDefault(); }
+  },true);
+  /* every button in the cluster also gets a right-click / long-press menu that
+     works, because they stay real <a href> elements */
+
+  /* ── 2. a grip so it is obvious the cluster can be moved ───────────── */
+
+
+  /* ── 3. drag, and remember where she put it ─────────────────────────── */
+  var KEY='nbPos';
+  function clampPos(l,t){
+    var r=nb.getBoundingClientRect();
+    var maxL=Math.max(0,window.innerWidth-r.width-4);
+    var maxT=Math.max(0,window.innerHeight-r.height-4);
+    return [Math.min(Math.max(0,l),maxL), Math.min(Math.max(0,t),maxT)];
+  }
+  function place(l,t){
+    var p=clampPos(l,t);
+    nb.style.left=p[0]+'px'; nb.style.top=p[1]+'px';
+    nb.style.right='auto'; nb.style.bottom='auto';
+  }
+  function save(){
+    try{ localStorage.setItem(KEY,JSON.stringify({l:parseFloat(nb.style.left)||0,
+                                                  t:parseFloat(nb.style.top)||0})); }catch(e){}
+  }
+  function reset(){
+    nb.style.left=''; nb.style.top=''; nb.style.right=''; nb.style.bottom='';
+    try{ localStorage.removeItem(KEY); }catch(e){}
+  }
+  try{
+    var s=JSON.parse(localStorage.getItem(KEY)||'null');
+    if(s&&typeof s.l==='number') place(s.l,s.t);
+  }catch(e){}
+
+  var dragging=false,ox=0,oy=0,moved=false;
+  function down(x,y,e){
+    var r=nb.getBoundingClientRect();
+    dragging=true; moved=false; ox=x-r.left; oy=y-r.top;
+    nb.classList.add('dragging');
+    if(e&&e.preventDefault) e.preventDefault();
+  }
+  function move(x,y){
+    if(!dragging) return;
+    moved=true; place(x-ox,y-oy);
+  }
+  function up(){
+    if(!dragging) return;
+    dragging=false; nb.classList.remove('dragging');
+    if(moved) save();
+  }
+  nb.addEventListener('mousedown',function(e){ if(e.button===0) down(e.clientX,e.clientY,e); });
+  window.addEventListener('mousemove',function(e){ move(e.clientX,e.clientY); });
+  window.addEventListener('mouseup',up);
+  nb.addEventListener('touchstart',function(e){
+    var t=e.touches[0]; down(t.clientX,t.clientY,e); },{passive:false});
+  window.addEventListener('touchmove',function(e){
+    if(!dragging) return; var t=e.touches[0]; move(t.clientX,t.clientY); e.preventDefault(); },{passive:false});
+  window.addEventListener('touchend',up);
+  nb.addEventListener('dblclick',function(e){ e.preventDefault(); reset(); });
+  /* keyboard: focus the grip and nudge with the arrows */
+  nb.addEventListener('keydown',function(e){
+    var step=e.shiftKey?24:6, r=nb.getBoundingClientRect(), l=r.left, t=r.top, hit=true;
+    if(e.key==='ArrowLeft') l-=step; else if(e.key==='ArrowRight') l+=step;
+    else if(e.key==='ArrowUp') t-=step; else if(e.key==='ArrowDown') t+=step;
+    else if(e.key==='Home'||e.key==='Escape'){ reset(); e.preventDefault(); return; }
+    else hit=false;
+    if(hit){ place(l,t); save(); e.preventDefault(); }
+  });
+  window.addEventListener('resize',function(){
+    if(nb.style.left) place(parseFloat(nb.style.left),parseFloat(nb.style.top));
+  });
+
+  /* ── 4. step aside for full-screen viewers ───────────────────────────
+     Some overlays (the NUR 175 image lightbox, the drug guide drawer) sit
+     below this cluster in the stacking order, so the cluster covered their
+     Close buttons. Find them once, then just watch whether they are shown. */
+  var overlays=[];
+  try{
+    document.querySelectorAll('body *').forEach(function(el){
+      if(overlays.length>40) return;
+      if(el===nb||nb.contains(el)) return;
+      var cs=getComputedStyle(el);
+      if(cs.position!=='fixed') return;
+      var z=parseInt(cs.zIndex,10);
+      if(!(z>=1000)) return;
+      /* covers most of the screen in at least one dimension */
+      var w=parseFloat(cs.width), h=parseFloat(cs.height);
+      var full=(cs.inset==='0px'||cs.top==='0px'&&cs.left==='0px'&&cs.right==='0px'&&cs.bottom==='0px');
+      if(full||(w>=window.innerWidth*0.9&&h>=window.innerHeight*0.9)) overlays.push(el);
+    });
+  }catch(e){}
+  function check(){
+    var open=overlays.some(function(el){
+      var cs=getComputedStyle(el);
+      return cs.display!=='none'&&cs.visibility!=='hidden'&&parseFloat(cs.opacity||'1')>0.05;
+    });
+    nb.classList.toggle('hidden-by-overlay',open);
+  }
+  if(overlays.length){
+    check();
+    var t=null;
+    new MutationObserver(function(){ clearTimeout(t); t=setTimeout(check,60); })
+      .observe(document.body,{attributes:true,subtree:true,
+                              attributeFilter:['class','style','hidden']});
+  }
+})();
+</script>
+<script id="skimJS">
+(function(){
+  /* What counts as a line of prose on these pages is NOT <p>. The 125 eBook units use
+     <p class="ebp">, but 175 is card-based divs and 198 mixes divs, p and li. So the
+     candidate set is "leaf text blocks": an element whose children are all inline.
+     Measured before choosing: on a 125 eBook unit that is 2,352 blocks of which ~456
+     are long unmarked prose; on the card pages it is a handful, which is the honest
+     answer - those pages are already skimmable. */
+  var INLINE = {B:1,I:1,EM:1,STRONG:1,SPAN:1,A:1,CODE:1,MARK:1,U:1,BR:1,SMALL:1,
+                SUB:1,SUP:1,ABBR:1,WBR:1,IMG:1};
+  var SIGNAL = 'b,strong,mark,u,code';
+  /* never touch: chrome, tables, quizzes, contents lists, captions, footers */
+  var SAFE = '#skimBtn,nav,header,#vwBar,.bar,.nb,.nbWrap,table,thead,tbody,tr,td,th,' +
+             '.stem,.q,.qa,.qt,.ans,.ansbox,.rationale,.fill,.blanks,.fp,.fpk,.nq,' +
+             '.toc,.foot,.cap,.chip,.chip-row,.sec-sub,.bn,.dvname,button,summary,' +
+             '[class*="nav"],[class*="btn"],[class*="quiz"]';
+  var MIN  = 110;      /* below this a line is a label or a rule, not padding */
+  var NUM  = /\d\s*(mg|mcg|g|kg|lb|ml|l|mmol|meq|mmhg|%|hr|hrs|min|sec|day|wk|yr|bpm|cm|mm|units?|°)/i;
+
+  var btn, marked=false, hid=0, total=0;
+
+  function leaf(el){
+    for(var i=0;i<el.children.length;i++)
+      if(!INLINE[el.children[i].tagName]) return false;
+    return true;
+  }
+
+  function mark(){
+    if(marked) return;
+    var all = document.querySelectorAll('p,li,div,dd');
+    for(var i=0;i<all.length;i++){
+      var el=all[i];
+      if(el.closest(SAFE)) continue;
+      if(!leaf(el)) continue;
+      var t=(el.textContent||'').trim();
+      if(!t) continue;
+      total++;
+      if(t.length < MIN) continue;
+      if(el.querySelector(SIGNAL)) continue;
+      if(NUM.test(t)) continue;
+      el.classList.add('skimHide'); hid++;
+    }
+    marked=true;
+  }
+
+  var wasShut=[];
+  function openAll(open){
+    if(open){
+      wasShut=[].slice.call(document.querySelectorAll('details:not([open])'));
+      wasShut.forEach(function(d){ d.open=true; });
+    } else {
+      wasShut.forEach(function(d){ d.open=false; });
+      wasShut=[];
+    }
+  }
+
+  function paint(on){
+    btn.querySelector('.lbl').textContent = on ? 'Skimming' : 'Skim mode';
+    btn.querySelector('.n').textContent =
+      on ? (hid ? ('hid ' + hid + ' of ' + total) : 'nothing to hide here') : '';
+  }
+
+  function toggle(){
+    var on=!document.body.classList.contains('skimOn');
+    if(on) mark();
+    document.body.classList.toggle('skimOn', on);
+    openAll(on); paint(on);
+    try{ localStorage.setItem('skimOn', on?'1':'0'); }catch(e){}
+  }
+
+  function build(){
+    /* an iframe shell has no prose of its own - the inner document carries its own
+       button, so a second dead one on the wrapper would just be a lie */
+    /* textContent, not innerText: innerText is render-aware, so on a page whose
+       content sits inside collapsed <details> it reads near-zero and this test would
+       suppress the button on a perfectly good page. That happened. */
+    if(document.querySelector('iframe') &&
+       (document.body.textContent||'').trim().length < 6000) return;
+
+    btn=document.createElement('button');
+    btn.type='button'; btn.id='skimBtn';
+    btn.setAttribute('aria-label','Toggle skim mode - hide the long prose, keep the rules');
+    btn.innerHTML='⚡ <span class="lbl">Skim mode</span> <span class="n"></span>';
+    btn.addEventListener('click', toggle);
+    document.body.appendChild(btn);
+    paint(false);
+
+  /* ---- draggable, because a button welded to a corner covers what she is reading
+     and at 300% zoom there is not much screen left to lose. Travel under 6px counts
+     as a click, 6px or more is a drag and the click is swallowed. */
+  var KEYPOS='skimBtnPos';
+  function clamp(x,y){
+    var r=btn.getBoundingClientRect(), m=4;
+    return [Math.max(m,Math.min(x,window.innerWidth-r.width-m)),
+            Math.max(m,Math.min(y,window.innerHeight-r.height-m))];
+  }
+  function place(x,y,save){
+    var p=clamp(x,y);
+    btn.style.left=p[0]+'px'; btn.style.top=p[1]+'px';
+    btn.style.right='auto'; btn.style.bottom='auto';
+    if(save){ try{ localStorage.setItem(KEYPOS,JSON.stringify(p)); }catch(e){} }
+  }
+  function restore(){
+    try{
+      var p=JSON.parse(localStorage.getItem(KEYPOS)||'null');
+      if(p && p.length===2) place(p[0],p[1],false);
+    }catch(e){}
+  }
+
+  var down=null, moved=false;
+  btn.addEventListener('pointerdown',function(e){
+    if(e.button && e.button!==0) return;
+    var r=btn.getBoundingClientRect();
+    down={x:e.clientX,y:e.clientY,dx:e.clientX-r.left,dy:e.clientY-r.top};
+    moved=false;
+    btn.setPointerCapture&&btn.setPointerCapture(e.pointerId);
+  });
+  btn.addEventListener('pointermove',function(e){
+    if(!down) return;
+    if(!moved && Math.abs(e.clientX-down.x)<6 && Math.abs(e.clientY-down.y)<6) return;
+    moved=true; btn.classList.add('dragging');
+    place(e.clientX-down.dx, e.clientY-down.dy, false);
+    e.preventDefault();
+  });
+  function end(e){
+    if(!down) return;
+    down=null;
+    if(moved){
+      btn.classList.remove('dragging');
+      var r=btn.getBoundingClientRect();
+      place(r.left,r.top,true);
+      /* swallow the click this drag would otherwise fire */
+      var kill=function(ev){ ev.stopPropagation(); ev.preventDefault();
+        btn.removeEventListener('click',kill,true); };
+      btn.addEventListener('click',kill,true);
+      setTimeout(function(){ btn.removeEventListener('click',kill,true); },0);
+    }
+  }
+  btn.addEventListener('pointerup',end);
+  btn.addEventListener('pointercancel',end);
+
+  /* arrows nudge it, so moving it never needs a precise drag */
+  btn.addEventListener('keydown',function(e){
+    var d={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];
+    if(!d) return;
+    e.preventDefault();
+    var step=e.shiftKey?48:12, r=btn.getBoundingClientRect();
+    place(r.left+d[0]*step, r.top+d[1]*step, true);
+  });
+
+  window.addEventListener('resize',function(){
+    var r=btn.getBoundingClientRect(); place(r.left,r.top,false);
+  });
+  restore();
+
+    /* ---- never sit under the nav cluster ---------------------------- */
+    function unstack(){
+      var nb=document.getElementById('navBtns');
+      if(!nb || !btn) return;
+      var a=btn.getBoundingClientRect(), b=nb.getBoundingClientRect();
+      var hit = !(a.right < b.left-4 || a.left > b.right+4 ||
+                  a.bottom < b.top-4 || a.top > b.bottom+4);
+      if(!hit) return;
+      var below = b.bottom + 10;
+      var top = (below + a.height + 6 <= window.innerHeight) ? below
+                                                             : Math.max(6, b.top - a.height - 10);
+      btn.style.top = top + 'px';
+      btn.style.left = Math.max(6, Math.min(a.left, window.innerWidth - a.width - 6)) + 'px';
+      btn.style.right = 'auto'; btn.style.bottom = 'auto';
+    }
+    setTimeout(unstack, 60);
+    window.addEventListener('resize', function(){ setTimeout(unstack, 60); });
+
+    var want=false;
+    try{ want=localStorage.getItem('skimOn')==='1'; }catch(e){}
+    if(want) toggle();
+  }
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', build);
+  else build();
+})();
+</script>
+</body>body></html></p></title><style id="skimCSS">
+#skimBtn{position:fixed;left:12px;bottom:12px;z-index:9000;
+ display:flex;align-items:center;gap:8px;
+ background:rgba(157,92,255,.92);border:1px solid rgba(255,255,255,.45);color:#fff;
+ border-radius:14px;padding:11px 14px;cursor:pointer;
+ font:800 .95rem 'Segoe UI',system-ui,sans-serif;
+ box-shadow:0 6px 20px rgba(0,0,0,.45);backdrop-filter:blur(6px);
+ max-width:calc(100vw - 24px)}
+#skimBtn:hover{background:rgba(157,92,255,1)}
+#skimBtn .n{font-weight:900;font-size:.88rem;opacity:.92;white-space:nowrap}
+body.skimOn #skimBtn{background:rgba(255,194,51,.95);color:#231a02;
+ border-color:rgba(0,0,0,.35)}
+body.skimOn .skimHide{display:none !important}
+body.skimOn .skimKeep{outline:0}
+
+#skimBtn{touch-action:none;cursor:grab}
+#skimBtn.dragging{opacity:.92;cursor:grabbing}
+
+#skimBtn:focus-visible{outline:3px solid #ffd76a;outline-offset:2px}
+@media print{#skimBtn{display:none}}
+</style>
+</head></html>
