@@ -1,0 +1,1202 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>NUR198 Final Review Q&amp;A</title>
+<style>
+:root{
+ --amethyst:157,92,255; --sapphire:47,107,255; --emerald:18,184,134; --teal:0,194,199;
+ --topaz:255,194,51;    --ruby:255,59,107;     --garnet:192,34,85;    --citrine:255,138,61;
+ --line:rgba(255,255,255,.30);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.55 'Segoe UI',system-ui,sans-serif;color:#fff;
+ background-color:#140b24;background-image:url("Designer.jpg");
+ background-size:cover;background-position:center;background-attachment:fixed;
+ background-repeat:no-repeat}
+.wrap{max-width:1060px;margin:0 auto;padding:16px 15px 90px}
+
+.bar{position:sticky;top:0;z-index:60;margin:0 0 12px;padding:10px 14px;
+ background:rgba(12,7,24,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+ border-bottom:1px solid var(--line)}
+.barrow{display:flex;gap:7px;align-items:center;flex-wrap:wrap;max-width:1060px;margin:0 auto}
+#q{flex:1 1 210px;min-width:160px;font-size:1rem;font-weight:600;padding:11px 15px;
+ border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.55);color:#fff}
+#q::placeholder{color:#cbbaf0}
+.chip{background:rgba(255,255,255,.14);border:1px solid var(--line);color:#fff;
+ border-radius:16px;padding:9px 14px;font:800 .88rem 'Segoe UI',system-ui,sans-serif;
+ cursor:pointer;white-space:nowrap}
+.chip:hover{background:rgba(255,255,255,.32)}
+.chip.on{background:rgba(var(--amethyst),.95);border-color:#fff}
+#cnt{font-size:.9rem;color:#eadcff;font-weight:700}
+
+h1{font-size:1.85rem;margin:8px 0 4px;text-shadow:0 2px 18px rgba(0,0,0,.95)}
+.lede{margin:0 0 12px;color:#f4ecff;text-shadow:0 1px 14px rgba(0,0,0,.9);font-size:.97rem}
+.tabs{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 6px}
+.tabs a{display:flex;gap:7px;align-items:center;
+ background:linear-gradient(rgba(10,4,22,.68),rgba(10,4,22,.68)),rgba(var(--amethyst),.62);
+ border:1px solid rgba(255,255,255,.4);border-left:5px solid rgba(var(--amethyst),1);
+ color:#fff;text-decoration:none;border-radius:14px;padding:10px 14px;
+ font-weight:800;font-size:.92rem;text-shadow:0 2px 8px rgba(0,0,0,.9)}
+.tabs a:hover{background:linear-gradient(rgba(10,4,22,.45),rgba(10,4,22,.45)),
+ rgba(var(--amethyst),.95);border-color:#fff}
+.tabs a .n{font-size:.84rem;font-weight:800;background:rgba(0,0,0,.5);border-radius:10px;
+ padding:2px 8px}
+
+h2.sec{font-size:1.36rem;margin:28px 0 8px;padding:11px 15px;border-radius:14px;
+ background:rgba(0,0,0,.55);border:1px solid var(--line);
+ text-shadow:0 2px 12px rgba(0,0,0,.9);scroll-margin-top:96px}
+
+details.qa{background:rgba(var(--amethyst),.60);backdrop-filter:blur(7px);
+ -webkit-backdrop-filter:blur(7px);border:1px solid var(--line);
+ border-left:5px solid rgba(255,255,255,.55);border-radius:16px;margin:10px 0;
+ box-shadow:0 8px 26px rgba(0,0,0,.5);overflow:hidden}
+details.qa.ruby{background:rgba(var(--ruby),.60)} details.qa.emerald{background:rgba(var(--emerald),.60)}
+details.qa.sapphire{background:rgba(var(--sapphire),.60)} details.qa.teal{background:rgba(var(--teal),.60)}
+details.qa.garnet{background:rgba(var(--garnet),.60)} details.qa.citrine{background:rgba(var(--citrine),.60)}
+details.qa.amethyst{background:rgba(var(--amethyst),.60)}
+details.qa.topaz{background:rgba(var(--topaz),.64);color:#241a02}
+details.qa.topaz .ansbox{background:rgba(255,255,255,.4);color:#241a02}
+details.qa>summary{list-style:none;cursor:pointer;padding:15px 17px;font-weight:800;
+ font-size:1.04rem;line-height:1.42;display:flex;gap:10px;align-items:flex-start}
+details.qa>summary::-webkit-details-marker{display:none}
+details.qa>summary::before{content:'?';flex:0 0 auto;width:26px;height:26px;border-radius:50%;
+ background:rgba(0,0,0,.48);display:flex;align-items:center;justify-content:center;
+ font-weight:900;font-size:1rem;margin-top:1px}
+details.qa[open]>summary::before{content:'\2713';background:rgba(255,255,255,.34)}
+details.qa>summary:hover{background:rgba(255,255,255,.10)}
+details.qa .qt{white-space:pre-line}
+.ansbox{margin:0;padding:2px 17px 15px;background:rgba(0,0,0,.30)}
+.ansbox p{margin:7px 0;font-size:1rem;line-height:1.5;white-space:pre-line}
+.ansbox ul{margin:6px 0;padding-left:22px}
+.ansbox li{margin:4px 0;font-size:1rem;line-height:1.45}
+.ansbox table{width:100%;min-width:400px;border-collapse:collapse;margin:9px 0;font-size:.96rem}
+.ansbox th,.ansbox td{border:1px solid rgba(255,255,255,.4);padding:8px 10px;
+ text-align:left;vertical-align:top}
+.ansbox th{background:rgba(0,0,0,.4);font-weight:900}
+.tblwrap{overflow-x:auto;max-width:100%;scrollbar-width:thin}
+.tblwrap::-webkit-scrollbar{height:11px}
+.tblwrap::-webkit-scrollbar-thumb{background:rgba(255,255,255,.45);border-radius:8px}
+
+#none{display:none;padding:20px;font-weight:800;font-size:1.02rem}
+.foot{margin:26px 0 0;font-size:.88rem;color:#eadcff;text-shadow:0 1px 10px rgba(0,0,0,.9)}
+
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a{background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;
+ border:1px solid rgba(255,255,255,.42);border-radius:20px;padding:9px 13px;font-weight:800;
+ font-size:.9rem;box-shadow:0 4px 14px rgba(0,0,0,.6)}
+#navBtns a.hb{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover{filter:brightness(1.15)}
+@media(max-width:1050px){#navBtns .lb{display:none}}
+@media(max-width:1180px){h1{padding-right:200px}}
+@media(max-width:1050px){h1{padding-right:130px}}
+@media(max-width:560px){h1{padding-right:0;margin-top:54px;font-size:1.34rem}}
+@media print{.bar,#navBtns,.tabs{display:none}details.qa{break-inside:avoid}
+ details.qa .ansbox{display:block !important}}
+</style><style id="skimCSS">
+#skimBtn{position:fixed;left:12px;bottom:12px;z-index:9000;
+ display:flex;align-items:center;gap:8px;
+ background:rgba(157,92,255,.92);border:1px solid rgba(255,255,255,.45);color:#fff;
+ border-radius:14px;padding:11px 14px;cursor:pointer;
+ font:800 .95rem 'Segoe UI',system-ui,sans-serif;
+ box-shadow:0 6px 20px rgba(0,0,0,.45);backdrop-filter:blur(6px);
+ max-width:calc(100vw - 24px)}
+#skimBtn:hover{background:rgba(157,92,255,1)}
+#skimBtn .n{font-weight:900;font-size:.88rem;opacity:.92;white-space:nowrap}
+body.skimOn #skimBtn{background:rgba(255,194,51,.95);color:#231a02;
+ border-color:rgba(0,0,0,.35)}
+body.skimOn .skimHide{display:none !important}
+body.skimOn .skimKeep{outline:0}
+
+#skimBtn{touch-action:none;cursor:grab}
+#skimBtn.dragging{opacity:.92;cursor:grabbing}
+
+#skimBtn:focus-visible{outline:3px solid #ffd76a;outline-offset:2px}
+@media print{#skimBtn{display:none}}
+</style>
+</head><body>
+<div id="navBtns">
+  <a class="hb" href="https://arnold7777777.github.io/NUR-198-Study-Guide/">&#127968;<span class="lb"> NUR 198</span></a>
+  <a href="https://arnold7777777.github.io/ABSN-Study-Hub/">&#127891;<span class="lb"> Hub</span></a>
+  
+</div>
+<div class="wrap">
+<h1>&#10067; Final Review &mdash; your own questions</h1>
+<p class="lede">All <b>155</b> of your review questions, grouped into <b>18</b> topics. The answer is hidden until you tap the question, so you can test yourself; <b>Show all answers</b> turns it back into a study guide.</p>
+<div class="tabs"><a href="#neurovascular-compartment-syndrome">🚨 Neurovascular &amp; compartment syndrome<span class="n">8</span></a><a href="#fat-embolism">🫁 Fat embolism<span class="n">5</span></a><a href="#fractures-healing">🦴 Fractures &amp; healing<span class="n">13</span></a><a href="#casts-traction-fixation">🩹 Casts, traction &amp; fixation<span class="n">10</span></a><a href="#osteoporosis">🦴 Osteoporosis<span class="n">11</span></a><a href="#arthritis-joint-replacement">🦵 Arthritis &amp; joint replacement<span class="n">16</span></a><a href="#osteomyelitis-avn-crps">🔬 Osteomyelitis, AVN &amp; CRPS<span class="n">7</span></a><a href="#amputation-phantom-limb-pain">🦿 Amputation &amp; phantom limb pain<span class="n">7</span></a><a href="#assistive-devices-mobility">🩼 Assistive devices &amp; mobility<span class="n">9</span></a><a href="#immobility-complications">🛏️ Immobility complications<span class="n">4</span></a><a href="#low-back-pain-diagnostics">🔍 Low back pain &amp; diagnostics<span class="n">9</span></a><a href="#pain-assessment-management">💊 Pain assessment &amp; management<span class="n">5</span></a><a href="#skin-cancer">🎗️ Skin cancer<span class="n">6</span></a><a href="#perioperative-care">🏥 Perioperative care<span class="n">4</span></a><a href="#respiratory-aspiration">🫁 Respiratory &amp; aspiration<span class="n">15</span></a><a href="#asthma-copd">💨 Asthma &amp; COPD<span class="n">8</span></a><a href="#acid-base-abgs">⚗️ Acid–base &amp; ABGs<span class="n">8</span></a><a href="#fluids-electrolytes">💧 Fluids &amp; electrolytes<span class="n">10</span></a></div>
+<div class="bar"><div class="barrow"><input id="q" type="search" placeholder="Search these questions&hellip;" autocomplete="off"><button type="button" class="chip" id="openAll">Show all answers</button><button type="button" class="chip on" id="closeAll">Hide all answers</button><span id="cnt"></span></div></div>
+<h2 class="sec" id="neurovascular-compartment-syndrome">🚨 Neurovascular &amp; compartment syndrome</h2>
+<details class="qa ruby" data-kw="what are the 6 ps of neurovascular assessment? pain, pallor, pulselessness, paresthesia (tingling/numbness), paralysis, poikilothermia (temp irregularity). &quot;&quot;"><summary><span class="qt">What are the 6 Ps of neurovascular assessment?</span></summary><div class="ansbox"><p>Pain, Pallor, Pulselessness, Paresthesia (tingling/numbness), Paralysis, Poikilothermia (temp irregularity).</p></div></details>
+<details class="qa ruby" data-kw="what are the earliest signs of compartment syndrome? severe pain, esp with passive stretching &quot;&quot;"><summary><span class="qt">What are the earliest signs of compartment syndrome?</span></summary><div class="ansbox"><p>Severe pain, esp with passive stretching</p></div></details>
+<details class="qa ruby" data-kw="what are the late signs of compartment syndrome? pulselessness &quot;&quot;"><summary><span class="qt">What are the late signs of compartment syndrome?</span></summary><div class="ansbox"><p>Pulselessness</p></div></details>
+<details class="qa ruby" data-kw="how do you manage compartment syndrome? this is an emergency
+a fasciotomy is an emergency surgical procedure in which the surgeon makes long incisions through the skin and fascia surrounding the affected muscle compartment. &quot;&quot;"><summary><span class="qt">How do you manage compartment syndrome?</span></summary><div class="ansbox"><p>THIS IS AN EMERGENCY</p>
+<p>A fasciotomy is an emergency surgical procedure in which the surgeon makes long incisions through the skin and fascia surrounding the affected muscle compartment.</p></div></details>
+<details class="qa ruby" data-kw="what actions are taken post-fasciotomy? the open wounds require sterile packing and dressing until secondary closure occurs. and when they do the secondary closure, they may need skin grafts and a negative pressure, la wound vac placed, just to keep that closed and reduce that edema. &quot;&quot;"><summary><span class="qt">What actions are taken post-fasciotomy?</span></summary><div class="ansbox"><p>The open wounds require sterile packing and dressing until secondary closure occurs. And when they do the secondary closure, they may need skin grafts and a negative pressure, la wound vac placed, just to keep that closed and reduce that edema.</p></div></details>
+<details class="qa ruby" data-kw="t/f when a patient has compartment syndrome, you should elevate the effected area above the heart? false
+in most orthopedic injuries, you elevate the extremity above the level of the heart to reduce swelling. compartment syndrome is the exception.
+the problem in compartment syndrome isn&#x27;t just swelling—it&#x27;s loss of blood flow (perfusion) to the muscles and nerves.
+elevating above the heart decreases blood flow = worse!
+✅ keep the affected extremity at the level of the heart. &quot;&quot;"><summary><span class="qt">T/F When a patient has compartment syndrome, you should elevate the effected area above the heart?</span></summary><div class="ansbox"><p>FALSE</p>
+<p>In most orthopedic injuries, you elevate the extremity above the level of the heart to reduce swelling. Compartment syndrome is the exception.</p>
+<p>The problem in compartment syndrome isn&#x27;t just swelling—it&#x27;s loss of blood flow (perfusion) to the muscles and nerves.</p>
+<p>Elevating above the heart decreases blood flow = worse!</p>
+<ul><li>Keep the affected extremity at the level of the heart.</li></ul></div></details>
+<details class="qa ruby" data-kw="for a fracture patient, how often do you perform neurovascular assessments? hourly for the first 24hrs. 1-4 hours after that.
+check the 6 ps - risk for compartment syndrome
+pain, sensation, skin temp, cap refill, pulses, movement. &quot;&quot;"><summary><span class="qt">For a fracture patient, how often do you perform neurovascular assessments?</span></summary><div class="ansbox"><p>Hourly for the first 24hrs. 1-4 hours after that.</p>
+<p>Check the 6 Ps - risk for compartment syndrome</p>
+<p>Pain, sensation, skin temp, cap refill, pulses, movement.</p></div></details>
+<details class="qa ruby" data-kw="what is the priority assessment after a cast application? distal neurovascular status (6 p&#x27;s) &quot;&quot;"><summary><span class="qt">What is the priority assessment after a cast application?</span></summary><div class="ansbox"><p>Distal neurovascular status (6 P&#x27;s)</p></div></details>
+<h2 class="sec" id="fat-embolism">🫁 Fat embolism</h2>
+<details class="qa garnet" data-kw="what is the classic triad of a fat embolism? respiratory distress, neurological changes, petechia rash &quot;&quot;"><summary><span class="qt">What is the classic triad of a fat embolism?</span></summary><div class="ansbox"><p>Respiratory distress, neurological changes, petechia rash</p></div></details>
+<details class="qa garnet" data-kw="which complication is associated with long bone fractures 24-72 hours after injury? fat embolism syndrome
+usually 24-72 hrs after long bone fracture.
+classic triad:
+- respiratory distress
+- neurologic changes
+- petechiae
+priority:
+- oxygen
+- rapid provider notification &quot;&quot;"><summary><span class="qt">Which complication is associated with long bone fractures 24-72 hours after injury?</span></summary><div class="ansbox"><p>Fat embolism syndrome</p>
+<p>Usually 24-72 hrs after long bone fracture.</p>
+<p>Classic Triad:</p>
+<ul><li>Respiratory distress</li><li>Neurologic changes</li><li>Petechiae</li></ul>
+<p>Priority:</p>
+<ul><li>Oxygen</li><li>Rapid provider notification</li></ul></div></details>
+<details class="qa garnet" data-kw="what are key differences between a fat embolism and a pulmonary embolism?  {&quot;cols&quot;: [&quot;fat embolism&quot;, &quot;pulmonary embolism&quot;], &quot;rows&quot;: [[&quot;long bone fracture&quot;, &quot;dvt&quot;], [&quot;petechiae&quot;, &quot;no petechiae&quot;], [&quot;neuro changes&quot;, &quot;usually no neuro changes&quot;], [&quot;24-72 hrs after break&quot;, &quot;anytime&quot;]]}"><summary><span class="qt">What are key differences between a fat embolism and a pulmonary embolism?</span></summary><div class="ansbox"><div class="tblwrap"><table><thead><tr><th>Fat embolism</th><th>Pulmonary embolism</th></tr></thead><tbody><tr><td>Long bone fracture</td><td>DVT</td></tr><tr><td>Petechiae</td><td>No petechiae</td></tr><tr><td>Neuro changes</td><td>Usually no neuro changes</td></tr><tr><td>24-72 hrs after break</td><td>Anytime</td></tr></tbody></table></div></div></details>
+<details class="qa garnet" data-kw="why can a fat embolism cause petechiae? late sign of fe - cutaneous petechiae. they&#x27;re pinpoint-sized subdermal hemorrhages that can occur, usually in the neck, chest, upper arms, and abdomen, because of blockage of the capillaries by fat globules. &quot;&quot;"><summary><span class="qt">Why can a fat embolism cause petechiae?</span></summary><div class="ansbox"><p>Late sign of FE - cutaneous petechiae. They&#x27;re pinpoint-sized subdermal hemorrhages that can occur, usually in the neck, chest, upper arms, and abdomen, because of blockage of the capillaries by fat globules.</p></div></details>
+<details class="qa garnet" data-kw="a patient is being treated for a fat embolus after a fracture. which data would the nurse evaluate as most favorable indication of resolution of the fat embolus?
+a. clear mentation
+b. mild dyspnea
+c. o2 sats 85%
+d. petechiae to upper chest only a. clear mentation (normal mental status; oriented x 4)
+fat embolus = dyspnea, respiratory distress, confusion because of lack of oxygen.
+headache, and then ultimately a petechial rash &quot;&quot;"><summary><span class="qt">A patient is being treated for a fat embolus after a fracture. Which data would the nurse evaluate as MOST favorable indication of resolution of the fat embolus?
+A. Clear mentation
+B. Mild dyspnea
+C. O2 sats 85%
+D. Petechiae to upper chest only</span></summary><div class="ansbox"><p>A. Clear mentation (normal mental status; Oriented x 4)</p>
+<p>Fat embolus = dyspnea, respiratory distress, confusion because of lack of oxygen.</p>
+<p>headache, and then ultimately a petechial rash</p></div></details>
+<h2 class="sec" id="fractures-healing">🦴 Fractures &amp; healing</h2>
+<details class="qa topaz" data-kw="what surgery repairs an open fracture? open reduction internal fixation (orif) &quot;&quot;"><summary><span class="qt">What surgery repairs an open fracture?</span></summary><div class="ansbox"><p>Open reduction Internal fixation (ORIF)</p></div></details>
+<details class="qa topaz" data-kw="when the fracture has not healed within 6 months of the injury, what is this called? delayed union
+it can be treated with electrical bone stimulation and bone grafting. low intensity pulse ultrasound can promote healing. &quot;&quot;"><summary><span class="qt">When the fracture has not healed within 6 months of the injury, what is this called?</span></summary><div class="ansbox"><p>Delayed union</p>
+<p>It can be treated with electrical bone stimulation and bone grafting. Low intensity pulse ultrasound can promote healing.</p></div></details>
+<details class="qa topaz" data-kw="when the fracture never heals or heals incorrectly, what is it called? never heals - nonunion
+heals incorrectly - malunion &quot;&quot;"><summary><span class="qt">When the fracture never heals or heals incorrectly, what is it called?</span></summary><div class="ansbox"><p>Never heals - nonunion</p>
+<p>Heals incorrectly - Malunion</p></div></details>
+<details class="qa topaz" data-kw="what is a transverse fracture? break straight across the entire bone &quot;&quot;"><summary><span class="qt">What is a transverse fracture?</span></summary><div class="ansbox"><p>Break straight across the entire bone</p></div></details>
+<details class="qa topaz" data-kw="what is an oblique fracture? break at an angle across the bone &quot;&quot;"><summary><span class="qt">What is an oblique fracture?</span></summary><div class="ansbox"><p>Break at an angle across the bone</p></div></details>
+<details class="qa topaz" data-kw="which type of fracture occurs when the bone bends and cracks without breaking completely? one side breaks while the other side bends. greenstick - most common in children because their bones are more flexible.
+think of trying to break a young green branch. it bends before it completely breaks—just like a child&#x27;s bone. &quot;&quot;"><summary><span class="qt">Which type of fracture occurs when the bone bends and cracks without breaking completely? One side breaks while the other side bends.</span></summary><div class="ansbox"><p>Greenstick - Most common in children because their bones are more flexible.</p>
+<p>Think of trying to break a young green branch. It bends before it completely breaks—just like a child&#x27;s bone.</p></div></details>
+<details class="qa topaz" data-kw="which type of fracture occurs when bone is shattered into three or more pieces? usually caused by high-energy trauma. comminuted fracture
+often requires orif (plates, screws, rods). higher risk for delayed healing.
+comminuted = crumbled
+&quot;c&quot; = crushed into many pieces. &quot;&quot;"><summary><span class="qt">Which type of fracture occurs when bone is shattered into three or more pieces? Usually caused by high-energy trauma.</span></summary><div class="ansbox"><p>Comminuted fracture</p>
+<p>Often requires ORIF (plates, screws, rods). Higher risk for delayed healing.</p>
+<p>Comminuted = Crumbled</p>
+<p>&quot;C&quot; = Crushed into many pieces.</p></div></details>
+<details class="qa topaz" data-kw="which fracture occurs when a twisting force causes the fracture to spiral around the bone? spiral - often occurs during sports injuries. in children, unexplained spiral fractures may raise concern for abuse. &quot;&quot;"><summary><span class="qt">Which fracture occurs when a twisting force causes the fracture to spiral around the bone?</span></summary><div class="ansbox"><p>Spiral - Often occurs during sports injuries. In children, unexplained spiral fractures may raise concern for abuse.</p></div></details>
+<details class="qa topaz" data-kw="which fracture occurs when a bone is crushed or collapses on itself? compression - common in vertebrae due to osteoporosis. may cause sudden back pain and loss of height. &quot;&quot;"><summary><span class="qt">Which fracture occurs when a bone is crushed or collapses on itself?</span></summary><div class="ansbox"><p>Compression - Common in vertebrae due to osteoporosis. May cause sudden back pain and loss of height.</p></div></details>
+<details class="qa topaz" data-kw="which fracture occurs when one broken end of the bone is driven into the other? impacted - often occurs with falls, especially hip fractures in older adults.
+impacted = in
+one bone fragment is driven into the other. &quot;&quot;"><summary><span class="qt">Which fracture occurs when one broken end of the bone is driven into the other?</span></summary><div class="ansbox"><p>Impacted - Often occurs with falls, especially hip fractures in older adults.</p>
+<p>Impacted = In</p>
+<p>One bone fragment is driven into the other.</p></div></details>
+<details class="qa topaz" data-kw="which type of fracture occurs when a bone breaks because it has been weakened by disease rather than trauma? pathologic - common causes include osteoporosis, bone tumors, or metastatic cancer. &quot;&quot;"><summary><span class="qt">Which type of fracture occurs when a bone breaks because it has been weakened by disease rather than trauma?</span></summary><div class="ansbox"><p>Pathologic - Common causes include osteoporosis, bone tumors, or metastatic cancer.</p></div></details>
+<details class="qa topaz" data-kw="👵 compression fractures are strongly associated with which disorder? osteoporosis &quot;&quot;"><summary><span class="qt">👵 Compression fractures are strongly associated with which disorder?</span></summary><div class="ansbox"><p>Osteoporosis</p></div></details>
+<details class="qa topaz" data-kw="which fractures presents the greatest infection risk, open or closed? open because of actual exposure through the compromised skin.
+for open fractures: prevent infection. cover with a sterile dressing, administer iv antibiotics, assess tetanus status, and prepare for surgery. &quot;&quot;"><summary><span class="qt">Which fractures presents the greatest infection risk, open or closed?</span></summary><div class="ansbox"><p>Open because of actual exposure through the compromised skin.</p>
+<p>For open fractures: Prevent infection. Cover with a sterile dressing, administer IV antibiotics, assess tetanus status, and prepare for surgery.</p></div></details>
+<h2 class="sec" id="casts-traction-fixation">🩹 Casts, traction &amp; fixation</h2>
+<details class="qa citrine" data-kw="how should wet plaster casts be handled? with the palms not the fingers (this is for plaster casts which take a long time to dry (24-72hrs) and fingers can leave indents.
+fiberglass is more common now - dries in 30min. more water proof (don&#x27;t need as much water proofing) &quot;&quot;"><summary><span class="qt">How should wet plaster casts be handled?</span></summary><div class="ansbox"><p>With the palms NOT the fingers (this is for plaster casts which take a long time to dry (24-72hrs) and fingers can leave indents.</p>
+<p>Fiberglass is more common now - dries in 30min. More water proof (don&#x27;t need as much water proofing)</p></div></details>
+<details class="qa citrine" data-kw="what should you do to the casted body part to avoid edema? elevate! &quot;&quot;"><summary><span class="qt">What should you do to the casted body part to avoid edema?</span></summary><div class="ansbox"><p>Elevate!</p></div></details>
+<details class="qa citrine" data-kw="t/f a cast is typically applied immediately to a fracture to ensure immobility? false - allow for some swelling to go down to avoid compartment syndrome (swelling causes diminished blood flow = necrosis) &quot;&quot;"><summary><span class="qt">T/F A cast is typically applied immediately to a fracture to ensure immobility?</span></summary><div class="ansbox"><p>False - allow for some swelling to go down to avoid compartment syndrome (swelling causes diminished blood flow = necrosis)</p></div></details>
+<details class="qa citrine" data-kw="what is the main purpose of traction? prevent soft tissue injury; maintain alignment, reduce muscle spasms, dec pain &quot;&quot;"><summary><span class="qt">What is the main purpose of traction?</span></summary><div class="ansbox"><p>Prevent soft tissue injury; Maintain alignment, reduce muscle spasms, dec pain</p></div></details>
+<details class="qa citrine" data-kw="should traction weights ever be removed? no
+only changed by a provider, not patient &quot;&quot;"><summary><span class="qt">Should traction weights ever be removed?</span></summary><div class="ansbox"><p>No</p>
+<p>Only changed by a provider, NOT patient</p></div></details>
+<details class="qa citrine" data-kw="what is skeletal traction and what are the benefits? screws are inserted into the bone
+can use heavier weights (15-30lbs) and longer traction times to realign bones.
+pin site care is key. &quot;&quot;"><summary><span class="qt">What is skeletal traction and what are the benefits?</span></summary><div class="ansbox"><p>Screws are inserted into the bone</p>
+<p>Can use heavier weights (15-30lbs) and longer traction times to realign bones.</p>
+<p>Pin site care is key.</p></div></details>
+<details class="qa citrine" data-kw="what are key rules for use of traction? - never remove weights.
+- weights hang freely.
+- do not place weights on bed.
+- maintain body alignment. &quot;&quot;"><summary><span class="qt">What are key rules for use of traction?</span></summary><div class="ansbox"><ul><li>Never remove weights.</li><li>Weights hang freely.</li><li>Do not place weights on bed.</li><li>Maintain body alignment.</li></ul></div></details>
+<details class="qa citrine" data-kw="the primary purpose of skeletal traction is
+a. maintain alignment
+b. reduce pain
+c. prevent infection a. maintain alignment - helps to heal.
+assess traction for proper weight alignment every shift.
+patient should use an incentive spirometer regularly to avoid atelectasis/pneumonia. &quot;&quot;"><summary><span class="qt">The primary purpose of skeletal traction is
+A. Maintain alignment
+B. Reduce pain
+C. Prevent infection</span></summary><div class="ansbox"><p>A. Maintain alignment - helps to heal.</p>
+<p>Assess traction for proper weight alignment every shift.</p>
+<p>Patient should use an incentive spirometer regularly to avoid atelectasis/pneumonia.</p></div></details>
+<details class="qa citrine" data-kw="when a fracture is immobilized using percutaneous pins and wire attached to rigid external frame, what is this called? external fixation
+- clean pin sites with chlorhexidine, one swab per spot to avoid cross-contamination.
+- inspect pins every 8 hours for signs of infection for first 48-72 hours, then daily.
+
+internal fixation uses plates, screws, pins, and rods inside the body (open reduction) &quot;&quot;"><summary><span class="qt">When a fracture is immobilized using percutaneous pins and wire attached to rigid external frame, what is this called?</span></summary><div class="ansbox"><p>External fixation</p>
+<ul><li>Clean pin sites with chlorhexidine, one swab per spot to avoid cross-contamination.</li><li>Inspect pins every 8 hours for signs of infection for first 48-72 hours, then daily.</li></ul>
+<p>Internal fixation uses plates, screws, pins, and rods inside the body (open reduction)</p></div></details>
+<details class="qa citrine" data-kw="nurse providing discharge teaching to a client after application of a leg cast. which statement indicates that the client understands proper cast care?
+a. i will avoid getting the cast wet
+b. i will need to cover the casted leg with warm blankets
+c. i need to use my fingertips to lift and move my legs
+d. i need to use something like a padded coat hanger to scratch under the cast if it itches. a. i will avoid getting the cast wet &quot;&quot;"><summary><span class="qt">Nurse providing discharge teaching to a client after application of a leg cast. Which statement indicates that the client understands proper cast care?
+A. I will avoid getting the cast wet
+B. I will need to cover the casted leg with warm blankets
+C. I need to use my fingertips to lift and move my legs
+D. I need to use something like a padded coat hanger to scratch under the cast if it itches.</span></summary><div class="ansbox"><p>A. I will avoid getting the cast wet</p></div></details>
+<h2 class="sec" id="osteoporosis">🦴 Osteoporosis</h2>
+<details class="qa amethyst" data-kw="what is the best diagnostic for osteoporosis? dexa scan &quot;&quot;"><summary><span class="qt">What is the best diagnostic for osteoporosis?</span></summary><div class="ansbox"><p>DEXA scan</p></div></details>
+<details class="qa amethyst" data-kw="what t-score indicates osteoporosis? &lt;= -2.5
+normally, specialized cells called osteoclasts break down old bone (bone resorption). in osteoporosis, bone is broken down faster than it is rebuilt. &quot;&quot;"><summary><span class="qt">What T-score indicates osteoporosis?</span></summary><div class="ansbox"><p>&lt;= -2.5</p>
+<p>Normally, specialized cells called osteoclasts break down old bone (bone resorption). In osteoporosis, bone is broken down faster than it is rebuilt.</p></div></details>
+<details class="qa amethyst" data-kw="what are three common fracture sites for osteoporosis? hip, vertebra, wrist &quot;&quot;"><summary><span class="qt">What are three common fracture sites for osteoporosis?</span></summary><div class="ansbox"><p>Hip, vertebra, wrist</p></div></details>
+<details class="qa amethyst" data-kw="what are the modifiable risks for osteoporosis? low calcium and vit d
+sedentary lifestyle
+smoking and excessive alc
+low body weight or eating d/o
+certain meds (corticosteroids, anticonvulsants) &quot;&quot;"><summary><span class="qt">What are the modifiable risks for Osteoporosis?</span></summary><div class="ansbox"><p>Low calcium and Vit D</p>
+<p>Sedentary lifestyle</p>
+<p>Smoking and excessive alc</p>
+<p>Low body weight or eating d/o</p>
+<p>Certain meds (corticosteroids, anticonvulsants)</p></div></details>
+<details class="qa amethyst" data-kw="what are the risk factors for osteoporosis? - women (esp. postmenopause)
+- smoking and alcohol
+- steroids use
+- low calcium and vitamin d deficiency
+- thin body habitus
+- older age
+- asian and white americans
+- hyperthyroid, hyperparathyroid &quot;&quot;"><summary><span class="qt">What are the risk factors for osteoporosis?</span></summary><div class="ansbox"><ul><li>Women (esp. postmenopause)</li><li>Smoking and Alcohol</li><li>Steroids use</li><li>Low calcium and Vitamin D deficiency</li><li>Thin body habitus</li><li>Older age</li><li>Asian and white Americans</li><li>Hyperthyroid, hyperparathyroid</li></ul></div></details>
+<details class="qa amethyst" data-kw="what medications can be used to treat osteoporosis? &quot;biscuits and ale to rise&quot;
+- bisphosphonates
+- alendronate
+- risedronate &quot;&quot;"><summary><span class="qt">What medications can be used to treat osteoporosis?</span></summary><div class="ansbox"><p>&quot;Biscuits and Ale to Rise&quot;</p>
+<ul><li>Bisphosphonates</li><li>Alendronate</li><li>Risedronate</li></ul></div></details>
+<details class="qa amethyst" data-kw="what is alendronate used for and what are key teaching points? alendronate (fosamax) is a bisphosphonate that is primarily used to prevent and treat osteoporosis by slowing the breakdown of bone.
+take in the morning on empty stomach
+full glass of water (not coffee, tea)
+remain upright for 30-60 mins - can cause severe esophageal irritation. &quot;&quot;"><summary><span class="qt">What is alendronate used for and what are key teaching points?</span></summary><div class="ansbox"><p>Alendronate (Fosamax) is a bisphosphonate that is primarily used to prevent and treat osteoporosis by slowing the breakdown of bone.</p>
+<p>Take in the morning on empty stomach</p>
+<p>Full Glass of water (not coffee, tea)</p>
+<p>Remain upright for 30-60 mins - Can cause severe esophageal irritation.</p></div></details>
+<details class="qa amethyst" data-kw="what does calcitonin do? decreases bone resorption &quot;&quot;"><summary><span class="qt">What does calcitonin do?</span></summary><div class="ansbox"><p>Decreases bone resorption</p></div></details>
+<details class="qa amethyst" data-kw="what is denosumab used for? used to treat osteoporosis and reduce fracture risk.
+✅ given as a subcutaneous injection every 6 months.
+✅ monitor for hypocalcemia
+watch for osteonecrosis of the jaw and advise good dental care. &quot;&quot;"><summary><span class="qt">What is denosumab used for?</span></summary><div class="ansbox"><p>Used to treat osteoporosis and reduce fracture risk.</p>
+<ul><li>Given as a subcutaneous injection every 6 months.</li><li>Monitor for hypocalcemia</li></ul>
+<p>Watch for osteonecrosis of the jaw and advise good dental care.</p></div></details>
+<details class="qa amethyst" data-kw="for a patient with suspected osteoporosis, what education can you provide to assist with slowing the progression of pain? weight-bearing exercises
+also vitamin d with calcium supplementation
+monitor bone mineral density (stop calcium before test) and ability to perform adls. &quot;&quot;"><summary><span class="qt">For a patient with suspected osteoporosis, what education can you provide to assist with slowing the progression of pain?</span></summary><div class="ansbox"><p>Weight-bearing exercises</p>
+<p>Also Vitamin D with calcium supplementation</p>
+<p>Monitor bone mineral density (stop calcium before test) and ability to perform ADLs.</p></div></details>
+<details class="qa amethyst" data-kw="what are key differences b/w osteoporosis and osteoarthritis?  {&quot;cols&quot;: [&quot;osteoporosis&quot;, &quot;osteoarthritis&quot;], &quot;rows&quot;: [[&quot;bone density loss&quot;, &quot;cartilage degeneration&quot;], [&quot;usually painless &#x27;til fracture&quot;, &quot;joint pain&quot;], [&quot;dexa diagnosis&quot;, &quot;x-ray&quot;], [&quot;fractures&quot;, &quot;stiffness&quot;]]}"><summary><span class="qt">What are key differences b/w osteoporosis and osteoarthritis?</span></summary><div class="ansbox"><div class="tblwrap"><table><thead><tr><th>Osteoporosis</th><th>Osteoarthritis</th></tr></thead><tbody><tr><td>Bone density loss</td><td>Cartilage degeneration</td></tr><tr><td>Usually painless &#x27;til fracture</td><td>Joint pain</td></tr><tr><td>DEXA diagnosis</td><td>X-ray</td></tr><tr><td>Fractures</td><td>Stiffness</td></tr></tbody></table></div></div></details>
+<h2 class="sec" id="arthritis-joint-replacement">🦵 Arthritis &amp; joint replacement</h2>
+<details class="qa emerald" data-kw="what causes osteoarthritis? degeneration of articular cartilage (wear and tear) on weight-bearing joints
+diagnostics: x-ray
+treatment: exercise, weight loss, heat, nsaids, arthroplasty/replacement if severe
+knobby joints &quot;&quot;"><summary><span class="qt">What causes osteoarthritis?</span></summary><div class="ansbox"><p>Degeneration of articular cartilage (wear and tear) on weight-bearing joints</p>
+<p>Diagnostics: X-ray</p>
+<p>Treatment: Exercise, weight loss, heat, NSAIDs, arthroplasty/replacement if severe</p>
+<p>Knobby Joints</p></div></details>
+<details class="qa emerald" data-kw="what are the manifestations of oa? pain worse with activity
+morning stiffness &lt;30 minutes
+crepitus (cracking, popping in joints)
+limited rom &quot;&quot;"><summary><span class="qt">What are the manifestations of OA?</span></summary><div class="ansbox"><p>Pain worse with activity</p>
+<p>Morning stiffness &lt;30 minutes</p>
+<p>Crepitus (cracking, popping in joints)</p>
+<p>Limited ROM</p></div></details>
+<details class="qa emerald" data-kw="what are meds for oa? analgesics, like tylenol, topicals, lidocaine patches, nsaids (ibuprofen, naproxen) for pain relief
+opioids - tramadol is a weak opioid that can be used.
+hot/heating pads - but not too hot.
+cold packs &quot;&quot;"><summary><span class="qt">What are meds for OA?</span></summary><div class="ansbox"><p>Analgesics, like Tylenol, topicals, lidocaine patches, NSAIDs (ibuprofen, naproxen) for pain relief</p>
+<p>Opioids - tramadol is a weak opioid that can be used.</p>
+<p>Hot/heating pads - but not too hot.</p>
+<p>Cold packs</p></div></details>
+<details class="qa emerald" data-kw="what therapeutic procedures can be used for oa? intra-articular injections of glucocorticoids (localized inflammation) or hyaluronic acid replacement.
+total joint arthroplasty/replacement &quot;&quot;"><summary><span class="qt">What therapeutic procedures can be used for OA?</span></summary><div class="ansbox"><p>Intra-articular injections of glucocorticoids (localized inflammation) or hyaluronic acid replacement.</p>
+<p>Total joint arthroplasty/replacement</p></div></details>
+<details class="qa emerald" data-kw="the surgical removal of a diseased joint due to oa, osteonecrosis, ra, trauma or congenital anomalies is called… arthroplasty (partial or total joint replacement) &quot;&quot;"><summary><span class="qt">The surgical removal of a diseased joint due to OA, osteonecrosis, RA, trauma or congenital anomalies is called…</span></summary><div class="ansbox"><p>Arthroplasty (partial or total joint replacement)</p></div></details>
+<details class="qa emerald" data-kw="what is rheumatoid arthritis? ra is a chronic autoimmune disease that causes symmetrical inflammation of the synovial joints, resulting in progressive joint damage, pain, stiffness, and loss of function.
+- occurs at any age
+- inflammatory
+- morning stiffness lasts &gt;1 hour
+- improves with gentle movement &quot;&quot;"><summary><span class="qt">What is Rheumatoid arthritis?</span></summary><div class="ansbox"><p>RA is a chronic autoimmune disease that causes symmetrical inflammation of the synovial joints, resulting in progressive joint damage, pain, stiffness, and loss of function.</p>
+<ul><li>occurs at any age</li><li>Inflammatory</li><li>Morning stiffness lasts &gt;1 hour</li><li>Improves with gentle movement</li></ul></div></details>
+<details class="qa emerald" data-kw="how does ra differ from oa?  {&quot;cols&quot;: [&quot;rheumatoid arthritis&quot;, &quot;osteoarthritis&quot;], &quot;rows&quot;: [[&quot;autoimmune&quot;, &quot;wear and tear&quot;], [&quot;any age&quot;, &quot;usually older age&quot;], [&quot;morning stiffness &gt;1 hour, improves with movement&quot;, &quot;worse with movement&quot;], [&quot;starts in small joints&quot;, &quot;weight-bearing joints&quot;], [&quot;usually bilateral / symmetrical&quot;, &quot;asymmetrical&quot;], [&quot;can cause deformities&quot;, &quot;typically doesn&#x27;t&quot;], [&quot;systemic symptoms&quot;, &quot;localized&quot;]]}"><summary><span class="qt">How does RA differ from OA?</span></summary><div class="ansbox"><div class="tblwrap"><table><thead><tr><th>Rheumatoid arthritis</th><th>Osteoarthritis</th></tr></thead><tbody><tr><td>Autoimmune</td><td>Wear and tear</td></tr><tr><td>Any age</td><td>Usually older age</td></tr><tr><td>Morning stiffness &gt;1 hour, improves with movement</td><td>Worse with movement</td></tr><tr><td>Starts in small joints</td><td>Weight-bearing joints</td></tr><tr><td>Usually bilateral / symmetrical</td><td>Asymmetrical</td></tr><tr><td>Can cause deformities</td><td>Typically doesn&#x27;t</td></tr><tr><td>Systemic symptoms</td><td>Localized</td></tr></tbody></table></div></div></details>
+<details class="qa emerald" data-kw="which type of osteo pain worsens with activity? osteoarthritis &quot;&quot;"><summary><span class="qt">Which type of osteo pain worsens with activity?</span></summary><div class="ansbox"><p>Osteoarthritis</p></div></details>
+<details class="qa emerald" data-kw="after a hip replacement, what is the max flexion a pt should do? maximum of 90 degrees. don&#x27;t bend over to the ground. &quot;&quot;"><summary><span class="qt">After a hip replacement, what is the max flexion a PT should do?</span></summary><div class="ansbox"><p>Maximum of 90 degrees. Don&#x27;t bend over to the ground.</p></div></details>
+<details class="qa emerald" data-kw="when and why do you use an abduction pillow? after hip surgery to prevent hip dislocation. &quot;&quot;"><summary><span class="qt">When and why do you use an abduction pillow?</span></summary><div class="ansbox"><p>After hip surgery to prevent hip dislocation.</p></div></details>
+<details class="qa emerald" data-kw="what are three signs of a prosthetic joint infection? fever, redness, drainage &quot;&quot;"><summary><span class="qt">What are three signs of a prosthetic joint infection?</span></summary><div class="ansbox"><p>Fever, redness, drainage</p></div></details>
+<details class="qa emerald" data-kw="what are the differences in post surgery for a knee vs hip replacement?  {&quot;cols&quot;: [&quot;knee&quot;, &quot;hip&quot;], &quot;rows&quot;: [[&quot;early rom&quot;, &quot;no flexion &gt; 90&quot;], [&quot;cpm machine&quot;, &quot;no crossing legs&quot;], [&quot;knee exercises&quot;, &quot;abduction pillow (avoid dislocation)&quot;]]}"><summary><span class="qt">What are the differences in post surgery for a knee vs hip replacement?</span></summary><div class="ansbox"><div class="tblwrap"><table><thead><tr><th>Knee</th><th>Hip</th></tr></thead><tbody><tr><td>Early ROM</td><td>No flexion &gt; 90</td></tr><tr><td>CPM machine</td><td>No crossing legs</td></tr><tr><td>Knee exercises</td><td>Abduction pillow (avoid dislocation)</td></tr></tbody></table></div></div></details>
+<details class="qa emerald" data-kw="what are key nursing considerations for a hip arthroplasty? prevent dislocation of that new joint.
+- we don&#x27;t want that to pop out because they&#x27;re bending over too far, or trying to put on their own shoes and socks
+- place a pillow or abduction device between the legs when turning to the unaffected side.
+- we don&#x27;t want to turn to the operative side.
+- use raised toilet seats, straight-back chairs with arms.
+- assistive items to prevent strain on that prosthetic; avoid flexion greater than 90 degrees.
+- we don&#x27;t want them crossing their legs &quot;&quot;"><summary><span class="qt">What are key nursing considerations for a hip arthroplasty?</span></summary><div class="ansbox"><p>Prevent dislocation of that new joint.</p>
+<ul><li>We don&#x27;t want that to pop out because they&#x27;re bending over too far, or trying to put on their own shoes and socks</li><li>Place a pillow or abduction device between the legs when turning to the unaffected side.</li><li>We don&#x27;t want to turn to the operative side.</li><li>Use raised toilet seats, straight-back chairs with arms.</li><li>Assistive items to prevent strain on that prosthetic; avoid flexion greater than 90 degrees.</li><li>We don&#x27;t want them crossing their legs</li></ul></div></details>
+<details class="qa emerald" data-kw="what is the highest-priority complication to monitor for after arthroplasty during the first postoperative days? neurovascular compromise
+dvt/pe
+infection
+bleeding &quot;&quot;"><summary><span class="qt">What is the highest-priority complication to monitor for after arthroplasty during the first postoperative days?</span></summary><div class="ansbox"><p>Neurovascular compromise</p>
+<p>DVT/PE</p>
+<p>Infection</p>
+<p>Bleeding</p></div></details>
+<details class="qa emerald" data-kw="a nurse is planning discharge teaching for a client who had a total hip arthroplasty. which of the following should the nurse include in teaching? sata
+a. clean the incision daily with soap and water
+b. turn toes inward when sitting or lying
+c. sit in a straight-backed chair
+d. bend at the waist when putting on socks
+e. use a raised toilet seat. a. clean the incision daily with soap and water
+c. sit in a straight-backed chair
+e. use a raised toilet seat. (don&#x27;t excessively bend at hip) &quot;&quot;"><summary><span class="qt">A nurse is planning discharge teaching for a client who had a total hip arthroplasty. Which of the following should the nurse include in teaching? SATA
+A. Clean the incision daily with soap and water
+B. Turn toes inward when sitting or lying
+C. Sit in a straight-backed chair
+D. Bend at the waist when putting on socks
+E. Use a raised toilet seat.</span></summary><div class="ansbox"><p>A. Clean the incision daily with soap and water</p>
+<p>C. Sit in a straight-backed chair</p>
+<p>E. Use a raised toilet seat. (Don&#x27;t excessively bend at hip)</p></div></details>
+<details class="qa emerald" data-kw="a nurse is providing information to a client who has osteoarthritis of the hips and knees. which of the following information should the nurse include? sata
+1. apply heat to the joints to alleviate pain.
+2. ice inflamed joints for 60 minutes (in 20 minute intervals) following any activity.
+c. reduce the amount of exercise done on days you have increased pain
+d. prop the knees with a pillow while on the bed
+e. active range of motion is more effective than passive. 1. apply heat to the joints to alleviate pain (but not too hot - don&#x27;t burn).
+2. ice inflamed joints for 60 minutes (in 20-minute intervals) following any activity.
+c. reduce the amount of exercise done on days you have increased pain (don&#x27;t stop exercises, just reduce # of reps)
+e. active range of motion is more effective than passive. &quot;&quot;"><summary><span class="qt">A nurse is providing information to a client who has osteoarthritis of the hips and knees. Which of the following information should the nurse include? SATA
+1. Apply heat to the joints to alleviate pain.
+2. Ice inflamed joints for 60 minutes (in 20 minute intervals) following any activity.
+C. Reduce the amount of exercise done on days you have increased pain
+D. Prop the knees with a pillow while on the bed
+E. Active range of motion is more effective than passive.</span></summary><div class="ansbox"><ul><li>Apply heat to the joints to alleviate pain (but not too hot - don&#x27;t burn).</li><li>Ice inflamed joints for 60 minutes (in 20-minute intervals) following any activity.</li></ul>
+<p>C. Reduce the amount of exercise done on days you have increased pain (Don&#x27;t stop exercises, just reduce # of reps)</p>
+<p>E. Active range of motion is more effective than passive.</p></div></details>
+<h2 class="sec" id="osteomyelitis-avn-crps">🔬 Osteomyelitis, AVN &amp; CRPS</h2>
+<details class="qa sapphire" data-kw="what are key ssx of osteomyelitis? severe localized bone pain ⭐ pulsating, worse with movement.
+- fever, elevated wbc count, drainage, and pain.
+- typically requires long-term iv antibiotics.
+- usually caused by bacteria (most commonly staphylococcus aureus).
+- the infection causes inflammation, swelling, decreased blood flow, and eventually bone destruction if left untreated.
+- older patient may have confusion before fever. &quot;&quot;"><summary><span class="qt">What are key SSX of osteomyelitis?</span></summary><div class="ansbox"><p>Severe Localized Bone Pain ⭐ pulsating, worse with movement.</p>
+<ul><li>fever, elevated WBC count, drainage, and pain.</li><li>Typically requires long-term IV antibiotics.</li><li>usually caused by bacteria (most commonly Staphylococcus aureus).</li><li>The infection causes inflammation, swelling, decreased blood flow, and eventually bone destruction if left untreated.</li><li>Older patient may have confusion before fever.</li></ul></div></details>
+<details class="qa sapphire" data-kw="how does someone typically get osteomyelitis? open fracture
+orthopedic surgery
+diabetic foot ulcers
+bloodstream infection &quot;&quot;"><summary><span class="qt">How does someone typically get osteomyelitis?</span></summary><div class="ansbox"><p>Open fracture</p>
+<p>Orthopedic Surgery</p>
+<p>Diabetic Foot Ulcers</p>
+<p>Bloodstream Infection</p></div></details>
+<details class="qa sapphire" data-kw="what are common orders for a patient with osteomyelitis? bed rest/immobilization
+weight-bearing is avoided (weak bones)
+elevate the injured area
+- decrease risks of immobility (dvts, pressure wounds, atelectasis). &quot;&quot;"><summary><span class="qt">What are common orders for a patient with osteomyelitis?</span></summary><div class="ansbox"><p>Bed rest/immobilization</p>
+<p>Weight-bearing is avoided (weak bones)</p>
+<p>Elevate the injured area</p>
+<ul><li>Decrease risks of immobility (DVTs, pressure wounds, atelectasis).</li></ul></div></details>
+<details class="qa sapphire" data-kw="the nurse is completing discharge teaching to a client who had a wound debridement for osteomyelitis. which of the following information should the nurse include?
+a. antibiotic therapy should continue for 3 months
+b. relief of pain indicates the infection is gone
+c. airborne precautions are used during wound care
+d. expect paresthesia distal to the wound. a. antibiotic therapy should continue for 3 months - these are hard to heal. &quot;&quot;"><summary><span class="qt">The nurse is completing discharge teaching to a client who had a wound debridement for osteomyelitis. Which of the following information should the nurse include?
+A. Antibiotic therapy should continue for 3 months
+B. Relief of pain indicates the infection is gone
+C. Airborne precautions are used during wound care
+D. Expect paresthesia distal to the wound.</span></summary><div class="ansbox"><p>A. Antibiotic therapy should continue for 3 months - these are hard to heal.</p></div></details>
+<details class="qa sapphire" data-kw="when blood flow to a fracture site is disrupted, it results in ischemia and necrosis, which is called? avascular necrosis
+- hip most often affected
+- risk factors are trauma, long-term corticosteroid use, sickle cell disease, and radiation therapy.
+- manifestations are pain and loss of function, often require surgical intervention, like joint replacement or bone grafting. &quot;&quot;"><summary><span class="qt">When blood flow to a fracture site is disrupted, it results in ischemia and necrosis, which is called?</span></summary><div class="ansbox"><p>Avascular Necrosis</p>
+<ul><li>Hip most often affected</li><li>Risk factors are trauma, long-term corticosteroid use, sickle cell disease, and radiation therapy.</li><li>Manifestations are pain and loss of function, often require surgical intervention, like joint replacement or bone grafting.</li></ul></div></details>
+<details class="qa sapphire" data-kw="what are the early manifestations of complex regional pain syndrome (crps)? severe chronic pain that usually follows a musculoskeletal trauma.
+it&#x27;s more common in the feet and in the hands.
+it can develop if acute pain is not well managed.
+- motor changes, muscle spasms, autonomic nervous system changes, like temperature sensitivity, diaphoresis, and sensory changes can happen. &quot;&quot;"><summary><span class="qt">What are the early manifestations of complex regional pain syndrome (CRPS)?</span></summary><div class="ansbox"><p>Severe chronic pain that usually follows a musculoskeletal trauma.</p>
+<p>It&#x27;s more common in the feet and in the hands.</p>
+<p>It can develop if acute pain is not well managed.</p>
+<ul><li>Motor changes, muscle spasms, autonomic nervous system changes, like temperature sensitivity, diaphoresis, and sensory changes can happen.</li></ul></div></details>
+<details class="qa sapphire" data-kw="what syndrome can be characterized by untraceable, burning sensations? crps
+avoid taking blood pressures, iv starts, blood draws in that affected extremity because we don&#x27;t want to cause more pain &quot;&quot;"><summary><span class="qt">What syndrome can be characterized by untraceable, burning sensations?</span></summary><div class="ansbox"><p>CRPS</p>
+<p>Avoid taking blood pressures, IV starts, blood draws in that affected extremity because we don&#x27;t want to cause more pain</p></div></details>
+<h2 class="sec" id="amputation-phantom-limb-pain">🦿 Amputation &amp; phantom limb pain</h2>
+<details class="qa garnet" data-kw="what is phantom limb pain? it is a real thing - pain perceived in an amputated limb.
+- pin and needle, or deep and burning, cramping, shooting, or aching pain that they&#x27;ll experience.
+- treat with neuropathic pain relievers like gabapentin.
+- calcitonin during the first week after having the amputation can decrease that limb pain. &quot;&quot;"><summary><span class="qt">What is phantom limb pain?</span></summary><div class="ansbox"><p>It is a real thing - pain perceived in an amputated limb.</p>
+<ul><li>pin and needle, or deep and burning, cramping, shooting, or aching pain that they&#x27;ll experience.</li><li>Treat with neuropathic pain relievers like gabapentin.</li><li>Calcitonin during the first week after having the amputation can decrease that limb pain.</li></ul></div></details>
+<details class="qa garnet" data-kw="what meds can be taken to reduce phantom limb pain? - antiepileptics like gabapentin
+- calcitonin during the first week after having the amputation can decrease that limb pain. calcitonin may reduce the pain transmission by the nervous system by reducing the release of pro-inflammatory cytokines from the injured nerves.
+- beta blockers, like propranolol, can relieve the continual dull, burning sensation associated with the amputated limb.
+- opioids are about 50% effective for these patients. &quot;&quot;"><summary><span class="qt">What meds can be taken to reduce phantom limb pain?</span></summary><div class="ansbox"><ul><li>Antiepileptics like Gabapentin</li><li>Calcitonin during the first week after having the amputation can decrease that limb pain. Calcitonin may reduce the pain transmission by the nervous system by reducing the release of pro-inflammatory cytokines from the injured nerves.</li><li>Beta blockers, like propranolol, can relieve the continual dull, burning sensation associated with the amputated limb.</li><li>Opioids are about 50% effective for these patients.</li></ul></div></details>
+<details class="qa garnet" data-kw="how can you treat phantom limb pain? pain meds (gaba)
+mirror therapy
+desensitization &quot;&quot;"><summary><span class="qt">How can you treat phantom limb pain?</span></summary><div class="ansbox"><p>Pain meds (Gaba)</p>
+<p>Mirror therapy</p>
+<p>Desensitization</p></div></details>
+<details class="qa garnet" data-kw="t/f a patient with a new below-knee amputation should lie in the prone 30 minutes, several times a day? true - prone positioning prevents amputation contractures.
+they should also avoid prolonged knee flexion. &quot;&quot;"><summary><span class="qt">T/F A patient with a new below-knee amputation should lie in the prone 30 minutes, several times a day?</span></summary><div class="ansbox"><p>True - Prone positioning prevents amputation contractures.</p>
+<p>They should also avoid prolonged knee flexion.</p></div></details>
+<details class="qa garnet" data-kw="t/f the nurse should place a pillow under an above-knee amputation stump? false &quot;&quot;"><summary><span class="qt">T/F The nurse should place a pillow under an above-knee amputation stump?</span></summary><div class="ansbox"><p>False</p></div></details>
+<details class="qa garnet" data-kw="what limb care is done to get ready for an amputation? - figure 8 pattern wrap to bring up blood flow and reduce edema.
+- shrinks swelling to allow for prosthetic &quot;&quot;"><summary><span class="qt">What limb care is done to get ready for an amputation?</span></summary><div class="ansbox"><ul><li>Figure 8 pattern wrap to bring up blood flow and reduce edema.</li><li>Shrinks swelling to allow for prosthetic</li></ul></div></details>
+<details class="qa garnet" data-kw="what steps should you take for traumatic amputation? 1. activate ems
+2. apply direct pressure using gauze or clean cloth
+3. elevate extremity above the heart
+4. wrap severed extremity in dry sterile gauze or clean cloth and place in sealed bag
+5. submerge bag in ice water (one part ice, 3 parts water) and send with client. &quot;&quot;"><summary><span class="qt">What steps should you take for traumatic amputation?</span></summary><div class="ansbox"><ul><li>Activate EMS</li><li>Apply direct pressure using gauze or clean cloth</li><li>Elevate extremity above the heart</li><li>Wrap severed extremity in dry sterile gauze or clean cloth and place in sealed bag</li><li>Submerge bag in ice water (one part ice, 3 parts water) and send with client.</li></ul></div></details>
+<h2 class="sec" id="assistive-devices-mobility">🩼 Assistive devices &amp; mobility</h2>
+<details class="qa teal" data-kw="what side should a cane be held on? the strong side &quot;&quot;"><summary><span class="qt">What side should a cane be held on?</span></summary><div class="ansbox"><p>The strong side</p></div></details>
+<details class="qa teal" data-kw="what is the cane walking sequence? cane - weak leg - strong leg &quot;&quot;"><summary><span class="qt">What is the cane walking sequence?</span></summary><div class="ansbox"><p>Cane - weak leg - strong leg</p></div></details>
+<details class="qa teal" data-kw="what is the walker walking sequence? walker - weak leg - strong leg &quot;&quot;"><summary><span class="qt">What is the walker walking sequence?</span></summary><div class="ansbox"><p>Walker - weak leg - strong leg</p></div></details>
+<details class="qa teal" data-kw="what is the proper technique with a walker? - push walker forward.
+- step with weak leg.
+- step with strong leg.
+** never pull walker toward body. &quot;&quot;"><summary><span class="qt">What is the proper technique with a walker?</span></summary><div class="ansbox"><ul><li>Push walker forward.</li><li>Step with weak leg.</li><li>Step with strong leg.</li></ul>
+<p>** Never pull walker toward body.</p></div></details>
+<details class="qa teal" data-kw="where should the body weight be supported with crutches? on the hands, not the axillae (armpits) &quot;&quot;"><summary><span class="qt">Where should the body weight be supported with crutches?</span></summary><div class="ansbox"><p>On the hands, not the axillae (armpits)</p></div></details>
+<details class="qa teal" data-kw="what is the proper fit for crutches? 2-3 finger width below axilla
+weight in hands, not armpits &quot;&quot;"><summary><span class="qt">What is the proper fit for crutches?</span></summary><div class="ansbox"><p>2-3 finger width below axilla</p>
+<p>Weight in hands, not armpits</p></div></details>
+<details class="qa teal" data-kw="what gait is used for non-weight-bearing on one leg? three point gait
+move:
+both crutches + injured leg
+then good leg &quot;&quot;"><summary><span class="qt">What gait is used for non-weight-bearing on one leg?</span></summary><div class="ansbox"><p>Three point gait</p>
+<p>Move:</p>
+<p>Both crutches + injured leg</p>
+<p>Then good leg</p></div></details>
+<details class="qa teal" data-kw="what is the most stable gait? 4-point
+slowest, most stable, both legs bear weight. &quot;&quot;"><summary><span class="qt">What is the most stable gait?</span></summary><div class="ansbox"><p>4-point</p>
+<p>Slowest, most stable, both legs bear weight.</p></div></details>
+<details class="qa teal" data-kw="how can you remember using stairs with assisted devices? up with the good, down with the bad
+up:
+good leg - crutches - bad leg
+down:
+crutches - bad leg - good leg &quot;&quot;"><summary><span class="qt">How can you remember using stairs with assisted devices?</span></summary><div class="ansbox"><p>Up with the good, down with the bad</p>
+<p>Up:</p>
+<p>Good leg - Crutches - Bad leg</p>
+<p>Down:</p>
+<p>Crutches - Bad leg - Good leg</p></div></details>
+<h2 class="sec" id="immobility-complications">🛏️ Immobility complications</h2>
+<details class="qa citrine" data-kw="what are 3 cardiovascular complications of immobility? dvt, venous stasis, orthostatic hypotension &quot;&quot;"><summary><span class="qt">What are 3 cardiovascular complications of immobility?</span></summary><div class="ansbox"><p>DVT, venous stasis, orthostatic hypotension</p></div></details>
+<details class="qa citrine" data-kw="what are three respiratory complications with immobility? atelectasis, pneumonia, retained secretions &quot;&quot;"><summary><span class="qt">What are three respiratory complications with immobility?</span></summary><div class="ansbox"><p>Atelectasis, pneumonia, retained secretions</p></div></details>
+<details class="qa citrine" data-kw="what are 3 msk complications with immobility? muscle atrophy, contractures, bone loss &quot;&quot;"><summary><span class="qt">What are 3 MSK complications with immobility?</span></summary><div class="ansbox"><p>Muscle atrophy, contractures, bone loss</p></div></details>
+<details class="qa citrine" data-kw="most important nursing intervention to prevent pressure injuries? reposition every 2 hours &quot;&quot;"><summary><span class="qt">Most important nursing intervention to prevent pressure injuries?</span></summary><div class="ansbox"><p>Reposition every 2 hours</p></div></details>
+<h2 class="sec" id="low-back-pain-diagnostics">🔍 Low back pain &amp; diagnostics</h2>
+<details class="qa sapphire" data-kw="what are the red flags for low back pain requiring immediate evaluation? bowel/bladder dysfunction
+saddle anesthesia
+progressive weakness
+fever or hx of cancer &quot;&quot;"><summary><span class="qt">What are the red flags for low back pain requiring immediate evaluation?</span></summary><div class="ansbox"><p>Bowel/bladder dysfunction</p>
+<p>Saddle Anesthesia</p>
+<p>Progressive weakness</p>
+<p>Fever or Hx of cancer</p></div></details>
+<details class="qa sapphire" data-kw="what is saddle anesthesia? saddle anesthesia is a loss or decrease of sensation (numbness) in the areas of the body that would touch a saddle if you were sitting on a horse.
+this includes the:
+perineum
+inner thighs
+buttocks
+genital area
+think of the area that contacts a bicycle or horse saddle. &quot;&quot;"><summary><span class="qt">What is saddle anesthesia?</span></summary><div class="ansbox"><p>Saddle anesthesia is a loss or decrease of sensation (numbness) in the areas of the body that would touch a saddle if you were sitting on a horse.</p>
+<p>This includes the:</p>
+<p>Perineum</p>
+<p>Inner thighs</p>
+<p>Buttocks</p>
+<p>Genital area</p>
+<p>Think of the area that contacts a bicycle or horse saddle.</p></div></details>
+<details class="qa sapphire" data-kw="what is an arthrocentesis (joint aspiration) used to diagnose? it is when a needle removes synovial fluid.
+used to diagnose:
+- gout
+- septic arthritis
+- rheumatoid arthritis &quot;&quot;"><summary><span class="qt">What is an Arthrocentesis (Joint Aspiration) used to diagnose?</span></summary><div class="ansbox"><p>It is when a needle removes synovial fluid.</p>
+<p>Used to diagnose:</p>
+<ul><li>Gout</li><li>Septic arthritis</li><li>Rheumatoid arthritis</li></ul></div></details>
+<details class="qa sapphire" data-kw="what is the best imaging for ligaments and tendons? mri &quot;&quot;"><summary><span class="qt">What is the best imaging for ligaments and tendons?</span></summary><div class="ansbox"><p>MRI</p></div></details>
+<details class="qa sapphire" data-kw="what is an mri used to diagnose? ligaments, tendons, cartilage, spinal cord, meniscus
+can&#x27;t use with: pacemakers, cochlear implants, certain aneurysm clips, metal frags &quot;&quot;"><summary><span class="qt">What is an MRI used to diagnose?</span></summary><div class="ansbox"><p>Ligaments, Tendons, Cartilage, Spinal cord, Meniscus</p>
+<p>Can&#x27;t use with: Pacemakers, cochlear implants, certain aneurysm clips, metal frags</p></div></details>
+<details class="qa sapphire" data-kw="what are ct scans often used for? complex fractures
+joint and spine injuries
+may use contrast - confirm iodine allergy, kidney function (bun/creatinine) - hydrate after &quot;&quot;"><summary><span class="qt">What are CT scans often used for?</span></summary><div class="ansbox"><p>Complex fractures</p>
+<p>Joint and spine injuries</p>
+<p>May use contrast - confirm iodine allergy, kidney function (BUN/Creatinine) - hydrate after</p></div></details>
+<details class="qa sapphire" data-kw="what is an arthroscopy used for? small camera inserted into the joint to diagnose:
+torn meniscus
+acl injury
+cartilage damage
+post-op:
+· ice
+· elevation
+· neurovascular checks
+watch for infection &quot;&quot;"><summary><span class="qt">What is an arthroscopy used for?</span></summary><div class="ansbox"><p>Small camera inserted into the joint to diagnose:</p>
+<p>Torn meniscus</p>
+<p>ACL injury</p>
+<p>Cartilage damage</p>
+<p>Post-op:</p>
+<p>· Ice</p>
+<p>· Elevation</p>
+<p>· Neurovascular checks</p>
+<p>Watch for infection</p></div></details>
+<details class="qa sapphire" data-kw="what is electromyography (emg) used for? measures muscle electrical activity.
+used for:
+· als
+· muscular dystrophy
+· peripheral neuropathy
+before test - avoid caffeine.
+after - temporary soreness expected. &quot;&quot;"><summary><span class="qt">What is electromyography (EMG) used for?</span></summary><div class="ansbox"><p>Measures muscle electrical activity.</p>
+<p>Used for:</p>
+<p>· ALS</p>
+<p>· Muscular dystrophy</p>
+<p>· Peripheral neuropathy</p>
+<p>Before test - Avoid caffeine.</p>
+<p>After - Temporary soreness expected.</p></div></details>
+<details class="qa sapphire" data-kw="what is a bone biopsy used for and what are the main complications? used to diagnose:
+osteomyelitis
+bone tumors
+complications: bleeding and infection.
+*** check pt/inr and platelets before procedure for bleeding risks &quot;&quot;"><summary><span class="qt">What is a bone biopsy used for and what are the main complications?</span></summary><div class="ansbox"><p>Used to diagnose:</p>
+<p>Osteomyelitis</p>
+<p>Bone tumors</p>
+<p>Complications: Bleeding and infection.</p>
+<p>*** Check PT/INR and platelets before procedure for bleeding risks</p></div></details>
+<h2 class="sec" id="pain-assessment-management">💊 Pain assessment &amp; management</h2>
+<details class="qa amethyst" data-kw="what would be included in a pain assessment? o - onset - when did it start
+l - location - where is the pain
+d - duration - how long does it last, constant/intermittent
+c - characteristics - what does it feel like (sharp, dull, burn)
+a - aggravating/alleviating factors
+r - radiation - does it travel anywhere
+t - timing - does it occur at certain times? has it changed over time
+s - severity - 0-10 &quot;&quot;"><summary><span class="qt">What would be included in a pain assessment?</span></summary><div class="ansbox"><p>O - Onset - when did it start</p>
+<p>L - Location - where is the pain</p>
+<p>D - Duration - how long does it last, constant/intermittent</p>
+<p>C - Characteristics - What does it feel like (sharp, dull, burn)</p>
+<p>A - Aggravating/alleviating factors</p>
+<p>R - Radiation - does it travel anywhere</p>
+<p>T - Timing - Does it occur at certain times? Has it changed over time</p>
+<p>S - Severity - 0-10</p></div></details>
+<details class="qa amethyst" data-kw="what would be tx options for acute pain? nsaids + otcs
+opioids
+hot/cold
+tylenol (not biliary, liver d/s)
+lidocaine &quot;&quot;"><summary><span class="qt">What would be TX options for acute pain?</span></summary><div class="ansbox"><p>NSAIDs + OTCs</p>
+<p>Opioids</p>
+<p>hot/cold</p>
+<p>Tylenol (Not biliary, liver d/s)</p>
+<p>Lidocaine</p></div></details>
+<details class="qa amethyst" data-kw="who should avoid taking nsaids? kidney disease/fluid volume issues
+heart failure = retaining fluids
+respiratory issues = fluid worsens lung issues
+gi bleeds/ulcers &quot;&quot;"><summary><span class="qt">Who should avoid taking NSAIDs?</span></summary><div class="ansbox"><p>Kidney disease/Fluid Volume issues</p>
+<p>Heart failure = retaining fluids</p>
+<p>Respiratory issues = fluid worsens lung issues</p>
+<p>GI bleeds/Ulcers</p></div></details>
+<details class="qa amethyst" data-kw="what would be tx options for chronic pain? opioids/morphine (assess respiratory first) &quot;&quot;"><summary><span class="qt">What would be TX options for Chronic pain?</span></summary><div class="ansbox"><p>Opioids/Morphine (assess respiratory first)</p></div></details>
+<details class="qa amethyst" data-kw="a post-op client has a pca pump but has inadequate pain relief despite frequent use of pca. what should the nurse do first?
+1. assess pt pain level, pca setting, and med delivery hx
+2. increase pca med dosage
+3. encourage client to use the pca more frequently
+4. replace pca pump with oral meds 1. assess pt pain level, pca setting, and med delivery hx
+need more info before doing the other things. &quot;&quot;"><summary><span class="qt">A post-op client has a PCA pump but has inadequate pain relief despite frequent use of PCA. What should the nurse do first?
+1. Assess PT pain level, PCA setting, and med delivery Hx
+2. Increase PCA med dosage
+3. Encourage client to use the PCA more frequently
+4. Replace PCA pump with oral meds</span></summary><div class="ansbox"><ul><li>Assess PT pain level, PCA setting, and med delivery Hx</li></ul>
+<p>Need more info before doing the other things.</p></div></details>
+<h2 class="sec" id="skin-cancer">🎗️ Skin cancer</h2>
+<details class="qa ruby" data-kw="what are the three types of skin cancers? &quot;best sort-of malignant&quot;
+basal cell carcinoma - low chance of metastasizing.
+squamous cell carcinoma - mid-risk. can become melanoma
+malignant melanoma - high risk of metastasizing &quot;&quot;"><summary><span class="qt">What are the three types of skin cancers?</span></summary><div class="ansbox"><p>&quot;Best Sort-of Malignant&quot;</p>
+<p>Basal Cell Carcinoma - low chance of metastasizing.</p>
+<p>Squamous Cell Carcinoma - Mid-risk. Can become Melanoma</p>
+<p>Malignant Melanoma - High risk of metastasizing</p></div></details>
+<details class="qa ruby" data-kw="what characteristics do you look at to assess a skin lesion? a - asymmetry
+b - border - jagged, scalloped, notched
+c - color - multiple or uneven pigment
+d - diameter (&gt;6mm, pencil eraser)
+e - evolution - changes over time &quot;&quot;"><summary><span class="qt">What characteristics do you look at to assess a skin lesion?</span></summary><div class="ansbox"><p>A - Asymmetry</p>
+<p>B - Border - jagged, scalloped, notched</p>
+<p>C - Color - Multiple or uneven pigment</p>
+<p>D - Diameter (&gt;6mm, pencil eraser)</p>
+<p>E - Evolution - changes over time</p></div></details>
+<details class="qa ruby" data-kw="which of the following characteristics is most suggestive of malignant melanoma?
+1. a pearly, raised nodule w/ visible blood vessels
+2. a firm, red nodule w/ crusted surface
+3. an irregularly shaped mole with variegated color and diameter &gt;6
+4. flat lesion with well-defined borders and scaling. 3. an irregularly shaped mole with variegated color and diameter &gt;6 &quot;&quot;"><summary><span class="qt">Which of the following characteristics is MOST suggestive of malignant melanoma?
+1. A pearly, raised nodule w/ visible blood vessels
+2. A firm, red nodule w/ crusted surface
+3. An irregularly shaped mole with variegated color and diameter &gt;6
+4. Flat lesion with well-defined borders and scaling.</span></summary><div class="ansbox"><ul><li>An irregularly shaped mole with variegated color and diameter &gt;6</li></ul></div></details>
+<details class="qa ruby" data-kw="a client is diagnosed with basal cell carcinoma. what is the nurse&#x27;s priority teaching?
+a. this cancer spreads quickly to internal organs
+b. you will need aggressive chemo and radiation
+c. this cancer rarely metastasizes but requires complete removal
+d. no treatment is needed unless symptoms worsen. c. this cancer rarely metastasizes but requires complete removal &quot;&quot;"><summary><span class="qt">A client is diagnosed with basal cell carcinoma. What is the nurse&#x27;s priority teaching?
+A. This cancer spreads quickly to internal organs
+B. You will need aggressive chemo and radiation
+C. This cancer rarely metastasizes but requires complete removal
+D. No treatment is needed unless symptoms worsen.</span></summary><div class="ansbox"><p>C. This cancer rarely metastasizes but requires complete removal</p></div></details>
+<details class="qa ruby" data-kw="the nurse is planning a health fair focused on cancer prevention. which of the following actions best promotes primary prevention of skin cancer?
+a. teaching clients to perform monthly skin self-exams
+b. referring clients with suspicious moles to derm
+c. offering free full-body skin screenings
+d. distributing free sunscreen samples with application instructions. d. distributing free sunscreen samples with application instructions. primary prevention
+
+a, b, and c are all secondary - finding/screening/reducing effects of existing issues.
+tertiary is dealing with folks who have had something and want to avoid it again or lessen impact of ongoing issues. &quot;&quot;"><summary><span class="qt">The nurse is planning a health fair focused on cancer prevention. Which of the following actions best promotes primary prevention of skin cancer?
+A. Teaching clients to perform monthly skin self-exams
+B. Referring clients with suspicious moles to derm
+C. Offering free full-body skin screenings
+D. Distributing free sunscreen samples with application instructions.</span></summary><div class="ansbox"><p>D. Distributing free sunscreen samples with application instructions. PRIMARY PREVENTION</p>
+<p>A, B, and C are all Secondary - finding/screening/reducing effects of existing issues.</p>
+<p>Tertiary is dealing with folks who have had something and want to avoid it again or lessen impact of ongoing issues.</p></div></details>
+<details class="qa ruby" data-kw="the nurse is teaching a client about proper cleaning techniques for an excisional biopsy site to prevent infection. which method should the nurse emphasize?
+1. use hydrogen peroxide directly on the wound 2x a day
+2. clean the wound gently with mild soap and water, then pat dry with sterile cloth
+3. apply rubbing alcohol to the wound and cover with a dry bandage.
+4. scrub wound vigorously to ensure all the debris is removed, then rinse with sterile saline. 2. clean the wound gently with mild soap and water, then pat dry with sterile cloth
+- we never want to recommend to people to use hydrogen peroxide, use rubbing alcohol, or, more importantly, to scrub vigorously. &quot;&quot;"><summary><span class="qt">The nurse is teaching a client about proper cleaning techniques for an excisional biopsy site to prevent infection. Which method should the nurse emphasize?
+1. Use hydrogen peroxide directly on the wound 2x a day
+2. Clean the wound gently with mild soap and water, then pat dry with sterile cloth
+3. Apply rubbing alcohol to the wound and cover with a dry bandage.
+4. Scrub wound vigorously to ensure all the debris is removed, then rinse with sterile saline.</span></summary><div class="ansbox"><ul><li>Clean the wound gently with mild soap and water, then pat dry with sterile cloth</li><li>We never want to recommend to people to use hydrogen peroxide, use rubbing alcohol, or, more importantly, to scrub vigorously.</li></ul></div></details>
+<h2 class="sec" id="perioperative-care">🏥 Perioperative care</h2>
+<details class="qa emerald" data-kw="when do you begin discharge planning? during admission &quot;&quot;"><summary><span class="qt">When do you begin discharge planning?</span></summary><div class="ansbox"><p>During admission</p></div></details>
+<details class="qa emerald" data-kw="what typically kicks off the inter-operative phase? timeout
+right operation, right patient, right location.
+circulating nurse advocates for the patient during the operation. &quot;&quot;"><summary><span class="qt">What typically kicks off the inter-operative phase?</span></summary><div class="ansbox"><p>Timeout</p>
+<p>Right operation, right patient, right location.</p>
+<p>Circulating nurse advocates for the patient during the operation.</p></div></details>
+<details class="qa emerald" data-kw="in the post-op phase, after those abcs, what are the things that we are primarily concerned about? bleeding, atelectasis, pain control, dvts, infection control (incision), gi motility (early ambulation) &quot;&quot;"><summary><span class="qt">In the post-op phase, after those ABCs, what are the things that we are primarily concerned about?</span></summary><div class="ansbox"><p>Bleeding, atelectasis, pain control, DVTs, infection control (incision), GI motility (early ambulation)</p></div></details>
+<details class="qa emerald" data-kw="what is the primary role of the circulating nurse in an or during a surgical procedure?
+a. ensure overall client safety and act as client advocate
+b. manage sterile aspects of or
+c. document the time the client arrived in the pre-op holding area
+d. obtain informed consent for surgery a. ensure overall client safety and act as client advocate &quot;&quot;"><summary><span class="qt">What is the primary role of the circulating nurse in an OR during a surgical procedure?
+A. Ensure overall client safety and act as client advocate
+B. Manage sterile aspects of OR
+C. Document the time the client arrived in the pre-op holding area
+D. Obtain informed consent for surgery</span></summary><div class="ansbox"><p>A. Ensure overall client safety and act as client advocate</p></div></details>
+<h2 class="sec" id="respiratory-aspiration">🫁 Respiratory &amp; aspiration</h2>
+<details class="qa teal" data-kw="what are the risk factors for the development of aspiration pneumonia? - dysphagia
+- intubated (ng, pegs, trach)
+- parkinsons, tbi, ms
+- dementia/alz, delirium
+- stroke
+- gerd, esophageal strictures &quot;&quot;"><summary><span class="qt">What are the risk factors for the development of aspiration pneumonia?</span></summary><div class="ansbox"><ul><li>Dysphagia</li><li>Intubated (NG, PEGs, Trach)</li><li>Parkinsons, TBI, MS</li><li>Dementia/ALZ, delirium</li><li>Stroke</li><li>GERD, Esophageal strictures</li></ul></div></details>
+<details class="qa teal" data-kw="how do we prevent aspiration pneumonia? - raise hob
+- swallow study (within 24hrs)
+- speech therapist
+- dietary changes (thick liquids) &quot;&quot;"><summary><span class="qt">How do we prevent aspiration pneumonia?</span></summary><div class="ansbox"><ul><li>Raise HOB</li><li>Swallow study (within 24hrs)</li><li>Speech Therapist</li><li>Dietary changes (thick liquids)</li></ul></div></details>
+<details class="qa teal" data-kw="what is food pocketing? when a patient has dysphagia (trouble swallowing) they will often hold/store food in their mouths, which ends up in the pockets of their cheeks. &quot;&quot;"><summary><span class="qt">What is food pocketing?</span></summary><div class="ansbox"><p>When a patient has dysphagia (trouble swallowing) they will often hold/store food in their mouths, which ends up in the pockets of their cheeks.</p></div></details>
+<details class="qa teal" data-kw="what is it called when pao2 drops below 60? acute respiratory failure (arf) &quot;&quot;"><summary><span class="qt">What is it called when PaO2 drops below 60?</span></summary><div class="ansbox"><p>Acute respiratory failure (ARF)</p></div></details>
+<details class="qa teal" data-kw="t/f the diagnosis of pneumonia may be missed in the older adult because they may not develop a fever. true
+a patient may have a cough, pleuritic-type chest pain, and dyspnea, whereas somebody who is older may have the initial clinical manifestation of confusion. &quot;&quot;"><summary><span class="qt">T/F The diagnosis of pneumonia may be missed in the older adult because they may not develop a fever.</span></summary><div class="ansbox"><p>True</p>
+<p>A patient may have a cough, pleuritic-type chest pain, and dyspnea, whereas somebody who is older may have the initial clinical manifestation of confusion.</p></div></details>
+<details class="qa teal" data-kw="what are the most important interventions to prevent atelectasis and alveolar collapse? deep breathing, incentive spirometry &quot;&quot;"><summary><span class="qt">What are the most important interventions to prevent atelectasis and alveolar collapse?</span></summary><div class="ansbox"><p>Deep breathing, incentive spirometry</p></div></details>
+<details class="qa teal" data-kw="a client admitted with status asthmaticus requires endotracheal intubation and mechanical ventilation. which intervention decreases the client&#x27;s risk for ventilator-associated pneumonia?
+a. providing a sedation vacation every 8 hours
+b. administering daily oral care with hydrogen peroxide
+c. lowering the head of the patient&#x27;s bed 15 to 25 degrees
+d. suctioning prn using a specialized endotracheal suction tube d. suctioning prn using a specialized endotracheal suction tube
+- sedation vacation daily to assess readiness for extubation but doesn&#x27;t prevent vap
+- oral care more than daily and not with hp
+- do not lower hob, minimum 30deg &quot;&quot;"><summary><span class="qt">A client admitted with status asthmaticus requires endotracheal intubation and mechanical ventilation. Which intervention decreases the client&#x27;s risk for ventilator-associated pneumonia?
+A. Providing a sedation vacation every 8 hours
+B. Administering daily oral care with hydrogen peroxide
+C. Lowering the head of the patient&#x27;s bed 15 to 25 degrees
+D. Suctioning PRN using a specialized endotracheal suction tube</span></summary><div class="ansbox"><p>D. Suctioning PRN using a specialized endotracheal suction tube</p>
+<ul><li>Sedation vacation daily to assess readiness for extubation but doesn&#x27;t prevent VAP</li><li>Oral care more than daily and NOT with HP</li><li>Do NOT lower HOB, minimum 30deg</li></ul></div></details>
+<details class="qa teal" data-kw="which manifestations may suggest a pneumothorax following an injury? sata
+a. tachycardia
+b. tachypnea
+c. pleuritic chest pain
+d. tracheal deviation
+e. expiratory wheezing a. tachycardia = inc hr to compensate for low o2
+b. tachypnea
+c. pleuritic chest pain = sharp, worsens with inspiration, usually on affected side
+d. tracheal deviation (esp with tension pneumo)
+- a pneumothorax occurs when air enters the pleural space, causing the lung to partially or completely collapse.
+- with a pneumothorax, we would auscultate nothing, either diminished or absent breath sounds on that side. &quot;&quot;"><summary><span class="qt">Which manifestations may suggest a pneumothorax following an injury? SATA
+A. Tachycardia
+B. Tachypnea
+C. Pleuritic chest pain
+D. Tracheal deviation
+E. Expiratory wheezing</span></summary><div class="ansbox"><p>A. Tachycardia = inc HR to compensate for low O2</p>
+<p>B. Tachypnea</p>
+<p>C. Pleuritic chest pain = sharp, worsens with inspiration, usually on affected side</p>
+<p>D. Tracheal deviation (esp with tension pneumo)</p>
+<ul><li>A pneumothorax occurs when air enters the pleural space, causing the lung to partially or completely collapse.</li><li>With a pneumothorax, we would auscultate nothing, either diminished or absent breath sounds on that side.</li></ul></div></details>
+<details class="qa teal" data-kw="select the clients at risk of developing a pulmonary embolism:
+1. bmi of 20
+2. post-menopausal
+3. fractured tibia
+4. hormone birth control meds
+5. tamoxifen 3. fractured tibia - immobility = dvt/venous stasis
+4. hormone birth control meds
+5. tamoxifen - a selective estrogen-receptor modulator
+
+obesity &gt;29 bmi (not 20)
+estrogen = pe (post-meno doesn&#x27;t have estrogen unless on hrt). &quot;&quot;"><summary><span class="qt">Select the clients at risk of developing a pulmonary embolism:
+1. BMI of 20
+2. Post-menopausal
+3. Fractured tibia
+4. Hormone birth control meds
+5. Tamoxifen</span></summary><div class="ansbox"><ul><li>Fractured tibia - immobility = DVT/Venous stasis</li><li>Hormone birth control meds</li><li>Tamoxifen - a selective estrogen-receptor modulator</li></ul>
+<p>Obesity &gt;29 BMI (not 20)</p>
+<p>Estrogen = PE (post-meno doesn&#x27;t have estrogen unless on HRT).</p></div></details>
+<details class="qa teal" data-kw="select the clients at risk for developing ards
+1. severe burn injury
+2. post coronary artery bypass surgery
+3. near drowning
+4. sepsis
+5. iron-deficiency anemia ards = diffuse alveolar injury (ventilation issue) direct or indirect lung injury.
+1. severe burn injury
+2. post-coronary artery bypass surgery (triggers inflammatory response)
+3. near drowning (direct damage)
+4. sepsis (#1 cause - damaged alveolar cap membrane = fluid in the lung) &quot;&quot;"><summary><span class="qt">Select the clients at risk for developing ARDS
+1. Severe burn injury
+2. Post coronary artery bypass surgery
+3. Near drowning
+4. Sepsis
+5. Iron-deficiency anemia</span></summary><div class="ansbox"><p>ARDS = diffuse alveolar injury (ventilation issue) direct or indirect lung injury.</p>
+<ul><li>Severe burn injury</li><li>Post-coronary artery bypass surgery (triggers inflammatory response)</li><li>Near drowning (Direct damage)</li><li>Sepsis (#1 cause - damaged alveolar cap membrane = fluid in the lung)</li></ul></div></details>
+<details class="qa teal" data-kw="select the appropriate actions/interventions for ards - treat cause of ards
+- provide oxygen therapy (often mechanical/vent)
+- provide nutritional support - supports immune and healing
+- place the client in prone position (alleviates pressure on lungs)
+- intubate and mechanically vent &quot;&quot;"><summary><span class="qt">Select the appropriate actions/interventions for ARDS</span></summary><div class="ansbox"><ul><li>Treat cause of ARDS</li><li>Provide oxygen therapy (often mechanical/vent)</li><li>Provide nutritional support - supports immune and healing</li><li>Place the client in prone position (alleviates pressure on lungs)</li><li>Intubate and mechanically vent</li></ul></div></details>
+<details class="qa teal" data-kw="what are the nursing goals of care of a tb patient? - prevent transmission - airborne precautions (n95, negative pressure, gloves)
+- airway patency - clear secretions
+education: explain the why behind the isolation, how long it will last (3 negative sputum cultures)
+- close contacts need to be tested
+- may need future chest x-rays to confirm tx is working.
+- will always be positive on a tb skin test in the future. &quot;&quot;"><summary><span class="qt">What are the nursing goals of care of a TB patient?</span></summary><div class="ansbox"><ul><li>Prevent transmission - airborne precautions (N95, negative pressure, gloves)</li><li>Airway patency - clear secretions</li></ul>
+<p>Education: Explain the why behind the isolation, how long it will last (3 negative sputum cultures)</p>
+<ul><li>Close contacts need to be tested</li><li>May need future chest x-rays to confirm TX is working.</li><li>Will always be positive on a TB skin test in the future.</li></ul></div></details>
+<details class="qa teal" data-kw="what does tb treatment entail? lasts at least 6-12 months
+must adhere and complete all med cycles
+many tb drugs are hepatotoxic. &quot;&quot;"><summary><span class="qt">What does TB treatment entail?</span></summary><div class="ansbox"><p>Lasts at least 6-12 months</p>
+<p>Must adhere and complete all med cycles</p>
+<p>Many TB drugs are hepatotoxic.</p></div></details>
+<details class="qa teal" data-kw="what are the meds used to treat active tb? r - rifampin - orange-red body fluids, hepatotoxicity
+i - isoniazid (inh) - peripheral neuropathy, hepatotoxicity
+p - pyrazinamide - hepatotoxicity, hyperuricemia (gout)
+e - ethambutol - optic neuritis (vision changes) &quot;&quot;"><summary><span class="qt">What are the meds used to treat active TB?</span></summary><div class="ansbox"><p>R - Rifampin - Orange-red body fluids, hepatotoxicity</p>
+<p>I - Isoniazid (INH) - Peripheral neuropathy, hepatotoxicity</p>
+<p>P - Pyrazinamide - Hepatotoxicity, hyperuricemia (gout)</p>
+<p>E - Ethambutol - Optic neuritis (vision changes)</p></div></details>
+<details class="qa teal" data-kw="what are the most common clinical manifestations and treatments for obstructive sleep apnea? loud snoring, daytime sleepiness
+tx: cpap &quot;&quot;"><summary><span class="qt">What are the most common clinical manifestations and treatments for Obstructive Sleep Apnea?</span></summary><div class="ansbox"><p>Loud snoring, daytime sleepiness</p>
+<p>TX: CPAP</p></div></details>
+<h2 class="sec" id="asthma-copd">💨 Asthma &amp; COPD</h2>
+<details class="qa citrine" data-kw="what are the side effects of albuterol? tremors (jittery, shaky)
+palpitations
+agitation
+tachycardia, restlessness, nervousness &quot;&quot;"><summary><span class="qt">What are the side effects of albuterol?</span></summary><div class="ansbox"><p>Tremors (jittery, shaky)</p>
+<p>Palpitations</p>
+<p>Agitation</p>
+<p>Tachycardia, restlessness, nervousness</p></div></details>
+<details class="qa citrine" data-kw="how is albuterol commonly administered? using a metered-dose inhaler.
+tiotropium is a long-acting anticholinergic medication. it is typically administered by dry powder inhaler, not metered dose inhaler. &quot;&quot;"><summary><span class="qt">How is albuterol commonly administered?</span></summary><div class="ansbox"><p>Using a Metered-dose inhaler.</p>
+<p>Tiotropium is a long-acting anticholinergic medication. It is typically administered by dry powder inhaler, not metered dose inhaler.</p></div></details>
+<details class="qa citrine" data-kw="what is the #1 thing you can do to avoid an asthma attack/exacerbation? avoid triggers - pollen (stay indoors during high pollen days); smoke
+using a rescue inhaler before exercising can prevent an exercise-induced bronchospasm, but it is not a comprehensive strategy for preventing overall asthma exacerbations. &quot;&quot;"><summary><span class="qt">What is the #1 thing you can do to avoid an asthma attack/exacerbation?</span></summary><div class="ansbox"><p>Avoid triggers - pollen (stay indoors during high pollen days); smoke</p>
+<p>Using a rescue inhaler before exercising can prevent an exercise-induced bronchospasm, but it is not a comprehensive strategy for preventing overall asthma exacerbations.</p></div></details>
+<details class="qa citrine" data-kw="a client with asthma is showing manifestations of an exacerbation. select the correct findings in worsening asthma. (select all that apply)
+a. spo₂ 90%
+b. inspiratory crackles
+c. bilateral wheezing
+d. tachypnea
+e. accessory muscle use
+f. confusion
+g. bloody sputum a. spo₂ 90% - hypoxemia is a key indicator
+c. bilateral wheezing - classic sound
+d. tachypnea - increase r/r to compensate
+e. accessory muscle use
+f. confusion - altered mental status (restlessness, confusion, or lethargy) is a late and serious sign &quot;&quot;"><summary><span class="qt">A client with asthma is showing manifestations of an exacerbation. Select the correct findings in worsening asthma. (Select all that apply)
+A. SpO₂ 90%
+B. Inspiratory crackles
+C. Bilateral wheezing
+D. Tachypnea
+E. Accessory muscle use
+F. Confusion
+G. Bloody sputum</span></summary><div class="ansbox"><p>A. SpO₂ 90% - Hypoxemia is a key indicator</p>
+<p>C. Bilateral wheezing - classic sound</p>
+<p>D. Tachypnea - Increase R/R to compensate</p>
+<p>E. Accessory muscle use</p>
+<p>F. Confusion - Altered mental status (restlessness, confusion, or lethargy) is a late and serious sign</p></div></details>
+<details class="qa citrine" data-kw="a nurse is teaching a client with copd about the use of bronchodilators. which statement indicates that the patient understands the teaching?
+a. &quot;i should use my long-acting bronchodilator only when i have symptoms.&quot;
+b. &quot;i will use my short-acting bronchodilator before engaging in physical activity.&quot;
+c. &quot;i can stop using my bronchodilator if i feel better.&quot;
+d. &quot;i should take my bronchodilator after using my corticosteroid inhaler.&quot; b. &quot;i will use my short-acting bronchodilator before engaging in physical activity.&quot;
+sabas such as albuterol are used both as rescue medication for acute symptoms and prophylactically before exercise or other activities that may trigger dyspnea.
+- labas are maintenance medications and must be taken regularly on a schedule. don&#x27;t stop when feeling better.
+take bronchodilators first, before corticosteroids to allow for better absorption. &quot;&quot;"><summary><span class="qt">A nurse is teaching a client with COPD about the use of bronchodilators. Which statement indicates that the patient understands the teaching?
+A. &quot;I should use my long-acting bronchodilator only when I have symptoms.&quot;
+B. &quot;I will use my short-acting bronchodilator before engaging in physical activity.&quot;
+C. &quot;I can stop using my bronchodilator if I feel better.&quot;
+D. &quot;I should take my bronchodilator after using my corticosteroid inhaler.&quot;</span></summary><div class="ansbox"><p>B. &quot;I will use my short-acting bronchodilator before engaging in physical activity.&quot;</p>
+<p>SABAs such as albuterol are used both as rescue medication for acute symptoms and prophylactically before exercise or other activities that may trigger dyspnea.</p>
+<ul><li>LABAs are maintenance medications and must be taken regularly on a schedule. Don&#x27;t stop when feeling better.</li></ul>
+<p>Take bronchodilators FIRST, before corticosteroids to allow for better absorption.</p></div></details>
+<details class="qa citrine" data-kw="a nurse is caring for a client with copd who requires supplemental oxygen. which oxygen delivery method is most appropriate to prevent carbon dioxide retention?
+a. simple face mask at 10 l/min
+b. non-rebreather mask at 15 l/min
+c. nasal cannula at 2 l/min
+d. venturi mask at 50% fio₂ the venturi mask is actually the preferred device when a precise oxygen concentration is needed for copd patients. &quot;&quot;"><summary><span class="qt">A nurse is caring for a client with COPD who requires supplemental oxygen. Which oxygen delivery method is most appropriate to prevent carbon dioxide retention?
+A. Simple face mask at 10 L/min
+B. Non-rebreather mask at 15 L/min
+C. Nasal cannula at 2 L/min
+D. Venturi mask at 50% FiO₂</span></summary><div class="ansbox"><p>The Venturi mask is actually the preferred device when a precise oxygen concentration is needed for COPD patients.</p></div></details>
+<details class="qa citrine" data-kw="the nurse should teach a copd client to ___ because high flow oxygen can ___ avoid high-flow oxygen - it can depress respiratory drive &quot;&quot;"><summary><span class="qt">The nurse should teach a COPD client to ___ because high flow oxygen can ___</span></summary><div class="ansbox"><p>Avoid high-flow oxygen - it can depress respiratory drive</p></div></details>
+<details class="qa citrine" data-kw="what would be the priority of interventions for a copd patient in respiratory acidosis? 1. semi fowlers
+2. apply prescribed o2 and titrate as ordered
+3. pursed-lip breathing (release trapped air)
+4. prepare for bipap &quot;&quot;"><summary><span class="qt">What would be the priority of interventions for a COPD patient in respiratory acidosis?</span></summary><div class="ansbox"><ul><li>Semi Fowlers</li><li>Apply prescribed O2 and titrate as ordered</li><li>Pursed-lip breathing (release trapped air)</li><li>Prepare for BiPAP</li></ul></div></details>
+<h2 class="sec" id="acid-base-abgs">⚗️ Acid–base &amp; ABGs</h2>
+<details class="qa sapphire" data-kw="what are common causes of respiratory acidosis? hypoventilation = co2 retention = low ph
+- copd
+- opioid or sedative o/d
+- pneumonia
+- atelectasis
+- severe asthma
+(the more i hold my breath, the more acidic i become) &quot;&quot;"><summary><span class="qt">What are common causes of respiratory acidosis?</span></summary><div class="ansbox"><p>Hypoventilation = CO2 retention = Low pH</p>
+<ul><li>COPD</li><li>Opioid or sedative o/d</li><li>Pneumonia</li><li>Atelectasis</li><li>Severe asthma</li></ul>
+<p>(The more I hold my breath, the more acidic I become)</p></div></details>
+<details class="qa sapphire" data-kw="what are common causes of respiratory alkalosis? hyperventilation → co₂ loss → ↑ ph
+think: &quot;blowing off too much co₂.&quot;
+anxiety/panic attack
+pain &amp; fever (inc r/r)
+early sepsis
+pe
+respiratory alkalosis = &quot;breathing too fast.&quot; &quot;&quot;"><summary><span class="qt">What are common causes of respiratory alkalosis?</span></summary><div class="ansbox"><p>Hyperventilation → CO₂ loss → ↑ pH</p>
+<p>Think: &quot;Blowing off too much CO₂.&quot;</p>
+<p>Anxiety/panic attack</p>
+<p>Pain &amp; Fever (inc r/r)</p>
+<p>Early sepsis</p>
+<p>PE</p>
+<p>Respiratory Alkalosis = &quot;Breathing Too Fast.&quot;</p></div></details>
+<details class="qa sapphire" data-kw="what are common causes of metabolic acidosis? &quot;the body is making acid or losing base.&quot;
+- dka
+- lactic acidosis (tissue hypoxia)
+- renal failure (can&#x27;t excrete acids)
+- severe diarrhea (loss of bicarb)
+- shock, starvation, salicylate o/d
+** kussmaul respirations (deep, rapid)
+metabolic acidosis = &quot;diarrhea and dka.&quot; &quot;&quot;"><summary><span class="qt">What are common causes of metabolic acidosis?</span></summary><div class="ansbox"><p>&quot;The body is making acid or losing base.&quot;</p>
+<ul><li>DKA</li><li>Lactic acidosis (tissue hypoxia)</li><li>Renal Failure (can&#x27;t excrete acids)</li><li>Severe diarrhea (Loss of bicarb)</li><li>Shock, starvation, salicylate o/d</li></ul>
+<p>** Kussmaul respirations (deep, rapid)</p>
+<p>Metabolic Acidosis = &quot;Diarrhea and DKA.&quot;</p></div></details>
+<details class="qa sapphire" data-kw="what are common causes of metabolic alkalosis? too much bicarbonate or loss of stomach acid
+- vomiting - lose hydrochloric acid
+- ng suction
+- excess antacids
+- diuretics (loop, thiazides - hydrogen ion loss) &quot;&quot;"><summary><span class="qt">What are common causes of metabolic alkalosis?</span></summary><div class="ansbox"><p>Too much bicarbonate OR loss of stomach acid</p>
+<ul><li>Vomiting - lose hydrochloric acid</li><li>NG suction</li><li>Excess antacids</li><li>Diuretics (loop, thiazides - hydrogen ion loss)</li></ul></div></details>
+<details class="qa sapphire" data-kw="excessive use of antacids can cause which abg imbalance? metabolic alkalosis (loss of too much acid) &quot;&quot;"><summary><span class="qt">Excessive use of antacids can cause which ABG imbalance?</span></summary><div class="ansbox"><p>Metabolic Alkalosis (loss of too much acid)</p></div></details>
+<details class="qa sapphire" data-kw="what are the expected clinical manifestations of respiratory acidosis? respiratory acidosis = &quot;not breathing&quot;
+😴 sleepy
+🧠 confused
+🤕 headache
+🌬️ breathing too little
+📈 high co₂
+high co₂ = cns depression &quot;&quot;"><summary><span class="qt">What are the expected clinical manifestations of respiratory acidosis?</span></summary><div class="ansbox"><p>Respiratory Acidosis = &quot;Not Breathing&quot;</p>
+<p>😴 Sleepy</p>
+<p>🧠 Confused</p>
+<p>🤕 Headache</p>
+<p>🌬️ Breathing too little</p>
+<p>📈 High CO₂</p>
+<p>High CO₂ = CNS Depression</p></div></details>
+<details class="qa sapphire" data-kw="a patient with copd is experiencing increased sob. their abgs indicate partially compensated respiratory acidosis. what is the primary cause of the imbalance, and what compensatory mechanisms would the body initiate to level out the ph? resp acidosis caused by hypoventilation (holding onto co2)
+compensation = increased renal retention of bicarb (inc hco3 to up the base, up the ph). &quot;&quot;"><summary><span class="qt">A patient with COPD is experiencing increased SOB. Their ABGs indicate partially compensated respiratory acidosis. What is the primary cause of the imbalance, and what compensatory mechanisms would the body initiate to level out the pH?</span></summary><div class="ansbox"><p>Resp Acidosis caused by hypoventilation (holding onto CO2)</p>
+<p>Compensation = increased renal retention of bicarb (inc HCO3 to up the base, up the pH).</p></div></details>
+<details class="qa sapphire" data-kw="how do kussmaul breaths compensate for metabolic acidosis? kussmaul respirations are deep, rapid, labored breathing that occurs as the body tries to compensate for metabolic acidosis.
+the patient is trying to blow off co₂ to reduce the acidity of the blood.
+seen a lot in clients with dka (high ketones = high acid) &quot;&quot;"><summary><span class="qt">How do Kussmaul breaths compensate for metabolic acidosis?</span></summary><div class="ansbox"><p>Kussmaul respirations are deep, rapid, labored breathing that occurs as the body tries to compensate for metabolic acidosis.</p>
+<p>The patient is trying to blow off CO₂ to reduce the acidity of the blood.</p>
+<p>Seen a lot in clients with DKA (high ketones = high acid)</p></div></details>
+<h2 class="sec" id="fluids-electrolytes">💧 Fluids &amp; electrolytes</h2>
+<details class="qa amethyst" data-kw="hyponatremia is most commonly associated with what symptoms? confusion and seizures - neurological systems &quot;&quot;"><summary><span class="qt">Hyponatremia is most commonly associated with what symptoms?</span></summary><div class="ansbox"><p>Confusion and seizures - neurological systems</p></div></details>
+<details class="qa amethyst" data-kw="hyperkalemia is most commonly associated with what symptoms? tall peaked t-waves, muscle cramps
+potassium = heart and muscles &quot;&quot;"><summary><span class="qt">Hyperkalemia is most commonly associated with what symptoms?</span></summary><div class="ansbox"><p>Tall peaked T-waves, muscle cramps</p>
+<p>Potassium = heart and muscles</p></div></details>
+<details class="qa amethyst" data-kw="hypocalcemia is most commonly associated with what symptoms? tetany and positive chvostek&#x27;s sign
+- neuromuscular irritability &quot;&quot;"><summary><span class="qt">Hypocalcemia is most commonly associated with what symptoms?</span></summary><div class="ansbox"><p>Tetany and positive Chvostek&#x27;s sign</p>
+<ul><li>neuromuscular irritability</li></ul></div></details>
+<details class="qa amethyst" data-kw="hypermagnesemia is most commonly associated with what symptoms? depressed tendon reflexes
+(think - you take mg to go to sleep and to poop b/c it relaxes your muscles. so too much = too much relaxation.) &quot;&quot;"><summary><span class="qt">Hypermagnesemia is most commonly associated with what symptoms?</span></summary><div class="ansbox"><p>Depressed tendon reflexes</p>
+<p>(Think - you take Mg to go to sleep and to poop b/c it relaxes your muscles. So too much = too much relaxation.)</p></div></details>
+<details class="qa amethyst" data-kw="what fluids would i give a patient with a na level of 112? hypertonic (high na) = &gt; 0.9% saline
+so 3% normal saline would work.
+they need more salt, give them hypertonic.
+however, this does not cure fvd. only to fix the electrolyte issue b/c it pulls water from cells.
+
+hypotonic turns your cells into hippos - fat cells = rehydration. na is high (170). give them 0.45% saline. &quot;&quot;"><summary><span class="qt">What fluids would I give a patient with a Na level of 112?</span></summary><div class="ansbox"><p>Hypertonic (high Na) = &gt; 0.9% saline</p>
+<p>So 3% normal saline would work.</p>
+<p>They need more salt, give them hypertonic.</p>
+<p>However, this does NOT cure FVD. Only to fix the electrolyte issue b/c it pulls water from cells.</p>
+<p>Hypotonic turns your cells into hippos - fat cells = rehydration. Na is high (170). Give them 0.45% saline.</p></div></details>
+<details class="qa amethyst" data-kw="when a patient needs resuscitative fluids, what do you give them? isotonic solutions.
+0.9% saline or lactated ringers
+ex: low blood pressure due to fluid volume deficits &quot;&quot;"><summary><span class="qt">When a patient needs resuscitative fluids, what do you give them?</span></summary><div class="ansbox"><p>Isotonic solutions.</p>
+<p>0.9% saline or Lactated Ringers</p>
+<p>Ex: low blood pressure due to fluid volume deficits</p></div></details>
+<details class="qa amethyst" data-kw="i have a patient whose na is 110. what nursing interventions should i anticipate? - fall precautions (due to confusion)
+- seizure precautions (low na)
+- prepare for hypertonic fluids &quot;&quot;"><summary><span class="qt">I have a patient whose Na is 110. What nursing interventions should I anticipate?</span></summary><div class="ansbox"><ul><li>Fall precautions (due to confusion)</li><li>Seizure precautions (low Na)</li><li>Prepare for hypertonic fluids</li></ul></div></details>
+<details class="qa amethyst" data-kw="what is a key factor of spironolactone? it&#x27;s a potassium-sparing diuretic - so look for hyperkalemia (muscle cramps, peaked t-waves, widened qrs intervals)
+loop diuretics (furosemide) and thiazides do not spare k+, so look for hypok. &quot;&quot;"><summary><span class="qt">What is a key factor of spironolactone?</span></summary><div class="ansbox"><p>It&#x27;s a Potassium-sparing diuretic - so look for hyperkalemia (muscle cramps, peaked T-waves, widened QRS intervals)</p>
+<p>Loop diuretics (Furosemide) and Thiazides do NOT spare K+, so look for hypoK.</p></div></details>
+<details class="qa amethyst" data-kw="what is a key factor in using ace inhibitors? lisinopril - prils
+ace inhibitors → hold on to potassium → risk of hyperkalemia.
+so when you see lisinopril + spironolactone = hyperkalemia risk.
+they block the raas system so no aldosterone (which normally causes retention of water and na, and excretion of k+). no raas, no aldosterone, no k+ excretion. &quot;&quot;"><summary><span class="qt">What is a key factor in using ACE inhibitors?</span></summary><div class="ansbox"><p>Lisinopril - PRILs</p>
+<p>ACE inhibitors → Hold on to potassium → Risk of hyperkalemia.</p>
+<p>So when you see Lisinopril + spironolactone = Hyperkalemia risk.</p>
+<p>They block the RAAS system so no aldosterone (which normally causes retention of water and Na, and excretion of K+). No RAAS, no aldosterone, no K+ excretion.</p></div></details>
+<details class="qa amethyst" data-kw="a client with chronic renal failure presents to the er after missing 2 dialyses. client reports chest pain, dyspnea, crackles in lungs and peripheral edema. which electrolyte abnormality should the nurse most anticipate? hyperkalemia - kidneys can&#x27;t excrete
+peaked t-waves
+fluid volume overload (crackles, edema)
+tx: diuretics (loop), calcium gluconate iv to stabilize cardiac membrane, iv regular insulin and d50 (drive k+ back into cells), or sodium polystyrene sulfonate (pulls k+ into bowels) &quot;&quot;"><summary><span class="qt">A client with chronic renal failure presents to the ER after missing 2 dialyses. Client reports chest pain, dyspnea, crackles in lungs and peripheral edema. Which electrolyte abnormality should the nurse MOST anticipate?</span></summary><div class="ansbox"><p>Hyperkalemia - kidneys can&#x27;t excrete</p>
+<p>Peaked T-waves</p>
+<p>Fluid volume overload (crackles, edema)</p>
+<p>TX: Diuretics (loop), Calcium gluconate IV to stabilize cardiac membrane, IV regular insulin and D50 (drive K+ back into cells), or sodium polystyrene sulfonate (pulls K+ into bowels)</p></div></details>
+<div id="none">Nothing matched that. Try a shorter word &mdash; &ldquo;traction&rdquo;, &ldquo;gain&rdquo;, &ldquo;tic&rdquo;.</div>
+<div class="foot">These are your own questions and answers, kept word for word. Tap a question to check yourself, or use <b>Show all answers</b> to read it straight through.</div>
+</div>
+<script>
+(function(){
+  var all=[].slice.call(document.querySelectorAll('details.qa'));
+  var heads=[].slice.call(document.querySelectorAll('h2.sec'));
+  var q=document.getElementById('q'), cnt=document.getElementById('cnt'),
+      none=document.getElementById('none');
+  function apply(){
+    var t=(q.value||'').trim().toLowerCase(), n=0;
+    all.forEach(function(d){
+      var ok=!t||(d.dataset.kw||'').indexOf(t)>=0;
+      d.style.display=ok?'':'none'; if(ok){n++; if(t) d.open=true;}
+    });
+    heads.forEach(function(h){
+      var el=h.nextElementSibling, any=false;
+      while(el&&el.tagName!=='H2'){ if(el.classList&&el.classList.contains('qa')
+        &&el.style.display!=='none') any=true; el=el.nextElementSibling; }
+      h.style.display=any?'':'none';
+    });
+    cnt.textContent=n+' of '+all.length+' questions';
+    none.style.display=n?'none':'block';
+  }
+  q.addEventListener('input',apply); q.addEventListener('search',apply);
+  document.getElementById('openAll').addEventListener('click',function(){
+    all.forEach(function(d){d.open=true;});
+    this.classList.add('on'); document.getElementById('closeAll').classList.remove('on');
+  });
+  document.getElementById('closeAll').addEventListener('click',function(){
+    all.forEach(function(d){d.open=false;});
+    this.classList.add('on'); document.getElementById('openAll').classList.remove('on');
+  });
+  apply();
+})();
+</script>
+<script id="skimJS">
+(function(){
+  /* What counts as a line of prose on these pages is NOT <p>. The 125 eBook units use
+     <p class="ebp">, but 175 is card-based divs and 198 mixes divs, p and li. So the
+     candidate set is "leaf text blocks": an element whose children are all inline.
+     Measured before choosing: on a 125 eBook unit that is 2,352 blocks of which ~456
+     are long unmarked prose; on the card pages it is a handful, which is the honest
+     answer - those pages are already skimmable. */
+  var INLINE = {B:1,I:1,EM:1,STRONG:1,SPAN:1,A:1,CODE:1,MARK:1,U:1,BR:1,SMALL:1,
+                SUB:1,SUP:1,ABBR:1,WBR:1,IMG:1};
+  var SIGNAL = 'b,strong,mark,u,code';
+  /* never touch: chrome, tables, quizzes, contents lists, captions, footers */
+  var SAFE = '#skimBtn,nav,header,#vwBar,.bar,.nb,.nbWrap,table,thead,tbody,tr,td,th,' +
+             '.stem,.q,.qa,.qt,.ans,.ansbox,.rationale,.fill,.blanks,.fp,.fpk,.nq,' +
+             '.toc,.foot,.cap,.chip,.chip-row,.sec-sub,.bn,.dvname,button,summary,' +
+             '[class*="nav"],[class*="btn"],[class*="quiz"]';
+  var MIN  = 110;      /* below this a line is a label or a rule, not padding */
+  var NUM  = /\d\s*(mg|mcg|g|kg|lb|ml|l|mmol|meq|mmhg|%|hr|hrs|min|sec|day|wk|yr|bpm|cm|mm|units?|°)/i;
+
+  var btn, marked=false, hid=0, total=0;
+
+  function leaf(el){
+    for(var i=0;i<el.children.length;i++)
+      if(!INLINE[el.children[i].tagName]) return false;
+    return true;
+  }
+
+  function mark(){
+    if(marked) return;
+    var all = document.querySelectorAll('p,li,div,dd');
+    for(var i=0;i<all.length;i++){
+      var el=all[i];
+      if(el.closest(SAFE)) continue;
+      if(!leaf(el)) continue;
+      var t=(el.textContent||'').trim();
+      if(!t) continue;
+      total++;
+      if(t.length < MIN) continue;
+      if(el.querySelector(SIGNAL)) continue;
+      if(NUM.test(t)) continue;
+      el.classList.add('skimHide'); hid++;
+    }
+    marked=true;
+  }
+
+  var wasShut=[];
+  function openAll(open){
+    if(open){
+      wasShut=[].slice.call(document.querySelectorAll('details:not([open])'));
+      wasShut.forEach(function(d){ d.open=true; });
+    } else {
+      wasShut.forEach(function(d){ d.open=false; });
+      wasShut=[];
+    }
+  }
+
+  function paint(on){
+    btn.querySelector('.lbl').textContent = on ? 'Skimming' : 'Skim mode';
+    btn.querySelector('.n').textContent =
+      on ? (hid ? ('hid ' + hid + ' of ' + total) : 'nothing to hide here') : '';
+  }
+
+  function toggle(){
+    var on=!document.body.classList.contains('skimOn');
+    if(on) mark();
+    document.body.classList.toggle('skimOn', on);
+    openAll(on); paint(on);
+    try{ localStorage.setItem('skimOn', on?'1':'0'); }catch(e){}
+  }
+
+  function build(){
+    /* an iframe shell has no prose of its own - the inner document carries its own
+       button, so a second dead one on the wrapper would just be a lie */
+    /* textContent, not innerText: innerText is render-aware, so on a page whose
+       content sits inside collapsed <details> it reads near-zero and this test would
+       suppress the button on a perfectly good page. That happened. */
+    if(document.querySelector('iframe') &&
+       (document.body.textContent||'').trim().length < 6000) return;
+
+    btn=document.createElement('button');
+    btn.type='button'; btn.id='skimBtn';
+    btn.setAttribute('aria-label','Toggle skim mode - hide the long prose, keep the rules');
+    btn.innerHTML='⚡ <span class="lbl">Skim mode</span> <span class="n"></span>';
+    btn.addEventListener('click', toggle);
+    document.body.appendChild(btn);
+    paint(false);
+
+  /* ---- draggable, because a button welded to a corner covers what she is reading
+     and at 300% zoom there is not much screen left to lose. Travel under 6px counts
+     as a click, 6px or more is a drag and the click is swallowed. */
+  var KEYPOS='skimBtnPos';
+  function clamp(x,y){
+    var r=btn.getBoundingClientRect(), m=4;
+    return [Math.max(m,Math.min(x,window.innerWidth-r.width-m)),
+            Math.max(m,Math.min(y,window.innerHeight-r.height-m))];
+  }
+  function place(x,y,save){
+    var p=clamp(x,y);
+    btn.style.left=p[0]+'px'; btn.style.top=p[1]+'px';
+    btn.style.right='auto'; btn.style.bottom='auto';
+    if(save){ try{ localStorage.setItem(KEYPOS,JSON.stringify(p)); }catch(e){} }
+  }
+  function restore(){
+    try{
+      var p=JSON.parse(localStorage.getItem(KEYPOS)||'null');
+      if(p && p.length===2) place(p[0],p[1],false);
+    }catch(e){}
+  }
+
+  var down=null, moved=false;
+  btn.addEventListener('pointerdown',function(e){
+    if(e.button && e.button!==0) return;
+    var r=btn.getBoundingClientRect();
+    down={x:e.clientX,y:e.clientY,dx:e.clientX-r.left,dy:e.clientY-r.top};
+    moved=false;
+    btn.setPointerCapture&&btn.setPointerCapture(e.pointerId);
+  });
+  btn.addEventListener('pointermove',function(e){
+    if(!down) return;
+    if(!moved && Math.abs(e.clientX-down.x)<6 && Math.abs(e.clientY-down.y)<6) return;
+    moved=true; btn.classList.add('dragging');
+    place(e.clientX-down.dx, e.clientY-down.dy, false);
+    e.preventDefault();
+  });
+  function end(e){
+    if(!down) return;
+    down=null;
+    if(moved){
+      btn.classList.remove('dragging');
+      var r=btn.getBoundingClientRect();
+      place(r.left,r.top,true);
+      /* swallow the click this drag would otherwise fire */
+      var kill=function(ev){ ev.stopPropagation(); ev.preventDefault();
+        btn.removeEventListener('click',kill,true); };
+      btn.addEventListener('click',kill,true);
+      setTimeout(function(){ btn.removeEventListener('click',kill,true); },0);
+    }
+  }
+  btn.addEventListener('pointerup',end);
+  btn.addEventListener('pointercancel',end);
+
+  /* arrows nudge it, so moving it never needs a precise drag */
+  btn.addEventListener('keydown',function(e){
+    var d={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];
+    if(!d) return;
+    e.preventDefault();
+    var step=e.shiftKey?48:12, r=btn.getBoundingClientRect();
+    place(r.left+d[0]*step, r.top+d[1]*step, true);
+  });
+
+  window.addEventListener('resize',function(){
+    var r=btn.getBoundingClientRect(); place(r.left,r.top,false);
+  });
+  restore();
+
+    /* ---- never sit under the nav cluster ---------------------------- */
+    function unstack(){
+      var nb=document.getElementById('navBtns');
+      if(!nb || !btn) return;
+      var a=btn.getBoundingClientRect(), b=nb.getBoundingClientRect();
+      var hit = !(a.right < b.left-4 || a.left > b.right+4 ||
+                  a.bottom < b.top-4 || a.top > b.bottom+4);
+      if(!hit) return;
+      var below = b.bottom + 10;
+      var top = (below + a.height + 6 <= window.innerHeight) ? below
+                                                             : Math.max(6, b.top - a.height - 10);
+      btn.style.top = top + 'px';
+      btn.style.left = Math.max(6, Math.min(a.left, window.innerWidth - a.width - 6)) + 'px';
+      btn.style.right = 'auto'; btn.style.bottom = 'auto';
+    }
+    setTimeout(unstack, 60);
+    window.addEventListener('resize', function(){ setTimeout(unstack, 60); });
+
+    var want=false;
+    try{ want=localStorage.getItem('skimOn')==='1'; }catch(e){}
+    if(want) toggle();
+  }
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', build);
+  else build();
+})();
+</script>
+</body></html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NUR198 Exam 5 · Module 11 — Upper GI Guided Notes (Completed)</title><style>
+ :root{--deep:#140b24;--panel:#241a3d;--panel2:#2c2050;--ink:#f4f0ff;--soft:#cdc3e8;--muted:#a99fc7;--line:#3a2d5e;--gold:#ffcf5c;--violet:#b58cff;--teal:#4fd6c9}
+ *{box-sizing:border-box} html,body{margin:0;min-height:100%;scroll-behavior:smooth}
+ body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--ink);background-color:var(--deep);
+   background-image:linear-gradient(rgba(12,7,22,.9),rgba(12,7,22,.94)),url("Designer.jpg");
+   background-size:cover;background-position:center;background-attachment:fixed;line-height:1.55}
+ a.home{position:fixed;top:10px;right:12px;z-index:99999;background:linear-gradient(135deg,#5a2d82,#8e2d6b);color:#fff;text-decoration:none;font:700 .82rem 'Segoe UI',system-ui,sans-serif;padding:8px 14px;border-radius:22px;box-shadow:0 4px 14px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.18)}
+ header{background:linear-gradient(135deg,#5a2d82,#8e2d6b);padding:18px 20px 16px;border-bottom:1px solid var(--line)}
+ header h1{margin:0;font-size:1.3rem} header p{margin:4px 0 0;font-size:.86rem;color:#ffe49b}
+ .bar{position:sticky;top:0;z-index:900;background:rgba(20,11,36,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+ .toggle{background:linear-gradient(135deg,#1c8f6e,#146c8a);color:#fff;border:none;font:700 .8rem 'Segoe UI';padding:8px 14px;border-radius:20px;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.4)}
+ .legend{color:var(--muted);font-size:0.82rem;margin:2px 0 0}
+ .nav{max-width:1000px;margin:0 auto;padding:12px 14px;display:flex;flex-wrap:wrap;gap:7px}
+ .nav a{font-size:0.82rem;color:var(--soft);text-decoration:none;background:var(--panel);border:1px solid var(--line);padding:5px 10px;border-radius:16px}
+ .nav a:hover{border-color:var(--violet);color:#fff}
+ .wrap{max-width:1000px;margin:0 auto;padding:6px 18px 80px}
+ .sec{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:16px 0}
+ .sech{color:var(--gold);font-size:1.12rem;border-left:5px solid var(--violet);padding-left:12px;margin:2px 0 12px;position:sticky;top:46px;background:var(--panel);z-index:5;padding:6px 0 6px 12px}
+ .sec h3{color:var(--teal);font-size:1rem;margin:14px 0 6px}
+ .sec p{margin:.5em 0} .sec ul{margin:.4em 0 .7em 1.1em} .sec li{margin:.25em 0}
+ table{border-collapse:collapse;width:100%;margin:10px 0;font-size:.9rem;background:var(--panel2);border-radius:8px;overflow:hidden}
+ th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+ th{background:#3a2160;color:#ffe49b} tr:nth-child(even) td{background:rgba(255,255,255,.03)}
+ mark.ans{background:linear-gradient(transparent 55%, rgba(123,224,176,.38) 55%);color:#d6ffe9;font-weight:600;padding:0 2px;border-radius:3px}
+ body.hideans mark.ans{background:#3a2d5e;color:transparent;border-radius:4px;box-shadow:inset 0 0 0 1px var(--line);cursor:pointer}
+ body.hideans mark.ans:hover{color:#8f83b0}
+ .pearl{background:rgba(255,207,92,.08);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:.5em .8em;margin:.6em 0;font-size:.9rem}
+ .chk{list-style:none;margin:.4em 0;padding:0} .chk li{margin:.3em 0}.chk li:before{content:"\2705 ";}
+ @media print{a.home,.bar{display:none} body{background:#fff;color:#000} .sec{background:#fff;border:1px solid #ccc} mark.ans{background:#d6f5e6;color:#05502f}}
+</style><style id="skimCSS">
+#skimBtn{position:fixed;left:12px;bottom:12px;z-index:9000;
+ display:flex;align-items:center;gap:8px;
+ background:rgba(157,92,255,.92);border:1px solid rgba(255,255,255,.45);color:#fff;
+ border-radius:14px;padding:11px 14px;cursor:pointer;
+ font:800 .95rem 'Segoe UI',system-ui,sans-serif;
+ box-shadow:0 6px 20px rgba(0,0,0,.45);backdrop-filter:blur(6px);
+ max-width:calc(100vw - 24px)}
+#skimBtn:hover{background:rgba(157,92,255,1)}
+#skimBtn .n{font-weight:900;font-size:.88rem;opacity:.92;white-space:nowrap}
+body.skimOn #skimBtn{background:rgba(255,194,51,.95);color:#231a02;
+ border-color:rgba(0,0,0,.35)}
+body.skimOn .skimHide{display:none !important}
+body.skimOn .skimKeep{outline:0}
+
+#skimBtn{touch-action:none;cursor:grab}
+#skimBtn.dragging{opacity:.92;cursor:grabbing}
+
+#skimBtn:focus-visible{outline:3px solid #ffd76a;outline-offset:2px}
+@media print{#skimBtn{display:none}}
+</style>
+
+<style id="noteChunkCSS">
+/* ---- section folding ------------------------------------------------- */
+details.nsec{border:1px solid rgba(255,255,255,.20);border-radius:14px;
+ margin:0 0 14px;overflow:hidden;background:rgba(0,0,0,.20)}
+details.nsec[open]{background:rgba(0,0,0,.28)}
+details.nsec > summary{cursor:pointer;list-style:none;display:flex;gap:10px;
+ align-items:center;flex-wrap:wrap;padding:13px 15px;font-weight:900;font-size:1.08rem;
+ line-height:1.35;background:rgba(255,255,255,.07)}
+details.nsec > summary::-webkit-details-marker{display:none}
+details.nsec > summary::after{content:"\25B8";margin-left:auto;font-weight:900;
+ opacity:.8;transition:transform .15s ease;font-size:1.1rem}
+details.nsec[open] > summary::after{transform:rotate(90deg)}
+details.nsec > .nsecbody{padding:4px 13px 14px}
+.nsec .nsn{font-weight:700;font-size:.92rem;opacity:.9;white-space:nowrap}
+
+/* ---- list chunking --------------------------------------------------- */
+details.nchunk{border:1px solid rgba(255,255,255,.18);border-radius:11px;
+ background:rgba(0,0,0,.18);margin:0 0 8px;overflow:hidden}
+details.nchunk > summary{cursor:pointer;list-style:none;display:flex;gap:9px;
+ align-items:center;flex-wrap:wrap;padding:9px 12px;font-weight:800;font-size:.97rem}
+details.nchunk > summary::-webkit-details-marker{display:none}
+details.nchunk > summary::after{content:"\25B8";margin-left:auto;font-weight:900;opacity:.75}
+details.nchunk[open] > summary::after{transform:rotate(90deg)}
+details.nchunk .cknum{flex:0 0 auto;min-width:1.9em;text-align:center;font-weight:900;
+ font-size:.9rem;padding:3px 7px;border-radius:8px;background:rgba(0,0,0,.42)}
+details.nchunk > ul{margin:0;padding:2px 12px 11px 2em}
+/* the "expand everything" control, for when she wants the old single scroll back */
+#allBtn{display:block;width:100%;margin:0 0 14px;padding:13px 170px 13px 13px;border-radius:13px;
+ border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.14);color:#fff;
+ font:900 1rem 'Segoe UI',system-ui,sans-serif;cursor:pointer}
+#allBtn:hover{background:rgba(255,255,255,.28)}
+@media(max-width:1024px){#allBtn{padding-right:150px}}
+@media print{details.nsec,details.nchunk{display:block}
+ details.nsec > .nsecbody,details.nchunk > ul{display:block !important}}
+</style>
+</head><body><button type="button" id="allBtn">&#9662; Expand everything</button>
+<style id="navDragCSS">
+#navBtns{touch-action:none;cursor:grab}
+#navBtns.dragging{opacity:.9;cursor:grabbing}
+#navBtns.hidden-by-overlay{display:none !important}
+
+
+#navBtns.dragging 
+@media print{#navBtns{display:none !important}}
+</style>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){
+  #nav a{white-space:normal}
+  .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+}
+
+/* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem}
+
+/* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){
+  header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){
+  header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style>
+
+<style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{
+  display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif;
+  padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer;
+  border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbLook{background:linear-gradient(135deg,#1d4ed8,#2f6bff)}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the
+   cluster stops sitting on top of page headings */
+@media(max-width:1024px){
+  #navBtns{top:6px;right:6px;gap:5px}
+  #navBtns .nbLabel{display:none}
+  #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){
+  #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbLook" href="https://arnold7777777.github.io/NUR-198-Study-Guide/Look%20It%20Up.html" target="_blank" rel="noopener" title="Look up any topic across all your sites">&#128269;<span class="nbLabel"> Look Up</span></a><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){
+  var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/';
+  window.nbToAbsn=function(ev){
+    if(ev&&ev.preventDefault)ev.preventDefault();
+    /* On a sub-page: try to close this tab so the study hub behind it is revealed.
+       Browsers only allow close() on script-opened tabs, so fall back to navigating. */
+    try{ window.close(); }catch(e){}
+    setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120);
+    return false;
+  };
+})();
+</script>
+
+<a class="home" href="NUR198%20Study%20Hub.html">🏠 Home</a>
+<header><h1>🟣 Exam 5 · Module 11 — Upper GI Guided Notes</h1><p>GERD · Esophageal Cancer · Gastritis · PUD · Gastrectomy · Gastric Cancer · completed with answers</p></header>
+<div class="bar"><button class="toggle" onclick="document.body.classList.toggle(\'hideans\');this.textContent=document.body.classList.contains(\'hideans\')?\'👁 Show answers\':\'🙈 Hide answers (quiz me)\'">🙈 Hide answers (quiz me)</button><span class="legend">Answers highlighted in green. Hide them to self-test; tap a hidden box to peek.</span></div>
+<nav class="nav"><a href="#obj">Objectives</a><a href="#gerd">GERD</a><a href="#esoph">Esophageal Ca</a><a href="#gastritis">Gastritis</a><a href="#pharm">Meds</a><a href="#pud">PUD</a><a href="#gastrectomy">Gastrectomy</a><a href="#pernicious">Pernicious Anemia</a><a href="#dumping">Dumping</a><a href="#gastric-ca">Gastric Cancer</a><a href="#fourthings">4 Must-Knows</a><a href="#summary">1-Min Summary</a></nav>
+<div class="wrap"><section id="obj" class="sec"><details class="nsec" open><summary>🎯 Learning Objectives<span class="nsn">4 items</span></summary><div class="nsecbody"><ul>
+<li>Explain the pathophysiology of common upper GI disorders.</li>
+<li>Differentiate GERD, gastritis, gastric ulcers, duodenal ulcers, and cholecystitis.</li>
+<li>Identify priority assessments and complications.</li>
+<li>Apply the NCLEX Clinical Judgment Model to GI case studies.</li></ul>
+<div class="pearl">Framework — <b>Recognize Cues</b> (history, assessment, risk factors, labs, diagnostics) → Analyze → Prioritize → Generate solutions → Take action → Evaluate.</div></section>
+<section id="gerd" class="sec"></div></details><details class="nsec"><summary>🔥 GERD (Gastroesophageal Reflux Disease)<span class="nsn">8 items</span></summary><div class="nsecbody"><p><b>GERD occurs when</b> <mark class="ans">the lower esophageal sphincter (LES) is weak/incompetent, letting stomach acid reflux back up into the esophagus.</mark></p>
+<h3>Classic manifestations</h3><ul>
+<li><mark class="ans">Heartburn (pyrosis) — burning, worse lying down/after meals</mark></li><li><mark class="ans">Regurgitation of sour/bitter fluid</mark></li><li><mark class="ans">Dysphagia + chest/epigastric pain</mark></li><li><mark class="ans">Chronic cough, hoarseness, sore throat (esp. at night)</mark></li></ul>
+<h3>Major lifestyle modifications</h3><ul>
+<li><mark class="ans">Avoid triggers: caffeine, chocolate, fatty/spicy foods, alcohol, peppermint</mark></li><li><mark class="ans">Small meals; no eating 2–3 h before bed; stay upright after eating</mark></li><li><mark class="ans">Elevate head of bed; lose weight; stop smoking</mark></li><li><mark class="ans">Avoid tight clothing; take PPI/H2 blocker as prescribed</mark></li></ul></section>
+<section id="esoph" class="sec"></div></details><details class="nsec"><summary>🎗️ Esophageal Cancer<span class="nsn">3 items</span></summary><div class="nsecbody"><p><b>Most patients are diagnosed:</b> <mark class="ans">Late — early disease is silent; dysphagia (first solids, then liquids) appears only after the tumor is advanced.</mark></p>
+<h3>Treatment may include</h3><ul><li><mark class="ans">Esophagectomy (surgical resection)</mark></li><li><mark class="ans">Chemotherapy</mark></li><li><mark class="ans">Radiation therapy</mark></li></ul>
+<p><b>Major nursing concern after esophagectomy:</b> <mark class="ans">Airway/respiratory protection + anastomotic leak & aspiration. Keep HOB elevated, monitor for leak (fever, pain, ↑HR), do NOT reposition the NG tube, watch respiratory status.</mark></p></section>
+<section id="gastric-intro" class="sec"></div></details><h2 class="sech">➡️ Transition to Gastric Disorders</h2><p><b>Food now enters the:</b> <mark class="ans">stomach</mark></p>
+<p><b>Main function of the stomach:</b> <mark class="ans">Store food, secrete acid + pepsin, begin protein digestion, and produce intrinsic factor (needed for B12 absorption).</mark></p></section>
+<section id="gastritis" class="sec"><details class="nsec"><summary>🩹 Gastritis<span class="nsn">3 items</span></summary><div class="nsecbody"><p><b>Definition:</b> <mark class="ans">Inflammation of the stomach (gastric mucosa) lining.</mark></p>
+<h3>Causes</h3>
+<p><b>Acute:</b> <mark class="ans">NSAIDs, alcohol, H. pylori, severe stress, spicy/irritating food.</mark></p>
+<p><b>Chronic:</b> <mark class="ans">H. pylori (most common), autoimmune (attacks parietal cells), chronic NSAID use.</mark></p>
+<h3>Risk factors — what damages the stomach lining</h3>
+<p><mark class="ans">NSAIDs · Alcohol · H. pylori · Smoking · Stress · Caffeine · Radiation · Autoimmune disease</mark> <span class="legend">(older age raises risk but is not itself a direct irritant)</span></p>
+<h3>Pathophysiology — complete the chain</h3>
+<p>Damage to stomach lining<br>↓ <mark class="ans">Protective mucus barrier breaks down / prostaglandins ↓</mark><br>↓ <mark class="ans">Acid + pepsin reach and irritate the mucosa</mark><br>↓ <mark class="ans">Inflammation, edema, and erosion of the lining</mark><br>↓ Possible bleeding or ulcer formation</p>
+<h3>Clinical manifestations — WHY it happens</h3>
+<table><tr><th>Manifestation</th><th>Why does it happen?</th></tr>
+<tr><td>Epigastric pain</td><td><mark class="ans">Acid directly irritates inflamed mucosa and nerve endings.</mark></td></tr>
+<tr><td>Nausea / Vomiting</td><td><mark class="ans">Irritation stimulates the vomiting center; gastric emptying is delayed.</mark></td></tr>
+<tr><td>Burning</td><td><mark class="ans">Acid contacting the inflamed/eroded lining.</mark></td></tr>
+<tr><td>Bloating</td><td><mark class="ans">Delayed gastric emptying and gas buildup.</mark></td></tr>
+<tr><td>Hematemesis</td><td><mark class="ans">Erosion of mucosal blood vessels → vomiting bright/coffee-ground blood.</mark></td></tr>
+<tr><td>Melena</td><td><mark class="ans">Digested blood from an upper GI bleed → black, tarry stool.</mark></td></tr>
+<tr><td>Weight loss</td><td><mark class="ans">Anorexia, nausea, and pain with eating reduce intake.</mark></td></tr></table>
+<h3>Diagnostics</h3>
+<p><b>Definitive diagnosis:</b> <mark class="ans">EGD (esophagogastroduodenoscopy) with biopsy.</mark></p>
+<p><b>How do we test for H. pylori?</b></p>
+<ol><li><mark class="ans">Urea breath test</mark></li><li><mark class="ans">Stool antigen test</mark></li><li><mark class="ans">Endoscopic biopsy (rapid urease test) / blood antibody serology</mark></li></ol></section>
+<section id="pharm" class="sec"></div></details><details class="nsec"><summary>💊 Pharmacology — Goals & Medications<span class="nsn">4 items</span></summary><div class="nsecbody"><h3>Instead of memorizing meds — complete the GOAL</h3>
+<ul><li><b>Kill</b> the <mark class="ans">H. pylori (antibiotics)</mark></li><li><b>Reduce</b> <mark class="ans">acid (PPIs, H2 blockers, antacids)</mark></li><li><b>Protect</b> the <mark class="ans">mucosa / stomach lining (sucralfate, misoprostol)</mark></li><li><b>Prevent</b> <mark class="ans">recurrence & NSAID-induced damage</mark></li></ul>
+<h3>Match each medication to its goal</h3>
+<table><tr><th>Medication</th><th>Goal / Action</th></tr>
+<tr><td>Antibiotics</td><td><mark class="ans">Eradicate H. pylori (usually 2 antibiotics + a PPI).</mark></td></tr>
+<tr><td>PPIs (–prazole)</td><td><mark class="ans">Block the proton pump → strongest, longest acid reduction (e.g., omeprazole).</mark></td></tr>
+<tr><td>H2 blockers (–tidine)</td><td><mark class="ans">Block histamine (H2) receptors → less acid (e.g., famotidine).</mark></td></tr>
+<tr><td>Antacids</td><td><mark class="ans">Neutralize acid already in the stomach — fast, short relief.</mark></td></tr>
+<tr><td>Sucralfate</td><td><mark class="ans">Coats/forms a protective barrier over the ulcer (give on empty stomach).</mark></td></tr>
+<tr><td>Misoprostol</td><td><mark class="ans">Prostaglandin analog — protects mucosa, prevents NSAID ulcers. Contraindicated in pregnancy.</mark></td></tr></table></section>
+<section id="gastritis-nsg" class="sec"></div></details><details class="nsec"><summary>🧑‍⚕️ Gastritis — Nursing Priorities<span class="nsn">4 items</span></summary><div class="nsecbody"><ol><li><mark class="ans">Monitor for GI bleeding — hematemesis, melena, ↓ H&H, vital-sign changes.</mark></li><li><mark class="ans">Give/teach medications — PPIs, antibiotics; STOP NSAIDs.</mark></li><li><mark class="ans">Pain management + diet teaching — avoid alcohol, caffeine, spicy foods, NSAIDs.</mark></li><li><mark class="ans">Teach: finish the full H. pylori antibiotic course; stop smoking/alcohol.</mark></li></ol></section>
+<section id="pud" class="sec"></div></details><details class="nsec"><summary>🕳️ Peptic Ulcer Disease (PUD)<span class="nsn">4 items</span></summary><div class="nsecbody"><p><b>Definition:</b> <mark class="ans">Erosion of the mucosa of the stomach (gastric) or duodenum, from acid/pepsin + H. pylori or NSAIDs.</mark></p>
+<h3>Gastric vs Duodenal Ulcers</h3>
+<table><tr><th>Finding</th><th>Gastric</th><th>Duodenal</th></tr>
+<tr><td>Pain after meals</td><td><mark class="ans">Pain 30–60 min AFTER eating; worse with food</mark></td><td><mark class="ans">Pain 2–3 h after eating</mark></td></tr>
+<tr><td>Pain relieved by food</td><td><mark class="ans">No — food makes it worse</mark></td><td><mark class="ans">Yes — food relieves it</mark></td></tr>
+<tr><td>Night pain</td><td><mark class="ans">Less common</mark></td><td><mark class="ans">Common — wakes patient at night</mark></td></tr>
+<tr><td>Hematemesis</td><td><mark class="ans">More common</mark></td><td><mark class="ans">Less common</mark></td></tr>
+<tr><td>Melena</td><td><mark class="ans">Less common</mark></td><td><mark class="ans">More common</mark></td></tr></table>
+<h3>Clinical reasoning — one clue that gives it away</h3>
+<table><tr><th>Disorder</th><th>One clue</th></tr>
+<tr><td>GERD</td><td><mark class="ans">Heartburn/regurgitation, worse lying down or bending over.</mark></td></tr>
+<tr><td>Gastritis</td><td><mark class="ans">Diffuse epigastric burning, often after NSAIDs/alcohol.</mark></td></tr>
+<tr><td>Gastric ulcer</td><td><mark class="ans">Pain WORSENS with food → weight loss.</mark></td></tr>
+<tr><td>Duodenal ulcer</td><td><mark class="ans">Pain RELIEVED by food; night pain 2–3 h after meals.</mark></td></tr>
+<tr><td>Cholecystitis</td><td><mark class="ans">RUQ pain after a fatty meal, radiates to right shoulder (+Murphy's sign).</mark></td></tr></table>
+<h3>Diagnostics</h3>
+<p><b>What confirms PUD?</b> <mark class="ans">EGD (endoscopy) with biopsy.</mark></p>
+<p><b>Is H. pylori the cause?</b> <mark class="ans">Urea breath test, stool antigen, or biopsy urease test.</mark></p>
+<h3>Treatment goals</h3><ul><li>Kill <mark class="ans">H. pylori</mark></li><li>Reduce <mark class="ans">acid</mark></li><li>Protect <mark class="ans">the mucosa</mark></li><li>Prevent <mark class="ans">recurrence</mark></li></ul>
+<h3>Complications</h3>
+<table><tr><th>Complication</th><th>Signs / Symptoms</th><th>Nursing Priority</th></tr>
+<tr><td>Hemorrhage</td><td><mark class="ans">Hematemesis, melena, hypotension, tachycardia, ↓ H&H.</mark></td><td><mark class="ans">NPO, IV fluids/blood, monitor VS & H&H, prepare for endoscopy.</mark></td></tr>
+<tr><td>Perforation</td><td><mark class="ans">Sudden severe pain, rigid board-like abdomen, rebound tenderness, peritonitis/shock.</mark></td><td><mark class="ans">NPO, NG suction, IV fluids + antibiotics, prepare for EMERGENCY surgery.</mark></td></tr>
+<tr><td>Pyloric stenosis</td><td><mark class="ans">Vomiting, epigastric fullness/bloating, weight loss (gastric outlet obstruction).</mark></td><td><mark class="ans">NG decompression, NPO, fluid & electrolyte replacement.</mark></td></tr></table></section>
+<section id="gastrectomy" class="sec"></div></details><details class="nsec"><summary>🔪 Gastrectomy & Post-Op<span class="nsn">4 items</span></summary><div class="nsecbody"><p><b>Why might a patient require a gastrectomy?</b> <mark class="ans">Gastric cancer, or severe PUD with complications (perforation, uncontrolled bleeding, or obstruction) not fixed by medical therapy.</mark></p>
+<h3>Postoperative priorities</h3><ul><li><mark class="ans">Airway/respiratory care — deep breathing, prevent atelectasis/pneumonia.</mark></li><li><mark class="ans">NG tube care — do NOT reposition; monitor drainage (report bright red).</mark></li><li><mark class="ans">Monitor for bleeding, anastomotic leak, and dumping syndrome.</mark></li><li><mark class="ans">Nutrition — small frequent meals + LIFELONG vitamin B12 (intrinsic factor lost).</mark></li></ul></section>
+<section id="pernicious" class="sec"></div></details><details class="nsec"><summary>🩸 Pernicious Anemia</summary><div class="nsecbody"><p><b>Why does it occur?</b> <mark class="ans">Loss of intrinsic factor (from gastric parietal cells) → vitamin B12 can't be absorbed.</mark></p>
+<p><b>Intrinsic factor is needed to absorb:</b> <mark class="ans">Vitamin B12 (cobalamin), absorbed in the terminal ileum.</mark></p>
+<p><b>Treatment:</b> <mark class="ans">Lifelong vitamin B12 replacement (IM injections or high-dose).</mark></p></section>
+<section id="dumping" class="sec"></div></details><details class="nsec"><summary>🍽️ Dumping Syndrome<span class="nsn">4 items</span></summary><div class="nsecbody"><p><b>Why does it happen?</b> <mark class="ans">After gastric surgery, hyperosmolar food dumps rapidly into the small intestine → fluid shifts into the bowel.</mark></p>
+<p><b>Early symptoms (15–30 min):</b> <mark class="ans">Dizziness, tachycardia, diaphoresis, cramping, diarrhea, hypotension.</mark></p>
+<p><b>Late symptoms (1–3 h):</b> <mark class="ans">Reactive hypoglycemia — sweating, shakiness, weakness, confusion (from a rebound insulin surge).</mark></p>
+<h3>Teaching</h3><ul><li><mark class="ans">Small, frequent meals.</mark></li><li><mark class="ans">High-protein, high-fat, LOW-carbohydrate; avoid concentrated sugars.</mark></li><li><mark class="ans">Drink fluids BETWEEN meals, not with them.</mark></li><li><mark class="ans">Lie down 20–30 min after eating.</mark></li></ul></section>
+<section id="gastric-ca" class="sec"></div></details><details class="nsec"><summary>🎗️ Gastric Cancer<span class="nsn">3 items</span></summary><div class="nsecbody"><h3>Risk factors</h3><ul><li><mark class="ans">H. pylori infection, chronic/atrophic gastritis, pernicious anemia.</mark></li><li><mark class="ans">Smoking; diet high in salted, smoked, or pickled foods; low fruits/vegetables.</mark></li><li><mark class="ans">Family history.</mark></li></ul>
+<p><b>How is it diagnosed?</b> <mark class="ans">EGD with biopsy (+ CT for staging).</mark></p>
+<p><b>Treatment:</b> <mark class="ans">Surgery (gastrectomy), chemotherapy, radiation.</mark></p></section>
+<section id="fourthings" class="sec"></div></details><details class="nsec"><summary>⭐ The Four Things You MUST Remember<span class="nsn">4 items</span></summary><div class="nsecbody"><ol>
+<li><b>Follow the Pathophysiology.</b> <mark class="ans">Damage → loss of mucosal protection → acid injures lining → inflammation → bleeding/ulcer. Symptoms follow the patho.</mark></li>
+<li><b>Find the Clue That Separates the Diseases.</b> <mark class="ans">Gastric ulcer = worse WITH food + weight loss; duodenal = RELIEVED by food + night pain; GERD = worse lying down; cholecystitis = after fatty meals, RUQ.</mark></li>
+<li><b>Treatment Always Has the Same Goals.</b> Kill <mark class="ans">H. pylori</mark> · Reduce <mark class="ans">acid</mark> · Protect <mark class="ans">mucosa</mark> · Prevent <mark class="ans">recurrence</mark></li>
+<li><b>Recognize Emergencies.</b> Hemorrhage: <mark class="ans">hematemesis/melena, hypotension, tachycardia → NPO, fluids/blood, EGD.</mark> &nbsp;|&nbsp; Perforation: <mark class="ans">sudden severe pain + rigid abdomen + peritonitis → NPO, NG suction, emergency surgery.</mark></li>
+</ol></section>
+<section id="check" class="sec"></div></details><details class="nsec"><summary>✅ NCLEX Success Check — I can now explain…<span class="nsn">6 items</span></summary><div class="nsecbody"><ul class="chk">
+<li>How gastritis becomes an ulcer.</li>
+<li>The difference between gastric and duodenal ulcers.</li>
+<li>Why H. pylori matters.</li>
+<li>When a GI patient is becoming unstable.</li>
+<li>Why a patient develops dumping syndrome after a gastrectomy.</li>
+<li>Why gastrectomy patients need lifelong B12 replacement.</li></ul></section>
+<section id="summary" class="sec"></div></details><details class="nsec"><summary>⏱️ One-Minute Summary<span class="nsn">4 items</span></summary><div class="nsecbody"><ol>
+<li><mark class="ans">GERD = weak LES → reflux → lifestyle changes + PPI.</mark></li><li><mark class="ans">Gastric ulcer = pain WITH food; duodenal = pain RELIEVED by food.</mark></li><li><mark class="ans">H. pylori → treat with antibiotics + PPI; test with breath/stool/biopsy.</mark></li><li><mark class="ans">Emergencies: bleeding (melena/hematemesis) & perforation (rigid abdomen). Gastrectomy → lifelong B12 + dumping syndrome.</mark></li></ol></section></div>
+<script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging
+   the whole page sideways */
+(function(){
+  function wrap(){
+    document.querySelectorAll('table').forEach(function(t){
+      var p=t.parentNode;
+      if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return;
+      var d=document.createElement('div'); d.className='a11y-tblwrap';
+      p.insertBefore(d,t); d.appendChild(t);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap);
+  else wrap();
+  setTimeout(wrap,1200);   /* catch tables built by the page's own scripts */
+})();
+</script>
+<script id="navDragJS">
+(function(){
+  var nb=document.getElementById('navBtns');
+  if(!nb||nb.dataset.dragReady) return;
+  nb.dataset.dragReady='1';
+
+  /* ── 1. modifier and middle clicks must open a new tab ───────────────
+     The ABSN link called preventDefault() every time, which killed
+     ctrl/cmd/shift-click and middle-click. Let those through. */
+  function passthrough(e){
+    return e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button===1;
+  }
+  nb.addEventListener('click',function(e){
+    var a=e.target.closest('a'); if(!a) return;
+    if(passthrough(e)){ e.stopImmediatePropagation(); }   /* before the page's own handler */
+  },true);
+  nb.addEventListener('auxclick',function(e){
+    var a=e.target.closest('a');
+    if(a&&e.button===1){ e.stopImmediatePropagation();
+      window.open(a.href,'_blank','noopener'); e.preventDefault(); }
+  },true);
+  /* every button in the cluster also gets a right-click / long-press menu that
+     works, because they stay real <a href> elements */
+
+  /* ── 2. a grip so it is obvious the cluster can be moved ───────────── */
+
+
+  /* ── 3. drag, and remember where she put it ─────────────────────────── */
+  var KEY='nbPos';
+  function clampPos(l,t){
+    var r=nb.getBoundingClientRect();
+    var maxL=Math.max(0,window.innerWidth-r.width-4);
+    var maxT=Math.max(0,window.innerHeight-r.height-4);
+    return [Math.min(Math.max(0,l),maxL), Math.min(Math.max(0,t),maxT)];
+  }
+  function place(l,t){
+    var p=clampPos(l,t);
+    nb.style.left=p[0]+'px'; nb.style.top=p[1]+'px';
+    nb.style.right='auto'; nb.style.bottom='auto';
+  }
+  function save(){
+    try{ localStorage.setItem(KEY,JSON.stringify({l:parseFloat(nb.style.left)||0,
+                                                  t:parseFloat(nb.style.top)||0})); }catch(e){}
+  }
+  function reset(){
+    nb.style.left=''; nb.style.top=''; nb.style.right=''; nb.style.bottom='';
+    try{ localStorage.removeItem(KEY); }catch(e){}
+  }
+  try{
+    var s=JSON.parse(localStorage.getItem(KEY)||'null');
+    if(s&&typeof s.l==='number') place(s.l,s.t);
+  }catch(e){}
+
+  var dragging=false,ox=0,oy=0,moved=false;
+  function down(x,y,e){
+    var r=nb.getBoundingClientRect();
+    dragging=true; moved=false; ox=x-r.left; oy=y-r.top;
+    nb.classList.add('dragging');
+    if(e&&e.preventDefault) e.preventDefault();
+  }
+  function move(x,y){
+    if(!dragging) return;
+    moved=true; place(x-ox,y-oy);
+  }
+  function up(){
+    if(!dragging) return;
+    dragging=false; nb.classList.remove('dragging');
+    if(moved) save();
+  }
+  nb.addEventListener('mousedown',function(e){ if(e.button===0) down(e.clientX,e.clientY,e); });
+  window.addEventListener('mousemove',function(e){ move(e.clientX,e.clientY); });
+  window.addEventListener('mouseup',up);
+  nb.addEventListener('touchstart',function(e){
+    var t=e.touches[0]; down(t.clientX,t.clientY,e); },{passive:false});
+  window.addEventListener('touchmove',function(e){
+    if(!dragging) return; var t=e.touches[0]; move(t.clientX,t.clientY); e.preventDefault(); },{passive:false});
+  window.addEventListener('touchend',up);
+  nb.addEventListener('dblclick',function(e){ e.preventDefault(); reset(); });
+  /* keyboard: focus the grip and nudge with the arrows */
+  nb.addEventListener('keydown',function(e){
+    var step=e.shiftKey?24:6, r=nb.getBoundingClientRect(), l=r.left, t=r.top, hit=true;
+    if(e.key==='ArrowLeft') l-=step; else if(e.key==='ArrowRight') l+=step;
+    else if(e.key==='ArrowUp') t-=step; else if(e.key==='ArrowDown') t+=step;
+    else if(e.key==='Home'||e.key==='Escape'){ reset(); e.preventDefault(); return; }
+    else hit=false;
+    if(hit){ place(l,t); save(); e.preventDefault(); }
+  });
+  window.addEventListener('resize',function(){
+    if(nb.style.left) place(parseFloat(nb.style.left),parseFloat(nb.style.top));
+  });
+
+  /* ── 4. step aside for full-screen viewers ───────────────────────────
+     Some overlays (the NUR 175 image lightbox, the drug guide drawer) sit
+     below this cluster in the stacking order, so the cluster covered their
+     Close buttons. Find them once, then just watch whether they are shown. */
+  var overlays=[];
+  try{
+    document.querySelectorAll('body *').forEach(function(el){
+      if(overlays.length>40) return;
+      if(el===nb||nb.contains(el)) return;
+      var cs=getComputedStyle(el);
+      if(cs.position!=='fixed') return;
+      var z=parseInt(cs.zIndex,10);
+      if(!(z>=1000)) return;
+      /* covers most of the screen in at least one dimension */
+      var w=parseFloat(cs.width), h=parseFloat(cs.height);
+      var full=(cs.inset==='0px'||cs.top==='0px'&&cs.left==='0px'&&cs.right==='0px'&&cs.bottom==='0px');
+      if(full||(w>=window.innerWidth*0.9&&h>=window.innerHeight*0.9)) overlays.push(el);
+    });
+  }catch(e){}
+  function check(){
+    var open=overlays.some(function(el){
+      var cs=getComputedStyle(el);
+      return cs.display!=='none'&&cs.visibility!=='hidden'&&parseFloat(cs.opacity||'1')>0.05;
+    });
+    nb.classList.toggle('hidden-by-overlay',open);
+  }
+  if(overlays.length){
+    check();
+    var t=null;
+    new MutationObserver(function(){ clearTimeout(t); t=setTimeout(check,60); })
+      .observe(document.body,{attributes:true,subtree:true,
+                              attributeFilter:['class','style','hidden']});
+  }
+})();
+</script>
+<script id="skimJS">
+(function(){
+  /* What counts as a line of prose on these pages is NOT <p>. The 125 eBook units use
+     <p class="ebp">, but 175 is card-based divs and 198 mixes divs, p and li. So the
+     candidate set is "leaf text blocks": an element whose children are all inline.
+     Measured before choosing: on a 125 eBook unit that is 2,352 blocks of which ~456
+     are long unmarked prose; on the card pages it is a handful, which is the honest
+     answer - those pages are already skimmable. */
+  var INLINE = {B:1,I:1,EM:1,STRONG:1,SPAN:1,A:1,CODE:1,MARK:1,U:1,BR:1,SMALL:1,
+                SUB:1,SUP:1,ABBR:1,WBR:1,IMG:1};
+  var SIGNAL = 'b,strong,mark,u,code';
+  /* never touch: chrome, tables, quizzes, contents lists, captions, footers */
+  var SAFE = '#skimBtn,nav,header,#vwBar,.bar,.nb,.nbWrap,table,thead,tbody,tr,td,th,' +
+             '.stem,.q,.qa,.qt,.ans,.ansbox,.rationale,.fill,.blanks,.fp,.fpk,.nq,' +
+             '.toc,.foot,.cap,.chip,.chip-row,.sec-sub,.bn,.dvname,button,summary,' +
+             '[class*="nav"],[class*="btn"],[class*="quiz"]';
+  var MIN  = 110;      /* below this a line is a label or a rule, not padding */
+  var NUM  = /\d\s*(mg|mcg|g|kg|lb|ml|l|mmol|meq|mmhg|%|hr|hrs|min|sec|day|wk|yr|bpm|cm|mm|units?|°)/i;
+
+  var btn, marked=false, hid=0, total=0;
+
+  function leaf(el){
+    for(var i=0;i<el.children.length;i++)
+      if(!INLINE[el.children[i].tagName]) return false;
+    return true;
+  }
+
+  function mark(){
+    if(marked) return;
+    var all = document.querySelectorAll('p,li,div,dd');
+    for(var i=0;i<all.length;i++){
+      var el=all[i];
+      if(el.closest(SAFE)) continue;
+      if(!leaf(el)) continue;
+      var t=(el.textContent||'').trim();
+      if(!t) continue;
+      total++;
+      if(t.length < MIN) continue;
+      if(el.querySelector(SIGNAL)) continue;
+      if(NUM.test(t)) continue;
+      el.classList.add('skimHide'); hid++;
+    }
+    marked=true;
+  }
+
+  var wasShut=[];
+  function openAll(open){
+    if(open){
+      wasShut=[].slice.call(document.querySelectorAll('details:not([open])'));
+      wasShut.forEach(function(d){ d.open=true; });
+    } else {
+      wasShut.forEach(function(d){ d.open=false; });
+      wasShut=[];
+    }
+  }
+
+  function paint(on){
+    btn.querySelector('.lbl').textContent = on ? 'Skimming' : 'Skim mode';
+    btn.querySelector('.n').textContent =
+      on ? (hid ? ('hid ' + hid + ' of ' + total) : 'nothing to hide here') : '';
+  }
+
+  function toggle(){
+    var on=!document.body.classList.contains('skimOn');
+    if(on) mark();
+    document.body.classList.toggle('skimOn', on);
+    openAll(on); paint(on);
+    try{ localStorage.setItem('skimOn', on?'1':'0'); }catch(e){}
+  }
+
+  function build(){
+    /* an iframe shell has no prose of its own - the inner document carries its own
+       button, so a second dead one on the wrapper would just be a lie */
+    /* textContent, not innerText: innerText is render-aware, so on a page whose
+       content sits inside collapsed <details> it reads near-zero and this test would
+       suppress the button on a perfectly good page. That happened. */
+    if(document.querySelector('iframe') &&
+       (document.body.textContent||'').trim().length < 6000) return;
+
+    btn=document.createElement('button');
+    btn.type='button'; btn.id='skimBtn';
+    btn.setAttribute('aria-label','Toggle skim mode - hide the long prose, keep the rules');
+    btn.innerHTML='⚡ <span class="lbl">Skim mode</span> <span class="n"></span>';
+    btn.addEventListener('click', toggle);
+    document.body.appendChild(btn);
+    paint(false);
+
+  /* ---- draggable, because a button welded to a corner covers what she is reading
+     and at 300% zoom there is not much screen left to lose. Travel under 6px counts
+     as a click, 6px or more is a drag and the click is swallowed. */
+  var KEYPOS='skimBtnPos';
+  function clamp(x,y){
+    var r=btn.getBoundingClientRect(), m=4;
+    return [Math.max(m,Math.min(x,window.innerWidth-r.width-m)),
+            Math.max(m,Math.min(y,window.innerHeight-r.height-m))];
+  }
+  function place(x,y,save){
+    var p=clamp(x,y);
+    btn.style.left=p[0]+'px'; btn.style.top=p[1]+'px';
+    btn.style.right='auto'; btn.style.bottom='auto';
+    if(save){ try{ localStorage.setItem(KEYPOS,JSON.stringify(p)); }catch(e){} }
+  }
+  function restore(){
+    try{
+      var p=JSON.parse(localStorage.getItem(KEYPOS)||'null');
+      if(p && p.length===2) place(p[0],p[1],false);
+    }catch(e){}
+  }
+
+  var down=null, moved=false;
+  btn.addEventListener('pointerdown',function(e){
+    if(e.button && e.button!==0) return;
+    var r=btn.getBoundingClientRect();
+    down={x:e.clientX,y:e.clientY,dx:e.clientX-r.left,dy:e.clientY-r.top};
+    moved=false;
+    btn.setPointerCapture&&btn.setPointerCapture(e.pointerId);
+  });
+  btn.addEventListener('pointermove',function(e){
+    if(!down) return;
+    if(!moved && Math.abs(e.clientX-down.x)<6 && Math.abs(e.clientY-down.y)<6) return;
+    moved=true; btn.classList.add('dragging');
+    place(e.clientX-down.dx, e.clientY-down.dy, false);
+    e.preventDefault();
+  });
+  function end(e){
+    if(!down) return;
+    down=null;
+    if(moved){
+      btn.classList.remove('dragging');
+      var r=btn.getBoundingClientRect();
+      place(r.left,r.top,true);
+      /* swallow the click this drag would otherwise fire */
+      var kill=function(ev){ ev.stopPropagation(); ev.preventDefault();
+        btn.removeEventListener('click',kill,true); };
+      btn.addEventListener('click',kill,true);
+      setTimeout(function(){ btn.removeEventListener('click',kill,true); },0);
+    }
+  }
+  btn.addEventListener('pointerup',end);
+  btn.addEventListener('pointercancel',end);
+
+  /* arrows nudge it, so moving it never needs a precise drag */
+  btn.addEventListener('keydown',function(e){
+    var d={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];
+    if(!d) return;
+    e.preventDefault();
+    var step=e.shiftKey?48:12, r=btn.getBoundingClientRect();
+    place(r.left+d[0]*step, r.top+d[1]*step, true);
+  });
+
+  window.addEventListener('resize',function(){
+    var r=btn.getBoundingClientRect(); place(r.left,r.top,false);
+  });
+  restore();
+
+    /* ---- never sit under the nav cluster ---------------------------- */
+    function unstack(){
+      var nb=document.getElementById('navBtns');
+      if(!nb || !btn) return;
+      var a=btn.getBoundingClientRect(), b=nb.getBoundingClientRect();
+      var hit = !(a.right < b.left-4 || a.left > b.right+4 ||
+                  a.bottom < b.top-4 || a.top > b.bottom+4);
+      if(!hit) return;
+      var below = b.bottom + 10;
+      var top = (below + a.height + 6 <= window.innerHeight) ? below
+                                                             : Math.max(6, b.top - a.height - 10);
+      btn.style.top = top + 'px';
+      btn.style.left = Math.max(6, Math.min(a.left, window.innerWidth - a.width - 6)) + 'px';
+      btn.style.right = 'auto'; btn.style.bottom = 'auto';
+    }
+    setTimeout(unstack, 60);
+    window.addEventListener('resize', function(){ setTimeout(unstack, 60); });
+
+    var want=false;
+    try{ want=localStorage.getItem('skimOn')==='1'; }catch(e){}
+    if(want) toggle();
+  }
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', build);
+  else build();
+})();
+</script>
+</div></details>
+<script id="noteChunkJS">
+(function(){
+  var btn=document.getElementById('allBtn'); if(!btn) return;
+  function all(){ return [].slice.call(document.querySelectorAll('details.nsec,details.nchunk')); }
+  function set(open){
+    all().forEach(function(d){ d.open=open; });
+    btn.textContent = open ? '\u25B4 Collapse everything' : '\u25BE Expand everything';
+    btn.dataset.open = open ? '1' : '';
+  }
+  btn.addEventListener('click', function(){ set(!btn.dataset.open); });
+  /* printing needs everything visible, and the browser prints the DOM as it stands */
+  window.addEventListener('beforeprint', function(){ all().forEach(function(d){ d.open=true; }); });
+})();
+</script>
+</body></html>
