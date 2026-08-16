@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NUR198 · ABG Review Guide (answered)</title>
+<style>
+:root{--amethyst:157,92,255;--sapphire:47,107,255;--emerald:18,184,134;--teal:0,194,199; --topaz:255,194,51;--ruby:255,59,107;--citrine:255,138,61;--garnet:192,34,85; --line:rgba(255,255,255,.30);}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background-color:#140b24;color:#fff;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif; min-height:100vh;padding:20px 15px 60px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("Designer.jpg"); background-size:cover;background-position:center;background-color:#140b24;z-index:-1}
+.wrap{max-width:1000px;margin:0 auto}
+.hero{background:rgba(20,11,36,.60);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px); border:1px solid var(--line);border-radius:20px;padding:18px 22px 16px;box-shadow:0 10px 34px rgba(0,0,0,.45);margin-bottom:16px}
+.hero .crumb{font-size:0.82rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;opacity:.85}
+.hero h1{margin:3px 0 5px;font-size:clamp(1.45rem,4vw,2.1rem);font-weight:900;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero h1 .glow{color:#ffd75e}
+.hero p{margin:0;font-size:.92rem;opacity:.95}
+.bigq{margin-top:12px;background:rgba(var(--ruby),.55);border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.6); border-radius:14px;padding:11px 15px}
+.bigq b.q{display:block;font-size:1.12rem;font-weight:900;margin-bottom:4px} /* sticky answer toggle */
+.bar{position:sticky;top:8px;z-index:50;display:flex;gap:9px;flex-wrap:wrap;align-items:center; background:rgba(20,11,36,.86);backdrop-filter:blur(8px);border:1px solid var(--line); border-radius:999px;padding:8px 12px;margin-bottom:16px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.bar button{background:rgba(var(--emerald),.9);color:#fff;border:1px solid rgba(255,255,255,.45); border-radius:999px;padding:7px 16px;font-weight:900;font-size:.86rem;cursor:pointer;font-family:inherit}
+.bar button:hover{filter:brightness(1.12)}
+.bar .tip{font-size:0.82rem;opacity:.86}
+body.quizmode .bar button{background:rgba(var(--ruby),.9)} /* cards */
+.card{background:rgba(var(--jewel),.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px); border:1px solid var(--line);border-left:6px solid rgba(255,255,255,.55);border-radius:16px; padding:15px 19px;box-shadow:0 8px 26px rgba(0,0,0,.40);margin-bottom:15px}
+.card h2{margin:0 0 4px;font-size:1.16rem;font-weight:900}
+.card h3{margin:14px 0 5px;font-size:1rem;font-weight:900}
+.card h4{margin:11px 0 3px;font-size:.9rem;font-weight:900;letter-spacing:.3px;opacity:.95}
+.card p{margin:0 0 8px;font-size:.9rem}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:4px 0 8px;padding-left:19px;font-size:.89rem}
+.card li{margin-bottom:4px}
+.q{font-style:italic;opacity:.95}
+mark{background:rgba(255,194,51,.94);color:#231a02;padding:1px 5px;border-radius:4px;font-weight:800}
+.never{text-decoration:underline wavy rgba(255,59,107,.95);text-underline-offset:3px;font-weight:800}
+.lead-in{font-size:.86rem;opacity:.92;font-style:italic;margin-bottom:6px} /* the filled blanks */
+.fill{background:rgba(255,255,255,.19);border-bottom:2px solid rgba(255,215,94,.85); border-radius:5px;padding:0 5px;font-weight:700}
+body.quizmode .fill{color:transparent;background:rgba(0,0,0,.32);border-bottom:2px solid rgba(255,215,94,.9); cursor:pointer;user-select:none;min-width:70px;display:inline-block}
+body.quizmode .fill::after{content:"?";color:rgba(255,215,94,.9);font-weight:900}
+body.quizmode .fill.show{color:inherit;background:rgba(255,255,255,.19);cursor:default}
+body.quizmode .fill.show::after{content:""}
+ul.blanks li{margin-bottom:6px} /* flow diagram */
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:stretch;margin:10px 0}
+.flow .stepbox{flex:1 1 165px;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.28); border-radius:12px;padding:9px 11px;position:relative}
+.flow .stepbox b{display:block;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;color:#ffd75e;margin-bottom:2px}
+.flow .stepbox span{font-size:.83rem}
+.flow .arrow{align-self:center;font-size:1.2rem;opacity:.8}
+@media(max-width:720px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:flex-start;margin-left:14px}} /* comparison tables */
+table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;margin:8px 0 4px; background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.24);border-radius:12px;overflow:hidden}
+table.cmp th{background:rgba(0,0,0,.36);text-align:left;padding:8px 11px;font-size:0.82rem;letter-spacing:1px; text-transform:uppercase;font-weight:900}
+table.cmp td{padding:8px 11px;border-top:1px solid rgba(255,255,255,.16);vertical-align:top}
+table.cmp td.k{font-weight:800;white-space:nowrap}
+@media(max-width:640px){ table.cmp thead{display:none} table.cmp td{display:block;border-top:none;padding:3px 11px} table.cmp td.k{color:#ffd75e;padding-top:9px} table.cmp tr{display:block;border-top:1px solid rgba(255,255,255,.2);padding:6px 0}
+}
+/* nclex q */
+.nq{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);border-left:5px solid rgba(255,215,94,.9); border-radius:12px;padding:11px 14px;margin:9px 0}
+.nq .stem{font-weight:800;margin-bottom:6px;font-size:.94rem}
+.nq ol{margin:0 0 8px;padding-left:22px;font-size:.89rem}
+.nq details{margin-top:6px}
+.nq summary{cursor:pointer;list-style:none;display:inline-block;background:rgba(var(--emerald),.9); border-radius:999px;padding:5px 14px;font-weight:900;font-size:.82rem}
+.nq details[open] summary{background:rgba(255,255,255,.22)}
+.nq .ans{margin-top:8px;font-size:.89rem}
+.toc{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.toc a{text-decoration:none;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.32); border-radius:999px;padding:6px 13px;font-size:0.82rem;font-weight:700}
+.toc a:hover{background:rgba(0,0,0,.55)}
+@media(max-width:620px){body{padding:14px 10px 40px}}
+</style><style id="skimCSS">
+#skimBtn{position:fixed;left:12px;bottom:12px;z-index:9000; display:flex;align-items:center;gap:8px; background:rgba(157,92,255,.92);border:1px solid rgba(255,255,255,.45);color:#fff; border-radius:14px;padding:11px 14px;cursor:pointer; font:800 .95rem 'Segoe UI',system-ui,sans-serif; box-shadow:0 6px 20px rgba(0,0,0,.45);backdrop-filter:blur(6px); max-width:calc(100vw - 24px)}
+#skimBtn:hover{background:rgba(157,92,255,1)}
+#skimBtn .n{font-weight:900;font-size:.88rem;opacity:.92;white-space:nowrap}
+body.skimOn #skimBtn{background:rgba(255,194,51,.95);color:#231a02; border-color:rgba(0,0,0,.35)}
+body.skimOn .skimHide{display:none !important}
+body.skimOn .skimKeep{outline:0} #skimBtn{touch-action:none;cursor:grab}
+#skimBtn.dragging{opacity:.92;cursor:grabbing} #skimBtn:focus-visible{outline:3px solid #ffd76a;outline-offset:2px}
+@media print{#skimBtn{display:none}}
+</style>
+</head>
+<body>
+<style id="navDragCSS">
+#navBtns{touch-action:none;cursor:grab}
+#navBtns.dragging{opacity:.9;cursor:grabbing}
+#navBtns.hidden-by-overlay{display:none !important} #navBtns.dragging @media print{#navBtns{display:none !important}}
+</style>
+<style id="a11yCSS">
+/* keep wide things inside the viewport so magnifying never forces sideways scrolling */
+img,svg,video,canvas{max-width:100%;height:auto}
+pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
+.a11y-tblwrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+@media(max-width:1024px){ #nav a{white-space:normal} .bar{margin-left:0 !important;margin-right:0 !important;max-width:100% !important}
+} /* rem (not em) so these can never compound down to unreadable sizes */
+small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
+sub,sup{font-size:.72rem} /* keep the fixed Home/ABSN cluster from sitting on top of page titles */
+@media(max-width:1024px){ header h1, header p, h1:first-of-type{padding-right:92px}
+}
+@media(max-width:560px){ header h1, header p, h1:first-of-type{padding-right:80px}
+}
+</style> <style id="navbtnCSS">
+#navBtns{position:fixed;top:10px;right:12px;z-index:2147483000;display:flex;gap:7px;align-items:center}
+#navBtns a,#navBtns button{ display:inline-block;font:700 .8rem 'Segoe UI',system-ui,sans-serif; padding:7px 13px;border-radius:22px;text-decoration:none;cursor:pointer; border:1px solid rgba(255,255,255,.22);box-shadow:0 4px 14px rgba(0,0,0,.5); color:#fff;white-space:nowrap;line-height:1.3;
+}
+#navBtns .nbLook{background:linear-gradient(135deg,#1d4ed8,#2f6bff)}
+#navBtns .nbHome{background:linear-gradient(135deg,#5a2d82,#8e2d6b)}
+#navBtns .nbAbsn{background:linear-gradient(135deg,#0f7d6b,#12b886)}
+#navBtns a:hover,#navBtns button:hover{filter:brightness(1.15)}
+#navBtns a,#navBtns button{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+/* magnified viewports report a narrow CSS width - shed the labels early so the cluster stops sitting on top of page headings */
+@media(max-width:1024px){ #navBtns{top:6px;right:6px;gap:5px} #navBtns .nbLabel{display:none} #navBtns a,#navBtns button{padding:8px 11px;font-size:1rem;line-height:1}
+}
+@media(max-width:560px){ #navBtns a,#navBtns button{padding:7px 9px;font-size:.95rem}
+}
+@media print{#navBtns{display:none}}
+</style>
+<div id="navBtns"><a class="nbLook" href="https://arnold7777777.github.io/NUR-198-Study-Guide/Look%20It%20Up.html" target="_blank" rel="noopener" title="Look up any topic across all your sites">&#128269;<span class="nbLabel"> Look Up</span></a><a class="nbHome" href="NUR198%20Study%20Hub.html" title="Back to this course's study hub">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/" onclick="return nbToAbsn(event)" title="Close this page and go back toward the ABSN Study Hub">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
+<script>if(window.top!==window.self){var _nb=document.getElementById("navBtns");if(_nb)_nb.style.display="none";}</script>
+<script>
+(function(){ var ABSN='https://arnold7777777.github.io/ABSN-Study-Hub/'; window.nbToAbsn=function(ev){ if(ev&&ev.preventDefault)ev.preventDefault(); /* On a sub-page: try to close this tab so the study hub behind it is revealed. Browsers only allow close() on script-opened tabs, so fall back to navigating. */ try{ window.close(); }catch(e){} setTimeout(function(){ if(!window.closed) window.location.href=ABSN; },120); return false; };
+})();
+</script> <div class="wrap"> <div class="hero"> <div class="crumb">NUR 198 · Acid-Base · ABG Review</div> <h1>ABG <span class="glow">Review Guide</span></h1> <p>Every practice question answered, with the interpretation worked out step by step.</p>
+<div class="bigq"><b class="q">Acidosis or alkalosis &mdash; respiratory or metabolic &mdash; compensating or not?</b>Answer those three in order and the ABG interprets itself.</div> </div>
+<div class="bar"><button id="toggle" type="button">🙈 Hide answers — quiz me</button><span class="tip" id="tip">Every highlighted answer was a blank in the handout.</span></div>
+<div class="toc"> <a href="#rules">1 · Rules Before You Start</a> <a href="#normals">2 · Normal Values ⭐</a> <a href="#rome">3 · ROME + The 5 Steps</a> <a href="#ttt">4 · Tic-Tac-Toe Grid</a> <a href="#comp">5 · Compensation</a> <a href="#causes">6 · Causes Cheat Sheet</a> <a href="#signs">7 · What the Patient Looks Like</a> <a href="#q1">8 · Questions 1&ndash;7</a> <a href="#q8">9 · Questions 8&ndash;14</a> <a href="#q15">10 · Questions 15&ndash;20</a> <a href="#danger">🚨 The Two Killers in This Set</a> <a href="#summary">⭐ Must not forget</a>
+</div> <!-- ===================== 1 · RULES BEFORE YOU START ===================== -->
+<div class="card" style="--jewel:var(--amethyst)" id="rules">
+<h2>1 &middot; Rules Before You Start 🧠</h2>
+<p class="lead-in">This is the handout's own opening list. Ask these five questions <b>in this order</b>, every time, before you look at the answer choices.</p> <h3>Ask yourself:</h3>
+<ul class="blanks"> <li><b>Is the pH acidic or alkalotic?</b> <span class="fill">pH <b>&lt; 7.35 = acidosis</b>, pH <b>&gt; 7.45 = alkalosis</b>. If the pH is inside 7.35&ndash;7.45, it is <em>normal</em> &mdash; but still lean it: 7.35&ndash;7.39 is the acid half, 7.41&ndash;7.45 is the alkaline half.</span></li> <li><b>Is the problem respiratory or metabolic?</b> <span class="fill">Look at which value <em>matches the pH</em>. <b>CO&#8322; is the lung value</b> &mdash; if pH and CO&#8322; move in <b>opposite</b> directions it is respiratory. <b>HCO&#8323; is the kidney value</b> &mdash; if pH and HCO&#8323; move in the <b>same</b> direction it is metabolic. (ROME)</span></li> <li><b>What caused it?</b> <span class="fill">Respiratory problems = a <b>ventilation</b> problem (COPD, opioids, sedation, pneumonia &rarr; acidosis; anxiety, pain, fever, PE &rarr; alkalosis). Metabolic problems = an <b>acid or bicarb</b> problem (DKA, shock, renal failure, diarrhea &rarr; acidosis; vomiting, NG suction, antacids, diuretics &rarr; alkalosis).</span></li> <li><b>Is the body compensating?</b> <span class="fill">Check the <em>other</em> value. Still normal = <b>uncompensated</b>. Abnormal but pH still out of range = <b>partially compensated</b>. Both abnormal and pH back inside 7.35&ndash;7.45 = <b>fully compensated</b>.</span></li> <li><b>What is the priority?</b> <span class="fill"><b>Airway and breathing first</b>, always &mdash; a falling respiratory rate outranks an abnormal number on paper. Then treat the <em>cause</em>, not the compensation, and check the <b>potassium</b>, <em>because acidosis drives K&#8314; out of the cells and can kill the patient before the pH does.</em></span></li>
+</ul>
+<p><mark>pH &rarr; CO&#8322; &rarr; HCO&#8323; &rarr; compensation &rarr; patient.</mark> Same five moves on every single ABG item.</p>
+<p class="fine">📄 Note on the original file: the handout is mostly embedded images (a normal-value table and a tic-tac-toe diagram) that did not survive text extraction. The grids below are rebuilt from standard values &mdash; if her paper copy shows a figure that is not here, that is why.</p>
+</div> <!-- ===================== 2 · NORMAL VALUES ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="normals">
+<h2>2 &middot; Normal Values &mdash; With Units ⭐🧪</h2>
+<p class="lead-in">You cannot interpret an ABG you cannot compare. Memorize these six lines; three of them do 90% of the work.</p> <ul class="blanks"> <li><b>pH</b> = <span class="fill">7.35 &ndash; 7.45</span> <em>(no units &mdash; it is a log scale)</em></li> <li><b>PaCO&#8322;</b> = <span class="fill">35 &ndash; 45 mm Hg</span> &mdash; <b>the LUNG number</b> <em>(this is an acid)</em></li> <li><b>HCO&#8323;</b> (bicarbonate) = <span class="fill">22 &ndash; 26 mEq/L</span> &mdash; <b>the KIDNEY number</b> <em>(this is a base)</em></li> <li><b>PaO&#8322;</b> = <span class="fill">80 &ndash; 100 mm Hg</span> <em>(oxygenation &mdash; separate question from acid-base)</em></li> <li><b>SaO&#8322;</b> = <span class="fill">95 &ndash; 100%</span> <em>(88&ndash;92% is an acceptable target in chronic CO&#8322; retainers)</em></li> <li><b>Base excess</b> = <span class="fill">&minus;2 to +2 mEq/L</span> <em>(negative = acid load, positive = base load)</em></li>
+</ul> <h3>Which way does each number point?</h3>
+<table class="cmp">
+<thead><tr><th>Value</th><th>Below normal means…</th><th>Above normal means…</th></tr></thead>
+<tbody>
+<tr><td class="k">pH</td><td>&lt; 7.35 = <b>ACIDOSIS</b></td><td>&gt; 7.45 = <b>ALKALOSIS</b></td></tr>
+<tr><td class="k">CO&#8322; (acid)</td><td>&lt; 35 = blowing acid off &rarr; <b>alkalotic</b></td><td>&gt; 45 = holding acid in &rarr; <b>acidotic</b></td></tr>
+<tr><td class="k">HCO&#8323; (base)</td><td>&lt; 22 = lost base &rarr; <b>acidotic</b></td><td>&gt; 26 = extra base &rarr; <b>alkalotic</b></td></tr>
+</tbody>
+</table>
+<p><mark>CO&#8322; is backwards &mdash; a HIGH CO&#8322; means a LOW pH.</mark> <em>Because CO&#8322; + water becomes carbonic acid; more CO&#8322; = more acid.</em> HCO&#8323; is not backwards: high bicarb, high pH.</p>
+</div> <!-- ===================== 3 · ROME + STEPS ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="rome">
+<h2>3 &middot; ROME + The 5 Steps 🔁</h2> <h3>ROME</h3>
+<ul class="blanks"> <li><b>R</b>espiratory <b>O</b>pposite &mdash; <span class="fill">pH and CO&#8322; move in <b>opposite</b> directions. pH &darr; with CO&#8322; &uarr; = respiratory acidosis. pH &uarr; with CO&#8322; &darr; = respiratory alkalosis.</span></li> <li><b>M</b>etabolic <b>E</b>qual &mdash; <span class="fill">pH and HCO&#8323; move in the <b>same</b> direction. pH &darr; with HCO&#8323; &darr; = metabolic acidosis. pH &uarr; with HCO&#8323; &uarr; = metabolic alkalosis.</span></li>
+</ul>
+<p class="fine">💡 If you only remember one thing: <b>find the value that matches the pH's direction.</b> That value names the problem. The other value is either normal or compensating.</p> <h3>The 5 steps, in order</h3>
+<div class="flow"> <div class="stepbox"><b>Step 1 · pH</b><span>Acid or base? &lt;7.35 acidosis &middot; &gt;7.45 alkalosis &middot; in range = look for compensation</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 2 · CO&#8322;</b><span>Lung value. Opposite the pH? &rarr; <b>RESPIRATORY</b></span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 3 · HCO&#8323;</b><span>Kidney value. Same way as the pH? &rarr; <b>METABOLIC</b></span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 4 · Compensation</b><span>Other value normal = none &middot; abnormal + pH still off = partial &middot; abnormal + pH normal = full</span></div> <div class="arrow">➜</div> <div class="stepbox"><b>Step 5 · Patient</b><span>Cause? Airway/breathing OK? Potassium? THAT is the test question.</span></div>
+</div>
+<p><b>Naming format the exam wants:</b> <span class="fill">[uncompensated / partially compensated / fully compensated] + [respiratory / metabolic] + [acidosis / alkalosis]</span>. Say all three parts out loud and the right option usually reads itself off the page.</p>
+</div> <!-- ===================== 4 · TIC TAC TOE ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="ttt">
+<h2>4 &middot; The Tic-Tac-Toe Grid ⬜</h2>
+<p class="lead-in">Draw three columns. Drop each number into the column it belongs to. Whatever lands in the <b>same column as the pH</b> is the primary problem.</p> <table class="cmp">
+<thead><tr><th>Put it here…</th><th>ACID column</th><th>NORMAL column</th><th>BASE column</th></tr></thead>
+<tbody>
+<tr><td class="k">pH</td><td>&lt; 7.35</td><td>7.35 &ndash; 7.45</td><td>&gt; 7.45</td></tr>
+<tr><td class="k">CO&#8322; (mm Hg)</td><td>&gt; 45</td><td>35 &ndash; 45</td><td>&lt; 35</td></tr>
+<tr><td class="k">HCO&#8323; (mEq/L)</td><td>&lt; 22</td><td>22 &ndash; 26</td><td>&gt; 26</td></tr>
+</tbody>
+</table> <h3>How to read your own grid</h3>
+<ul class="blanks"> <li><b>pH + CO&#8322; in the same column</b> &rarr; <span class="fill"><b>respiratory</b> problem, named by the pH's column (acid column = acidosis)</span></li> <li><b>pH + HCO&#8323; in the same column</b> &rarr; <span class="fill"><b>metabolic</b> problem, named by the pH's column</span></li> <li><b>The third value still sitting in the NORMAL column</b> &rarr; <span class="fill"><b>uncompensated</b> &mdash; the other system has not started helping yet</span></li> <li><b>Both CO&#8322; and HCO&#8323; out of the normal column, pH still abnormal</b> &rarr; <span class="fill"><b>partially compensated</b></span></li> <li><b>Both CO&#8322; and HCO&#8323; out of the normal column, pH back inside 7.35&ndash;7.45</b> &rarr; <span class="fill"><b>fully compensated</b> &mdash; then use the 7.40 split to say which one was primary</span></li>
+</ul>
+<p class="fine">💡 <b>The 7.40 split (only for a normal pH):</b> 7.35&ndash;7.39 means the body started <em>acidotic</em>; 7.41&ndash;7.45 means it started <em>alkalotic</em>. The body compensates <b>toward</b> normal but never overshoots past the midline.</p>
+</div> <!-- ===================== 5 · COMPENSATION ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="comp">
+<h2>5 &middot; Compensation &mdash; Who Fixes Whom 📈</h2>
+<p class="lead-in">The two systems cover for each other. Whichever one is <b>not</b> broken is the one doing the compensating.</p> <table class="cmp">
+<thead><tr><th>System</th><th>Compensates for</th><th>How</th><th>Speed</th></tr></thead>
+<tbody>
+<tr><td class="k">🫁 Lungs (CO&#8322;)</td><td><b>Metabolic</b> problems</td><td>Change rate &amp; depth &mdash; blow off CO&#8322; in acidosis, hold CO&#8322; in alkalosis</td><td><b>Minutes</b> &mdash; fast, but incomplete</td></tr>
+<tr><td class="k">🫘 Kidneys (HCO&#8323;)</td><td><b>Respiratory</b> problems</td><td>Retain or dump bicarbonate and excrete H&#8314;</td><td><b>Hours to 2&ndash;3 days</b> &mdash; slow, but far more complete</td></tr>
+</tbody>
+</table> <h3>The three compensation states</h3>
+<table class="cmp">
+<thead><tr><th>State</th><th>pH</th><th>CO&#8322; &amp; HCO&#8323;</th><th>Read it as</th></tr></thead>
+<tbody>
+<tr><td class="k">Uncompensated</td><td><b>Abnormal</b></td><td>One abnormal, one <b>normal</b></td><td>Brand new &mdash; help hasn't arrived</td></tr>
+<tr><td class="k">Partially compensated</td><td><b>Still abnormal</b></td><td><b>Both</b> abnormal</td><td>Help is on the way but losing</td></tr>
+<tr><td class="k">Fully compensated</td><td><b>NORMAL</b></td><td><b>Both</b> abnormal</td><td>Chronic &mdash; the body caught up</td></tr>
+</tbody>
+</table>
+<p><mark>Normal pH + two abnormal values = fully compensated. It is never "normal ABG."</mark></p>
+<p><span class="never">Never treat the compensation.</span> Kussmaul breathing in DKA and a fast rate in metabolic acidosis are the patient's <em>rescue</em> &mdash; sedating or slowing that breathing removes the only thing holding the pH up.</p>
+</div> <!-- ===================== 6 · CAUSES ===================== -->
+<div class="card" style="--jewel:var(--emerald)" id="causes">
+<h2>6 &middot; Causes Cheat Sheet 🗂️</h2>
+<p class="lead-in">Most of the questions below are really "name the cause." Learn these four columns and you can answer without an ABG at all.</p> <table class="cmp">
+<thead><tr><th>Imbalance</th><th>Mechanism</th><th>Classic causes</th></tr></thead>
+<tbody>
+<tr><td class="k">Respiratory acidosis<br>&uarr;CO&#8322;, &darr;pH</td><td><b>HYPOventilation</b> &mdash; not blowing CO&#8322; off</td><td>COPD &middot; <b>opioids / sedatives / anesthesia</b> &middot; pneumonia, atelectasis &middot; chest trauma, flail chest &middot; neuromuscular disease (MG, Guillain-Barr&eacute;) &middot; obesity hypoventilation, OSA &middot; airway obstruction &middot; post-op splinting</td></tr>
+<tr><td class="k">Respiratory alkalosis<br>&darr;CO&#8322;, &uarr;pH</td><td><b>HYPERventilation</b> &mdash; blowing too much CO&#8322; off</td><td><b>Anxiety / panic</b> &middot; pain &middot; fever &middot; early sepsis &middot; pulmonary embolism &middot; high altitude &middot; over-set ventilator &middot; early salicylate toxicity</td></tr>
+<tr><td class="k">Metabolic acidosis<br>&darr;HCO&#8323;, &darr;pH</td><td><b>Gained acid</b> or <b>lost bicarb</b></td><td><b>DKA</b> &middot; lactic acidosis / shock &middot; renal failure &middot; <b>diarrhea</b>, ileostomy, intestinal fistula &middot; starvation &middot; late salicylate toxicity</td></tr>
+<tr><td class="k">Metabolic alkalosis<br>&uarr;HCO&#8323;, &uarr;pH</td><td><b>Lost acid</b> or <b>gained base</b></td><td><b>Vomiting</b> &middot; <b>NG suction</b> &middot; antacid / bicarb overuse &middot; loop and thiazide diuretics &middot; hypokalemia &middot; steroids / Cushing&rsquo;s &middot; massive transfusion (citrate)</td></tr>
+</tbody>
+</table> <h3>Two shortcuts that cover most items</h3>
+<ul class="blanks"> <li><b>The belly-button rule:</b> <span class="fill">Fluid lost from <b>above</b> the belly button (vomiting, NG suction) is <b>acid</b> &rarr; <b>metabolic ALKALOSIS</b>. Fluid lost from <b>below</b> (diarrhea, ileostomy, fistula) is <b>bicarbonate-rich</b> &rarr; <b>metabolic ACIDOSIS</b>.</span></li> <li><b>The breathing rule:</b> <span class="fill">If the question describes <b>slow or shallow</b> breathing, the answer is <b>respiratory acidosis</b>. If it describes <b>fast, deep, or panicked</b> breathing as the <em>problem</em>, it is <b>respiratory alkalosis</b>. If fast and deep breathing is the body's <em>response</em> to something else, it is <b>compensation for metabolic acidosis</b>.</span></li>
+</ul>
+</div> <!-- ===================== 7 · SIGNS ===================== -->
+<div class="card" style="--jewel:var(--garnet)" id="signs">
+<h2>7 &middot; What the Patient Actually Looks Like 👁️</h2>
+<p class="lead-in">The exam rarely hands you an ABG in the clinical items &mdash; it hands you a patient. Acidosis sedates. Alkalosis irritates.</p> <table class="cmp">
+<thead><tr><th></th><th>ACIDOSIS &mdash; CNS <b>depression</b></th><th>ALKALOSIS &mdash; CNS <b>excitement</b></th></tr></thead>
+<tbody>
+<tr><td class="k">Neuro</td><td>Headache, drowsy, confused, <b>lethargic &rarr; coma</b></td><td>Anxious, lightheaded, dizzy, <b>seizures</b></td></tr>
+<tr><td class="k">Neuromuscular</td><td>Weakness, flaccid, hyporeflexia</td><td><b>Tingling: circumoral, fingers, toes</b> &middot; twitching, tetany, carpopedal spasm, +Chvostek/Trousseau</td></tr>
+<tr><td class="k">Cardiac</td><td><b>Hyperkalemia</b> &rarr; peaked T waves, wide QRS, bradycardia, VF</td><td><b>Hypokalemia</b> &rarr; flat T waves, U waves, PVCs; tachycardia</td></tr>
+<tr><td class="k">Respiratory</td><td><b>Kussmaul</b> (deep, rapid, labored) if metabolic; slow/shallow if respiratory</td><td>Fast and deep if respiratory; slow and shallow (holding CO&#8322;) if metabolic</td></tr>
+<tr><td class="k">Skin</td><td>Warm, flushed <em>(vasodilation)</em></td><td>Pale, may have carpal spasm</td></tr>
+</tbody>
+</table>
+<p><mark>Potassium follows the pH backwards: acidosis &rarr; hyperkalemia; alkalosis &rarr; hypokalemia.</mark> <em>Because H&#8314; and K&#8314; trade places across the cell membrane.</em> Alkalosis also drops <b>ionized calcium</b>, which is where the tingling and tetany come from.</p>
+</div> <!-- ===================== 8 · QUESTIONS 1-7 ===================== -->
+<div class="card" style="--jewel:var(--sapphire)" id="q1">
+<h2>8 &middot; Mixed Practice Questions 1&ndash;7 ✍️</h2>
+<p class="lead-in">Cover the reveal. Write your three-part name (compensation + system + acid/base) before you tap.</p> <div class="nq">
+<div class="stem">Q1. A patient has the following ABG results: <b>pH 7.31 &middot; CO&#8322; 52 &middot; HCO&#8323; 24.</b> What acid-base imbalance is present?</div>
+<ol type="A"> <li>Metabolic acidosis</li> <li>Respiratory acidosis</li> <li>Respiratory alkalosis</li> <li>Metabolic alkalosis</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: B &mdash; respiratory acidosis (uncompensated).</b></p>
+<p><b>Reading the numbers:</b><br>
+<b>pH 7.31</b> &rarr; below 7.35 &rarr; <b>acidosis</b>.<br>
+<b>CO&#8322; 52</b> &rarr; above 45 &rarr; <b>acidic</b>, and it moved <em>opposite</em> the pH. <b>R</b>espiratory <b>O</b>pposite &rarr; this is the primary problem.<br>
+<b>HCO&#8323; 24</b> &rarr; inside 22&ndash;26 &rarr; <b>normal</b>, so the kidneys have not started compensating &rarr; <b>uncompensated</b>.<br>
+Therefore: acidosis + CO&#8322; matches + bicarb untouched = <b>uncompensated respiratory acidosis</b>. Think hypoventilation &mdash; sedation, COPD, splinting, a suppressed drive.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> Metabolic acidosis needs HCO&#8323; <b>below 22</b>. It is 24 &mdash; dead normal.<br>
+<b>C.</b> Respiratory alkalosis needs pH <b>above 7.45</b> with CO&#8322; <b>below 35</b>. Both are the reverse here.<br>
+<b>D.</b> Metabolic alkalosis needs pH above 7.45 with HCO&#8323; above 26. Neither is true.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q2. True or False: <b>Vomiting commonly causes metabolic acidosis.</b></div>
+<ol type="A"> <li>TRUE</li> <li>FALSE</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: FALSE.</b> Vomiting causes <b>metabolic ALKALOSIS</b>.</p>
+<p><b>Why:</b> gastric fluid is hydrochloric acid. Throwing it up &mdash; or suctioning it out through an NG tube &mdash; removes acid from the body, so the bicarbonate left behind is now in excess and the pH climbs. Expect <b>&uarr;HCO&#8323;, &uarr;pH</b>, plus <b>hypokalemia</b> and <b>hypochloremia</b> that keep the alkalosis going until you replace K&#8314; and Cl&#8315; with normal saline.</p>
+<p><b>Why TRUE is wrong:</b> it reverses the belly-button rule. Losses from <b>below</b> the belly button (diarrhea, ileostomy, fistula) are <b>bicarbonate</b>-rich and cause metabolic <b>acidosis</b>. Losses from <b>above</b> are acid and cause <b>alkalosis</b>.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q3. A patient with severe anxiety begins hyperventilating. Which assessment finding would the nurse expect?</div>
+<ol type="A"> <li>Bradycardia</li> <li>Tingling around the mouth</li> <li>Decreased respirations</li> <li>Hyperkalemia</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: B &mdash; tingling around the mouth (circumoral paresthesia).</b></p>
+<p><b>Chain of reasoning:</b> panic &rarr; hyperventilation &rarr; <b>CO&#8322; blown off</b> &rarr; <b>respiratory alkalosis</b> &rarr; alkalosis makes calcium bind more tightly to albumin, so <b>ionized calcium falls</b> &rarr; <em>neuromuscular irritability</em>: tingling of lips, fingers and toes, lightheadedness, twitching, carpopedal spasm. Nursing action is coaching slow, controlled breathing, not oxygen.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> Anxiety and a sympathetic surge cause <b>tachycardia</b>, not bradycardia.<br>
+<b>C.</b> Hyperventilation <em>is</em> increased rate and depth &mdash; decreased respirations describe the opposite problem (respiratory acidosis).<br>
+<b>D.</b> Alkalosis shifts K&#8314; <b>into</b> the cells &rarr; <b>hypo</b>kalemia. Hyperkalemia goes with acidosis.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q4. A patient presents with: <b>pH 7.50 &middot; CO&#8322; 30 &middot; HCO&#8323; 24.</b> Which condition is most likely?</div>
+<ol type="A"> <li>Respiratory alkalosis</li> <li>Metabolic alkalosis</li> <li>Respiratory acidosis</li> <li>Metabolic acidosis</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: A &mdash; respiratory alkalosis (uncompensated).</b></p>
+<p><b>Reading the numbers:</b><br>
+<b>pH 7.50</b> &rarr; above 7.45 &rarr; <b>alkalosis</b>.<br>
+<b>CO&#8322; 30</b> &rarr; below 35 &rarr; <b>alkalotic</b>, opposite the pH &rarr; <b>respiratory</b> (ROME).<br>
+<b>HCO&#8323; 24</b> &rarr; normal &rarr; <b>uncompensated</b>.<br>
+Therefore: <b>uncompensated respiratory alkalosis</b> &mdash; the patient is blowing off CO&#8322;. Look for anxiety, pain, fever, early sepsis, PE, or a ventilator set too fast.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>B.</b> Metabolic alkalosis requires HCO&#8323; <b>&gt; 26</b>; this bicarb is 24.<br>
+<b>C.</b> Respiratory acidosis requires pH &lt; 7.35 <b>and</b> CO&#8322; &gt; 45 &mdash; both are the opposite.<br>
+<b>D.</b> Metabolic acidosis requires pH &lt; 7.35 and HCO&#8323; &lt; 22 &mdash; neither is true.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q5. True or False: <b>The kidneys compensate quickly for respiratory imbalances.</b></div>
+<ol type="A"> <li>TRUE</li> <li>FALSE</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: FALSE.</b> The kidneys are the <b>slow</b> system.</p>
+<p><b>Why:</b> renal compensation means retaining or dumping bicarbonate and excreting hydrogen ions &mdash; that takes <b>hours to begin and 2&ndash;3 days to be complete</b>. The <b>lungs</b> are the fast responders: change the rate and depth and the CO&#8322; moves within <b>minutes</b>. The trade-off is that the slow system is the <em>thorough</em> one, which is why a chronic COPD patient can end up with a fully normal pH.</p>
+<p><b>Why TRUE is wrong:</b> it swaps the two systems. Fast = lungs = CO&#8322;. Slow = kidneys = HCO&#8323;.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q6. A patient with COPD becomes increasingly lethargic. Which lab finding would the nurse anticipate?</div>
+<ol type="A"> <li>Low CO&#8322;</li> <li>Elevated HCO&#8323; only</li> <li>High CO&#8322;</li> <li>High pH</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: C &mdash; high CO&#8322;.</b></p>
+<p><b>Why:</b> COPD traps air and destroys alveolar surface, so the patient cannot get CO&#8322; <em>out</em> &rarr; <b>CO&#8322; retention &rarr; respiratory acidosis</b>. Rising CO&#8322; is a cerebral vasodilator and a sedative &mdash; <b>increasing lethargy in a COPD patient is CO&#8322; narcosis until proven otherwise</b>, and it is an early warning of respiratory failure. Do not treat a sleepy COPD patient as "resting comfortably."</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> A low CO&#8322; means the patient is blowing it off &mdash; the opposite of the COPD problem, and it would not cause lethargy.<br>
+<b>B.</b> The HCO&#8323; <em>is</em> elevated in chronic COPD (renal compensation), but the word <b>"only"</b> makes it wrong &mdash; the CO&#8322; is high too, and the CO&#8322; is what is making her lethargic.<br>
+<b>D.</b> Chronic CO&#8322; retention pushes the pH <b>down</b> or, once compensated, back to low-normal &mdash; not high.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q7. A patient with severe diarrhea is MOST at risk for:</div>
+<ol type="A"> <li>Metabolic alkalosis</li> <li>Respiratory acidosis</li> <li>Metabolic acidosis</li> <li>Respiratory alkalosis</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: C &mdash; metabolic acidosis.</b></p>
+<p><b>Why:</b> intestinal and pancreatic secretions are <b>rich in bicarbonate</b>. Severe diarrhea flushes that base out of the body before it can be reabsorbed &rarr; <b>&darr;HCO&#8323; &rarr; &darr;pH</b>. Expect <b>hypokalemia</b> at the same time, since stool carries potassium out too.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> Metabolic alkalosis is the <b>vomiting / NG suction</b> answer &mdash; acid lost from above the belly button.<br>
+<b>B.</b> Respiratory acidosis requires <b>hypoventilation</b>; diarrhea does not change ventilation.<br>
+<b>D.</b> Respiratory alkalosis requires <b>hyperventilation</b>. (If it appeared later, it would be <em>compensation</em>, not the primary problem.)</p>
+</div></details>
+</div>
+</div> <!-- ===================== 9 · QUESTIONS 8-14 ===================== -->
+<div class="card" style="--jewel:var(--teal)" id="q8">
+<h2>9 &middot; Mixed Practice Questions 8&ndash;14 ✍️</h2> <div class="nq">
+<div class="stem">Q8. True or False: <b>Kussmaul respirations are commonly seen in metabolic acidosis.</b></div>
+<ol type="A"> <li>TRUE</li> <li>FALSE</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b></p>
+<p><b>Why:</b> Kussmaul respirations are <b>deep, rapid, labored</b> breaths. When the pH falls, chemoreceptors drive the lungs to <b>blow off CO&#8322;</b> (carbonic acid) to pull the pH back up. It is the textbook finding in <b>DKA</b> and in severe metabolic acidosis of any cause.</p>
+<p><b>The exam trap:</b> Kussmaul breathing is <b>compensation, not the emergency</b>. <span class="never">Never give a sedative or try to slow that breathing.</span> Fix the acidosis (insulin, fluids, perfusion) and the breathing settles on its own.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q9. A nurse reviews the following ABG: <b>pH 7.48 &middot; CO&#8322; 38 &middot; HCO&#8323; 31.</b> Which imbalance is present?</div>
+<ol type="A"> <li>Respiratory alkalosis</li> <li>Metabolic alkalosis</li> <li>Respiratory acidosis</li> <li>Metabolic acidosis</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: B &mdash; metabolic alkalosis (uncompensated).</b></p>
+<p><b>Reading the numbers:</b><br>
+<b>pH 7.48</b> &rarr; above 7.45 &rarr; <b>alkalosis</b>.<br>
+<b>CO&#8322; 38</b> &rarr; sits inside 35&ndash;45 &rarr; <b>normal</b>, so the lungs are not the cause and are not yet compensating.<br>
+<b>HCO&#8323; 31</b> &rarr; above 26 &rarr; <b>alkalotic</b>, and it moved the <em>same</em> way as the pH. <b>M</b>etabolic <b>E</b>qual &rarr; primary problem.<br>
+Therefore: <b>uncompensated metabolic alkalosis</b>. Ask about vomiting, NG suction, diuretics, or antacid use.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> Respiratory alkalosis would show CO&#8322; <b>&lt; 35</b>; 38 is normal.<br>
+<b>C.</b> Respiratory acidosis needs pH &lt; 7.35 and CO&#8322; &gt; 45.<br>
+<b>D.</b> Metabolic acidosis needs pH &lt; 7.35 and HCO&#8323; &lt; 22 &mdash; this bicarb is high, not low.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q10. Which patient should the nurse assess FIRST?</div>
+<ol type="A"> <li>Patient hyperventilating during a panic attack</li> <li>Patient with vomiting and muscle cramps</li> <li>Patient with RR 6 after opioid administration</li> <li>Patient with chronic COPD and SpO&#8322; 91%</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: C &mdash; the patient with a respiratory rate of 6 after an opioid.</b></p>
+<p><b>Why:</b> <b>ABCs.</b> A rate of 6 is not just an abnormal number &mdash; it is failing ventilation. CO&#8322; climbs by roughly 3&ndash;6 mm Hg per minute of apnea/hypoventilation, so the pH is dropping <em>right now</em> and respiratory arrest follows. Act: stimulate, open the airway, apply oxygen, <b>bag-mask if needed</b>, hold the opioid, and give <b>naloxone</b> per protocol &mdash; then keep watching, because naloxone wears off sooner than the opioid does.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> Panic-driven hyperventilation causes respiratory <b>alkalosis</b> &mdash; frightening and uncomfortable, but self-limiting; coach slow breathing. Fast breathing is far safer than no breathing.<br>
+<b>B.</b> Vomiting with cramps is metabolic alkalosis with hypokalemia and low ionized calcium &mdash; genuinely needs attention, but the cramps are not immediately lethal. Assess second.<br>
+<b>D.</b> An SpO&#8322; of 91% is <b>expected</b> in a chronic CO&#8322; retainer, where the target is often 88&ndash;92%. It is a baseline, not a change.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q11. True or False: <b>Respiratory acidosis occurs when CO&#8322; levels increase.</b></div>
+<ol type="A"> <li>TRUE</li> <li>FALSE</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b></p>
+<p><b>Why:</b> CO&#8322; dissolved in water becomes <b>carbonic acid</b> (CO&#8322; + H&#8322;O &harr; H&#8322;CO&#8323; &harr; H&#8314; + HCO&#8323;&#8315;). Retained CO&#8322; therefore means retained <b>acid</b>, and the pH falls. That is exactly why <b>CO&#8322; reads backwards</b> next to the pH &mdash; the higher the CO&#8322;, the lower the pH.</p>
+<p><b>Why FALSE is wrong:</b> it would mean CO&#8322; behaves like a base, which is only true of <b>bicarbonate</b>. CO&#8322; up = acid up = pH down, every time.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q12. A patient with DKA develops rapid deep respirations. What is the BEST explanation?</div>
+<ol type="A"> <li>The patient is developing respiratory alkalosis</li> <li>The lungs are compensating for acidosis</li> <li>The kidneys are retaining CO&#8322;</li> <li>The patient is developing metabolic alkalosis</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: B &mdash; the lungs are compensating for the acidosis.</b></p>
+<p><b>Chain of reasoning:</b> no insulin &rarr; fat is burned for fuel &rarr; <b>ketoacids</b> accumulate &rarr; bicarbonate is consumed buffering them &rarr; <b>&darr;HCO&#8323;, &darr;pH = metabolic acidosis</b> &rarr; chemoreceptors trigger <b>Kussmaul respirations</b> &rarr; CO&#8322; is blown off &rarr; the pH is dragged back toward normal. The breathing is the <em>fix</em>, not the failure.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> The CO&#8322; is low, but that is compensation. The pH is still <b>acidic</b>, so the primary problem cannot be an alkalosis. (You only call it respiratory alkalosis when the low CO&#8322; is the thing driving a <em>high</em> pH.)<br>
+<b>C.</b> Kidneys do not handle CO&#8322; &mdash; they handle <b>bicarbonate and H&#8314;</b>. CO&#8322; belongs to the lungs.<br>
+<b>D.</b> DKA lowers bicarbonate. Metabolic alkalosis is the opposite picture and would not produce Kussmaul breathing.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q13. Which condition is MOST commonly associated with metabolic alkalosis?</div>
+<ol type="A"> <li>Panic attack</li> <li>COPD</li> <li>Diarrhea</li> <li>Prolonged vomiting</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: D &mdash; prolonged vomiting.</b></p>
+<p><b>Why:</b> vomiting drains <b>hydrochloric acid</b> out of the stomach. Losing acid raises the pH, and the bicarbonate that remains is now relatively excessive &rarr; <b>&uarr;HCO&#8323;, &uarr;pH</b>. The accompanying <b>volume depletion, hypochloremia and hypokalemia</b> keep the kidney from correcting it, which is why treatment is <b>0.9% saline plus potassium replacement</b>.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> A panic attack &rarr; hyperventilation &rarr; <b>respiratory alkalosis</b> (right pH direction, wrong system).<br>
+<b>B.</b> COPD &rarr; CO&#8322; retention &rarr; <b>respiratory acidosis</b>.<br>
+<b>C.</b> Diarrhea &rarr; bicarbonate loss &rarr; <b>metabolic acidosis</b> (right system, exact opposite direction &mdash; this is the distractor she must not fall for).</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q14. True or False: <b>Low bicarbonate levels are associated with metabolic acidosis.</b></div>
+<ol type="A"> <li>TRUE</li> <li>FALSE</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b></p>
+<p><b>Why:</b> bicarbonate is the body's main <b>base</b>. HCO&#8323; below <b>22 mEq/L</b> means the buffer has been lost (diarrhea, renal wasting) or used up neutralizing acid (DKA, lactic acidosis), so the pH falls with it. <b>M</b>etabolic <b>E</b>qual: pH &darr; and HCO&#8323; &darr; together.</p>
+<p><b>Why FALSE is wrong:</b> it would put <b>high</b> bicarb with acidosis. High HCO&#8323; (&gt; 26) is metabolic <b>alkalosis</b>, or the kidney's compensation for chronic respiratory acidosis.</p>
+</div></details>
+</div>
+</div> <!-- ===================== 10 · QUESTIONS 15-20 ===================== -->
+<div class="card" style="--jewel:var(--citrine)" id="q15">
+<h2>10 &middot; Mixed Practice Questions 15&ndash;20 ✍️</h2> <div class="nq">
+<div class="stem">Q15. A patient has: <b>pH 7.32 &middot; CO&#8322; 29 &middot; HCO&#8323; 18.</b> What is the BEST interpretation?</div>
+<ol type="A"> <li>Fully compensated metabolic acidosis</li> <li>Partially compensated metabolic acidosis</li> <li>Respiratory alkalosis</li> <li>Uncompensated respiratory acidosis</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: B &mdash; partially compensated metabolic acidosis.</b></p>
+<p><b>Reading the numbers:</b><br>
+<b>pH 7.32</b> &rarr; below 7.35 &rarr; <b>acidosis</b>, and still abnormal.<br>
+<b>HCO&#8323; 18</b> &rarr; below 22 &rarr; <b>acidic</b>, same direction as the pH &rarr; <b>metabolic</b> is the primary problem (ME).<br>
+<b>CO&#8322; 29</b> &rarr; below 35 &rarr; alkalotic, which does <em>not</em> match the pH &mdash; so it is not causing the problem, it is <b>fixing</b> it. The lungs are hyperventilating to blow off acid.<br>
+Both values abnormal + pH still out of range = <b>partially compensated</b>. Picture DKA or lactic acidosis with Kussmaul breathing.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> "Fully compensated" requires the pH to be back <b>inside 7.35&ndash;7.45</b>. It is 7.32 &mdash; the lungs have not caught up yet.<br>
+<b>C.</b> If respiratory alkalosis were the primary problem the pH would be <b>high</b>, not low. A low CO&#8322; with an acidic pH is always compensation.<br>
+<b>D.</b> Uncompensated respiratory acidosis would need CO&#8322; <b>high</b> and HCO&#8323; <b>normal</b>. Here the CO&#8322; is low and the bicarb is low &mdash; the exact reverse.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q16. A patient receiving IV opioids is difficult to arouse and breathing 8 times/minute. Which acid-base imbalance is MOST likely?</div>
+<ol type="A"> <li>Respiratory alkalosis</li> <li>Respiratory acidosis</li> <li>Metabolic alkalosis</li> <li>Metabolic acidosis</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: B &mdash; respiratory acidosis.</b></p>
+<p><b>Why:</b> opioids blunt the brainstem's response to rising CO&#8322;, so the patient simply stops breathing enough. <b>Hypoventilation &rarr; CO&#8322; retention &rarr; carbonic acid &rarr; &darr;pH.</b> Expect <b>&uarr;CO&#8322; with a normal HCO&#8323;</b> (uncompensated &mdash; this happened in minutes, and the kidneys need days).</p>
+<p><b>Priority actions:</b> stimulate and reposition, oxygen, <b>bag-valve-mask if the rate keeps falling</b>, withhold further opioid, naloxone per protocol, and continued monitoring &mdash; <em>because naloxone's duration is shorter than most opioids and she can re-sedate.</em></p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> Respiratory alkalosis requires <b>hyperventilation</b>; this patient is doing the opposite.<br>
+<b>C.</b> Metabolic alkalosis comes from acid loss or base gain &mdash; vomiting, NG suction, antacids. No such history here.<br>
+<b>D.</b> Metabolic acidosis would require lost bicarb or gained fixed acid. The failure here is <b>ventilation</b>, so the disorder is respiratory. <em>(A prolonged arrest eventually adds a lactic acidosis on top &mdash; but the first and "most likely" answer is respiratory.)</em></p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q17. True or False: <b>Hyperventilation causes CO&#8322; retention.</b></div>
+<ol type="A"> <li>TRUE</li> <li>FALSE</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: FALSE.</b></p>
+<p><b>Why:</b> hyperventilation <b>blows CO&#8322; off</b> &mdash; the more air moved, the more CO&#8322; exhaled &rarr; <b>&darr;CO&#8322; &rarr; &uarr;pH &rarr; respiratory alkalosis</b>. It is <b>HYPOventilation</b> (slow, shallow, obstructed) that <b>retains</b> CO&#8322; and produces respiratory acidosis.</p>
+<p><b>Why TRUE is wrong:</b> it confuses the prefixes. <b>Hyper &rarr; off &rarr; alkalosis. Hypo &rarr; held &rarr; acidosis.</b> Read those two words carefully on the exam &mdash; they are one letter apart and flip the whole answer.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q18. Which finding is MOST concerning in a patient with metabolic acidosis?</div>
+<ol type="A"> <li>Deep rapid respirations</li> <li>Potassium 6.1 mEq/L</li> <li>Mild nausea</li> <li>Respiratory rate 20</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: B &mdash; potassium 6.1 mEq/L.</b></p>
+<p><b>Why:</b> in acidosis, excess <b>H&#8314; moves into the cells and K&#8314; is pushed out</b> into the bloodstream. A potassium of 6.1 (normal <b>3.5&ndash;5.0 mEq/L</b>) can produce <b>peaked T waves, a widening QRS, bradycardia, and ventricular fibrillation or asystole</b> &mdash; a rhythm problem, not a lab problem. Get the patient on a monitor, obtain an ECG, and anticipate <b>IV calcium gluconate</b> to protect the heart, then insulin with dextrose to move K&#8314; back inside.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> Deep rapid (Kussmaul) respirations are <b>expected compensation</b> &mdash; the thing keeping her alive. Concerning would be if they <em>stopped</em>.<br>
+<b>C.</b> Mild nausea is common in acidosis and is not urgent.<br>
+<b>D.</b> A respiratory rate of 20 is at the top of the normal range (12&ndash;20) and completely reasonable in someone compensating.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q19. A patient has: <b>pH 7.40 &middot; CO&#8322; 50 &middot; HCO&#8323; 32.</b> Which interpretation is correct?</div>
+<ol type="A"> <li>Uncompensated respiratory acidosis</li> <li>Fully compensated respiratory acidosis</li> <li>Respiratory alkalosis</li> <li>Metabolic alkalosis</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: B &mdash; fully compensated respiratory acidosis.</b></p>
+<p><b>Reading the numbers:</b><br>
+<b>pH 7.40</b> &rarr; <b>normal</b>. A normal pH sitting next to two abnormal values never means "normal ABG" &mdash; it means <b>full compensation</b>.<br>
+<b>CO&#8322; 50</b> &rarr; above 45 &rarr; <b>acidic</b>.<br>
+<b>HCO&#8323; 32</b> &rarr; above 26 &rarr; <b>alkalotic</b>.<br>
+The two are pulling in opposite directions and have cancelled out. The <b>primary</b> disorder is the one that came first: the retained CO&#8322;. The kidneys then held onto bicarbonate over days to bring the pH home &mdash; the classic <b>chronic COPD</b> gas.</p>
+<p><b>How to break the tie:</b> normally you use the <b>7.40 split</b> &mdash; 7.35&ndash;7.39 means it started acidotic, 7.41&ndash;7.45 means it started alkalotic. Here the pH is exactly 7.40, dead on the line, so the split cannot decide it. Use the pattern instead: a <b>high CO&#8322; with a compensating high bicarb</b> is chronic respiratory acidosis, and it is the only option offered that describes two abnormal values with a normal pH.</p>
+<p><b>Why the others are wrong:</b><br>
+<b>A.</b> "Uncompensated" would require an <b>abnormal pH</b> and a <b>normal HCO&#8323;</b>. Both parts fail here.<br>
+<b>C.</b> Respiratory alkalosis requires a <b>low</b> CO&#8322; (&lt; 35) and a high pH. This CO&#8322; is 50.<br>
+<b>D.</b> Metabolic alkalosis as a primary problem would show a pH <b>above 7.45</b>; and here the elevated bicarb is the <em>response</em>, not the cause &mdash; the kidney does not spontaneously retain bicarb without a reason.</p>
+</div></details>
+</div> <div class="nq">
+<div class="stem">Q20. True or False: <b>The lungs help compensate for metabolic imbalances.</b></div>
+<ol type="A"> <li>TRUE</li> <li>FALSE</li>
+</ol>
+<details><summary>Show the answer</summary><div class="ans">
+<p><b>Answer: TRUE.</b></p>
+<p><b>Why:</b> each system covers the other. When the problem is <b>metabolic</b>, the lungs adjust <b>rate and depth</b> to move CO&#8322; within <b>minutes</b> &mdash; breathe faster and deeper to blow acid off in metabolic acidosis (Kussmaul), breathe slower and shallower to hold CO&#8322; in metabolic alkalosis. When the problem is <b>respiratory</b>, the <b>kidneys</b> take over with bicarbonate, over hours to days.</p>
+<p><b>Why FALSE is wrong:</b> it would leave metabolic acidosis with no fast defence at all &mdash; and would make Kussmaul respirations in DKA impossible to explain.</p>
+</div></details>
+</div>
+</div> <!-- ===================== 11 · DANGER ===================== -->
+<div class="card" style="--jewel:var(--ruby)" id="danger">
+<h2>11 &middot; The Two Killers Hidden in This Set 🚨</h2>
+<p class="lead-in">Twenty questions, two of them are actually emergencies. These are the ones that become "which patient first" items.</p> <h3>🚨 Killer 1 &mdash; the falling respiratory rate (Q10, Q16)</h3>
+<ul class="blanks"> <li><b>Trigger:</b> <span class="fill">RR under 10&ndash;12 after an opioid, benzodiazepine, or anesthesia &mdash; especially with difficulty arousing</span></li> <li><b>Why it kills:</b> <span class="fill">CO&#8322; accumulates within minutes and the pH crashes; the kidneys cannot compensate for days, so there is <b>no backup system</b>. Hypoxia and arrest follow.</span></li> <li><b>Do:</b> <span class="fill">Stimulate &rarr; open the airway &rarr; oxygen &rarr; <b>bag-valve-mask ventilation</b> if the rate keeps falling &rarr; hold the opioid &rarr; naloxone per protocol &rarr; keep monitoring for re-sedation</span></li>
+</ul>
+<p><span class="never">Never leave a sedated patient with a falling respiratory rate to "check on them later."</span></p> <h3>🚨 Killer 2 &mdash; potassium riding with the pH (Q18)</h3>
+<ul class="blanks"> <li><b>Rule:</b> <span class="fill"><b>Acidosis &rarr; hyperkalemia</b> (K&#8314; leaves the cell). <b>Alkalosis &rarr; hypokalemia</b> (K&#8314; enters the cell).</span></li> <li><b>The number to fear:</b> <span class="fill">K&#8314; above <b>5.0 mEq/L</b>, and urgently above <b>6.0</b> &mdash; peaked T waves, widening QRS, then VF or asystole</span></li> <li><b>Do first:</b> <span class="fill">Cardiac monitor and 12-lead ECG, then <b>IV calcium gluconate</b> to stabilize the myocardium <em>(it does not lower the potassium &mdash; it buys time)</em>, then insulin with dextrose to shift it, then a binder or dialysis to remove it</span></li>
+</ul>
+<p class="fine">⚠️ Also on the danger list: <b>lethargy in a COPD patient</b> (Q6) &mdash; that is CO&#8322; narcosis, an early sign of respiratory failure, not a patient finally resting.</p>
+</div> <!-- ===================== 12 · SUMMARY ===================== -->
+<div class="card" style="--jewel:var(--topaz)" id="summary">
+<h2>12 &middot; Must Not Forget ⭐</h2>
+<p class="lead-in">If she reads nothing else the morning of the exam, she reads this.</p> <ul class="blanks"> <li><b>1.</b> <span class="fill">pH <b>7.35&ndash;7.45</b> &middot; CO&#8322; <b>35&ndash;45 mm Hg</b> &middot; HCO&#8323; <b>22&ndash;26 mEq/L</b>. Nothing else can be interpreted until these three are memorized.</span></li> <li><b>2.</b> <span class="fill"><b>ROME.</b> Respiratory = pH and CO&#8322; <b>Opposite</b>. Metabolic = pH and HCO&#8323; <b>Equal</b>. Whichever value matches the pH's direction names the disorder.</span></li> <li><b>3.</b> <span class="fill"><b>CO&#8322; is an acid, HCO&#8323; is a base.</b> High CO&#8322; = low pH. High bicarb = high pH.</span></li> <li><b>4.</b> <span class="fill"><b>Lungs are fast (minutes), kidneys are slow (2&ndash;3 days).</b> Lungs compensate for metabolic problems; kidneys compensate for respiratory ones.</span></li> <li><b>5.</b> <span class="fill"><b>Normal pH + two abnormal values = fully compensated.</b> Abnormal pH + two abnormal values = partially compensated. Abnormal pH + one normal value = uncompensated.</span></li> <li><b>6.</b> <span class="fill"><b>Vomiting/NG suction &rarr; metabolic ALKALOSIS. Diarrhea &rarr; metabolic ACIDOSIS.</b> Above the belly button is acid; below it is bicarbonate.</span></li> <li><b>7.</b> <span class="fill"><b>Acidosis sedates, alkalosis irritates.</b> Lethargy and confusion = acidosis (plus hyperkalemia). Tingling, tetany and anxiety = alkalosis (plus hypokalemia and low ionized calcium).</span></li> <li><b>8.</b> <span class="fill"><b>Airway and breathing beat any lab value.</b> A respiratory rate of 6 outranks every abnormal number on the page &mdash; and never sedate away Kussmaul breathing, <em>because it is the only thing holding the pH up.</em></span></li>
+</ul>
+<p><mark>pH &rarr; CO&#8322; &rarr; HCO&#8323; &rarr; compensation &rarr; patient. Five moves, every time.</mark></p>
+<p class="fine">💬 Ask Claire: &ldquo;Give me five random ABG sets with a one-line patient story, make me name compensation + system + acid/base, and tell me which one I got wrong and why.&rdquo;</p>
+</div>
+</div>
+<script>
+(function(){ var btn=document.getElementById('toggle'), tip=document.getElementById('tip'); btn.addEventListener('click',function(){ var on=document.body.classList.toggle('quizmode'); btn.innerHTML = on ? '\uD83D\uDC41\uFE0F Show all answers' : '\uD83D\uDE48 Hide answers \u2014 quiz me'; tip.textContent = on ? 'Tap any blank to reveal just that one.' : "Every highlighted answer was a blank in the handout."; if(!on) document.querySelectorAll('.fill.show').forEach(function(f){f.classList.remove('show');}); window.scrollTo({top:0,behavior:'smooth'}); }); document.addEventListener('click',function(e){ if(!document.body.classList.contains('quizmode')) return; var f=e.target.closest('.fill'); if(f) f.classList.add('show'); });
+})();
+</script> <script id="a11yJS">
+/* a table wider than the screen scrolls inside its own box rather than dragging the whole page sideways */
+(function(){ function wrap(){ document.querySelectorAll('table').forEach(function(t){ var p=t.parentNode; if(!p||p.classList&&p.classList.contains('a11y-tblwrap'))return; var d=document.createElement('div'); d.className='a11y-tblwrap'; p.insertBefore(d,t); d.appendChild(t); }); } if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',wrap); else wrap(); setTimeout(wrap,1200); /* catch tables built by the page's own scripts */
+})();
+</script>
+<script id="navDragJS">
+(function(){ var nb=document.getElementById('navBtns'); if(!nb||nb.dataset.dragReady) return; nb.dataset.dragReady='1'; /* ── 1. modifier and middle clicks must open a new tab ─────────────── The ABSN link called preventDefault() every time, which killed ctrl/cmd/shift-click and middle-click. Let those through. */ function passthrough(e){ return e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button===1; } nb.addEventListener('click',function(e){ var a=e.target.closest('a'); if(!a) return; if(passthrough(e)){ e.stopImmediatePropagation(); } /* before the page's own handler */ },true); nb.addEventListener('auxclick',function(e){ var a=e.target.closest('a'); if(a&&e.button===1){ e.stopImmediatePropagation(); window.open(a.href,'_blank','noopener'); e.preventDefault(); } },true); /* every button in the cluster also gets a right-click / long-press menu that works, because they stay real <a href> elements */ /* ── 2. a grip so it is obvious the cluster can be moved ───────────── */ /* ── 3. drag, and remember where she put it ─────────────────────────── */ var KEY='nbPos'; function clampPos(l,t){ var r=nb.getBoundingClientRect(); var maxL=Math.max(0,window.innerWidth-r.width-4); var maxT=Math.max(0,window.innerHeight-r.height-4); return [Math.min(Math.max(0,l),maxL), Math.min(Math.max(0,t),maxT)]; } function place(l,t){ var p=clampPos(l,t); nb.style.left=p[0]+'px'; nb.style.top=p[1]+'px'; nb.style.right='auto'; nb.style.bottom='auto'; } function save(){ try{ localStorage.setItem(KEY,JSON.stringify({l:parseFloat(nb.style.left)||0, t:parseFloat(nb.style.top)||0})); }catch(e){} } function reset(){ nb.style.left=''; nb.style.top=''; nb.style.right=''; nb.style.bottom=''; try{ localStorage.removeItem(KEY); }catch(e){} } try{ var s=JSON.parse(localStorage.getItem(KEY)||'null'); if(s&&typeof s.l==='number') place(s.l,s.t); }catch(e){} var dragging=false,ox=0,oy=0,moved=false; function down(x,y,e){ var r=nb.getBoundingClientRect(); dragging=true; moved=false; ox=x-r.left; oy=y-r.top; nb.classList.add('dragging'); if(e&&e.preventDefault) e.preventDefault(); } function move(x,y){ if(!dragging) return; moved=true; place(x-ox,y-oy); } function up(){ if(!dragging) return; dragging=false; nb.classList.remove('dragging'); if(moved) save(); } nb.addEventListener('mousedown',function(e){ if(e.button===0) down(e.clientX,e.clientY,e); }); window.addEventListener('mousemove',function(e){ move(e.clientX,e.clientY); }); window.addEventListener('mouseup',up); nb.addEventListener('touchstart',function(e){ var t=e.touches[0]; down(t.clientX,t.clientY,e); },{passive:false}); window.addEventListener('touchmove',function(e){ if(!dragging) return; var t=e.touches[0]; move(t.clientX,t.clientY); e.preventDefault(); },{passive:false}); window.addEventListener('touchend',up); nb.addEventListener('dblclick',function(e){ e.preventDefault(); reset(); }); /* keyboard: focus the grip and nudge with the arrows */ nb.addEventListener('keydown',function(e){ var step=e.shiftKey?24:6, r=nb.getBoundingClientRect(), l=r.left, t=r.top, hit=true; if(e.key==='ArrowLeft') l-=step; else if(e.key==='ArrowRight') l+=step; else if(e.key==='ArrowUp') t-=step; else if(e.key==='ArrowDown') t+=step; else if(e.key==='Home'||e.key==='Escape'){ reset(); e.preventDefault(); return; } else hit=false; if(hit){ place(l,t); save(); e.preventDefault(); } }); window.addEventListener('resize',function(){ if(nb.style.left) place(parseFloat(nb.style.left),parseFloat(nb.style.top)); }); /* ── 4. step aside for full-screen viewers ─────────────────────────── Some overlays (the NUR 175 image lightbox, the drug guide drawer) sit below this cluster in the stacking order, so the cluster covered their Close buttons. Find them once, then just watch whether they are shown. */ var overlays=[]; try{ document.querySelectorAll('body *').forEach(function(el){ if(overlays.length>40) return; if(el===nb||nb.contains(el)) return; var cs=getComputedStyle(el); if(cs.position!=='fixed') return; var z=parseInt(cs.zIndex,10); if(!(z>=1000)) return; /* covers most of the screen in at least one dimension */ var w=parseFloat(cs.width), h=parseFloat(cs.height); var full=(cs.inset==='0px'||cs.top==='0px'&&cs.left==='0px'&&cs.right==='0px'&&cs.bottom==='0px'); if(full||(w>=window.innerWidth*0.9&&h>=window.innerHeight*0.9)) overlays.push(el); }); }catch(e){} function check(){ var open=overlays.some(function(el){ var cs=getComputedStyle(el); return cs.display!=='none'&&cs.visibility!=='hidden'&&parseFloat(cs.opacity||'1')>0.05; }); nb.classList.toggle('hidden-by-overlay',open); } if(overlays.length){ check(); var t=null; new MutationObserver(function(){ clearTimeout(t); t=setTimeout(check,60); }) .observe(document.body,{attributes:true,subtree:true, attributeFilter:['class','style','hidden']}); }
+})();
+</script>
+<script id="skimJS">
+(function(){ /* What counts as a line of prose on these pages is NOT <p>. The 125 eBook units use <p class="ebp">, but 175 is card-based divs and 198 mixes divs, p and li. So the candidate set is "leaf text blocks": an element whose children are all inline. Measured before choosing: on a 125 eBook unit that is 2,352 blocks of which ~456 are long unmarked prose; on the card pages it is a handful, which is the honest answer - those pages are already skimmable. */ var INLINE = {B:1,I:1,EM:1,STRONG:1,SPAN:1,A:1,CODE:1,MARK:1,U:1,BR:1,SMALL:1, SUB:1,SUP:1,ABBR:1,WBR:1,IMG:1}; var SIGNAL = 'b,strong,mark,u,code'; /* never touch: chrome, tables, quizzes, contents lists, captions, footers */ var SAFE = '#skimBtn,nav,header,#vwBar,.bar,.nb,.nbWrap,table,thead,tbody,tr,td,th,' + '.stem,.q,.qa,.qt,.ans,.ansbox,.rationale,.fill,.blanks,.fp,.fpk,.nq,' + '.toc,.foot,.cap,.chip,.chip-row,.sec-sub,.bn,.dvname,button,summary,' + '[class*="nav"],[class*="btn"],[class*="quiz"]'; var MIN = 110; /* below this a line is a label or a rule, not padding */ var NUM = /\d\s*(mg|mcg|g|kg|lb|ml|l|mmol|meq|mmhg|%|hr|hrs|min|sec|day|wk|yr|bpm|cm|mm|units?|°)/i; var btn, marked=false, hid=0, total=0; function leaf(el){ for(var i=0;i<el.children.length;i++) if(!INLINE[el.children[i].tagName]) return false; return true; } function mark(){ if(marked) return; var all = document.querySelectorAll('p,li,div,dd'); for(var i=0;i<all.length;i++){ var el=all[i]; if(el.closest(SAFE)) continue; if(!leaf(el)) continue; var t=(el.textContent||'').trim(); if(!t) continue; total++; if(t.length < MIN) continue; if(el.querySelector(SIGNAL)) continue; if(NUM.test(t)) continue; el.classList.add('skimHide'); hid++; } marked=true; } var wasShut=[]; function openAll(open){ if(open){ wasShut=[].slice.call(document.querySelectorAll('details:not([open])')); wasShut.forEach(function(d){ d.open=true; }); } else { wasShut.forEach(function(d){ d.open=false; }); wasShut=[]; } } function paint(on){ btn.querySelector('.lbl').textContent = on ? 'Skimming' : 'Skim mode'; btn.querySelector('.n').textContent = on ? (hid ? ('hid ' + hid + ' of ' + total) : 'nothing to hide here') : ''; } function toggle(){ var on=!document.body.classList.contains('skimOn'); if(on) mark(); document.body.classList.toggle('skimOn', on); openAll(on); paint(on); try{ localStorage.setItem('skimOn', on?'1':'0'); }catch(e){} } function build(){ /* an iframe shell has no prose of its own - the inner document carries its own button, so a second dead one on the wrapper would just be a lie */ /* textContent, not innerText: innerText is render-aware, so on a page whose content sits inside collapsed <details> it reads near-zero and this test would suppress the button on a perfectly good page. That happened. */ if(document.querySelector('iframe') && (document.body.textContent||'').trim().length < 6000) return; btn=document.createElement('button'); btn.type='button'; btn.id='skimBtn'; btn.setAttribute('aria-label','Toggle skim mode - hide the long prose, keep the rules'); btn.innerHTML='⚡ <span class="lbl">Skim mode</span> <span class="n"></span>'; btn.addEventListener('click', toggle); document.body.appendChild(btn); paint(false); /* ---- draggable, because a button welded to a corner covers what she is reading and at 300% zoom there is not much screen left to lose. Travel under 6px counts as a click, 6px or more is a drag and the click is swallowed. */ var KEYPOS='skimBtnPos'; function clamp(x,y){ var r=btn.getBoundingClientRect(), m=4; return [Math.max(m,Math.min(x,window.innerWidth-r.width-m)), Math.max(m,Math.min(y,window.innerHeight-r.height-m))]; } function place(x,y,save){ var p=clamp(x,y); btn.style.left=p[0]+'px'; btn.style.top=p[1]+'px'; btn.style.right='auto'; btn.style.bottom='auto'; if(save){ try{ localStorage.setItem(KEYPOS,JSON.stringify(p)); }catch(e){} } } function restore(){ try{ var p=JSON.parse(localStorage.getItem(KEYPOS)||'null'); if(p && p.length===2) place(p[0],p[1],false); }catch(e){} } var down=null, moved=false; btn.addEventListener('pointerdown',function(e){ if(e.button && e.button!==0) return; var r=btn.getBoundingClientRect(); down={x:e.clientX,y:e.clientY,dx:e.clientX-r.left,dy:e.clientY-r.top}; moved=false; btn.setPointerCapture&&btn.setPointerCapture(e.pointerId); }); btn.addEventListener('pointermove',function(e){ if(!down) return; if(!moved && Math.abs(e.clientX-down.x)<6 && Math.abs(e.clientY-down.y)<6) return; moved=true; btn.classList.add('dragging'); place(e.clientX-down.dx, e.clientY-down.dy, false); e.preventDefault(); }); function end(e){ if(!down) return; down=null; if(moved){ btn.classList.remove('dragging'); var r=btn.getBoundingClientRect(); place(r.left,r.top,true); /* swallow the click this drag would otherwise fire */ var kill=function(ev){ ev.stopPropagation(); ev.preventDefault(); btn.removeEventListener('click',kill,true); }; btn.addEventListener('click',kill,true); setTimeout(function(){ btn.removeEventListener('click',kill,true); },0); } } btn.addEventListener('pointerup',end); btn.addEventListener('pointercancel',end); /* arrows nudge it, so moving it never needs a precise drag */ btn.addEventListener('keydown',function(e){ var d={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key]; if(!d) return; e.preventDefault(); var step=e.shiftKey?48:12, r=btn.getBoundingClientRect(); place(r.left+d[0]*step, r.top+d[1]*step, true); }); window.addEventListener('resize',function(){ var r=btn.getBoundingClientRect(); place(r.left,r.top,false); }); restore(); /* ---- never sit under the nav cluster ---------------------------- */ function unstack(){ var nb=document.getElementById('navBtns'); if(!nb || !btn) return; var a=btn.getBoundingClientRect(), b=nb.getBoundingClientRect(); var hit = !(a.right < b.left-4 || a.left > b.right+4 || a.bottom < b.top-4 || a.top > b.bottom+4); if(!hit) return; var below = b.bottom + 10; var top = (below + a.height + 6 <= window.innerHeight) ? below : Math.max(6, b.top - a.height - 10); btn.style.top = top + 'px'; btn.style.left = Math.max(6, Math.min(a.left, window.innerWidth - a.width - 6)) + 'px'; btn.style.right = 'auto'; btn.style.bottom = 'auto'; } setTimeout(unstack, 60); window.addEventListener('resize', function(){ setTimeout(unstack, 60); }); var want=false; try{ want=localStorage.getItem('skimOn')==='1'; }catch(e){} if(want) toggle(); } if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
+</script>
+</body></html>
