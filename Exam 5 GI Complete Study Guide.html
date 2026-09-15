@@ -246,6 +246,23 @@ body.skimOn .skimKeep{outline:0}
 #skimBtn:focus-visible{outline:3px solid #ffd76a;outline-offset:2px}
 @media print{#skimBtn{display:none}}
 </style>
+<style id="drawnfig-css">
+/* Selectors are deliberately specific: a page rule like `.imggrid figure{overflow:hidden}`
+   outranks a bare `.drawnfig` and was clipping the right-hand side of these figures off. */
+figure.drawnfig,.imggrid figure.drawnfig{margin:12px 0;max-width:100%;min-width:0;
+  overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+  background:none;border:0;display:block}
+/* The plates are drawn on a 340px canvas and are never scaled below it - type that
+   shrinks to 8px is unreadable - so a narrower column pans inside this box instead. */
+figure.drawnfig>svg,.imggrid figure.drawnfig>svg{width:100%;min-width:340px;height:auto;display:block;
+  border-radius:12px;border:1px solid rgba(120,90,160,.35);box-shadow:0 8px 22px rgba(0,0,0,.35);
+  background:#fbf9ff;object-fit:none}
+.drawn-note{margin:10px 0;padding:10px 12px;border-radius:10px;font-size:0.92rem;line-height:1.5;
+  background:rgba(18,184,134,.16);border:1px solid rgba(18,184,134,.45);color:inherit}
+/* A 340px track floor is wider than a 320px phone, so the grid pushed the page
+   sideways. One full-width column below 720px, with a zero minimum. */
+@media(max-width:720px){.imggrid{grid-template-columns:minmax(0,1fr)!important}}
+</style>
 </head>
 <body>
 <div style="max-width:60rem;margin:14px auto"><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1xOJ7VmRuwDabtWh13TQu1va-USVjjRO1/view" style="display:block;text-decoration:none;color:#fff;background:#ff8a3d99;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.30);border-left:5px solid rgba(255,255,255,.55);border-radius:16px;padding:16px 18px;box-shadow:0 8px 26px rgba(0,0,0,.38)"><div style="font-size:1.15rem;font-weight:800;line-height:1.3">&#129386; GI system &mdash; robot illustration</div><div style="font-size:.95rem;margin-top:5px;opacity:.95">Full-size original on your Drive. Tap to open it.</div></a></div>
@@ -1055,14 +1072,11 @@ sub,sup{font-size:.72rem}
 #quiz-filter .qfc:hover{background:rgba(255,255,255,.14)}
 #quiz-filter .qfc.active{background:#fbbf24;color:#111;font-weight:800;border-color:#fbbf24}
 
-/* On a phone these plates sat several padded cards deep, which scaled their
-   14px type down to 10px. Pull each figure out to the full screen width so the
-   drawing renders at its own size; it pans inside its own box if still narrow. */
 @media(max-width:720px){
-  .embfig{width:calc(100vw - 20px);margin-left:calc(50% - 50vw + 10px);margin-right:calc(50% - 50vw + 10px);
-          max-width:none;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  .embfig{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
   .embfig svg{min-width:340px}
 }
+
 </style>
 <script>(function(){
   var countState='all';

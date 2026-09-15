@@ -122,8 +122,7 @@ sub,sup{font-size:.72rem}
 @media print{#navBtns{display:none}}
 
 @media(max-width:720px){
-  .wbfig{width:calc(100vw - 20px);margin-left:calc(50% - 50vw + 10px);margin-right:calc(50% - 50vw + 10px);
-         overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  .wbfig{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
   .wbfig svg{min-width:340px;max-width:none}
 }
 </style>

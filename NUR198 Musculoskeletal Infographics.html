@@ -83,6 +83,23 @@ body.skimOn .skimKeep{outline:0}
 #skimBtn:focus-visible{outline:3px solid #ffd76a;outline-offset:2px}
 @media print{#skimBtn{display:none}}
 </style>
+<style id="drawnfig-css">
+/* Selectors are deliberately specific: a page rule like `.imggrid figure{overflow:hidden}`
+   outranks a bare `.drawnfig` and was clipping the right-hand side of these figures off. */
+figure.drawnfig,.imggrid figure.drawnfig{margin:12px 0;max-width:100%;min-width:0;
+  overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+  background:none;border:0;display:block}
+/* The plates are drawn on a 340px canvas and are never scaled below it - type that
+   shrinks to 8px is unreadable - so a narrower column pans inside this box instead. */
+figure.drawnfig>svg,.imggrid figure.drawnfig>svg{width:100%;min-width:340px;height:auto;display:block;
+  border-radius:12px;border:1px solid rgba(120,90,160,.35);box-shadow:0 8px 22px rgba(0,0,0,.35);
+  background:#fbf9ff;object-fit:none}
+.drawn-note{margin:10px 0;padding:10px 12px;border-radius:10px;font-size:0.92rem;line-height:1.5;
+  background:rgba(18,184,134,.16);border:1px solid rgba(18,184,134,.45);color:inherit}
+/* A 340px track floor is wider than a 320px phone, so the grid pushed the page
+   sideways. One full-width column below 720px, with a zero minimum. */
+@media(max-width:720px){.imggrid{grid-template-columns:minmax(0,1fr)!important}}
+</style>
 </head><body>
 <style id="navDragCSS">
 #navBtns{touch-action:none;cursor:grab}
@@ -92,6 +109,7 @@ body.skimOn .skimKeep{outline:0}
 
 #navBtns.dragging 
 @media print{#navBtns{display:none !important}}
+
 </style>
 <div id="navBtns"><a class="nbLook" href="Look%20It%20Up.html">&#128269;<span class="nbLabel"> Look Up</span></a><a class="nbHome" href="NUR198%20Study%20Hub.html">&#127968;<span class="nbLabel"> Home</span></a><a class="nbAbsn" href="https://arnold7777777.github.io/ABSN-Study-Hub/">&#127891;<span class="nbLabel"> ABSN Hub</span></a></div>
 
@@ -99,7 +117,7 @@ body.skimOn .skimKeep{outline:0}
 <header>
  <h1>&#129460; Musculoskeletal <span class="glow">Infographics</span></h1>
  <p>Module 13 &middot; visual study cards.</p>
-</header><div class="removed-third-party" style="border:1px dashed rgba(255,194,51,.6);background:rgba(255,194,51,.12);color:#ffe9a8;border-radius:14px;padding:13px 15px;margin:10px 0 18px;font-size:15px;line-height:1.6;font-weight:700">&#9888;&#65039; The pictures on this page came from other publishers and have been removed &mdash; they were not this site's to host. My own notes under each one are still here.</div>
+</header><div class="drawn-note">🖌️ The pictures that used to sit on this page came from other publishers. They have been replaced with original drawings of the same material, made for this site.</div>
 <section class="grp">
  <h2>🦴 Injury &amp; immobilization</h2>
  <p class="sub">5 cards</p>
