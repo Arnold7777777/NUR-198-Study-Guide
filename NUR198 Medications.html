@@ -134,6 +134,16 @@ figure.drawnfig>svg,.imggrid figure.drawnfig>svg{width:100%;min-width:340px;heig
    sideways. One full-width column below 720px, with a zero minimum. */
 @media(max-width:720px){.imggrid{grid-template-columns:minmax(0,1fr)!important}}
 </style>
+<style id="snfig-css">
+figure.snfig{margin:12px 0;max-width:100%;min-width:0;background:#fff;border-radius:12px;
+  padding:8px;border:1px solid rgba(120,90,160,.35);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+figure.snfig img{display:block;width:100%;height:auto;border-radius:8px}
+figure.snfig figcaption{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;
+  margin-top:8px;padding:8px 10px;border-radius:8px;background:rgba(157,92,255,.16);
+  color:#2a1140;font-size:.9rem;line-height:1.45}
+figure.snfig .snfull{display:inline-flex;align-items:center;min-height:44px;padding:6px 12px;
+  border-radius:999px;background:#6d28d9;color:#fff;font-weight:800;text-decoration:none;font-size:.86rem}
+</style>
 </head><body>
 <style id="navDragCSS">
 #navBtns{touch-action:none;cursor:grab}
