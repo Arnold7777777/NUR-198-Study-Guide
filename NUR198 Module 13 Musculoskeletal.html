@@ -51,7 +51,7 @@ header .lede{font-size:1.06rem;color:var(--soft);max-width:720px;margin:0 auto;
 /* ─── layout ─── */
 main{max-width:1080px;margin:0 auto;padding:10px 16px 70px}
 section{margin:30px 0 0;scroll-margin-top:70px}
-h2.sec{font-size:1.6rem;font-weight:900;margin:0 0 4px;display:flex;align-items:center;gap:10px;
+h2.sec{font-size:1.6rem;font-weight:900;margin:0 0 4px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;
   text-shadow:0 2px 10px rgba(0,0,0,.5)}
 h2.sec .tag{font-size:0.82rem;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;
   padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid var(--line)}
@@ -77,7 +77,7 @@ p.subhead{color:var(--soft);font-size:.95rem;margin:0 0 10px;text-shadow:0 2px 8
 .card p,.card li{font-size:.93rem}
 .card ul,.card ol{padding-left:20px;margin:5px 0}
 .card li{margin:3px 0}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:13px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:13px}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px}
 
 /* ─── typography with meaning ─── */
@@ -183,6 +183,7 @@ details[open]>summary::after{content:" \25B2"}
 footer{max-width:1080px;margin:0 auto;padding:0 16px 50px;text-align:center;
   font-size:0.82rem;color:var(--dim)}
 @media print{#nav{display:none} details{display:block} details>summary{display:none} .card{break-inside:avoid}}
+@media(max-width:400px){h1{font-size:2rem;overflow-wrap:break-word}}
 </style>
 
 <style id="mskImgCSS">
@@ -271,8 +272,11 @@ figure.snfig figcaption{display:flex;flex-wrap:wrap;gap:8px;align-items:center;j
 figure.snfig .snfull{display:inline-flex;align-items:center;min-height:44px;padding:6px 12px;
   border-radius:999px;background:#6d28d9;color:#fff;font-weight:800;text-decoration:none;font-size:.86rem}
 </style>
+<link rel="stylesheet" href="assets/nur198-visuals/nur198-visuals.css">
+<link rel="stylesheet" href="assets/nur198-nav/context.css">
 </head>
 <body>
+<!-- n198ctx --><div class="n198ctx" role="navigation" aria-label="Course navigation" data-module="13"><p class="n198-crumb"><a class="n198-hub" href="NUR198%20Study%20Hub.html">NUR 198 Study Hub</a> <span aria-hidden="true">&rsaquo;</span> <a href="NUR198%20Study%20Hub.html#ef">Final &middot; Cumulative</a> <span aria-hidden="true">&rsaquo;</span> <a href="NUR198%20Study%20Hub.html#m13">Module 13</a></p><p class="n198-mname">Musculoskeletal Disorders &amp; Trauma</p><div class="n198-row"><a class="n198-back" href="NUR198%20Study%20Hub.html#m13">&larr; All of Module 13</a><details class="n198-switch"><summary>Change module</summary><div class="n198-mods"><p class="n198-ex"><a href="NUR198%20Study%20Hub.html#e1">Exam 1 &middot; Foundations</a></p><a href="NUR198%20Study%20Hub.html#m1"><b>M1</b> Older Adult, Chronic Illness &amp; Disability</a><a href="NUR198%20Study%20Hub.html#m2"><b>M2</b> Fluid, Electrolyte &amp; Acid–Base Balance</a><a href="NUR198%20Study%20Hub.html#m3"><b>M3</b> Perioperative, Pain &amp; Integumentary</a><p class="n198-ex"><a href="NUR198%20Study%20Hub.html#e2">Exam 2 &middot; Respiratory</a></p><a href="NUR198%20Study%20Hub.html#m4"><b>M4</b> Upper Respiratory</a><a href="NUR198%20Study%20Hub.html#m5"><b>M5</b> Lower Respiratory &amp; Chest</a><a href="NUR198%20Study%20Hub.html#m6"><b>M6</b> Chronic Pulmonary Disease</a><p class="n198-ex"><a href="NUR198%20Study%20Hub.html#e3">Exam 3 &middot; Cardiovascular</a></p><a href="NUR198%20Study%20Hub.html#m7"><b>M7</b> Coronary, Conduction &amp; Hypertension</a><a href="NUR198%20Study%20Hub.html#m8"><b>M8</b> Valves, Inflammatory, Heart Failure &amp; Vascular</a><p class="n198-ex"><a href="NUR198%20Study%20Hub.html#e4">Exam 4 &middot; Renal &amp; Hepatobiliary</a></p><a href="NUR198%20Study%20Hub.html#m9"><b>M9</b> Renal &amp; Urinary</a><a href="NUR198%20Study%20Hub.html#m10"><b>M10</b> Hepatobiliary, Pancreatic &amp; Biliary</a><p class="n198-ex"><a href="NUR198%20Study%20Hub.html#e5">Exam 5 &middot; Gastrointestinal</a></p><a href="NUR198%20Study%20Hub.html#m11"><b>M11</b> Upper GI</a><a href="NUR198%20Study%20Hub.html#m12"><b>M12</b> Lower GI, Intestinal &amp; Rectal</a><p class="n198-ex"><a href="NUR198%20Study%20Hub.html#ef">Final &middot; Cumulative</a></p><a href="NUR198%20Study%20Hub.html#m13"><b>M13</b> Musculoskeletal Disorders &amp; Trauma</a></div></details></div></div><script>if(window.top!==window.self)document.currentScript.previousElementSibling.remove()</script><!-- /n198ctx -->
 <div style="max-width:60rem;margin:14px auto"><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1jcHVE925J6avB2sPMVSV5NAu3DuTUDVw/view" style="display:block;text-decoration:none;color:#fff;background:#9d5cff99;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.30);border-left:5px solid rgba(255,255,255,.55);border-radius:16px;padding:16px 18px;box-shadow:0 8px 26px rgba(0,0,0,.38)"><div style="font-size:1.15rem;font-weight:800;line-height:1.3">&#129460; Musculoskeletal system &mdash; robot illustration</div><div style="font-size:.95rem;margin-top:5px;opacity:.95">Full-size original on your Drive. Tap to open it.</div></a></div>
 <style id="navDragCSS">
 #navBtns{touch-action:none;cursor:grab}
@@ -323,7 +327,7 @@ pre,code,kbd{white-space:pre-wrap;overflow-wrap:anywhere}
 
 /* rem (not em) so these can never compound down to unreadable sizes */
 small,.eyebrow,.rail-sep,.sm-txt,.tiny,.fine,.cap,.foot{font-size:.82rem}
-sub,sup{font-size:.72rem}
+sub,sup{font-size:.75rem}
 
 /* keep the fixed Home/ABSN cluster from sitting on top of page titles */
 @media(max-width:1024px){
@@ -454,7 +458,7 @@ sub,sup{font-size:.72rem}
 <div class="card garnet"><h3>&#129535; Pin site care</h3><div class="box hy"><b class="lead">&#11088; The one-line answer</b><mark>One cotton swab per pin.</mark> <span class="why">A swab that touches two pins carries organisms from one to the other.</span></div><h4>How often</h4><ul><li>Usually <b>once a shift, 1&ndash;2 times a day</b>, or per facility protocol</li><li><b>Increase the frequency</b> if drainage increases or infection is suspected</li></ul><h4>What you look for</h4><ul><li><b>Drainage</b> &mdash; color, amount, odor</li><li><b>Redness</b> around the site</li><li><b>Loosening</b> of the pins</li><li><b>Tenting</b> &mdash; skin rising up along the pin</li></ul><h4>What you use</h4><ul><li><b>Chlorhexidine</b> is common, but the protocol is set by the provider and the facility</li><li><span class="never">Do not tighten a loose pin yourself</span> &mdash; report it</li><li>Crusting: follow the facility protocol; do not pick crusts off on your own initiative</li></ul></div>
 </div></section>
 <section id="comp">
-<h2 class="sec">&#128680; Complications <span class="tag">emergency content</span></h2>
+<h2 class="sec">&#128680; Complications <span class="tag">emergency content</span></h2><figure class="nv-figure" id="nur198-07-compartment"><h3>Acute compartment syndrome: do not wait</h3><a href="assets/nur198-visuals/NUR198-M13-Compartment-Syndrome.webp"><img src="assets/nur198-visuals/NUR198-M13-Compartment-Syndrome.webp" alt="A conceptual fascial compartment shows swollen muscle compressing vessels and a nerve, beside urgent assessment clues." width="1536" height="1024" loading="lazy" decoding="async"></a><figcaption><p>Swelling within a closed fascial compartment can compromise tissue blood flow and nerve function. Disproportionate pain, pain during passive stretch, tense swelling or sensory changes raise concern, but findings can be absent or unreliable. A palpable pulse does not exclude acute compartment syndrome. Escalate immediately for urgent assessment; fasciotomy may be needed. This is an acute emergency concept, not a self-testing exercise.</p><p><a href="assets/nur198-visuals/NUR198-M13-Compartment-Syndrome.webp">Open full-size infographic</a></p><p>Sources: <a href="https://www.orthoinfo.org/diseases--conditions/compartment-syndrome/">AAOS: Compartment syndrome</a>; <a href="https://surgeryreference.aofoundation.org/orthopedic-trauma/adult-trauma/further-reading/compartment-syndrome-foot">AO Foundation: Compartment syndrome assessment</a></p></figcaption></figure><div class="nv-recall"><p><strong>Quick recall:</strong> Does a palpable distal pulse rule out acute compartment syndrome?</p><details><summary>Reveal answer</summary><p>No. Tissue perfusion can be compromised while a pulse remains present. Do not wait for pulselessness or all of the classic findings.</p></details></div>
 <p class="subhead">This is where the priority questions live. Learn the first sign and the time window for each.</p>
 <div class="card ruby"><h3>&#128680; Compartment syndrome &mdash; medical emergency</h3><p><b>What it is:</b> pressure builds inside a closed muscle compartment, blood flow is restricted, and the resulting ischemia causes <b>irreversible tissue damage</b>. <span class="why">The fascia will not stretch, so the pressure has nowhere to go.</span></p><div class="flow"><div class="step"><span class="n">first</span><b>Paresthesia</b><p class="tiny">Numbness and tingling. This is the earliest sign.</p></div><div class="step"><span class="n">then</span><b>Pain</b><p class="tiny">Worsening, out of proportion, and worse on <b>passive</b> movement.</p></div><div class="step"><span class="n">then</span><b>Pressure &amp; pallor</b><p class="tiny">Hard swollen muscle; the distal area turns pale and cool.</p></div><div class="step"><span class="n">last</span><b>Pulselessness &amp; paralysis</b><p class="tiny">Cannot move the hand or foot. Late &mdash; do not wait for this.</p></div></div><div class="box stop"><b class="lead">&#9889; What you do, in order</b><b>1.</b> Recognize it and <b>notify the provider immediately</b>. <b>2.</b> <b>Loosen the dressing</b> or bivalve the cast per order. <b>3.</b> Keep the limb at <b>heart level</b> &mdash; <span class="never">do not elevate above the heart</span>, which drops arterial flow further, and <span class="never">do not apply ice</span>, which constricts. <b>4.</b> Prepare to assist with a <b>fasciotomy</b> &mdash; a surgical opening into the tissue to relieve pressure and save the limb.</div><div class="box hy"><b class="lead">&#11088; Exam tell</b>&ldquo;Pain rated 10/10 when the foot is <b>passively</b> moved&rdquo; and &ldquo;<b>hard, swollen</b> muscle&rdquo; are compartment syndrome. A capillary refill of 2 seconds and 2+ pulses are <b>normal</b> &mdash; they do not rule it out, because perfusion changes come late.</div></div>
 <div class="card citrine"><h3>&#129440; Fat embolism syndrome</h3>
@@ -942,6 +946,9 @@ sub,sup{font-size:.72rem}
   else build();
 })();
 </script>
+<script src="assets/nur198-visuals/open-hash.js"></script>
+<!-- n198ctx-end --><div class="n198ctx n198-foot" role="navigation" aria-label="Previous and next lesson"><a class="n198-prev" href="NUR198%20Exam%205%20Module%2012%20Lower%20GI%20Workbook.html"><span>&larr; Previous lesson</span>Exam 5 · Module 12 — Lower GI Workbook (Answer Key)</a><a class="n198-up" href="NUR198%20Study%20Hub.html#m13"><span>Back to</span>Module 13 on the Study Hub</a><a class="n198-next" href="NUR198%20Musculoskeletal%20Infographics.html"><span>Next lesson &rarr;</span>Musculoskeletal Infographics</a></div><script>if(window.top!==window.self)document.currentScript.previousElementSibling.remove()</script><!-- /n198ctx-end -->
+<script src="assets/nur198-nav/context.js"></script>
 </body>
 </html>
 <h2 class="sec" id="msk-infographics">&#128444;&#65039; All the musculoskeletal infographics</h2>

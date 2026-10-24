@@ -1,0 +1,37 @@
+/* Exam -> Module context bar on every lesson page (tools/wire-context-bar.py). Solid navy, scoped. */
+.n198ctx{box-sizing:border-box;width:calc(100% - 20px);max-width:1080px;margin:10px auto;align-self:center;padding:12px 14px;background:#101c30;border:1px solid #475b78;border-radius:14px;
+ color:#f4eee1;font:400 16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:left;position:relative;z-index:5}
+.n198ctx *{box-sizing:border-box}
+.n198ctx p{margin:0;font-size:16px;color:#f4eee1}
+.n198ctx a{color:#79ddd6;text-underline-offset:.18em}
+.n198ctx .n198-crumb{overflow-wrap:break-word}
+.n198ctx .n198-crumb::before{content:"";float:right;width:min(124px,32%);height:40px} /* first line only: room for the floating round buttons */
+.n198ctx .n198-crumb a{display:inline-block;padding:10px 0;min-height:44px;line-height:24px;font-weight:700}
+.n198ctx .n198-mname{font-weight:800;font-size:18px;margin:2px 0 8px;overflow-wrap:break-word}
+.n198ctx .n198-row{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}
+.n198ctx .n198-back,.n198ctx .n198-switch>summary{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:10px;
+ border:1px solid #79ddd6;background:#16294a;color:#f4eee1;font-weight:700;text-decoration:none;cursor:pointer}
+.n198ctx .n198-back[hidden]{display:none}
+.n198ctx .n198-switch{flex:1 1 auto;min-width:0}
+.n198ctx .n198-switch>summary{list-style:none}
+.n198ctx .n198-switch>summary::-webkit-details-marker{display:none}
+.n198ctx .n198-switch>summary::after{content:"\25BE";margin-left:8px}
+.n198ctx .n198-switch[open]>summary::after{content:"\25B4"}
+.n198ctx .n198-mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:6px;margin-top:10px}
+.n198ctx .n198-mods a{display:block;min-height:44px;padding:10px 12px;border-radius:10px;background:#16294a;color:#f4eee1;text-decoration:none;overflow-wrap:break-word}
+.n198ctx .n198-mods a b{color:#dfbd78;margin-right:4px}
+.n198ctx .n198-mods a.here{outline:2px solid #dfbd78}
+.n198ctx .n198-mods .n198-ex{grid-column:1/-1;margin-top:6px}
+.n198ctx .n198-mods .n198-ex a{background:none;padding:10px 0;color:#79ddd6;font-weight:800}
+.n198-foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:8px;margin:28px auto 70px}
+.n198-foot a{display:block;min-height:44px;padding:10px 14px;border-radius:10px;background:#16294a;border:1px solid #475b78;color:#f4eee1;text-decoration:none;font-weight:700;overflow-wrap:break-word}
+.n198-foot a span{display:block;font-size:14px;font-weight:600;color:#79ddd6}
+.n198-foot .n198-next{text-align:right}
+.n198ctx :focus-visible{outline:3px solid #dfbd78;outline-offset:2px}
+/* full-screen tabbed guides: the bar folds to one line so the tabs keep the screen */
+.n198ctx{flex:0 0 auto}
+.n198-fold{padding:0 14px}
+.n198-fold>summary{display:flex;align-items:center;min-height:44px;cursor:pointer;font-weight:700;color:#f4eee1;padding-right:min(124px,32%)}
+.n198-fold>summary::marker{color:#79ddd6}
+.n198-fold[open]{padding-bottom:12px;max-height:70vh;overflow:auto}
+@media print{.n198ctx{display:none}}
