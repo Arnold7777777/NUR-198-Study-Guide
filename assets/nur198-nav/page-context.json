@@ -1,0 +1,167 @@
+{
+ "mods": {
+  "1": {
+   "n": "Older Adult, Chronic Illness & Disability",
+   "e": "Exam 1"
+  },
+  "2": {
+   "n": "Fluid, Electrolyte & Acid–Base Balance",
+   "e": "Exam 1"
+  },
+  "3": {
+   "n": "Perioperative, Pain & Integumentary",
+   "e": "Exam 1"
+  },
+  "4": {
+   "n": "Upper Respiratory",
+   "e": "Exam 2"
+  },
+  "5": {
+   "n": "Lower Respiratory & Chest",
+   "e": "Exam 2"
+  },
+  "6": {
+   "n": "Chronic Pulmonary Disease",
+   "e": "Exam 2"
+  },
+  "7": {
+   "n": "Coronary, Conduction & Hypertension",
+   "e": "Exam 3"
+  },
+  "8": {
+   "n": "Valves, Inflammatory, Heart Failure & Vascular",
+   "e": "Exam 3"
+  },
+  "9": {
+   "n": "Renal & Urinary",
+   "e": "Exam 4"
+  },
+  "10": {
+   "n": "Hepatobiliary, Pancreatic & Biliary",
+   "e": "Exam 4"
+  },
+  "11": {
+   "n": "Upper GI",
+   "e": "Exam 5"
+  },
+  "12": {
+   "n": "Lower GI, Intestinal & Rectal",
+   "e": "Exam 5"
+  },
+  "13": {
+   "n": "Musculoskeletal Disorders & Trauma",
+   "e": "Final"
+  }
+ },
+ "pages": {
+  "NUR198 Exam 1 Study Guide.html": [
+   1,
+   2,
+   3
+  ],
+  "NUR198 ABG Review Guide.html": [
+   2
+  ],
+  "NUR198 Electrolyte Review Guide.html": [
+   2
+  ],
+  "NUR198 Fluids Electrolytes and Acid-Base Guided Notes.html": [
+   2
+  ],
+  "NUR198 IV Fluids Review Guide.html": [
+   2
+  ],
+  "NUR198 Exam 2 Study Guide.html": [
+   4,
+   5,
+   6
+  ],
+  "NUR198 Respiratory I Framework.html": [
+   4
+  ],
+  "NUR198 Respiratory I Guided Notes.html": [
+   4
+  ],
+  "NUR198 Respiratory II Framework.html": [
+   5
+  ],
+  "NUR198 Respiratory III Framework.html": [
+   6
+  ],
+  "NUR198 Week 6 Respiratory Active Learning.html": [
+   6
+  ],
+  "NUR198 Cardiac Concepts.html": [
+   7,
+   8
+  ],
+  "NUR198 Exam 3 Guide and Quiz.html": [
+   7,
+   8
+  ],
+  "NUR198 Exam 3 Infographics.html": [
+   7,
+   8
+  ],
+  "NUR198 Exam 3 KCRs.html": [
+   7,
+   8
+  ],
+  "NUR198 Exam 3 Study Guide.html": [
+   7,
+   8
+  ],
+  "NUR198 Module 7 Cardiac Guided Notes.html": [
+   7
+  ],
+  "NUR198 Module 8 Cardiac Guided Notes.html": [
+   8
+  ],
+  "NUR198 Exam 4 Guide.html": [
+   9,
+   10
+  ],
+  "NUR198 Renal and Urinary Workbook.html": [
+   9
+  ],
+  "NUR198 Week 9 Renal and Urinary Guided Notes.html": [
+   9
+  ],
+  "NUR198 Hepatobiliary Activity.html": [
+   10
+  ],
+  "NUR198 Week 10 Hepatobiliary Guided Notes.html": [
+   10
+  ],
+  "Exam 5 GI Complete Study Guide.html": [
+   11,
+   12
+  ],
+  "NUR198 Exam 5 GI Medications Cheat-Sheet.html": [
+   11,
+   12
+  ],
+  "NUR198 Exam 5 Infographics.html": [
+   11,
+   12
+  ],
+  "NUR198 Exam 5 Module 11 Upper GI Guided Notes.html": [
+   11
+  ],
+  "NUR198 Week 11 Upper GI Guided Notes.html": [
+   11
+  ],
+  "NUR198 Exam 5 Module 12 Lower GI Workbook.html": [
+   12
+  ],
+  "NUR198 Module 13 Musculoskeletal.html": [
+   13
+  ],
+  "NUR198 Musculoskeletal Infographics.html": [
+   13
+  ],
+  "NUR198 Week 13 Musculoskeletal Guided Notes.html": [
+   13
+  ]
+ }
+}

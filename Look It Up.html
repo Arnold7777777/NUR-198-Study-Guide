@@ -31,11 +31,21 @@ h1{font-size:1.12rem;margin:0;white-space:nowrap;font-weight:900}
 .lede{font-size:.92rem;opacity:.95;margin:0 0 12px}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px}
 .chips button{background:rgba(0,0,0,.36);border:1px solid var(--line);color:#fff;
- border-radius:999px;padding:8px 14px;font:700 .9rem inherit;cursor:pointer}
+ border-radius:999px;padding:8px 14px;font-weight:700;font-size:.9rem;font-family:inherit;cursor:pointer;min-height:44px}
 .chips button:hover{background:rgba(var(--amethyst),.7)}
 .chips .lab{font-size:.82rem;opacity:.85;align-self:center;font-weight:800;
  letter-spacing:.8px;text-transform:uppercase;margin-right:2px}
 
+/* NUR 198 exam/module context (27 Oct) */
+.modrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 14px;padding:10px 14px;
+ background:rgba(14,8,26,.88);border:1px solid var(--line);border-radius:14px}
+.modrow label{font-weight:800;color:#ffe49b}
+#modsel{min-height:44px;font-size:1rem;font-family:inherit;font-weight:700;padding:8px 12px;border-radius:12px;
+ border:2px solid rgba(255,255,255,.34);background:#1d1233;color:#fff;max-width:100%}
+#modsel:focus-visible{outline:3px solid rgba(var(--topaz),.95);outline-offset:2px}
+.modrow .mnote{flex:1 1 100%;margin:0;font-size:.85rem;color:#e6dcff}
+.hit .ctx,.qz .ctx{display:inline-block;font-size:0.82rem;font-weight:800;background:#20123a;color:#ffe49b;
+ border:1px solid rgba(255,228,155,.55);border-radius:999px;padding:2px 9px;margin-left:6px}
 #status{font-size:.95rem;font-weight:800;color:#ffe49b;margin:2px 0 14px;min-height:1.2em}
 
 .grp{margin-bottom:20px}
@@ -76,7 +86,7 @@ h1{font-size:1.12rem;margin:0;white-space:nowrap;font-weight:900}
 .qz .src a{color:#ffe49b}
 
 .more{background:rgba(0,0,0,.4);border:1px solid var(--line);color:#fff;border-radius:12px;
- padding:10px 18px;font:800 .9rem inherit;cursor:pointer;margin-bottom:6px}
+ padding:10px 18px;font-weight:800;font-size:.9rem;font-family:inherit;cursor:pointer;margin-bottom:6px;min-height:44px}
 .more:hover{background:rgba(0,0,0,.6)}
 .none{background:rgba(0,0,0,.36);border:1px dashed var(--line);border-radius:14px;
  padding:16px 18px;font-size:.95rem}
@@ -191,6 +201,9 @@ small,.eyebrow,.tiny,.fine,.foot{font-size:.82rem}
   <button>ostomy</button><button>NG tube</button><button>pancreatitis</button>
 </div>
 
+<div class="modrow" id="modrow"><label for="modsel">NUR 198 results for</label>
+  <select id="modsel"><option value="">All of NUR 198</option></select>
+  <p class="mnote">Narrows only the NUR 198 pages and Mega Quiz questions. The other courses' results stay as they are.</p></div>
 <div id="status"></div>
 <div id="out"></div>
 
@@ -200,7 +213,32 @@ small,.eyebrow,.tiny,.fine,.foot{font-size:.82rem}
 <script>
 (function(){
 var IDX=null, QB=null, loading=false;
-var PICS=null;
+var PICS=null, CTX=null;
+var modsel=document.getElementById('modsel');
+/* which exam and module(s) a NUR 198 page belongs to, from the Study Hub's module lists */
+fetch('assets/nur198-nav/page-context.json').then(function(r){return r.json();}).then(function(j){
+  CTX=j;
+  Object.keys(j.mods).sort(function(a,b){return a-b;}).forEach(function(n){
+    var o=document.createElement('option'); o.value=n;
+    o.textContent=j.mods[n].e+' \u00b7 M'+n+' '+j.mods[n].n; modsel.appendChild(o);
+  });
+}).catch(function(){ document.getElementById('modrow').hidden=true; });
+function baseOf(p){ return decodeURIComponent(p.u).split('/').pop(); }
+function modsOf(p){ return CTX&&p.s==='198' ? (CTX.pages[baseOf(p)]||[]) : []; }
+function ctxLabel(p){
+  if(!CTX||p.s!=='198') return '';
+  var m=modsOf(p);
+  if(!m.length) return '<span class="ctx">All modules</span>';
+  var ex=[]; m.forEach(function(n){ var e=CTX.mods[n].e; if(ex.indexOf(e)<0) ex.push(e); });
+  return '<span class="ctx">'+esc(ex.join(' / ')+' \u00b7 '+m.map(function(n){return 'M'+n;}).join(' \u00b7 '))+'</span>';
+}
+function qLabel(x){
+  if(!CTX||!x.m||!CTX.mods[x.m]) return '';
+  return '<span class="ctx">'+esc(CTX.mods[x.m].e+' \u00b7 M'+x.m)+'</span>';
+}
+/* with a module chosen, NUR 198 results outside it drop out; everything else stays */
+function keepPage(p){ var m=modsel.value; return !m || p.s!=='198' || modsOf(p).indexOf(+m)>-1; }
+function keepQ(x){ var m=modsel.value; return !m || x.src!=='NUR 198 Mega Quiz' || String(x.m)===m; }
 var q=document.getElementById('q'), out=document.getElementById('out'),
     status=document.getElementById('status');
 
@@ -315,21 +353,23 @@ function render(t){
   }).sort(function(a,b){return b.score-a.score;});
   rows.forEach(function(r){ r.secs.sort(function(a,b){return b.sc-a.sc;}); });
 
+  rows=rows.filter(function(r){ return keepPage(r.p); });
   var groups={learn:[],drill:[],ref:[]};
   rows.forEach(function(r){ groups[bucket(r.p)].push(r); });
 
   /* quiz questions that actually ask about it */
   var qs=QB.filter(function(x){
-    return (x.q+' '+(x.o||[]).join(' ')+' '+(x.r||'')).toLowerCase().indexOf(lt)>-1;
+    return keepQ(x) && (x.q+' '+(x.o||[]).join(' ')+' '+(x.r||'')).toLowerCase().indexOf(lt)>-1;
   }).sort(function(a,b){
     var A=a.q.toLowerCase().indexOf(lt)>-1?1:0, B=b.q.toLowerCase().indexOf(lt)>-1?1:0;
     return B-A;
   });
 
   var total=rows.length;
-  status.textContent = total||qs.length
+  var lim = modsel.value && CTX ? ' (NUR 198 limited to Module '+modsel.value+')' : '';
+  status.textContent = (total||qs.length
     ? total+' page'+(total===1?'':'s')+' and '+qs.length+' quiz question'+(qs.length===1?'':'s')+' mention "'+t+'"'
-    : 'Nothing found for "'+t+'".';
+    : 'Nothing found for "'+t+'".') + lim;
 
   var html='';
   function section(cls,icon,title,why,list){
@@ -340,7 +380,7 @@ function render(t){
       var best=r.secs[0];
       var href=r.p.u+(best&&best.a?'#'+best.a:(best?'#:~:text='+encodeURIComponent(best.h.slice(0,60)):''));
       s+='<a class="hit" target="_blank" rel="noopener" href="'+esc(href)+'">'
-        +'<span class="pg">'+esc(r.p.t||'(untitled)')+'<span class="site">'+siteName(r.p.s)+'</span></span>';
+        +'<span class="pg">'+esc(r.p.t||'(untitled)')+'<span class="site">'+siteName(r.p.s)+'</span>'+ctxLabel(r.p)+'</span>';
       if(best){
         s+='<span class="secs"><b>'+mark(best.h,t)+'</b>';
         if(best.t) s+=' &mdash; '+mark(snippet(best.t,t),t);
@@ -364,7 +404,7 @@ function render(t){
       html+='</ol><details><summary>Show the answer</summary><div class="ans">'
            +(x.r?mark(x.r,t):'(no rationale saved for this one)')+'</div></details>'
            +'<div class="src">from <a target="_blank" rel="noopener" href="'+esc(x.u)+'">'+esc(x.src)+'</a>'
-           +(x.diff?' &middot; '+esc(x.diff):'')+'</div></div>';
+           +(x.diff?' &middot; '+esc(x.diff):'')+qLabel(x)+'</div></div>';
     });
     if(qs.length>6) html+='<button class="more" data-g="qz">Show 6 more questions</button>';
     html+='</div>';
@@ -398,7 +438,7 @@ function render(t){
           var best=r.secs[0];
           var href=r.p.u+(best&&best.a?'#'+best.a:'');
           frag+='<a class="hit" target="_blank" rel="noopener" href="'+esc(href)+'">'
-              +'<span class="pg">'+esc(r.p.t||'')+'<span class="site">'+siteName(r.p.s)+'</span></span>'
+              +'<span class="pg">'+esc(r.p.t||'')+'<span class="site">'+siteName(r.p.s)+'</span>'+ctxLabel(r.p)+'</span>'
               +(best?'<span class="secs"><b>'+mark(best.h,t)+'</b></span>':'')+'</a>';
         });
         b.insertAdjacentHTML('beforebegin',frag);
@@ -408,6 +448,7 @@ function render(t){
   });
 }
 
+modsel.addEventListener('change',run);
 var timer=null;
 q.addEventListener('input',function(){ clearTimeout(timer); timer=setTimeout(run,180); });
 document.getElementById('clr').addEventListener('click',function(){
