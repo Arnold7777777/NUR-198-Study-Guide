@@ -1,0 +1,370 @@
+[
+  {
+    "id": "gi-picture-overview",
+    "title": "GI anatomy and the path food takes",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--gi-overview.webp",
+        "Digestive-system overview",
+        "Trace the esophagus, stomach, small intestine and colon."
+      ]
+    ],
+    "sn": [
+      [
+        "1imaZIlarPsdCn32SnmVEzT0sAs5BKI6p",
+        "GI Pathophysiology — Key Terms"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-reflux",
+    "title": "Reflux and hiatal hernia: see the junction",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--gerd-hiatal.webp",
+        "Reflux and hiatal hernia",
+        "Compare backflow through the LES with stomach tissue moving through the diaphragm."
+      ]
+    ],
+    "sn": [
+      [
+        "1BIvreyZ7GwPcxuoSxtVaGPGa50a0-BJF",
+        "GERD"
+      ],
+      [
+        "1oJxiZAsJx_Xf0RqpNSCEF8A6kFbrkPHs",
+        "Hiatal Hernia"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-upper-anatomy",
+    "title": "What upper-GI anatomy and Barrett’s change look like",
+    "pics": [
+      [
+        "assets/gi-illustrated-2026/upper-gi-anatomy.webp",
+        "Upper-GI anatomical comparison",
+        "Find the LES, diaphragm, stomach landmarks, altered mucosa and an ulcer crater."
+      ]
+    ],
+    "links": [
+      [
+        "https://www.msdmanuals.com/home/multimedia/image/barrett-esophagus",
+        "Real Barrett’s endoscopy photograph — MSD Manual"
+      ],
+      [
+        "https://www.niddk.nih.gov/news/media-library/17473",
+        "Microscopic Barrett’s tissue illustration — NIDDK"
+      ]
+    ],
+    "note": "The salmon-colored lining is an illustrated appearance. Biopsy establishes the tissue diagnosis. The original cards below are notes, not endoscopy or specimen photographs."
+  },
+  {
+    "id": "gi-picture-stomach",
+    "title": "Stomach disorders: lining damage and rapid emptying",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--peptic-ulcer.webp",
+        "Peptic ulcer: focal tissue injury",
+        "Compare intact protection with an ulcer crater."
+      ],
+      [
+        "assets/diagram-replacements/illustrated-library-01/clinical-guides--gastritis.webp",
+        "Gastritis",
+        "Inflamed lining differs from a focal ulcer crater."
+      ],
+      [
+        "assets/diagram-replacements/illustrated-library-01/clinical-guides--dumping-syndrome.webp",
+        "Dumping syndrome",
+        "Follow rapid delivery of stomach contents and early versus later effects."
+      ]
+    ],
+    "sn": [
+      [
+        "1Nxm3kQ0PbbHHFIvWXuCWxzaGgYl3iGfF",
+        "Peptic Ulcer Disease"
+      ],
+      [
+        "1Z9gLxI0u5Tew0Yy304wqqu5PyFvwAV_k",
+        "Gastritis"
+      ],
+      [
+        "1hO7yS8k7lnXr-Ttc0yyDRWBBN40GCduY",
+        "Dumping Syndrome"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-ulcers",
+    "title": "Gastric vs. duodenal ulcers — location, timing and bleeding",
+    "pics": [
+      [
+        "assets/gi-illustrated-2026/gastric-duodenal-ulcers.webp",
+        "Gastric versus duodenal ulcers",
+        "G = grief with food. D = delayed discomfort. Either location can bleed."
+      ]
+    ],
+    "links": [
+      [
+        "../ABSN-Study-Hub/gi/NG-295_peptic-ulcer-disease.html#gastric-vs-duodenal",
+        "Detailed comparison and question findings"
+      ],
+      [
+        "https://www.merckmanuals.com/professional/gastrointestinal-disorders/gastritis-and-peptic-ulcer-disease/peptic-ulcer-disease",
+        "Real ulcer endoscopy photographs — Merck Manual"
+      ]
+    ],
+    "note": "Classic timing is a clue, not a diagnosis. Low BP, a fast pulse, melena and falling hemoglobin may accompany bleeding from either ulcer. See the original Simple Nursing handout immediately above. An ordinary ulcer is not automatically a full-thickness perforation."
+  },
+  {
+    "id": "gi-picture-feeding",
+    "title": "What feeding routes physically look like",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--enteral-parenteral.webp",
+        "Enteral versus parenteral nutrition",
+        "Trace a feeding tube into the GI tract and IV nutrition into the bloodstream."
+      ]
+    ],
+    "sn": [
+      [
+        "17KfgpYK0HlkrHconjzfp_yGKan4kl610",
+        "TPN & Enteral Feeding"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-villi",
+    "title": "IBS and celiac disease: movement versus injured villi",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--ibs.webp",
+        "Irritable bowel syndrome",
+        "The illustration explains symptom patterns; IBS does not have one characteristic visible ulcer."
+      ],
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--celiac.webp",
+        "Celiac disease and villous injury",
+        "Compare tall intestinal villi with shortened, flattened villi; this is a teaching illustration, not a biopsy micrograph."
+      ]
+    ],
+    "sn": [
+      [
+        "19AMmEjChoOcWKhS-R_IJZktbHXhsu2n-",
+        "Irritable Bowel Syndrome"
+      ],
+      [
+        "1IHSWsuwx4N5HvoldbgaQGFf3FGk9M_IB",
+        "Celiac Disease"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-inflammation",
+    "title": "Appendix, diverticula and the peritoneum",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--appendicitis.webp",
+        "Appendicitis",
+        "Locate the appendix and follow inflammation."
+      ],
+      [
+        "assets/diagram-replacements/illustrated-library-01/clinical-guides--diverticular-disease.webp",
+        "Diverticulosis versus diverticulitis",
+        "Outpouchings are different from inflamed outpouchings."
+      ],
+      [
+        "assets/diagram-replacements/illustrated-library-01/clinical-guides--peritonitis.webp",
+        "Peritonitis",
+        "See inflammation involving the abdominal lining."
+      ]
+    ],
+    "sn": [
+      [
+        "1uRNtbE_xfhRw3-LXnY22PNX1JdMC2zMe",
+        "Appendicitis"
+      ],
+      [
+        "1yqsOQ0Caxi56qh8Hb64Nvujg-hLa4Toa",
+        "Diverticulitis & Diverticulosis"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-ibd",
+    "title": "Crohn’s and ulcerative colitis: location and depth",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--inflammatory-bowel.webp",
+        "Inflammatory bowel disease",
+        "Crohn’s can involve deeper bowel-wall layers and separated areas; UC usually spreads continuously from the rectum in the colon’s mucosa."
+      ]
+    ],
+    "sn": [
+      [
+        "1rGXZXN35-kLjOF1u2gMtCAx9kbCX05VA",
+        "Crohn’s & UC — Pathophysiology, Signs & Causes"
+      ],
+      [
+        "1oGHi8LeYLqsMtsLnel-vv7SzNZKeQ2v3",
+        "Crohn’s & UC — Treatments & Complications"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-ibd-appearance",
+    "title": "Look closely at the bowel lining",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--inflammatory-bowel.webp",
+        "Crohn’s and UC tissue patterns",
+        "Use the enlarged lining views to distinguish patchy deep disease from continuous superficial colonic inflammation."
+      ]
+    ],
+    "links": [
+      [
+        "https://www.merckmanuals.com/professional/multimedia/image/ulcerative-colitis",
+        "Real UC colonoscopy photograph — Merck Manual"
+      ]
+    ],
+    "note": "The original quick-review cards below are not surgical photographs. The source button opens a real colonoscopy image; the inline picture is an anatomical teaching illustration."
+  },
+  {
+    "id": "gi-picture-bleeding",
+    "title": "GI bleeding and obstruction: visible changes",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--gi-bleeding.webp",
+        "GI bleeding",
+        "Compare blood loss, stool or vomit appearance, and perfusion effects."
+      ],
+      [
+        "assets/diagram-replacements/illustrated-library-01/clinical-guides--bowel-obstruction.webp",
+        "Bowel obstruction",
+        "Follow the blockage and the bowel above it."
+      ]
+    ],
+    "sn": [
+      [
+        "1DrOSdYyylQBJ1OoPeJdsSrcEqm1fWfQG",
+        "GI Bleed"
+      ],
+      [
+        "1X0lCKT0IF-BooKZSqgHtj9k6mba9E3uy",
+        "Small Bowel Obstruction"
+      ],
+      [
+        "1ARDDxLR6F7sn0_MzZvjZEjB-QCM6MoDo",
+        "Colon & Esophageal Cancer"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-obstruction",
+    "title": "Block, stop, twist or telescope?",
+    "pics": [
+      [
+        "assets/gi-illustrated-2026/bowel-obstruction-anatomy.webp",
+        "Mechanical obstruction, ileus, volvulus and intussusception",
+        "The physical shapes differ. Bowel sounds alone do not determine the cause."
+      ]
+    ],
+    "links": [
+      [
+        "https://www.radiologymasterclass.co.uk/tutorials/abdo/abdomen_x-ray_abnormalities/pathology_small_bowel_obstruction",
+        "Actual obstruction and ileus X-rays — Radiology Masterclass"
+      ],
+      [
+        "https://www.radiologymasterclass.co.uk/tutorials/abdo/abdomen_x-ray/anatomy_system_bowel_gas",
+        "Normal abdominal X-ray — compare the gas pattern"
+      ]
+    ],
+    "note": "These are anatomical illustrations, not radiographs. The links show actual X-rays. Obstruction and ileus can look similar on imaging; interpretation uses the full clinical picture."
+  },
+  {
+    "id": "gi-picture-anorectal",
+    "title": "Anorectal anatomy: cushions, pockets and tunnels",
+    "pics": [
+      [
+        "assets/gi-illustrated-2026/niddk-hemorrhoids.jpg",
+        "Internal and external hemorrhoids",
+        "NIH/NIDDK anatomical illustration. The entire original image is shown."
+      ]
+    ],
+    "links": [
+      [
+        "https://www.fascrs.org/Web/Patients/Diseases-and-Conditions/A-Z/Abscess_and_Fistula.aspx?WebsiteKey=72e24489-68dc-44d0-8248-ea73cb810d39",
+        "ASCRS illustrations: abscess and fistula"
+      ],
+      [
+        "https://www.fascrs.org/images/ASCRS/Diseases%20and%20Conditions/anal_abscess.jpg?version=1E1AEB14",
+        "Open the abscess diagram"
+      ],
+      [
+        "https://www.fascrs.org/images/ASCRS/Diseases%20and%20Conditions/external_anal_sphincter.jpg?version=7B737613",
+        "Open the fistula diagram"
+      ]
+    ],
+    "note": "Memory cue: fissure = a tear; abscess = an infected pocket; fistula = a tunnel. An abscess usually needs drainage; sitz baths alone are not definitive treatment. No exact Simple Nursing handout for this anorectal comparison was found in the current library."
+  },
+  {
+    "id": "gi-picture-medicines",
+    "title": "GI medicines: see their targets",
+    "pics": [
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--acid-medicines.webp",
+        "Acid-control medicines",
+        "Compare acid suppression, neutralization and a protective coating."
+      ],
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--bowel-medicines.webp",
+        "Bowel medicines",
+        "Link the symptom pattern to a medication’s action."
+      ]
+    ],
+    "sn": [
+      [
+        "1wHfVesmMZTpwZuElCcTAnIMXHbaoDmTV",
+        "Histamine H2 blockers"
+      ],
+      [
+        "1oja9Ws0P_zBl3A3Wh7Mtpr00S9qE90ha",
+        "Proton Pump Inhibitors"
+      ]
+    ]
+  },
+  {
+    "id": "gi-picture-regions",
+    "title": "The nine abdominal regions — on a body",
+    "pics": [
+      [
+        "assets/gi-illustrated-2026/abdominal-regions-signs.webp",
+        "Abdominal regions and visible bruising signs",
+        "Patient right is on the viewer’s left. Organ examples are location aids, not exact boundaries."
+      ]
+    ],
+    "note": "No exact Simple Nursing handout for the nine-region map was found in the current library."
+  },
+  {
+    "id": "gi-picture-bruising",
+    "title": "Cullen and Grey Turner signs: see the skin changes",
+    "pics": [
+      [
+        "assets/gi-illustrated-2026/abdominal-regions-signs.webp",
+        "Periumbilical versus flank bruising",
+        "Cullen = around the navel. Grey Turner = flank. These findings are not specific to pancreatitis."
+      ],
+      [
+        "assets/diagram-replacements/illustrated-library-04/topic-diagrams--pancreatitis.webp",
+        "Pancreatitis",
+        "Locate the pancreas and trace inflammation and complications."
+      ]
+    ],
+    "sn": [
+      [
+        "1ARZt2UrAko9UR50va6L74nyhVZYBJDnG",
+        "Pancreatitis"
+      ]
+    ]
+  }
+]
