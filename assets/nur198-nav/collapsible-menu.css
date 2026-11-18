@@ -1,0 +1,15 @@
+.collapsible-study-menu{position:sticky;top:0;z-index:70;padding:6px 0;background:#140d22;max-height:55vh;max-height:55dvh;overflow:auto;scrollbar-gutter:stable}
+.collapsible-study-menu .wrap{padding:0 14px;min-width:0}
+.collapsible-study-menu .study-menu-heading{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:0 14px 5px}
+.collapsible-study-menu button{min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.collapsible-study-menu #study-menu-toggle{background:#55319a;border:2px solid #cbb6ef;color:#fff;font:700 16px/1.3 system-ui,sans-serif;padding:9px 16px}
+.collapsible-study-menu :is(button,a,input):focus-visible{outline:3px solid #ffe197;outline-offset:2px}
+.study-menu-hint{font:14px/1.4 system-ui,sans-serif;color:#e5d9f9}
+.collapsible-study-menu.menu-closed{max-height:none;overflow:visible}
+.collapsible-study-menu.menu-closed .study-menu-heading{padding-bottom:0}
+.collapsible-study-menu [hidden]{display:none!important}
+.collapsible-study-menu #q{max-width:100%;width:100%;min-width:0;min-height:44px}
+.collapsible-study-menu #navBtns.study-menu-links{position:static!important;inset:auto!important;transform:none!important;display:flex;flex-wrap:wrap;gap:8px;max-width:1060px;margin:8px auto 0;padding:0 14px;touch-action:auto;cursor:auto}
+.collapsible-study-menu #navBtns a{min-height:44px;max-width:100%;font-size:16px;overflow-wrap:anywhere}
+@media(max-width:390px){.study-menu-hint{display:none}.collapsible-study-menu .wrap{padding-inline:10px}}
+@media print{.collapsible-study-menu{display:none!important}}
