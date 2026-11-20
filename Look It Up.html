@@ -210,6 +210,7 @@ small,.eyebrow,.tiny,.fine,.foot{font-size:.82rem}
 <div class="foot">Study material only &mdash; always check your course materials, the package insert and facility policy.</div>
 </div>
 
+<script src="../ABSN-Study-Hub/absn-search-priority.js"></script>
 <script>
 (function(){
 var IDX=null, QB=null, loading=false;
@@ -244,13 +245,14 @@ var q=document.getElementById('q'), out=document.getElementById('out'),
 
 /* which bucket a page belongs in */
 function bucket(p){
+  var priority=AbsnSearchPriority.rank({},p);if(priority===0)return 'visual';if(priority===1)return 'media';
   var u=decodeURIComponent(p.u).toLowerCase(), s=p.s;
   if(s==='drug'||s==='lab') return 'ref';
   if(/quiz|mega|clinical judgment/.test(u)) return 'drill';
   return 'learn';
 }
 function siteName(k){
-  return {'198':'NUR 198','125':'NUR 125','175':'NUR 175','lab':'Labs & Dx','drug':'Drugs'}[k]||k;
+  return {'hub':'Study Hub','198':'NUR 198','125':'NUR 125','175':'NUR 175','lab':'Labs & Dx','drug':'Drugs'}[k]||k;
 }
 function esc(s){var d=document.createElement('div');d.textContent=s==null?'':s;return d.innerHTML;}
 function mark(s,t){
@@ -272,8 +274,8 @@ function load(cb){
   if(loading) return;
   loading=true; status.textContent='Loading the index…';
   var need=3, done=function(){ if(--need===0){ loading=false; cb(); } };
-  fetch('search-index.json').then(function(r){return r.json();})
-    .then(function(j){IDX=j;done();}).catch(function(){IDX={pages:[],entries:[]};done();});
+  Promise.all([fetch('search-index.json').then(function(r){return r.json();}),fetch('../ABSN-Study-Hub/resource-search.json',{cache:'no-cache'}).then(function(r){return r.json();}).catch(function(){return null;})])
+    .then(function(parts){IDX=parts[0];var extra=parts[1];if(extra){var offset=IDX.pages.length;IDX.pages=IDX.pages.concat(extra.pages);IDX.entries=IDX.entries.concat(extra.entries.map(function(e){return {p:offset+Number(e.p),h:e.h,a:e.a,t:e.t,k:e.k};}));}done();}).catch(function(){IDX={pages:[],entries:[]};done();});
   fetch('quiz-bank.json').then(function(r){return r.json();})
     .then(function(j){QB=j;done();}).catch(function(){QB=[];done();});
   fetch('pics.json').then(function(r){return r.json();})
@@ -354,7 +356,7 @@ function render(t){
   rows.forEach(function(r){ r.secs.sort(function(a,b){return b.sc-a.sc;}); });
 
   rows=rows.filter(function(r){ return keepPage(r.p); });
-  var groups={learn:[],drill:[],ref:[]};
+  var groups={visual:[],media:[],learn:[],drill:[],ref:[]};
   rows.forEach(function(r){ groups[bucket(r.p)].push(r); });
 
   /* quiz questions that actually ask about it */
@@ -378,8 +380,8 @@ function render(t){
          +'<p class="why">'+why+'</p>';
     list.slice(0,8).forEach(function(r){
       var best=r.secs[0];
-      var href=r.p.u+(best&&best.a?'#'+best.a:(best?'#:~:text='+encodeURIComponent(best.h.slice(0,60)):''));
-      s+='<a class="hit" target="_blank" rel="noopener" href="'+esc(href)+'">'
+      var href=r.p.u+(best&&best.a?'#'+best.a:(best&&!r.p.k?'#:~:text='+encodeURIComponent(best.h.slice(0,60)):''));
+      s+='<a data-resource-kind="'+esc(AbsnSearchPriority.kind({},r.p))+'" class="hit" target="_blank" rel="noopener" href="'+esc(href)+'">'
         +'<span class="pg">'+esc(r.p.t||'(untitled)')+'<span class="site">'+siteName(r.p.s)+'</span>'+ctxLabel(r.p)+'</span>';
       if(best){
         s+='<span class="secs"><b>'+mark(best.h,t)+'</b>';
@@ -393,6 +395,8 @@ function render(t){
     return s+'</div>';
   }
 
+  html+=section('visual','🖼️','Infographics & visual handouts','Pictures that match your search.',groups.visual);
+  html+=section('media','▶ 🎧','Videos & podcasts','Watch or listen to a matching resource.',groups.media);
   html+=section('learn','\uD83D\uDCD8','Learn it',
     'The guides and filled-in notes that actually teach this.',groups.learn);
   if(qs.length){
